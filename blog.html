@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon & Walmart Marketplace Blog | SellTru</title>
+  <meta name="description" content="Expert guides and strategy on Amazon marketing, Amazon PPC, listing optimization, and Walmart.com marketplace growth. Written by SellTru's marketplace specialists.">
+  <meta property="og:title" content="Amazon & Walmart Marketplace Blog | SellTru">
+  <meta property="og:description" content="Practical guides on Amazon PPC, listing optimization, Walmart marketplace, and ecommerce growth — from a team that manages $150M+ in marketplace sales.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://selltru.com/blog">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.revealed { opacity: 1; transform: none; }
+
+    .blog-hero {
+      background: linear-gradient(150deg, #0A1628 0%, #0D1B2A 60%, #112240 100%);
+      padding: 96px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 30%, rgba(26,86,219,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .blog-hero-inner {
+      max-width: 660px;
+    }
+    .blog-hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .blog-hero h1 span { color: var(--orange); }
+    .blog-hero p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+    }
+
+    .blog-section { background: var(--gray-50); padding: 80px 0 96px; }
+
+    .blog-filter-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .filter-btn {
+      font-family: var(--font-head);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 100px;
+      border: 1.5px solid var(--gray-200);
+      background: var(--white);
+      color: var(--text-light);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: #fff;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .blog-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .blog-card-thumb {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-card-thumb.amz { background: linear-gradient(135deg, #FF9900 0%, #FF6B35 100%); }
+    .blog-card-thumb.wmt { background: linear-gradient(135deg, #0071DC 0%, #001E6C 100%); }
+    .blog-card-thumb.str { background: linear-gradient(135deg, #1A56DB 0%, #0A1628 100%); }
+    .blog-card-thumb.ppc { background: linear-gradient(135deg, #10B981 0%, #059669 100%); }
+    .blog-card-eyebrow {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      font-family: var(--font-head);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      background: rgba(0,0,0,0.25);
+      border-radius: 100px;
+      padding: 4px 10px;
+    }
+    .blog-card-read-time {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      font-family: var(--font-head);
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.7);
+    }
+    .blog-card-body {
+      padding: 22px 24px 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-card-title {
+      font-family: var(--font-head);
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+    .blog-card-excerpt {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+    .blog-card-link {
+      font-family: var(--font-head);
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--blue);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: gap 0.2s ease;
+    }
+    .blog-card-link:hover { gap: 8px; }
+
+    .blog-cta-section {
+      background: linear-gradient(135deg, #0D1B2A 0%, #1A3A5C 100%);
+      padding: 80px 0;
+    }
+    .blog-cta-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .blog-cta-inner h2 {
+      font-family: var(--font-head);
+      font-size: clamp(24px, 3.5vw, 38px);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .blog-cta-inner p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 1024px) {
+      .blog-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "SellTru Blog",
+    "description": "Expert guides on Amazon marketing, Amazon PPC, listing optimization, and Walmart.com marketplace growth.",
+    "url": "https://selltru.com/blog",
+    "publisher": {
+      "@type": "Organization",
+      "name": "SellTru",
+      "url": "https://selltru.com"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="nav" role="banner">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="nav-logo" href="index.html" aria-label="SellTru home">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+            <rect x="1" y="20" width="7" height="13" rx="2.5" fill="#FF6B35"/>
+            <rect x="10" y="13" width="7" height="20" rx="2.5" fill="#1A56DB"/>
+            <rect x="19" y="6" width="7" height="27" rx="2.5" fill="white"/>
+            <rect x="28" y="10" width="5" height="23" rx="2" fill="rgba(255,255,255,0.3)"/>
+          </svg>
+          <span class="nav-logo-text">SELL<span>TRU</span></span>
+        </a>
+        <nav class="nav-links" role="navigation" aria-label="Main navigation">
+          <a class="nav-link" href="amazon-marketing.html">Amazon</a>
+          <a class="nav-link" href="walmart-marketing.html">Walmart</a>
+          <a class="nav-link active" href="blog.html">Blog</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="about.html#contact">Contact</a>
+        </nav>
+        <a class="nav-cta" href="about.html#contact">Get Free Audit</a>
+        <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile">
+      <a href="amazon-marketing.html">Amazon Marketing</a>
+      <a href="walmart-marketing.html">Walmart Marketing</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+      <a href="about.html#contact" class="nav-cta">Get Your Free Audit →</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== BLOG HERO ===== -->
+    <section class="blog-hero" aria-label="SellTru blog">
+      <div class="container">
+        <div class="blog-hero-inner">
+          <p class="section-tag light" style="margin-bottom:14px;">The SellTru Blog</p>
+          <h1>Marketplace Strategy. <span>No Fluff.</span></h1>
+          <p>Practical guides on Amazon advertising, listing optimization, Walmart.com growth, and everything in between. Written by people who manage real accounts every day.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BLOG POSTS ===== -->
+    <section class="blog-section" aria-label="All blog posts">
+      <div class="container">
+
+        <div class="blog-filter-bar" role="group" aria-label="Filter by category">
+          <button class="filter-btn active" data-filter="all">All Posts</button>
+          <button class="filter-btn" data-filter="amazon-ppc">Amazon PPC</button>
+          <button class="filter-btn" data-filter="listing">Listing Optimization</button>
+          <button class="filter-btn" data-filter="walmart">Walmart</button>
+          <button class="filter-btn" data-filter="strategy">Strategy</button>
+        </div>
+
+        <div class="blog-grid" id="blog-grid">
+
+          <!-- Post 8 -->
+          <article class="blog-card reveal" data-category="walmart">
+            <div class="blog-card-thumb wmt">
+              <span aria-hidden="true">📣</span>
+              <span class="blog-card-eyebrow">Walmart Marketplace</span>
+              <span class="blog-card-read-time">8 min</span>
+            </div>
+            <div class="blog-card-body">
+              <h2 class="blog-card-title">Does Walmart Have PPC Advertising for Sellers?</h2>
+              <p class="blog-card-excerpt">Yes — but it works very differently from Amazon. Here's how Walmart Connect ads actually work, what ROAS to expect, and how to structure campaigns that drive real results.</p>
+              <a class="blog-card-link" href="blog/does-walmart-have-ppc-advertising.html">Read Article →</a>
+            </div>
+          </article>
+
+          <!-- Post 7 -->
+          <article class="blog-card reveal" data-category="strategy">
+            <div class="blog-card-thumb str">
+              <span aria-hidden="true">💰</span>
+              <span class="blog-card-eyebrow">Amazon Agencies</span>
+              <span class="blog-card-read-time">7 min</span>
+            </div>
+            <div class="blog-card-body">
+              <h2 class="blog-card-title">Is Hiring an Amazon Marketing Agency Really Worth the Cost?</h2>
+              <p class="blog-card-excerpt">The ROI math most brands never run. Here's exactly what a good agency should deliver — and how to know if yours is earning its fee.</p>
+              <a class="blog-card-link" href="blog/is-amazon-marketing-agency-worth-it.html">Read Article →</a>
+            </div>
+          </article>
+
+          <!-- Post 6 -->
+          <article class="blog-card reveal" data-category="strategy">
+            <div class="blog-card-thumb amz">
+              <span aria-hidden="true">🔍</span>
+              <span class="blog-card-eyebrow">Amazon Agencies</span>
+              <span class="blog-card-read-time">8 min</span>
+            </div>
+            <div class="blog-card-body">
+              <h2 class="blog-card-title">What Questions Should I Ask Before Hiring an Amazon Marketing Agency?</h2>
+              <p class="blog-card-excerpt">12 questions that separate great Amazon agencies from mediocre ones — with examples of what strong and weak answers actually sound like.</p>
+              <a class="blog-card-link" href="blog/questions-to-ask-amazon-marketing-agency.html">Read Article →</a>
+            </div>
+          </article>
+
+          <!-- Post 5 -->
+          <article class="blog-card reveal" data-category="walmart">
+            <div class="blog-card-thumb wmt">
+              <span aria-hidden="true">⚖️</span>
+              <span class="blog-card-eyebrow">Marketplace Strategy</span>
+              <span class="blog-card-read-time">7 min</span>
+            </div>
+            <div class="blog-card-body">
+              <h2 class="blog-card-title">Walmart vs Amazon: Where Should Your Brand Focus in 2026?</h2>
+              <p class="blog-card-excerpt">Not an either/or. Here's the honest framework for deciding which marketplace deserves your attention — and why the best brands are running both.</p>
+              <a class="blog-card-link" href="blog/walmart-vs-amazon-2026.html">Read Article →</a>
+            </div>
+          </article>
+
+          <!-- Post 4 -->
+          <article class="blog-card reveal" data-category="strategy">
+            <div class="blog-card-thumb amz">
+              <span aria-hidden="true">🚀</span>
+              <span class="blog-card-eyebrow">Amazon Strategy</span>
+              <span class="blog-card-read-time">8 min</span>
+            </div>
+            <div class="blog-card-body">
+              <h2 class="blog-card-title">How to Launch a New Product on Amazon: The 30-Day Playbook</h2>
+              <p class="blog-card-excerpt">The first 30 days determine whether your listing ranks or stalls for months. Here's the exact launch framework we use for every new product.</p>
+              <a class="blog-card-link" href="blog/how-to-launch-new-product-on-amazon.html">Read Article →</a>
+            </div>
+          </article>
+
+          <!-- Post 1 -->
+          <article class="blog-card reveal" data-category="amazon-ppc">
+            <div class="blog-card-thumb ppc">
+              <span aria-hidden="true">📉</span>
+              <span class="blog-card-eyebrow">Amazon PPC</span>
+              <span class="blog-card-read-time">7 min</span>
+            </div>
+            <div class="blog-card-body">
+              <h2 class="blog-card-title">How to Reduce Amazon ACOS Without Cutting Ad Spend</h2>
+              <p class="blog-card-excerpt">High ACOS isn't a budget problem. It's a targeting and structure problem. Here's how to actually fix it.</p>
+              <a class="blog-card-link" href="blog/how-to-reduce-amazon-acos.html">Read Article →</a>
+            </div>
+          </article>
+
+          <!-- Post 2 -->
+          <article class="blog-card reveal" data-category="listing">
+            <div class="blog-card-thumb amz">
+              <span aria-hidden="true">📝</span>
+              <span class="blog-card-eyebrow">Listing Optimization</span>
+              <span class="blog-card-read-time">9 min</span>
+            </div>
+            <div class="blog-card-body">
+              <h2 class="blog-card-title">Amazon Listing Optimization: The Complete Guide for 2026</h2>
+              <p class="blog-card-excerpt">Titles, bullets, backend keywords, A+ content, and images — everything that actually moves rank and conversion.</p>
+              <a class="blog-card-link" href="blog/amazon-listing-optimization-guide-2026.html">Read Article →</a>
+            </div>
+          </article>
+
+          <!-- Post 3 -->
+          <article class="blog-card reveal" data-category="strategy">
+            <div class="blog-card-thumb str">
+              <span aria-hidden="true">📊</span>
+              <span class="blog-card-eyebrow">Strategy</span>
+              <span class="blog-card-read-time">6 min</span>
+            </div>
+            <div class="blog-card-body">
+              <h2 class="blog-card-title">Why Your Amazon Sales Dropped (And What to Fix First)</h2>
+              <p class="blog-card-excerpt">Amazon sales can fall off a cliff fast. Most brands look at the wrong thing first. Here's the actual diagnostic checklist.</p>
+              <a class="blog-card-link" href="blog/why-amazon-sales-dropped.html">Read Article →</a>
+            </div>
+          </article>
+
+          <!-- More posts will be added automatically by the scheduled task -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BLOG CTA ===== -->
+    <section class="blog-cta-section" aria-label="Free audit CTA">
+      <div class="container">
+        <div class="blog-cta-inner reveal">
+          <p class="section-tag light" style="margin-bottom:12px;">Free Audit</p>
+          <h2>Reading Is Great. Results Are Better.</h2>
+          <p>If any of this sounds familiar — high ACOS, stalled ranking, Walmart underperforming — let's look at your account. Free, no obligation, no pitch deck.</p>
+          <a class="btn btn-primary btn-lg" href="about.html#contact">Get Your Free Audit</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="nav-logo" href="index.html">
+            <svg width="30" height="30" viewBox="0 0 34 34" fill="none">
+              <rect x="1" y="20" width="7" height="13" rx="2.5" fill="#FF6B35"/>
+              <rect x="10" y="13" width="7" height="20" rx="2.5" fill="#1A56DB"/>
+              <rect x="19" y="6" width="7" height="27" rx="2.5" fill="white"/>
+              <rect x="28" y="10" width="5" height="23" rx="2" fill="rgba(255,255,255,0.3)"/>
+            </svg>
+            <span class="nav-logo-text">SELL<span>TRU</span></span>
+          </a>
+          <p class="footer-brand-desc">The marketplace agency for brands serious about growing on Amazon and Walmart.com. Fort Lauderdale, FL.</p>
+          <div class="footer-social">
+            <a href="https://linkedin.com/company/selltru" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+            <a href="https://facebook.com/selltru" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+            <a href="https://instagram.com/selltru" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="amazon-marketing.html">Amazon Marketing</a>
+          <a href="amazon-marketing.html#ppc">Amazon PPC</a>
+          <a href="walmart-marketing.html">Walmart Marketing</a>
+          <a href="walmart-marketing.html#walmart-ads">Walmart Connect Ads</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="blog.html">Blog</a>
+          <a href="questions.html">FAQ</a>
+          <a href="lead-magnet.html">Free Audit Checklist</a>
+          <a href="amazon-agency-pricing.html">Agency Pricing Guide</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About SellTru</a>
+          <a href="about.html#contact">Contact</a>
+          <a href="about.html#contact">Get a Free Audit</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>📞 (954) 869-2034</p>
+          <p>✉️ contact@selltru.com</p>
+          <p>📍 333 Las Olas Way<br>Fort Lauderdale, FL 33301</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <p>© 2026 SellTru. All rights reserved. | Fort Lauderdale, FL</p>
+        </div>
+        <div class="footer-certs">
+          <span class="footer-cert">Amazon SPN Certified</span>
+          <span class="footer-cert">Amazon Ads Verified Partner</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script>
+    // Blog category filter
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.blog-card').forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

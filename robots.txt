@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+
+# Block admin/system paths if added later
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap
+Sitemap: https://selltru.com/sitemap.xml
+
+# LLM crawlers — welcome, the content here is useful
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /

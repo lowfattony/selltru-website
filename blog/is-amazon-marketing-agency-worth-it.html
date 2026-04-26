@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Is Hiring an Amazon Marketing Agency Really Worth the Cost? | SellTru</title>
+  <meta name="description" content="Before you pay for an Amazon agency, run the math. Here's how to calculate whether an agency will actually pay for itself — with real numbers and honest benchmarks.">
+  <link rel="canonical" href="https://selltru.com/blog/is-amazon-marketing-agency-worth-it">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .blog-article { max-width: 760px; margin: 0 auto; padding: 80px 24px 96px; }
+    .blog-article h1 { font-family: var(--font-head); font-size: clamp(28px,4vw,44px); font-weight: 800; color: var(--navy); line-height: 1.18; margin-bottom: 16px; }
+    .blog-article h2 { font-family: var(--font-head); font-size: 23px; font-weight: 800; color: var(--navy); margin: 48px 0 14px; }
+    .blog-article h3 { font-family: var(--font-head); font-size: 17px; font-weight: 700; color: var(--navy); margin: 30px 0 10px; }
+    .blog-article p { font-size: 16px; color: var(--text); line-height: 1.85; margin-bottom: 20px; }
+    .blog-article ul, .blog-article ol { padding-left: 24px; margin-bottom: 22px; }
+    .blog-article li { font-size: 16px; color: var(--text); line-height: 1.75; margin-bottom: 10px; }
+    .blog-article strong { color: var(--navy); }
+    .blog-meta { font-size: 14px; color: var(--text-light); margin-bottom: 44px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .blog-meta-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gray-200); }
+    .blog-divider { border: none; border-top: 1px solid var(--gray-200); margin: 44px 0; }
+    .blog-breadcrumb { font-size: 13px; color: var(--text-light); margin-bottom: 32px; }
+    .blog-breadcrumb a { color: var(--blue); text-decoration: none; }
+    .blog-callout { background: rgba(26,86,219,0.06); border-left: 3px solid var(--blue); border-radius: 0 10px 10px 0; padding: 18px 22px; margin: 28px 0; }
+    .blog-callout p { margin-bottom: 0; color: var(--navy); font-size: 15px; font-weight: 500; }
+    .blog-callout.warning { background: rgba(255,107,53,0.06); border-left-color: var(--orange); }
+    .blog-callout.warning p { color: #7a3010; }
+    .blog-callout.green { background: rgba(34,197,94,0.06); border-left-color: #22c55e; }
+    .blog-callout.green p { color: #166534; }
+
+    /* ROI calculator table */
+    .roi-table-wrap { overflow-x: auto; margin: 24px 0 36px; border-radius: 12px; border: 1px solid var(--gray-200); }
+    .roi-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+    .roi-table th { background: var(--navy); color: #fff; font-family: var(--font-head); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 14px 18px; text-align: left; }
+    .roi-table td { padding: 13px 18px; border-bottom: 1px solid var(--gray-100); color: var(--text); }
+    .roi-table tr:last-child td { border-bottom: none; }
+    .roi-table tr:nth-child(even) td { background: var(--gray-50); }
+    .roi-table .positive { color: #16a34a; font-weight: 700; }
+    .roi-table .negative { color: #dc2626; font-weight: 700; }
+    .roi-table .row-total td { background: rgba(26,86,219,0.05) !important; font-weight: 700; color: var(--navy); }
+
+    /* Verdict boxes */
+    .verdict-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 28px 0 36px; }
+    .verdict-box { border-radius: 14px; padding: 22px 22px 20px; }
+    .verdict-box.yes { background: rgba(34,197,94,0.07); border: 1.5px solid rgba(34,197,94,0.3); }
+    .verdict-box.no { background: rgba(220,38,38,0.06); border: 1.5px solid rgba(220,38,38,0.2); }
+    .verdict-box-title { font-family: var(--font-head); font-size: 14px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 12px; }
+    .verdict-box.yes .verdict-box-title { color: #16a34a; }
+    .verdict-box.no .verdict-box-title { color: #dc2626; }
+    .verdict-box ul { padding-left: 16px; margin: 0; }
+    .verdict-box li { font-size: 14px; color: var(--text); line-height: 1.6; margin-bottom: 7px; }
+
+    .blog-cta-box { background: linear-gradient(135deg, #0D1B2A, #1A3A5C); border-radius: 18px; padding: 40px 44px; margin-top: 64px; text-align: center; }
+    .blog-cta-box h3 { color: #fff; font-family: var(--font-head); font-size: 24px; font-weight: 800; margin-bottom: 10px; }
+    .blog-cta-box p { color: rgba(255,255,255,0.7); font-size: 15px; margin-bottom: 28px; line-height: 1.6; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.revealed { opacity: 1; transform: none; }
+    @media (max-width: 560px) { .verdict-grid { grid-template-columns: 1fr; } .blog-cta-box { padding: 32px 22px; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Is Hiring an Amazon Marketing Agency Really Worth the Cost?",
+    "description": "Before you pay for an Amazon agency, run the math. Here's how to calculate whether an agency will actually pay for itself — with real numbers and honest benchmarks.",
+    "datePublished": "2026-04-26",
+    "dateModified": "2026-04-26",
+    "author": { "@type": "Organization", "name": "SellTru", "url": "https://selltru.com" },
+    "publisher": { "@type": "Organization", "name": "SellTru", "url": "https://selltru.com" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://selltru.com/blog/is-amazon-marketing-agency-worth-it" }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="nav" role="banner">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="nav-logo" href="../index.html" aria-label="SellTru home">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+            <rect x="1" y="20" width="7" height="13" rx="2.5" fill="#FF6B35"/>
+            <rect x="10" y="13" width="7" height="20" rx="2.5" fill="#1A56DB"/>
+            <rect x="19" y="6" width="7" height="27" rx="2.5" fill="white"/>
+            <rect x="28" y="10" width="5" height="23" rx="2" fill="rgba(255,255,255,0.3)"/>
+          </svg>
+          <span class="nav-logo-text">SELL<span>TRU</span></span>
+        </a>
+        <nav class="nav-links" role="navigation" aria-label="Main navigation">
+          <a class="nav-link" href="../amazon-marketing.html">Amazon</a>
+          <a class="nav-link" href="../walmart-marketing.html">Walmart</a>
+          <a class="nav-link active" href="../blog.html">Blog</a>
+          <a class="nav-link" href="../about.html">About</a>
+          <a class="nav-link" href="../about.html#contact">Contact</a>
+        </nav>
+        <a class="nav-cta" href="../about.html#contact">Get Free Audit</a>
+        <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile">
+      <a href="../amazon-marketing.html">Amazon Marketing</a>
+      <a href="../walmart-marketing.html">Walmart Marketing</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../about.html">About</a>
+      <a href="../about.html#contact" class="nav-cta">Get Your Free Audit →</a>
+    </div>
+  </header>
+
+  <main>
+    <article class="blog-article">
+
+      <div class="blog-breadcrumb reveal">
+        <a href="../blog.html">← Blog</a>
+      </div>
+
+      <h1 class="reveal">Is Hiring an Amazon Marketing Agency Really Worth the Cost?</h1>
+
+      <div class="blog-meta reveal">
+        <span>SellTru</span>
+        <span class="blog-meta-dot"></span>
+        <span>April 26, 2026</span>
+        <span class="blog-meta-dot"></span>
+        <span>8 min read</span>
+        <span class="blog-meta-dot"></span>
+        <span>Agency Selection</span>
+      </div>
+
+      <p class="reveal">The honest answer is: it depends — but not on anything mysterious. It depends on your numbers. An Amazon agency is worth the cost when the revenue and savings they generate exceed their fee. That's it. The question isn't philosophical. It's math.</p>
+
+      <p class="reveal">This post walks through how to actually run that math before you sign anything, what a realistic ROI timeline looks like, and the situations where an agency genuinely doesn't make sense.</p>
+
+      <h2 class="reveal">The ROI Framework: What an Agency Actually Moves</h2>
+
+      <p class="reveal">A good Amazon agency generates value through four levers. Most people only think about one of them (ads). Here's the full picture:</p>
+
+      <ul class="reveal">
+        <li><strong>Lower ACOS:</strong> Reducing your advertising cost of sale directly puts money back in your pocket. A 10-point ACOS improvement on $20,000/month ad spend is $2,000/month in savings.</li>
+        <li><strong>Higher conversion rate:</strong> Better listings, A+ Content, and optimized images convert more of your existing traffic into sales — without spending more on ads. A 3-point conversion lift on 8,000 monthly sessions at a $45 ASP is $10,800/month in incremental revenue.</li>
+        <li><strong>Organic rank improvement:</strong> Better keyword targeting and listing relevance lifts your organic position, driving free traffic that compounds over time.</li>
+        <li><strong>Recovered suppressed/stranded listings:</strong> A single suppressed ASIN can cost thousands per month in lost revenue. Agencies catch and fix these fast.</li>
+      </ul>
+
+      <div class="blog-callout reveal">
+        <p>Most brands focus on ad spend when evaluating agency ROI. The bigger opportunity is often listing optimization — it improves every channel at once and the gains are permanent, not recurring costs. See everything that goes into a full <a href="../amazon-marketing.html" style="color:var(--blue);text-decoration:none;font-weight:600;">Amazon account management</a> engagement.</p>
+      </div>
+
+      <h2 class="reveal">Running the Math: A Real Example</h2>
+
+      <p class="reveal">Let's take a brand doing $500,000/year on Amazon ($41,667/month). They're spending $8,000/month on ads at a 35% ACOS, and their main listing converts at 11%.</p>
+
+      <div class="roi-table-wrap reveal">
+        <table class="roi-table">
+          <thead>
+            <tr>
+              <th>Lever</th>
+              <th>Before Agency</th>
+              <th>After 90 Days</th>
+              <th>Monthly Impact</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ACOS (on $8K spend)</td>
+              <td>35%</td>
+              <td>24%</td>
+              <td class="positive">+$880 saved</td>
+            </tr>
+            <tr>
+              <td>Listing conversion rate</td>
+              <td>11%</td>
+              <td>14.5%</td>
+              <td class="positive">+$5,250 revenue</td>
+            </tr>
+            <tr>
+              <td>Suppressed ASIN recovered</td>
+              <td>1 ASIN offline</td>
+              <td>Restored</td>
+              <td class="positive">+$2,800 revenue</td>
+            </tr>
+            <tr>
+              <td>Organic rank (main keyword)</td>
+              <td>Position 18</td>
+              <td>Position 7</td>
+              <td class="positive">+$1,600 revenue</td>
+            </tr>
+            <tr class="row-total">
+              <td colspan="3">Total monthly improvement</td>
+              <td class="positive">+$10,530/mo</td>
+            </tr>
+            <tr class="row-total">
+              <td colspan="3">Agency fee</td>
+              <td class="negative">−$3,500/mo</td>
+            </tr>
+            <tr class="row-total">
+              <td colspan="3">Net monthly gain</td>
+              <td class="positive">+$7,030/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="reveal">These numbers aren't hypothetical maximums — they're conservative estimates for a mid-size brand with untapped optimization. The ACOS improvement alone nearly covers the fee. Everything else is upside.</p>
+
+      <p class="reveal">The payback period on a $3,500/month agency fee at those improvement rates: <strong>under 30 days</strong>.</p>
+
+      <h2 class="reveal">The Break-Even Test</h2>
+
+      <p class="reveal">Before hiring any agency, do this calculation:</p>
+
+      <ol class="reveal">
+        <li>Take your agency's monthly fee.</li>
+        <li>Divide it by your gross margin percentage. This tells you how much incremental revenue the agency needs to generate just to break even.</li>
+        <li>Ask the agency if they've achieved that level of improvement for brands at your revenue range. If they can't point to examples, that's your answer.</li>
+      </ol>
+
+      <p class="reveal">Example: $3,500 fee ÷ 55% gross margin = $6,364 in incremental monthly revenue needed to break even. That's not a high bar for a brand doing $500K/year on Amazon.</p>
+
+      <div class="blog-callout warning reveal">
+        <p>If an agency can't tell you what improvement benchmarks they typically hit in the first 90 days — in specific, measurable terms — don't hire them. Vague answers ("we'll help you grow") are a red flag.</p>
+      </div>
+
+      <h2 class="reveal">When an Agency IS Worth It</h2>
+
+      <div class="verdict-grid reveal">
+        <div class="verdict-box yes">
+          <div class="verdict-box-title">✓ Good fit</div>
+          <ul>
+            <li>Doing $500K–$20M/year on Amazon</li>
+            <li>ACOS above your break-even target</li>
+            <li>Listing conversion rate below 12%</li>
+            <li>No dedicated internal Amazon specialist</li>
+            <li>Expanding to Walmart or new categories</li>
+            <li>Account health issues or suppressed ASINs</li>
+            <li>Launching new products regularly</li>
+          </ul>
+        </div>
+        <div class="verdict-box no">
+          <div class="verdict-box-title">✗ Not a fit</div>
+          <ul>
+            <li>Under $200K/year — margins too tight</li>
+            <li>Already have a strong in-house team</li>
+            <li>Account is healthy and growing organically</li>
+            <li>Only selling 1–2 products with stable rank</li>
+            <li>Margins under 30% (fee math rarely works)</li>
+            <li>Not willing to share account access</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="reveal">The Hidden Costs of Not Hiring an Agency</h2>
+
+      <p class="reveal">Most people frame this as "agency fee vs. doing it ourselves." That's the wrong comparison. The real comparison is: agency fee vs. <em>the cost of the status quo</em>.</p>
+
+      <p class="reveal">If your ACOS is 38% when it should be 22%, you're losing money every single day you wait. If your main listing converts at 10% when it should be 15%, you're leaving revenue on the table on every visitor. Those aren't hypothetical losses — they're real money leaving your account monthly.</p>
+
+      <p class="reveal">Add it up: a brand with a 12-point ACOS gap on $10,000/month ad spend is losing $1,200/month vs. an optimized account. Over a year, that's $14,400 — enough to pay for 4+ months of agency management. The delay is the cost.</p>
+
+      <div class="blog-callout green reveal">
+        <p>The question isn't whether you can afford an agency. For most brands doing $500K+/year, the better question is how much you're losing by not having one.</p>
+      </div>
+
+      <h2 class="reveal">The ROI Timeline: What to Expect Month by Month</h2>
+
+      <p class="reveal"><strong>Month 1:</strong> Audit, campaign restructure, and listing optimization. You may not see revenue movement yet, but the foundation is being laid. ACOS often starts improving in weeks 3–4 as negative keywords are added and bids are adjusted.</p>
+
+      <p class="reveal"><strong>Month 2:</strong> Conversion rate improvements show up in the data as listing changes index. Ad performance stabilizes. You should be able to see measurable ACOS improvement by end of month 2.</p>
+
+      <p class="reveal"><strong>Month 3:</strong> Organic rank shifts become visible. New keywords begin generating traffic. The compounding effect of better conversion + better rank starts to show. This is where ROI typically becomes undeniable.</p>
+
+      <p class="reveal">If you're 90 days in and can't point to specific measurable improvements — in ACOS, conversion rate, or organic rank — something is wrong. That's the benchmark. Not 6 months. Not a year.</p>
+
+      <h2 class="reveal">One Honest Caveat</h2>
+
+      <p class="reveal">Not all agencies deliver these results. The Amazon agency space ranges from exceptional specialists to operators charging premium fees for junior execution. The ROI case above assumes you hire a good one. Hiring a bad agency won't just fail to deliver ROI — it can actively set your account back through poor campaign structure, missed policy violations, and lost keyword history.</p>
+
+      <p class="reveal">Which is why the vetting process matters as much as the ROI math. Before you commit, <a href="questions-to-ask-amazon-marketing-agency.html" style="color:var(--blue);text-decoration:none;font-weight:600;">read our guide on what questions to ask before hiring an Amazon agency</a> — it covers the specific questions that separate the real operators from the pretenders.</p>
+
+      <hr class="blog-divider">
+
+      <p class="reveal">The short answer: yes, hiring a good Amazon agency is worth the cost for most brands doing $500K+ per year. The math works. The key word is <em>good</em>. For the rest — <a href="../amazon-agency-pricing.html" style="color:var(--blue);text-decoration:none;font-weight:600;">see what Amazon agencies actually charge</a>, what to ask them, and how to find one worth hiring.</p>
+
+      <div class="blog-cta-box reveal">
+        <h3>See If the Math Works for Your Account</h3>
+        <p>We'll audit your Amazon account, show you exactly what's costing you, and give you a clear picture of what improvement looks like — before you make any decision.</p>
+        <a href="../about.html#contact" class="btn btn-primary">Get the Free Audit</a>
+      </div>
+
+    </article>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="nav-logo" href="../index.html">
+            <svg width="30" height="30" viewBox="0 0 34 34" fill="none">
+              <rect x="1" y="20" width="7" height="13" rx="2.5" fill="#FF6B35"/>
+              <rect x="10" y="13" width="7" height="20" rx="2.5" fill="#1A56DB"/>
+              <rect x="19" y="6" width="7" height="27" rx="2.5" fill="white"/>
+              <rect x="28" y="10" width="5" height="23" rx="2" fill="rgba(255,255,255,0.3)"/>
+            </svg>
+            <span class="nav-logo-text">SELL<span>TRU</span></span>
+          </a>
+          <p class="footer-brand-desc">The marketplace agency for brands serious about growing on Amazon and Walmart.com. Fort Lauderdale, FL.</p>
+          <div class="footer-social">
+            <a href="https://linkedin.com/company/selltru" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+            <a href="https://facebook.com/selltru" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+            <a href="https://instagram.com/selltru" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="../amazon-marketing.html">Amazon Marketing</a>
+          <a href="../amazon-marketing.html#ppc">Amazon PPC</a>
+          <a href="../walmart-marketing.html">Walmart Marketing</a>
+          <a href="../walmart-marketing.html#walmart-ads">Walmart Connect Ads</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="../blog.html">Blog</a>
+          <a href="../questions.html">FAQ</a>
+          <a href="../lead-magnet.html">Free Audit Checklist</a>
+          <a href="../amazon-agency-pricing.html">Agency Pricing Guide</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="../about.html">About SellTru</a>
+          <a href="../about.html#contact">Contact</a>
+          <a href="../about.html#contact">Get a Free Audit</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>📞 (954) 869-2034</p>
+          <p>✉️ contact@selltru.com</p>
+          <p>📍 333 Las Olas Way<br>Fort Lauderdale, FL 33301</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <p>© 2026 SellTru. All rights reserved. | Fort Lauderdale, FL</p>
+        </div>
+        <div class="footer-certs">
+          <span class="footer-cert">Amazon SPN Certified</span>
+          <span class="footer-cert">Amazon Ads Verified Partner</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const ro = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); ro.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => ro.observe(el));
+  </script>
+
+</body>
+</html>

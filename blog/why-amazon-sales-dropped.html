@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Your Amazon Sales Dropped (And What to Fix First) | SellTru Blog</title>
+  <meta name="description" content="Amazon sales can fall fast. Most brands look at the wrong thing first. Here's the actual diagnostic checklist to find the real cause and fix it before it compounds.">
+  <link rel="canonical" href="https://selltru.com/blog/why-amazon-sales-dropped">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .blog-article { max-width: 760px; margin: 0 auto; padding: 80px 24px 96px; }
+    .blog-article h1 { font-family: var(--font-head); font-size: clamp(28px,4vw,42px); font-weight: 800; color: var(--navy); line-height: 1.2; margin-bottom: 16px; }
+    .blog-article h2 { font-family: var(--font-head); font-size: 22px; font-weight: 700; color: var(--navy); margin: 44px 0 14px; }
+    .blog-article h3 { font-family: var(--font-head); font-size: 17px; font-weight: 700; color: var(--navy); margin: 28px 0 10px; }
+    .blog-article p { font-size: 16px; color: var(--text); line-height: 1.8; margin-bottom: 18px; }
+    .blog-article ul, .blog-article ol { padding-left: 24px; margin-bottom: 20px; }
+    .blog-article li { font-size: 16px; color: var(--text); line-height: 1.7; margin-bottom: 8px; }
+    .blog-article strong { color: var(--navy); }
+    .blog-meta { font-size: 14px; color: var(--text-light); margin-bottom: 40px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .blog-meta-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gray-200); }
+    .blog-divider { border: none; border-top: 1px solid var(--gray-200); margin: 40px 0; }
+    .blog-callout { background: rgba(26,86,219,0.06); border-left: 3px solid var(--blue); border-radius: 0 10px 10px 0; padding: 18px 22px; margin: 28px 0; }
+    .blog-callout p { margin-bottom: 0; color: var(--navy); font-size: 15px; }
+    .blog-callout.warning { background: rgba(255,107,53,0.07); border-color: var(--orange); }
+    .blog-numbered { counter-reset: diagnosis-counter; list-style: none; padding-left: 0; }
+    .blog-numbered li { counter-increment: diagnosis-counter; padding-left: 44px; position: relative; margin-bottom: 24px; }
+    .blog-numbered li::before { content: counter(diagnosis-counter); position: absolute; left: 0; top: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--navy); color: #fff; font-family: var(--font-head); font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .blog-numbered li strong { display: block; font-family: var(--font-head); font-size: 16px; color: var(--navy); margin-bottom: 6px; }
+    .blog-cta-box { background: linear-gradient(135deg, #0D1B2A, #1A3A5C); border-radius: 18px; padding: 40px 44px; margin-top: 64px; text-align: center; }
+    .blog-cta-box h3 { color: #fff; font-family: var(--font-head); font-size: 24px; font-weight: 800; margin-bottom: 10px; }
+    .blog-cta-box p { color: rgba(255,255,255,0.7); font-size: 15px; margin-bottom: 28px; line-height: 1.6; }
+    .blog-breadcrumb { font-size: 13px; color: var(--text-light); margin-bottom: 32px; }
+    .blog-breadcrumb a { color: var(--blue); text-decoration: none; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.revealed { opacity: 1; transform: none; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Why Your Amazon Sales Dropped (And What to Fix First)",
+    "description": "Amazon sales can fall fast. Most brands look at the wrong thing first. Here's the actual diagnostic checklist to find the real cause and fix it.",
+    "datePublished": "2026-04-26",
+    "dateModified": "2026-04-26",
+    "author": { "@type": "Organization", "name": "SellTru", "url": "https://selltru.com" },
+    "publisher": { "@type": "Organization", "name": "SellTru", "url": "https://selltru.com" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://selltru.com/blog/why-amazon-sales-dropped" }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="nav" role="banner">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="nav-logo" href="../index.html" aria-label="SellTru home">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+            <rect x="1" y="20" width="7" height="13" rx="2.5" fill="#FF6B35"/>
+            <rect x="10" y="13" width="7" height="20" rx="2.5" fill="#1A56DB"/>
+            <rect x="19" y="6" width="7" height="27" rx="2.5" fill="white"/>
+            <rect x="28" y="10" width="5" height="23" rx="2" fill="rgba(255,255,255,0.3)"/>
+          </svg>
+          <span class="nav-logo-text">SELL<span>TRU</span></span>
+        </a>
+        <nav class="nav-links" role="navigation" aria-label="Main navigation">
+          <a class="nav-link" href="../amazon-marketing.html">Amazon</a>
+          <a class="nav-link" href="../walmart-marketing.html">Walmart</a>
+          <a class="nav-link active" href="../blog.html">Blog</a>
+          <a class="nav-link" href="../about.html">About</a>
+          <a class="nav-link" href="../about.html#contact">Contact</a>
+        </nav>
+        <a class="nav-cta" href="../about.html#contact">Get Free Audit</a>
+        <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile">
+      <a href="../amazon-marketing.html">Amazon Marketing</a>
+      <a href="../walmart-marketing.html">Walmart Marketing</a>
+      <a href="../about.html">About</a>
+      <a href="../about.html#contact" class="nav-cta">Get Your Free Audit →</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="blog-article">
+
+      <p class="blog-breadcrumb"><a href="../blog.html">← Blog</a> &nbsp;/&nbsp; Strategy</p>
+
+      <p class="section-tag" style="margin-bottom:12px;">Strategy</p>
+      <h1>Why Your Amazon Sales Dropped (And What to Fix First)</h1>
+      <div class="blog-meta">
+        <span>By SellTru</span>
+        <span class="blog-meta-dot"></span>
+        <span>April 2026</span>
+        <span class="blog-meta-dot"></span>
+        <span>6 min read</span>
+      </div>
+
+      <p>You wake up Monday morning, check your dashboard, and the number is wrong. Revenue is down 30% from last week. Maybe 40%. You refresh it. Still wrong. No email from Amazon. No notification. Just a number that doesn't make sense.</p>
+
+      <p>This happens to nearly every brand that sells on Amazon long enough. The frustrating part isn't the drop — it's that Amazon gives you almost no information about why. You're left staring at a chart with a cliff and no explanation.</p>
+
+      <p>The good news: there are only a handful of real causes, and once you know where to look, the diagnosis is faster than you'd think. Here's the exact order to check things.</p>
+
+      <h2>Step 1: Check Your Account Health Dashboard First</h2>
+
+      <p>Before anything else, go to Seller Central → Performance → Account Health. Amazon can suppress your listings, restrict your selling privileges, or place your account under review without sending a clear notification. A red or yellow account health metric can tank visibility overnight.</p>
+
+      <p>Look for: policy violations, intellectual property complaints, product authenticity flags, and order defect rate. Any of these can trigger algorithmic suppression even without a full suspension.</p>
+
+      <div class="blog-callout warning">
+        <p><strong>Don't skip this step.</strong> We've seen accounts lose 60% of revenue overnight because of a single IP complaint from a competitor — filed in bad faith — that the brand didn't know about for days.</p>
+      </div>
+
+      <h2>Step 2: Check for Listing Suppression or Stranded Inventory</h2>
+
+      <p>In Seller Central, go to Inventory → Manage Inventory → Filter by "Inactive" or check the Stranded Inventory report. A suppressed listing means your product is invisible to shoppers even though inventory exists.</p>
+
+      <p>Common suppression triggers:</p>
+      <ul>
+        <li>Missing required product attributes (Amazon adds new required fields regularly)</li>
+        <li>Image that no longer meets Amazon's guidelines (resolution, background, props)</li>
+        <li>Price set outside Amazon's "fair pricing" range</li>
+        <li>Variation parent-child structure broken after a catalog update</li>
+        <li>HAZMAT review flag triggered by ingredients or materials</li>
+      </ul>
+
+      <p>Fix each suppression issue before assuming the problem is more complex. You'd be surprised how often "my Amazon sales died" is actually a suppressed listing that takes 30 minutes to fix.</p>
+
+      <h2>Step 3: Check Your Buy Box Ownership</h2>
+
+      <p>If you share your ASIN with other sellers, you may have lost the Buy Box. Go to your listing on Amazon (as a customer, not logged in as a seller) and look at the "Add to Cart" seller. Is it you?</p>
+
+      <p>Losing the Buy Box doesn't mean your listing is gone — but it means you're getting almost no sales. Shoppers almost universally buy from whoever holds the Buy Box.</p>
+
+      <p>Why you might have lost it:</p>
+      <ul>
+        <li>A third-party seller undercut your price</li>
+        <li>Your seller metrics (order defect rate, late shipment) dropped below Amazon's threshold</li>
+        <li>You switched from FBA to FBM without competitive shipping times</li>
+        <li>Your inventory quantity dropped and Amazon's algorithm is hedging toward other sellers</li>
+      </ul>
+
+      <h2>Step 4: Check Keyword Ranking</h2>
+
+      <p>Amazon's algorithm updates constantly. A change in how it weights certain signals can move you off page one for your top keywords — and you'd never get an email about it.</p>
+
+      <p>Use a rank tracker (Helium 10, Jungle Scout, or Seller Board) to check your current ranking for your top 10-15 keywords. Compare to where you were two weeks ago. A drop in organic rank for high-volume terms explains most "sudden" sales drops that aren't account health or suppression issues. If your listing hasn't been optimized recently, that could be contributing — see our <a href="amazon-listing-optimization-guide-2026.html" style="color:var(--blue);">complete listing optimization guide</a> for the key levers.</p>
+
+      <p>What causes rank drops:</p>
+      <ul>
+        <li>Sales velocity decline (from stockout, suppression, or seasonal dip) that triggered the algorithm to down-rank you</li>
+        <li>A competitor launched, got initial review velocity, and displaced you</li>
+        <li>Your review rating fell after a wave of negative reviews (check reviews by date)</li>
+        <li>An algorithm update that changed the weighting of a signal your listing was benefiting from</li>
+      </ul>
+
+      <h2>Step 5: Check for a Competitor Hijacking Your Listing</h2>
+
+      <p>Listing hijacking is exactly what it sounds like: another seller adds their product to your ASIN and undercuts your price, winning the Buy Box while selling something that isn't your product.</p>
+
+      <p>Check your listing for "Other Sellers on Amazon" offers. If there's a seller you don't recognize selling at a lower price, your listing may have been hijacked.</p>
+
+      <p>The fix: Amazon Brand Registry gives you tools to report and remove unauthorized sellers. If you're not brand registered, this is an ongoing vulnerability. Get registered.</p>
+
+      <h2>Step 6: Look at Advertising</h2>
+
+      <p>Check this last — not first — because ad problems are rarely the cause of a sudden sales drop. But if everything above looks clean, pull up your Campaign Manager.</p>
+
+      <p>Look for: campaigns that hit their daily budget cap early in the day, bids that were changed recently, campaigns that were accidentally paused, or any significant ACOS spike that suggests you're burning budget without converting.</p>
+
+      <div class="blog-callout">
+        <p><strong>If you paused ads for any reason</strong> — to "save money during a slow period" — and your organic rank dropped shortly after, that's the connection. Amazon's algorithm partially rewards paid sales velocity. Cutting ads entirely often causes an organic rank decline that compounds the revenue drop. Before cutting, read our guide on <a href="how-to-reduce-amazon-acos.html" style="color:var(--blue);">reducing ACOS without cutting ad spend</a>.</p>
+      </div>
+
+      <h2>The Diagnostic Order, Summarized</h2>
+
+      <ol class="blog-numbered">
+        <li>
+          <strong>Account Health Dashboard</strong>
+          Check for policy violations, IP complaints, or performance flags. These cause invisible suppression.
+        </li>
+        <li>
+          <strong>Listing Suppression &amp; Stranded Inventory</strong>
+          Check Manage Inventory for inactive listings and the Stranded Inventory report for FBA issues.
+        </li>
+        <li>
+          <strong>Buy Box Ownership</strong>
+          Check your listing as a customer. Confirm you own the Buy Box, or find out who does.
+        </li>
+        <li>
+          <strong>Keyword Ranking</strong>
+          Check your top keywords for organic rank changes in the last 7–14 days.
+        </li>
+        <li>
+          <strong>Listing Hijacking</strong>
+          Look for unauthorized sellers on your ASIN in the "Other Sellers on Amazon" section.
+        </li>
+        <li>
+          <strong>Advertising</strong>
+          Check for paused campaigns, budget caps, or bid changes that correlate with the drop.
+        </li>
+      </ol>
+
+      <hr class="blog-divider">
+
+      <p>Most sales drops have a clear cause if you look in the right places. The brands that get hurt worst are the ones that spend two weeks A/B testing their main image while a hijacker is winning their Buy Box on day one.</p>
+
+      <p>Systematic account monitoring — running this checklist proactively, before the drop — is the difference between catching a problem in hour one versus week three. That's part of what our <a href="../amazon-marketing.html" style="color:var(--blue);">Amazon account management service</a> includes: we're watching the metrics before you have to ask.</p>
+
+      <div class="blog-cta-box">
+        <h3>Something Looks Off. Let's Diagnose It.</h3>
+        <p>Tell us what you're seeing — we'll pull up your account and walk through the actual numbers with you. Free, no pitch, no obligation.</p>
+        <a class="btn btn-primary" href="../about.html#contact">Get a Free Amazon Audit</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="nav-logo" href="../index.html">
+            <svg width="30" height="30" viewBox="0 0 34 34" fill="none">
+              <rect x="1" y="20" width="7" height="13" rx="2.5" fill="#FF6B35"/>
+              <rect x="10" y="13" width="7" height="20" rx="2.5" fill="#1A56DB"/>
+              <rect x="19" y="6" width="7" height="27" rx="2.5" fill="white"/>
+              <rect x="28" y="10" width="5" height="23" rx="2" fill="rgba(255,255,255,0.3)"/>
+            </svg>
+            <span class="nav-logo-text">SELL<span>TRU</span></span>
+          </a>
+          <p class="footer-brand-desc">The marketplace agency for brands serious about growing on Amazon and Walmart.com. Fort Lauderdale, FL.</p>
+          <div class="footer-social">
+            <a href="https://linkedin.com/company/selltru" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+            <a href="https://facebook.com/selltru" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+            <a href="https://instagram.com/selltru" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="../amazon-marketing.html">Amazon Marketing</a>
+          <a href="../amazon-marketing.html#ppc">Amazon PPC</a>
+          <a href="../walmart-marketing.html">Walmart Marketing</a>
+          <a href="../walmart-marketing.html#walmart-ads">Walmart Connect Ads</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="../blog.html">Blog</a>
+          <a href="../questions.html">FAQ</a>
+          <a href="../lead-magnet.html">Free Audit Checklist</a>
+          <a href="../amazon-agency-pricing.html">Agency Pricing Guide</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="../about.html">About SellTru</a>
+          <a href="../about.html#contact">Contact</a>
+          <a href="../about.html#contact">Get a Free Audit</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>📞 (954) 869-2034</p>
+          <p>✉️ contact@selltru.com</p>
+          <p>📍 333 Las Olas Way<br>Fort Lauderdale, FL 33301</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <p>© 2026 SellTru. All rights reserved. | Fort Lauderdale, FL</p>
+        </div>
+        <div class="footer-certs">
+          <span class="footer-cert">Amazon SPN Certified</span>
+          <span class="footer-cert">Amazon Ads Verified Partner</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

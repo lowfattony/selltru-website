@@ -360,7 +360,9 @@
           <div class="lm-form-card">
             <h3>Want Us to Run the Audit For You?</h3>
             <p>Use the checklist yourself — or let SellTru do it. A free professional audit takes about 48 hours and covers everything below, plus competitive analysis.</p>
-            <form class="contact-form" action="https://formspree.io/f/xlgakqbq" method="POST" novalidate>
+            <form class="lm-audit-form" action="https://formspree.io/f/xlgakqbq" method="POST">
+              <input type="hidden" name="_next" value="https://selltru.com/lead-magnet.html">
+              <input type="hidden" name="_subject" value="New Free Audit Request — SellTru">
               <div class="form-group">
                 <label class="form-label" for="lm-name">Your Name *</label>
                 <input class="form-input" type="text" id="lm-name" name="name" placeholder="Jane Smith" required>

@@ -69,15 +69,44 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', e => {
       e.preventDefault();
       const btn = form.querySelector('.form-btn');
-      btn.textContent = 'Message Sent!';
-      btn.style.background = '#10B981';
+      const originalText = btn.textContent;
+      btn.textContent = 'Sending…';
       btn.disabled = true;
-      setTimeout(() => {
-        btn.textContent = 'Send Message';
-        btn.style.background = '';
+
+      fetch(form.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      })
+      .then(res => {
+        if (res.ok) {
+          btn.textContent = 'Message Sent!';
+          btn.style.background = '#10B981';
+          form.reset();
+          setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.background = '';
+            btn.disabled = false;
+          }, 4000);
+        } else {
+          btn.textContent = 'Error — Try Again';
+          btn.style.background = '#EF4444';
+          btn.disabled = false;
+          setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.background = '';
+          }, 4000);
+        }
+      })
+      .catch(() => {
+        btn.textContent = 'Error — Try Again';
+        btn.style.background = '#EF4444';
         btn.disabled = false;
-        form.reset();
-      }, 4000);
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.background = '';
+        }, 4000);
+      });
     });
   }
 

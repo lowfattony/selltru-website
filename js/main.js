@@ -80,11 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .then(res => {
         if (res.ok) {
-          // Also add to Mailchimp with audit-request tag
-          const emailInput = form.querySelector('input[type="email"]');
-          if (emailInput && emailInput.value) {
-            subscribeToMailchimp(emailInput.value, 'audit-request', () => {});
-          }
           btn.textContent = 'Message Sent!';
           btn.style.background = '#10B981';
           form.reset();

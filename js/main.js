@@ -80,6 +80,11 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .then(res => {
         if (res.ok) {
+          // Also add to Mailchimp with audit-request tag
+          const emailInput = form.querySelector('input[type="email"]');
+          if (emailInput && emailInput.value) {
+            subscribeToMailchimp(emailInput.value, 'audit-request', () => {});
+          }
           btn.textContent = 'Message Sent!';
           btn.style.background = '#10B981';
           form.reset();
@@ -136,15 +141,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('[data-target]').forEach(el => countObserver.observe(el));
 
-  /* === EMAIL CAPTURE: NETLIFY AJAX SUBMIT === */
+  /* === MAILCHIMP SUBSCRIBE (JSONP) === */
+  const MC_U  = '1b35098a2febce7d1180e95a8';
+  const MC_ID = '1fe2258322';
+
+  function subscribeToMailchimp(email, source, onSuccess) {
+    const cbName = 'mc_cb_' + Date.now();
+    const url = 'https://us18.list-manage.com/subscribe/post-json' +
+      '?u=' + MC_U +
+      '&id=' + MC_ID +
+      '&EMAIL=' + encodeURIComponent(email) +
+      '&SOURCE=' + encodeURIComponent(source) +
+      '&c=' + cbName;
+
+    window[cbName] = function(data) {
+      const s = document.getElementById(cbName);
+      if (s) s.remove();
+      delete window[cbName];
+      onSuccess(); // show success regardless (handles already-subscribed gracefully)
+    };
+
+    const script = document.createElement('script');
+    script.id = cbName;
+    script.src = url;
+    document.body.appendChild(script);
+
+    // Fallback: fire success after 5s in case JSONP is blocked
+    setTimeout(() => { if (window[cbName]) { delete window[cbName]; onSuccess(); } }, 5000);
+  }
+
+  // Keep old name as alias so existing call sites work unchanged
   function submitEmailToNetlify(email, source, onSuccess) {
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams({ 'form-name': 'email-capture', email, source }).toString()
-    })
-    .then(() => onSuccess())
-    .catch(() => onSuccess()); // still show success even on network edge cases
+    subscribeToMailchimp(email, source, onSuccess);
   }
 
   /* === STICKY EMAIL BAR === */

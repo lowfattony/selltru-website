@@ -161,6 +161,27 @@
     </div>
   </header>
 
+  <!-- ===== EMAIL STICKY BAR ===== -->
+  <div class="email-bar" id="email-bar" role="complementary" aria-label="Free checklist offer" hidden>
+    <div class="email-bar-inner">
+      <div class="email-bar-copy">
+        <span class="email-bar-label">Free Download</span>
+        <span class="email-bar-text">Get the Amazon Audit Checklist we use on every account we take over.</span>
+      </div>
+      <form class="email-bar-form" id="email-bar-form" novalidate>
+        <input type="email" name="email" class="email-bar-input" placeholder="Your work email" required autocomplete="email">
+        <button type="submit" class="email-bar-btn">Send It</button>
+      </form>
+      <button class="email-bar-dismiss" id="email-bar-dismiss" aria-label="Dismiss">✕</button>
+    </div>
+  </div>
+
+  <!-- Hidden Netlify form for email capture (required for Netlify to detect) -->
+  <form name="email-capture" data-netlify="true" hidden>
+    <input type="email" name="email">
+    <input type="hidden" name="source">
+  </form>
+
   <main id="main">
 
     <!-- ===== HERO ===== -->
@@ -1089,6 +1110,42 @@
           <a class="btn btn-primary btn-lg" href="about.html#contact" style="white-space:nowrap;">Claim Your Free Audit →</a>
         </div>
 
+      </div>
+    </section>
+
+    <!-- ===== EMAIL CAPTURE ===== -->
+    <section class="email-capture-section" aria-label="Free Amazon audit checklist">
+      <div class="container">
+        <div class="ec-grid">
+          <div class="ec-left reveal">
+            <p class="section-tag light">Free Download</p>
+            <h2 class="ec-headline">The Amazon Audit Checklist.<br>On Us.</h2>
+            <p class="ec-sub">The exact checklist we run through when we take over a new account. 47 line items across ads, listings, inventory, and account health. Takes 10 minutes to read. Saves months of guessing.</p>
+            <ul class="ec-bullets">
+              <li>Where ad spend typically leaks without anyone noticing</li>
+              <li>The listing mistakes that kill conversion rates</li>
+              <li>Account health flags that quietly suppress rankings</li>
+            </ul>
+          </div>
+          <div class="ec-right reveal reveal-delay-1">
+            <div class="ec-form-card">
+              <p class="ec-form-headline">Get instant access. No spam.</p>
+              <form class="ec-form" id="ec-form" novalidate>
+                <div class="ec-field">
+                  <label for="ec-email" class="ec-label">Work Email</label>
+                  <input type="email" id="ec-email" name="email" class="ec-input" placeholder="you@yourbrand.com" required autocomplete="email">
+                </div>
+                <button type="submit" class="btn btn-primary ec-submit">Send Me the Checklist</button>
+                <p class="ec-privacy">No pitch, no follow-up sequence. Just the checklist.</p>
+              </form>
+              <div class="ec-success" id="ec-success" hidden>
+                <div class="ec-success-icon">✓</div>
+                <p class="ec-success-text">Check your inbox. The checklist is on its way.</p>
+                <a href="lead-magnet.html" class="ec-success-link">View it now instead</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 

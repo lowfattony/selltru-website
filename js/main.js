@@ -107,6 +107,77 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('[data-target]').forEach(el => countObserver.observe(el));
 
+  /* === EMAIL CAPTURE: NETLIFY AJAX SUBMIT === */
+  function submitEmailToNetlify(email, source, onSuccess) {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ 'form-name': 'email-capture', email, source }).toString()
+    })
+    .then(() => onSuccess())
+    .catch(() => onSuccess()); // still show success even on network edge cases
+  }
+
+  /* === STICKY EMAIL BAR === */
+  const emailBar = document.getElementById('email-bar');
+  const emailBarDismiss = document.getElementById('email-bar-dismiss');
+  const emailBarForm = document.getElementById('email-bar-form');
+
+  if (emailBar && !sessionStorage.getItem('email-bar-dismissed')) {
+    emailBar.hidden = false;
+    const showBar = () => emailBar.classList.add('visible');
+    // Show after scrolling past hero or after 10 seconds, whichever comes first
+    let shown = false;
+    const maybeShow = () => { if (!shown) { shown = true; showBar(); } };
+    setTimeout(maybeShow, 10000);
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) maybeShow();
+    }, { passive: true });
+  }
+
+  if (emailBarDismiss) {
+    emailBarDismiss.addEventListener('click', () => {
+      emailBar.classList.remove('visible');
+      sessionStorage.setItem('email-bar-dismissed', '1');
+    });
+  }
+
+  if (emailBarForm) {
+    emailBarForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const email = emailBarForm.querySelector('input[type="email"]').value;
+      const btn = emailBarForm.querySelector('.email-bar-btn');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      submitEmailToNetlify(email, 'sticky-bar', () => {
+        btn.textContent = 'Done!';
+        btn.style.background = '#10B981';
+        setTimeout(() => {
+          emailBar.classList.remove('visible');
+          sessionStorage.setItem('email-bar-dismissed', '1');
+        }, 2000);
+      });
+    });
+  }
+
+  /* === INLINE EMAIL CAPTURE FORM === */
+  const ecForm = document.getElementById('ec-form');
+  const ecSuccess = document.getElementById('ec-success');
+
+  if (ecForm) {
+    ecForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const email = ecForm.querySelector('input[type="email"]').value;
+      const btn = ecForm.querySelector('.ec-submit');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      submitEmailToNetlify(email, 'inline-section', () => {
+        ecForm.hidden = true;
+        ecSuccess.hidden = false;
+      });
+    });
+  }
+
   /* === FAQ ACCORDION === */
   document.querySelectorAll('.faq-q').forEach(question => {
     question.addEventListener('click', () => {

@@ -1400,6 +1400,9 @@ section { padding: 96px 0; }
 .bsc-val.o { color: var(--orange); }
 .bsc-val.w { color: #fff; }
 .bsc-lbl { font-size: 11px; color: rgba(255,255,255,0.38); line-height: 1.3; }
+.bsc-context { font-size: 11px; color: rgba(255,255,255,0.22); line-height: 1.4; margin-top: 10px; }
+.bsc-bar { height: 3px; background: rgba(255,255,255,0.07); border-radius: 100px; margin-top: auto; overflow: hidden; }
+.bsc-fill { height: 100%; border-radius: 100px; }
 
 /* "Why marketplace" bento card */
 .bento-why-card {
@@ -1410,7 +1413,7 @@ section { padding: 96px 0; }
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 .bwc-title {
   font-family: var(--font-head);
@@ -1421,7 +1424,7 @@ section { padding: 96px 0; }
   margin-bottom: 8px;
 }
 .bwc-sub { font-size: 14px; color: var(--text-light); line-height: 1.6; }
-.bwc-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
+.bwc-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 24px; }
 .bwc-tag {
   display: inline-flex;
   align-items: center;

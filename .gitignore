@@ -1,0 +1,4 @@
+# Private scripts — never push these
+mailchimp_setup.py
+mailchimp_automations.py
+mailchimp_email_templates.html

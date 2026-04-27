@@ -141,38 +141,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('[data-target]').forEach(el => countObserver.observe(el));
 
-  /* === MAILCHIMP SUBSCRIBE (JSONP) === */
-  const MC_U  = '1b35098a2febce7d1180e95a8';
-  const MC_ID = '1fe2258322';
+  /* === EMAIL CAPTURE — Formspree === */
+  const FORMSPREE_URL = 'https://formspree.io/f/xlgakqbq';
 
-  function subscribeToMailchimp(email, source, onSuccess) {
-    const cbName = 'mc_cb_' + Date.now();
-    const url = 'https://us18.list-manage.com/subscribe/post-json' +
-      '?u=' + MC_U +
-      '&id=' + MC_ID +
-      '&EMAIL=' + encodeURIComponent(email) +
-      '&SOURCE=' + encodeURIComponent(source) +
-      '&c=' + cbName;
-
-    window[cbName] = function(data) {
-      const s = document.getElementById(cbName);
-      if (s) s.remove();
-      delete window[cbName];
-      onSuccess(); // show success regardless (handles already-subscribed gracefully)
-    };
-
-    const script = document.createElement('script');
-    script.id = cbName;
-    script.src = url;
-    document.body.appendChild(script);
-
-    // Fallback: fire success after 5s in case JSONP is blocked
-    setTimeout(() => { if (window[cbName]) { delete window[cbName]; onSuccess(); } }, 5000);
-  }
-
-  // Keep old name as alias so existing call sites work unchanged
   function submitEmailToNetlify(email, source, onSuccess) {
-    subscribeToMailchimp(email, source, onSuccess);
+    const data = new FormData();
+    data.append('email', email);
+    data.append('source', source);
+    data.append('_subject', 'New Email Capture — SellTru (' + source + ')');
+
+    fetch(FORMSPREE_URL, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: data
+    })
+    .then(() => onSuccess())
+    .catch(() => onSuccess()); // show success regardless to avoid frustrating users
   }
 
   /* === STICKY EMAIL BAR === */

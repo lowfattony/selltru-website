@@ -1,13 +1,12 @@
 // ============================================================
 // SELLTRU DAILY SEO HEARTBEAT REPORT
 // Google Apps Script — sends to andrewderamo18@gmail.com
-// Setup instructions at the bottom of this file
 // ============================================================
 
 const CONFIG = {
   EMAIL_TO:        'andrewderamo18@gmail.com',
-  SITE_URL:        'https://www.selltru.com/',   // Must match exactly in Search Console
-  GA4_PROPERTY_ID: 'REPLACE_WITH_YOUR_GA4_PROPERTY_ID', // e.g. '123456789'
+  SITE_URL:        'https://www.selltru.com/',
+  GA4_PROPERTY_ID: '471676900',
   DAYS_LOOKBACK:   7,
   BRAND_DARK:      '#0d1b2e',
   BRAND_ORANGE:    '#E85D26',
@@ -27,7 +26,7 @@ function sendDailySEOReport() {
     const gsc = fetchGSC(start, end, prevStart, prevEnd);
     const ga  = fetchGA4(start, end, prevStart, prevEnd);
 
-    const subject  = `📊 SellTru SEO Heartbeat — ${displayDate(today)}`;
+    const subject  = `[SEO Report] SellTru Heartbeat — ${displayDate(today)}`;
     const htmlBody = buildEmail(gsc, ga, start, end);
 
     GmailApp.sendEmail(CONFIG.EMAIL_TO, subject, 'Please view in HTML.', { htmlBody });
@@ -39,41 +38,49 @@ function sendDailySEOReport() {
 }
 
 // ============================================================
-// GOOGLE SEARCH CONSOLE
+// GOOGLE SEARCH CONSOLE (REST API via UrlFetchApp)
 // ============================================================
 function fetchGSC(start, end, prevStart, prevEnd) {
+  const token       = ScriptApp.getOAuthToken();
+  const encodedSite = encodeURIComponent(CONFIG.SITE_URL);
+  const apiUrl      = 'https://searchconsole.googleapis.com/webmasters/v3/sites/' +
+                      encodedSite + '/searchAnalytics/query';
+
   function query(startDate, endDate, extra) {
-    return SearchConsole.Searchanalytics.query(CONFIG.SITE_URL,
-      Object.assign({ startDate, endDate, rowLimit: 25 }, extra));
+    const body     = Object.assign({ startDate, endDate, rowLimit: 25 }, extra);
+    const response = UrlFetchApp.fetch(apiUrl, {
+      method:             'post',
+      contentType:        'application/json',
+      headers:            { Authorization: 'Bearer ' + token },
+      payload:            JSON.stringify(body),
+      muteHttpExceptions: true,
+    });
+    const code = response.getResponseCode();
+    const text = response.getContentText();
+    if (code !== 200) throw new Error('GSC API ' + code + ': ' + text);
+    return JSON.parse(text);
   }
 
   try {
-    const curr = query(start, end, { dimensions: [] });
-    const prev = query(prevStart, prevEnd, { dimensions: [] });
-
+    const curr       = query(start, end, { dimensions: [] });
+    const prev       = query(prevStart, prevEnd, { dimensions: [] });
     const topQueries = query(start, end, {
       dimensions: ['query'],
-      orderBy: [{ fieldName: 'clicks', sortOrder: 'DESCENDING' }]
+      orderBy: [{ fieldName: 'clicks', sortOrder: 'DESCENDING' }],
     });
-
-    const blogPages = query(start, end, {
+    const blogPages  = query(start, end, {
       dimensions: ['page'],
-      dimensionFilterGroups: [{
-        filters: [{ dimension: 'page', operator: 'contains', expression: '/blog/' }]
-      }],
-      orderBy: [{ fieldName: 'impressions', sortOrder: 'DESCENDING' }]
+      dimensionFilterGroups: [{ filters: [{ dimension: 'PAGE', operator: 'CONTAINS', expression: '/blog/' }] }],
+      orderBy: [{ fieldName: 'impressions', sortOrder: 'DESCENDING' }],
     });
-
-    const nearMiss = query(start, end, {
+    // Fetch top 50 queries and filter client-side for positions 10-20 (near misses)
+    // GSC does not support server-side filtering by position
+    const allQueries = query(start, end, {
       dimensions: ['query'],
-      dimensionFilterGroups: [{
-        filters: [
-          { dimension: 'position', operator: 'greaterThan',     expression: '10' },
-          { dimension: 'position', operator: 'lessThanOrEqual', expression: '20' }
-        ]
-      }],
-      orderBy: [{ fieldName: 'impressions', sortOrder: 'DESCENDING' }]
+      rowLimit: 50,
+      orderBy: [{ fieldName: 'impressions', sortOrder: 'DESCENDING' }],
     });
+    const nearMiss = { rows: (allQueries.rows || []).filter(r => r.position > 10 && r.position <= 20) };
 
     return {
       curr:       (curr.rows || [{ clicks:0, impressions:0, ctr:0, position:0 }])[0],
@@ -89,35 +96,56 @@ function fetchGSC(start, end, prevStart, prevEnd) {
 }
 
 // ============================================================
-// GOOGLE ANALYTICS 4
+// GOOGLE ANALYTICS 4 (direct REST via UrlFetchApp — no advanced service)
 // ============================================================
 function fetchGA4(start, end, prevStart, prevEnd) {
-  const prop = 'properties/' + CONFIG.GA4_PROPERTY_ID;
+  const token   = ScriptApp.getOAuthToken();
+  const baseUrl = 'https://analyticsdata.googleapis.com/v1beta/properties/' +
+                  CONFIG.GA4_PROPERTY_ID + ':runReport';
 
-  function runReport(dateStart, dateEnd, extra) {
-    return AnalyticsData.Properties.runReport(prop,
-      Object.assign({
-        dateRanges: [{ startDate: dateStart, endDate: dateEnd }],
-        metrics: [
-          { name: 'sessions' },
-          { name: 'newUsers' },
-          { name: 'engagementRate' },
-          { name: 'averageSessionDuration' },
-        ],
-        dimensionFilter: {
-          filter: {
-            fieldName: 'sessionDefaultChannelGroup',
-            stringFilter: { matchType: 'EXACT', value: 'Organic Search' }
-          }
-        }
-      }, extra));
+  function ga4Post(body) {
+    const response = UrlFetchApp.fetch(baseUrl, {
+      method:             'post',
+      contentType:        'application/json',
+      headers:            { Authorization: 'Bearer ' + token },
+      payload:            JSON.stringify(body),
+      muteHttpExceptions: true,
+    });
+    const code = response.getResponseCode();
+    const text = response.getContentText();
+    if (code !== 200) throw new Error('GA4 API ' + code + ': ' + text);
+    return JSON.parse(text);
   }
 
-  try {
-    const curr = runReport(start, end, {});
-    const prev = runReport(prevStart, prevEnd, {});
+  const organicFilter = {
+    filter: {
+      fieldName: 'sessionDefaultChannelGroup',
+      stringFilter: { matchType: 'EXACT', value: 'Organic Search' }
+    }
+  };
 
-    const blogReport = AnalyticsData.Properties.runReport(prop, {
+  try {
+    const curr = ga4Post({
+      dateRanges: [{ startDate: start, endDate: end }],
+      metrics: [
+        { name: 'sessions' },
+        { name: 'newUsers' },
+        { name: 'engagementRate' },
+        { name: 'averageSessionDuration' },
+      ],
+      dimensionFilter: organicFilter,
+    });
+    const prev = ga4Post({
+      dateRanges: [{ startDate: prevStart, endDate: prevEnd }],
+      metrics: [
+        { name: 'sessions' },
+        { name: 'newUsers' },
+        { name: 'engagementRate' },
+        { name: 'averageSessionDuration' },
+      ],
+      dimensionFilter: organicFilter,
+    });
+    const blogReport = ga4Post({
       dateRanges: [{ startDate: start, endDate: end }],
       dimensions: [{ name: 'pagePath' }],
       metrics: [{ name: 'sessions' }, { name: 'screenPageViews' }, { name: 'engagementRate' }],
@@ -128,20 +156,20 @@ function fetchGA4(start, end, prevStart, prevEnd) {
         }
       },
       orderBys: [{ metric: { metricName: 'sessions' }, desc: true }],
-      limit: 10
+      limit: 10,
     });
 
-    const cv = curr.rows?.[0]?.metricValues || [];
-    const pv = prev.rows?.[0]?.metricValues || [];
+    const cv = (curr.rows || [])[0]?.metricValues || [];
+    const pv = (prev.rows || [])[0]?.metricValues || [];
 
     return {
-      sessions:        parseInt(cv[0]?.value || 0),
-      newUsers:        parseInt(cv[1]?.value || 0),
-      engagementRate:  parseFloat(cv[2]?.value || 0),
-      avgDuration:     parseFloat(cv[3]?.value || 0),
-      prevSessions:    parseInt(pv[0]?.value || 0),
-      prevNewUsers:    parseInt(pv[1]?.value || 0),
-      blogRows:        blogReport.rows || [],
+      sessions:       parseInt(cv[0]?.value  || 0),
+      newUsers:       parseInt(cv[1]?.value  || 0),
+      engagementRate: parseFloat(cv[2]?.value || 0),
+      avgDuration:    parseFloat(cv[3]?.value || 0),
+      prevSessions:   parseInt(pv[0]?.value  || 0),
+      prevNewUsers:   parseInt(pv[1]?.value  || 0),
+      blogRows:       blogReport.rows || [],
     };
   } catch (e) {
     Logger.log('GA4 error: ' + e);
@@ -153,49 +181,43 @@ function fetchGA4(start, end, prevStart, prevEnd) {
 // EMAIL HTML BUILDER
 // ============================================================
 function buildEmail(gsc, ga, start, end) {
-  const c   = gsc.curr || {};
-  const p   = gsc.prev || {};
+  const c = gsc.curr || {};
+  const p = gsc.prev || {};
 
-  const clicks      = c.clicks      || 0;
-  const impr        = c.impressions  || 0;
-  const ctr         = ((c.ctr       || 0) * 100).toFixed(1);
-  const pos         = (c.position   || 0).toFixed(1);
-  const pClicks     = p.clicks      || 0;
-  const pImpr       = p.impressions  || 0;
-  const pPos        = p.position    || 0;
+  const clicks  = c.clicks      || 0;
+  const impr    = c.impressions  || 0;
+  const ctr     = ((c.ctr       || 0) * 100).toFixed(1);
+  const pos     = (c.position   || 0).toFixed(1);
+  const pClicks = p.clicks      || 0;
+  const pImpr   = p.impressions  || 0;
+  const pPos    = p.position    || 0;
 
-  // ---- helpers ----
-  function pctDelta(curr, prev, invertColor) {
+  function pctDelta(curr, prev) {
     if (!prev) return badge('—', '#94a3b8');
     const pct = Math.round(((curr - prev) / prev) * 100);
-    const good = invertColor ? pct < 0 : pct >= 0;
-    return badge((pct >= 0 ? '↑ ' : '↓ ') + Math.abs(pct) + '%', good ? '#10b981' : '#ef4444');
+    return badge((pct >= 0 ? '↑ ' : '↓ ') + Math.abs(pct) + '%', pct >= 0 ? '#10b981' : '#ef4444');
   }
   function posDelta(curr, prev) {
     if (!prev) return badge('—', '#94a3b8');
     const diff = parseFloat(curr) - parseFloat(prev);
-    const good = diff <= 0;
-    return badge((good ? '↑ ' : '↓ ') + Math.abs(diff).toFixed(1) + ' pos', good ? '#10b981' : '#ef4444');
+    return badge((diff <= 0 ? '↑ ' : '↓ ') + Math.abs(diff).toFixed(1) + ' pos', diff <= 0 ? '#10b981' : '#ef4444');
   }
   function badge(text, color) {
     return `<span style="font-size:11px;font-weight:700;color:${color}">${text}</span>`;
   }
   function stat(value, label, delta) {
-    return `
-      <td style="width:25%;padding:0 6px">
-        <div style="background:#f8fafc;border-radius:10px;padding:16px;text-align:center">
-          <div style="font-size:26px;font-weight:900;color:#0f172a;letter-spacing:-1px">${value}</div>
-          <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#94a3b8;margin:4px 0">${label}</div>
-          ${delta}
-        </div>
-      </td>`;
+    return `<td style="width:25%;padding:0 6px">
+      <div style="background:#f8fafc;border-radius:10px;padding:16px;text-align:center">
+        <div style="font-size:26px;font-weight:900;color:#0f172a;letter-spacing:-1px">${value}</div>
+        <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#94a3b8;margin:4px 0">${label}</div>
+        ${delta}
+      </div></td>`;
   }
   function sectionHead(icon, title, subtitle) {
-    return `
-      <div style="padding:20px 24px 0">
-        <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#94a3b8">${icon} ${title}</div>
-        ${subtitle ? `<div style="font-size:12px;color:#cbd5e1;margin-top:3px">${subtitle}</div>` : ''}
-      </div>`;
+    return `<div style="padding:20px 24px 0">
+      <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#94a3b8">${icon} ${title}</div>
+      ${subtitle ? `<div style="font-size:12px;color:#cbd5e1;margin-top:3px">${subtitle}</div>` : ''}
+    </div>`;
   }
   function tableHead(cols) {
     return `<tr style="background:#f1f5f9">${cols.map(c =>
@@ -208,15 +230,14 @@ function buildEmail(gsc, ga, start, end) {
   function dur(s) {
     return Math.floor(s/60) + 'm ' + Math.round(s%60) + 's';
   }
-  function posColor(pos) {
-    if (pos <= 3)  return '#10b981';
-    if (pos <= 10) return '#3b82f6';
-    if (pos <= 20) return '#f59e0b';
+  function posColor(p) {
+    if (p <= 3)  return '#10b981';
+    if (p <= 10) return '#3b82f6';
+    if (p <= 20) return '#f59e0b';
     return '#ef4444';
   }
 
-  // ---- query rows ----
-  const queryRows = gsc.topQueries.slice(0, 10).map((r, i) => `
+  const queryRows = gsc.topQueries.slice(0,10).map((r,i) => `
     <tr style="border-bottom:1px solid #f1f5f9">
       <td style="padding:8px 12px;font-size:12px;color:#94a3b8">${i+1}</td>
       <td style="padding:8px 12px;font-size:13px;color:#1e293b">${r.keys[0]}</td>
@@ -224,36 +245,32 @@ function buildEmail(gsc, ga, start, end) {
       <td style="padding:8px 12px;text-align:right;font-size:13px;color:#64748b">${r.impressions.toLocaleString()}</td>
       <td style="padding:8px 12px;text-align:right;font-size:13px;color:#64748b">${(r.ctr*100).toFixed(1)}%</td>
       <td style="padding:8px 12px;text-align:right;font-size:13px;font-weight:700;color:${posColor(r.position)}">${r.position.toFixed(1)}</td>
-    </tr>`).join('') || `<tr><td colspan="6" style="padding:20px;text-align:center;color:#94a3b8;font-size:13px">No queries yet — GSC data appears after ~3–5 days of indexing</td></tr>`;
+    </tr>`).join('') || `<tr><td colspan="6" style="padding:20px;text-align:center;color:#94a3b8;font-size:13px">No query data yet</td></tr>`;
 
-  // ---- blog rows (GSC) ----
-  const blogGSCRows = gsc.blogPages.slice(0, 8).map(r => `
+  const blogGSCRows = gsc.blogPages.slice(0,8).map(r => `
     <tr style="border-bottom:1px solid #f1f5f9">
       <td style="padding:8px 12px;font-size:12px;color:#1e293b;word-break:break-all">${cleanPath(r.keys[0])}</td>
       <td style="padding:8px 12px;text-align:right;font-size:13px;font-weight:600;color:#1e293b">${r.clicks}</td>
       <td style="padding:8px 12px;text-align:right;font-size:13px;color:#64748b">${r.impressions.toLocaleString()}</td>
       <td style="padding:8px 12px;text-align:right;font-size:13px;font-weight:700;color:${posColor(r.position)}">${r.position.toFixed(1)}</td>
-    </tr>`).join('') || `<tr><td colspan="4" style="padding:20px;text-align:center;color:#94a3b8;font-size:13px">Blog posts not yet indexed — typically takes 1–4 weeks for new content</td></tr>`;
+    </tr>`).join('') || `<tr><td colspan="4" style="padding:20px;text-align:center;color:#94a3b8;font-size:13px">No blog impressions yet &mdash; Google typically takes 2&ndash;4 weeks to index new content</td></tr>`;
 
-  // ---- blog rows (GA4) ----
-  const blogGA4Rows = ga.blogRows.slice(0, 8).map(r => {
+  const blogGA4Rows = ga.blogRows.slice(0,8).map(r => {
     const mv = r.metricValues || [];
-    return `
-    <tr style="border-bottom:1px solid #f1f5f9">
+    return `<tr style="border-bottom:1px solid #f1f5f9">
       <td style="padding:8px 12px;font-size:12px;color:#1e293b;word-break:break-all">${r.dimensionValues[0]?.value || '—'}</td>
       <td style="padding:8px 12px;text-align:right;font-size:13px;font-weight:600;color:#1e293b">${mv[0]?.value || 0}</td>
       <td style="padding:8px 12px;text-align:right;font-size:13px;color:#64748b">${mv[1]?.value || 0}</td>
       <td style="padding:8px 12px;text-align:right;font-size:13px;color:#64748b">${Math.round((parseFloat(mv[2]?.value)||0)*100)}%</td>
-    </tr>`}).join('') || `<tr><td colspan="4" style="padding:20px;text-align:center;color:#94a3b8;font-size:13px">No organic sessions to blog posts yet</td></tr>`;
+    </tr>`;}).join('') || `<tr><td colspan="4" style="padding:20px;text-align:center;color:#94a3b8;font-size:13px">No organic blog sessions yet &mdash; will populate once Google indexes your posts</td></tr>`;
 
-  // ---- near-miss rows ----
-  const nearMissRows = gsc.nearMiss.slice(0, 8).map(r => `
+  const nearMissRows = gsc.nearMiss.slice(0,8).map(r => `
     <tr style="border-bottom:1px solid #fde68a">
       <td style="padding:8px 12px;font-size:13px;color:#1e293b">${r.keys[0]}</td>
       <td style="padding:8px 12px;text-align:right;font-size:13px;font-weight:700;color:#d97706">${r.position.toFixed(1)}</td>
       <td style="padding:8px 12px;text-align:right;font-size:13px;color:#92400e">${r.impressions.toLocaleString()}</td>
       <td style="padding:8px 12px;text-align:right;font-size:13px;color:#92400e">${r.clicks}</td>
-    </tr>`).join('') || `<tr><td colspan="4" style="padding:16px;text-align:center;color:#b45309;font-size:13px">Near-miss keywords will appear here once content starts ranking</td></tr>`;
+    </tr>`).join('') || `<tr><td colspan="4" style="padding:16px;text-align:center;color:#b45309;font-size:13px">Near-miss keywords will appear once content starts ranking</td></tr>`;
 
   const period = `${displayDate(new Date(start+'T12:00:00'))} – ${displayDate(new Date(end+'T12:00:00'))}`;
 
@@ -262,31 +279,28 @@ function buildEmail(gsc, ga, start, end) {
 <body style="margin:0;padding:0;background:#f1f5f9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
 <div style="max-width:680px;margin:0 auto;padding:24px 16px">
 
-  <!-- HEADER -->
   <div style="background:linear-gradient(135deg,${CONFIG.BRAND_DARK} 0%,#1a3050 100%);border-radius:14px 14px 0 0;padding:36px 32px;text-align:center">
     <div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:10px">SELLTRU.COM</div>
-    <div style="font-size:30px;font-weight:900;color:#fff;letter-spacing:-0.5px;margin-bottom:6px">📊 SEO Heartbeat</div>
+    <div style="font-size:30px;font-weight:900;color:#fff;letter-spacing:-0.5px;margin-bottom:6px">&#128202; SEO Heartbeat</div>
     <div style="font-size:14px;color:rgba(255,255,255,0.6)">${displayDate(new Date())}</div>
     <div style="display:inline-block;background:rgba(255,255,255,0.08);border-radius:20px;padding:5px 14px;margin-top:10px">
       <span style="font-size:11px;color:rgba(255,255,255,0.45)">Period: ${period}</span>
     </div>
   </div>
 
-  <!-- GSC STATS -->
   <div style="background:#fff;border-left:1px solid #e2e8f0;border-right:1px solid #e2e8f0;padding:24px">
-    ${sectionHead('🔍', 'Google Search Console', 'How selltru.com appears in Google search results')}
+    ${sectionHead('&#128269;', 'Google Search Console', 'How selltru.com appears in Google search results')}
     <table style="width:100%;border-collapse:collapse;margin-top:16px"><tr>
       ${stat(clicks.toLocaleString(), 'Clicks', pctDelta(clicks, pClicks))}
       ${stat(impr.toLocaleString(), 'Impressions', pctDelta(impr, pImpr))}
       ${stat(ctr + '%', 'CTR', badge('avg click rate', '#94a3b8'))}
       ${stat(pos, 'Avg Position', posDelta(pos, pPos))}
     </tr></table>
-    <div style="margin-top:12px;font-size:11px;color:#cbd5e1;text-align:center">↑ green = improvement vs previous ${CONFIG.DAYS_LOOKBACK} days &nbsp;•&nbsp; For position, lower number = better ranking</div>
+    <div style="margin-top:12px;font-size:11px;color:#cbd5e1;text-align:center">vs previous ${CONFIG.DAYS_LOOKBACK} days &nbsp;•&nbsp; lower position number = better ranking</div>
   </div>
 
-  <!-- GA4 STATS -->
   <div style="background:#fff;border-left:1px solid #e2e8f0;border-right:1px solid #e2e8f0;border-top:2px solid #f1f5f9;padding:8px 24px 24px">
-    ${sectionHead('📈', 'GA4 Organic Traffic', 'Sessions arriving from Google search only')}
+    ${sectionHead('&#128200;', 'GA4 Organic Traffic', 'Sessions arriving from Google search only')}
     <table style="width:100%;border-collapse:collapse;margin-top:16px"><tr>
       ${stat(ga.sessions.toLocaleString(), 'Sessions', pctDelta(ga.sessions, ga.prevSessions))}
       ${stat(ga.newUsers.toLocaleString(), 'New Users', pctDelta(ga.newUsers, ga.prevNewUsers))}
@@ -295,46 +309,41 @@ function buildEmail(gsc, ga, start, end) {
     </tr></table>
   </div>
 
-  <!-- TOP QUERIES -->
-  <div style="background:#fff;border:1px solid #e2e8f0;border-top:2px solid #f1f5f9;padding:24px;margin-top:0">
-    ${sectionHead('🎯', 'Top Search Queries', 'What people are Googling to find SellTru')}
+  <div style="background:#fff;border:1px solid #e2e8f0;border-top:2px solid #f1f5f9;padding:24px">
+    ${sectionHead('&#127919;', 'Top Search Queries', 'What people are Googling to find SellTru')}
     <table style="width:100%;border-collapse:collapse;margin-top:16px">
       ${tableHead([{label:'#'},{label:'Query'},{label:'Clicks',right:true},{label:'Impressions',right:true},{label:'CTR',right:true},{label:'Position',right:true}])}
       ${queryRows}
     </table>
   </div>
 
-  <!-- BLOG PERFORMANCE (GSC) -->
   <div style="background:#fff;border:1px solid #e2e8f0;border-top:2px solid #f1f5f9;padding:24px">
-    ${sectionHead('✍️', 'Blog Post Rankings (Search Console)', 'Impressions & clicks driven by your /blog/ content')}
+    ${sectionHead('&#9997;', 'Blog Post Rankings (Search Console)', 'Impressions &amp; clicks from your /blog/ content')}
     <table style="width:100%;border-collapse:collapse;margin-top:16px">
       ${tableHead([{label:'Blog Post'},{label:'Clicks',right:true},{label:'Impressions',right:true},{label:'Avg. Position',right:true}])}
       ${blogGSCRows}
     </table>
   </div>
 
-  <!-- BLOG TRAFFIC (GA4) -->
   <div style="background:#fff;border:1px solid #e2e8f0;border-top:2px solid #f1f5f9;padding:24px">
-    ${sectionHead('🚦', 'Blog Post Traffic (GA4)', 'Actual organic sessions landing on your blog posts')}
+    ${sectionHead('&#128678;', 'Blog Post Traffic (GA4)', 'Organic sessions landing on your blog posts')}
     <table style="width:100%;border-collapse:collapse;margin-top:16px">
       ${tableHead([{label:'Blog Post'},{label:'Sessions',right:true},{label:'Pageviews',right:true},{label:'Engaged',right:true}])}
       ${blogGA4Rows}
     </table>
   </div>
 
-  <!-- NEAR-MISS KEYWORDS -->
-  <div style="background:#fffbeb;border:1px solid #fde68a;border-top:2px solid #fef3c7;padding:24px">
-    ${sectionHead('🚀', 'Low-Hanging Fruit — Positions 11–20', 'These keywords are almost on page 1. One good update could push them over.')}
+  <div style="background:#fffbeb;border:1px solid #fde68a;padding:24px">
+    ${sectionHead('&#128640;', 'Low-Hanging Fruit &mdash; Positions 11&ndash;20', 'Almost on page 1. One good update could push these over.')}
     <table style="width:100%;border-collapse:collapse;margin-top:16px">
       ${tableHead([{label:'Keyword'},{label:'Position',right:true},{label:'Impressions',right:true},{label:'Clicks',right:true}])}
       ${nearMissRows}
     </table>
     <div style="margin-top:12px;padding:12px;background:#fef3c7;border-radius:8px;font-size:12px;color:#92400e">
-      💡 <strong>What to do:</strong> For each keyword in positions 11–20, find the page targeting that keyword, add more depth to the content, improve the title tag, and build 1–2 internal links to it.
+      &#128161; <strong>What to do:</strong> For each keyword here, find the page targeting it, add more depth, improve the title tag, and build 1&ndash;2 internal links to it.
     </div>
   </div>
 
-  <!-- FOOTER -->
   <div style="background:${CONFIG.BRAND_DARK};border-radius:0 0 14px 14px;padding:20px 24px;text-align:center">
     <div style="font-size:12px;color:rgba(255,255,255,0.35)">SellTru SEO Heartbeat • Delivered every morning at 8 AM</div>
     <div style="font-size:11px;color:rgba(255,255,255,0.2);margin-top:4px">Google Search Console + GA4 • selltru.com</div>
@@ -357,7 +366,7 @@ function displayDate(date) {
 }
 
 // ============================================================
-// SETUP — Run this ONE TIME to install the daily 8 AM trigger
+// DAILY TRIGGER — run once to install
 // ============================================================
 function setupDailyTrigger() {
   ScriptApp.getProjectTriggers().forEach(t => ScriptApp.deleteTrigger(t));
@@ -366,53 +375,69 @@ function setupDailyTrigger() {
     .everyDays(1)
     .atHour(8)
     .create();
-  Logger.log('✅ Daily trigger created — report will arrive at ' + CONFIG.EMAIL_TO + ' every morning at 8 AM.');
+  Logger.log('✅ Daily trigger set — report will arrive at ' + CONFIG.EMAIL_TO + ' every morning at 8 AM.');
 }
 
 // ============================================================
-// TEST — Run this to send a test report right now
+// TEST — sends a report immediately
 // ============================================================
 function testReport() {
-  Logger.log('Sending test report...');
   sendDailySEOReport();
-  Logger.log('Done! Check ' + CONFIG.EMAIL_TO);
+  Logger.log('Done — check ' + CONFIG.EMAIL_TO);
 }
 
 // ============================================================
-// SETUP INSTRUCTIONS
+// DEBUG — run this if data comes back as zeros
+// Check View → Logs after running
 // ============================================================
-//
-// STEP 1 — Get your GA4 Property ID
-//   → Go to analytics.google.com
-//   → Admin → Property Settings
-//   → Copy the "Property ID" (a number like 123456789)
-//   → Paste it into CONFIG.GA4_PROPERTY_ID above
-//
-// STEP 2 — Create the Apps Script project
-//   → Go to script.google.com → New Project
-//   → Name it "SellTru SEO Report"
-//   → Delete the default code and paste this entire file
-//
-// STEP 3 — Enable the required services
-//   → Left sidebar → click "+" next to Services
-//   → Add "Google Search Console API"
-//   → Add "Google Analytics Data API"
-//   → Click Save
-//
-// STEP 4 — Run the setup trigger (one time only)
-//   → In the function dropdown (top toolbar), select "setupDailyTrigger"
-//   → Click ▶ Run
-//   → Click "Review Permissions" → Allow
-//   → This installs the 8 AM daily schedule
-//
-// STEP 5 — Send a test report right now
-//   → In the function dropdown, select "testReport"
-//   → Click ▶ Run
-//   → Check andrewderamo18@gmail.com — report should arrive within ~30 seconds
-//
-// IMPORTANT — Your Google account must have:
-//   • Google Analytics 4 property set up for selltru.com
-//   • Search Console property verified for https://www.selltru.com/
-//   • The same Google account used to run this script needs access to both
-//
-// ============================================================
+function debugReport() {
+  Logger.log('=== SELLTRU SEO DEBUG ===');
+  Logger.log('SITE_URL: ' + CONFIG.SITE_URL);
+  Logger.log('GA4_PROPERTY_ID: ' + CONFIG.GA4_PROPERTY_ID);
+
+  const token = ScriptApp.getOAuthToken();
+  Logger.log('OAuth token: ' + (token ? 'YES (length ' + token.length + ')' : 'NO'));
+
+  Logger.log('\n--- GSC: Your verified sites ---');
+  try {
+    const r = UrlFetchApp.fetch('https://searchconsole.googleapis.com/webmasters/v3/sites', {
+      headers: { Authorization: 'Bearer ' + token }, muteHttpExceptions: true
+    });
+    Logger.log('Response ' + r.getResponseCode() + ': ' + r.getContentText());
+  } catch (e) { Logger.log('Error: ' + e); }
+
+  Logger.log('\n--- GSC: Test query ---');
+  try {
+    const end   = offsetDate(new Date(), -1);
+    const start = offsetDate(new Date(), -7);
+    const url   = 'https://searchconsole.googleapis.com/webmasters/v3/sites/' +
+                  encodeURIComponent(CONFIG.SITE_URL) + '/searchAnalytics/query';
+    const r = UrlFetchApp.fetch(url, {
+      method: 'post', contentType: 'application/json',
+      headers: { Authorization: 'Bearer ' + token },
+      payload: JSON.stringify({ startDate: start, endDate: end, rowLimit: 3 }),
+      muteHttpExceptions: true,
+    });
+    Logger.log('Response ' + r.getResponseCode() + ': ' + r.getContentText());
+  } catch (e) { Logger.log('Error: ' + e); }
+
+  Logger.log('\n--- GA4: Test query (direct REST) ---');
+  try {
+    const end   = offsetDate(new Date(), -1);
+    const start = offsetDate(new Date(), -7);
+    const url   = 'https://analyticsdata.googleapis.com/v1beta/properties/' +
+                  CONFIG.GA4_PROPERTY_ID + ':runReport';
+    const r = UrlFetchApp.fetch(url, {
+      method: 'post', contentType: 'application/json',
+      headers: { Authorization: 'Bearer ' + token },
+      payload: JSON.stringify({
+        dateRanges: [{ startDate: start, endDate: end }],
+        metrics: [{ name: 'sessions' }],
+      }),
+      muteHttpExceptions: true,
+    });
+    Logger.log('GA4 response ' + r.getResponseCode() + ': ' + r.getContentText().slice(0, 500));
+  } catch (e) { Logger.log('GA4 error: ' + e); }
+
+  Logger.log('\n=== DEBUG COMPLETE ===');
+}

@@ -187,7 +187,7 @@
             <rect x="1" y="20" width="7" height="13" rx="2.5" fill="#FF6B35"/>
             <rect x="10" y="13" width="7" height="20" rx="2.5" fill="#1A56DB"/>
             <rect x="19" y="6" width="7" height="27" rx="2.5" fill="white"/>
-            <rect x="28" y="2" width="7" height="31" rx="2.5" fill="white"/>
+            <rect x="28" y="2" width="5" height="31" rx="2" fill="rgba(255,255,255,0.55)"/>
           </svg>
           <span class="nav-logo-text">SELL<span>TRU</span></span>
         </a>
@@ -487,7 +487,7 @@
               <rect x="1" y="20" width="7" height="13" rx="2.5" fill="#FF6B35"/>
               <rect x="10" y="13" width="7" height="20" rx="2.5" fill="#1A56DB"/>
               <rect x="19" y="6" width="7" height="27" rx="2.5" fill="white"/>
-              <rect x="28" y="2" width="7" height="31" rx="2.5" fill="white"/>
+              <rect x="28" y="2" width="5" height="31" rx="2" fill="rgba(255,255,255,0.55)"/>
             </svg>
             <span class="nav-logo-text">SELL<span>TRU</span></span>
           </a>
@@ -538,6 +538,23 @@
   </footer>
 
   <script src="js/main.js" defer></script>
+
+  <div class="sticky-audit-strip" id="sticky-strip" role="complementary" aria-label="Free audit offer">
+    <div class="sticky-strip-text">
+      <div class="sticky-strip-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <div class="sticky-strip-copy">
+        <div class="sticky-strip-headline">Free Amazon Account Audit</div>
+        <div class="sticky-strip-sub">We'll find what's costing you. No obligation.</div>
+      </div>
+    </div>
+    <div class="sticky-strip-actions">
+      <a class="sticky-strip-cta" href="about.html#contact">Get the Free Audit</a>
+      <button class="sticky-strip-dismiss" id="strip-dismiss" aria-label="Dismiss">✕</button>
+    </div>
+  </div>
+  <script>(function(){var s=document.getElementById('sticky-strip'),d=document.getElementById('strip-dismiss'),shown=false;if(sessionStorage.getItem('strip-dismissed'))return;window.addEventListener('scroll',function(){if(!shown&&window.scrollY>600){s.classList.add('visible');shown=true;}},{passive:true});d.addEventListener('click',function(){s.classList.remove('visible');sessionStorage.setItem('strip-dismissed','1');});})();</script>
 
 </body>
 </html>

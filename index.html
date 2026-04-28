@@ -131,6 +131,31 @@
     .hero-v2 { overflow: hidden; }
     .sc-arrow { display:inline-flex; align-items:center; gap:8px; transition:gap .2s ease; }
     .sc-arrow:hover { gap:14px; }
+
+    /* === Hero star line === */
+    .hero-star-line { display:flex; align-items:center; gap:8px; margin:10px 0 20px; }
+    .hsl-stars { color:#FFB800; font-size:13px; letter-spacing:2px; }
+    .hsl-text { font-size:13px; color:rgba(255,255,255,0.6); }
+    .hsl-text strong { color:rgba(255,255,255,0.85); font-weight:600; }
+
+    /* === Hero stat strip === */
+    .hero-stat-strip { display:flex; align-items:center; margin:22px 0 0; }
+    .hss-item { text-align:center; flex:1; }
+    .hss-num { display:block; font-size:22px; font-weight:800; color:#fff; font-family:var(--font-head); line-height:1.1; }
+    .hss-label { display:block; font-size:11px; color:rgba(255,255,255,0.45); letter-spacing:0.05em; margin-top:3px; }
+    .hss-divider { width:1px; height:38px; background:rgba(255,255,255,0.12); flex-shrink:0; }
+
+    /* === Client logo band === */
+    .client-logos-band { padding:36px 0 44px; border-top:1px solid rgba(255,255,255,0.06); }
+    .client-logos-label { text-align:center; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.28); margin-bottom:22px; }
+    .client-logos-strip { display:flex; align-items:center; justify-content:center; gap:32px; flex-wrap:wrap; padding:0 16px; }
+    .client-logo-item img { height:32px; max-width:120px; object-fit:contain; mix-blend-mode:screen; filter:brightness(1.4) saturate(0.4); opacity:0.65; transition:opacity .2s ease; }
+    .client-logo-item img:hover { opacity:1; }
+    @media (max-width:640px) {
+      .hss-num { font-size:19px; }
+      .client-logos-strip { gap:20px; }
+      .client-logo-item img { height:26px; max-width:90px; }
+    }
   </style>
 </head>
 <body>
@@ -144,7 +169,7 @@
             <rect x="1"  y="20" width="7" height="13" rx="2.5" fill="#FF6B35"/>
             <rect x="10" y="13" width="7" height="20" rx="2.5" fill="#1A56DB"/>
             <rect x="19" y="6"  width="7" height="27" rx="2.5" fill="white"/>
-            <rect x="28" y="2"  width="7" height="31" rx="2.5" fill="white"/>
+            <rect x="28" y="2" width="5" height="31" rx="2" fill="rgba(255,255,255,0.55)"/>
           </svg>
           <span class="nav-logo-text">SELL<span>TRU</span></span>
         </a>
@@ -210,6 +235,11 @@
               Amazon SPN Certified &nbsp;·&nbsp; Walmart Marketplace Specialist
             </div>
 
+            <div class="hero-star-line reveal">
+              <span class="hsl-stars">★★★★★</span>
+              <span class="hsl-text">Trusted by <strong>200+ brands</strong> nationwide</span>
+            </div>
+
             <h1 class="reveal">
               We Run Amazon and Walmart
               <span class="g-text-orange">for Brands Doing $1M to $20M.</span>
@@ -225,7 +255,24 @@
               <a class="btn btn-outline-white btn-lg" href="#services">See What We Do ↓</a>
             </div>
 
-            <div class="hero-trust reveal reveal-delay-3">
+            <div class="hero-stat-strip reveal reveal-delay-3">
+              <div class="hss-item">
+                <span class="hss-num">$150M+</span>
+                <span class="hss-label">Sales Managed</span>
+              </div>
+              <div class="hss-divider"></div>
+              <div class="hss-item">
+                <span class="hss-num">200+</span>
+                <span class="hss-label">Brands Served</span>
+              </div>
+              <div class="hss-divider"></div>
+              <div class="hss-item">
+                <span class="hss-num">90%</span>
+                <span class="hss-label">Retention Rate</span>
+              </div>
+            </div>
+
+            <div class="hero-trust reveal reveal-delay-4">
               <span class="hero-trust-label">CERTIFIED BY</span>
               <div class="trust-badges">
                 <a class="trust-cert-wrap" href="#" aria-label="Amazon SPN Certified">
@@ -331,6 +378,20 @@
       </div>
     </section>
 
+    <!-- ===== CLIENT LOGOS ===== -->
+    <div class="client-logos-band">
+      <div class="container">
+        <p class="client-logos-label">Brands we manage on Amazon &amp; Walmart</p>
+        <div class="client-logos-strip">
+          <div class="client-logo-item"><img src="img/clients/applied-vision-sports.jpg" alt="Applied Vision Sports" loading="lazy"></div>
+          <div class="client-logo-item"><img src="img/clients/door-daddy.jpg" alt="Door Daddy" loading="lazy"></div>
+          <div class="client-logo-item"><img src="img/clients/veeboards.jpg" alt="VeeBoards" loading="lazy"></div>
+          <div class="client-logo-item"><img src="img/clients/attackletics.jpg" alt="Attackletics" loading="lazy"></div>
+          <div class="client-logo-item"><img src="img/clients/nuts-on-the-run.jpg" alt="Nuts on the Run" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- ===== MARQUEE ===== -->
     <div class="marquee-bar" aria-hidden="true">
       <div class="marquee-inner">
@@ -342,7 +403,7 @@
           <span class="m-item"><span class="m-dot"></span> 200+ Brand Partners Served</span>
           <span class="m-item"><span class="m-dot"></span> Amazon Listing Optimization Experts</span>
           <span class="m-item"><span class="m-dot"></span> WFS &amp; FBA Management</span>
-          <span class="m-item"><span class="m-dot"></span> 98% Client Retention Rate</span>
+          <span class="m-item"><span class="m-dot"></span> 90% Client Retention Rate</span>
           <span class="m-item"><span class="m-dot"></span> Fort Lauderdale · Brands Nationwide</span>
           <span class="m-item"><span class="m-dot"></span> A+ Content &amp; Brand Store Design</span>
           <span class="m-item"><span class="m-dot"></span> Amazon SPN Certified Agency</span>
@@ -352,7 +413,7 @@
           <span class="m-item"><span class="m-dot"></span> 200+ Brand Partners Served</span>
           <span class="m-item"><span class="m-dot"></span> Amazon Listing Optimization Experts</span>
           <span class="m-item"><span class="m-dot"></span> WFS &amp; FBA Management</span>
-          <span class="m-item"><span class="m-dot"></span> 98% Client Retention Rate</span>
+          <span class="m-item"><span class="m-dot"></span> 90% Client Retention Rate</span>
           <span class="m-item"><span class="m-dot"></span> Fort Lauderdale · Brands Nationwide</span>
           <span class="m-item"><span class="m-dot"></span> A+ Content &amp; Brand Store Design</span>
         </div>
@@ -525,10 +586,10 @@
                 <div class="bsc-bar"><div class="bsc-fill" style="width:70%;background:var(--orange)"></div></div>
               </div>
               <div class="bsc-item">
-                <div class="bsc-val b" data-target="98" data-suffix="%">98%</div>
+                <div class="bsc-val b" data-target="90" data-suffix="%">90%</div>
                 <div class="bsc-lbl">Client Retention Rate</div>
                 <div class="bsc-context">Results keep clients, not contracts</div>
-                <div class="bsc-bar"><div class="bsc-fill" style="width:98%;background:#60A5FA"></div></div>
+                <div class="bsc-bar"><div class="bsc-fill" style="width:90%;background:#60A5FA"></div></div>
               </div>
               <div class="bsc-item">
                 <div class="bsc-val w">3.2×</div>
@@ -598,7 +659,7 @@
             <div class="result-lbl">Average ACOS reduction within the first 90 days</div>
           </div>
           <div class="result-col reveal reveal-delay-3">
-            <div class="result-num" style="color:#fff;" data-target="98" data-suffix="%">98%</div>
+            <div class="result-num" style="color:#fff;" data-target="90" data-suffix="%">90%</div>
             <div class="result-lbl">Client retention rate. We keep clients because of results, not contracts.</div>
           </div>
         </div>
@@ -1104,7 +1165,7 @@
               </div>
               <div class="faq-a">
                 <div class="faq-a-inner">
-                  <p>There's a 90-day onboarding period — not because we lock you in, but because marketplace results need time to build. Anyone promising overnight wins is not being straight with you. After 90 days, we go month-to-month. Our retention rate is 98%, and it's not because of contracts.</p>
+                  <p>There's a 90-day onboarding period — not because we lock you in, but because marketplace results need time to build. Anyone promising overnight wins is not being straight with you. After 90 days, we go month-to-month. Our retention rate is 90%, and it's not because of contracts.</p>
                 </div>
               </div>
             </div>
@@ -1198,7 +1259,7 @@
               <rect x="1"  y="20" width="7" height="13" rx="2.5" fill="#FF6B35"/>
               <rect x="10" y="13" width="7" height="20" rx="2.5" fill="#1A56DB"/>
               <rect x="19" y="6"  width="7" height="27" rx="2.5" fill="white"/>
-              <rect x="28" y="2"  width="7" height="31" rx="2.5" fill="white"/>
+              <rect x="28" y="2" width="5" height="31" rx="2" fill="rgba(255,255,255,0.55)"/>
             </svg>
             <span class="nav-logo-text">SELL<span>TRU</span></span>
           </a>

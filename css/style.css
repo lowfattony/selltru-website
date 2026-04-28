@@ -2673,10 +2673,13 @@ section { padding: 96px 0; }
 .nav-link.blog-link { }
 
 @media (max-width: 768px) {
-  .sticky-audit-strip { padding: 12px 16px; gap: 12px; justify-content: flex-end; }
+  .sticky-audit-strip { padding: 12px 16px; gap: 12px; }
+  .sticky-strip-cta { font-size: 13px; padding: 10px 18px; }
+}
+@media (max-width: 480px) {
+  .sticky-audit-strip { justify-content: flex-end; }
   .sticky-strip-text { display: none; }
   .sticky-strip-icon { display: none; }
-  .sticky-strip-cta { font-size: 13px; padding: 10px 18px; }
 }
 
 /* === SVG ICON BOXES (replaces emojis) === */

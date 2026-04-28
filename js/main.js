@@ -52,6 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* === SCROLL REVEAL === */
+  // Immediately reveal any element already inside the viewport at load time
+  function isInViewport(el) {
+    const r = el.getBoundingClientRect();
+    return r.top < window.innerHeight && r.bottom > 0;
+  }
+
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -59,9 +65,21 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  }, {
+    threshold: 0,
+    // Positive bottom margin: trigger reveals 120px BEFORE the element
+    // reaches the visible viewport edge — eliminates flash of invisible content
+    rootMargin: '0px 0px 120px 0px'
+  });
 
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  document.querySelectorAll('.reveal').forEach(el => {
+    if (isInViewport(el)) {
+      // Already visible on load — reveal immediately, no animation needed
+      el.classList.add('revealed');
+    } else {
+      revealObserver.observe(el);
+    }
+  });
 
   /* === CONTACT FORM === */
   const form = document.querySelector('.contact-form');

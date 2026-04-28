@@ -834,6 +834,7 @@
           <a href="blog.html">Blog</a>
           <a href="questions.html">FAQ</a>
           <a href="amazon-agency-pricing.html">Agency Pricing Guide</a>
+          <a href="write-for-us.html">Write for Us</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
@@ -860,29 +861,7 @@
     </div>
   </footer>
 
-  <script>
-    // Nav scroll
-    const nav = document.querySelector('.nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 20);
-    }, { passive: true });
-
-    // Hamburger
-    const hamburger = document.querySelector('.nav-hamburger');
-    const mobileNav = document.querySelector('.nav-mobile');
-    hamburger.addEventListener('click', () => {
-      const open = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.setAttribute('aria-expanded', String(!open));
-      mobileNav.classList.toggle('open');
-    });
-
-    // Scroll reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); revealObserver.unobserve(e.target); } });
-    }, { threshold: 0.08 });
-    reveals.forEach(el => revealObserver.observe(el));
-  </script>
+  <script src="js/main.js" defer></script>
 
   <div class="sticky-audit-strip" id="sticky-strip" role="complementary" aria-label="Free audit offer">
     <div class="sticky-strip-text">

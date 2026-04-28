@@ -191,11 +191,80 @@
       line-height: 1.7;
     }
 
+    .blog-wfu-section {
+      background: var(--off-white);
+      border-top: 1px solid var(--gray-200);
+      padding: 56px 0;
+    }
+    .blog-wfu-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-xl);
+      padding: 40px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-wfu-inner::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #10B981, #34D399);
+      border-radius: 4px 0 0 4px;
+    }
+    .blog-wfu-tag {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #10B981;
+      margin-bottom: 8px;
+    }
+    .blog-wfu-title {
+      font-family: var(--font-head);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+    .blog-wfu-desc {
+      font-size: 15px;
+      color: var(--text-light);
+      line-height: 1.65;
+      max-width: 520px;
+      margin: 0;
+    }
+    .blog-wfu-btn {
+      flex-shrink: 0;
+      display: inline-block;
+      background: transparent;
+      border: 2px solid #10B981;
+      color: #10B981;
+      border-radius: var(--radius-sm);
+      padding: 12px 24px;
+      font-family: var(--font-head);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease;
+      white-space: nowrap;
+    }
+    .blog-wfu-btn:hover { background: #10B981; color: #fff; }
+
     @media (max-width: 1024px) {
       .blog-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 640px) {
       .blog-grid { grid-template-columns: 1fr; }
+      .blog-wfu-inner { flex-direction: column; align-items: flex-start; padding: 28px 24px; }
     }
   </style>
   <script type="application/ld+json">
@@ -452,6 +521,20 @@
       </div>
     </section>
 
+    <!-- ===== WRITE FOR US BANNER ===== -->
+    <section class="blog-wfu-section" aria-label="Write for us">
+      <div class="container">
+        <div class="blog-wfu-inner reveal">
+          <div class="blog-wfu-text">
+            <span class="blog-wfu-tag">Guest Posts</span>
+            <h2 class="blog-wfu-title">Know your stuff? Write for us.</h2>
+            <p class="blog-wfu-desc">We publish guest posts from Amazon sellers, agency pros, and ecommerce operators. If you've got real experience — not theory — we want your pitch.</p>
+          </div>
+          <a href="write-for-us.html" class="blog-wfu-btn">Submit a Pitch →</a>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== BLOG CTA ===== -->
     <section class="blog-cta-section" aria-label="Free audit CTA">
       <div class="container">
@@ -500,6 +583,7 @@
           <a href="questions.html">FAQ</a>
           <a href="lead-magnet.html">Free Audit Checklist</a>
           <a href="amazon-agency-pricing.html">Agency Pricing Guide</a>
+          <a href="write-for-us.html">Write for Us</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
@@ -527,23 +611,6 @@
   </footer>
 
   <script src="js/main.js" defer></script>
-  <script>
-    // Blog category filter
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        document.querySelectorAll('.blog-card').forEach(card => {
-          if (filter === 'all' || card.dataset.category === filter) {
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-  </script>
 
   <div class="sticky-audit-strip" id="sticky-strip" role="complementary" aria-label="Free audit offer">
     <div class="sticky-strip-text">

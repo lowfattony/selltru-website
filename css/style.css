@@ -317,6 +317,7 @@ section { padding: 96px 0; }
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
+  margin-top: 24px;
 }
 .hero-trust-label {
   font-size: 12px;
@@ -2134,6 +2135,8 @@ section { padding: 96px 0; }
   .pain-grid { grid-template-columns: 1fr 1fr; }
   .pain-bridge { flex-direction: column; text-align: center; }
   .guarantee-strip { flex-direction: column; text-align: center; }
+  .hero-v2 { min-height: unset; padding: 90px 0 40px; }
+  .hv-wrap { display: none; }
 }
 @media (max-width: 480px) {
   .pain-grid { grid-template-columns: 1fr; }
@@ -2677,9 +2680,9 @@ section { padding: 96px 0; }
   .sticky-strip-cta { font-size: 13px; padding: 10px 18px; }
 }
 @media (max-width: 480px) {
-  .sticky-audit-strip { justify-content: flex-end; }
-  .sticky-strip-text { display: none; }
+  .sticky-audit-strip { gap: 10px; justify-content: space-between; }
   .sticky-strip-icon { display: none; }
+  .sticky-strip-sub { display: none; }
 }
 
 /* === SVG ICON BOXES (replaces emojis) === */

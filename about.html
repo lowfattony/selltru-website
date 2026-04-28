@@ -207,6 +207,7 @@
     <div class="nav-mobile">
       <a href="amazon-marketing.html">Amazon Marketing</a>
       <a href="walmart-marketing.html">Walmart Marketing</a>
+      <a href="blog.html">Blog</a>
       <a href="about.html">About</a>
       <a href="#contact" class="nav-cta">Get Your Free Audit →</a>
     </div>
@@ -554,7 +555,7 @@
       <button class="sticky-strip-dismiss" id="strip-dismiss" aria-label="Dismiss">✕</button>
     </div>
   </div>
-  <script>(function(){var s=document.getElementById('sticky-strip'),d=document.getElementById('strip-dismiss'),shown=false;if(sessionStorage.getItem('strip-dismissed'))return;window.addEventListener('scroll',function(){if(!shown&&window.scrollY>600){s.classList.add('visible');shown=true;}},{passive:true});d.addEventListener('click',function(){s.classList.remove('visible');sessionStorage.setItem('strip-dismissed','1');});})();</script>
+  <script>(function(){var s=document.getElementById('sticky-strip'),d=document.getElementById('strip-dismiss'),shown=false;if(sessionStorage.getItem('strip-dismissed-'+location.pathname))return;window.addEventListener('scroll',function(){if(!shown&&window.scrollY>300){s.classList.add('visible');shown=true;}},{passive:true});d.addEventListener('click',function(){s.classList.remove('visible');sessionStorage.setItem('strip-dismissed-'+location.pathname,'1');});})();</script>
 
 </body>
 </html>

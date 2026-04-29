@@ -17,76 +17,173 @@
   <meta name="robots" content="noindex, follow">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .error-section {
-      min-height: 72vh;
-      display: flex;
-      align-items: center;
-      padding: 100px 0 80px;
-      background: var(--bg);
-    }
-    .error-inner {
+    /* ── Hero ── */
+    .e404-hero {
+      background: var(--navy);
+      padding: 120px 0 80px;
       text-align: center;
-      max-width: 540px;
+      position: relative;
+      overflow: hidden;
+    }
+    .e404-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(26,86,219,.22) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .e404-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
       margin: 0 auto;
     }
-    .error-code {
-      font-size: clamp(80px, 14vw, 140px);
+
+    /* Illustrated bar-chart that makes sense for a marketplace agency */
+    .e404-illustration {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 10px;
+      height: 80px;
+      margin-bottom: 32px;
+    }
+    .e404-bar {
+      width: 28px;
+      border-radius: 6px 6px 0 0;
+      opacity: .9;
+    }
+    .e404-bar:nth-child(1){ height: 45%; background: #FF6B35; }
+    .e404-bar:nth-child(2){ height: 70%; background: #1A56DB; }
+    .e404-bar:nth-child(3){ height: 55%; background: rgba(255,255,255,.35); position:relative; }
+    .e404-bar:nth-child(3)::after {
+      content: '?';
+      position: absolute;
+      top: -28px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 18px;
+      font-weight: 800;
+      color: rgba(255,255,255,.5);
+    }
+    .e404-bar:nth-child(4){ height: 85%; background: #1A56DB; }
+    .e404-bar:nth-child(5){ height: 60%; background: #FF6B35; }
+
+    .e404-code {
+      font-family: var(--font-head);
+      font-size: clamp(72px, 14vw, 130px);
       font-weight: 800;
       line-height: 1;
-      color: var(--primary);
-      letter-spacing: -4px;
-      margin-bottom: 8px;
-    }
-    .error-title {
-      font-size: clamp(22px, 4vw, 30px);
-      font-weight: 700;
-      color: var(--text);
+      letter-spacing: -6px;
+      color: #fff;
       margin-bottom: 16px;
     }
-    .error-desc {
-      font-size: 17px;
-      color: var(--text-muted);
-      line-height: 1.65;
-      margin-bottom: 40px;
+    .e404-code span {
+      color: var(--orange);
     }
-    .error-actions {
+    .e404-title {
+      font-family: var(--font-head);
+      font-size: clamp(20px, 3.5vw, 26px);
+      font-weight: 700;
+      color: rgba(255,255,255,.92);
+      margin-bottom: 14px;
+    }
+    .e404-desc {
+      font-size: 16px;
+      color: rgba(255,255,255,.55);
+      line-height: 1.65;
+      margin-bottom: 36px;
+      max-width: 460px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .e404-actions {
       display: flex;
-      gap: 14px;
+      gap: 12px;
       justify-content: center;
       flex-wrap: wrap;
     }
-    .error-links {
-      margin-top: 48px;
-      padding-top: 32px;
-      border-top: 1px solid var(--border);
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-      text-align: left;
-    }
-    .error-link-item {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      padding: 14px 16px;
-      background: var(--surface);
-      border: 1px solid var(--border);
+    .e404-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--orange);
+      color: #fff;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 15px;
+      padding: 13px 26px;
       border-radius: 10px;
       text-decoration: none;
-      transition: border-color .2s, box-shadow .2s;
+      transition: background .2s, transform .15s;
     }
-    .error-link-item:hover {
-      border-color: var(--primary);
-      box-shadow: 0 2px 12px rgba(26,86,219,.08);
-    }
-    .error-link-label {
-      font-size: 14px;
+    .e404-btn-primary:hover { background: var(--orange-hover); transform: translateY(-1px); }
+    .e404-btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.1);
+      color: rgba(255,255,255,.9);
+      font-family: var(--font-head);
       font-weight: 600;
-      color: var(--primary);
+      font-size: 15px;
+      padding: 13px 26px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,.18);
+      text-decoration: none;
+      transition: background .2s, transform .15s;
     }
-    .error-link-desc {
+    .e404-btn-secondary:hover { background: rgba(255,255,255,.16); transform: translateY(-1px); }
+
+    /* ── Links grid ── */
+    .e404-links-section {
+      background: var(--off-white);
+      padding: 56px 0 72px;
+    }
+    .e404-links-label {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 28px;
+    }
+    .e404-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+    }
+    .e404-card {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 18px 20px;
+      background: #fff;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: border-color .2s, box-shadow .2s, transform .15s;
+    }
+    .e404-card:hover {
+      border-color: var(--blue);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .e404-card-icon {
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+    .e404-card-label {
+      font-family: var(--font-head);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .e404-card-desc {
       font-size: 13px;
-      color: var(--text-muted);
+      color: var(--gray-400);
+      line-height: 1.5;
     }
   </style>
 </head>
@@ -129,45 +226,68 @@
 
   <!-- ===== 404 CONTENT ===== -->
   <main>
-    <section class="error-section">
+
+    <!-- Hero -->
+    <section class="e404-hero">
       <div class="container">
-        <div class="error-inner reveal">
-          <div class="error-code">404</div>
-          <h1 class="error-title">This page doesn't exist.</h1>
-          <p class="error-desc">The URL may have changed, been removed, or you might have mistyped it. Try one of the pages below or head back home.</p>
-          <div class="error-actions">
-            <a href="index.html" class="btn-primary">Back to Homepage</a>
-            <a href="about.html#contact" class="btn-secondary">Get Free Audit</a>
+        <div class="e404-hero-inner reveal">
+          <div class="e404-illustration" aria-hidden="true">
+            <div class="e404-bar"></div>
+            <div class="e404-bar"></div>
+            <div class="e404-bar"></div>
+            <div class="e404-bar"></div>
+            <div class="e404-bar"></div>
           </div>
-          <div class="error-links">
-            <a href="amazon-marketing.html" class="error-link-item">
-              <span class="error-link-label">Amazon Marketing</span>
-              <span class="error-link-desc">Full Amazon management & PPC</span>
-            </a>
-            <a href="walmart-marketing.html" class="error-link-item">
-              <span class="error-link-label">Walmart Marketing</span>
-              <span class="error-link-desc">Walmart.com management & ads</span>
-            </a>
-            <a href="blog.html" class="error-link-item">
-              <span class="error-link-label">Blog</span>
-              <span class="error-link-desc">Amazon & Walmart strategy guides</span>
-            </a>
-            <a href="questions.html" class="error-link-item">
-              <span class="error-link-label">FAQ</span>
-              <span class="error-link-desc">Common questions answered</span>
-            </a>
-            <a href="amazon-agency-pricing.html" class="error-link-item">
-              <span class="error-link-label">Agency Pricing</span>
-              <span class="error-link-desc">What Amazon agencies actually cost</span>
-            </a>
-            <a href="about.html" class="error-link-item">
-              <span class="error-link-label">About SellTru</span>
-              <span class="error-link-desc">Our story, credentials & team</span>
-            </a>
+          <div class="e404-code">4<span>0</span>4</div>
+          <h1 class="e404-title">This page doesn't exist.</h1>
+          <p class="e404-desc">The URL may have changed, been removed, or you might have mistyped it. Here are some better places to go.</p>
+          <div class="e404-actions">
+            <a href="index.html" class="e404-btn-primary">← Back to Homepage</a>
+            <a href="about.html#contact" class="e404-btn-secondary">Get Free Audit</a>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Quick links -->
+    <section class="e404-links-section">
+      <div class="container">
+        <p class="e404-links-label">Where would you like to go?</p>
+        <div class="e404-grid">
+          <a href="amazon-marketing.html" class="e404-card">
+            <div class="e404-card-icon">📦</div>
+            <div class="e404-card-label">Amazon Marketing</div>
+            <div class="e404-card-desc">Full Amazon management & PPC advertising</div>
+          </a>
+          <a href="walmart-marketing.html" class="e404-card">
+            <div class="e404-card-icon">🛒</div>
+            <div class="e404-card-label">Walmart Marketing</div>
+            <div class="e404-card-desc">Walmart.com management & Connect ads</div>
+          </a>
+          <a href="blog.html" class="e404-card">
+            <div class="e404-card-icon">📝</div>
+            <div class="e404-card-label">Blog</div>
+            <div class="e404-card-desc">Amazon & Walmart strategy guides</div>
+          </a>
+          <a href="questions.html" class="e404-card">
+            <div class="e404-card-icon">💬</div>
+            <div class="e404-card-label">FAQ</div>
+            <div class="e404-card-desc">Straight answers to common questions</div>
+          </a>
+          <a href="amazon-agency-pricing.html" class="e404-card">
+            <div class="e404-card-icon">💰</div>
+            <div class="e404-card-label">Agency Pricing</div>
+            <div class="e404-card-desc">What Amazon agencies actually cost</div>
+          </a>
+          <a href="about.html" class="e404-card">
+            <div class="e404-card-icon">🏢</div>
+            <div class="e404-card-label">About SellTru</div>
+            <div class="e404-card-desc">Our story, credentials & team</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- ===== FOOTER ===== -->

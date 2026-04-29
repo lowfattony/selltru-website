@@ -560,7 +560,7 @@
         var data = new FormData(form);
         fetch('/', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: new URLSearchParams(data).toString() })
           .then(function() {
-            form.innerHTML = '<div style="text-align:center;padding:40px 20px;"><div style="font-size:40px;margin-bottom:16px;">✓</div><p style="font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--navy);margin-bottom:8px;">Pitch received.</p><p style="color:var(--text-light);font-size:15px;line-height:1.6;">We\'ll review it and get back to you within 3 business days.</p></div>';
+            window.location.href = 'write-for-us-thanks.html';
           })
           .catch(function() {
             form.querySelector('.wfu-submit').textContent = 'Something went wrong — try emailing contact@selltru.com';

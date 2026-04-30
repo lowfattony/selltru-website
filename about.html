@@ -418,6 +418,7 @@
           <div class="form-card reveal">
             <h3 class="form-title">Request Your Free Marketplace Audit</h3>
             <form class="contact-form" action="https://formspree.io/f/xlgakqbq" method="POST" novalidate>
+              <input type="hidden" name="_next" value="https://selltru.com/audit-thanks">
               <div class="form-row">
                 <div class="form-group">
                   <label class="form-label" for="first-name">First Name *</label>
@@ -438,7 +439,7 @@
                   <input class="form-input" type="tel" id="phone" name="phone" placeholder="(555) 000-0000">
                 </div>
                 <div class="form-group">
-                  <label class="form-label" for="company">Company Name *</label>
+                  <label class="form-label" for="company">Company / Brand Name *</label>
                   <input class="form-input" type="text" id="company" name="company" placeholder="Your Brand LLC" required>
                 </div>
               </div>
@@ -452,17 +453,30 @@
                   <option value="new">I'm new to marketplaces</option>
                 </select>
               </div>
-              <div class="form-group">
-                <label class="form-label" for="revenue">Current annual marketplace revenue (approx.)</label>
-                <select class="form-select" id="revenue" name="revenue">
-                  <option value="" disabled selected>Select range...</option>
-                  <option value="pre-launch">Pre-launch / Not yet selling</option>
-                  <option value="under-250k">Under $250K</option>
-                  <option value="250k-1m">$250K – $1M</option>
-                  <option value="1m-5m">$1M – $5M</option>
-                  <option value="5m-20m">$5M – $20M</option>
-                  <option value="over-20m">Over $20M</option>
-                </select>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="revenue">Annual marketplace revenue *</label>
+                  <select class="form-select" id="revenue" name="revenue" required>
+                    <option value="" disabled selected>Select range...</option>
+                    <option value="pre-launch">Pre-launch / Not yet selling</option>
+                    <option value="under-250k">Under $250K</option>
+                    <option value="250k-1m">$250K – $1M</option>
+                    <option value="1m-5m">$1M – $5M</option>
+                    <option value="5m-20m">$5M – $20M</option>
+                    <option value="over-20m">Over $20M</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="adspend">Monthly ad spend *</label>
+                  <select class="form-select" id="adspend" name="adspend" required>
+                    <option value="" disabled selected>Select range...</option>
+                    <option value="none">Not running ads yet</option>
+                    <option value="under-2k">Under $2K/mo</option>
+                    <option value="2k-10k">$2K – $10K/mo</option>
+                    <option value="10k-50k">$10K – $50K/mo</option>
+                    <option value="50k-plus">$50K+/mo</option>
+                  </select>
+                </div>
               </div>
               <div class="form-group">
                 <label class="form-label" for="message">What's your biggest marketplace challenge right now?</label>

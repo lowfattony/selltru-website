@@ -29,6 +29,12 @@
 
   <!-- Core pages -->
   <url>
+    <loc>https://selltru.com/audit-thanks</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://selltru.com/write-for-us</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>

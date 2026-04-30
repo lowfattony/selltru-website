@@ -86,11 +86,9 @@
       background: var(--off-white);
       padding: 80px 0;
     }
-    .wfu-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: start;
+    .wfu-single-col {
+      max-width: 760px;
+      margin: 0 auto;
     }
 
     .wfu-section-label {
@@ -172,6 +170,48 @@
       font-size: 13px;
       font-weight: 600;
       color: var(--navy);
+    }
+
+    /* Acknowledgment checkboxes */
+    .wfu-acknowledgments {
+      background: rgba(16,185,129,0.04);
+      border: 1px solid rgba(16,185,129,0.2);
+      border-radius: var(--radius-md);
+      padding: 24px 24px 20px;
+      margin-bottom: 24px;
+    }
+    .wfu-ack-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.3px;
+      margin-bottom: 14px;
+    }
+    .wfu-ack-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .wfu-ack-item:last-child { margin-bottom: 0; }
+    .wfu-ack-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      accent-color: var(--teal);
+      margin-top: 2px;
+      cursor: pointer;
+    }
+    .wfu-ack-item label {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.55;
+      cursor: pointer;
+    }
+    .wfu-submit:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      transform: none !important;
     }
 
     /* Form */
@@ -294,9 +334,9 @@
     }
 
     @media (max-width: 768px) {
-      .wfu-grid { grid-template-columns: 1fr; gap: 40px; }
       .form-row { grid-template-columns: 1fr; }
       .wfu-form-wrap { padding: 28px 20px; }
+      .wfu-acknowledgments { padding: 18px 16px; }
     }
   </style>
 </head>
@@ -350,9 +390,9 @@
   <!-- Main content -->
   <section class="wfu-content">
     <div class="container">
-      <div class="wfu-grid">
+      <div class="wfu-single-col">
 
-        <!-- Left: guidelines -->
+        <!-- Step 1: What we're looking for -->
         <div class="reveal">
           <p class="wfu-section-label">What We're Looking For</p>
           <h2 class="wfu-section-title">Real experience. No fluff.</h2>
@@ -374,42 +414,46 @@
             <span class="wfu-topic-tag">Ecommerce Strategy</span>
             <span class="wfu-topic-tag">DTC Brands on Amazon</span>
           </div>
+        </div>
 
-          <p class="wfu-section-label" style="margin-top: 36px;">Guidelines</p>
+        <!-- Step 2: Guidelines -->
+        <div class="reveal" style="margin-top: 48px;">
+          <p class="wfu-section-label">Submission Guidelines</p>
+          <h2 class="wfu-section-title">Read these before you pitch.</h2>
           <div class="wfu-guidelines">
             <div class="wfu-guideline">
               <div class="wfu-guideline-icon">✓</div>
               <div class="wfu-guideline-text">
                 <strong>Originality</strong>
-                <span>All articles should be original by the author and not published elsewhere. We do not publish AI-generated content, or content with any AI-generated section.</span>
+                <span>All articles must be original and not published elsewhere — including your own site, Medium, LinkedIn, or any other platform. We do not publish AI-generated content, or content with any AI-generated sections.</span>
               </div>
             </div>
             <div class="wfu-guideline">
               <div class="wfu-guideline-icon">✓</div>
               <div class="wfu-guideline-text">
-                <strong>Articles</strong>
-                <span>Articles should be 1,500 words or longer. However, we will prioritize the uniqueness and usefulness of the content in the article.</span>
+                <strong>Length &amp; quality</strong>
+                <span>Articles should be 1,500 words or longer. We prioritize depth and usefulness over length — a tightly written 1,500-word piece beats a padded 3,000-word one every time.</span>
               </div>
             </div>
             <div class="wfu-guideline">
               <div class="wfu-guideline-icon">✓</div>
               <div class="wfu-guideline-text">
-                <strong>Source</strong>
-                <span>Cite reliable sources to verify your claims, or have original research you can contribute.</span>
+                <strong>Sources &amp; claims</strong>
+                <span>Back up your claims with reliable sources, data, or original research. Opinion is fine; unsupported generalizations are not.</span>
               </div>
             </div>
             <div class="wfu-guideline">
               <div class="wfu-guideline-icon">✓</div>
               <div class="wfu-guideline-text">
                 <strong>Backlinks</strong>
-                <span>Use no more than two internal backlinks to your own website. You may include a third in your author bio.</span>
+                <span>You may include up to two links to your own website within the article body. A third link is permitted in your author bio. Anything beyond that will be removed.</span>
               </div>
             </div>
             <div class="wfu-guideline">
               <div class="wfu-guideline-icon">✓</div>
               <div class="wfu-guideline-text">
                 <strong>Images</strong>
-                <span>Only use images you have created and own the copyright to, have explicit permission to use, or that are copyright free.</span>
+                <span>Only include images you own, have created yourself, have explicit permission to use, or that are copyright-free. Do not submit screenshots from third-party tools without permission.</span>
               </div>
             </div>
           </div>
@@ -425,8 +469,8 @@
           </div>
         </div>
 
-        <!-- Right: form -->
-        <div class="reveal">
+        <!-- Step 3: Pitch form (only accessible after reading guidelines) -->
+        <div class="reveal" style="margin-top: 48px;">
           <div class="wfu-form-wrap">
             <h2 class="wfu-form-title">Submit Your Pitch</h2>
             <p class="wfu-form-sub">Send us your idea before writing the full piece. We'll respond within 3 business days.</p>
@@ -478,7 +522,28 @@
                 <input type="url" id="sample" name="sample" placeholder="https://...">
               </div>
 
-              <button type="submit" class="wfu-submit">Submit Pitch</button>
+              <!-- Mandatory acknowledgments — must all be checked to unlock Submit -->
+              <div class="wfu-acknowledgments">
+                <p class="wfu-ack-title">Before you submit, please confirm all of the following:</p>
+                <div class="wfu-ack-item">
+                  <input type="checkbox" id="ack1" name="ack1">
+                  <label for="ack1">This article is original and has not been published elsewhere (including my own site, Medium, or LinkedIn).</label>
+                </div>
+                <div class="wfu-ack-item">
+                  <input type="checkbox" id="ack2" name="ack2">
+                  <label for="ack2">This article is not AI-generated and contains no AI-generated sections.</label>
+                </div>
+                <div class="wfu-ack-item">
+                  <input type="checkbox" id="ack3" name="ack3">
+                  <label for="ack3">I have read all submission guidelines above and my pitch follows them.</label>
+                </div>
+                <div class="wfu-ack-item">
+                  <input type="checkbox" id="ack4" name="ack4">
+                  <label for="ack4">I understand SellTru does not accept paid placements, sponsored posts, or excessive self-promotional links.</label>
+                </div>
+              </div>
+
+              <button type="submit" class="wfu-submit" id="wfu-submit-btn" disabled>Submit Pitch</button>
               <p class="wfu-form-note">We review every pitch and respond within 3 business days. We don't accept paid placements or link insertions.</p>
             </form>
           </div>
@@ -551,10 +616,26 @@
   <script src="js/main.js" defer></script>
 
   <script>
-    // Inline form success state
     (function() {
       var form = document.getElementById('wfu-form');
-      if (!form) return;
+      var submitBtn = document.getElementById('wfu-submit-btn');
+      if (!form || !submitBtn) return;
+
+      // Checkbox gating — all 4 must be checked to enable Submit
+      var ackIds = ['ack1', 'ack2', 'ack3', 'ack4'];
+      function updateSubmitState() {
+        var allChecked = ackIds.every(function(id) {
+          return document.getElementById(id) && document.getElementById(id).checked;
+        });
+        submitBtn.disabled = !allChecked;
+      }
+      ackIds.forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) el.addEventListener('change', updateSubmitState);
+      });
+      updateSubmitState();
+
+      // Form submission
       form.addEventListener('submit', function(e) {
         e.preventDefault();
         var data = new FormData(form);
@@ -563,7 +644,7 @@
             window.location.href = 'write-for-us-thanks.html';
           })
           .catch(function() {
-            form.querySelector('.wfu-submit').textContent = 'Something went wrong — try emailing contact@selltru.com';
+            submitBtn.textContent = 'Something went wrong — try emailing contact@selltru.com';
           });
       });
     })();

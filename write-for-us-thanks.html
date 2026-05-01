@@ -8,7 +8,6 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-Z5ZERMY21K');
-    // Track pitch submission as a conversion event
     gtag('event', 'pitch_submitted', { event_category: 'engagement', event_label: 'write_for_us' });
   </script>
   <meta charset="UTF-8">
@@ -20,109 +19,206 @@
   <link rel="canonical" href="https://selltru.com/write-for-us-thanks">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .thanks-section {
-      min-height: 72vh;
-      display: flex;
-      align-items: center;
-      padding: 100px 0 80px;
-      background: var(--bg);
-    }
-    .thanks-inner {
+    /* Hero */
+    .wt-hero {
+      background: linear-gradient(150deg, #0A1628 0%, #0D1B2A 60%, #112240 100%);
+      padding: 96px 0 80px;
       text-align: center;
-      max-width: 560px;
+      position: relative;
+      overflow: hidden;
+    }
+    .wt-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(16,185,129,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .wt-hero-inner {
+      position: relative;
+      max-width: 620px;
       margin: 0 auto;
     }
-    .thanks-icon {
+
+    /* Check badge */
+    .wt-check {
       width: 72px;
       height: 72px;
-      background: #DCFCE7;
       border-radius: 50%;
+      background: rgba(16,185,129,0.15);
+      border: 2px solid rgba(16,185,129,0.35);
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 28px;
     }
-    .thanks-icon svg {
-      width: 34px;
-      height: 34px;
-      color: #16A34A;
-    }
-    .thanks-title {
-      font-size: clamp(26px, 4.5vw, 36px);
-      font-weight: 800;
-      color: var(--text);
+    .wt-check svg { width: 32px; height: 32px; color: #10B981; }
+
+    .wt-eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #10B981;
       margin-bottom: 14px;
-      letter-spacing: -0.5px;
     }
-    .thanks-subtitle {
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--primary);
+    .wt-hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(30px, 5vw, 46px);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
       margin-bottom: 16px;
     }
-    .thanks-desc {
-      font-size: 16px;
-      color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 14px;
+    .wt-hero p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.62);
+      line-height: 1.75;
+      margin-bottom: 28px;
     }
-    .thanks-timeline {
+
+    /* Timeline pill */
+    .wt-timeline {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 10px 18px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 100px;
+      padding: 9px 20px;
       font-size: 14px;
-      color: var(--text-muted);
-      margin: 8px 0 36px;
+      color: rgba(255,255,255,0.55);
     }
-    .thanks-timeline strong {
-      color: var(--text);
+    .wt-timeline strong { color: #fff; font-weight: 700; }
+    .wt-timeline svg { color: #10B981; flex-shrink: 0; }
+
+    /* Blog posts section */
+    .wt-posts {
+      background: var(--gray-50);
+      padding: 72px 0 88px;
     }
-    .thanks-divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 36px 0;
+    .wt-posts-header {
+      text-align: center;
+      margin-bottom: 40px;
     }
-    .thanks-next-label {
-      font-size: 12px;
+    .wt-posts-eyebrow {
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: .08em;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 20px;
+      color: var(--blue);
+      margin-bottom: 10px;
     }
-    .thanks-next-links {
+    .wt-posts-header h2 {
+      font-family: var(--font-head);
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    /* Post grid - reuse blog card styles */
+    .wt-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px;
-      text-align: left;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 36px;
     }
-    .thanks-next-link {
+    .wt-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      text-decoration: none;
       display: flex;
       flex-direction: column;
-      gap: 4px;
-      padding: 14px 16px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      text-decoration: none;
-      transition: border-color .2s, box-shadow .2s;
+      transition: transform var(--transition), box-shadow var(--transition);
     }
-    .thanks-next-link:hover {
-      border-color: var(--primary);
-      box-shadow: 0 2px 12px rgba(26,86,219,.08);
+    .wt-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
     }
-    .thanks-next-link-label {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--primary);
+    .wt-card-thumb {
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      position: relative;
     }
-    .thanks-next-link-desc {
+    .wt-card-thumb.amz { background: linear-gradient(135deg, #FF9900 0%, #FF6B35 100%); }
+    .wt-card-thumb.wmt { background: linear-gradient(135deg, #0071DC 0%, #001E6C 100%); }
+    .wt-card-thumb.str { background: linear-gradient(135deg, #1A56DB 0%, #0A1628 100%); }
+    .wt-card-eyebrow {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      background: rgba(0,0,0,0.25);
+      border-radius: 100px;
+      padding: 3px 9px;
+    }
+    .wt-card-body {
+      padding: 20px 22px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .wt-card-title {
+      font-family: var(--font-head);
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .wt-card-desc {
       font-size: 13px;
-      color: var(--text-muted);
+      color: var(--text-light);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 16px;
+    }
+    .wt-card-cta {
+      font-family: var(--font-head);
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--blue);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Browse all link */
+    .wt-browse-all {
+      text-align: center;
+    }
+    .wt-browse-all a {
+      font-family: var(--font-head);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      text-decoration: none;
+      border: 2px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      padding: 12px 28px;
+      display: inline-block;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .wt-browse-all a:hover {
+      border-color: var(--navy);
+      color: var(--navy);
+    }
+
+    @media (max-width: 900px) {
+      .wt-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .wt-hero { padding: 72px 0 60px; }
+      .wt-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -144,7 +240,7 @@
         <nav class="nav-links" role="navigation" aria-label="Main navigation">
           <a class="nav-link" href="amazon-marketing.html">Amazon</a>
           <a class="nav-link" href="walmart-marketing.html">Walmart</a>
-          <a class="nav-link" href="blog.html">Blog</a>
+          <a class="nav-link active" href="blog.html">Blog</a>
           <a class="nav-link" href="about.html">About</a>
           <a class="nav-link" href="about.html#contact">Contact</a>
         </nav>
@@ -163,48 +259,82 @@
     </div>
   </header>
 
-  <!-- ===== THANKS CONTENT ===== -->
   <main>
-    <section class="thanks-section">
+
+    <!-- ===== HERO ===== -->
+    <section class="wt-hero">
       <div class="container">
-        <div class="thanks-inner reveal">
-          <div class="thanks-icon">
+        <div class="wt-hero-inner reveal">
+          <div class="wt-check">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polyline points="20 6 9 17 4 12"/>
             </svg>
           </div>
-          <h1 class="thanks-title">Pitch received.</h1>
-          <p class="thanks-subtitle">Thanks for reaching out to contribute to the SellTru blog.</p>
-          <p class="thanks-desc">We read every submission. If your pitch is a fit — right topic, real experience, no fluff — we'll follow up with next steps. If it's not quite there, we may pass on this one without a detailed response.</p>
-          <div class="thanks-timeline">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span>Expected response: <strong>3–5 business days</strong></span>
-          </div>
-
-          <hr class="thanks-divider">
-
-          <p class="thanks-next-label">While you wait, explore the blog</p>
-          <div class="thanks-next-links">
-            <a href="blog/how-to-reduce-amazon-acos.html" class="thanks-next-link">
-              <span class="thanks-next-link-label">How to Reduce Amazon ACoS</span>
-              <span class="thanks-next-link-desc">A practical breakdown of what actually moves the needle</span>
-            </a>
-            <a href="blog/is-amazon-marketing-agency-worth-it.html" class="thanks-next-link">
-              <span class="thanks-next-link-label">Is an Amazon Agency Worth It?</span>
-              <span class="thanks-next-link-desc">The ROI math most brands never run</span>
-            </a>
-            <a href="blog/fastest-way-to-grow-walmart-marketplace-sales.html" class="thanks-next-link">
-              <span class="thanks-next-link-label">Grow Walmart Marketplace Sales</span>
-              <span class="thanks-next-link-desc">Tactical playbook — $1K to $150K/mo case study included</span>
-            </a>
-            <a href="blog.html" class="thanks-next-link">
-              <span class="thanks-next-link-label">Browse All Posts →</span>
-              <span class="thanks-next-link-desc">Amazon and Walmart strategy for serious sellers</span>
-            </a>
+          <p class="wt-eyebrow">Pitch Received</p>
+          <h1>We've got your pitch.<br>We'll take it from here.</h1>
+          <p>We read every submission personally. If it's a fit — right topic, real experience, no fluff — we'll follow up with next steps. If it's not quite there, we may pass without a detailed response.</p>
+          <div class="wt-timeline">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Expected response: <strong>3 to 5 business days</strong></span>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- ===== WHILE YOU WAIT ===== -->
+    <section class="wt-posts">
+      <div class="container">
+        <div class="wt-posts-header reveal">
+          <p class="wt-posts-eyebrow">While You Wait</p>
+          <h2>Read what we publish.</h2>
+        </div>
+
+        <div class="wt-grid">
+
+          <a href="blog/how-to-reduce-amazon-acos.html" class="wt-card reveal">
+            <div class="wt-card-thumb amz">
+              <span aria-hidden="true">📉</span>
+              <span class="wt-card-eyebrow">Amazon PPC</span>
+            </div>
+            <div class="wt-card-body">
+              <h3 class="wt-card-title">How to Reduce Amazon ACOS Without Cutting Ad Spend</h3>
+              <p class="wt-card-desc">High ACOS isn't a budget problem. It's a targeting and structure problem. Here's how to actually fix it.</p>
+              <span class="wt-card-cta">Read Article →</span>
+            </div>
+          </a>
+
+          <a href="blog/fastest-way-to-grow-walmart-marketplace-sales.html" class="wt-card reveal">
+            <div class="wt-card-thumb wmt">
+              <span aria-hidden="true">📈</span>
+              <span class="wt-card-eyebrow">Walmart</span>
+            </div>
+            <div class="wt-card-body">
+              <h3 class="wt-card-title">The Fastest Way to Grow Sales by Adding Walmart Marketplace</h3>
+              <p class="wt-card-desc">The launch playbook that took one brand from $1K to $150K/month in 8 months with zero ad spend.</p>
+              <span class="wt-card-cta">Read Article →</span>
+            </div>
+          </a>
+
+          <a href="blog/is-amazon-marketing-agency-worth-it.html" class="wt-card reveal">
+            <div class="wt-card-thumb str">
+              <span aria-hidden="true">💰</span>
+              <span class="wt-card-eyebrow">Strategy</span>
+            </div>
+            <div class="wt-card-body">
+              <h3 class="wt-card-title">Is Hiring an Amazon Marketing Agency Really Worth the Cost?</h3>
+              <p class="wt-card-desc">The ROI math most brands never run. Here's what a good agency should deliver and how to know if yours is earning its fee.</p>
+              <span class="wt-card-cta">Read Article →</span>
+            </div>
+          </a>
+
+        </div>
+
+        <div class="wt-browse-all reveal">
+          <a href="blog.html">Browse All Posts →</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- ===== FOOTER ===== -->
@@ -247,7 +377,7 @@
           <h4>Company</h4>
           <a href="about.html">About SellTru</a>
           <a href="about.html#contact">Contact</a>
-          <a href="about.html#contact">Free Marketplace Audit</a>
+          <a href="about.html#contact">Get a Free Audit</a>
         </div>
         <div class="footer-col">
           <h4>Contact</h4>

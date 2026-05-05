@@ -1,3 +1,31 @@
 # Netlify redirects
-# Custom 404 page
-/* /404.html 404
+
+# -----------------------------------------------
+# Old site redirects (previous Fort Lauderdale agency)
+# These pages are still indexed by Google and getting
+# impressions but returning 404s. 301s pass link equity
+# and stop bleeding traffic to dead pages.
+# -----------------------------------------------
+
+/fort-lauderdale-seo-agency                          /                          301
+/fort-lauderdale-seo-agency/                         /                          301
+/website-design-fort-lauderdale                      /                          301
+/website-design-fort-lauderdale/                     /                          301
+/fort-lauderdale-email-marketing-agency              /                          301
+/fort-lauderdale-email-marketing-agency/             /                          301
+/performance-marketing                               /                          301
+/performance-marketing/                              /                          301
+/social-media-management                             /                          301
+/social-media-management/                            /                          301
+/amazon-management                                   /amazon-marketing           301
+/amazon-management/                                  /amazon-marketing           301
+/contact                                             /about                     301
+/contact/                                            /about                     301
+/news                                                /blog                      301
+/news/                                               /blog                      301
+/news/*                                              /blog                      301
+
+# -----------------------------------------------
+# Custom 404 page (must stay last — catch-all)
+# -----------------------------------------------
+/*    /404.html    404

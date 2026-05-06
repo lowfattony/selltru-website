@@ -61,9 +61,9 @@ class SellTruHeader extends HTMLElement {
         <a class="nav-link${activeClass('/walmart-marketing.html')}" href="/walmart-marketing.html">Walmart</a>
         <a class="nav-link${activeClass('/blog.html')}" href="/blog.html">Blog</a>
         <a class="nav-link${activeClass('/about.html')}" href="/about.html">About</a>
-        <a class="nav-link" href="/about.html#contact">Contact</a>
+        <a class="nav-link" href="/about.html#contact-form">Contact</a>
       </nav>
-      <a class="nav-cta" href="/about.html#contact">Get Free Audit</a>
+      <a class="nav-cta" href="/about.html#contact-form">Get Free Audit</a>
       <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -74,7 +74,7 @@ class SellTruHeader extends HTMLElement {
     <a href="/walmart-marketing.html">Walmart Marketing</a>
     <a href="/blog.html">Blog</a>
     <a href="/about.html">About</a>
-    <a href="/about.html#contact" class="nav-cta">Get Your Free Audit &rarr;</a>
+    <a href="/about.html#contact-form" class="nav-cta">Get Your Free Audit &rarr;</a>
   </div>
 </header>
 
@@ -140,8 +140,8 @@ class SellTruFooter extends HTMLElement {
       <div class="footer-col">
         <h4>Company</h4>
         <a href="/about.html">About SellTru</a>
-        <a href="/about.html#contact">Contact</a>
-        <a href="/about.html#contact">Get a Free Audit</a>
+        <a href="/about.html#contact-form">Contact</a>
+        <a href="/about.html#contact-form">Get a Free Audit</a>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
@@ -171,7 +171,7 @@ class SellTruFooter extends HTMLElement {
     </div>
   </div>
   <div class="sticky-strip-actions">
-    <a class="sticky-strip-cta" href="/about.html#contact">Get the Free Audit</a>
+    <a class="sticky-strip-cta" href="/about.html#contact-form">Get the Free Audit</a>
     <button class="sticky-strip-dismiss" id="strip-dismiss" aria-label="Dismiss">&times;</button>
   </div>
 </div>`;

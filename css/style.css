@@ -2,7 +2,7 @@
 /* ── Web Component FOUC prevention ─────────────────────────── */
 selltru-header:not(:defined) {
   display: block;
-  height: 64px;
+  height: 72px; /* matches .nav-inner height */
   background: #0F172A; /* matches .nav background */
 }
 selltru-footer:not(:defined) {

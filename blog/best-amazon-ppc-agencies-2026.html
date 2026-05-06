@@ -701,16 +701,5 @@
     </div>
   </div>
 
-  <script>
-    // FAQ accordion
-    document.querySelectorAll('.faq-q').forEach(function(q) {
-      q.addEventListener('click', function() {
-        var item = q.closest('.faq-item');
-        var isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
-        if (!isOpen) item.classList.add('open');
-      });
-    });
-  </script>
 </body>
 </html>

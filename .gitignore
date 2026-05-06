@@ -2,3 +2,7 @@
 mailchimp_setup.py
 mailchimp_automations.py
 mailchimp_email_templates.html
+
+# Internal tracking / scripts — not for public repo
+gsc-indexing-log.md
+seo-report/

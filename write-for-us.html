@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5ZERMY21K"></script>
+  <!-- Google tag (gtag.js) — deferred until idle -->
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    window.gtag = function(){dataLayer.push(arguments);};
     gtag('js', new Date());
     gtag('config', 'G-Z5ZERMY21K');
+    function _loadGA(){var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-Z5ZERMY21K';s.async=true;document.head.appendChild(s);}
+    'requestIdleCallback' in window ? requestIdleCallback(_loadGA,{timeout:4000}) : setTimeout(_loadGA,4000);
   </script>
   <meta charset="UTF-8">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -343,7 +345,7 @@
       .wfu-acknowledgments { padding: 18px 16px; }
     }
   </style>
-  <script src="/js/components.js"></script>
+  <script src="/js/components.js" defer></script>
 </head>
 <body>
 

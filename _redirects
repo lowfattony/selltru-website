@@ -24,6 +24,8 @@
 /news                                                /blog                      301
 /news/                                               /blog                      301
 /news/*                                              /blog                      301
+/home                                                /                          301
+/home/                                               /                          301
 
 # -----------------------------------------------
 # Custom 404 page (must stay last — catch-all)

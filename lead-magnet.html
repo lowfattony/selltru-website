@@ -364,15 +364,8 @@
       margin-top: 4px;
     }
     .audit-popup .popup-btn:hover { background: #e0521f; }
-    .audit-popup-success {
-      text-align: center;
-      padding: 8px 0;
-    }
-    .audit-popup-success .success-icon {
-      font-size: 36px;
-      display: block;
-      margin-bottom: 10px;
-    }
+    .audit-popup-success { text-align: center; padding: 8px 0; }
+    .audit-popup-success .success-icon { font-size: 36px; display: block; margin-bottom: 10px; }
     .audit-popup-success h4 {
       font-family: var(--font-head);
       font-size: 16px;
@@ -380,12 +373,7 @@
       color: var(--navy);
       margin-bottom: 6px;
     }
-    .audit-popup-success p {
-      font-size: 13px;
-      color: var(--text-light);
-      line-height: 1.5;
-      margin: 0;
-    }
+    .audit-popup-success p { font-size: 13px; color: var(--text-light); line-height: 1.5; margin: 0; }
     @media (max-width: 480px) {
       .audit-popup { width: calc(100vw - 32px); right: 16px; bottom: 16px; }
     }
@@ -913,4 +901,160 @@
             <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false">
               <div class="checklist-checkbox"></div>
               <div class="checklist-item-text">
-                <div class="checklist-item-label">You are winnin
+                <div class="checklist-item-label">You are winning the Buy Box on all your primary ASINs</div>
+                <div class="checklist-item-note">Check as a customer, not as a seller. Even small pricing or fulfillment disadvantages can cost you Buy Box share.</div>
+              </div>
+              <span class="checklist-severity sev-high">High</span>
+            </div>
+            <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false">
+              <div class="checklist-checkbox"></div>
+              <div class="checklist-item-text">
+                <div class="checklist-item-label">Negative reviews from the past 90 days have been reviewed for product or listing improvement opportunities</div>
+                <div class="checklist-item-note">Negative reviews are free product research. The most common complaints point directly to your highest-leverage improvement opportunities.</div>
+              </div>
+              <span class="checklist-severity sev-low">Low</span>
+            </div>
+            <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false">
+              <div class="checklist-checkbox"></div>
+              <div class="checklist-item-text">
+                <div class="checklist-item-label">Posts (Amazon Posts) are active if in an eligible category</div>
+                <div class="checklist-item-note">Amazon Posts is a free organic content channel that appears on competitor listings and in brand feeds. Most brands aren't using it.</div>
+              </div>
+              <span class="checklist-severity sev-low">Low</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== BOTTOM CTA ===== -->
+    <section class="lm-bottom-cta" aria-label="Professional audit CTA">
+      <div class="container">
+        <div class="lm-bottom-cta-inner reveal">
+          <p class="section-tag" style="margin-bottom:12px;">Done With the Checklist?</p>
+          <h2>Found Some Issues? We Can Fix Them.</h2>
+          <p>If this checklist surfaced problems you don't have time to tackle — or you want a professional second opinion — our free audit covers all of this plus a competitive analysis and a specific action plan.</p>
+          <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center;">
+            <a class="btn btn-primary btn-lg" href="about.html#contact-form">Get a Free Professional Audit</a>
+            <a class="btn btn-outline-navy btn-lg" href="amazon-marketing.html">See Our Amazon Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <selltru-footer></selltru-footer>
+
+  <script src="/js/main.js" defer></script>
+
+  <!-- ===== EMAIL CAPTURE POPUP ===== -->
+  <div class="audit-popup" id="audit-popup" role="dialog" aria-modal="true" aria-label="Get a free audit" hidden>
+    <button class="audit-popup-close" id="popup-close" aria-label="Close">&times;</button>
+    <div id="popup-form-view">
+      <span class="audit-popup-emoji">&#128064;</span>
+      <h4>You're finding issues. Want us to fix them?</h4>
+      <p>Drop your email and we'll send a custom audit based on the gaps you're flagging — no charge.</p>
+      <form id="popup-form" action="https://formspree.io/f/xlgakqbq" method="POST">
+        <input type="hidden" name="_subject" value="Checklist Popup — Audit Request">
+        <input type="hidden" name="source" value="checklist-popup">
+        <div class="form-group">
+          <input class="form-input" type="text" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <input class="form-input" type="email" name="email" placeholder="Business email" required>
+        </div>
+        <button type="submit" class="popup-btn">Send Me the Audit &#8594;</button>
+      </form>
+    </div>
+    <div id="popup-success-view" class="audit-popup-success" hidden>
+      <span class="success-icon">&#10003;</span>
+      <h4>You're on the list.</h4>
+      <p>We'll review what you found and send a personalized audit within 1 business day.</p>
+    </div>
+  </div>
+
+  <script>
+  (function () {
+    var TOTAL = 50;
+    var POPUP_TRIGGER = 5;
+    var items = document.querySelectorAll('.checklist-item');
+    var fillEl = document.getElementById('progress-fill');
+    var scoreEl = document.getElementById('progress-score');
+    var checkedCount = 0;
+    var popupShown = false;
+
+    function updateProgress() {
+      var pct = Math.round((checkedCount / TOTAL) * 100);
+      fillEl.style.width = pct + '%';
+      scoreEl.textContent = checkedCount + ' / ' + TOTAL + ' checked';
+    }
+
+    items.forEach(function (item) {
+      function toggle() {
+        var isChecked = item.classList.toggle('checked');
+        item.setAttribute('aria-checked', isChecked ? 'true' : 'false');
+        checkedCount += isChecked ? 1 : -1;
+        updateProgress();
+        if (isChecked && checkedCount >= POPUP_TRIGGER && !popupShown && !sessionStorage.getItem('st_popup_done')) {
+          showPopup();
+        }
+      }
+      item.addEventListener('click', toggle);
+      item.addEventListener('keydown', function (e) {
+        if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); toggle(); }
+      });
+    });
+
+    var popup = document.getElementById('audit-popup');
+    var closeBtn = document.getElementById('popup-close');
+    var form = document.getElementById('popup-form');
+    var successView = document.getElementById('popup-success-view');
+    var formView = document.getElementById('popup-form-view');
+
+    function showPopup() {
+      popupShown = true;
+      popup.hidden = false;
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { popup.classList.add('visible'); });
+      });
+    }
+
+    function hidePopup() {
+      popup.classList.remove('visible');
+      setTimeout(function () { popup.hidden = true; }, 400);
+    }
+
+    closeBtn.addEventListener('click', function () {
+      sessionStorage.setItem('st_popup_done', '1');
+      hidePopup();
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var submitBtn = form.querySelector('.popup-btn');
+      var origText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending…';
+      submitBtn.disabled = true;
+      var data = new FormData(form);
+      fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+        .then(function (res) {
+          if (res.ok) {
+            formView.hidden = true;
+            successView.hidden = false;
+            sessionStorage.setItem('st_popup_done', '1');
+            setTimeout(hidePopup, 3500);
+          } else {
+            submitBtn.textContent = 'Error — try again';
+            submitBtn.disabled = false;
+          }
+        })
+        .catch(function () {
+          submitBtn.textContent = 'Error — try again';
+          submitBtn.disabled = false;
+        });
+    });
+  }());
+  </script>
+</body>
+</html>

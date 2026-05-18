@@ -142,6 +142,7 @@ class SellTruFooter extends HTMLElement {
         <a href="/questions.html">FAQ</a>
         <a href="/lead-magnet.html">Free Audit Checklist</a>
         <a href="/amazon-agency-pricing.html">Agency Pricing Guide</a>
+        <a href="/walmart-advertising-cost.html">Walmart Advertising Cost</a>
         <a href="/case-studies.html">Case Studies</a>
         <a href="/write-for-us.html">Write for Us</a>
       </div>

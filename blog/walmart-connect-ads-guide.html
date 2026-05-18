@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js), deferred until idle -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){dataLayer.push(arguments);};
+    gtag('js', new Date());
+    gtag('config', 'G-Z5ZERMY21K');
+    function _loadGA(){var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-Z5ZERMY21K';s.async=true;document.head.appendChild(s);}
+    'requestIdleCallback' in window ? requestIdleCallback(_loadGA,{timeout:4000}) : setTimeout(_loadGA,4000);
+  </script>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Walmart Connect Ads Guide (2026) | SellTru</title>
+  <meta name="description" content="How Walmart Connect Ads work in 2026. Ad types, campaign setup, bidding strategy, keyword research, weekly optimization, and benchmarks.">
+  <link rel="canonical" href="https://selltru.com/blog/walmart-connect-ads-guide">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .blog-article { max-width: 760px; margin: 0 auto; padding: 80px 24px 96px; }
+    .blog-article h1 { font-family: var(--font-head); font-size: clamp(28px,4vw,42px); font-weight: 800; color: var(--navy); line-height: 1.2; margin-bottom: 16px; }
+    .blog-article h2 { font-family: var(--font-head); font-size: 22px; font-weight: 700; color: var(--navy); margin: 44px 0 14px; padding-top: 4px; }
+    .blog-article h3 { font-family: var(--font-head); font-size: 17px; font-weight: 700; color: var(--navy); margin: 28px 0 10px; }
+    .blog-article p { font-size: 16px; color: var(--text); line-height: 1.8; margin-bottom: 18px; }
+    .blog-article ul, .blog-article ol { padding-left: 24px; margin-bottom: 20px; }
+    .blog-article li { font-size: 16px; color: var(--text); line-height: 1.7; margin-bottom: 8px; }
+    .blog-article strong { color: var(--navy); }
+    .blog-meta { font-size: 14px; color: var(--text-light); margin-bottom: 40px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .blog-meta-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gray-200); }
+    .blog-divider { border: none; border-top: 1px solid var(--gray-200); margin: 40px 0; }
+    .blog-callout { background: rgba(26,86,219,0.06); border-left: 3px solid var(--blue); border-radius: 0 10px 10px 0; padding: 18px 22px; margin: 28px 0; }
+    .blog-callout p { margin-bottom: 0; color: var(--navy); font-size: 15px; }
+    .blog-callout.warning { background: rgba(255,107,53,0.07); border-color: var(--orange); }
+    .blog-callout.warning p { color: #7a3010; }
+    .blog-callout.green { background: rgba(34,197,94,0.06); border-left-color: #22c55e; }
+    .blog-callout.green p { color: #166534; }
+    .compare-table { width: 100%; border-collapse: collapse; margin: 28px 0; font-size: 15px; }
+    .compare-table th { background: var(--navy); color: #fff; font-family: var(--font-head); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 12px 16px; text-align: left; }
+    .compare-table td { padding: 12px 16px; border-bottom: 1px solid var(--gray-200); vertical-align: top; line-height: 1.55; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: var(--gray-50); }
+    .compare-table .td-label { font-weight: 700; color: var(--navy); }
+    .step-box { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 14px; padding: 20px 24px; margin: 16px 0; }
+    .step-box-num { font-family: var(--font-head); font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+    .step-box-title { font-family: var(--font-head); font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+    .step-box p { font-size: 15px; margin-bottom: 0; }
+    .blog-cta-box { background: linear-gradient(135deg, #0D1B2A, #1A3A5C); border-radius: 18px; padding: 40px 44px; margin-top: 64px; text-align: center; }
+    .blog-cta-box h3 { color: #fff; font-family: var(--font-head); font-size: 24px; font-weight: 800; margin-bottom: 10px; }
+    .blog-cta-box p { color: rgba(255,255,255,0.7); font-size: 15px; margin-bottom: 28px; line-height: 1.6; }
+    .blog-breadcrumb { font-size: 13px; color: var(--text-light); margin-bottom: 32px; }
+    .blog-breadcrumb a { color: var(--blue); text-decoration: none; }
+    .toc { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 14px; padding: 24px 28px; margin: 32px 0 44px; }
+    .toc-title { font-family: var(--font-head); font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-light); margin-bottom: 14px; }
+    .toc ol { margin: 0; padding-left: 20px; }
+    .toc li { font-size: 14px; margin-bottom: 6px; }
+    .toc a { color: var(--blue); text-decoration: none; font-weight: 500; }
+    .toc a:hover { text-decoration: underline; }
+    .bench-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 24px 0; }
+    .bench-card { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 12px; padding: 18px 20px; }
+    .bench-card-label { font-family: var(--font-head); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-light); margin-bottom: 6px; }
+    .bench-card-value { font-family: var(--font-head); font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+    .bench-card-note { font-size: 13px; color: var(--text-light); line-height: 1.5; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.revealed { opacity: 1; transform: none; }
+    @media (max-width: 560px) { .bench-grid { grid-template-columns: 1fr; } .blog-cta-box { padding: 32px 22px; } }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Walmart Connect Ads Guide (2026): How the Platform Works, Campaign Setup, and Optimization",
+    "description": "How Walmart Connect Ads actually work in 2026. Ad types, campaign setup, bidding strategy, keyword research, weekly optimization process, and performance benchmarks.",
+    "datePublished": "2026-05-18",
+    "dateModified": "2026-05-18",
+    "author": { "@type": "Organization", "name": "SellTru", "url": "https://selltru.com" },
+    "publisher": { "@type": "Organization", "name": "SellTru", "url": "https://selltru.com" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://selltru.com/blog/walmart-connect-ads-guide" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Walmart Connect and how does it work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Walmart Connect is Walmart's retail media advertising platform. It includes Sponsored Products (keyword-triggered search ads in Walmart.com results), Sponsored Brands (banner placements at the top of search), and Walmart Display (on-site and off-site placements using Walmart's first-party shopper data). The platform operates on a second-price auction similar to Amazon Ads, but with significantly fewer active advertisers on most categories, resulting in lower CPCs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is Walmart Connect different from Amazon PPC?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Walmart Connect and Amazon PPC both run keyword-based search auctions, but they differ in important ways: Walmart's algorithm weighs in-store sales velocity and WFS fulfillment status in placement decisions. Walmart has far fewer active advertisers, meaning lower CPCs but also less historical keyword data to inform bids. Walmart's search intent skews toward known brands and value-seekers, while Amazon's intent spans a wider research-to-purchase spectrum. Walmart also has a lower organic rank velocity, listings take longer to build organic momentum than on Amazon."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good ROAS for Walmart Connect Ads?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A good Walmart Connect ROAS depends on your product margins. For most brands, a 3x to 5x ROAS on Sponsored Products is considered healthy. In lower-margin categories (electronics, commodity home goods), you may need 5x to 6x to be profitable after ad cost. In higher-margin categories (supplements, beauty, specialty consumables), a 2.5x ROAS may still be profitable. The right target is: (1 / your target ACOS), if your margin allows a 25% ACOS, your target ROAS is 4x."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take for Walmart Connect ads to work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Expect 45 to 90 days before you have enough data to optimize meaningfully. The first 30 days gather baseline data, search term performance, conversion rates by keyword, placement data. Days 30 to 60 allow for initial bid adjustments and negative keyword implementation. By day 90 you should have a clear picture of which keywords and campaign structures are performing efficiently enough to scale."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need WFS (Walmart Fulfillment Services) for Walmart Connect to work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WFS is not required to run Walmart Connect ads, but it does improve ad performance. Walmart's algorithm gives preference to WFS items in placement decisions, similar to how Amazon's algorithm favors FBA. WFS items also display the 'Fast Shipping' badge, which improves conversion rate. If you're not on WFS, your ads can still run effectively, but expect lower conversion rates compared to WFS-enrolled competitors in the same search results."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://selltru.com" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://selltru.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Walmart Connect Ads Guide (2026)", "item": "https://selltru.com/blog/walmart-connect-ads-guide" }
+    ]
+  }
+  </script>
+  <script src="/js/components.js" defer></script>
+</head>
+<body>
+
+  <selltru-header></selltru-header>
+
+  <main>
+    <div class="blog-article">
+
+      <p class="blog-breadcrumb"><a href="../blog.html">← Blog</a> &nbsp;/&nbsp; Walmart Marketplace</p>
+
+      <p class="section-tag" style="margin-bottom:12px;">Walmart Marketplace</p>
+      <h1>Walmart Connect Ads Guide (2026): How the Platform Works, Campaign Setup, and Optimization</h1>
+      <div class="blog-meta">
+        <span>By SellTru</span>
+        <span class="blog-meta-dot"></span>
+        <span>May 2026</span>
+        <span class="blog-meta-dot"></span>
+        <span>22 min read</span>
+      </div>
+
+      <p>Walmart Connect is the most underused paid advertising channel in e-commerce right now. The platform is real, the traffic is real, and the competition is a fraction of what you face on Amazon. Most brands either aren't running it at all, or they're running it wrong, copying their Amazon campaign structure into Walmart without adjusting for the platform's different mechanics.</p>
+
+      <p>This guide covers how Walmart Connect actually works in 2026: the ad types, how the auction functions, campaign structure, keyword strategy, bidding, weekly optimization, and what good performance actually looks like. If you're starting from scratch or trying to fix campaigns that aren't performing, this is the reference.</p>
+
+      <div class="toc">
+        <p class="toc-title">In This Guide</p>
+        <ol>
+          <li><a href="#how-it-works">How Walmart Connect Works (and How It Differs From Amazon)</a></li>
+          <li><a href="#ad-types">The Three Walmart Connect Ad Types</a></li>
+          <li><a href="#before-you-advertise">Before You Advertise: Listing Quality Requirements</a></li>
+          <li><a href="#campaign-setup">Campaign Setup: Structure for Scale</a></li>
+          <li><a href="#keyword-strategy">Keyword Strategy for Walmart</a></li>
+          <li><a href="#bidding">Bidding Strategy: How to Set Starting Bids</a></li>
+          <li><a href="#optimization">The Weekly Optimization Process</a></li>
+          <li><a href="#benchmarks">Performance Benchmarks</a></li>
+          <li><a href="#mistakes">Common Mistakes That Drain ROAS</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ol>
+      </div>
+
+      <h2 id="how-it-works">How Walmart Connect Works (and How It Differs From Amazon)</h2>
+
+      <p>Walmart Connect operates on a second-price keyword auction, you bid a maximum CPC, and you pay one cent above the next-highest bid. The mechanics look familiar if you've run Amazon Sponsored Products. But the similarity is mostly surface level.</p>
+
+      <p><strong>Key differences that change your strategy:</strong></p>
+
+      <p><strong>Walmart's algorithm weighs fulfillment method.</strong> Items fulfilled through WFS (Walmart Fulfillment Services) get preferential placement treatment, similar to Amazon FBA. If your competitors are on WFS and you're seller-fulfilled, you're competing uphill both in organic ranking and ad placement quality.</p>
+
+      <p><strong>Walmart weighs in-store sales.</strong> Walmart is a physical retail company first. Products with strong in-store velocity get a signal boost in the search algorithm that Amazon products never deal with. If you're a brand that sells at Walmart stores, your in-store performance affects your online search visibility. If you're a pure-play marketplace seller with no store presence, you don't have this signal, and you need to compensate with stronger digital performance metrics.</p>
+
+      <p><strong>Fewer advertisers means different CPC dynamics.</strong> Walmart Connect has dramatically fewer active advertisers than Amazon on most categories. This means CPCs are lower, but it also means there's less historical auction data available to inform bidding. You're operating with less signal on Walmart, which makes campaign structure and manual bid management more important, not less.</p>
+
+      <p><strong>Search intent is slightly different.</strong> Walmart.com shoppers skew more toward known national brands and value-seeking behavior compared to Amazon shoppers. Keyword research needs to reflect this, generic "best [category]" searches often perform differently on Walmart than Amazon.</p>
+
+      <div class="blog-callout">
+        <p><strong>The most important thing to know about Walmart Connect:</strong> You cannot copy your Amazon campaign structure and expect the same results. The platform rewards the same fundamentals, relevance, conversion rate, listing quality, but the weights are different and the optimization levers behave differently.</p>
+      </div>
+
+      <h2 id="ad-types">The Three Walmart Connect Ad Types</h2>
+
+      <h3>Sponsored Products</h3>
+
+      <p>Sponsored Products are the core Walmart Connect ad format. They appear in Walmart.com search results and on product pages, triggered by keywords you bid on. This is where the vast majority of Walmart Connect ad spend goes, and where you should start.</p>
+
+      <p>There are two campaign types within Sponsored Products:</p>
+
+      <p><strong>Automatic campaigns</strong>, Walmart's algorithm determines which search terms to show your ads against, based on your product content. Use these for keyword discovery: run auto campaigns for 3–4 weeks, pull the search term report, and graduate converting keywords into manual campaigns. Auto campaigns are not long-term efficient, they're a research tool.</p>
+
+      <p><strong>Manual campaigns</strong>, You choose the keywords and set bids. Manual campaigns give you full control over match type (broad, phrase, exact), bid levels per keyword, and budget allocation. Your mature campaign structure should be primarily manual, with auto campaigns running in the background for ongoing keyword discovery.</p>
+
+      <h3>Sponsored Brands</h3>
+
+      <p>Sponsored Brands appear as banner placements at the top of Walmart.com search results, above organic listings. They allow you to feature your brand name, logo, and up to three products in a single placement. These are higher-funnel placements: better for brand awareness and category conquest than direct-response conversion.</p>
+
+      <p>Sponsored Brands work best for established brands with multiple SKUs in a category, and for brand defense (showing your own brand name at the top when competitors bid on your brand terms). Don't launch Sponsored Brands before you have a mature Sponsored Products structure, the brand-level spend rarely outperforms well-run Sponsored Products for most Walmart sellers at the $500K–$5M revenue level.</p>
+
+      <h3>Walmart Display (On-Site and Off-Site)</h3>
+
+      <p>Walmart's display advertising breaks into two layers:</p>
+
+      <p><strong>On-site display</strong>, Banner and carousel placements across Walmart.com pages (homepage, category pages, product pages). These run on CPM or CPC, targeting audiences based on shopping behavior and category interest.</p>
+
+      <p><strong>Walmart DSP (off-site)</strong>, Programmatic display ads served across the broader web, powered by Walmart's first-party shopper data. The DSP is Walmart's most powerful upper-funnel tool, it can target people who have visited Walmart.com, purchased in specific categories, or match lookalike audience profiles. Off-site DSP is a scale play, not a starting point. Most brands shouldn't touch DSP until their Sponsored Products foundation is performing well and they have budget to invest in upper-funnel brand building.</p>
+
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Ad Type</th>
+            <th>Where It Shows</th>
+            <th>Best For</th>
+            <th>Start Here?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-label">Sponsored Products (Auto)</td>
+            <td>Search results, product pages</td>
+            <td>Keyword discovery</td>
+            <td>✓ Yes, first 30 days</td>
+          </tr>
+          <tr>
+            <td class="td-label">Sponsored Products (Manual)</td>
+            <td>Search results, product pages</td>
+            <td>Efficient conversion, scalable ROAS</td>
+            <td>✓ Yes, ongoing foundation</td>
+          </tr>
+          <tr>
+            <td class="td-label">Sponsored Brands</td>
+            <td>Top of search results</td>
+            <td>Brand defense, category conquest</td>
+            <td>After Sponsored Products</td>
+          </tr>
+          <tr>
+            <td class="td-label">On-Site Display</td>
+            <td>Walmart.com pages</td>
+            <td>Retargeting, category visibility</td>
+            <td>Scale stage only</td>
+          </tr>
+          <tr>
+            <td class="td-label">Walmart DSP (Off-Site)</td>
+            <td>Across the web</td>
+            <td>Upper-funnel brand building</td>
+            <td>Scale stage only</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="before-you-advertise">Before You Advertise: Listing Quality Requirements</h2>
+
+      <p>This is the step most brands skip, and it's why their Walmart Connect ROAS never improves past mediocre. You cannot run efficient ads against a listing that doesn't convert. Every dollar you spend on Walmart Connect drives traffic to your product page. If the page doesn't convert, the ad fails, and Walmart's algorithm interprets low click-to-purchase conversion as a quality signal that depresses future placements.</p>
+
+      <p><strong>What Walmart evaluates in listings before ads can perform:</strong></p>
+
+      <ul>
+        <li><strong>Item Content Score.</strong> Walmart scores each listing from 0 to 100 on content quality. Scores below 60 significantly limit organic and paid visibility. Target 80+. This requires: a keyword-rich title (75–150 characters), complete attribute fill (size, color, material, features), and a minimum of 4 product images.</li>
+        <li><strong>Customer ratings.</strong> Walmart requires a minimum of 3 customer reviews and a 3.5+ star rating before an item is eligible for paid placement on most high-visibility positions. Without this threshold, your ads may run but placement quality will be limited.</li>
+        <li><strong>In-Stock rate.</strong> Walmart penalizes items with inconsistent inventory in both organic and paid ranking. Consistent in-stock status is a prerequisite for efficient advertising.</li>
+        <li><strong>Main image quality.</strong> Your main image must be on a pure white background, show the product clearly, and be at least 1000x1000 pixels. Low-quality main images reduce CTR and signal poor content quality to Walmart's algorithm.</li>
+      </ul>
+
+      <div class="blog-callout warning">
+        <p><strong>Don't advertise a listing with an Item Content Score below 70.</strong> Fix the content first. Running ads against a low-score listing burns budget, produces poor conversion data, and trains Walmart's algorithm that your item underperforms, which compounds into worse organic rank over time.</p>
+      </div>
+
+      <h2 id="campaign-setup">Campaign Setup: Structure for Scale</h2>
+
+      <p>Campaign structure is the foundation of efficient Walmart Connect advertising. Get this right at the start and optimization is straightforward. Get it wrong and you'll spend months trying to read performance data that's too noisy to act on.</p>
+
+      <div class="step-box">
+        <div class="step-box-num">Step 1</div>
+        <div class="step-box-title">Start with auto campaigns for keyword discovery</div>
+        <p>Create one auto campaign per product grouping (similar products, same category). Set a moderate daily budget, $15 to $30/day per campaign. Set bids at a level where you're competitive but not burning budget: start at $0.50 to $0.80 for most categories. Run these for 3–4 weeks without making changes. You need data before you optimize.</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-box-num">Step 2</div>
+        <div class="step-box-title">Pull the Search Term Report and identify winners</div>
+        <p>After 3–4 weeks: download the Search Term Report from Campaign Manager (Reports → Advertising Reports → Search Term). Sort by orders (descending). Any search term with 2+ orders and an ACOS at or below your target is a keyword worth moving to a manual campaign. Any term with $5+ in spend and zero orders is a candidate for negative keywords.</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-box-num">Step 3</div>
+        <div class="step-box-title">Build manual campaigns by keyword intent</div>
+        <p>Create separate manual campaigns for different keyword intent levels. A clean structure: one campaign for exact match high-intent keywords (product-specific searches), one for phrase match category keywords, and one for brand defense (your brand name in exact match). Keeping these separate lets you set different bids, budgets, and optimization thresholds per intent level.</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-box-num">Step 4</div>
+        <div class="step-box-title">Add negatives to your auto campaigns</div>
+        <p>Once you've moved converting keywords into manual campaigns, add them as negative exact match keywords in your auto campaigns. This prevents the two campaign types from competing against each other in the auction and inflating your own CPCs. Keep the auto campaigns running for ongoing discovery, they'll continue surfacing new converting search terms as Walmart's shopper behavior evolves.</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-box-num">Step 5</div>
+        <div class="step-box-title">Segment products by performance tier</div>
+        <p>As you accumulate data, separate your best-converting products from weaker performers into different campaigns. High-converting products can support more aggressive bids. Weaker products need tighter budgets until conversion data improves. Mixing high and low performers in the same campaign forces you to compromise on bidding, you either underbid your winners or overbid your losers.</p>
+      </div>
+
+      <h2 id="keyword-strategy">Keyword Strategy for Walmart</h2>
+
+      <p>Walmart's search algorithm has a narrower keyword vocabulary than Amazon's. Shoppers on Walmart.com tend to search with shorter, more direct queries, fewer long-tail modifiers, more brand-name and category searches. This isn't universal, but it's a pattern worth knowing when you build your initial keyword list.</p>
+
+      <p><strong>Where to find keywords for Walmart:</strong></p>
+
+      <p><strong>Walmart's search bar autocomplete.</strong> Type your primary category keyword into Walmart.com search and look at the autocomplete suggestions. These reflect actual Walmart.com search behavior, not Amazon's, not Google's. They're your most direct signal for what Walmart shoppers are searching.</p>
+
+      <p><strong>Your auto campaign Search Term Reports.</strong> After 3–4 weeks of auto campaigns running, your own data is the most reliable keyword source. These are real searches from real Walmart shoppers that triggered impressions on your product.</p>
+
+      <p><strong>Competitor item titles and keywords.</strong> Look at the titles of top-ranking organic results in your category on Walmart.com. The keywords in those titles are the ones Walmart's algorithm considers most relevant for that category.</p>
+
+      <p><strong>Amazon keyword lists, with adjustments.</strong> Your existing Amazon keyword list is a starting point, not a direct copy. Remove modifiers that are Amazon-specific ("prime eligible", "FBA", "Amazon's choice"). Keep the category and feature keywords, then validate them against Walmart's actual search volume by running them in auto campaigns and watching for impressions.</p>
+
+      <h3>Match Types on Walmart</h3>
+
+      <p>Walmart Connect supports three keyword match types, similar to Amazon:</p>
+
+      <ul>
+        <li><strong>Broad match</strong>, Your ad can show on searches containing your keyword words in any order, plus related terms. Highest reach, lowest precision. Useful in auto campaigns and early-stage discovery. Requires active negative keyword management to stay efficient.</li>
+        <li><strong>Phrase match</strong>, Your ad shows on searches containing your keyword phrase in order, potentially with words before or after. Balanced between reach and relevance. Good for category-level keywords.</li>
+        <li><strong>Exact match</strong>, Your ad shows only on searches that match your keyword exactly (or very close variations). Lowest reach, highest relevance. Use for your proven top-converting keywords where you want maximum bid control.</li>
+      </ul>
+
+      <p>The structural principle: use exact match for your highest-value proven converters, phrase match for category-level coverage, and broad match/auto for ongoing discovery. Don't run all three match types for the same keyword in the same campaign, the match types will compete with each other for the same search terms, making your data unreadable.</p>
+
+      <h2 id="bidding">Bidding Strategy: How to Set Starting Bids</h2>
+
+      <p>The most common bidding mistake on Walmart Connect: setting bids based on intuition or by copying Amazon bid levels. Walmart CPCs are structurally different, usually lower, but the right bid for any keyword depends on your margin, your conversion rate, and your ACOS target.</p>
+
+      <p><strong>The formula for maximum CPC:</strong></p>
+
+      <div class="blog-callout">
+        <p><strong>Max CPC = Conversion Rate × Average Order Value × Target ACOS</strong><br><br>
+        Example: 4% CVR × $35 AOV × 25% target ACOS = $0.35 max CPC<br>
+        If current bids exceed this, you're structurally losing money on that keyword at scale.</p>
+      </div>
+
+      <p>For new campaigns without conversion data, you can't calculate this directly, you don't know the conversion rate yet. In this case, use conservative starting bids and let the data build before increasing. Starting at $0.40 to $0.70 for most Walmart categories is a reasonable baseline in 2026. Adjust after you have 50+ clicks per keyword.</p>
+
+      <h3>Bid Adjustment by Placement</h3>
+
+      <p>Walmart Connect allows bid modifiers by placement, you can increase or decrease bids for specific placement types:</p>
+
+      <ul>
+        <li><strong>Search In-Grid</strong>, the standard position within search results pages. This is your primary placement volume source.</li>
+        <li><strong>Search Carousel</strong>, carousel placements within search results. Can have different conversion characteristics than in-grid.</li>
+        <li><strong>Item Buybox</strong>, the buy box area on product detail pages. Often lower conversion intent than search placements, but can be valuable for category conquest (appearing on competitor product pages).</li>
+        <li><strong>Home Page</strong>, placements on the Walmart.com homepage. High visibility, lower conversion intent. Use cautiously with budget caps.</li>
+      </ul>
+
+      <p>After 30+ days of data, pull placement performance from your campaign reports. If one placement type is consistently above your ACOS target, reduce its bid modifier. If one is performing well below target ACOS (meaning it's efficient), increase the modifier to capture more of those placements.</p>
+
+      <h2 id="optimization">The Weekly Optimization Process</h2>
+
+      <p>Sustainable Walmart Connect performance comes from consistent weekly management, not one-time setup. Here's the process we run every week across client accounts:</p>
+
+      <p><strong>Monday: Search Term Report review.</strong> Download the search term report for all active campaigns. Sort by spend descending. Flag any term with $3+ spend and zero orders, add as negative exact. Flag any term with 2+ orders at or below target ACOS, candidate for promoting to a manual exact match keyword if not already there.</p>
+
+      <p><strong>Tuesday: Bid adjustments.</strong> For keywords with 30+ clicks: compare actual ACOS to target ACOS. If above target by more than 20%, reduce bid by 10–15%. If below target and there's room to capture more volume, increase bid by 10%. Don't make bid changes on keywords with fewer than 30 clicks, the data isn't reliable enough to act on.</p>
+
+      <p><strong>Wednesday: Budget pacing check.</strong> Identify any campaigns that are hitting their daily budget cap before 6 PM consistently. Good campaigns hitting budget caps early should have their budgets increased, you're leaving conversions on the table by capping them. Underperforming campaigns hitting their caps should have their bids reduced, not their budgets increased.</p>
+
+      <p><strong>Thursday: New keyword identification.</strong> Review converting search terms from auto campaigns that haven't been graduated to manual campaigns yet. If a term has 3+ orders and hasn't been moved, it's been waiting too long. Create the exact match keyword in the appropriate manual campaign.</p>
+
+      <p><strong>Friday: Placement and product performance review.</strong> Monthly (or bi-weekly): pull performance by product. Any product with 50+ clicks and below 3% conversion rate is a listing problem, not an advertising problem. Flag for listing optimization. Any product with strong conversion rate and efficient ACOS deserves a budget increase and more aggressive bidding.</p>
+
+      <h2 id="benchmarks">Performance Benchmarks</h2>
+
+      <p>What does good Walmart Connect performance actually look like? These benchmarks are based on well-run accounts across multiple categories in 2025–2026. Use these as directional targets, not hard rules, your margins determine your specific ACOS target.</p>
+
+      <div class="bench-grid">
+        <div class="bench-card">
+          <div class="bench-card-label">Average CPC (most categories)</div>
+          <div class="bench-card-value">$0.35–$1.20</div>
+          <div class="bench-card-note">30–50% lower than Amazon equivalents. Electronics and supplements are at the high end.</div>
+        </div>
+        <div class="bench-card">
+          <div class="bench-card-label">Conversion Rate (healthy)</div>
+          <div class="bench-card-value">4–8%</div>
+          <div class="bench-card-note">Walmart shoppers convert slightly lower than Amazon on most categories due to less purchase intent specificity.</div>
+        </div>
+        <div class="bench-card">
+          <div class="bench-card-label">Target ACOS (mature account)</div>
+          <div class="bench-card-value">15–30%</div>
+          <div class="bench-card-note">Category and margin dependent. High-margin products can tolerate higher ACOS. Calculate your specific target.</div>
+        </div>
+        <div class="bench-card">
+          <div class="bench-card-label">ROAS (well-run growth stage)</div>
+          <div class="bench-card-value">3x–5x</div>
+          <div class="bench-card-note">Higher ROAS is achievable at scale with proven keyword lists. 3x is a healthy growth-stage benchmark.</div>
+        </div>
+        <div class="bench-card">
+          <div class="bench-card-label">Time to meaningful data</div>
+          <div class="bench-card-value">45–90 days</div>
+          <div class="bench-card-note">Don't evaluate campaign performance or make major structural decisions before 45 days of data.</div>
+        </div>
+        <div class="bench-card">
+          <div class="bench-card-label">Ad Spend as % of Walmart Revenue</div>
+          <div class="bench-card-value">8–15%</div>
+          <div class="bench-card-note">Growth-stage brands. Lower at scale as organic rank compounds. Higher in the first 60 days of launch.</div>
+        </div>
+      </div>
+
+      <h2 id="mistakes">Common Mistakes That Drain ROAS</h2>
+
+      <p><strong>1. Running auto campaigns indefinitely without harvesting keywords.</strong> Auto campaigns are discovery tools. They generate high wasted spend at scale because Walmart's algorithm casts a wide net for relevance. Run them for discovery, graduate converting keywords to manual, and add negatives to keep auto campaigns focused. If your auto campaign spend is more than 30% of your total Walmart Connect spend after 60 days, your manual campaign structure isn't mature enough.</p>
+
+      <p><strong>2. Setting bids without knowing your target ACOS.</strong> Most brands set bids by guessing or by matching competitors. Neither works consistently. Calculate your max CPC using the formula above. Every keyword with a bid above that formula's output is structurally unprofitable at scale, it might produce data, but it can't produce margin.</p>
+
+      <p><strong>3. Mixing all products in one campaign.</strong> Your best-converting products will subsidize your worst performers if they're in the same campaign. Your ACOS metric will look average but your best products will be underfunded and your worst will consume disproportionate budget. Segment by performance tier and treat each tier differently.</p>
+
+      <p><strong>4. Ignoring the listing while running ads.</strong> Ads drive clicks. Listings convert clicks into orders. If your Item Content Score is below 70, your main image is low-resolution, or your product has fewer than 10 reviews, the ads can't perform efficiently regardless of how well-structured they are. Fix the listing, then scale the ads.</p>
+
+      <p><strong>5. Measuring only ROAS without tracking organic rank impact.</strong> One of Walmart Connect's biggest value propositions is the halo effect, ad-driven sales build organic rank, which reduces your long-term dependence on paid traffic. If you're only measuring ROAS, you're measuring half the equation. A 30% ACOS campaign that's building your organic rank position toward page 1 is more valuable than a 20% ACOS campaign with no rank impact. Track your organic rank monthly alongside your ROAS.</p>
+
+      <p><strong>6. Not defending your brand terms.</strong> Even if you rank organically for your own brand name, competitors can bid on it and show above your organic listing. Set up a brand keyword campaign in exact match at a bid high enough to win your own search terms. The ACOS on brand campaigns is almost always excellent, these are high-intent, high-converting searches, and the cost of not running them is ceding your own brand name to competitors.</p>
+
+      <hr class="blog-divider">
+
+      <p>Walmart Connect is not a set-and-forget platform. But it's also not the black box that some brands assume it is. The fundamentals, clean campaign structure, disciplined keyword management, listing quality as a prerequisite, are the same fundamentals that work on every search advertising platform. What's different on Walmart is the opportunity size: the advertiser density is low, the CPCs are low, and the brands building ad infrastructure there now are laying groundwork that will be expensive for later entrants to displace.</p>
+
+      <p>If you're already on Amazon, the incremental investment to run Walmart Connect properly is lower than it looks, because most of the work (listings, creative, keyword research) overlaps. The channel-specific adjustments are learnable. The window to build early advantage is still open.</p>
+
+      <p>For more on how to structure your expansion from Amazon to Walmart: <a href="how-to-expand-amazon-brand-to-walmart.html" style="color:var(--blue);">How to Expand Your Amazon Brand to Walmart Marketplace</a>. And if you're trying to figure out what to budget for Walmart Connect: <a href="../walmart-connect-ads-cost.html" style="color:var(--blue);">Walmart Connect Advertising Cost, CPC Benchmarks and Budget Guide</a>.</p>
+
+      <h2 id="faq">Walmart Connect Ads FAQ</h2>
+
+      <p><strong>What is Walmart Connect and how does it work?</strong> Walmart Connect is Walmart's retail media platform. It includes Sponsored Products (keyword-triggered search ads), Sponsored Brands (banner placements at the top of search), and Walmart Display (on-site and off-site placements using Walmart's first-party data). The auction model is second-price, similar to Amazon Ads, you bid a maximum CPC and pay one cent above the next highest bid.</p>
+
+      <p><strong>How is Walmart Connect different from Amazon PPC?</strong> Both run keyword-based search auctions, but Walmart weighs in-store sales velocity and WFS fulfillment in placement decisions. There are far fewer active advertisers on Walmart, resulting in lower CPCs but also less historical data. Walmart's search intent skews toward known national brands and value-seekers. Organic rank builds more slowly on Walmart than Amazon.</p>
+
+      <p><strong>What is a good ROAS for Walmart Connect?</strong> For most brands, 3x to 5x on Sponsored Products is healthy. Calculate your target as (1 / target ACOS). If your margin allows a 25% ACOS, your target ROAS is 4x. Lower-margin categories need higher ROAS targets to remain profitable.</p>
+
+      <p><strong>How long does it take for Walmart Connect to work?</strong> Expect 45 to 90 days before you have enough data to optimize meaningfully. The first 30 days gather baseline data. Days 30 to 60 allow for initial bid adjustments and negative keyword implementation. By day 90 you should have a clear picture of which campaigns and keywords are performing efficiently enough to scale.</p>
+
+      <p><strong>Do I need WFS for Walmart Connect to work?</strong> WFS is not required, but it improves ad performance. Walmart's algorithm gives preference to WFS items in placement decisions and WFS items display the "Fast Shipping" badge, which improves conversion rate. Non-WFS ads can still run effectively but will typically convert at a lower rate than WFS competitors in the same search results.</p>
+
+      <p style="font-size:15px;color:#64748B;margin-bottom:16px;">Have more questions about Walmart Connect advertising? <a href="/questions#walmart" style="color:var(--blue);font-weight:600;">See our full Walmart FAQ →</a></p>
+      <div class="blog-cta-box">
+        <h3>Want Someone to Run This For You?</h3>
+        <p>We manage Walmart Connect Ads for brands doing $1M to $20M on Walmart.com. Audit, setup, weekly optimization, and monthly reporting, all flat fee, no percentage of spend. Start with a free account review.</p>
+        <a class="btn btn-primary" href="../about.html#contact-form">Request a Free Walmart Audit</a>
+      </div>
+
+      <div style="margin-top:40px;padding:18px 22px 18px 26px;background:#F8FAFC;border:1px solid #E2E8F0;border-left:3px solid #10B981;border-radius:0 12px 12px 0;" class="reveal">
+        <p style="margin:0;font-size:14px;color:#64748B;line-height:1.65;">Have experience with this? The SellTru blog accepts guest posts from Amazon sellers, agency pros, and ecommerce operators. <a href="../write-for-us.html" style="color:#1A56DB;font-weight:600;text-decoration:none;">See our submission guidelines →</a></p>
+      </div>
+
+    </div>
+  </main>
+
+  <selltru-footer></selltru-footer>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

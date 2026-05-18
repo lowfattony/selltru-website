@@ -57,6 +57,18 @@
   }
   </script>
   <script src="/js/components.js" defer></script>
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://selltru.com" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://selltru.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "How to Reduce ACoS on Amazon Without Cutting Ad Spend", "item": "https://selltru.com/blog/how-to-reduce-amazon-acos" }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -153,24 +165,65 @@
 
       <p><strong>Defensive brand campaigns.</strong> If competitors are bidding on your brand keywords, you may need to defend those placements at any ACOS. Losing your brand search to a competitor costs more in the long run than the ad spend to hold it.</p>
 
+
+      <h2>ACOS Benchmarks by Category</h2>
+
+      <p>One reason so many brands chase the wrong ACOS target: they're comparing themselves to the wrong benchmark. A 25% ACOS in supplements is solid. That same 25% in consumer electronics might mean you're losing money on every sale. Category matters.</p>
+
+      <p>Here are realistic ACOS ranges by product category, based on typical margin structures and competitive density:</p>
+
+      <div class="blog-callout">
+        <p><strong>Supplements / Health &amp; Wellness:</strong> Target 20–35%. High margins (often 60–70%+) give you room to spend. Competitive, but defensible with strong branding.</p>
+        <p><strong>Home &amp; Kitchen:</strong> Target 15–25%. Moderate margins, high competition on generic terms. Brand keywords tend to be efficient; category keywords are expensive.</p>
+        <p><strong>Apparel &amp; Accessories:</strong> Target 15–30%. Highly variable, private label apparel at scale can run 20–40% ACOS intentionally if LTV is high.</p>
+        <p><strong>Consumer Electronics / Gadgets:</strong> Target 8–18%. Thin margins mean you need tighter targeting. Exact match only on proven converters.</p>
+        <p><strong>Beauty &amp; Personal Care:</strong> Target 20–35%. High repeat purchase rate changes the math, a 35% ACOS on a first order is fine if that customer reorders every 45 days.</p>
+        <p><strong>Grocery / Consumables:</strong> Target 15–25%. Tight margins but strong Subscribe &amp; Save attach rates. Front-end ACOS tolerance depends entirely on your LTV model.</p>
+      </div>
+
+      <p>These ranges assume you're past the launch phase. During the first 30–60 days of a new product, all of these ceilings are higher, you're buying rank, not optimizing for margin yet.</p>
+
+      <h2>Negative Keywords: The Full Strategy</h2>
+
+      <p>Negative keywords are the fastest lever for ACOS reduction, but most brands use them wrong. They add a few obvious terms and call it done. Here's the complete approach.</p>
+
+      <p><strong>Negative exact vs. negative phrase.</strong> Negative exact blocks a specific search term exactly as typed. Negative phrase blocks any search containing that phrase in any order. Use negative exact when you want to block a specific query but keep related terms. Use negative phrase when the entire concept is irrelevant, if you sell a premium product, adding "cheap" as a negative phrase blocks "cheap [product]", "budget cheap [product]", "[product] cheap option", and so on.</p>
+
+      <p><strong>Where to pull negatives from.</strong> The Search Term Report is your primary source, but check all three: (1) Campaign Manager → Reports → Search Term Report for auto and broad/phrase campaigns. (2) Any search terms appearing in your auto campaigns that you're already targeting in manual campaigns, add those to your auto campaign as negatives to prevent cannibalizing your own structured spend. (3) Terms with high impressions and zero clicks, these inflate your data and skew performance metrics without spending money, but they're a signal the term is irrelevant enough that Amazon isn't even showing your ad prominently.</p>
+
+      <p><strong>The compounding effect.</strong> Every irrelevant term you negative out reduces wasted spend, which improves your ACOS ratio, which frees up budget to bid more aggressively on your proven converters. The accounts we audit that have never done serious negative keyword work are almost always sitting on 20–30% wasted spend that's been dragging ACOS for months.</p>
+
+      <p>Run this review weekly for the first 90 days of any campaign. Monthly is acceptable once the account is mature and negative lists are established.</p>
+
+      <h2>ACOS vs. ROAS: Which Metric Actually Matters</h2>
+
+      <p>Both metrics measure ad efficiency. They're inverses of each other. ACOS = ad spend ÷ ad revenue. ROAS = ad revenue ÷ ad spend. A 25% ACOS is the same as a 4x ROAS. A 20% ACOS is a 5x ROAS.</p>
+
+      <p>Use ACOS when you want to compare ad cost directly to your margin. It's easier to think about in terms of profitability: if my gross margin is 55% and my ACOS is 30%, I'm keeping 25% before other costs. That math is intuitive.</p>
+
+      <p>Use ROAS when you're comparing across channels (Amazon vs. Facebook vs. Google), because ROAS is the more common metric outside Amazon's ecosystem. A 4x ROAS on Amazon looks different than a 4x ROAS on Facebook because Amazon ad spend also influences organic rank, a factor Facebook doesn't have.</p>
+
+      <p><strong>The one to watch on Amazon is ACOS.</strong> It maps directly to your P&amp;L. ROAS is useful for external reporting and cross-channel comparison, but ACOS is the number you optimize inside Campaign Manager. Know your target ACOS, not a general benchmark, your specific number based on your margin and profit goals, and build every bid, budget, and campaign decision around it.</p>
+
       <hr class="blog-divider">
 
-      <p>High ACOS is solvable. It almost always comes down to one of those four root causes — and fixing them doesn't require cutting spend. It requires fixing the targeting, the listing, or the structure. Start with the Search Term Report. Everything else follows from there.</p>
+      <p>High ACOS is solvable. It almost always comes down to one of those four root causes, and fixing them doesn't require cutting spend. It requires fixing the targeting, the listing, or the structure. Start with the Search Term Report. Everything else follows from there.</p>
 
       <p>Also worth reading: if you're running both Sponsored Products and Sponsored Brands, the budget split and sequencing between them is often where ACOS problems start. Our guide on <a href="./amazon-sponsored-products-vs-sponsored-brands.html" style="color:var(--blue);">Sponsored Products vs. Sponsored Brands</a> covers exactly how to structure that.</p>
 
-      <p>And once your ACoS is under control, the next metric to watch is TACoS — Total Advertising Cost of Sale. It's the one number that tells you whether your ads are actually building the business or just running efficiently in place. See our full breakdown: <a href="amazon-tacos-advertising.html" style="color:var(--blue);">Amazon TACoS explained</a>.</p>
+      <p>And once your ACoS is under control, the next metric to watch is TACoS, Total Advertising Cost of Sale. It's the one number that tells you whether your ads are actually building the business or just running efficiently in place. See our full breakdown: <a href="amazon-tacos-advertising.html" style="color:var(--blue);">Amazon TACoS explained</a>.</p>
 
       <p>One more thing worth knowing: if you sell a consumable or replenishable product, your acceptable ACoS threshold changes when you factor in lifetime value. A 45% ACoS on a first-order acquisition looks very different if that customer subscribes and reorders every 60 days for a year. Our guide on <a href="amazon-subscribe-and-save-strategy.html" style="color:var(--blue);">Amazon Subscribe &amp; Save strategy</a> walks through exactly how to align your PPC thinking with repeat purchase economics.</p>
 
       <p>If you're weighing whether to handle PPC in-house or bring in an agency, our full breakdown covers what Amazon PPC management actually costs, the three pricing models, and what you should expect at each price point: <a href="amazon-ppc-management-cost.html" style="color:var(--blue);">How Much Does Amazon PPC Management Cost?</a></p>
 
-      <p>If you'd rather have someone who does this every day take a look, <a href="../amazon-marketing.html#ppc" style="color:var(--blue);">our Amazon PPC service</a> includes exactly this kind of ongoing optimization. The first step is a free audit — we'll pull up your account and show you what's actually happening.</p>
+      <p>If you'd rather have someone who does this every day take a look, <a href="../amazon-marketing.html#ppc" style="color:var(--blue);">our Amazon PPC service</a> includes exactly this kind of ongoing optimization. The first step is a free audit, we'll pull up your account and show you what's actually happening.</p>
 
       <p style="font-size:15px;color:#64748B;margin-bottom:28px;">Before hiring any agency to manage your marketplace ads: <a href="questions-to-ask-amazon-marketing-agency.html" style="color:var(--blue);font-weight:600;">15 questions to ask an Amazon marketing agency →</a></p>
+      <p style="font-size:15px;color:#64748B;margin-bottom:16px;">Have more questions about Amazon ACOS and advertising efficiency? <a href="/questions#amazon-advertising" style="color:var(--blue);font-weight:600;">See our full FAQ →</a></p>
       <div class="blog-cta-box">
         <h3>Your ACOS Has a Number. Let's Find It.</h3>
-        <p>We'll review your campaigns, search term reports, and bidding structure — and tell you exactly where the waste is and how to fix it. Free. No obligation.</p>
+        <p>We'll review your campaigns, search term reports, and bidding structure, and tell you exactly where the waste is and how to fix it. Free. No obligation.</p>
         <a class="btn btn-primary" href="../about.html#contact-form">Get a Free Amazon Audit</a>
       </div>
       <div style="margin-top:40px;padding:18px 22px 18px 26px;background:#F8FAFC;border:1px solid #E2E8F0;border-left:3px solid #10B981;border-radius:0 12px 12px 0;" class="reveal">

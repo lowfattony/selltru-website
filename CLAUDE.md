@@ -62,3 +62,13 @@ If the task is "fix the calculator padding", only `walmart-connect-calculator.ht
 
 ### Rule 7: Git diff review is mandatory before every push
 Run `git diff --stat HEAD` and read every changed file in the output. If a file appears in the diff that shouldn't be there, investigate before pushing.
+
+### Rule 8: When auditing or writing title tags, always count the FULL tag content — including the brand suffix
+Title tags on this site end with ` | SellTru`. Never count just the descriptive portion alone. Always measure the complete string as it will appear in the `<title>` element.
+
+Before presenting title options to Andrew, verify the full character count with:
+```bash
+echo -n "Your Proposed Title | SellTru" | wc -c
+```
+
+The limit is 60 characters. If a proposed title is over 60, do not present it — shorten it first.

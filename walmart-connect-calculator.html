@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){dataLayer.push(arguments);};
+    gtag('js', new Date());
+    gtag('config', 'G-Z5ZERMY21K');
+    function _loadGA(){var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-Z5ZERMY21K';s.async=true;document.head.appendChild(s);}
+    'requestIdleCallback' in window ? requestIdleCallback(_loadGA,{timeout:4000}) : setTimeout(_loadGA,4000);
+  </script>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Walmart Connect Ad Budget Calculator (2026) - Free Tool</title>
+  <meta name="description" content="Walmart Connect budget calculator. Enter a revenue goal or budget to get expected clicks, ROAS by phase, and a 90-day projection from real accounts.">
+  <link rel="canonical" href="https://selltru.com/walmart-connect-calculator">
+  <meta property="og:title" content="Walmart Connect Ad Budget Calculator (2026)">
+  <meta property="og:description" content="The only free Walmart Connect budget calculator built from real account data. See expected clicks, ROAS by phase, and your 90-day projection.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://selltru.com/walmart-connect-calculator">
+  <meta property="og:image" content="https://selltru.com/og-default.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
+  <link rel="stylesheet" href="css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Walmart Connect Ad Budget Calculator",
+    "url": "https://selltru.com/walmart-connect-calculator",
+    "description": "Free Walmart Connect advertising budget calculator built from real account data. Estimate monthly ad spend, expected ROAS, clicks, and a 90-day performance projection.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Organization", "name": "SellTru", "url": "https://selltru.com" }
+  }
+  </script>
+
+  <style>
+    /* ── Page layout ── */
+    .calc-hero { background: linear-gradient(160deg, var(--navy) 0%, #1A3A5C 100%); padding: 80px 0 64px; text-align: center; }
+    .calc-hero .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; }
+    .calc-hero h1 { font-family: var(--font-head); font-size: clamp(28px,4vw,46px); font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 16px; }
+    .calc-hero p { font-size: 17px; color: rgba(255,255,255,0.72); max-width: 560px; margin: 0 auto 28px; line-height: 1.65; }
+    .data-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); border-radius: 100px; padding: 8px 18px; font-size: 13px; color: rgba(255,255,255,0.7); }
+    .data-badge span { color: #fff; font-weight: 600; }
+
+    /* ── Calculator card ── */
+    .calc-section { padding: 0 0 80px; background: var(--gray-50); }
+    .calc-card { background: #fff; border-radius: 20px; box-shadow: 0 4px 32px rgba(13,27,42,0.10); max-width: 820px; margin: -40px auto 0; overflow: hidden; }
+
+    /* ── Mode toggle ── */
+    .mode-toggle { display: flex; border-bottom: 1px solid var(--gray-200); }
+    .mode-btn { flex: 1; padding: 18px 20px; font-family: var(--font-head); font-size: 14px; font-weight: 700; color: var(--text-light); background: none; border: none; cursor: pointer; transition: color 0.2s, background 0.2s; position: relative; }
+    .mode-btn.active { color: var(--navy); background: #fff; }
+    .mode-btn.active::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 2px; background: var(--orange); }
+    .mode-btn:first-child { border-right: 1px solid var(--gray-200); }
+
+    /* ── Form ── */
+    .calc-form { padding: 36px 40px 28px; }
+    @media(max-width:600px){ .calc-form { padding: 24px 20px 20px; } }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+    @media(max-width:600px){ .form-grid { grid-template-columns: 1fr; } }
+    .form-group { display: flex; flex-direction: column; gap: 7px; }
+    .form-group label { font-size: 13px; font-weight: 600; color: var(--navy); }
+    .form-group .hint { font-size: 12px; color: var(--text-light); margin-top: -4px; }
+    .form-control { width: 100%; padding: 11px 14px; border: 1.5px solid var(--gray-200); border-radius: 10px; font-size: 15px; color: var(--navy); font-family: var(--font-body); background: var(--gray-50); transition: border-color 0.2s, background 0.2s; box-sizing: border-box; }
+    .form-control:focus { outline: none; border-color: var(--blue); background: #fff; }
+    .input-prefix { position: relative; }
+    .input-prefix .prefix { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); font-size: 15px; color: var(--text-light); font-weight: 600; pointer-events: none; }
+    .input-prefix .form-control { padding-left: 26px; }
+
+    /* ── Category cards ── */
+    .category-group { grid-column: 1 / -1; }
+    .category-label { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 10px; display: block; }
+    .category-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
+    @media(max-width:600px){ .category-grid { grid-template-columns: repeat(2,1fr); } }
+    .cat-card { border: 1.5px solid var(--gray-200); border-radius: 12px; padding: 12px 10px; cursor: pointer; transition: all 0.18s; text-align: center; background: var(--gray-50); }
+    .cat-card:hover { border-color: var(--blue); background: rgba(26,86,219,0.04); }
+    .cat-card.selected { border-color: var(--blue); background: rgba(26,86,219,0.06); }
+    .cat-card .cat-name { font-size: 12px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+    .cat-card .cat-cpc { font-size: 11px; color: var(--blue); font-weight: 600; }
+    .cat-card .cat-ex { font-size: 10px; color: var(--text-light); margin-top: 3px; line-height: 1.4; }
+
+    /* ── Calculate button ── */
+    .calc-btn { width: 100%; padding: 16px; background: var(--orange); color: #fff; font-family: var(--font-head); font-size: 16px; font-weight: 800; border: none; border-radius: 12px; cursor: pointer; transition: background 0.2s, transform 0.15s; margin-top: 8px; }
+    .calc-btn:hover { background: #e55a1a; transform: translateY(-1px); }
+
+    /* ── Results ── */
+    .results-section { display: none; padding: 0 40px 40px; }
+    @media(max-width:600px){ .results-section { padding: 0 20px 28px; } }
+    .results-section.visible { display: block; }
+    .results-divider { border: none; border-top: 1px solid var(--gray-200); margin: 0 0 32px; }
+
+    .summary-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 28px; }
+    @media(max-width:700px){ .summary-grid { grid-template-columns: repeat(2,1fr); } }
+    .summary-card { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 14px; padding: 16px 14px; text-align: center; }
+    .summary-card .s-label { font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--text-light); margin-bottom: 6px; }
+    .summary-card .s-val { font-family: var(--font-head); font-size: 22px; font-weight: 800; color: var(--navy); }
+    .summary-card .s-sub { font-size: 11px; color: var(--text-light); margin-top: 3px; }
+    .summary-card.highlight { background: var(--navy); border-color: var(--navy); }
+    .summary-card.highlight .s-label { color: rgba(255,255,255,0.55); }
+    .summary-card.highlight .s-val { color: var(--orange); }
+    .summary-card.highlight .s-sub { color: rgba(255,255,255,0.5); }
+
+    /* ── Health indicator ── */
+    .health-bar { border-radius: 12px; padding: 14px 20px; margin-bottom: 28px; display: flex; align-items: center; gap: 14px; }
+    .health-bar.green { background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.22); }
+    .health-bar.yellow { background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.28); }
+    .health-bar.red { background: rgba(239,68,68,0.07); border: 1px solid rgba(239,68,68,0.2); }
+    .health-icon { font-size: 22px; flex-shrink: 0; }
+    .health-text strong { font-size: 14px; font-weight: 700; color: var(--navy); display: block; margin-bottom: 2px; }
+    .health-text span { font-size: 13px; color: var(--text); line-height: 1.5; }
+
+    /* ── 90-day phases ── */
+    .phases-title { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 14px; }
+    .phases-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 28px; }
+    @media(max-width:600px){ .phases-grid { grid-template-columns: 1fr; } }
+    .phase-card { border: 1px solid var(--gray-200); border-radius: 14px; overflow: hidden; }
+    .phase-card-head { padding: 11px 16px; display: flex; justify-content: space-between; align-items: center; }
+    .phase-card-head .ph-num { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+    .phase-card-head .ph-label { font-family: var(--font-head); font-size: 13px; font-weight: 700; color: #fff; }
+    .phase-card-head .ph-range { font-size: 11px; color: rgba(255,255,255,0.55); }
+    .phase-card:nth-child(1) .phase-card-head { background: #1A3A5C; }
+    .phase-card:nth-child(2) .phase-card-head { background: #1A56DB; }
+    .phase-card:nth-child(3) .phase-card-head { background: var(--orange); }
+    .phase-card-body { padding: 14px 16px; }
+    .phase-metric { display: flex; justify-content: space-between; align-items: baseline; padding: 5px 0; border-bottom: 1px solid var(--gray-200); }
+    .phase-metric:last-child { border-bottom: none; }
+    .phase-metric .pm-label { font-size: 12px; color: var(--text-light); }
+    .phase-metric .pm-val { font-size: 14px; font-weight: 700; color: var(--navy); }
+    .phase-metric .pm-val.positive { color: #16a34a; }
+
+    /* ── ROAS progress bar ── */
+    .roas-viz { margin-bottom: 28px; }
+    .roas-viz-title { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 14px; }
+    .roas-track { background: var(--gray-100); border-radius: 100px; height: 10px; position: relative; margin-bottom: 8px; overflow: visible; }
+    .roas-fill { height: 100%; border-radius: 100px; background: linear-gradient(90deg, #1A3A5C, #1A56DB, var(--orange)); transition: width 0.8s cubic-bezier(0.34,1.56,0.64,1); }
+    .roas-markers { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-light); }
+
+    /* ── Assumptions note ── */
+    .assumptions { background: rgba(26,86,219,0.04); border: 1px solid rgba(26,86,219,0.12); border-radius: 12px; padding: 16px 20px; font-size: 13px; color: var(--text); line-height: 1.65; }
+    .assumptions strong { color: var(--navy); }
+    .assumptions a { color: var(--blue); font-weight: 600; text-decoration: none; }
+
+    /* ── Explainer section ── */
+    .explainer { max-width: 820px; margin: 48px auto 0; padding: 0 24px; }
+    .explainer h2 { font-family: var(--font-head); font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 14px; }
+    .explainer p { font-size: 15px; color: var(--text); line-height: 1.75; margin-bottom: 16px; }
+    .explainer .data-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 20px 0 28px; }
+    .explainer .data-table th { background: var(--navy); color: #fff; font-family: var(--font-head); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 10px 14px; text-align: left; }
+    .explainer .data-table td { padding: 10px 14px; border-bottom: 1px solid var(--gray-200); vertical-align: top; }
+    .explainer .data-table tr:last-child td { border-bottom: none; }
+    .explainer .data-table tr:nth-child(even) td { background: var(--gray-50); }
+    .section-divider { border: none; border-top: 1px solid var(--gray-200); margin: 40px 0; }
+
+    /* ── CTA ── */
+    .calc-cta { background: var(--navy); border-radius: 20px; padding: 40px; text-align: center; max-width: 820px; margin: 40px auto 80px; }
+    .calc-cta h3 { font-family: var(--font-head); font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 10px; }
+    .calc-cta p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 24px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.65; }
+    @media(max-width:600px){ .calc-cta { margin: 40px 16px 60px; padding: 28px 20px; } .explainer { padding: 0 16px; } }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .revealed { opacity: 1; transform: none; }
+  </style>
+
+  <script src="/js/components.js" defer></script>
+</head>
+<body>
+
+  <selltru-header></selltru-header>
+
+  <main>
+
+    <!-- ── Hero ── -->
+    <section class="calc-hero">
+      <div class="container">
+        <p class="eyebrow">Free Walmart Advertising Tool</p>
+        <h1>Walmart Connect Budget Calculator</h1>
+        <p>Enter your revenue goal or monthly budget. Get expected clicks, ROAS by phase, and a realistic 90-day projection - built from accounts we actively manage.</p>
+        <div class="data-badge">Data from <span>60+ Walmart brands</span> &nbsp;·&nbsp; Updated <span>2026</span></div>
+      </div>
+    </section>
+
+    <!-- ── Calculator ── -->
+    <section class="calc-section">
+      <div class="container">
+
+        <div class="calc-card reveal">
+
+          <!-- Toggle -->
+          <div class="mode-toggle" role="tablist">
+            <button class="mode-btn active" id="btn-goal" role="tab" onclick="switchMode('goal')">
+              I have a revenue goal
+            </button>
+            <button class="mode-btn" id="btn-budget" role="tab" onclick="switchMode('budget')">
+              I have a monthly budget
+            </button>
+          </div>
+
+          <!-- Form -->
+          <div class="calc-form">
+
+            <!-- Goal mode inputs -->
+            <div id="mode-goal">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="revenue-goal">Monthly Revenue Goal on Walmart</label>
+                  <div class="input-prefix">
+                    <span class="prefix">$</span>
+                    <input type="number" id="revenue-goal" class="form-control" placeholder="25,000" min="1000" step="1000">
+                  </div>
+                  <p class="hint">How much in Walmart sales do you want per month at maturity?</p>
+                </div>
+                <div class="form-group">
+                  <label for="aov-goal">Average Order Value</label>
+                  <div class="input-prefix">
+                    <span class="prefix">$</span>
+                    <input type="number" id="aov-goal" class="form-control" placeholder="38" min="5" step="1">
+                  </div>
+                  <p class="hint">Average dollar amount per Walmart order</p>
+                </div>
+
+                <div class="category-group">
+                  <span class="category-label">Product Category - sets the CPC range used in calculations</span>
+                  <div class="category-grid" id="cat-grid-goal">
+                    <div class="cat-card selected" data-cat="low" onclick="selectCat('goal','low',this)">
+                      <div class="cat-name">Low Competition</div>
+                      <div class="cat-cpc">$0.40 – $0.95 CPC</div>
+                      <div class="cat-ex">Specialty food, niche home goods</div>
+                    </div>
+                    <div class="cat-card" data-cat="moderate" onclick="selectCat('goal','moderate',this)">
+                      <div class="cat-name">Moderate</div>
+                      <div class="cat-cpc">$0.75 – $1.25 CPC</div>
+                      <div class="cat-ex">Health supplements, baby products</div>
+                    </div>
+                    <div class="cat-card" data-cat="competitive" onclick="selectCat('goal','competitive',this)">
+                      <div class="cat-name">Competitive</div>
+                      <div class="cat-cpc">$1.25 – $2.00 CPC</div>
+                      <div class="cat-ex">Electronics accessories, personal care</div>
+                    </div>
+                    <div class="cat-card" data-cat="branded" onclick="selectCat('goal','branded',this)">
+                      <div class="cat-name">High-Intent / Branded</div>
+                      <div class="cat-cpc">$1.50 – $2.50 CPC</div>
+                      <div class="cat-ex">Brand name searches, top-of-category</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="calc-btn" onclick="calculate('goal')">Calculate What It Takes →</button>
+            </div>
+
+            <!-- Budget mode inputs -->
+            <div id="mode-budget" style="display:none;">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="monthly-budget">Monthly Ad Budget</label>
+                  <div class="input-prefix">
+                    <span class="prefix">$</span>
+                    <input type="number" id="monthly-budget" class="form-control" placeholder="5,000" min="500" step="500">
+                  </div>
+                  <p class="hint">How much can you commit per month to Walmart Connect?</p>
+                </div>
+                <div class="form-group">
+                  <label for="aov-budget">Average Order Value</label>
+                  <div class="input-prefix">
+                    <span class="prefix">$</span>
+                    <input type="number" id="aov-budget" class="form-control" placeholder="38" min="5" step="1">
+                  </div>
+                  <p class="hint">Average dollar amount per Walmart order</p>
+                </div>
+
+                <div class="category-group">
+                  <span class="category-label">Product Category - sets the CPC range used in calculations</span>
+                  <div class="category-grid" id="cat-grid-budget">
+                    <div class="cat-card selected" data-cat="low" onclick="selectCat('budget','low',this)">
+                      <div class="cat-name">Low Competition</div>
+                      <div class="cat-cpc">$0.40 – $0.95 CPC</div>
+                      <div class="cat-ex">Specialty food, niche home goods</div>
+                    </div>
+                    <div class="cat-card" data-cat="moderate" onclick="selectCat('budget','moderate',this)">
+                      <div class="cat-name">Moderate</div>
+                      <div class="cat-cpc">$0.75 – $1.25 CPC</div>
+                      <div class="cat-ex">Health supplements, baby products</div>
+                    </div>
+                    <div class="cat-card" data-cat="competitive" onclick="selectCat('budget','competitive',this)">
+                      <div class="cat-name">Competitive</div>
+                      <div class="cat-cpc">$1.25 – $2.00 CPC</div>
+                      <div class="cat-ex">Electronics accessories, personal care</div>
+                    </div>
+                    <div class="cat-card" data-cat="branded" onclick="selectCat('budget','branded',this)">
+                      <div class="cat-name">High-Intent / Branded</div>
+                      <div class="cat-cpc">$1.50 – $2.50 CPC</div>
+                      <div class="cat-ex">Brand name searches, top-of-category</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="calc-btn" onclick="calculate('budget')">Project My Results →</button>
+            </div>
+
+          </div><!-- /calc-form -->
+
+          <!-- Results -->
+          <div class="results-section" id="results">
+            <hr class="results-divider">
+
+            <!-- Summary cards -->
+            <div style="padding: 0 40px;" id="results-inner">
+              <div class="summary-grid" id="summary-cards"></div>
+              <div class="health-bar" id="health-bar"></div>
+
+              <!-- 90-day phases -->
+              <p class="phases-title">90-Day Performance Projection</p>
+              <div class="phases-grid" id="phases-grid"></div>
+
+              <!-- ROAS progress -->
+              <div class="roas-viz">
+                <p class="roas-viz-title">ROAS Trajectory Over 90 Days</p>
+                <div class="roas-track">
+                  <div class="roas-fill" id="roas-fill" style="width:0%"></div>
+                </div>
+                <div class="roas-markers">
+                  <span>Month 1 (<span id="roas-m1-label">—</span>x)</span>
+                  <span>Month 2–3 (<span id="roas-m2-label">—</span>x)</span>
+                  <span>Month 4+ (<span id="roas-m3-label">—</span>x)</span>
+                </div>
+              </div>
+
+              <!-- Assumptions -->
+              <div class="assumptions" id="assumptions-note"></div>
+            </div>
+
+          </div><!-- /results -->
+
+        </div><!-- /calc-card -->
+
+        <!-- Explainer -->
+        <div class="explainer">
+          <hr class="section-divider">
+          <h2>How These Numbers Are Calculated</h2>
+          <p>Every number in this calculator comes from benchmarks built across 60+ Walmart seller accounts. The CPC ranges are mid-points from what we see in Walmart Connect campaigns by category. The ROAS projections reflect the three-phase trajectory most accounts follow - not best-case scenarios.</p>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Avg CPC Range</th>
+                <th>Used in Calculator</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Low Competition</td><td>$0.40 – $0.95</td><td>$0.65 midpoint</td></tr>
+              <tr><td>Moderate Competition</td><td>$0.75 – $1.25</td><td>$1.00 midpoint</td></tr>
+              <tr><td>Competitive</td><td>$1.25 – $2.00</td><td>$1.60 midpoint</td></tr>
+              <tr><td>High-Intent / Branded</td><td>$1.50 – $2.50</td><td>$2.00 midpoint</td></tr>
+            </tbody>
+          </table>
+
+          <p>The ROAS values in this calculator (1.8x, 2.8x, 4.2x by phase) come directly from real account data across the 60+ Walmart brands we manage. They reflect total account ROAS: ad-attributed revenue plus the organic lift that builds as paid velocity signals relevance to Walmart's algorithm. This is why Phase 3 ROAS is meaningfully higher than Phase 1 - it's not just better ad efficiency, it's organic rank compounding on top of paid. The calculator assumes WFS enrollment and a content quality score above 90. Without those, real-world results will be lower.</p>
+
+          <p>The 90-day ramp reflects a real pattern: month one is data collection with sub-optimal relevance scores and no purchase history, so ROAS is low. By month 2–3 you're optimizing on real data and ROAS improves. By month 4 and beyond, organic rank builds under your ad activity and total efficiency (TACoS) improves even if ad ROAS plateaus.</p>
+
+          <p>For full detail on Walmart Connect CPCs, monthly budget benchmarks, and what agency management costs, see the <a href="/walmart-advertising-cost">Walmart Advertising Cost guide</a> - the source data behind this tool.</p>
+
+          <hr class="section-divider">
+          <h2>Why Walmart ROAS Is Different From Amazon</h2>
+          <p>Amazon sellers often bring their ROAS expectations to Walmart and get confused when month-one numbers look different. A few structural reasons for this: Walmart's shopper base is smaller, conversion rates are lower, and new listings go through a virtual shelf placement process that can suppress impressions in the first few weeks regardless of bid levels.</p>
+          <p>The upside that Amazon doesn't offer at the same scale: organic rank on Walmart is stickier. Once your product earns category placement through paid velocity, it tends to hold that position longer than an equivalent Amazon listing would without continuous ad support. The brands that understand this - and fund the 90-day ramp rather than pulling campaigns at month one - are the ones that build durable Walmart revenue at lower long-term TACoS.</p>
+        </div>
+
+        <!-- CTA -->
+        <div class="calc-cta reveal">
+          <h3>Want Someone to Run These Numbers for Your Actual Account?</h3>
+          <p>We manage Walmart Connect campaigns for brands doing $500K–$5M+ on marketplace. A free audit takes 20 minutes and tells you exactly what your account should realistically target.</p>
+          <a href="/about#contact-form" class="btn btn-primary" style="display:inline-block;padding:14px 36px;background:var(--orange);color:#fff;font-weight:700;border-radius:10px;text-decoration:none;font-size:15px;">Get a Free Walmart Audit</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <selltru-footer></selltru-footer>
+
+  <script src="/js/main.js" defer></script>
+
+  <script>
+    // ── State ──
+    const state = {
+      mode: 'goal',
+      cat: { goal: 'low', budget: 'low' }
+    };
+
+    // ── CPC data (midpoints from real account benchmarks) ──
+    const CPC = { low: 0.65, moderate: 1.00, competitive: 1.60, branded: 2.00 };
+
+    // ── ROAS by phase (from account data) ──
+    // Phase 1 (month 1): learning, low relevance score
+    // Phase 2 (month 2-3): optimized, improving
+    // Phase 3 (month 4+): mature + organic rank building
+    const ROAS_PHASES = { p1: 1.8, p2: 2.8, p3: 4.2 };
+
+    // ── Budget floor thresholds ──
+    const FLOOR_CAUTION = 1500;
+
+    // ── Mode switch ──
+    function switchMode(mode) {
+      state.mode = mode;
+      document.getElementById('mode-goal').style.display = mode === 'goal' ? 'block' : 'none';
+      document.getElementById('mode-budget').style.display = mode === 'budget' ? 'block' : 'none';
+      document.getElementById('btn-goal').classList.toggle('active', mode === 'goal');
+      document.getElementById('btn-budget').classList.toggle('active', mode === 'budget');
+      document.getElementById('results').classList.remove('visible');
+    }
+
+    // ── Category select ──
+    function selectCat(mode, cat, el) {
+      state.cat[mode] = cat;
+      document.querySelectorAll(`#cat-grid-${mode} .cat-card`).forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+    }
+
+    // ── Helpers ──
+    function fmt(n) { return '$' + Math.round(n).toLocaleString(); }
+    function fmtX(n) { return n.toFixed(1) + 'x'; }
+    function fmtN(n) { return Math.round(n).toLocaleString(); }
+
+    // ── Main calculate ──
+    function calculate(mode) {
+      const cat = state.cat[mode];
+      const cpc = CPC[cat];
+      const cvr = CVR[cat];
+      let monthlyBudget, aov;
+
+      if (mode === 'goal') {
+        const goalEl = document.getElementById('revenue-goal');
+        const aovEl = document.getElementById('aov-goal');
+        const goal = parseFloat(goalEl.value);
+        aov = parseFloat(aovEl.value);
+        if (!goal || !aov || goal < 100 || aov < 1) {
+          goalEl.style.borderColor = '#ef4444';
+          aovEl.style.borderColor = '#ef4444';
+          setTimeout(() => { goalEl.style.borderColor=''; aovEl.style.borderColor=''; }, 2000);
+          return;
+        }
+        // Work backwards from mature ROAS target (from real account benchmarks)
+        monthlyBudget = goal / ROAS_PHASES.p3;
+      } else {
+        const budEl = document.getElementById('monthly-budget');
+        const aovEl = document.getElementById('aov-budget');
+        monthlyBudget = parseFloat(budEl.value);
+        aov = parseFloat(aovEl.value);
+        if (!monthlyBudget || !aov || monthlyBudget < 100 || aov < 1) {
+          budEl.style.borderColor = '#ef4444';
+          aovEl.style.borderColor = '#ef4444';
+          setTimeout(() => { budEl.style.borderColor=''; aovEl.style.borderColor=''; }, 2000);
+          return;
+        }
+      }
+
+      // ── Core calculations per phase ──
+      // Revenue is driven by ROAS benchmarks from real accounts (includes organic lift).
+      // Clicks come from CPC (category-specific). Orders derive from revenue / AOV.
+      function calcPhase(budget, roas_target) {
+        const clicks = budget / cpc;
+        const revenue = budget * roas_target;
+        const orders = revenue / aov;
+        return { clicks, orders, revenue, roas: roas_target, budget };
+      }
+
+      const p1 = calcPhase(monthlyBudget, ROAS_PHASES.p1);
+      const p2 = calcPhase(monthlyBudget, ROAS_PHASES.p2);
+      const p3 = calcPhase(monthlyBudget, ROAS_PHASES.p3);
+
+      // ── Daily budget ──
+      const dailyBudget = monthlyBudget / 30;
+
+      // ── Render summary cards ──
+      const summaryHTML = `
+        <div class="summary-card highlight">
+          <div class="s-label">${mode === 'goal' ? 'Required Budget' : 'Monthly Budget'}</div>
+          <div class="s-val">${fmt(monthlyBudget)}</div>
+          <div class="s-sub">${fmt(dailyBudget)}/day</div>
+        </div>
+        <div class="summary-card">
+          <div class="s-label">Est. Monthly Clicks</div>
+          <div class="s-val">${fmtN(p2.clicks)}</div>
+          <div class="s-sub">at $${cpc.toFixed(2)} avg CPC</div>
+        </div>
+        <div class="summary-card">
+          <div class="s-label">Month 1 ROAS</div>
+          <div class="s-val">${fmtX(p1.roas)}</div>
+          <div class="s-sub">Data collection phase</div>
+        </div>
+        <div class="summary-card">
+          <div class="s-label">Mature ROAS</div>
+          <div class="s-val">${fmtX(p3.roas)}</div>
+          <div class="s-sub">Month 4+ w/ organic rank</div>
+        </div>
+      `;
+      document.getElementById('summary-cards').innerHTML = summaryHTML;
+
+      // ── Health bar ──
+      let healthClass, healthIcon, healthTitle, healthMsg;
+      if (monthlyBudget >= 5000) {
+        healthClass = 'green'; healthIcon = '✅';
+        healthTitle = 'Strong - enough budget to build real momentum';
+        healthMsg = `${fmt(monthlyBudget)}/month generates enough click volume to build organic rank within 90 days. You should see measurable ROAS improvement from month to month.`;
+      } else if (monthlyBudget >= FLOOR_CAUTION) {
+        healthClass = 'yellow'; healthIcon = '⚠️';
+        healthTitle = 'Workable - but growth will be slower';
+        healthMsg = `${fmt(monthlyBudget)}/month can generate data and start building rank. Budget to the $5K range when you're ready to accelerate - the algorithm responds to volume.`;
+      } else {
+        healthClass = 'red'; healthIcon = '🔴';
+        healthTitle = 'Below the momentum threshold';
+        healthMsg = `${fmt(monthlyBudget)}/month is below the $1,500 floor we typically see for generating usable data on Walmart. At this level, campaigns run too thin to build meaningful purchase velocity or organic rank.`;
+      }
+      document.getElementById('health-bar').className = `health-bar ${healthClass}`;
+      document.getElementById('health-bar').innerHTML = `
+        <div class="health-icon">${healthIcon}</div>
+        <div class="health-text">
+          <strong>${healthTitle}</strong>
+          <span>${healthMsg}</span>
+        </div>
+      `;
+
+      // ── 90-day phases ──
+      const phasesHTML = `
+        <div class="phase-card">
+          <div class="phase-card-head">
+            <div><div class="ph-num">Phase 1</div><div class="ph-label">Data Collection</div></div>
+            <div class="ph-range">Days 1–30</div>
+          </div>
+          <div class="phase-card-body">
+            <div class="phase-metric"><span class="pm-label">Ad Budget</span><span class="pm-val">${fmt(p1.budget)}</span></div>
+            <div class="phase-metric"><span class="pm-label">Est. Clicks</span><span class="pm-val">${fmtN(p1.clicks)}</span></div>
+            <div class="phase-metric"><span class="pm-label">Est. Orders</span><span class="pm-val">${fmtN(p1.orders)}</span></div>
+            <div class="phase-metric"><span class="pm-label">Est. Revenue</span><span class="pm-val">${fmt(p1.revenue)}</span></div>
+            <div class="phase-metric"><span class="pm-label">ROAS</span><span class="pm-val">${fmtX(p1.roas)}</span></div>
+          </div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card-head">
+            <div><div class="ph-num">Phase 2</div><div class="ph-label">Optimization</div></div>
+            <div class="ph-range">Days 31–60</div>
+          </div>
+          <div class="phase-card-body">
+            <div class="phase-metric"><span class="pm-label">Ad Budget</span><span class="pm-val">${fmt(p2.budget)}</span></div>
+            <div class="phase-metric"><span class="pm-label">Est. Clicks</span><span class="pm-val">${fmtN(p2.clicks)}</span></div>
+            <div class="phase-metric"><span class="pm-label">Est. Orders</span><span class="pm-val">${fmtN(p2.orders)}</span></div>
+            <div class="phase-metric"><span class="pm-label">Est. Revenue</span><span class="pm-val">${fmt(p2.revenue)}</span></div>
+            <div class="phase-metric"><span class="pm-label">ROAS</span><span class="pm-val positive">${fmtX(p2.roas)}</span></div>
+          </div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card-head">
+            <div><div class="ph-num">Phase 3</div><div class="ph-label">Efficiency + Scale</div></div>
+            <div class="ph-range">Days 61–90+</div>
+          </div>
+          <div class="phase-card-body">
+            <div class="phase-metric"><span class="pm-label">Ad Budget</span><span class="pm-val">${fmt(p3.budget)}</span></div>
+            <div class="phase-metric"><span class="pm-label">Est. Clicks</span><span class="pm-val">${fmtN(p3.clicks)}</span></div>
+            <div class="phase-metric"><span class="pm-label">Est. Orders</span><span class="pm-val">${fmtN(p3.orders)}</span></div>
+            <div class="phase-metric"><span class="pm-label">Est. Revenue</span><span class="pm-val">${fmt(p3.revenue)}</span></div>
+            <div class="phase-metric"><span class="pm-label">ROAS</span><span class="pm-val positive">${fmtX(p3.roas)}</span></div>
+          </div>
+        </div>
+      `;
+      document.getElementById('phases-grid').innerHTML = phasesHTML;
+
+      // ── ROAS progress bar ──
+      const maxRoas = 6;
+      const fillPct = Math.min((p3.roas / maxRoas) * 100, 95);
+      document.getElementById('roas-fill').style.width = fillPct + '%';
+      document.getElementById('roas-m1-label').textContent = p1.roas.toFixed(1);
+      document.getElementById('roas-m2-label').textContent = p2.roas.toFixed(1);
+      document.getElementById('roas-m3-label').textContent = p3.roas.toFixed(1);
+
+      // ── Assumptions note ──
+      const catLabel = { low:'Low Competition', moderate:'Moderate Competition', competitive:'Competitive', branded:'High-Intent / Branded' };
+      document.getElementById('assumptions-note').innerHTML = `
+        <strong>What this assumes:</strong> ${catLabel[cat]} category at $${cpc.toFixed(2)} avg CPC, ${(cvr*100).toFixed(1)}% base conversion rate, $${aov} AOV, WFS enrolled, content quality score 90+. Month-to-month ROAS improvement reflects conversion rate increasing as Walmart's algorithm builds organic relevance signals. These are estimates - your actual results depend on listing quality, pricing, and campaign structure. <a href="/walmart-advertising-cost">See the full benchmark data →</a>
+      `;
+
+      // ── Show results ──
+      document.getElementById('results').classList.add('visible');
+      setTimeout(() => {
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
+    }
+
+    // ── Scroll reveal ──
+    document.addEventListener('DOMContentLoaded', () => {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); } });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    });
+  </script>
+
+</body>
+</html>
+          

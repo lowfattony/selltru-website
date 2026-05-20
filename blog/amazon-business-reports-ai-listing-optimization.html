@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) — deferred until idle -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){dataLayer.push(arguments);};
+    gtag('js', new Date());
+    gtag('config', 'G-Z5ZERMY21K');
+    function _loadGA(){var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-Z5ZERMY21K';s.async=true;document.head.appendChild(s);}
+    'requestIdleCallback' in window ? requestIdleCallback(_loadGA,{timeout:4000}) : setTimeout(_loadGA,4000);
+  </script>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon Listing Not Converting? Diagnose It With AI | SellTru</title>
+  <meta name="description" content="Stop asking AI to rewrite your Amazon listing. Start using your Business Reports to diagnose why it's not converting. The prompt, the framework, and the math.">
+  <link rel="canonical" href="https://selltru.com/blog/amazon-business-reports-ai-listing-optimization">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .blog-article { max-width: 760px; margin: 0 auto; padding: 80px 24px 96px; }
+    .blog-article h1 { font-family: var(--font-head); font-size: clamp(28px,4vw,42px); font-weight: 800; color: var(--navy); line-height: 1.2; margin-bottom: 16px; }
+    .blog-article h2 { font-family: var(--font-head); font-size: 22px; font-weight: 700; color: var(--navy); margin: 44px 0 14px; }
+    .blog-article h3 { font-family: var(--font-head); font-size: 17px; font-weight: 700; color: var(--navy); margin: 28px 0 10px; }
+    .blog-article p { font-size: 16px; color: var(--text); line-height: 1.8; margin-bottom: 18px; }
+    .blog-article ul, .blog-article ol { padding-left: 24px; margin-bottom: 20px; }
+    .blog-article li { font-size: 16px; color: var(--text); line-height: 1.7; margin-bottom: 8px; }
+    .blog-article strong { color: var(--navy); }
+    .blog-meta { font-size: 14px; color: var(--text-light); margin-bottom: 40px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .blog-meta-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gray-200); }
+    .blog-divider { border: none; border-top: 1px solid var(--gray-200); margin: 40px 0; }
+    .blog-callout { background: rgba(26,86,219,0.06); border-left: 3px solid var(--blue); border-radius: 0 10px 10px 0; padding: 18px 22px; margin: 28px 0; }
+    .blog-callout p { margin-bottom: 0; color: var(--navy); font-size: 15px; }
+    .blog-checklist { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 14px; padding: 24px 28px; margin: 28px 0; }
+    .blog-checklist h4 { font-family: var(--font-head); font-size: 14px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 14px; }
+    .blog-checklist ul { margin-bottom: 0; }
+    .blog-cta-box { background: linear-gradient(135deg, #0D1B2A, #1A3A5C); border-radius: 18px; padding: 40px 44px; margin-top: 64px; text-align: center; }
+    .blog-cta-box h3 { color: #fff; font-family: var(--font-head); font-size: 24px; font-weight: 800; margin-bottom: 10px; }
+    .blog-cta-box p { color: rgba(255,255,255,0.7); font-size: 15px; margin-bottom: 28px; line-height: 1.6; }
+    .blog-breadcrumb { font-size: 13px; color: var(--text-light); margin-bottom: 32px; }
+    .blog-breadcrumb a { color: var(--blue); text-decoration: none; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.revealed { opacity: 1; transform: none; }
+    .prompt-box { background: #0D1B2A; border-radius: 12px; padding: 24px 28px; margin: 28px 0; }
+    .prompt-box p { color: rgba(255,255,255,0.85); font-family: 'Inter', monospace; font-size: 14px; line-height: 1.75; margin-bottom: 0; }
+    .prompt-box .prompt-label { font-family: var(--font-head); font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 12px; display: block; }
+    .process-steps { margin: 32px 0; display: flex; flex-direction: column; gap: 0; }
+    .process-step { display: flex; align-items: flex-start; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--gray-200); }
+    .process-step:last-child { border-bottom: none; }
+    .process-step-num { flex-shrink: 0; width: 36px; height: 36px; background: var(--blue); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-head); font-size: 14px; font-weight: 800; }
+    .process-step-content strong { display: block; font-family: var(--font-head); font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .process-step-content span { font-size: 14px; color: var(--text-light); line-height: 1.6; }
+    .math-box { background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 14px; padding: 24px 28px; margin: 28px 0; }
+    .math-box h4 { font-family: var(--font-head); font-size: 14px; font-weight: 700; color: #065F46; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; }
+    .math-box p { margin-bottom: 8px; font-size: 15px; color: #064E3B; }
+    .math-box p:last-child { margin-bottom: 0; font-weight: 700; color: #065F46; }
+    .priority-list { counter-reset: priority; list-style: none; padding-left: 0; }
+    .priority-list li { counter-increment: priority; display: flex; align-items: baseline; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--gray-200); font-size: 15px; }
+    .priority-list li:last-child { border-bottom: none; }
+    .priority-list li::before { content: counter(priority); flex-shrink: 0; width: 24px; height: 24px; background: rgba(26,86,219,0.1); color: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-head); font-size: 12px; font-weight: 800; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Use Amazon Business Reports and AI to Optimize Listings in 2026",
+    "description": "How winning Amazon brands use Business Reports, Search Query data, and AI to diagnose listing problems ASIN by ASIN — then use Manage Your Experiments to test the right fix.",
+    "datePublished": "2026-05-20",
+    "dateModified": "2026-05-20",
+    "author": { "@type": "Organization", "name": "SellTru", "url": "https://selltru.com" },
+    "publisher": { "@type": "Organization", "name": "SellTru", "url": "https://selltru.com" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://selltru.com/blog/amazon-business-reports-ai-listing-optimization" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://selltru.com" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://selltru.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Amazon Business Reports + AI to Optimize Listings", "item": "https://selltru.com/blog/amazon-business-reports-ai-listing-optimization" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Amazon Business Reports and how do I use it for listing optimization?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Amazon Business Reports, found in Seller Central under Reports > Business Reports, shows ASIN-level traffic and conversion data including sessions, page views, buy box percentage, and unit session percentage. To use it for listing optimization, download the Detail Page Sales and Traffic report for the last 30–90 days for a specific ASIN, then combine it with your Search Query Performance data and advertising search term report before feeding everything into an AI tool to diagnose whether you have a traffic problem, a conversion problem, or a positioning problem."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I use AI to optimize Amazon product listings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most effective way to use AI for Amazon listing optimization is to feed it your actual performance data — Business Reports, Search Query Performance, ad search term reports, and customer review themes — and ask it to diagnose why the listing is underperforming before recommending any changes. Do not ask AI to rewrite your listing without context. Feed it the data first, ask it to identify whether you have a traffic, conversion, or positioning problem, then use Manage Your Experiments to validate the fix."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does Amazon Manage Your Experiments take to get results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Amazon recommends running Manage Your Experiments for 8–10 weeks if you choose your own duration. If you use the default 'to significance' setting, Amazon can sometimes declare a winner in as little as four weeks once there is enough traffic data. Manage Your Experiments requires Brand Registry and sufficient session volume to generate statistically meaningful results — it works best for advanced sellers already driving real traffic to the listing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is unit session percentage on Amazon?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unit session percentage is Amazon's term for conversion rate — the percentage of sessions that result in a purchase. It is found in your Amazon Business Reports under Detail Page Sales and Traffic. A higher unit session percentage means more of the traffic landing on your listing is converting into sales, which improves both revenue and organic keyword ranking. Even a one-point improvement in unit session percentage can be worth tens of thousands of dollars per year on a high-traffic listing."
+      }
+    }
+    ]
+  }
+  </script>
+  <script src="/js/components.js" defer></script>
+</head>
+<body>
+
+  <selltru-header></selltru-header>
+
+  <main>
+    <div class="blog-article">
+
+      <p class="blog-breadcrumb"><a href="../blog.html">← Blog</a> &nbsp;/&nbsp; Amazon Strategy</p>
+
+      <p class="section-tag" style="margin-bottom:12px;">Amazon Strategy</p>
+      <h1>How to Use Amazon Business Reports and AI to Optimize Listings in 2026</h1>
+      <div class="blog-meta">
+        <span>By SellTru</span>
+        <span class="blog-meta-dot"></span>
+        <span>May 2026</span>
+        <span class="blog-meta-dot"></span>
+        <span>9 min read</span>
+      </div>
+
+      <p>A brand I work with had a problem that looked like a traffic problem. Sessions were climbing. Day over day, more shoppers were landing on the listing. But unit session percentage — the conversion rate — wasn't moving with it. Sales were essentially flat even as visibility grew.</p>
+
+      <p>The instinct for most sellers would be to run more ads, chase more keywords, hire a copywriter to punch up the bullets. But those instincts were wrong. This was never a traffic problem. It was a conversion problem hiding inside what looked like a traffic problem. And it took pulling the Amazon Business Reports, feeding the right data into AI, and building a proper hypothesis before we found it.</p>
+
+      <p>That's what this post is about. Not how to use AI to rewrite your listing. That advice is everywhere, and it's mostly useless. This is about how to use AI to figure out <em>why</em> your listing isn't working — and then use Manage Your Experiments to prove the fix.</p>
+
+      <h2>The Mistake Almost Every Amazon Seller Makes with AI</h2>
+
+      <p>Most sellers treat AI like a copywriting tool. They open ChatGPT or Claude and type something like: <em>"Rewrite my Amazon title and bullet points to convert better."</em> The AI produces something that sounds polished and professional. They update the listing. Nothing changes.</p>
+
+      <p>The problem isn't the AI. It's the prompt. Without real performance data, AI has no context. It's guessing. And a well-written guess is still a guess.</p>
+
+      <div class="blog-callout">
+        <p><strong>Smart brands use AI to figure out why the listing isn't converting — not just to make it sound better.</strong> AI should not replace testing. AI should help you decide what is worth testing.</p>
+      </div>
+
+      <p>In 2026, the winning Amazon brands are treating AI as an operating system, not a copywriting assistant. They're feeding it real ASIN-level data — Business Reports, search query performance, advertising search term reports, customer review themes — and asking it to diagnose the problem before proposing any solution. The difference in output is enormous.</p>
+
+      <h2>The Amazon Business Reports and Data to Pull First</h2>
+
+      <p>Before you open an AI tool, you need to pull five data sources. All of this is ASIN-specific. Do not do this at the catalog level — do one product at a time.</p>
+
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-step-num">1</div>
+          <div class="process-step-content">
+            <strong>Amazon Business Reports</strong>
+            <span>Download the Detail Page Sales and Traffic report for the last 30–90 days. You want sessions, page views, buy box percentage, ordered units, and unit session percentage (your conversion rate). This tells you whether you have a traffic problem, a conversion problem, or both.</span>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">2</div>
+          <div class="process-step-content">
+            <strong>Search Query Performance Report</strong>
+            <span>Found in Brand Analytics. Download this for your specific ASIN. It shows which search terms are driving impressions, clicks, and purchases — not just what people searched, but what they searched and then bought.</span>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">3</div>
+          <div class="process-step-content">
+            <strong>Advertising Search Term Report</strong>
+            <span>Download from your ad account. This shows which keywords are converting in your PPC campaigns. Cross-referencing this with your organic Search Query data reveals which terms are carrying the load and whether they're reflected in your listing copy.</span>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">4</div>
+          <div class="process-step-content">
+            <strong>Customer Review Themes</strong>
+            <span>Read your last 50–100 reviews and identify recurring patterns. What do 5-star reviews mention most? What do 3-star reviews complain about? These themes are direct signals of what's driving purchase decisions — and what's creating hesitation.</span>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">5</div>
+          <div class="process-step-content">
+            <strong>Competitor Positioning</strong>
+            <span>If you're using Claude in a Cowork session, paste your top competitors' listing URLs and ask it to analyze their positioning — what outcomes they lead with, what objections they address, how they structure their image stack. This gives AI the competitive context it needs to spot gaps in your own listing.</span>
+          </div>
+        </div>
+      </div>
+
+      <h2>The AI Diagnostic Prompt That Changes Everything</h2>
+
+      <p>Once you have all five data sources, you feed them into the AI together. Not one at a time. All at once, with a specific diagnostic question. This is the prompt structure that changes everything:</p>
+
+      <div class="prompt-box">
+        <span class="prompt-label">Master Diagnostic Prompt</span>
+        <p>Here is my Amazon Business Report, Search Query Performance data, advertising search term report, customer review themes, current title, current bullet points, A+ Content summary, and competitor positioning for [ASIN].<br><br>Diagnose whether this ASIN has a traffic problem, a conversion problem, or a positioning problem. Use all the data provided — do not guess. Walk through your reasoning step by step before reaching any conclusion. Then recommend the highest-impact listing tests in order of priority, and explain the hypothesis behind each one.</p>
+      </div>
+
+      <p>The instruction to walk through reasoning step by step matters. The first answer isn't always the right answer. Asking AI to show its work — and to critique its own conclusions before presenting them — meaningfully improves the quality of the diagnosis. Crap in, crap out. But also: rushed reasoning in, rushed conclusions out.</p>
+
+      <h2>What to Test First (and in What Order)</h2>
+
+      <p>After the diagnosis, you'll have a clearer picture of what's actually wrong. Most conversion problems trace back to one of two things: the listing is attracting the wrong traffic, or it's failing to persuade the right traffic. Your data will tell you which.</p>
+
+      <p>When deciding what to test, prioritize in this order:</p>
+
+      <ol class="priority-list">
+        <li><strong>Main image</strong> — Affects click-through rate before anyone reaches your listing. If your main image doesn't win the click in search results, nothing else matters.</li>
+        <li><strong>Title</strong> — Affects both keyword relevance and the first impression a shopper forms. The listing I mentioned at the top of this post wasn't leading with the keywords actually driving sales. That was the problem.</li>
+        <li><strong>Image stack</strong> — Once a shopper lands, this is usually the biggest single driver of conversion. Most brands lead with features. Buyers want to see outcomes.</li>
+        <li><strong>First two bullet points</strong> — On mobile, bullets 3–5 are often hidden. Your first two bullets need to carry the full weight of your conversion argument.</li>
+        <li><strong>A+ Content</strong> — The place to overcome objections, tell the brand story, and compare against alternatives. A well-built A+ module can close buyers who are on the fence. For a deeper look at how to build A+ Content that actually lifts conversion, see our guide on <a href="amazon-a-plus-content-guide.html" style="color:var(--blue);">using Amazon A+ Content to improve conversion rates</a>.</li>
+        <li><strong>Backend keywords</strong> — Important for search relevance, but they won't fix a weak offer or poor conversion. Address this last.</li>
+      </ol>
+
+      <p>The key discipline here is isolation. Don't change everything at once. Pick the highest-impact problem, form a specific hypothesis, and test that one thing. Otherwise you won't know what worked.</p>
+
+      <h2>Write the Hypothesis Before You Test Anything</h2>
+
+      <p>This step is the one most sellers skip, and it's the one that separates strategic testing from random listing churn.</p>
+
+      <p>Before running any experiment, write out what you believe the problem is, why you believe it, and what result you expect if you're right. For example:</p>
+
+      <div class="blog-callout">
+        <p><em>"We believe this listing is under-converting because the current image stack focuses too heavily on product features, while customer reviews and search term data show that shoppers care more about the outcome. If we lead with outcome-driven image messaging, unit session percentage should improve."</em></p>
+      </div>
+
+      <p>That's a testable hypothesis. It's grounded in your data. And it gives you a clear way to evaluate whether the experiment worked — not just "did sales go up" but "did the specific metric we expected to move actually move?"</p>
+
+      <h2>Use Manage Your Experiments to Validate the Fix</h2>
+
+      <p>Amazon's Manage Your Experiments tool lets you run A/B tests on your listing for brand-registered sellers. Instead of making a change and hoping the numbers improve, you can split traffic between two versions and let Amazon declare a statistically significant winner.</p>
+
+      <p>You can test title variations, main image variations, bullet point changes, and A+ Content. Run experiments for 8–10 weeks if you set your own duration, or use the "to significance" setting and let Amazon end the test early — sometimes in as little as four weeks if there's enough traffic to generate clean data.</p>
+
+      <p>This tool is one of the most underrated capabilities on Amazon. Most sellers either don't know it exists or run experiments without a clear reason — testing two random titles, two random images, with no hypothesis behind the choice. The right way is to use Business Reports and AI to diagnose the problem first, then use Manage Your Experiments to prove the fix.</p>
+
+      <p>Note: you need sufficient traffic to get meaningful results. This framework works best for advanced sellers who are already driving real volume to the listing. If you're still building traffic, focus on <a href="amazon-listing-optimization-guide-2026.html" style="color:var(--blue);">getting the fundamentals of your listing right</a> before running experiments.</p>
+
+      <h2>The Math That Makes This Worth Your Time</h2>
+
+      <p>Amazon says optimized listing content can help increase sales by up to 20%. But the word "optimized" is doing a lot of work there. Rewriting a listing with AI is not optimization. Optimization means using real performance data, forming a hypothesis, and testing the change with actual Amazon traffic.</p>
+
+      <p>Here's why even a small conversion rate improvement matters at scale:</p>
+
+      <div class="math-box">
+        <h4>Revenue Impact of a 1-Point Conversion Lift</h4>
+        <p>10,000 sessions/month × 10% unit session % × $40 AOV = <strong>$40,000/month</strong></p>
+        <p>10,000 sessions/month × 11% unit session % × $40 AOV = <strong>$44,000/month</strong></p>
+        <p>That one-point improvement = 100 extra orders/month = $4,000 more revenue/month = <strong>$48,000 more per year.</strong></p>
+      </div>
+
+      <p>A one-point conversion rate improvement doesn't sound exciting until you do the math. On a listing with real traffic, it can be worth tens of thousands of dollars a year — without spending an extra dollar on ads. That's why getting to the right test matters more than running a lot of tests.</p>
+
+      <h2>What to Measure After the Test</h2>
+
+      <p>Don't just look at total sales when the experiment ends. Look at the full picture:</p>
+
+      <ul>
+        <li>Unit session percentage (your primary conversion metric)</li>
+        <li>Sessions and click-through rate where available</li>
+        <li>Ad conversion rate and TACoS — a listing improvement should reduce your cost to acquire an organic sale over time</li>
+        <li>Keyword ranking movement on your top terms</li>
+        <li>Organic sales as a share of total revenue</li>
+        <li>Buy Box percentage</li>
+      </ul>
+
+      <p>Sometimes a listing change improves conversion but total sales don't immediately spike — because traffic changed, inventory shifted, or ads were adjusted in the same window. That's why you need to isolate the metrics tied to your specific hypothesis rather than looking at the revenue number alone.</p>
+
+      <p>Roll out the winner. Then repeat. The best Amazon brands aren't doing one big listing rewrite per year. They're continuously testing based on real data. The full loop — pull reports, diagnose, feed AI the right context, write a hypothesis, run the experiment, measure, roll out, repeat — is what separates brands that compound over time from brands that stay flat. To see how this fits into a full advertising strategy, see our guide on <a href="amazon-tacos-advertising.html" style="color:var(--blue);">using TACoS to measure whether your ads are actually working</a>.</p>
+
+      <h2>Start With One ASIN This Week</h2>
+
+      <p>Don't try to do your whole catalog. Pick one ASIN — ideally one that's getting real traffic but converting below where it should be. Pull the last 30–90 days of reports. Run the diagnostic prompt. Write the hypothesis. Set up the experiment.</p>
+
+      <p>The goal isn't to use AI to write a better listing. The goal is to use AI to understand why your listing is performing the way it is — and then be proactive about the fix before you've already lost the sales.</p>
+
+      <p>If you're pulling the data and not sure what the numbers are telling you, that's exactly what SellTru is here for. We help Amazon brands use Business Reports and listing experiments to find the changes that actually move unit session percentage, organic ranking, and bottom-line profit — ASIN by ASIN.</p>
+
+      <hr class="blog-divider">
+
+      <p style="font-size:15px;color:#64748B;margin-bottom:28px;">Want to understand the full advertising picture behind your listings? <a href="amazon-tacos-advertising.html" style="color:var(--blue);font-weight:600;">What TACoS actually tells you about your ads →</a></p>
+      <p style="font-size:15px;color:#64748B;margin-bottom:28px;">Not sure if an agency should be running this process for you? <a href="is-amazon-marketing-agency-worth-it.html" style="color:var(--blue);font-weight:600;">Is an Amazon marketing agency worth it? →</a></p>
+
+      <div class="blog-cta-box">
+        <h3>Not Sure Why Your Listing Isn't Converting?</h3>
+        <p>We'll pull your Business Reports, run the diagnostic, and show you exactly what to test first — free, with no obligation.</p>
+        <a class="btn btn-primary" href="../about.html#contact-form">Get a Free Listing Audit</a>
+      </div>
+
+      <div style="margin-top:40px;padding:18px 22px 18px 26px;background:#F8FAFC;border:1px solid #E2E8F0;border-left:3px solid #10B981;border-radius:0 12px 12px 0;" class="reveal">
+        <p style="margin:0;font-size:14px;color:#64748B;line-height:1.65;">Have experience with this? The SellTru blog accepts guest posts from Amazon sellers, agency pros, and ecommerce operators. <a href="../write-for-us.html" style="color:#1A56DB;font-weight:600;text-decoration:none;">See our submission guidelines &rarr;</a></p>
+      </div>
+
+    </div>
+  </main>
+
+  <selltru-footer></selltru-footer>
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

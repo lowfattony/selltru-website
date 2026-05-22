@@ -184,6 +184,92 @@
     }
   </style>
   <script src="/js/components.js" defer></script>
+
+  <style>
+    /* === AUDIT MODAL === */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10,14,35,0.88);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow-y: auto;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .modal-overlay.modal-active { opacity: 1; }
+    .modal-overlay[hidden]       { display: none !important; }
+    .modal-box {
+      background: #fff;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 640px;
+      padding: 40px 44px;
+      position: relative;
+      transform: translateY(20px);
+      transition: transform 0.25s ease;
+      max-height: calc(100vh - 40px);
+      overflow-y: auto;
+    }
+    .modal-overlay.modal-active .modal-box { transform: translateY(0); }
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      background: none;
+      border: none;
+      font-size: 28px;
+      line-height: 1;
+      cursor: pointer;
+      color: #94a3b8;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: color .15s, background .15s;
+    }
+    .modal-close:hover { color: var(--navy); background: rgba(0,0,0,.06); }
+    .modal-header { margin-bottom: 28px; padding-right: 28px; }
+    .modal-header h2 {
+      font-family: var(--font-head,'Plus Jakarta Sans',sans-serif);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--navy);
+      margin: 0 0 8px;
+      line-height: 1.25;
+    }
+    .modal-header p { font-size: 14px; color: #64748b; margin: 0; }
+    .modal-success {
+      text-align: center;
+      padding: 48px 20px;
+    }
+    .modal-success-icon {
+      width: 56px;
+      height: 56px;
+      background: #10B981;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: 700;
+      margin: 0 auto 20px;
+    }
+    .modal-success h3 {
+      font-family: var(--font-head,'Plus Jakarta Sans',sans-serif);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--navy);
+      margin: 0 0 10px;
+    }
+    .modal-success p { color: #64748b; font-size: 15px; margin: 0; }
+    @media (max-width:600px) {
+      .modal-box { padding: 28px 18px; }
+      .modal-header h2 { font-size: 18px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -228,7 +314,7 @@
             </p>
 
             <div class="hero-ctas">
-              <a class="btn btn-primary btn-lg" href="about.html#contact-form">Get a Free Audit</a>
+              <a class="btn btn-primary btn-lg" href="about.html#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
               <a class="btn btn-outline-white btn-lg" href="#services">See What We Do ↓</a>
             </div>
 
@@ -505,7 +591,7 @@
           <div class="pain-bridge-text">
             None of this is a you problem. It's a <span>specialist problem</span>. Most brands doing $1M to $20M don't have one.
           </div>
-          <a class="btn btn-primary" href="about.html#contact-form">Fix It With a Free Audit →</a>
+          <a class="btn btn-primary" href="about.html#contact-form" data-modal-trigger="audit">Fix It With a Free Audit →</a>
         </div>
       </div>
     </section>
@@ -766,7 +852,7 @@
         </div>
         <div class="stories-cta center reveal">
           <p class="stories-cta-text">Every brand above started with a free account audit. No pitch deck, no pressure. Just an honest look at what's actually happening in your account.</p>
-          <a href="about.html#contact-form" class="btn btn-primary">Request Your Free Audit</a>
+          <a href="about.html#contact-form" data-modal-trigger="audit" class="btn btn-primary">Request Your Free Audit</a>
         </div>
       </div>
     </section>
@@ -869,7 +955,7 @@
                 <div class="vs-include-item">Month-to-month after 90 days</div>
                 <div class="vs-include-item">No long-term lock-in</div>
               </div>
-              <a class="btn btn-primary btn-lg" href="about.html#contact-form">Get Your Free Audit</a>
+              <a class="btn btn-primary btn-lg" href="about.html#contact-form" data-modal-trigger="audit">Get Your Free Audit</a>
               <p class="vs-guarantee">Free audit. No commitment. Honest conversation.</p>
             </div>
           </div>
@@ -1021,7 +1107,7 @@
             <p class="section-tag">Common Questions</p>
             <h2 class="section-title">Real Questions.<br>Honest Answers.</h2>
             <p>These are the questions we actually get. If yours isn't here, just ask. We don't do sales scripts.</p>
-            <a class="btn btn-blue" href="about.html#contact-form">Talk to Our Team →</a>
+            <a class="btn btn-blue" href="about.html#contact-form" data-modal-trigger="audit">Talk to Our Team →</a>
           </div>
 
           <div class="faq-list reveal reveal-delay-1">
@@ -1109,7 +1195,7 @@
             <div class="gc-title">The Audit Is Free. The Conversation Is Honest.</div>
             <p class="gc-text">We'll look at your account and tell you what we'd actually do. No made-up benchmarks. No fluff. If we can help, we'll tell you how. If we're not the right fit, we'll tell you that too.</p>
           </div>
-          <a class="btn btn-primary btn-lg" href="about.html#contact-form" style="white-space:nowrap;">Claim Your Free Audit →</a>
+          <a class="btn btn-primary btn-lg" href="about.html#contact-form" data-modal-trigger="audit" style="white-space:nowrap;">Claim Your Free Audit →</a>
         </div>
 
       </div>
@@ -1157,7 +1243,7 @@
         <h2>You've Read Enough.<br>Let's Look at Your Account.</h2>
         <p>We'll dig into your Amazon or Walmart presence for free and tell you exactly what we'd fix first. No pitch decks, no obligation. If we're not the right fit, we'll say so.</p>
         <div class="cta-buttons">
-          <a class="btn btn-primary btn-lg" href="about.html#contact-form">Get Your Free Audit</a>
+          <a class="btn btn-primary btn-lg" href="about.html#contact-form" data-modal-trigger="audit">Get Your Free Audit</a>
           <a class="btn btn-outline-white btn-lg" href="tel:+19548692034">Call (954) 869-2034</a>
         </div>
       </div>
@@ -1169,5 +1255,173 @@
   <selltru-footer></selltru-footer>
 
   <script src="/js/main.js" defer></script>
+
+  <!-- ===== AUDIT MODAL ===== -->
+  <div id="audit-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Close modal" id="modal-close-btn">&times;</button>
+      <div class="modal-header">
+        <h2 id="modal-title">Request Your Free Marketplace Audit</h2>
+        <p>No pitch decks. No obligation. We'll look at your account and tell you exactly what we'd fix first.</p>
+      </div>
+      <form class="contact-form" id="modal-audit-form" action="https://formspree.io/f/xlgakqbq" method="POST" novalidate>
+        <input type="hidden" name="_next" value="https://selltru.com/audit-thanks">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="m-first-name">First Name *</label>
+            <input class="form-input" type="text" id="m-first-name" name="first-name" placeholder="John" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="m-last-name">Last Name *</label>
+            <input class="form-input" type="text" id="m-last-name" name="last-name" placeholder="Smith" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="m-email">Business Email *</label>
+          <input class="form-input" type="email" id="m-email" name="email" placeholder="john@yourbrand.com" required autocomplete="email">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="m-phone">Phone Number</label>
+            <input class="form-input" type="tel" id="m-phone" name="phone" placeholder="(555) 000-0000" autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="m-company">Company / Brand Name *</label>
+            <input class="form-input" type="text" id="m-company" name="company" placeholder="Your Brand LLC" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="m-marketplace">Which marketplace(s) do you need help with? *</label>
+          <select class="form-select" id="m-marketplace" name="marketplace" required>
+            <option value="" disabled selected>Select marketplace...</option>
+            <option value="amazon">Amazon only</option>
+            <option value="walmart">Walmart.com only</option>
+            <option value="both">Both Amazon &amp; Walmart.com</option>
+            <option value="new">I'm new to marketplaces</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="m-revenue">Annual marketplace revenue *</label>
+            <select class="form-select" id="m-revenue" name="revenue" required>
+              <option value="" disabled selected>Select range...</option>
+              <option value="pre-launch">Pre-launch / Not yet selling</option>
+              <option value="under-250k">Under $250K</option>
+              <option value="250k-1m">$250K &ndash; $1M</option>
+              <option value="1m-5m">$1M &ndash; $5M</option>
+              <option value="5m-20m">$5M &ndash; $20M</option>
+              <option value="over-20m">Over $20M</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="m-adspend">Monthly ad spend *</label>
+            <select class="form-select" id="m-adspend" name="adspend" required>
+              <option value="" disabled selected>Select range...</option>
+              <option value="none">Not running ads yet</option>
+              <option value="under-2k">Under $2K/mo</option>
+              <option value="2k-10k">$2K &ndash; $10K/mo</option>
+              <option value="10k-50k">$10K &ndash; $50K/mo</option>
+              <option value="50k-plus">$50K+/mo</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="m-message">What's your biggest marketplace challenge right now?</label>
+          <textarea class="form-textarea" id="m-message" name="message" rows="4" placeholder="e.g. ACOS is out of control, can't rank for key terms, launching a new product line..."></textarea>
+        </div>
+        <button type="submit" class="form-btn" id="modal-submit-btn">Send My Audit Request &rarr;</button>
+      </form>
+      <div class="modal-success" id="modal-success" hidden>
+        <div class="modal-success-icon">&#10003;</div>
+        <h3>We'll be in touch soon.</h3>
+        <p>Check your email &mdash; we'll follow up within one business day.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var overlay   = document.getElementById('audit-modal');
+      var closeBtn  = document.getElementById('modal-close-btn');
+      var form      = document.getElementById('modal-audit-form');
+      var success   = document.getElementById('modal-success');
+      var submitBtn = document.getElementById('modal-submit-btn');
+
+      if (!overlay) return; // safety guard
+
+      function openModal(e) {
+        e.preventDefault();
+        // Reset if a prior submission succeeded
+        if (success && !success.hidden) {
+          success.hidden = true;
+          form.hidden    = false;
+          form.reset();
+          submitBtn.disabled    = false;
+          submitBtn.textContent = 'Send My Audit Request →';
+        }
+        overlay.hidden = false;
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            overlay.classList.add('modal-active');
+          });
+        });
+        document.body.style.overflow = 'hidden';
+        var firstInput = overlay.querySelector('input:not([type="hidden"])');
+        if (firstInput) firstInput.focus();
+      }
+
+      function closeModal() {
+        overlay.classList.remove('modal-active');
+        document.body.style.overflow = '';
+        setTimeout(function() { overlay.hidden = true; }, 260);
+      }
+
+      // Wire all triggers
+      document.querySelectorAll('[data-modal-trigger="audit"]').forEach(function(el) {
+        el.addEventListener('click', openModal);
+      });
+
+      // Close on X
+      closeBtn.addEventListener('click', closeModal);
+
+      // Close on backdrop click
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeModal();
+      });
+
+      // Close on Escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !overlay.hidden) closeModal();
+      });
+
+      // Submit via fetch (stay on page, show inline success)
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        submitBtn.disabled    = true;
+        submitBtn.textContent = 'Sending…';
+        fetch(form.action, {
+          method:  'POST',
+          body:    new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        })
+        .then(function(res) {
+          if (res.ok) {
+            form.hidden    = true;
+            success.hidden = false;
+          } else {
+            submitBtn.disabled    = false;
+            submitBtn.textContent = 'Send My Audit Request →';
+            alert('Something went wrong. Please email us at contact@selltru.com.');
+          }
+        })
+        .catch(function() {
+          submitBtn.disabled    = false;
+          submitBtn.textContent = 'Send My Audit Request →';
+          alert('Something went wrong. Please email us at contact@selltru.com.');
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

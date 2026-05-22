@@ -72,3 +72,10 @@ echo -n "Your Proposed Title | SellTru" | wc -c
 ```
 
 The limit is 60 characters. If a proposed title is over 60, do not present it — shorten it first.
+
+### Rule 9: Never push to GitHub or deploy to the live site without explicit instruction
+Do not run `git push` under any circumstances unless Andrew has explicitly said to push in that conversation. This applies to all branches, including feature branches — pushing a branch still puts code on GitHub and is not Claude's decision to make.
+
+Committing locally is fine. Pushing is not, without direct instruction.
+
+If work is complete and ready to push, say so and wait for Andrew to confirm before running any `git push` command.

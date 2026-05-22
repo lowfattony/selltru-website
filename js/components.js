@@ -182,7 +182,7 @@ class SellTruFooter extends HTMLElement {
     </div>
   </div>
   <div class="sticky-strip-actions">
-    <a class="sticky-strip-cta" href="/about.html#contact-form">Get the Free Audit</a>
+    <a class="sticky-strip-cta" href="/about.html#contact-form" data-modal-trigger="audit">Get the Free Audit</a>
     <button class="sticky-strip-dismiss" id="strip-dismiss" aria-label="Dismiss">&times;</button>
   </div>
 </div>`;
@@ -192,6 +192,7 @@ class SellTruFooter extends HTMLElement {
     const dismiss = this.querySelector('#strip-dismiss');
     if (!strip || !dismiss) return;
     if (sessionStorage.getItem('strip-dismissed-' + location.pathname)) return;
+    if (document.getElementById('blog-sticky-bar')) return; // don't compete with blog bar
     let shown = false;
     window.addEventListener('scroll', () => {
       if (!shown && window.scrollY > 300) {

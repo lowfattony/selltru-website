@@ -104,6 +104,7 @@ class SellTruHeader extends HTMLElement {
   <input type="email" name="email">
   <input type="hidden" name="source">
 </form>`;
+    initAuditModal();
   }
 }
 
@@ -201,6 +202,148 @@ class SellTruFooter extends HTMLElement {
     dismiss.addEventListener('click', () => {
       strip.classList.remove('visible');
       sessionStorage.setItem('strip-dismissed-' + location.pathname, '1');
+    });
+  }
+}
+
+
+/* --- Audit Modal (shared across all pages) ------------------------------ */
+
+function initAuditModal() {
+  if (document.getElementById('audit-modal')) return; // already initialised
+
+  // ── CSS ──
+  var style = document.createElement('style');
+  style.textContent = [
+    '.modal-overlay{position:fixed;inset:0;z-index:1100;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(13,27,42,.72);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;transition:opacity .26s ease;pointer-events:none;}',
+    '.modal-overlay.modal-active{opacity:1;pointer-events:all;}',
+    '.modal-box{background:#fff;border-radius:20px;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;padding:40px 40px 36px;position:relative;transform:translateY(20px) scale(.98);transition:transform .26s cubic-bezier(.34,1.3,.64,1);}',
+    '.modal-overlay.modal-active .modal-box{transform:none;}',
+    '.modal-close{position:absolute;top:16px;right:16px;background:none;border:none;cursor:pointer;font-size:22px;line-height:1;color:#94A3B8;padding:6px 8px;border-radius:8px;transition:color .15s,background .15s;}',
+    '.modal-close:hover{color:#0D1B2A;background:rgba(0,0,0,.06);}',
+    '.modal-box h2{font-family:"Plus Jakarta Sans",-apple-system,sans-serif;font-size:22px;font-weight:800;color:#0D1B2A;margin-bottom:6px;}',
+    '.modal-box .modal-sub{font-size:14px;color:#64748B;margin-bottom:24px;}',
+    '.modal-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}',
+    '.modal-field{margin-bottom:12px;}',
+    '.modal-field label{display:block;font-size:12px;font-weight:600;color:#334155;text-transform:uppercase;letter-spacing:.04em;margin-bottom:5px;}',
+    '.modal-field input,.modal-field select,.modal-field textarea{width:100%;padding:10px 14px;border:1.5px solid #E2E8F0;border-radius:10px;font-size:14px;color:#1E293B;font-family:"Inter",-apple-system,sans-serif;background:#fff;transition:border-color .15s;}',
+    '.modal-field input:focus,.modal-field select:focus,.modal-field textarea:focus{outline:none;border-color:#1A56DB;}',
+    '.modal-field textarea{resize:vertical;min-height:72px;}',
+    '.modal-submit{width:100%;margin-top:8px;padding:14px;background:#FF6B35;color:#fff;font-family:"Plus Jakarta Sans",-apple-system,sans-serif;font-size:16px;font-weight:700;border:none;border-radius:12px;cursor:pointer;transition:background .2s;}',
+    '.modal-submit:hover{background:#E55A28;}',
+    '.modal-success{display:none;text-align:center;padding:20px 0;}',
+    '.modal-success .success-icon{font-size:40px;margin-bottom:12px;}',
+    '.modal-success h3{font-family:"Plus Jakarta Sans",-apple-system,sans-serif;font-size:20px;font-weight:800;color:#0D1B2A;margin-bottom:8px;}',
+    '.modal-success p{color:#64748B;font-size:14px;line-height:1.6;}',
+    '@media(max-width:520px){.modal-box{padding:28px 20px 24px;}.modal-row{grid-template-columns:1fr;}}'
+  ].join('');
+  document.head.appendChild(style);
+
+  // ── HTML ──
+  var overlay = document.createElement('div');
+  overlay.id = 'audit-modal';
+  overlay.className = 'modal-overlay';
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-modal', 'true');
+  overlay.setAttribute('aria-labelledby', 'modal-title');
+  overlay.hidden = true;
+  overlay.innerHTML = [
+    '<div class="modal-box">',
+    '  <button class="modal-close" id="modal-close-btn" aria-label="Close">&times;</button>',
+    '  <h2 id="modal-title">Get Your Free Amazon Audit</h2>',
+    '  <p class="modal-sub">We\'ll review your account and show you exactly where the waste is. Takes 2 minutes to request.</p>',
+    '  <div class="modal-success" id="modal-success">',
+    '    <div class="success-icon">&#10003;</div>',
+    '    <h3>Request received.</h3>',
+    '    <p>We\'ll review your account and be in touch within 1 business day.</p>',
+    '  </div>',
+    '  <form id="modal-audit-form" action="https://formspree.io/f/xlgakqbq" method="POST">',
+    '    <div class="modal-row">',
+    '      <div class="modal-field"><label for="m-fname">First Name</label><input type="text" id="m-fname" name="first_name" placeholder="Jane" required></div>',
+    '      <div class="modal-field"><label for="m-lname">Last Name</label><input type="text" id="m-lname" name="last_name" placeholder="Smith" required></div>',
+    '    </div>',
+    '    <div class="modal-field"><label for="m-email">Work Email</label><input type="email" id="m-email" name="email" placeholder="jane@brand.com" required></div>',
+    '    <div class="modal-field"><label for="m-brand">Brand / Company Name</label><input type="text" id="m-brand" name="brand_name" placeholder="Your brand name" required></div>',
+    '    <div class="modal-row">',
+    '      <div class="modal-field"><label for="m-revenue">Annual Amazon Revenue</label><select id="m-revenue" name="annual_revenue"><option value="">Select range</option><option>Under $500K</option><option>$500K - $1M</option><option>$1M - $3M</option><option>$3M - $5M</option><option>$5M+</option></select></div>',
+    '      <div class="modal-field"><label for="m-adspend">Monthly Ad Spend</label><select id="m-adspend" name="monthly_ad_spend"><option value="">Select range</option><option>Under $5K</option><option>$5K - $15K</option><option>$15K - $30K</option><option>$30K - $50K</option><option>$50K+</option></select></div>',
+    '    </div>',
+    '    <div class="modal-field"><label for="m-acos">Current ACoS (if known)</label><input type="text" id="m-acos" name="current_acos" placeholder="e.g. 35%"></div>',
+    '    <div class="modal-field"><label for="m-goal">Biggest Challenge Right Now</label><textarea id="m-goal" name="biggest_challenge" placeholder="e.g. ACOS keeps climbing, not sure why..."></textarea></div>',
+    '    <button type="submit" class="modal-submit">Request My Free Audit &rarr;</button>',
+    '  </form>',
+    '</div>'
+  ].join('');
+  document.body.appendChild(overlay);
+
+  // ── JS ──
+  function openModal(e) {
+    if (e) e.preventDefault();
+    var form = document.getElementById('modal-audit-form');
+    var success = document.getElementById('modal-success');
+    if (form) form.style.display = '';
+    if (success) success.style.display = 'none';
+    overlay.hidden = false;
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        overlay.classList.add('modal-active');
+      });
+    });
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    overlay.classList.remove('modal-active');
+    document.body.style.overflow = '';
+    setTimeout(function() { overlay.hidden = true; }, 260);
+  }
+
+  // expose globally so bar-cta onclick can call it
+  window.openAuditModal = openModal;
+
+  // close button
+  document.getElementById('modal-close-btn').addEventListener('click', closeModal);
+
+  // backdrop click
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeModal();
+  });
+
+  // Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !overlay.hidden) closeModal();
+  });
+
+  // event delegation — catches triggers added to DOM after init (e.g. sticky bar)
+  document.addEventListener('click', function(e) {
+    var trigger = e.target.closest('[data-modal-trigger="audit"]');
+    if (trigger) openModal(e);
+  });
+
+  // form submit
+  var form = document.getElementById('modal-audit-form');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = form.querySelector('.modal-submit');
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function(r) {
+        if (r.ok) {
+          form.style.display = 'none';
+          var s = document.getElementById('modal-success');
+          if (s) s.style.display = 'block';
+        } else {
+          if (btn) { btn.disabled = false; btn.textContent = 'Request My Free Audit →'; }
+          alert('Something went wrong. Please email us at contact@selltru.com');
+        }
+      }).catch(function() {
+        if (btn) { btn.disabled = false; btn.textContent = 'Request My Free Audit →'; }
+        alert('Something went wrong. Please email us at contact@selltru.com');
+      });
     });
   }
 }

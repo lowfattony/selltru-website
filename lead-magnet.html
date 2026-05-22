@@ -346,9 +346,13 @@
       outline: none;
       box-sizing: border-box;
       font-family: var(--font-body);
+      color: var(--navy); background: #fff; -webkit-appearance: none; -webkit-text-fill-color: var(--navy);
       transition: border-color 0.15s;
     }
-    .audit-popup .form-input:focus { border-color: var(--orange); }
+    .audit-popup .form-input:focus { border-color: var(--orange);
+    }
+    .form-input::placeholder { color: #9CA3AF; opacity: 1; }
+    .form-input:focus { }
     .audit-popup .popup-btn {
       width: 100%;
       background: var(--orange);
@@ -377,6 +381,7 @@
     @media (max-width: 480px) {
       .audit-popup { width: calc(100vw - 32px); right: 16px; bottom: 16px; }
     }
+      @media(max-width:600px){ .checklist-section { padding: 48px 0 56px; } }
   </style>
   <script type="application/ld+json">
   {

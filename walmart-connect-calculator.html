@@ -68,7 +68,8 @@
     .form-group { display: flex; flex-direction: column; gap: 7px; }
     .form-group label { font-size: 13px; font-weight: 600; color: var(--navy); }
     .form-group .hint { font-size: 12px; color: var(--text-light); margin-top: -4px; }
-    .form-control { width: 100%; padding: 11px 14px; border: 1.5px solid var(--gray-200); border-radius: 10px; font-size: 15px; color: var(--navy); font-family: var(--font-body); background: var(--gray-50); transition: border-color 0.2s, background 0.2s; box-sizing: border-box; }
+    .form-control { width: 100%; padding: 11px 14px; border: 1.5px solid var(--gray-200); border-radius: 10px; font-size: 15px; color: var(--navy); -webkit-text-fill-color: var(--navy); font-family: var(--font-body); background: var(--gray-50); -webkit-appearance: none; transition: border-color 0.2s, background 0.2s; box-sizing: border-box; }
+    .form-control::placeholder { color: var(--text-light); opacity: 1; }
     .form-control:focus { outline: none; border-color: var(--blue); background: #fff; }
     .input-prefix { position: relative; }
     .input-prefix .prefix { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); font-size: 15px; color: var(--text-light); font-weight: 600; pointer-events: none; }
@@ -166,6 +167,7 @@
 
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
     .revealed { opacity: 1; transform: none; }
+      @media(max-width:600px){ .calc-hero { padding: 56px 0 48px; } .mode-btn { padding: 14px 12px; font-size: 13px; } }
   </style>
 
   <script src="/js/components.js" defer></script>
@@ -345,7 +347,8 @@
           <h2>How These Numbers Are Calculated</h2>
           <p>Every number in this calculator comes from benchmarks built across 60+ Walmart seller accounts. The CPC ranges are mid-points from what we see in Walmart Connect campaigns by category. The ROAS projections reflect the three-phase trajectory most accounts follow - not best-case scenarios.</p>
 
-          <table class="data-table">
+          <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:20px 0 28px;">
+          <table class="data-table" style="margin:0;">
             <thead>
               <tr>
                 <th>Category</th>
@@ -360,6 +363,7 @@
               <tr><td>High-Intent / Branded</td><td>$1.50 – $2.50</td><td>$2.00 midpoint</td></tr>
             </tbody>
           </table>
+          </div>
 
           <p>The ROAS values in this calculator (1.8x, 2.8x, 4.2x by phase) come directly from real account data across the 60+ Walmart brands we manage. They reflect total account ROAS: ad-attributed revenue plus the organic lift that builds as paid velocity signals relevance to Walmart's algorithm. This is why Phase 3 ROAS is meaningfully higher than Phase 1 - it's not just better ad efficiency, it's organic rank compounding on top of paid. The calculator assumes WFS enrollment and a content quality score above 90. Without those, real-world results will be lower.</p>
 

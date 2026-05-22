@@ -74,11 +74,100 @@
     ]
   }
   </script>
+
+  <!-- Sticky Blog CTA Bar -->
+  <style>
+    #blog-sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 800;
+      background: #0D1B2A;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      transform: translateY(100%);
+      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.35);
+    }
+    #blog-sticky-bar.bar-visible { transform: translateY(0); }
+    #blog-sticky-bar.bar-hidden { display: none; }
+    .bar-text {
+      color: rgba(255,255,255,0.85);
+      font-size: 14px;
+      font-family: 'Inter',-apple-system,sans-serif;
+      line-height: 1.4;
+    }
+    .bar-text strong { color: #fff; font-weight: 700; }
+    .bar-cta {
+      display: inline-block;
+      background: #FF6B35;
+      color: #fff;
+      font-family: 'Plus Jakarta Sans',-apple-system,sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+    .bar-cta:hover { background: #E55A28; }
+    .bar-dismiss {
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.45);
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 1;
+      padding: 4px 6px;
+      border-radius: 4px;
+      flex-shrink: 0;
+      transition: color 0.2s;
+    }
+    .bar-dismiss:hover { color: rgba(255,255,255,0.85); }
+    @media (max-width: 600px) {
+      #blog-sticky-bar { flex-wrap: wrap; gap: 10px; padding: 12px 16px; }
+      .bar-text { font-size: 13px; }
+    }
+  </style>
 </head>
 <body>
 
   
   <selltru-header></selltru-header>
+  <!-- Sticky Blog CTA Bar -->
+  <div id="blog-sticky-bar" aria-label="Free audit offer">
+    <p class="bar-text"><strong>Free Amazon PPC Audit</strong> — We'll review your account and show you exactly where the waste is.</p>
+    <a href="/about#contact-form" class="bar-cta">Get Free Audit &rarr;</a>
+    <button class="bar-dismiss" id="bar-close" aria-label="Dismiss">&times;</button>
+  </div>
+  <script>
+    (function(){
+      var bar = document.getElementById('blog-sticky-bar');
+      if (!bar) return;
+      if (sessionStorage.getItem('bar-dismissed') === '1') { bar.classList.add('bar-hidden'); return; }
+      var shown = false;
+      function onScroll() {
+        if (!shown && window.scrollY > 300) {
+          shown = true;
+          bar.classList.add('bar-visible');
+          window.removeEventListener('scroll', onScroll);
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      document.getElementById('bar-close').addEventListener('click', function() {
+        bar.classList.remove('bar-visible');
+        setTimeout(function(){ bar.classList.add('bar-hidden'); }, 350);
+        sessionStorage.setItem('bar-dismissed', '1');
+      });
+    })();
+  </script>
 
 
   <main>
@@ -188,13 +277,4 @@
         <a class="btn btn-primary" href="../about.html#contact-form">Get a Free Listing Audit</a>
       </div>
       <div style="margin-top:40px;padding:18px 22px 18px 26px;background:#F8FAFC;border:1px solid #E2E8F0;border-left:3px solid #10B981;border-radius:0 12px 12px 0;" class="reveal">
-        <p style="margin:0;font-size:14px;color:#64748B;line-height:1.65;">Have experience with this? The SellTru blog accepts guest posts from Amazon sellers, agency pros, and ecommerce operators. <a href="../write-for-us.html" style="color:#1A56DB;font-weight:600;text-decoration:none;">See our submission guidelines &rarr;</a></p>
-      </div>
-
-    </div>
-  </main>
-  <selltru-footer></selltru-footer>
-
-  <script src="/js/main.js" defer></script>
-</body>
-</html>
+        <p style="margin:0;font-size:14px;color:#64748B;line-height:1.65;">Have experience with this? The SellTru blog accepts guest posts from Amazon sellers, agency pros, and ecommerce operators. <a href="../write-for-us.html" style="color:#1A56DB;font-weight:600;text-deco

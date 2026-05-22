@@ -1,0 +1,33 @@
+[1mdiff --git a/blog.html b/blog.html[m
+[1mindex 1460e25..452ca4f 100644[m
+[1m--- a/blog.html[m
+[1m+++ b/blog.html[m
+[36m@@ -271,6 +271,7 @@[m
+       .blog-grid { grid-template-columns: 1fr; }[m
+       .blog-wfu-inner { flex-direction: column; align-items: flex-start; padding: 28px 24px; }[m
+     }[m
+[32m+[m[32m      @media(max-width:600px){ .blog-hero { padding: 56px 0 48px; } .blog-section { padding: 48px 0 56px; } .blog-cta-section { padding: 48px 0 56px; } }[m
+   </style>[m
+   <script type="application/ld+json">[m
+   {[m
+[36m@@ -321,20 +322,6 @@[m
+ [m
+         <div class="blog-grid" id="blog-grid">[m
+ [m
+[31m-          <!-- Post 26 -->[m
+[31m-          <article class="blog-card reveal" data-category="walmart">[m
+[31m-            <div class="blog-card-thumb wmt">[m
+[31m-              <span aria-hidden="true">📊</span>[m
+[31m-              <span class="blog-card-eyebrow">Walmart Advertising</span>[m
+[31m-              <span class="blog-card-read-time">8 min</span>[m
+[31m-            </div>[m
+[31m-            <div class="blog-card-body">[m
+[31m-              <h2 class="blog-card-title">Walmart Connect vs. Amazon Ads: ROAS, CPC, and Performance Compared</h2>[m
+[31m-              <p class="blog-card-excerpt">Walmart Connect is not Amazon ads with a smaller budget. Here is how the two platforms actually compare on ROAS, CPC, data speed, and campaign strategy — and which brands should add Walmart Connect to their ad mix.</p>[m
+[31m-              <a class="blog-card-link" href="blog/walmart-connect-vs-amazon-ads.html">Read Article →</a>[m
+[31m-            </div>[m
+[31m-          </article>[m
+[31m-[m
+           <!-- Post 25 -->[m
+           <article class="blog-card reveal" data-category="strategy">[m
+             <div class="blog-card-thumb amz">[m

@@ -151,6 +151,8 @@
       #blog-sticky-bar { flex-wrap: wrap; gap: 10px; padding: 12px 16px; }
       .bar-text { font-size: 13px; }
     }
+    @keyframes bar-shake { 0%,100%{transform:translateX(0)} 15%,45%,75%{transform:translateX(-5px)} 30%,60%{transform:translateX(5px)} }
+    .bar-cta-shake { animation:bar-shake 0.55s ease-in-out; }
   </style>
 </head>
 <body>
@@ -158,8 +160,8 @@
   <selltru-header></selltru-header>
   <!-- Sticky Blog CTA Bar -->
   <div id="blog-sticky-bar" aria-label="Free audit offer">
-    <p class="bar-text"><strong>Free Amazon PPC Audit</strong> — We'll review your account and show you exactly where the waste is.</p>
-    <a href="/about#contact-form" class="bar-cta" data-modal-trigger="audit">Get Free Audit &rarr;</a>
+    <p class="bar-text"><strong>Free Amazon PPC Audit</strong> — Most accounts waste 25%+ on bad targeting. We'll find yours in 15 minutes.</p>
+    <a href="/about#contact-form" class="bar-cta" data-modal-trigger="audit">Claim My Free Audit &rarr;</a>
     <button class="bar-dismiss" id="bar-close" aria-label="Dismiss">&times;</button>
   </div>
   <script>
@@ -173,6 +175,7 @@
           shown = true;
           bar.classList.add('bar-visible');
           window.removeEventListener('scroll', onScroll);
+          setTimeout(function(){var btn=bar.querySelector('.bar-cta');if(btn){btn.classList.add('bar-cta-shake');btn.addEventListener('animationend',function(){btn.classList.remove('bar-cta-shake');},{once:true});setTimeout(function(){btn.classList.add('bar-cta-shake');btn.addEventListener('animationend',function(){btn.classList.remove('bar-cta-shake');},{once:true});},8000);}},2500);
         }
       }
       window.addEventListener('scroll', onScroll, { passive: true });
@@ -369,4 +372,21 @@
       </div>
 
       <div style="margin-top:40px;padding:18px 22px 18px 26px;background:#F8FAFC;border:1px solid #E2E8F0;border-left:3px solid #10B981;border-radius:0 12px 12px 0;" class="reveal">
-        <p style="margin:0;font-size:14px;color:#64748B;line-height:1.65;">Have experience with this? The SellTru blog accepts guest posts from Amazon sellers, agency pros, and ecommerc
+        <p style="margin:0;font-size:14px;color:#64748B;line-height:1.65;">Have experience with this? The SellTru blog accepts guest posts from Amazon sellers, agency pros, and ecommerce operators. <a href="../write-for-us.html" style="color:#1A56DB;font-weight:600;text-decoration:none;">See our submission guidelines &rarr;</a></p>
+      </div>
+
+    </div>
+  </main>
+
+  <selltru-footer></selltru-footer>
+
+  <!-- Reveal scroll animation — do not edit -->
+  <script>
+    var ro = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('revealed'); ro.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function(el){ ro.observe(el); });
+  </script>
+
+</body>
+</html>

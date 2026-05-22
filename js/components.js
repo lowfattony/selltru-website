@@ -71,7 +71,7 @@ class SellTruHeader extends HTMLElement {
         <a class="nav-link${activeClass('/about.html')}" href="/about.html">About</a>
         <a class="nav-link" href="/about.html#contact-form">Contact</a>
       </nav>
-      <a class="nav-cta" href="/about.html#contact-form">Get Free Audit</a>
+      <a class="nav-cta" href="/about.html#contact-form" data-modal-trigger="audit">Get Free Audit</a>
       <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>

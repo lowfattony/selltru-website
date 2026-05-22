@@ -1432,9 +1432,9 @@
         setTimeout(function() { overlay.hidden = true; }, 260);
       }
 
-      // Wire all triggers
-      document.querySelectorAll('[data-modal-trigger="audit"]').forEach(function(el) {
-        el.addEventListener('click', openModal);
+      // Wire all triggers — event delegation so deferred nav CTA is also caught
+      document.addEventListener('click', function(e) {
+        if (e.target.closest('[data-modal-trigger="audit"]')) openModal(e);
       });
 
       // Close on X

@@ -6,4 +6,5 @@ document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector
       window.gtag&&gtag("event","cta_click",{"event_category":"engagement","event_label":"audit_cta"});
     }
   });
+const wfuBtn=document.getElementById("wfu-submit-btn");if(wfuBtn){const wfuBoxes=document.querySelectorAll("#wfu-form input[type='checkbox']");function wfuCheck(){wfuBtn.disabled=[...wfuBoxes].some(cb=>!cb.checked);}wfuBoxes.forEach(cb=>cb.addEventListener("change",wfuCheck));}
 });

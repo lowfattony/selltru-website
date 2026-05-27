@@ -258,20 +258,23 @@ function initAuditModal() {
     '    <h3>Request received.</h3>',
     '    <p>We\'ll review your account and be in touch within 1 business day.</p>',
     '  </div>',
-    '  <form id="modal-audit-form" action="#" method="POST">',
+    '  <form id="modal-audit-form" class="contact-form" action="#" method="POST" novalidate>',
     '    <div class="modal-row">',
-    '      <div class="modal-field"><label for="m-fname">First Name</label><input type="text" id="m-fname" name="first_name" placeholder="Jane" required></div>',
-    '      <div class="modal-field"><label for="m-lname">Last Name</label><input type="text" id="m-lname" name="last_name" placeholder="Smith" required></div>',
+    '      <div class="modal-field"><label class="form-label" for="m-fname">First Name *</label><input class="form-input" type="text" id="m-fname" name="first-name" placeholder="Jane" required></div>',
+    '      <div class="modal-field"><label class="form-label" for="m-lname">Last Name *</label><input class="form-input" type="text" id="m-lname" name="last-name" placeholder="Smith" required></div>',
     '    </div>',
-    '    <div class="modal-field"><label for="m-email">Work Email</label><input type="email" id="m-email" name="email" placeholder="jane@brand.com" required></div>',
-    '    <div class="modal-field"><label for="m-brand">Brand / Company Name</label><input type="text" id="m-brand" name="brand_name" placeholder="Your brand name" required></div>',
     '    <div class="modal-row">',
-    '      <div class="modal-field"><label for="m-revenue">Annual Amazon Revenue</label><select id="m-revenue" name="annual_revenue"><option value="">Select range</option><option>Under $500K</option><option>$500K - $1M</option><option>$1M - $3M</option><option>$3M - $5M</option><option>$5M+</option></select></div>',
-    '      <div class="modal-field"><label for="m-adspend">Monthly Ad Spend</label><select id="m-adspend" name="monthly_ad_spend"><option value="">Select range</option><option>Under $5K</option><option>$5K - $15K</option><option>$15K - $30K</option><option>$30K - $50K</option><option>$50K+</option></select></div>',
+    '      <div class="modal-field"><label class="form-label" for="m-email">Work Email *</label><input class="form-input" type="email" id="m-email" name="email" placeholder="jane@brand.com" required></div>',
+    '      <div class="modal-field"><label class="form-label" for="m-phone">Phone <span style=\'font-weight:400;opacity:.7\'>(optional)</span></label><input class="form-input" type="tel" id="m-phone" name="phone" placeholder="(555) 000-0000"></div>',
     '    </div>',
-    '    <div class="modal-field"><label for="m-acos">Current ACoS (if known)</label><input type="text" id="m-acos" name="current_acos" placeholder="e.g. 35%"></div>',
-    '    <div class="modal-field"><label for="m-goal">Biggest Challenge Right Now</label><textarea id="m-goal" name="biggest_challenge" placeholder="e.g. ACOS keeps climbing, not sure why..."></textarea></div>',
-    '    <button type="submit" class="modal-submit">Request My Free Audit &rarr;</button>',
+    '    <div class="modal-field"><label class="form-label" for="m-company">Company / Brand Name *</label><input class="form-input" type="text" id="m-company" name="company" placeholder="Your Brand LLC" required></div>',
+    '    <div class="modal-field"><label class="form-label" for="m-marketplace">Which marketplace(s) do you need help with? *</label><select class="form-select" id="m-marketplace" name="marketplace" required><option value="" disabled selected>Select marketplace...</option><option value="amazon">Amazon only</option><option value="walmart">Walmart.com only</option><option value="both">Both Amazon &amp; Walmart.com</option></select></div>',
+    '    <div class="modal-row">',
+    '      <div class="modal-field"><label class="form-label" for="m-revenue">Annual marketplace revenue *</label><select class="form-select" id="m-revenue" name="revenue" required><option value="" disabled selected>Select range...</option><option value="pre-launch">Pre-launch / Not yet selling</option><option value="under-250k">Under $250K</option><option value="250k-1m">$250K &ndash; $1M</option><option value="1m-5m">$1M &ndash; $5M</option><option value="5m-20m">$5M &ndash; $20M</option><option value="over-20m">Over $20M</option></select></div>',
+    '      <div class="modal-field"><label class="form-label" for="m-adspend">Monthly ad spend *</label><select class="form-select" id="m-adspend" name="adspend" required><option value="" disabled selected>Select range...</option><option value="none">Not running ads yet</option><option value="under-2k">Under $2K/mo</option><option value="2k-10k">$2K &ndash; $10K/mo</option><option value="10k-50k">$10K &ndash; $50K/mo</option><option value="50k-plus">$50K+/mo</option></select></div>',
+    '    </div>',
+    '    <div class="modal-field"><label class="form-label" for="m-message">What\'s your biggest marketplace challenge right now?</label><textarea class="form-textarea" id="m-message" name="message" rows="3" placeholder="e.g. ACOS is out of control, can\'t rank for key terms..."></textarea></div>',
+    '    <button type="submit" class="modal-submit">Send My Audit Request &rarr;</button>',
     '  </form>',
     '</div>'
   ].join('');
@@ -328,7 +331,7 @@ function initAuditModal() {
       e.preventDefault();
       var btn = form.querySelector('.modal-submit');
       if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
-      var nameMap = {'first_name':'firstname','last_name':'lastname','email':'email','brand_name':'company','annual_revenue':'annual_revenue_range','monthly_ad_spend':'monthly_ad_spend','current_acos':'current_acos','biggest_challenge':'message'};
+      var nameMap = {'first-name':'firstname','last-name':'lastname','email':'email','phone':'phone','company':'company','marketplace':'marketplaces','revenue':'annual_revenue_range','adspend':'monthly_ad_spend','acos':'current_acos','message':'message'};
       var fields = [];
       var fd = new FormData(form);
       fd.forEach(function(value, key) {

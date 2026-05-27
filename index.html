@@ -1449,22 +1449,7 @@
         if (e.key === 'Escape' && !overlay.hidden) closeModal();
       });
 
-      // Submit via HubSpot Forms API
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        if (!form.checkValidity()) { form.reportValidity(); return; }
-        submitBtn.disabled    = true;
-        submitBtn.textContent = 'Sending…';
-        submitToHubSpot(form, function() {
-          window.gtag && gtag('event', 'generate_lead', {'event_category': 'conversion', 'event_label': 'modal_audit_form'});
-          form.hidden    = true;
-          success.hidden = false;
-        }, function() {
-          submitBtn.disabled    = false;
-          submitBtn.textContent = 'Send My Audit Request →';
-          alert('Something went wrong. Please email us at contact@selltru.com.');
-        });
-      });
+      // Form submission handled by main.js
     })();
   </script>
 </body>

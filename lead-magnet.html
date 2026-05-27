@@ -429,9 +429,7 @@
           <div class="lm-form-card">
             <h3>Want Us to Run the Audit For You?</h3>
             <p>Use the checklist yourself — or let SellTru do it. A free professional audit takes about 48 hours and covers everything below, plus competitive analysis.</p>
-            <form class="lm-audit-form" action="https://formspree.io/f/xlgakqbq" method="POST">
-              <input type="hidden" name="_next" value="https://selltru.com/lead-magnet.html">
-              <input type="hidden" name="_subject" value="New Free Audit Request — SellTru">
+            <form class="lm-audit-form" action="#" method="POST">
               <div class="form-group">
                 <label class="form-label" for="lm-name">Your Name *</label>
                 <input class="form-input" type="text" id="lm-name" name="name" placeholder="Jane Smith" required>
@@ -960,9 +958,7 @@
       <span class="audit-popup-emoji">&#128064;</span>
       <h4>You're finding issues. Want us to fix them?</h4>
       <p>Drop your email and we'll send a custom audit based on the gaps you're flagging — no charge.</p>
-      <form id="popup-form" action="https://formspree.io/f/xlgakqbq" method="POST">
-        <input type="hidden" name="_subject" value="Checklist Popup — Audit Request">
-        <input type="hidden" name="source" value="checklist-popup">
+      <form id="popup-form" action="#" method="POST">
         <div class="form-group">
           <input class="form-input" type="text" name="name" placeholder="Your name" required>
         </div>
@@ -1042,7 +1038,18 @@
       submitBtn.textContent = 'Sending…';
       submitBtn.disabled = true;
       var data = new FormData(form);
-      fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+      var fields = [];
+      var nameMap = {'name': 'firstname', 'email': 'email'};
+      data.forEach(function(value, key) {
+        if (key.charAt(0) === '_' || key === 'source') return;
+        var hsName = nameMap[key] || key;
+        if (value) fields.push({ objectTypeId: '0-1', name: hsName, value: value });
+      });
+      fetch('https://api.hsforms.com/submissions/v3/integration/submit/246322145/afb91a90-3757-489a-ba33-d5588bd111c0', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fields: fields, context: { pageUri: window.location.href, pageName: document.title } })
+      })
         .then(function (res) {
           if (res.ok) {
             formView.hidden = true;

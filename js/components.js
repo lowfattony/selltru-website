@@ -258,7 +258,7 @@ function initAuditModal() {
     '    <h3>Request received.</h3>',
     '    <p>We\'ll review your account and be in touch within 1 business day.</p>',
     '  </div>',
-    '  <form id="modal-audit-form" action="https://formspree.io/f/xlgakqbq" method="POST">',
+    '  <form id="modal-audit-form" action="#" method="POST">',
     '    <div class="modal-row">',
     '      <div class="modal-field"><label for="m-fname">First Name</label><input type="text" id="m-fname" name="first_name" placeholder="Jane" required></div>',
     '      <div class="modal-field"><label for="m-lname">Last Name</label><input type="text" id="m-lname" name="last_name" placeholder="Smith" required></div>',
@@ -328,10 +328,17 @@ function initAuditModal() {
       e.preventDefault();
       var btn = form.querySelector('.modal-submit');
       if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
-      fetch(form.action, {
+      var nameMap = {'first_name':'firstname','last_name':'lastname','email':'email','brand_name':'company','annual_revenue':'selltru_revenue','monthly_ad_spend':'selltru_adspend','current_acos':'selltru_acos','biggest_challenge':'message'};
+      var fields = [];
+      var fd = new FormData(form);
+      fd.forEach(function(value, key) {
+        var hsName = nameMap[key] || key;
+        if (value) fields.push({ objectTypeId: '0-1', name: hsName, value: value });
+      });
+      fetch('https://api.hsforms.com/submissions/v3/integration/submit/246322145/afb91a90-3757-489a-ba33-d5588bd111c0', {
         method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fields: fields, context: { pageUri: window.location.href, pageName: document.title } })
       }).then(function(r) {
         if (r.ok) {
           form.style.display = 'none';

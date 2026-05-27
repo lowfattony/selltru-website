@@ -93,7 +93,7 @@ class SellTruHeader extends HTMLElement {
       <span class="email-bar-text">Get the Amazon Audit Checklist we use on every account we take over.</span>
     </div>
     <form class="email-bar-form" id="email-bar-form" novalidate>
-      <input type="email" name="email" class="email-bar-input" placeholder="Your work email" required autocomplete="email">
+      <input type="email" name="email" class="email-bar-input" placeholder="Your work email" aria-label="Your work email" required autocomplete="email">
       <button type="submit" class="email-bar-btn">Send It</button>
     </form>
     <button class="email-bar-dismiss" id="email-bar-dismiss" aria-label="Dismiss">&times;</button>

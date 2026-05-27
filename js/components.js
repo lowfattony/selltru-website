@@ -328,7 +328,7 @@ function initAuditModal() {
       e.preventDefault();
       var btn = form.querySelector('.modal-submit');
       if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
-      var nameMap = {'first_name':'firstname','last_name':'lastname','email':'email','brand_name':'company','annual_revenue':'selltru_revenue','monthly_ad_spend':'selltru_adspend','current_acos':'selltru_acos','biggest_challenge':'message'};
+      var nameMap = {'first_name':'firstname','last_name':'lastname','email':'email','brand_name':'company','annual_revenue':'annual_revenue_range','monthly_ad_spend':'monthly_ad_spend','current_acos':'current_acos','biggest_challenge':'message'};
       var fields = [];
       var fd = new FormData(form);
       fd.forEach(function(value, key) {

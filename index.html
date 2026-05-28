@@ -252,6 +252,7 @@
       border-radius: 8px;
       overflow: hidden;
     }
+    .modal-box-calendly { max-width: 700px !important; }
     .modal-success-icon {
       width: 56px;
       height: 56px;
@@ -1427,6 +1428,8 @@
           form.reset();
           submitBtn.disabled    = false;
           submitBtn.textContent = 'Send My Audit Request →';
+          var mb = document.querySelector('.modal-box');
+          if (mb) mb.classList.remove('modal-box-calendly');
         }
         overlay.hidden = false;
         requestAnimationFrame(function() {
@@ -1472,6 +1475,8 @@
           mutations.forEach(function(m) {
             if (m.attributeName === 'hidden' && !calSuccessEl.hasAttribute('hidden')) {
               if (window.Calendly) Calendly.initInlineWidgets();
+              var mb = document.querySelector('.modal-box');
+              if (mb) mb.classList.add('modal-box-calendly');
             }
           });
         }).observe(calSuccessEl, { attributes: true });

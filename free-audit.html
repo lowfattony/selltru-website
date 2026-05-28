@@ -903,20 +903,15 @@
       if (!valid) return;
       btn.disabled = true;
       btn.textContent = 'Submitting...';
-      var fields = [];
-      var nameMap = {
-        'first-name':'firstname','last-name':'lastname','email':'email',
-        'phone':'phone','company':'company','marketplace':'marketplaces',
-        'revenue':'annual_revenue_range','adspend':'monthly_ad_spend'
-      };
+      var data = {};
       new FormData(this).forEach(function(v, k) {
-        var n = nameMap[k] || k;
-        if (v) fields.push({objectTypeId:'0-1', name:n, value:v});
+        if (k.charAt(0) === '_' || k === 'source') return;
+        if (v) data[k] = v;
       });
-      fetch('https://api.hsforms.com/submissions/v3/integration/submit/246322145/afb91a90-3757-489a-ba33-d5588bd111c0', {
+      fetch('https://formspree.io/f/xlgakqbq', {
         method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({fields:fields, context:{pageUri:location.href, pageName:document.title}})
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify(data)
       })
       .then(function(r) {
         if (r.ok) {
@@ -984,12 +979,11 @@
       });
       if (!valid) return;
       btn.disabled = true; btn.textContent = 'Submitting...';
-      var fields = [];
-      var nameMap = {'first-name':'firstname','last-name':'lastname','email':'email','phone':'phone','company':'company','marketplace':'marketplaces','revenue':'annual_revenue_range','adspend':'monthly_ad_spend'};
-      new FormData(this).forEach(function(v,k){ var n=nameMap[k]||k; if(v) fields.push({objectTypeId:'0-1',name:n,value:v}); });
-      fetch('https://api.hsforms.com/submissions/v3/integration/submit/246322145/afb91a90-3757-489a-ba33-d5588bd111c0',{
-        method:'POST',headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({fields:fields,context:{pageUri:location.href,pageName:document.title}})
+      var data = {};
+      new FormData(this).forEach(function(v,k){ if(k.charAt(0)==='_'||k==='source')return; if(v) data[k]=v; });
+      fetch('https://formspree.io/f/xlgakqbq',{
+        method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify(data)
       }).then(function(r){
         if(r.ok){
           if(window.gtag) gtag('event','generate_lead',{event_category:'conversion',event_label:'lp_inline_form'});

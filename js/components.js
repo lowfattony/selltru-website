@@ -234,8 +234,10 @@ function initAuditModal() {
     '.modal-submit:hover{background:#E55A28;}',
     '.modal-success{display:none;text-align:center;padding:20px 0;}',
     '.modal-success .success-icon{font-size:40px;margin-bottom:12px;}',
-    '.modal-success h3{font-family:"Plus Jakarta Sans",-apple-system,sans-serif;font-size:20px;font-weight:800;color:#0D1B2A;margin-bottom:8px;}',
-    '.modal-success p{color:#64748B;font-size:14px;line-height:1.6;}',
+        '.modal-success p{color:#64748B;font-size:14px;line-height:1.6;}',
+'.modal-success h3{font-family:"Plus Jakarta Sans",-apple-system,sans-serif;font-size:20px;font-weight:800;color:#0D1B2A;margin-bottom:8px;}',
+'.modal-success .calendly-inline-widget{margin-top:14px;border-radius:8px;overflow:hidden;}',
+'.modal-box-calendly{max-width:700px !important;}',
     '@media(max-width:520px){.modal-box{padding:28px 20px 24px;}.modal-row{grid-template-columns:1fr;}}'
   ].join('');
   document.head.appendChild(style);
@@ -254,9 +256,9 @@ function initAuditModal() {
     '  <h2 id="modal-title">Get Your Free Amazon Audit</h2>',
     '  <p class="modal-sub">We\'ll review your account and show you exactly where the waste is. Takes 2 minutes to request.</p>',
     '  <div class="modal-success" id="modal-success">',
-    '    <div class="success-icon">&#10003;</div>',
-    '    <h3>Request received.</h3>',
-    '    <p>We\'ll review your account and be in touch within 1 business day.</p>',
+    '    <h3>Application received.</h3>',
+    '    <p>Book a call now while you\'re here &mdash; no waiting, no back-and-forth.</p>',
+    '    <div class="calendly-inline-widget" data-url="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1" style="min-width:280px;height:700px;"></div>',
     '  </div>',
     '  <form id="modal-audit-form" class="contact-form" action="#" method="POST" novalidate>',
     '    <div class="modal-row">',
@@ -280,6 +282,14 @@ function initAuditModal() {
   ].join('');
   document.body.appendChild(overlay);
 
+  // Load Calendly script if not already present
+  if (!document.querySelector('script[src*="calendly.com"]')) {
+    var calScript = document.createElement('script');
+    calScript.src = 'https://assets.calendly.com/assets/external/widget.js';
+    calScript.async = true;
+    document.head.appendChild(calScript);
+  }
+
   // ── JS ──
   function openModal(e) {
     if (e) e.preventDefault();
@@ -287,6 +297,8 @@ function initAuditModal() {
     var success = document.getElementById('modal-success');
     if (form) form.style.display = '';
     if (success) success.style.display = 'none';
+    var mb = document.querySelector('.modal-box');
+    if (mb) mb.classList.remove('modal-box-calendly');
     overlay.hidden = false;
     requestAnimationFrame(function() {
       requestAnimationFrame(function() {
@@ -327,26 +339,30 @@ function initAuditModal() {
   // form submit
   var form = document.getElementById('modal-audit-form');
   if (form) {
+    form.dataset.hubspotBound = '1'; // prevent main.js double-bind
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       var btn = form.querySelector('.modal-submit');
       if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
-      var nameMap = {'first-name':'firstname','last-name':'lastname','email':'email','phone':'phone','company':'company','marketplace':'marketplaces','revenue':'annual_revenue_range','adspend':'monthly_ad_spend','acos':'current_acos','message':'message'};
-      var fields = [];
-      var fd = new FormData(form);
-      fd.forEach(function(value, key) {
-        var hsName = nameMap[key] || key;
-        if (value) fields.push({ objectTypeId: '0-1', name: hsName, value: value });
+      var data = {};
+      new FormData(form).forEach(function(value, key) {
+        if (key.charAt(0) === '_' || key === 'source') return;
+        if (value) data[key] = value;
       });
-      fetch('https://api.hsforms.com/submissions/v3/integration/submit/246322145/afb91a90-3757-489a-ba33-d5588bd111c0', {
+      fetch('https://formspree.io/f/xlgakqbq', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ fields: fields, context: { pageUri: window.location.href, pageName: document.title } })
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
       }).then(function(r) {
         if (r.ok) {
           form.style.display = 'none';
           var s = document.getElementById('modal-success');
-          if (s) s.style.display = 'block';
+          if (s) {
+            s.style.display = 'block';
+            var mb = document.querySelector('.modal-box');
+            if (mb) mb.classList.add('modal-box-calendly');
+            if (window.Calendly) Calendly.initInlineWidgets();
+          }
         } else {
           if (btn) { btn.disabled = false; btn.textContent = 'Request My Free Audit →'; }
           alert('Something went wrong. Please email us at contact@selltru.com');

@@ -1042,18 +1042,15 @@
       var origText = submitBtn.textContent;
       submitBtn.textContent = 'Sending…';
       submitBtn.disabled = true;
-      var data = new FormData(form);
-      var fields = [];
-      var nameMap = {'name': 'firstname', 'email': 'email'};
-      data.forEach(function(value, key) {
+      var payload = {};
+      new FormData(form).forEach(function(value, key) {
         if (key.charAt(0) === '_' || key === 'source') return;
-        var hsName = nameMap[key] || key;
-        if (value) fields.push({ objectTypeId: '0-1', name: hsName, value: value });
+        if (value) payload[key] = value;
       });
-      fetch('https://api.hsforms.com/submissions/v3/integration/submit/246322145/afb91a90-3757-489a-ba33-d5588bd111c0', {
+      fetch('https://formspree.io/f/xlgakqbq', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ fields: fields, context: { pageUri: window.location.href, pageName: document.title } })
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
       })
         .then(function (res) {
           if (res.ok) {

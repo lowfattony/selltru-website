@@ -446,6 +446,10 @@
       text-align:center;font-size:12px;color:rgba(255,255,255,0.2);margin-top:14px;
     }
 
+    .modal-box-calendly{max-width:680px !important}
+    .modal-success .calendly-inline-widget,
+    .lp-success .calendly-inline-widget{margin-top:16px;border-radius:8px;overflow:hidden}
+
     /* ── Responsive ─────────────────────────────────────────── */
     @media(min-width:1100px){
       .lp-proof-masonry{columns:3}
@@ -475,6 +479,8 @@
       .modal-card{padding:24px 18px}
     }
   </style>
+  <link rel="preconnect" href="https://assets.calendly.com">
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
 <body>
 
@@ -561,9 +567,9 @@
 
         <!-- Success State -->
         <div class="modal-success" id="modal-success">
-          <div class="modal-success-icon">&#10003;</div>
-          <h3>You are in the queue.</h3>
-          <p>We will review your application and follow up within one business day.</p>
+          <h3>Application received.</h3>
+          <p>Book a call now while you're here &mdash; no waiting, no back-and-forth.</p>
+          <div class="calendly-inline-widget" data-url="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1" style="min-width:280px;height:700px;"></div>
         </div>
 
         <p class="modal-form-note" id="modal-form-note">No spam. No pitch calls. We review every application personally.</p>
@@ -797,9 +803,9 @@
       </form>
 
       <div class="lp-success" id="lp-success">
-        <div class="lp-success-icon">&#10003;</div>
-        <h3>You are in the queue.</h3>
-        <p>We will review your application and follow up within one business day.</p>
+        <h3>Application received.</h3>
+        <p>Book a call now while you're here &mdash; no waiting, no back-and-forth.</p>
+        <div class="calendly-inline-widget" data-url="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1" style="min-width:280px;height:700px;"></div>
       </div>
 
       <p class="lp-form-note" id="lp-form-note">No spam. No pitch calls. We review every application personally.</p>
@@ -829,6 +835,9 @@
       document.getElementById('modal-step-1').classList.add('active');
       document.getElementById('modal-step-2').classList.remove('active');
       document.getElementById('modal-success').style.display = 'none';
+      document.querySelector('.modal-box').classList.remove('modal-box-calendly');
+      document.getElementById('modal-step-label').style.display = '';
+      document.querySelector('.modal-progress-bar').style.display = '';
       document.getElementById('modal-form').style.display = '';
       document.getElementById('modal-form-note').style.display = '';
       document.getElementById('modal-progress').style.width = '40%';
@@ -919,6 +928,7 @@
           document.querySelector('.modal-progress-bar').style.display = 'none';
           var success = document.getElementById('modal-success');
           success.style.display = 'block';
+          document.querySelector('.modal-box').classList.add('modal-box-calendly');
           document.getElementById('modal-progress').style.width = '100%';
         } else { throw 0; }
       })

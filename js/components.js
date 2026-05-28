@@ -222,22 +222,26 @@ function initAuditModal() {
     '.modal-overlay.modal-active .modal-box{transform:none;}',
     '.modal-close{position:absolute;top:16px;right:16px;background:none;border:none;cursor:pointer;font-size:22px;line-height:1;color:#94A3B8;padding:6px 8px;border-radius:8px;transition:color .15s,background .15s;}',
     '.modal-close:hover{color:#0D1B2A;background:rgba(0,0,0,.06);}',
-    '.modal-box h2{font-family:"Plus Jakarta Sans",-apple-system,sans-serif;font-size:22px;font-weight:800;color:#0D1B2A;margin-bottom:6px;}',
-    '.modal-box .modal-sub{font-size:14px;color:#64748B;margin-bottom:24px;}',
+    '.modal-header{margin-bottom:16px;}',
+    '.modal-header h2{font-family:"Plus Jakarta Sans",-apple-system,sans-serif;font-size:22px;font-weight:800;color:#0D1B2A;margin-bottom:6px;}',
+    '.modal-header .modal-sub{font-size:14px;color:#64748B;}',
+    '.modal-progress-bar{height:4px;background:#E2E8F0;border-radius:2px;margin-bottom:6px;overflow:hidden;}',
+    '.modal-progress{height:100%;background:linear-gradient(90deg,#1A56DB,#FF6B35);border-radius:2px;transition:width .4s ease;}',
+    '.modal-step-label{font-size:12px;font-weight:600;color:#94A3B8;margin-bottom:20px;text-transform:uppercase;letter-spacing:.04em;}',
+    '.modal-step{display:none;} .modal-step.active{display:block;}',
     '.modal-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}',
     '.modal-field{margin-bottom:12px;}',
     '.modal-field label{display:block;font-size:12px;font-weight:600;color:#334155;text-transform:uppercase;letter-spacing:.04em;margin-bottom:5px;}',
-    '.modal-field input,.modal-field select,.modal-field textarea{width:100%;padding:10px 14px;border:1.5px solid #E2E8F0;border-radius:10px;font-size:14px;color:#1E293B;font-family:"Inter",-apple-system,sans-serif;background:#fff;transition:border-color .15s;}',
-    '.modal-field input:focus,.modal-field select:focus,.modal-field textarea:focus{outline:none;border-color:#1A56DB;}',
-    '.modal-field textarea{resize:vertical;min-height:72px;}',
+    '.modal-field input,.modal-field select{width:100%;padding:10px 14px;border:1.5px solid #E2E8F0;border-radius:10px;font-size:14px;color:#1E293B;font-family:"Inter",-apple-system,sans-serif;background:#fff;transition:border-color .15s;}',
+    '.modal-field input:focus,.modal-field select:focus{outline:none;border-color:#1A56DB;}',
     '.modal-submit{width:100%;margin-top:8px;padding:14px;background:#FF6B35;color:#fff;font-family:"Plus Jakarta Sans",-apple-system,sans-serif;font-size:16px;font-weight:700;border:none;border-radius:12px;cursor:pointer;transition:background .2s;}',
     '.modal-submit:hover{background:#E55A28;}',
+    '.modal-submit:disabled{opacity:.6;cursor:not-allowed;}',
     '.modal-success{display:none;text-align:center;padding:20px 0;}',
-    '.modal-success .success-icon{font-size:40px;margin-bottom:12px;}',
-        '.modal-success p{color:#64748B;font-size:14px;line-height:1.6;}',
-'.modal-success h3{font-family:"Plus Jakarta Sans",-apple-system,sans-serif;font-size:20px;font-weight:800;color:#0D1B2A;margin-bottom:8px;}',
-'.modal-success .calendly-inline-widget{margin-top:14px;border-radius:8px;overflow:hidden;}',
-'.modal-box-calendly{max-width:700px !important;}',
+    '.modal-success h3{font-family:"Plus Jakarta Sans",-apple-system,sans-serif;font-size:20px;font-weight:800;color:#0D1B2A;margin-bottom:8px;}',
+    '.modal-success p{color:#64748B;font-size:14px;line-height:1.6;}',
+    '.modal-success .calendly-inline-widget{margin-top:14px;border-radius:8px;overflow:hidden;}',
+    '.modal-box-calendly{max-width:700px !important;}',
     '@media(max-width:520px){.modal-box{padding:28px 20px 24px;}.modal-row{grid-template-columns:1fr;}}'
   ].join('');
   document.head.appendChild(style);
@@ -253,31 +257,34 @@ function initAuditModal() {
   overlay.innerHTML = [
     '<div class="modal-box">',
     '  <button class="modal-close" id="modal-close-btn" aria-label="Close">&times;</button>',
-    '  <h2 id="modal-title">Get Your Free Amazon Audit</h2>',
-    '  <p class="modal-sub">We\'ll review your account and show you exactly where the waste is. Takes 2 minutes to request.</p>',
+    '  <div class="modal-header" id="modal-header">',
+    '    <h2 id="modal-title">Get Your Free Amazon Audit</h2>',
+    '    <p class="modal-sub">Takes 2 minutes. We\'ll show you exactly where your ad spend is leaking.</p>',
+    '  </div>',
+    '  <div class="modal-progress-bar" id="modal-prog-bar"><div class="modal-progress" id="modal-progress" style="width:50%"></div></div>',
+    '  <p class="modal-step-label" id="modal-step-label">Step 1 of 2 — Your Info</p>',
+    '  <form id="modal-audit-form" novalidate>',
+    '    <div id="modal-step-1" class="modal-step active">',
+    '      <div class="modal-field"><label for="m-fname">First Name *</label><input type="text" id="m-fname" name="first-name" placeholder="Jane"></div>',
+    '      <div class="modal-field"><label for="m-email">Work Email *</label><input type="email" id="m-email" name="email" placeholder="jane@brand.com"></div>',
+    '      <button type="button" id="modal-next-btn" class="modal-submit">Next — About Your Brand →</button>',
+    '    </div>',
+    '    <div id="modal-step-2" class="modal-step">',
+    '      <div class="modal-field"><label for="m-phone">Phone <span style="opacity:.65;font-weight:400;text-transform:none">(optional)</span></label><input type="tel" id="m-phone" name="phone" placeholder="(555) 000-0000"></div>',
+    '      <div class="modal-field"><label for="m-company">Company / Brand Name *</label><input type="text" id="m-company" name="company" placeholder="Your Brand LLC"></div>',
+    '      <div class="modal-field"><label for="m-marketplace">Which marketplace(s)? *</label><select id="m-marketplace" name="marketplace"><option value="" disabled selected>Select marketplace...</option><option value="amazon">Amazon only</option><option value="walmart">Walmart.com only</option><option value="both">Both Amazon &amp; Walmart.com</option></select></div>',
+    '      <div class="modal-row">',
+    '        <div class="modal-field"><label for="m-revenue">Annual revenue *</label><select id="m-revenue" name="revenue"><option value="" disabled selected>Select range...</option><option value="pre-launch">Pre-launch</option><option value="under-250k">Under $250K</option><option value="250k-1m">$250K – $1M</option><option value="1m-5m">$1M – $5M</option><option value="5m-20m">$5M – $20M</option><option value="over-20m">Over $20M</option></select></div>',
+    '        <div class="modal-field"><label for="m-adspend">Monthly ad spend *</label><select id="m-adspend" name="adspend"><option value="" disabled selected>Select range...</option><option value="none">Not running ads</option><option value="under-2k">Under $2K/mo</option><option value="2k-10k">$2K – $10K/mo</option><option value="10k-50k">$10K – $50K/mo</option><option value="50k-plus">$50K+/mo</option></select></div>',
+    '      </div>',
+    '      <button type="submit" id="modal-submit-btn" class="modal-submit">Send My Audit Request →</button>',
+    '    </div>',
+    '  </form>',
     '  <div class="modal-success" id="modal-success">',
     '    <h3>Application received.</h3>',
-    '    <p>Book a call now while you\'re here &mdash; no waiting, no back-and-forth.</p>',
+    '    <p>Book a call now while you\'re here — no waiting, no back-and-forth.</p>',
     '    <div class="calendly-inline-widget" data-url="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1" style="min-width:280px;height:700px;"></div>',
     '  </div>',
-    '  <form id="modal-audit-form" class="contact-form" action="#" method="POST" novalidate>',
-    '    <div class="modal-row">',
-    '      <div class="modal-field"><label class="form-label" for="m-fname">First Name *</label><input class="form-input" type="text" id="m-fname" name="first-name" placeholder="Jane" required></div>',
-    '      <div class="modal-field"><label class="form-label" for="m-lname">Last Name *</label><input class="form-input" type="text" id="m-lname" name="last-name" placeholder="Smith" required></div>',
-    '    </div>',
-    '    <div class="modal-row">',
-    '      <div class="modal-field"><label class="form-label" for="m-email">Work Email *</label><input class="form-input" type="email" id="m-email" name="email" placeholder="jane@brand.com" required></div>',
-    '      <div class="modal-field"><label class="form-label" for="m-phone">Phone <span style=\'font-weight:400;opacity:.7\'>(optional)</span></label><input class="form-input" type="tel" id="m-phone" name="phone" placeholder="(555) 000-0000"></div>',
-    '    </div>',
-    '    <div class="modal-field"><label class="form-label" for="m-company">Company / Brand Name *</label><input class="form-input" type="text" id="m-company" name="company" placeholder="Your Brand LLC" required></div>',
-    '    <div class="modal-field"><label class="form-label" for="m-marketplace">Which marketplace(s) do you need help with? *</label><select class="form-select" id="m-marketplace" name="marketplace" required><option value="" disabled selected>Select marketplace...</option><option value="amazon">Amazon only</option><option value="walmart">Walmart.com only</option><option value="both">Both Amazon &amp; Walmart.com</option></select></div>',
-    '    <div class="modal-row">',
-    '      <div class="modal-field"><label class="form-label" for="m-revenue">Annual marketplace revenue *</label><select class="form-select" id="m-revenue" name="revenue" required><option value="" disabled selected>Select range...</option><option value="pre-launch">Pre-launch / Not yet selling</option><option value="under-250k">Under $250K</option><option value="250k-1m">$250K &ndash; $1M</option><option value="1m-5m">$1M &ndash; $5M</option><option value="5m-20m">$5M &ndash; $20M</option><option value="over-20m">Over $20M</option></select></div>',
-    '      <div class="modal-field"><label class="form-label" for="m-adspend">Monthly ad spend *</label><select class="form-select" id="m-adspend" name="adspend" required><option value="" disabled selected>Select range...</option><option value="none">Not running ads yet</option><option value="under-2k">Under $2K/mo</option><option value="2k-10k">$2K &ndash; $10K/mo</option><option value="10k-50k">$10K &ndash; $50K/mo</option><option value="50k-plus">$50K+/mo</option></select></div>',
-    '    </div>',
-    '    <div class="modal-field"><label class="form-label" for="m-message">What\'s your biggest marketplace challenge right now?</label><textarea class="form-textarea" id="m-message" name="message" rows="3" placeholder="e.g. ACOS is out of control, can\'t rank for key terms..."></textarea></div>',
-    '    <button type="submit" class="modal-submit">Send My Audit Request &rarr;</button>',
-    '  </form>',
     '</div>'
   ].join('');
   document.body.appendChild(overlay);
@@ -293,17 +300,30 @@ function initAuditModal() {
   // ── JS ──
   function openModal(e) {
     if (e) e.preventDefault();
-    var form = document.getElementById('modal-audit-form');
-    var success = document.getElementById('modal-success');
-    if (form) form.style.display = '';
-    if (success) success.style.display = 'none';
-    var mb = document.querySelector('.modal-box');
-    if (mb) mb.classList.remove('modal-box-calendly');
+    var step1     = document.getElementById('modal-step-1');
+    var step2     = document.getElementById('modal-step-2');
+    var success   = document.getElementById('modal-success');
+    var form      = document.getElementById('modal-audit-form');
+    var header    = document.getElementById('modal-header');
+    var progBar   = document.getElementById('modal-prog-bar');
+    var stepLabel = document.getElementById('modal-step-label');
+    var prog      = document.getElementById('modal-progress');
+    var mb        = overlay.querySelector('.modal-box');
+
+    if (step1) step1.classList.add('active');
+    if (step2) step2.classList.remove('active');
+    if (success)   success.style.display   = 'none';
+    if (form)    { form.style.display = ''; form.reset(); }
+    if (header)    header.style.display    = '';
+    if (progBar)   progBar.style.display   = '';
+    if (stepLabel) { stepLabel.style.display = ''; stepLabel.textContent = 'Step 1 of 2 — Your Info'; }
+    if (prog)      prog.style.width = '50%';
+    if (mb)        mb.classList.remove('modal-box-calendly');
+    overlay.querySelectorAll('.modal-field input,.modal-field select').forEach(function(el) { el.style.borderColor = ''; });
+
     overlay.hidden = false;
     requestAnimationFrame(function() {
-      requestAnimationFrame(function() {
-        overlay.classList.add('modal-active');
-      });
+      requestAnimationFrame(function() { overlay.classList.add('modal-active'); });
     });
     document.body.style.overflow = 'hidden';
   }
@@ -314,67 +334,113 @@ function initAuditModal() {
     setTimeout(function() { overlay.hidden = true; }, 260);
   }
 
-  // expose globally so bar-cta onclick can call it
   window.openAuditModal = openModal;
 
-  // close button
   document.getElementById('modal-close-btn').addEventListener('click', closeModal);
-
-  // backdrop click
-  overlay.addEventListener('click', function(e) {
-    if (e.target === overlay) closeModal();
-  });
-
-  // Escape key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && !overlay.hidden) closeModal();
-  });
-
-  // event delegation — catches triggers added to DOM after init (e.g. sticky bar)
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && !overlay.hidden) closeModal(); });
   document.addEventListener('click', function(e) {
     var trigger = e.target.closest('[data-modal-trigger="audit"]');
     if (trigger) openModal(e);
   });
 
-  // form submit
-  var form = document.getElementById('modal-audit-form');
-  if (form) {
-    form.dataset.hubspotBound = '1'; // prevent main.js double-bind
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var btn = form.querySelector('.modal-submit');
-      if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
-      var data = {};
-      new FormData(form).forEach(function(value, key) {
-        if (key.charAt(0) === '_' || key === 'source') return;
-        if (value) data[key] = value;
-      });
-      fetch('https://formspree.io/f/xlgakqbq', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(data)
-      }).then(function(r) {
-        if (r.ok) {
-          form.style.display = 'none';
-          var s = document.getElementById('modal-success');
-          if (s) {
-            s.style.display = 'block';
-            var mb = document.querySelector('.modal-box');
-            if (mb) mb.classList.add('modal-box-calendly');
-            if (window.Calendly) Calendly.initInlineWidgets();
-          }
-        } else {
-          if (btn) { btn.disabled = false; btn.textContent = 'Request My Free Audit →'; }
-          alert('Something went wrong. Please email us at contact@selltru.com');
-        }
-      }).catch(function() {
-        if (btn) { btn.disabled = false; btn.textContent = 'Request My Free Audit →'; }
-        alert('Something went wrong. Please email us at contact@selltru.com');
-      });
-    });
-  }
-}
+  // Step 1 — Next button
+  document.getElementById('modal-next-btn').addEventListener('click', function() {
+    var fname = document.getElementById('m-fname');
+    var email = document.getElementById('m-email');
+    var valid = true;
+    fname.style.borderColor = '';
+    email.style.borderColor = '';
+    if (!fname.value.trim()) { fname.style.borderColor = '#EF4444'; fname.focus(); valid = false; }
+    var emailVal = email.value.trim();
+    if (!emailVal || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+      email.style.borderColor = '#EF4444';
+      if (valid) email.focus();
+      valid = false;
+    }
+    if (!valid) return;
 
+    // Silent partial lead capture — fire and forget
+    fetch('https://formspree.io/f/xlgakqbq', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ 'first-name': fname.value.trim(), email: emailVal, submission_type: 'partial' })
+    });
+
+    document.getElementById('modal-step-1').classList.remove('active');
+    document.getElementById('modal-step-2').classList.add('active');
+    document.getElementById('modal-progress').style.width = '80%';
+    document.getElementById('modal-step-label').textContent = 'Step 2 of 2 — Your Business';
+  });
+
+  // Step 2 — form submit
+  var form = document.getElementById('modal-audit-form');
+  form.dataset.hubspotBound = '1'; // prevent main.js double-bind
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var company     = document.getElementById('m-company');
+    var marketplace = document.getElementById('m-marketplace');
+    var revenue     = document.getElementById('m-revenue');
+    var adspend     = document.getElementById('m-adspend');
+    var valid = true;
+    [company, marketplace, revenue, adspend].forEach(function(el) { el.style.borderColor = ''; });
+    if (!company.value.trim())  { company.style.borderColor    = '#EF4444'; if (valid) company.focus();     valid = false; }
+    if (!marketplace.value)     { marketplace.style.borderColor = '#EF4444'; if (valid) marketplace.focus(); valid = false; }
+    if (!revenue.value)         { revenue.style.borderColor    = '#EF4444'; if (valid) revenue.focus();     valid = false; }
+    if (!adspend.value)         { adspend.style.borderColor    = '#EF4444'; if (valid) adspend.focus();     valid = false; }
+    if (!valid) return;
+
+    var btn = document.getElementById('modal-submit-btn');
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+
+    var fname   = document.getElementById('m-fname');
+    var emailEl = document.getElementById('m-email');
+    var phone   = document.getElementById('m-phone');
+    var data = {
+      'first-name': fname   ? fname.value.trim()   : '',
+      email:        emailEl ? emailEl.value.trim() : '',
+      company:      company.value.trim(),
+      marketplace:  marketplace.value,
+      revenue:      revenue.value,
+      adspend:      adspend.value
+    };
+    var phoneVal = phone ? phone.value.trim() : '';
+    if (phoneVal) data.phone = phoneVal;
+
+    fetch('https://formspree.io/f/xlgakqbq', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    }).then(function(r) {
+      if (r.ok) {
+        window.gtag && gtag('event', 'generate_lead', { event_category: 'conversion', event_label: 'modal_audit_form' });
+        form.style.display = 'none';
+        var hdr = document.getElementById('modal-header');
+        var pb  = document.getElementById('modal-prog-bar');
+        var sl  = document.getElementById('modal-step-label');
+        if (hdr) hdr.style.display = 'none';
+        if (pb)  pb.style.display  = 'none';
+        if (sl)  sl.style.display  = 'none';
+        var s = document.getElementById('modal-success');
+        if (s) {
+          s.style.display = 'block';
+          var mb = overlay.querySelector('.modal-box');
+          if (mb) mb.classList.add('modal-box-calendly');
+          if (window.Calendly && window.Calendly.initInlineWidget) {
+            var calEl = s.querySelector('.calendly-inline-widget');
+            if (calEl) Calendly.initInlineWidget({ url: calEl.dataset.url, parentElement: calEl });
+          }
+        }
+      } else {
+        if (btn) { btn.disabled = false; btn.textContent = 'Send My Audit Request →'; }
+        alert('Something went wrong. Please email us at contact@selltru.com');
+      }
+    }).catch(function() {
+      if (btn) { btn.disabled = false; btn.textContent = 'Send My Audit Request →'; }
+      alert('Something went wrong. Please email us at contact@selltru.com');
+    });
+  });
+}
 /* --- Register both elements ------------------------------------- */
 
 customElements.define('selltru-header', SellTruHeader);

@@ -925,7 +925,7 @@
           success.style.display = 'block';
           document.querySelector('.modal-box').classList.add('modal-box-calendly');
           document.getElementById('modal-progress').style.width = '100%';
-          if (window.Calendly) Calendly.initInlineWidgets();
+          if (window.Calendly && window.Calendly.initInlineWidget) { var calEl = success.querySelector('.calendly-inline-widget'); if (calEl) Calendly.initInlineWidget({ url: calEl.dataset.url, parentElement: calEl }); }
         } else { throw 0; }
       })
       .catch(function() {
@@ -994,7 +994,7 @@
           document.querySelector('.lp-progress-bar').style.display='none';
           document.getElementById('lp-success').style.display='block';
           document.getElementById('lp-progress').style.width='100%';
-          if (window.Calendly) Calendly.initInlineWidgets();
+          if (window.Calendly && window.Calendly.initInlineWidget) { var lpCalEl = document.querySelector('#lp-success .calendly-inline-widget'); if (lpCalEl) Calendly.initInlineWidget({ url: lpCalEl.dataset.url, parentElement: lpCalEl }); }
         } else { throw 0; }
       }).catch(function(){
         btn.disabled=false; btn.textContent='Error. Try Again.'; btn.style.background='#EF4444';

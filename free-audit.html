@@ -222,9 +222,9 @@
       color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:1px;
       text-align:center;padding:0 16px;
     }
-    .lp-proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
-    .lp-proof-grid .lp-proof-img:last-child:nth-child(odd){grid-column:1 / -1}
-    .lp-proof-img{border-radius:var(--radius);overflow:hidden;border:1px solid var(--gray-200);background:var(--gray-100)}
+    .lp-proof-masonry{columns:2;column-gap:16px;margin-bottom:16px}
+    .lp-proof-img{break-inside:avoid;display:block;border-radius:var(--radius);overflow:hidden;border:1px solid var(--gray-200);background:var(--gray-100);margin-bottom:16px}
+    .lp-proof-img:last-child{margin-bottom:0}
     .lp-proof-img img{width:100%;display:block;border-radius:var(--radius)}
     .lp-ph{
       aspect-ratio:4/3;background:var(--gray-100);border:2px dashed var(--gray-200);
@@ -448,7 +448,7 @@
       .lp-hiw-grid{grid-template-columns:1fr}
       .lp-step{padding:36px 28px}
       .lp-videos-row{grid-template-columns:1fr}
-      .lp-proof-grid{grid-template-columns:1fr}
+      .lp-proof-masonry{columns:1}
       .lp-fields-row{grid-template-columns:1fr}
       .lp-form-card{padding:28px 22px}
       .lp-btn-row{grid-template-columns:1fr 1fr}
@@ -684,23 +684,23 @@
         </div>
       </div>
 
-      <div class="lp-proof-grid">
-        <div class="lp-proof-img"><img src="/img/proof/thanks.png" alt="Client message — Prime Sale amazing job"></div>
+      <div class="lp-proof-masonry">
         <div class="lp-proof-img"><img src="/img/proof/donovan-scale.png" alt="Client Slack — $17K day, Donovan Lagarde praising the team"></div>
         <div class="lp-proof-img"><img src="/img/proof/first100k.png" alt="Client Slack — Chris celebrating first $100K month"></div>
-        <div class="lp-proof-img"><img src="/img/proof/nootropics.png" alt="Client message — 100% profit growth, 75% conversion growth, 115% sales growth in under 1 week"></div>
         <div class="lp-proof-img"><img src="/img/proof/sp.png" alt="Client review — Selltru SP campaigns, performance and ROI improve every month"></div>
+        <div class="lp-proof-img"><img src="/img/proof/thanks.png" alt="Client message — Prime Sale amazing job"></div>
         <div class="lp-proof-img"><img src="/img/proof/dsp.png" alt="Client review — Selltru DSP team most knowledgeable and experienced in Amazon space"></div>
+        <div class="lp-proof-img"><img src="/img/proof/nootropics.png" alt="Client message — 100% profit growth, 75% conversion growth, 115% sales growth in under 1 week"></div>
       </div>
 
-      <div class="lp-proof-grid">
+      <div class="lp-proof-masonry">
         <div class="lp-proof-img"><img src="/img/proof/658133201_1284870386923002_2186896439348802586_n.jpg" alt="Amazon Seller Central — $617.5K product sales in 30 days, up 39% year over year"></div>
         <div class="lp-proof-img"><img src="/img/proof/660938818_1286417760101598_758258788650045617_n.jpg" alt="Amazon Seller Central — $4.762M product sales over 12 months, up 47%"></div>
+        <div class="lp-proof-img"><img src="/img/proof/5-11.jpg" alt="Amazon sales snapshot — $1,181,827 in ordered product sales over 12 months"></div>
+        <div class="lp-proof-img"><img src="/img/proof/12acos.jpg" alt="Amazon PPC dashboard — $169,242 in sales at 12.18% ACOS"></div>
         <div class="lp-proof-img"><img src="/img/proof/667299012_1291597772916930_7187615870286680459_n.jpg" alt="Amazon Seller Central — $3.365M product sales over 12 months, up 40%"></div>
         <div class="lp-proof-img"><img src="/img/proof/668584847_1288717626538278_4964078251286251879_n.jpg" alt="Amazon Seller Central — $534.2K product sales in 30 days, up 39% year over year"></div>
         <div class="lp-proof-img"><img src="/img/proof/670991531_1291597796250261_907207678442897442_n.jpg" alt="Amazon Seller Central — $310.3K product sales in 30 days, up 76% year over year"></div>
-        <div class="lp-proof-img"><img src="/img/proof/5-11.jpg" alt="Amazon sales snapshot — $1,181,827 in ordered product sales over 12 months"></div>
-        <div class="lp-proof-img"><img src="/img/proof/12acos.jpg" alt="Amazon PPC dashboard — $169,242 in sales at 12.18% ACOS"></div>
       </div>
 
     </div>

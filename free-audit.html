@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Marketplace Profit Audit | SellTru</title>
+  <meta name="description" content="Get a free audit of your Amazon and Walmart ad accounts. Find what is wasting your budget and exactly how to fix it.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- OpenAI Ads Pixel -->
+  <script>
+    !function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments);};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f);}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");
+    oaiq("init", { pixelId: "UeyzoKe3VtFvfSMqVPUoaN" });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQ8PYJGXJN"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-DQ8PYJGXJN");</script>
+
+  <style>
+    /* ── Reset ─────────────────────────────────────────────── */
+    *,::before,::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',-apple-system,sans-serif;background:#fff;color:#1E293B;line-height:1.6;-webkit-font-smoothing:antialiased}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    ul{list-style:none}
+    button{cursor:pointer;font-family:inherit}
+
+    /* ── Site Variables (matching selltru.com) ─────────────── */
+    :root{
+      --navy:#0D1B2A;
+      --navy-light:#162235;
+      --navy-mid:#1D3045;
+      --orange:#FF6B35;
+      --orange-hover:#E55A28;
+      --white:#FFFFFF;
+      --off-white:#F8FAFC;
+      --gray-100:#F1F5F9;
+      --gray-200:#E2E8F0;
+      --gray-400:#94A3B8;
+      --gray-600:#475569;
+      --text:#1E293B;
+      --text-light:#64748B;
+      --font-head:'Plus Jakarta Sans',-apple-system,sans-serif;
+      --font-body:'Inter',-apple-system,sans-serif;
+      --radius-sm:10px;
+      --radius:14px;
+      --radius-lg:20px;
+      --radius-xl:28px;
+      --shadow-md:0 8px 20px -3px rgba(0,0,0,0.12);
+    }
+
+    /* ── Slim Logo Bar ──────────────────────────────────────── */
+    .lp-logo-bar{
+      background:var(--navy);
+      padding:10px 24px;
+      text-align:center;
+      border-bottom:1px solid rgba(255,255,255,0.07);
+    }
+    .lp-logo{
+      font-family:var(--font-head);font-size:22px;font-weight:800;
+      color:#fff;letter-spacing:-0.5px;display:inline-block;
+    }
+    .lp-logo span{color:var(--orange)}
+
+    /* ── Hero ───────────────────────────────────────────────── */
+    .lp-hero{
+      background:var(--navy);position:relative;overflow:hidden;
+      text-align:center;padding:32px 24px 40px;
+    }
+    .lp-hero::before{
+      content:'';position:absolute;inset:0;
+      background:radial-gradient(ellipse at 50% 0%,rgba(26,86,219,0.22) 0,transparent 60%),
+                  radial-gradient(ellipse at 20% 100%,rgba(255,107,53,0.14) 0,transparent 50%);
+      pointer-events:none;
+    }
+    .lp-hero-inner{position:relative;z-index:1;max-width:1100px;margin:0 auto}
+    .lp-qualifier{
+      font-family:var(--font-head);font-size:clamp(13px,1.6vw,15px);font-weight:800;
+      letter-spacing:2.5px;text-transform:uppercase;color:var(--orange);
+      background:rgba(255,107,53,0.12);border:1px solid rgba(255,107,53,0.3);
+      border-radius:100px;padding:6px 20px;display:inline-block;margin-bottom:16px;
+    }
+    .lp-hero h1{
+      font-family:var(--font-head);font-size:clamp(26px,3.5vw,46px);font-weight:900;
+      color:#fff;line-height:1.1;letter-spacing:-1.5px;margin-bottom:12px;
+    }
+    .lp-hero h1 .accent{color:var(--orange)}
+    .lp-hero-sub{
+      font-size:clamp(14px,1.6vw,17px);color:rgba(255,255,255,0.6);
+      line-height:1.65;max-width:700px;margin:0 auto 20px;
+    }
+    .lp-hero-sub strong{color:rgba(255,255,255,0.9);font-weight:600}
+
+    /* Video placeholder */
+    .lp-video-wrap{
+      width:100%;max-width:620px;margin:0 auto 20px;
+      border-radius:var(--radius-lg);overflow:hidden;
+      box-shadow:0 24px 48px rgba(0,0,0,0.5);
+      border:1px solid rgba(255,255,255,0.08);
+    }
+    .lp-video-ph{
+      aspect-ratio:16/9;background:linear-gradient(135deg,rgba(255,255,255,0.04),rgba(255,255,255,0.07));
+      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
+    }
+    .lp-play-btn{
+      width:72px;height:72px;border-radius:50%;background:var(--orange);
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:0 8px 28px rgba(255,107,53,0.5);
+    }
+    .lp-play-btn svg{width:28px;height:28px;fill:#fff;margin-left:4px}
+    .lp-video-ph p{
+      font-family:var(--font-head);font-size:14px;font-weight:600;
+      color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:1.5px;
+    }
+    .lp-apply-line{
+      font-family:var(--font-head);font-size:clamp(16px,2vw,22px);font-weight:700;
+      color:#fff;margin-bottom:4px;
+    }
+    .lp-apply-line .hl{color:var(--orange)}
+    .lp-apply-sub{font-size:16px;color:rgba(255,255,255,0.5);margin-bottom:24px}
+    .lp-arrows{display:flex;justify-content:center;gap:18px;margin-bottom:28px}
+    .lp-arrows svg{width:30px;height:30px;fill:var(--orange);opacity:0.8}
+    .lp-cta-btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      background:var(--orange);color:#fff;border:none;border-radius:100px;
+      padding:22px 64px;font-family:var(--font-head);font-size:20px;font-weight:800;
+      letter-spacing:0.5px;text-transform:uppercase;cursor:pointer;
+      transition:background 0.2s,transform 0.2s,box-shadow 0.2s;
+      box-shadow:0 10px 36px rgba(255,107,53,0.5);
+    }
+    .lp-cta-btn:hover{background:var(--orange-hover);transform:translateY(-2px);box-shadow:0 16px 44px rgba(255,107,53,0.55)}
+    .lp-spots{margin-top:10px;font-size:13px;color:rgba(255,255,255,0.3)}
+    .lp-spots strong{color:rgba(255,255,255,0.5)}
+
+    /* ── Marquee Logos ──────────────────────────────────────── */
+    .lp-marquee{
+      background:var(--navy-light);
+      border-top:1px solid rgba(255,255,255,0.07);
+      border-bottom:1px solid rgba(255,255,255,0.07);
+      padding:28px 0;overflow:hidden;
+    }
+    .lp-marquee-inner{overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent 0,black 120px,black calc(100% - 120px),transparent 100%);mask-image:linear-gradient(to right,transparent 0,black 120px,black calc(100% - 120px),transparent 100%)}
+    .lp-marquee-track{display:flex;align-items:center;width:max-content;animation:marquee-scroll 36s linear infinite}
+    .lp-marquee-track:hover{animation-play-state:paused}
+    @keyframes marquee-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    .lp-m-item{
+      display:inline-flex;align-items:center;padding:0 52px;white-space:nowrap;
+    }
+    .lp-m-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.2);flex-shrink:0;display:none}
+    .lp-m-logo{height:44px;width:auto;max-width:400px;object-fit:contain;opacity:0.6;filter:brightness(0) invert(1);transition:opacity 0.25s}
+    .lp-m-logo:hover{opacity:0.9}
+    .lp-m-logo-lg{height:60px!important}
+
+    /* ── How It Works ───────────────────────────────────────── */
+    .lp-hiw{background:var(--off-white);padding:96px 40px;text-align:center}
+    .lp-section-tag{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+    .lp-section-title{
+      font-family:var(--font-head);font-size:clamp(32px,4vw,56px);font-weight:800;
+      color:var(--navy);letter-spacing:-1px;line-height:1.1;margin-bottom:14px;
+    }
+    .lp-section-title span{color:var(--orange)}
+    .lp-section-sub{font-size:19px;color:var(--text-light);line-height:1.75;max-width:640px;margin:0 auto 64px}
+    .lp-hiw-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+    .lp-step{
+      background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius-lg);
+      padding:52px 44px;text-align:center;transition:transform 0.25s,box-shadow 0.25s;
+    }
+    .lp-step:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+    .lp-step-icon{
+      width:64px;height:64px;border-radius:var(--radius-sm);
+      display:flex;align-items:center;justify-content:center;
+      margin:0 auto 24px;background:rgba(255,107,53,0.1);
+    }
+    .lp-step-icon svg{width:32px;height:32px;fill:var(--orange)}
+    .lp-step-num{
+      font-family:var(--font-head);font-size:13px;font-weight:800;
+      letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:10px;
+    }
+    .lp-step-title{font-family:var(--font-head);font-size:26px;font-weight:800;color:var(--navy);margin-bottom:14px;line-height:1.2}
+    .lp-step p{font-size:17px;color:var(--text-light);line-height:1.75}
+
+    /* ── Results ────────────────────────────────────────────── */
+    .lp-results{background:#fff;padding:80px 24px}
+    .lp-results-inner{max-width:1100px;margin:0 auto}
+    .lp-results-hdr{text-align:center;margin-bottom:52px}
+    .lp-videos-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+    .lp-vid-card{
+      border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:16/9;
+      background:var(--navy);position:relative;border:1px solid rgba(255,255,255,0.06);
+    }
+    .lp-vid-card img{width:100%;height:100%;object-fit:cover}
+    .lp-vid-overlay{
+      position:absolute;inset:0;background:rgba(0,0,0,0.5);
+      display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:20px;
+    }
+    .lp-vid-label{font-family:var(--font-head);font-size:18px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:0.5px}
+    .lp-vid-name{font-size:12px;color:rgba(255,255,255,0.55);margin-top:3px}
+    .lp-vid-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
+    .lp-vid-player{position:relative;cursor:pointer;width:100%;height:100%}
+    .lp-vid-player img{width:100%;height:100%;object-fit:cover;display:block}
+    .lp-vid-player .lp-play-overlay{
+      position:absolute;inset:0;display:flex;flex-direction:column;
+      align-items:center;justify-content:center;gap:12px;
+      background:rgba(0,0,0,0.35);transition:background 0.2s;
+    }
+    .lp-vid-player:hover .lp-play-overlay{background:rgba(0,0,0,0.2)}
+    .lp-vid-player video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none}
+    .lp-vid-player.playing .lp-play-overlay{display:none}
+    .lp-vid-player.playing video{display:block}
+    .lp-vid-play{
+      width:60px;height:60px;border-radius:50%;background:var(--orange);
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:0 8px 24px rgba(255,107,53,0.5);
+    }
+    .lp-vid-play svg{width:24px;height:24px;fill:#fff;margin-left:3px}
+    .lp-vid-ph-txt{
+      font-family:var(--font-head);font-size:13px;font-weight:600;
+      color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:1px;
+      text-align:center;padding:0 16px;
+    }
+    .lp-proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+    .lp-proof-grid .lp-proof-img:last-child:nth-child(odd){grid-column:1 / -1}
+    .lp-proof-img{border-radius:var(--radius);overflow:hidden;border:1px solid var(--gray-200);background:var(--gray-100)}
+    .lp-proof-img img{width:100%;display:block;border-radius:var(--radius)}
+    .lp-ph{
+      aspect-ratio:4/3;background:var(--gray-100);border:2px dashed var(--gray-200);
+      border-radius:var(--radius);display:flex;flex-direction:column;
+      align-items:center;justify-content:center;gap:8px;padding:24px;text-align:center;
+    }
+    .lp-ph-icon{font-size:28px;opacity:0.35}
+    .lp-ph-label{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.5px}
+    .lp-ph-file{font-size:11px;color:var(--gray-400);font-family:monospace}
+
+    /* ── Inline Form Section ────────────────────────────────── */
+    .lp-inline-form{
+      background:var(--navy);padding:80px 24px;
+    }
+    .lp-inline-form-hdr{text-align:center;margin-bottom:40px}
+    .lp-inline-form-hdr h2{
+      font-family:var(--font-head);font-size:clamp(26px,4vw,44px);font-weight:800;
+      color:#fff;letter-spacing:-1px;line-height:1.1;margin-bottom:12px;
+    }
+    .lp-inline-form-hdr h2 span{color:var(--orange)}
+    .lp-inline-form-hdr p{font-size:17px;color:rgba(255,255,255,0.5);max-width:500px;margin:0 auto}
+    .lp-form-card{
+      background:#0f0f0f;border-radius:var(--radius-xl);
+      padding:44px 48px;max-width:720px;margin:0 auto;
+      box-shadow:0 32px 64px rgba(0,0,0,0.4);
+    }
+    .lp-progress-bar{height:4px;background:rgba(255,255,255,0.1);border-radius:100px;overflow:hidden;margin-bottom:10px}
+    .lp-progress-fill{height:100%;background:var(--orange);border-radius:100px;transition:width 0.4s ease}
+    .lp-step-label{
+      font-family:var(--font-head);font-size:11px;font-weight:700;
+      color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:24px;
+    }
+    .lp-step-panel{display:none}
+    .lp-step-panel.active{display:block}
+    .lp-fields-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .lp-field{margin-bottom:14px}
+    .lp-field label{
+      display:block;font-family:var(--font-head);font-size:11px;font-weight:700;
+      color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:7px;
+    }
+    .lp-field label .req{color:var(--orange)}
+    .lp-input,.lp-select{
+      width:100%;background:rgba(255,255,255,0.08);border:1.5px solid rgba(255,255,255,0.12);
+      border-radius:8px;padding:12px 14px;font-size:15px;font-family:var(--font-body);
+      color:#fff;outline:none;appearance:none;transition:border-color 0.2s,background 0.2s;
+    }
+    .lp-input::placeholder{color:rgba(255,255,255,0.25)}
+    .lp-input:focus,.lp-select:focus{border-color:var(--orange);background:rgba(255,255,255,0.12)}
+    .lp-select{
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath fill='%2394A3B8' d='M5 6L0 0h10z'/%3E%3C/svg%3E");
+      background-repeat:no-repeat;background-position:right 14px center;
+      background-color:rgba(255,255,255,0.08);cursor:pointer;
+    }
+    .lp-select option{background:#0D1B2A;color:#fff}
+    .lp-submit-btn{
+      width:100%;background:var(--orange);color:#fff;border:none;border-radius:100px;
+      padding:17px 24px;margin-top:6px;font-family:var(--font-head);font-size:17px;font-weight:800;
+      letter-spacing:1px;text-transform:uppercase;cursor:pointer;
+      transition:background 0.2s,transform 0.15s,box-shadow 0.2s;
+      box-shadow:0 6px 20px rgba(255,107,53,0.4);
+    }
+    .lp-submit-btn:hover{background:var(--orange-hover);transform:translateY(-1px);box-shadow:0 10px 28px rgba(255,107,53,0.5)}
+    .lp-submit-btn:disabled{opacity:0.6;cursor:not-allowed;transform:none}
+    .lp-btn-row{display:grid;grid-template-columns:1fr 1.8fr;gap:12px;margin-top:6px}
+    .lp-back-btn{
+      background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.2);
+      border-radius:100px;padding:17px 24px;font-family:var(--font-head);font-size:15px;font-weight:700;
+      letter-spacing:0.5px;text-transform:uppercase;cursor:pointer;
+      transition:border-color 0.2s,background 0.2s;
+    }
+    .lp-back-btn:hover{border-color:rgba(255,255,255,0.45);background:rgba(255,255,255,0.06)}
+    .lp-success{text-align:center;padding:48px 20px;display:none}
+    .lp-success-icon{
+      width:64px;height:64px;background:var(--orange);color:#fff;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;
+      margin:0 auto 20px;
+    }
+    .lp-success h3{font-family:var(--font-head);font-size:26px;font-weight:800;color:#fff;margin-bottom:10px}
+    .lp-success p{font-size:15px;color:rgba(255,255,255,0.45);line-height:1.7}
+    .lp-form-note{text-align:center;font-size:12px;color:rgba(255,255,255,0.2);margin-top:14px}
+
+    /* ── Footer ─────────────────────────────────────────────── */
+    .lp-footer{
+      background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);
+      padding:22px 24px;text-align:center;
+    }
+    .lp-footer p{font-size:12px;color:rgba(255,255,255,0.3)}
+    .lp-footer a{color:rgba(255,255,255,0.45);text-decoration:underline}
+    .lp-footer a:hover{color:rgba(255,255,255,0.7)}
+
+    /* ════════════════════════════════════════════════════════════
+       POPUP MODAL
+       ════════════════════════════════════════════════════════════ */
+    .modal-overlay{
+      position:fixed;inset:0;
+      background:rgba(0,0,0,0.72);
+      z-index:9999;
+      display:flex;align-items:center;justify-content:center;
+      padding:16px;
+      animation:fadeInOverlay 0.2s ease;
+    }
+    .modal-overlay.hidden{display:none}
+    @keyframes fadeInOverlay{from{opacity:0}to{opacity:1}}
+
+    .modal-box{
+      background:#fff;
+      border-radius:16px;
+      padding:20px;
+      max-width:560px;width:100%;
+      position:relative;
+      box-shadow:0 32px 80px rgba(0,0,0,0.45);
+      animation:slideUpModal 0.25s ease;
+    }
+    @keyframes slideUpModal{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+    .modal-close{
+      position:absolute;top:10px;right:10px;
+      width:32px;height:32px;border-radius:50%;
+      background:#fff;border:1.5px solid #e2e8f0;
+      color:#1e293b;font-size:16px;font-weight:700;
+      display:flex;align-items:center;justify-content:center;
+      cursor:pointer;z-index:1;line-height:1;
+      transition:background 0.15s,border-color 0.15s;
+    }
+    .modal-close:hover{background:#f1f5f9;border-color:#94a3b8}
+
+    .modal-card{
+      background:#0f0f0f;
+      border-radius:10px;
+      padding:36px 40px;
+    }
+
+    /* Progress bar */
+    .modal-progress-bar{
+      height:4px;background:rgba(255,255,255,0.1);
+      border-radius:100px;overflow:hidden;margin-bottom:10px;
+    }
+    .modal-progress-fill{
+      height:100%;background:var(--orange);
+      border-radius:100px;transition:width 0.4s ease;
+    }
+    .modal-step-label{
+      font-family:var(--font-head);font-size:11px;font-weight:700;
+      color:rgba(255,255,255,0.3);text-transform:uppercase;
+      letter-spacing:1.5px;margin-bottom:24px;
+    }
+
+    /* Fields */
+    .modal-step{display:none}
+    .modal-step.active{display:block}
+
+    .modal-fields-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:0}
+    .modal-field{margin-bottom:14px}
+    .modal-field label{
+      display:block;font-family:var(--font-head);font-size:11px;font-weight:700;
+      color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:7px;
+    }
+    .modal-field label .req{color:var(--orange)}
+    .modal-input,.modal-select{
+      width:100%;background:rgba(255,255,255,0.08);
+      border:1.5px solid rgba(255,255,255,0.12);
+      border-radius:8px;padding:12px 14px;
+      font-size:15px;font-family:var(--font-body);
+      color:#fff;outline:none;appearance:none;
+      transition:border-color 0.2s,background 0.2s;
+    }
+    .modal-input::placeholder{color:rgba(255,255,255,0.25)}
+    .modal-input:focus,.modal-select:focus{border-color:var(--orange);background:rgba(255,255,255,0.12)}
+    .modal-select{
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath fill='%2394A3B8' d='M5 6L0 0h10z'/%3E%3C/svg%3E");
+      background-repeat:no-repeat;background-position:right 14px center;
+      background-color:rgba(255,255,255,0.08);cursor:pointer;
+    }
+    .modal-select option{background:#0D1B2A;color:#fff}
+
+    /* CTA button — pill shape matching Trivium */
+    .modal-cta-btn{
+      width:100%;background:var(--orange);color:#fff;
+      border:none;border-radius:100px;
+      padding:17px 24px;margin-top:6px;
+      font-family:var(--font-head);font-size:17px;font-weight:800;
+      letter-spacing:1px;text-transform:uppercase;cursor:pointer;
+      transition:background 0.2s,transform 0.15s,box-shadow 0.2s;
+      box-shadow:0 6px 20px rgba(255,107,53,0.4);
+    }
+    .modal-cta-btn:hover{background:var(--orange-hover);transform:translateY(-1px);box-shadow:0 10px 28px rgba(255,107,53,0.5)}
+    .modal-cta-btn:disabled{opacity:0.6;cursor:not-allowed;transform:none}
+
+    /* Back + Submit row for step 2 */
+    .modal-btn-row{display:grid;grid-template-columns:1fr 1.8fr;gap:12px;margin-top:6px}
+    .modal-back-btn{
+      background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.2);
+      border-radius:100px;padding:17px 24px;
+      font-family:var(--font-head);font-size:15px;font-weight:700;
+      letter-spacing:0.5px;text-transform:uppercase;cursor:pointer;
+      transition:border-color 0.2s,background 0.2s;
+    }
+    .modal-back-btn:hover{border-color:rgba(255,255,255,0.45);background:rgba(255,255,255,0.06)}
+
+    /* Success state */
+    .modal-success{
+      text-align:center;padding:48px 20px;display:none;
+    }
+    .modal-success-icon{
+      width:64px;height:64px;background:var(--orange);color:#fff;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      font-size:28px;font-weight:700;margin:0 auto 20px;
+    }
+    .modal-success h3{
+      font-family:var(--font-head);font-size:26px;font-weight:800;
+      color:#fff;margin-bottom:10px;
+    }
+    .modal-success p{font-size:15px;color:rgba(255,255,255,0.45);line-height:1.7}
+
+    .modal-form-note{
+      text-align:center;font-size:12px;color:rgba(255,255,255,0.2);margin-top:14px;
+    }
+
+    /* ── Responsive ─────────────────────────────────────────── */
+    @media(max-width:768px){
+      .lp-hiw-grid{grid-template-columns:1fr}
+      .lp-step{padding:36px 28px}
+      .lp-videos-row{grid-template-columns:1fr}
+      .lp-proof-grid{grid-template-columns:1fr}
+      .modal-fields-row{grid-template-columns:1fr}
+      .modal-card{padding:28px 22px}
+      .modal-btn-row{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:480px){
+      .lp-hero{padding:24px 18px 32px}
+      .lp-cta-btn{padding:18px 36px;font-size:16px}
+      .modal-card{padding:24px 18px}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       POPUP MODAL — Opens when any CTA button is clicked
+       ═══════════════════════════════════════════════════════════ -->
+  <div id="audit-modal" class="modal-overlay hidden" onclick="if(event.target===this)closeAuditModal()">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeAuditModal()" aria-label="Close">&times;</button>
+      <div class="modal-card">
+
+        <div class="modal-progress-bar">
+          <div class="modal-progress-fill" id="modal-progress" style="width:40%"></div>
+        </div>
+        <div class="modal-step-label" id="modal-step-label">Step 1 of 2 &mdash; Your Info</div>
+
+        <form id="modal-form" novalidate>
+
+          <!-- Step 1: Contact Info -->
+          <div class="modal-step active" id="modal-step-1">
+            <div class="modal-fields-row">
+              <div class="modal-field">
+                <label for="m-fname">First Name <span class="req">*</span></label>
+                <input class="modal-input" type="text" id="m-fname" name="first-name" placeholder="Enter your name" required autocomplete="given-name">
+              </div>
+              <div class="modal-field">
+                <label for="m-lname">Last Name <span class="req">*</span></label>
+                <input class="modal-input" type="text" id="m-lname" name="last-name" placeholder="Enter your last name" required autocomplete="family-name">
+              </div>
+            </div>
+            <div class="modal-field">
+              <label for="m-email">Email Address <span class="req">*</span></label>
+              <input class="modal-input" type="email" id="m-email" name="email" placeholder="Enter your email address" required autocomplete="email">
+            </div>
+            <div class="modal-field">
+              <label for="m-phone">Phone Number <span class="req">*</span></label>
+              <input class="modal-input" type="tel" id="m-phone" name="phone" placeholder="+1 (555) 000-0000" required autocomplete="tel">
+            </div>
+            <button type="button" class="modal-cta-btn" id="modal-next-btn">SEE IF YOU QUALIFY</button>
+          </div>
+
+          <!-- Step 2: Qualifying Questions -->
+          <div class="modal-step" id="modal-step-2">
+            <div class="modal-field">
+              <label for="m-company">Brand Name <span class="req">*</span></label>
+              <input class="modal-input" type="text" id="m-company" name="company" placeholder="Your Brand LLC" required autocomplete="organization">
+            </div>
+            <div class="modal-field">
+              <label for="m-marketplace">Which marketplace(s) are you on? <span class="req">*</span></label>
+              <select class="modal-select" id="m-marketplace" name="marketplace" required>
+                <option value="" disabled selected>Select marketplace...</option>
+                <option value="amazon">Amazon only</option>
+                <option value="walmart">Walmart.com only</option>
+                <option value="both">Both Amazon and Walmart.com</option>
+              </select>
+            </div>
+            <div class="modal-field">
+              <label for="m-revenue">Annual marketplace revenue <span class="req">*</span></label>
+              <select class="modal-select" id="m-revenue" name="revenue" required>
+                <option value="" disabled selected>Select range...</option>
+                <option value="250k-1m">$250K to $1M</option>
+                <option value="1m-5m">$1M to $5M</option>
+                <option value="5m-20m">$5M to $20M</option>
+                <option value="over-20m">Over $20M</option>
+              </select>
+            </div>
+            <div class="modal-field">
+              <label for="m-adspend">Monthly ad spend <span class="req">*</span></label>
+              <select class="modal-select" id="m-adspend" name="adspend" required>
+                <option value="" disabled selected>Select range...</option>
+                <option value="under-2k">Under $2K/mo</option>
+                <option value="2k-10k">$2K to $10K/mo</option>
+                <option value="10k-50k">$10K to $50K/mo</option>
+                <option value="50k-plus">$50K+/mo</option>
+              </select>
+            </div>
+            <div class="modal-btn-row">
+              <button type="button" class="modal-back-btn" id="modal-back-btn">Back</button>
+              <button type="submit" class="modal-cta-btn" id="modal-submit-btn">Submit Application</button>
+            </div>
+          </div>
+
+        </form>
+
+        <!-- Success State -->
+        <div class="modal-success" id="modal-success">
+          <div class="modal-success-icon">&#10003;</div>
+          <h3>You are in the queue.</h3>
+          <p>We will review your application and follow up within one business day.</p>
+        </div>
+
+        <p class="modal-form-note" id="modal-form-note">No spam. No pitch calls. We review every application personally.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIM LOGO BAR -->
+  <div class="lp-logo-bar">
+    <div class="lp-logo">Sell<span>Tru</span></div>
+  </div>
+
+  <!-- HERO -->
+  <section class="lp-hero">
+    <div class="lp-hero-inner">
+      <div class="lp-qualifier">For $500K+ Brands on Amazon or Walmart</div>
+      <h1>We Will Find What Is <span class="accent">Killing Your Margins</span><br>and Show You How to Fix It</h1>
+      <p class="lp-hero-sub">Our proven system tested across 50+ Amazon and Walmart brands. You will leave the call knowing exactly what to fix, what to cut, and where your next dollar of growth is hiding.</p>
+
+      <div class="lp-video-wrap">
+        <!-- ANDREW: Replace placeholder with your client video:
+             <iframe width="100%" style="aspect-ratio:16/9;display:block" src="YOUTUBE_EMBED_URL" frameborder="0" allowfullscreen></iframe>
+        -->
+        <div class="lp-video-ph">
+          <div class="lp-play-btn">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <p>Client Video Coming Soon</p>
+        </div>
+      </div>
+
+      <button class="lp-cta-btn" onclick="openAuditModal()">Apply for Your Free Audit</button>
+      <p class="lp-spots"><strong>Limited spots:</strong> Only accepting 3 new brands per month</p>
+    </div>
+  </section>
+
+  <!-- SCROLLING LOGOS -->
+  <div class="lp-marquee">
+    <div class="lp-marquee-inner">
+      <div class="lp-marquee-track">
+        <div class="lp-m-item"><img class="lp-m-logo" src="/img/clients/processed/attackletics.png" alt="Attackletics"></div>
+        <div class="lp-m-item"><img class="lp-m-logo" src="/img/clients/processed/door-daddy.png" alt="Door Daddy"></div>
+        <div class="lp-m-item"><img class="lp-m-logo" src="/img/clients/processed/applied-vision-sports.png" alt="Applied Vision Sports"></div>
+        <div class="lp-m-item"><img class="lp-m-logo" src="/img/clients/processed/nuts-on-the-run.png" class="lp-m-logo lp-m-logo-lg" alt="Nuts on the Run"></div>
+        <div class="lp-m-item"><img class="lp-m-logo" src="/img/clients/processed/veeboards.png" alt="Veeboards"></div>
+        <div class="lp-m-item"><img class="lp-m-logo" src="/img/clients/processed/nds-logo.png" alt="NDS"></div>
+        <div class="lp-m-item"><img class="lp-m-logo" src="/img/clients/processed/light.bio.png" class="lp-m-logo lp-m-logo-lg" alt="Light.bio"></div>
+        <div class="lp-m-item"><img class="lp-m-logo" src="/img/clients/processed/helmet-logo-750x750.png" class="lp-m-logo lp-m-logo-lg" alt="Helmet Brand"></div>
+        <div class="lp-m-item"><img class="lp-m-logo" src="/img/clients/processed/WATER_BORN_FB_PROFILE_01.png" alt="Water Born"></div>
+        <div class="lp-m-item"><img class="lp-m-logo" src="/img/clients/processed/primal1.png" alt="Primal Prelude"></div>
+        <div class="lp-m-item"><img class="lp-m-logo" src="/img/clients/processed/sol717.png" alt="Sol 717"></div>
+        <div class="lp-m-item"><img class="lp-m-logo" src="/img/clients/processed/vital.png" alt="Vital+"></div>
+        <!-- Duplicate for seamless loop -->
+        <div class="lp-m-item"><img class="lp-m-logo" src="/img/clients/processed/attackletics.png" alt="Attackletics"></div>
+        <div class="lp-m-item"><img class="lp-m-logo" src="/img/clients/processed/door-daddy.png" alt="Door Daddy"></div>
+        <div class="lp-m-item"><img class="lp-m-logo" src="/img/clients/processed/applied-vision-sports.png" alt="Applied Vision Sports"></div>
+        <div class="lp-m-item"><img class="lp-m-logo" src="/img/clients/processed/nuts-on-the-run.png" class="lp-m-logo lp-m-logo-lg" alt="Nuts on the Run"></div>
+        <div class="lp-m-item"><img class="lp-m-logo" src="/img/clients/processed/veeboards.png" alt="Veeboards"></div>
+        <div class="lp-m-item"><img class="lp-m-logo" src="/img/clients/processed/nds-logo.png" alt="NDS"></div>
+        <div class="lp-m-item"><img class="lp-m-logo" src="/img/clients/processed/light.bio.png" class="lp-m-logo lp-m-logo-lg" alt="Light.bio"></div>
+        <div class="lp-m-item"><img class="lp-m-logo" src="/img/clients/processed/helmet-logo-750x750.png" class="lp-m-logo lp-m-logo-lg" alt="Helmet Brand"></div>
+        <div class="lp-m-item"><img class="lp-m-logo" src="/img/clients/processed/WATER_BORN_FB_PROFILE_01.png" alt="Water Born"></div>
+        <div class="lp-m-item"><img class="lp-m-logo" src="/img/clients/processed/primal1.png" alt="Primal Prelude"></div>
+        <div class="lp-m-item"><img class="lp-m-logo" src="/img/clients/processed/sol717.png" alt="Sol 717"></div>
+        <div class="lp-m-item"><img class="lp-m-logo" src="/img/clients/processed/vital.png" alt="Vital+"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section class="lp-hiw">
+    <div class="lp-section-tag">The Process</div>
+    <h2 class="lp-section-title">How It <span>Works</span></h2>
+    <div class="lp-hiw-grid">
+      <div class="lp-step">
+        <div class="lp-step-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+        </div>
+        <div class="lp-step-num">Step 1</div>
+        <div class="lp-step-title">Book Your Free Audit</div>
+        <p>Apply for a 45-minute strategy session designed for established Amazon and Walmart brands. We ask you for the essentials so we can focus on what matters. From there, we prepare a data-backed review of your ad accounts before you even get on the call.</p>
+      </div>
+      <div class="lp-step">
+        <div class="lp-step-icon">
+          <svg viewBox="0 0 24 24"><path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"/></svg>
+        </div>
+        <div class="lp-step-num">Step 2</div>
+        <div class="lp-step-title">Receive a Profit-First Roadmap</div>
+        <p>You get a detailed growth roadmap showing how to increase conversion rates, improve ROAS, and scale profitably on Amazon and Walmart. Clear priorities, campaign fixes, and execution guidance your team can act on, built from managing 50+ marketplace brands.</p>
+      </div>
+      <div class="lp-step">
+        <div class="lp-step-icon">
+          <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6z"/></svg>
+        </div>
+        <div class="lp-step-num">Step 3</div>
+        <div class="lp-step-title">Achieve Predictable Growth</div>
+        <p>By scaling only what is already proven, your Amazon and Walmart accounts reward you with better traffic, higher conversion, and compounding results. Most brands see meaningful performance lifts within 90 days while you regain time, confidence, and control over the business.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REAL RESULTS -->
+  <section class="lp-results">
+    <div class="lp-results-inner">
+      <div class="lp-results-hdr">
+        <div class="lp-section-tag">Real Results</div>
+        <h2 class="lp-section-title">Real Results From <span>Real Brand Owners</span></h2>
+        <p class="lp-section-sub" style="margin:0 auto">These are screenshots from actual client accounts. No stock images, no made-up numbers.</p>
+      </div>
+
+      <div class="lp-videos-row">
+        <div class="lp-vid-card">
+          <div class="lp-vid-player" onclick="playVideo(this)">
+            <img src="/img/proof/video-testi-1-thumb.jpg" alt="Client video testimonial">
+            <div class="lp-play-overlay">
+              <div class="lp-vid-play">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <p class="lp-vid-ph-txt">Watch Client Testimonial</p>
+            </div>
+            <video src="/img/proof/client-video-1.mp4" controls playsinline preload="none"></video>
+          </div>
+        </div>
+        <div class="lp-vid-card">
+          <div class="lp-vid-ph">
+            <div class="lp-vid-play">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <p class="lp-vid-ph-txt">Client Video 2<br><span style="font-size:10px;opacity:0.5">Add file: /img/proof/video-testi-2-thumb.jpg</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lp-proof-grid">
+        <div class="lp-proof-img"><img src="/img/proof/thanks.png" alt="Client message — Prime Sale amazing job"></div>
+        <div class="lp-proof-img"><img src="/img/proof/donovan-scale.png" alt="Client Slack — $17K day, Donovan Lagarde praising the team"></div>
+        <div class="lp-proof-img"><img src="/img/proof/first100k.png" alt="Client Slack — Chris celebrating first $100K month"></div>
+        <div class="lp-proof-img"><img src="/img/proof/nootropics.png" alt="Client message — 100% profit growth, 75% conversion growth, 115% sales growth in under 1 week"></div>
+        <div class="lp-proof-img"><img src="/img/proof/sp.png" alt="Client review — Selltru SP campaigns, performance and ROI improve every month"></div>
+        <div class="lp-proof-img"><img src="/img/proof/dsp.png" alt="Client review — Selltru DSP team most knowledgeable and experienced in Amazon space"></div>
+      </div>
+
+      <div class="lp-proof-grid">
+        <div class="lp-proof-img"><img src="/img/proof/658133201_1284870386923002_2186896439348802586_n.jpg" alt="Amazon Seller Central — $617.5K product sales in 30 days, up 39% year over year"></div>
+        <div class="lp-proof-img"><img src="/img/proof/660938818_1286417760101598_758258788650045617_n.jpg" alt="Amazon Seller Central — $4.762M product sales over 12 months, up 47%"></div>
+        <div class="lp-proof-img"><img src="/img/proof/667299012_1291597772916930_7187615870286680459_n.jpg" alt="Amazon Seller Central — $3.365M product sales over 12 months, up 40%"></div>
+        <div class="lp-proof-img"><img src="/img/proof/668584847_1288717626538278_4964078251286251879_n.jpg" alt="Amazon Seller Central — $534.2K product sales in 30 days, up 39% year over year"></div>
+        <div class="lp-proof-img"><img src="/img/proof/670991531_1291597796250261_907207678442897442_n.jpg" alt="Amazon Seller Central — $310.3K product sales in 30 days, up 76% year over year"></div>
+        <div class="lp-proof-img"><img src="/img/proof/5-11.jpg" alt="Amazon sales snapshot — $1,181,827 in ordered product sales over 12 months"></div>
+        <div class="lp-proof-img"><img src="/img/proof/12acos.jpg" alt="Amazon PPC dashboard — $169,242 in sales at 12.18% ACOS"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INLINE FORM -->
+  <section class="lp-inline-form" id="lp-inline-form">
+    <div class="lp-inline-form-hdr">
+      <h2>Apply for Your <span>Free Audit</span> Today</h2>
+      <p>We only accept 3 new brands per month. If the timing is right, let us take a look.</p>
+    </div>
+    <div class="lp-form-card">
+      <div class="lp-progress-bar">
+        <div class="lp-progress-fill" id="lp-progress" style="width:40%"></div>
+      </div>
+      <div class="lp-step-label" id="lp-step-label">Step 1 of 2 &mdash; Your Info</div>
+
+      <form id="lp-form" novalidate>
+        <div class="lp-step-panel active" id="lp-step-1">
+          <div class="lp-fields-row">
+            <div class="lp-field">
+              <label for="lp-fname">First Name <span class="req">*</span></label>
+              <input class="lp-input" type="text" id="lp-fname" name="first-name" placeholder="Enter your name" required autocomplete="given-name">
+            </div>
+            <div class="lp-field">
+              <label for="lp-lname">Last Name <span class="req">*</span></label>
+              <input class="lp-input" type="text" id="lp-lname" name="last-name" placeholder="Enter your last name" required autocomplete="family-name">
+            </div>
+          </div>
+          <div class="lp-field">
+            <label for="lp-email">Email Address <span class="req">*</span></label>
+            <input class="lp-input" type="email" id="lp-email" name="email" placeholder="Enter your email address" required autocomplete="email">
+          </div>
+          <div class="lp-field">
+            <label for="lp-phone">Phone Number <span class="req">*</span></label>
+            <input class="lp-input" type="tel" id="lp-phone" name="phone" placeholder="+1 (555) 000-0000" required autocomplete="tel">
+          </div>
+          <button type="button" class="lp-submit-btn" id="lp-next-btn">SEE IF YOU QUALIFY</button>
+        </div>
+
+        <div class="lp-step-panel" id="lp-step-2">
+          <div class="lp-field">
+            <label for="lp-company">Brand Name <span class="req">*</span></label>
+            <input class="lp-input" type="text" id="lp-company" name="company" placeholder="Your Brand LLC" required autocomplete="organization">
+          </div>
+          <div class="lp-field">
+            <label for="lp-marketplace">Which marketplace(s) are you on? <span class="req">*</span></label>
+            <select class="lp-select" id="lp-marketplace" name="marketplace" required>
+              <option value="" disabled selected>Select marketplace...</option>
+              <option value="amazon">Amazon only</option>
+              <option value="walmart">Walmart.com only</option>
+              <option value="both">Both Amazon and Walmart.com</option>
+            </select>
+          </div>
+          <div class="lp-field">
+            <label for="lp-revenue">Annual marketplace revenue <span class="req">*</span></label>
+            <select class="lp-select" id="lp-revenue" name="revenue" required>
+              <option value="" disabled selected>Select range...</option>
+              <option value="250k-1m">$250K to $1M</option>
+              <option value="1m-5m">$1M to $5M</option>
+              <option value="5m-20m">$5M to $20M</option>
+              <option value="over-20m">Over $20M</option>
+            </select>
+          </div>
+          <div class="lp-field">
+            <label for="lp-adspend">Monthly ad spend <span class="req">*</span></label>
+            <select class="lp-select" id="lp-adspend" name="adspend" required>
+              <option value="" disabled selected>Select range...</option>
+              <option value="under-2k">Under $2K/mo</option>
+              <option value="2k-10k">$2K to $10K/mo</option>
+              <option value="10k-50k">$10K to $50K/mo</option>
+              <option value="50k-plus">$50K+/mo</option>
+            </select>
+          </div>
+          <div class="lp-btn-row">
+            <button type="button" class="lp-back-btn" id="lp-back-btn">Back</button>
+            <button type="submit" class="lp-submit-btn" id="lp-submit-btn">Submit Application</button>
+          </div>
+        </div>
+      </form>
+
+      <div class="lp-success" id="lp-success">
+        <div class="lp-success-icon">&#10003;</div>
+        <h3>You are in the queue.</h3>
+        <p>We will review your application and follow up within one business day.</p>
+      </div>
+
+      <p class="lp-form-note" id="lp-form-note">No spam. No pitch calls. We review every application personally.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="lp-footer">
+    <p>&copy; 2026 SellTru LLC &bull; <a href="/">selltru.com</a> &bull; <a href="/about.html#contact-form">Contact</a></p>
+  </footer>
+
+  <script>
+    /* ── Modal open / close ────────────────────────────────── */
+    function openAuditModal() {
+      var m = document.getElementById('audit-modal');
+      m.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      // Reset to step 1 each time it opens
+      resetModal();
+      setTimeout(function(){ document.getElementById('m-fname').focus(); }, 100);
+    }
+    function closeAuditModal() {
+      document.getElementById('audit-modal').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+    function resetModal() {
+      document.getElementById('modal-step-1').classList.add('active');
+      document.getElementById('modal-step-2').classList.remove('active');
+      document.getElementById('modal-success').style.display = 'none';
+      document.getElementById('modal-form').style.display = '';
+      document.getElementById('modal-form-note').style.display = '';
+      document.getElementById('modal-progress').style.width = '40%';
+      document.getElementById('modal-step-label').textContent = 'Step 1 of 2 — Your Info';
+      // Clear fields
+      document.getElementById('modal-form').reset();
+      var btn = document.getElementById('modal-submit-btn');
+      btn.disabled = false;
+      btn.textContent = 'Submit Application';
+      btn.style.background = '';
+    }
+    // Close on Escape key
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') closeAuditModal();
+    });
+
+    /* ── Step 1 to Step 2 ──────────────────────────────────── */
+    document.getElementById('modal-next-btn').addEventListener('click', function() {
+      var step1 = document.getElementById('modal-step-1');
+      var valid = true;
+      step1.querySelectorAll('[required]').forEach(function(f) {
+        f.style.borderColor = '';
+        if (!f.value.trim()) {
+          f.style.borderColor = '#EF4444';
+          if (valid) f.focus();
+          valid = false;
+        } else if (f.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.value)) {
+          f.style.borderColor = '#EF4444';
+          if (valid) f.focus();
+          valid = false;
+        }
+      });
+      if (!valid) return;
+      step1.classList.remove('active');
+      document.getElementById('modal-step-2').classList.add('active');
+      document.getElementById('modal-progress').style.width = '80%';
+      document.getElementById('modal-step-label').textContent = 'Step 2 of 2 — Your Business';
+    });
+
+    /* ── Back button ───────────────────────────────────────── */
+    document.getElementById('modal-back-btn').addEventListener('click', function() {
+      document.getElementById('modal-step-2').classList.remove('active');
+      document.getElementById('modal-step-1').classList.add('active');
+      document.getElementById('modal-progress').style.width = '40%';
+      document.getElementById('modal-step-label').textContent = 'Step 1 of 2 — Your Info';
+    });
+
+    /* ── HubSpot submission ────────────────────────────────── */
+    document.getElementById('modal-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = document.getElementById('modal-submit-btn');
+      // Validate step 2 fields
+      var step2 = document.getElementById('modal-step-2');
+      var valid = true;
+      step2.querySelectorAll('[required]').forEach(function(f) {
+        f.style.borderColor = '';
+        if (!f.value.trim()) {
+          f.style.borderColor = '#EF4444';
+          if (valid) f.focus();
+          valid = false;
+        }
+      });
+      if (!valid) return;
+      btn.disabled = true;
+      btn.textContent = 'Submitting...';
+      var fields = [];
+      var nameMap = {
+        'first-name':'firstname','last-name':'lastname','email':'email',
+        'phone':'phone','company':'company','marketplace':'marketplaces',
+        'revenue':'annual_revenue_range','adspend':'monthly_ad_spend'
+      };
+      new FormData(this).forEach(function(v, k) {
+        var n = nameMap[k] || k;
+        if (v) fields.push({objectTypeId:'0-1', name:n, value:v});
+      });
+      fetch('https://api.hsforms.com/submissions/v3/integration/submit/246322145/afb91a90-3757-489a-ba33-d5588bd111c0', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({fields:fields, context:{pageUri:location.href, pageName:document.title}})
+      })
+      .then(function(r) {
+        if (r.ok) {
+          if (window.gtag) gtag('event','generate_lead',{event_category:'conversion',event_label:'free_audit_modal'});
+          if (window.oaiq) oaiq('measure','registration_completed',{type:'customer_action',amount:0,currency:'USD'});
+          document.getElementById('modal-form').style.display = 'none';
+          document.getElementById('modal-form-note').style.display = 'none';
+          document.getElementById('modal-step-label').style.display = 'none';
+          document.querySelector('.modal-progress-bar').style.display = 'none';
+          var success = document.getElementById('modal-success');
+          success.style.display = 'block';
+          document.getElementById('modal-progress').style.width = '100%';
+        } else { throw 0; }
+      })
+      .catch(function() {
+        btn.disabled = false;
+        btn.textContent = 'Error. Try Again.';
+        btn.style.background = '#EF4444';
+        setTimeout(function(){ btn.textContent='Submit Application'; btn.style.background=''; btn.disabled=false; }, 4000);
+      });
+    });
+
+    /* ── Click-to-play video ───────────────────────────────── */
+    function playVideo(el) {
+      el.classList.add('playing');
+      var vid = el.querySelector('video');
+      vid.play();
+    }
+
+    /* ── Inline form: Step 1 to Step 2 ─────────────────────── */
+    document.getElementById('lp-next-btn').addEventListener('click', function() {
+      var step1 = document.getElementById('lp-step-1');
+      var valid = true;
+      step1.querySelectorAll('[required]').forEach(function(f) {
+        f.style.borderColor = '';
+        if (!f.value.trim()) { f.style.borderColor='#EF4444'; if(valid) f.focus(); valid=false; }
+        else if (f.type==='email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.value)) { f.style.borderColor='#EF4444'; if(valid) f.focus(); valid=false; }
+      });
+      if (!valid) return;
+      step1.classList.remove('active');
+      document.getElementById('lp-step-2').classList.add('active');
+      document.getElementById('lp-progress').style.width = '80%';
+      document.getElementById('lp-step-label').textContent = 'Step 2 of 2 — Your Business';
+    });
+
+    /* ── Inline form: Back ──────────────────────────────────── */
+    document.getElementById('lp-back-btn').addEventListener('click', function() {
+      document.getElementById('lp-step-2').classList.remove('active');
+      document.getElementById('lp-step-1').classList.add('active');
+      document.getElementById('lp-progress').style.width = '40%';
+      document.getElementById('lp-step-label').textContent = 'Step 1 of 2 — Your Info';
+    });
+
+    /* ── Inline form: Submit ────────────────────────────────── */
+    document.getElementById('lp-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = document.getElementById('lp-submit-btn');
+      var step2 = document.getElementById('lp-step-2');
+      var valid = true;
+      step2.querySelectorAll('[required]').forEach(function(f) {
+        f.style.borderColor = '';
+        if (!f.value.trim()) { f.style.borderColor='#EF4444'; if(valid) f.focus(); valid=false; }
+      });
+      if (!valid) return;
+      btn.disabled = true; btn.textContent = 'Submitting...';
+      var fields = [];
+      var nameMap = {'first-name':'firstname','last-name':'lastname','email':'email','phone':'phone','company':'company','marketplace':'marketplaces','revenue':'annual_revenue_range','adspend':'monthly_ad_spend'};
+      new FormData(this).forEach(function(v,k){ var n=nameMap[k]||k; if(v) fields.push({objectTypeId:'0-1',name:n,value:v}); });
+      fetch('https://api.hsforms.com/submissions/v3/integration/submit/246322145/afb91a90-3757-489a-ba33-d5588bd111c0',{
+        method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({fields:fields,context:{pageUri:location.href,pageName:document.title}})
+      }).then(function(r){
+        if(r.ok){
+          if(window.gtag) gtag('event','generate_lead',{event_category:'conversion',event_label:'lp_inline_form'});
+          if(window.oaiq) oaiq('measure','registration_completed',{type:'customer_action',amount:0,currency:'USD'});
+          document.getElementById('lp-form').style.display='none';
+          document.getElementById('lp-form-note').style.display='none';
+          document.getElementById('lp-step-label').style.display='none';
+          document.querySelector('.lp-progress-bar').style.display='none';
+          document.getElementById('lp-success').style.display='block';
+          document.getElementById('lp-progress').style.width='100%';
+        } else { throw 0; }
+      }).catch(function(){
+        btn.disabled=false; btn.textContent='Error. Try Again.'; btn.style.background='#EF4444';
+        setTimeout(function(){btn.textContent='Submit Application';btn.style.background='';btn.disabled=false;},4000);
+      });
+    });
+  </script>
+</body>
+</html>

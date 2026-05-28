@@ -930,6 +930,7 @@
           success.style.display = 'block';
           document.querySelector('.modal-box').classList.add('modal-box-calendly');
           document.getElementById('modal-progress').style.width = '100%';
+          if (window.Calendly) Calendly.initInlineWidgets();
         } else { throw 0; }
       })
       .catch(function() {
@@ -999,6 +1000,7 @@
           document.querySelector('.lp-progress-bar').style.display='none';
           document.getElementById('lp-success').style.display='block';
           document.getElementById('lp-progress').style.width='100%';
+          if (window.Calendly) Calendly.initInlineWidgets();
         } else { throw 0; }
       }).catch(function(){
         btn.disabled=false; btn.textContent='Error. Try Again.'; btn.style.background='#EF4444';

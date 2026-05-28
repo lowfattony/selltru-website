@@ -242,7 +242,15 @@
     .modal-header p { font-size: 14px; color: #64748b; margin: 0; }
     .modal-success {
       text-align: center;
-      padding: 48px 20px;
+      padding: 20px 0 0;
+    }
+    .modal-box:has(#modal-success:not([hidden])) .modal-header {
+      display: none;
+    }
+    .modal-success .calendly-inline-widget {
+      margin-top: 16px;
+      border-radius: 8px;
+      overflow: hidden;
     }
     .modal-success-icon {
       width: 56px;
@@ -331,6 +339,8 @@
     !function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments);};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f);}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");
     oaiq("init", { pixelId: "UeyzoKe3VtFvfSMqVPUoaN" });
   </script>
+  <link rel="preconnect" href="https://assets.calendly.com">
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
 <body>
 
@@ -1391,9 +1401,9 @@
         <button type="submit" class="form-btn" id="modal-submit-btn">Send My Audit Request &rarr;</button>
       </form>
       <div class="modal-success" id="modal-success" hidden>
-        <div class="modal-success-icon">&#10003;</div>
-        <h3>We'll be in touch soon.</h3>
-        <p>Check your email &mdash; we'll follow up within one business day.</p>
+        <h3>Application received.</h3>
+        <p>Book a call now while you're here &mdash; no waiting, no back-and-forth.</p>
+        <div class="calendly-inline-widget" data-url="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1" style="min-width:280px;height:700px;"></div>
       </div>
     </div>
   </div>
@@ -1454,6 +1464,18 @@
       });
 
       // Form submission handled by main.js
+
+      // Reinitialize Calendly when success state becomes visible
+      var calSuccessEl = document.getElementById('modal-success');
+      if (calSuccessEl) {
+        new MutationObserver(function(mutations) {
+          mutations.forEach(function(m) {
+            if (m.attributeName === 'hidden' && !calSuccessEl.hasAttribute('hidden')) {
+              if (window.Calendly) Calendly.initInlineWidgets();
+            }
+          });
+        }).observe(calSuccessEl, { attributes: true });
+      }
     })();
   </script>
 </body>

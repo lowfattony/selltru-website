@@ -589,17 +589,7 @@
       <h1>We Will Find What Is <span class="accent">Killing Your Margins</span><br>and Show You How to Fix It</h1>
       <p class="lp-hero-sub">Our proven system tested across 50+ Amazon and Walmart brands. You will leave the call knowing exactly what to fix, what to cut, and where your next dollar of growth is hiding.</p>
 
-      <div class="lp-video-wrap">
-        <!-- ANDREW: Replace placeholder with your client video:
-             <iframe width="100%" style="aspect-ratio:16/9;display:block" src="YOUTUBE_EMBED_URL" frameborder="0" allowfullscreen></iframe>
-        -->
-        <div class="lp-video-ph">
-          <div class="lp-play-btn">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <p>Client Video Coming Soon</p>
-        </div>
-      </div>
+
 
       <button class="lp-cta-btn" onclick="openAuditModal()">Apply for Your Free Audit</button>
       <p class="lp-spots"><strong>Limited spots:</strong> Only accepting 3 new brands per month</p>
@@ -694,11 +684,15 @@
           </div>
         </div>
         <div class="lp-vid-card">
-          <div class="lp-vid-ph">
-            <div class="lp-vid-play">
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          <div class="lp-vid-player" onclick="playVideo(this)">
+            <img width="1280" height="720" loading="lazy" src="/img/proof/video-testi-2-thumb.webp" alt="Client video testimonial">
+            <div class="lp-play-overlay">
+              <div class="lp-vid-play">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <p class="lp-vid-ph-txt">Watch Client Testimonial</p>
             </div>
-            <p class="lp-vid-ph-txt">Client Video 2<br><span style="font-size:10px;opacity:0.5">Add file: /img/proof/video-testi-2-thumb.jpg</span></p>
+            <video src="/img/proof/client-video-2.mp4" controls playsinline preload="none"></video>
           </div>
         </div>
       </div>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 340" role="img" aria-label="The supplement PPC order of operations: Profit, then Foundation, then Traffic, then Scale. Most brands start at Scale, which is backwards.">
+  <rect width="880" height="340" fill="#F8FAFC" rx="16"/>
+  <text x="40" y="52" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="24" font-weight="800" fill="#0D1B2A">The Supplement PPC Order of Operations</text>
+  <text x="40" y="80" font-family="Inter,Arial,sans-serif" font-size="15" fill="#64748B">Profit first. Scale last. Most brands do it backwards.</text>
+
+  <!-- Step 1 Profit -->
+  <g>
+    <rect x="40" y="110" width="180" height="140" rx="12" fill="#0D1B2A"/>
+    <text x="62" y="146" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="13" font-weight="700" fill="#FF6B35">STEP 1</text>
+    <text x="62" y="178" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="22" font-weight="800" fill="#ffffff">Profit</text>
+    <text x="62" y="206" font-family="Inter,Arial,sans-serif" font-size="13" fill="#CBD5E1">Break-even ACoS,</text>
+    <text x="62" y="224" font-family="Inter,Arial,sans-serif" font-size="13" fill="#CBD5E1">margin, COGS, fees</text>
+  </g>
+  <!-- Step 2 Foundation -->
+  <g>
+    <rect x="240" y="110" width="180" height="140" rx="12" fill="#1A3A5C"/>
+    <text x="262" y="146" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="13" font-weight="700" fill="#FF6B35">STEP 2</text>
+    <text x="262" y="178" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="22" font-weight="800" fill="#ffffff">Foundation</text>
+    <text x="262" y="206" font-family="Inter,Arial,sans-serif" font-size="13" fill="#CBD5E1">Listing converts,</text>
+    <text x="262" y="224" font-family="Inter,Arial,sans-serif" font-size="13" fill="#CBD5E1">claims compliant</text>
+  </g>
+  <!-- Step 3 Traffic -->
+  <g>
+    <rect x="440" y="110" width="180" height="140" rx="12" fill="#1A56DB"/>
+    <text x="462" y="146" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="13" font-weight="700" fill="#FFD9C9">STEP 3</text>
+    <text x="462" y="178" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="22" font-weight="800" fill="#ffffff">Traffic</text>
+    <text x="462" y="206" font-family="Inter,Arial,sans-serif" font-size="13" fill="#DBEAFE">Branded defense,</text>
+    <text x="462" y="224" font-family="Inter,Arial,sans-serif" font-size="13" fill="#DBEAFE">isolate high intent</text>
+  </g>
+  <!-- Step 4 Scale -->
+  <g>
+    <rect x="640" y="110" width="180" height="140" rx="12" fill="#FF6B35"/>
+    <text x="662" y="146" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="13" font-weight="700" fill="#0D1B2A">STEP 4</text>
+    <text x="662" y="178" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="22" font-weight="800" fill="#ffffff">Scale</text>
+    <text x="662" y="206" font-family="Inter,Arial,sans-serif" font-size="13" fill="#FFF1EC">Winners only:</text>
+    <text x="662" y="224" font-family="Inter,Arial,sans-serif" font-size="13" fill="#FFF1EC">terms, ASINs, sources</text>
+  </g>
+
+  <!-- arrows -->
+  <text x="226" y="188" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#94A3B8">&#8594;</text>
+  <text x="426" y="188" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#94A3B8">&#8594;</text>
+  <text x="626" y="188" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#94A3B8">&#8594;</text>
+
+  <text x="40" y="300" font-family="Inter,Arial,sans-serif" font-size="14" fill="#64748B">In supplements, ads amplify a strong foundation. They cannot manufacture one.</text>
+  <text x="40" y="324" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="600" fill="#1A56DB">SellTru &#183; Amazon &amp; Walmart PPC</text>
+</svg>

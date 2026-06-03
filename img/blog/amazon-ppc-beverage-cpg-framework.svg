@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 360" role="img" aria-label="The beverage and CPG PPC framework: Economics, Offer, Structure, Intent, Repeat Purchase, then Scale. Build the math before the campaigns.">
+  <rect width="1060" height="360" fill="#F8FAFC" rx="16"/>
+  <text x="40" y="52" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="24" font-weight="800" fill="#0D1B2A">The Beverage &amp; CPG PPC Framework</text>
+  <text x="40" y="80" font-family="Inter,Arial,sans-serif" font-size="15" fill="#64748B">Economics first. Scale last. Build the math before the campaigns.</text>
+
+  <!-- Step 1 Economics -->
+  <g>
+    <rect x="40" y="110" width="145" height="150" rx="12" fill="#0D1B2A"/>
+    <text x="60" y="144" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="12" font-weight="700" fill="#FF6B35">STEP 1</text>
+    <text x="60" y="174" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="19" font-weight="800" fill="#ffffff">Economics</text>
+    <text x="60" y="202" font-family="Inter,Arial,sans-serif" font-size="12" fill="#CBD5E1">Break-even ACoS,</text>
+    <text x="60" y="220" font-family="Inter,Arial,sans-serif" font-size="12" fill="#CBD5E1">margin, fees,</text>
+    <text x="60" y="238" font-family="Inter,Arial,sans-serif" font-size="12" fill="#CBD5E1">coupons</text>
+  </g>
+  <!-- Step 2 Offer -->
+  <g>
+    <rect x="207" y="110" width="145" height="150" rx="12" fill="#16314A"/>
+    <text x="227" y="144" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="12" font-weight="700" fill="#FF6B35">STEP 2</text>
+    <text x="227" y="174" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="19" font-weight="800" fill="#ffffff">Offer</text>
+    <text x="227" y="202" font-family="Inter,Arial,sans-serif" font-size="12" fill="#CBD5E1">Pack size, price,</text>
+    <text x="227" y="220" font-family="Inter,Arial,sans-serif" font-size="12" fill="#CBD5E1">flavors, reviews,</text>
+    <text x="227" y="238" font-family="Inter,Arial,sans-serif" font-size="12" fill="#CBD5E1">Subscribe &amp; Save</text>
+  </g>
+  <!-- Step 3 Structure -->
+  <g>
+    <rect x="374" y="110" width="145" height="150" rx="12" fill="#1A3A5C"/>
+    <text x="394" y="144" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="12" font-weight="700" fill="#FF6B35">STEP 3</text>
+    <text x="394" y="174" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="19" font-weight="800" fill="#ffffff">Structure</text>
+    <text x="394" y="202" font-family="Inter,Arial,sans-serif" font-size="12" fill="#CBD5E1">Listing converts</text>
+    <text x="394" y="220" font-family="Inter,Arial,sans-serif" font-size="12" fill="#CBD5E1">before a single</text>
+    <text x="394" y="238" font-family="Inter,Arial,sans-serif" font-size="12" fill="#CBD5E1">ad goes live</text>
+  </g>
+  <!-- Step 4 Intent -->
+  <g>
+    <rect x="541" y="110" width="145" height="150" rx="12" fill="#1A56DB"/>
+    <text x="561" y="144" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="12" font-weight="700" fill="#FFD9C9">STEP 4</text>
+    <text x="561" y="174" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="19" font-weight="800" fill="#ffffff">Intent</text>
+    <text x="561" y="202" font-family="Inter,Arial,sans-serif" font-size="12" fill="#DBEAFE">Separate branded,</text>
+    <text x="561" y="220" font-family="Inter,Arial,sans-serif" font-size="12" fill="#DBEAFE">non-branded,</text>
+    <text x="561" y="238" font-family="Inter,Arial,sans-serif" font-size="12" fill="#DBEAFE">competitor, auto</text>
+  </g>
+  <!-- Step 5 Repeat -->
+  <g>
+    <rect x="708" y="110" width="145" height="150" rx="12" fill="#2A6FE0"/>
+    <text x="728" y="144" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="12" font-weight="700" fill="#FFD9C9">STEP 5</text>
+    <text x="728" y="174" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="19" font-weight="800" fill="#ffffff">Repeat</text>
+    <text x="728" y="202" font-family="Inter,Arial,sans-serif" font-size="12" fill="#DBEAFE">Subscribe &amp; Save,</text>
+    <text x="728" y="220" font-family="Inter,Arial,sans-serif" font-size="12" fill="#DBEAFE">reorder rate, LTV</text>
+  </g>
+  <!-- Step 6 Scale -->
+  <g>
+    <rect x="875" y="110" width="145" height="150" rx="12" fill="#FF6B35"/>
+    <text x="895" y="144" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="12" font-weight="700" fill="#0D1B2A">STEP 6</text>
+    <text x="895" y="174" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="19" font-weight="800" fill="#ffffff">Scale</text>
+    <text x="895" y="202" font-family="Inter,Arial,sans-serif" font-size="12" fill="#FFF1EC">Expand only</text>
+    <text x="895" y="220" font-family="Inter,Arial,sans-serif" font-size="12" fill="#FFF1EC">what already</text>
+    <text x="895" y="238" font-family="Inter,Arial,sans-serif" font-size="12" fill="#FFF1EC">prints profit</text>
+  </g>
+
+  <!-- arrows -->
+  <text x="190" y="192" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#94A3B8">&#8594;</text>
+  <text x="357" y="192" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#94A3B8">&#8594;</text>
+  <text x="524" y="192" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#94A3B8">&#8594;</text>
+  <text x="691" y="192" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#94A3B8">&#8594;</text>
+  <text x="858" y="192" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#94A3B8">&#8594;</text>
+
+  <text x="40" y="312" font-family="Inter,Arial,sans-serif" font-size="14" fill="#64748B">In CPG, the brands that lose money rarely have a PPC problem. They have a math problem.</text>
+  <text x="40" y="336" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="600" fill="#1A56DB">SellTru &#183; Amazon &amp; Walmart PPC</text>
+</svg>

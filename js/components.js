@@ -125,8 +125,8 @@ class SellTruFooter extends HTMLElement {
         <p class="footer-brand-desc">The Amazon marketing agency and Walmart marketplace agency for brands doing $1M to $20M. Fort Lauderdale, FL. Serving brands nationwide.</p>
         <div class="footer-social" aria-label="Social media">
           <a href="https://linkedin.com/company/selltru" target="_blank" rel="noopener" aria-label="LinkedIn">${ICON_LINKEDIN}</a>
-          <a href="https://facebook.com/selltru" target="_blank" rel="noopener" aria-label="Facebook">${ICON_FACEBOOK}</a>
-          <a href="https://instagram.com/selltru" target="_blank" rel="noopener" aria-label="Instagram">${ICON_INSTAGRAM}</a>
+          <a href="https://www.facebook.com/share/1BY35ZocEW/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">${ICON_FACEBOOK}</a>
+          <a href="https://www.instagram.com/selltru.amazon" target="_blank" rel="noopener" aria-label="Instagram">${ICON_INSTAGRAM}</a>
         </div>
       </div>
       <div class="footer-col">

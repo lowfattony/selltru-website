@@ -134,6 +134,9 @@ class SellTruFooter extends HTMLElement {
         <a href="/amazon-marketing.html">Amazon Marketing</a>
         <a href="/amazon-marketing.html#listing-optimization">Listing Optimization</a>
         <a href="/amazon-marketing.html#ppc">Amazon PPC &amp; Ads</a>
+        <a href="/amazon-ppc-food-beverage.html">PPC for Food &amp; Beverage</a>
+        <a href="/amazon-ppc-supplements.html">PPC for Supplements</a>
+        <a href="/amazon-ppc-pet-brands.html">PPC for Pet Brands</a>
         <a href="/walmart-marketing.html">Walmart Marketing</a>
         <a href="/walmart-marketing.html#walmart-ads">Walmart Connect Ads</a>
       </div>

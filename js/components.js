@@ -159,8 +159,8 @@ class SellTruFooter extends HTMLElement {
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
-        <p>(954) 869-2034</p>
-        <p>contact@selltru.com</p>
+        <p><a href="tel:+19548692034">(954) 869-2034</a></p>
+        <p><a href="mailto:contact@selltru.com">contact@selltru.com</a></p>
         <p>333 Las Olas Way<br>Fort Lauderdale, FL 33301</p>
       </div>
     </div>

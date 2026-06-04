@@ -632,32 +632,32 @@
 
       <h2 id="faq">Frequently Asked Questions</h2>
 
-      <div class="faq-item">
+      <div class="faq-item open">
         <p class="faq-q">How much does an Amazon PPC agency cost in 2026?</p>
         <p class="faq-a">Most Amazon PPC agencies charge between $2,500 and $10,000+ per month depending on account size and scope. Mid-market agencies like SellTru typically charge $3,000 to $4,500 per month for full account management. Larger agencies with significant overhead often charge $6,000 to $10,000+ for similar work. Always ask exactly what is included in the retainer before signing. For a full breakdown, see our guide on <a href="amazon-ppc-management-cost.html">how much Amazon PPC management actually costs</a>.</p>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item open">
         <p class="faq-q">What should I look for when hiring an Amazon PPC agency?</p>
         <p class="faq-a">Look at three things first: how they structure campaigns (by SKU, with match types separated), how often they make changes to the account (ask to see change history), and who will actually be managing your account day-to-day. Many agencies have excellent salespeople and average account managers. Ask for the name and background of your account manager before you sign.</p>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item open">
         <p class="faq-q">What are the red flags when hiring an Amazon PPC agency?</p>
         <p class="faq-a">The biggest red flag is when an agency cannot tell you specifically who will be working on your account. Other red flags include guaranteed ACoS or ROAS results, lock-in contracts longer than six months with no exit flexibility, campaign structures where branded, non-branded, and auto campaigns are all mixed together, and retainers that seem unusually low for the scope being promised.</p>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item open">
         <p class="faq-q">Should I hire an Amazon PPC agency or manage ads in-house?</p>
         <p class="faq-a">For most brands doing $1M or more on Amazon, an experienced agency will outperform an in-house hire at a lower total cost. The exception is if you can hire someone with five or more years of Amazon-specific PPC experience, which is both rare and expensive. For a full breakdown, see our guide on <a href="amazon-agency-vs-in-house.html">Amazon agency vs. in-house</a>.</p>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item open">
         <p class="faq-q">Do Amazon PPC agencies also manage Walmart advertising?</p>
         <p class="faq-a">Most do not. If you are selling or planning to sell on Walmart Marketplace, you need an agency with dedicated Walmart Connect Ads experience. SellTru is one of the few agencies that manages both Amazon and Walmart advertising at the same level of depth.</p>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item open">
         <p class="faq-q">How do I know if my Amazon PPC agency is actually working on my account?</p>
         <p class="faq-a">Ask them to show you the change history log inside your Amazon Seller Central account. Every bid change, keyword addition, budget adjustment, and campaign update is logged with a timestamp. If the log shows weeks of inactivity, that is a problem. A good agency should be making meaningful changes multiple times per week, especially in the first 90 days of an engagement.</p>
       </div>
@@ -691,6 +691,13 @@
   </main>
 
   <selltru-footer></selltru-footer>
+
+  <!-- FAQ accordion toggle -->
+  <script>
+    document.querySelectorAll('.faq-item .faq-q').forEach(function(q){
+      q.addEventListener('click', function(){ q.parentElement.classList.toggle('open'); });
+    });
+  </script>
 
   <!-- Reveal scroll animation — do not edit -->
   <script>

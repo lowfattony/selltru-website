@@ -17,8 +17,17 @@
     !function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments);};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f);}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");
     oaiq("init", { pixelId: "UeyzoKe3VtFvfSMqVPUoaN", debug: true });
   </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQ8PYJGXJN"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-DQ8PYJGXJN");</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5ZERMY21K"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-Z5ZERMY21K");</script>
+
+  <!-- Microsoft Clarity (session recording + heatmaps) -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wmzqznte2l");
+  </script>
 
   <style>
     /* ── Reset ─────────────────────────────────────────────── */
@@ -908,7 +917,7 @@
       .then(function(r) {
         if (r.ok) {
           if (window.gtag) gtag('event','generate_lead',{event_category:'conversion',event_label:'free_audit_modal'});
-          if (window.oaiq) oaiq('measure','registration_completed',{type:'customer_action',amount:0,currency:'USD'});
+          if (window.oaiq) oaiq('measure','registration_completed',{type:'customer_action'});
           document.getElementById('modal-form').style.display = 'none';
           document.getElementById('modal-form-note').style.display = 'none';
           document.getElementById('modal-step-label').style.display = 'none';
@@ -979,7 +988,7 @@
       }).then(function(r){
         if(r.ok){
           if(window.gtag) gtag('event','generate_lead',{event_category:'conversion',event_label:'lp_inline_form'});
-          if(window.oaiq) oaiq('measure','registration_completed',{type:'customer_action',amount:0,currency:'USD'});
+          if(window.oaiq) oaiq('measure','registration_completed',{type:'customer_action'});
           document.getElementById('lp-form').style.display='none';
           document.getElementById('lp-form-note').style.display='none';
           document.getElementById('lp-step-label').style.display='none';

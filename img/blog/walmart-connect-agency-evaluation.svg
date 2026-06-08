@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" font-family="'Plus Jakarta Sans',Arial,sans-serif">
+  <rect width="1000" height="560" fill="#F8FAFC"/>
+  <text x="500" y="52" text-anchor="middle" font-size="30" font-weight="800" fill="#0D1B2A">How to Spot a Real Walmart Connect Agency</text>
+  <text x="500" y="86" text-anchor="middle" font-size="17" font-weight="500" fill="#64748B">Hire a Walmart marketplace operator — not just an ad manager.</text>
+
+  <!-- Left column: Ad manager -->
+  <rect x="60" y="120" width="400" height="400" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <rect x="60" y="120" width="400" height="58" rx="16" fill="#94A3B8"/>
+  <rect x="60" y="150" width="400" height="28" fill="#94A3B8"/>
+  <text x="260" y="158" text-anchor="middle" font-size="20" font-weight="800" fill="#FFFFFF">Amazon Agency Doing Walmart</text>
+  <g font-size="16" fill="#475569" font-weight="500">
+    <text x="92" y="222">&#10007;  Copies the Amazon campaign map</text>
+    <text x="92" y="266">&#10007;  Talks only about bids, ROAS, ACoS</text>
+    <text x="92" y="310">&#10007;  Treats Walmart as an add-on upsell</text>
+    <text x="92" y="354">&#10007;  Ignores listing &amp; content setup</text>
+    <text x="92" y="398">&#10007;  Promises Amazon-level volume fast</text>
+    <text x="92" y="442">&#10007;  Leaves reviews unsyndicated</text>
+    <text x="92" y="486">&#10007;  Spends before the account is ready</text>
+  </g>
+
+  <!-- Right column: Operator -->
+  <rect x="540" y="120" width="400" height="400" rx="16" fill="#FFFFFF" stroke="#FF6B35" stroke-width="2.5"/>
+  <rect x="540" y="120" width="400" height="58" rx="16" fill="#0D1B2A"/>
+  <rect x="540" y="150" width="400" height="28" fill="#0D1B2A"/>
+  <text x="740" y="158" text-anchor="middle" font-size="20" font-weight="800" fill="#FFFFFF">Walmart Marketplace Operator</text>
+  <g font-size="16" fill="#0D1B2A" font-weight="600">
+    <text x="572" y="222">&#10003;  Full-account audit before any spend</text>
+    <text x="572" y="266">&#10003;  Builds listings for Walmart search</text>
+    <text x="572" y="310">&#10003;  Syndicates reviews to build trust</text>
+    <text x="572" y="354">&#10003;  Fixes Buy Box, WFS &amp; pricing first</text>
+    <text x="572" y="398">&#10003;  Campaigns built on Walmart data</text>
+    <text x="572" y="442">&#10003;  Honest 60&#8211;120 day timeline</text>
+    <text x="572" y="486">&#10003;  Treats Walmart as its own marketplace</text>
+  </g>
+  <text x="500" y="548" text-anchor="middle" font-size="14" font-weight="600" fill="#94A3B8">SellTru &#183; Walmart Connect &amp; Marketplace Growth</text>
+</svg>

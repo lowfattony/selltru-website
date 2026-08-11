@@ -52,9 +52,38 @@
     }
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://selltru.com/#andrew-deramo",
+    "name": "Andrew Deramo",
+    "jobTitle": "Founder & Head of Strategy",
+    "image": "https://selltru.com/img/andrew-deramo.jpg",
+    "url": "https://selltru.com/about",
+    "worksFor": { "@id": "https://selltru.com/#organization" },
+    "description": "Amazon and Walmart PPC expert with 7+ years managing $150M+ in marketplace sales across 150+ Amazon brands and 60+ Walmart brands.",
+    "knowsAbout": ["Amazon PPC", "Amazon listing optimization", "Walmart Connect advertising", "Amazon DSP", "marketplace strategy"],
+    "sameAs": ["https://linkedin.com/in/andrew-deramo"]
+  }
+  </script>
   <style>
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
     .reveal.revealed { opacity: 1; transform: none; }
+
+    /* Founder story */
+    .founder-section { padding: 96px 0; }
+    .founder-grid { display: grid; grid-template-columns: 360px 1fr; gap: 56px; align-items: start; }
+    .founder-photo { width: 100%; border-radius: 20px; display: block; }
+    .founder-photo-card { position: sticky; top: 100px; }
+    .founder-name { font-size: 20px; font-weight: 800; color: var(--navy); margin: 16px 0 2px; }
+    .founder-role { font-size: 14px; color: var(--text-light, #64748B); margin-bottom: 12px; }
+    .founder-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+    .founder-badge { font-size: 12px; font-weight: 600; background: #EFF4FF; color: var(--blue); padding: 5px 10px; border-radius: 999px; }
+    .founder-story p { margin-bottom: 18px; line-height: 1.8; }
+    .founder-story h3 { font-size: 20px; font-weight: 800; color: var(--navy); margin: 28px 0 10px; }
+    .founder-link { font-weight: 600; color: var(--blue); }
+    @media (max-width: 860px) { .founder-grid { grid-template-columns: 1fr; } .founder-photo-card { position: static; max-width: 380px; } }
 
     /* About-specific */
     .about-layout {
@@ -302,6 +331,43 @@
                 <span class="value-text">Speed without cutting corners</span>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOUNDER STORY ===== -->
+    <section class="founder-section" id="founder-story" aria-label="Founder story">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-tag">The Full Story</p>
+          <h2 class="section-title">Why SellTru Exists</h2>
+        </div>
+        <div class="founder-grid">
+          <div class="founder-photo-card reveal">
+            <picture>
+              <source srcset="/img/andrew-deramo.webp" type="image/webp">
+              <img class="founder-photo" src="/img/andrew-deramo.jpg" alt="Andrew Deramo, founder of SellTru, in the Fort Lauderdale office" width="900" height="900" loading="lazy">
+            </picture>
+            <div class="founder-name">Andrew Deramo</div>
+            <div class="founder-role">Founder &amp; Head of Strategy</div>
+            <div class="founder-badges">
+              <span class="founder-badge">Amazon SPN Certified</span>
+              <span class="founder-badge">Amazon Ads Verified</span>
+              <span class="founder-badge">Walmart Partner</span>
+              <span class="founder-badge">Upwork Top Rated Plus</span>
+            </div>
+          </div>
+          <div class="founder-story reveal">
+            <p>Before I ran an agency, I was the client. I was a business owner trying to grow on marketplaces, and I did what every brand owner does when they hit a ceiling: I hired help. Big-name agencies, polished pitch decks, confident promises. I sat through the kickoff calls, signed the retainers, and waited.</p>
+            <p>What I got back were reports full of impressions and clicks while my actual numbers stayed flat. The person who sold me disappeared the day the contract was signed, and my account went to whoever had bandwidth that month. I didn't just hear about the broken agency model — I paid for it, more than once.</p>
+            <h3>So I learned it myself</h3>
+            <p>I stopped outsourcing and went deep on how Amazon actually works — campaign structure, match types, ranking, the unglamorous weekly optimization work that agencies skip when nobody's watching. That was more than seven years ago. Since then I've managed over $150M in marketplace sales across 150+ Amazon brands and 60+ Walmart brands, and earned the certifications that can't be bought: <a class="founder-link" href="/questions">Amazon SPN</a>, Amazon Ads Verified Partner, Walmart Marketplace Partner, and Upwork Top Rated Plus.</p>
+            <h3>Why we only do marketplaces</h3>
+            <p>Amazon and Walmart change too fast to be a side offering. An agency that also runs your social ads, your email, and your website redesign is an agency that's average at all of it. We picked one thing — <a class="founder-link" href="/amazon-marketing">Amazon</a> and <a class="founder-link" href="/walmart-marketing">Walmart.com</a> — and built the entire company around being better at it than anyone else.</p>
+            <h3>How SellTru is run differently</h3>
+            <p>I'm personally in every account we take on. Not "executive oversight" — actually in the campaigns, looking at the same dashboards my team works in. We stay deliberately small, we only take brands we know we can move, and we price so that the relationship only works if you grow. That's the agency I was looking for as a business owner and never found. So I built it.</p>
+            <p><a class="founder-link" href="https://linkedin.com/in/andrew-deramo" target="_blank" rel="noopener">Connect with me on LinkedIn</a> or <a class="founder-link" href="#contact-form">get a free audit</a> — I read every one that comes in.</p>
           </div>
         </div>
       </div>

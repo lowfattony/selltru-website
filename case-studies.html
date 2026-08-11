@@ -34,6 +34,15 @@
   </script>
 
   <style>
+    .cs-shot { margin-top: 28px; }
+    .cs-shot img { width: 100%; max-width: 460px; border-radius: 14px; border: 1px solid #E2E8F0; display: block; }
+    .cs-shot-caption { font-size: 13px; color: #64748B; margin-top: 8px; }
+    .proof-wall { padding: 96px 0; background: #F8FAFC; }
+    .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+    .proof-grid img { width: 100%; height: auto; border-radius: 12px; border: 1px solid #E2E8F0; display: block; background: #fff; }
+    @media (max-width: 860px) { .proof-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .proof-grid { grid-template-columns: 1fr; } }
+
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
     .reveal.revealed { opacity: 1; transform: none; }
 
@@ -350,6 +359,10 @@
               <li>Launched Walmart Connect Ads in months 3 and 4 to accelerate organic rank, then pulled back as organic took hold</li>
             </ul>
           </div>
+          <div class="cs-shot reveal">
+              <img src="/img/proof/walmart/walmart-six-figure-revenue.webp" alt="Walmart Seller Center — $125,442 in item sales over 30 days, up 1,228% vs the previous period" width="1320" height="2868" loading="lazy">
+              <div class="cs-shot-caption">Walmart Seller Center during the ramp — $125,442 in 30 days, up 1,228% over the previous period.</div>
+            </div>
           <div class="cs-results cs-walmart reveal">
             <div class="cs-results-title">Results — 8 Months</div>
             <div class="cs-result-item">
@@ -393,6 +406,10 @@
               <li>Optimized listing copy and A+ content to improve conversion rate on traffic already arriving</li>
             </ul>
           </div>
+          <div class="cs-shot reveal">
+              <img src="/img/proof/amazon-dsp-39-yoy-growth.webp" alt="Amazon Seller Central — $617.5K product sales in 30 days, up 39% year over year" width="1179" height="2451" loading="lazy">
+              <div class="cs-shot-caption">Seller Central snapshot from the account — $617.5K in 30 days, +39% YoY.</div>
+            </div>
           <div class="cs-results reveal">
             <div class="cs-results-title">Results</div>
             <div class="cs-result-item">
@@ -492,7 +509,26 @@
     </section>
 
     <!-- ===== CTA ===== -->
-    <section class="cs-cta" aria-label="Get a free audit">
+        <!-- ===== PROOF WALL ===== -->
+    <section class="proof-wall" aria-label="Client messages and reviews">
+      <div class="container">
+        <div class="section-header center reveal">
+          <p class="section-tag">In Their Words</p>
+          <h2 class="section-title">Straight From Client Slack Channels</h2>
+          <p class="section-sub">Not polished marketing quotes — real messages and reviews from the brands we manage, exactly as they were sent.</p>
+        </div>
+        <div class="proof-grid reveal">
+          <img src="/img/proof/donovan-scale.webp" alt="Client Slack — $17K day, Donovan Lagarde praising the team" width="941" height="1672" loading="lazy">
+          <img src="/img/proof/first100k.webp" alt="Client Slack — Chris celebrating first $100K month" width="941" height="1672" loading="lazy">
+          <img src="/img/proof/nootropics.webp" alt="Client message — 100% profit growth, 75% conversion growth, 115% sales growth in under 1 week" width="1486" height="1059" loading="lazy">
+          <img src="/img/proof/thanks.webp" alt="Client message — Prime Sale amazing job" width="1486" height="1058" loading="lazy">
+          <img src="/img/proof/sp.webp" alt="Client review — Selltru SP campaigns, performance and ROI improve every month" width="1485" height="1059" loading="lazy">
+          <img src="/img/proof/selltru-dsp-client-review.webp" alt="Client review — Selltru DSP team most knowledgeable and experienced in Amazon space" width="1486" height="1058" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+<section class="cs-cta" aria-label="Get a free audit">
       <div class="container">
         <p class="section-tag light" style="margin-bottom:14px;text-align:center;">Free Audit</p>
         <h2>Want to Know What's Costing You on Amazon or Walmart?</h2>

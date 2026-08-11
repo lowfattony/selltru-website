@@ -16,6 +16,12 @@
   <title>Best Amazon PPC Agencies 2026, Ranked | SellTru</title>
   <meta name="description" content="The 8 best Amazon PPC agencies for $1M-$10M brands in 2026, ranked by an operator who's managed $150M+ in sales. Real criteria, honest red flags.">
   <link rel="canonical" href="https://selltru.com/blog/best-amazon-ppc-agencies-2026">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://selltru.com/blog/best-amazon-ppc-agencies-2026">
+  <meta property="og:title" content="Best Amazon PPC Agencies 2026, Ranked | SellTru">
+  <meta property="og:description" content="The 8 best Amazon PPC agencies for $1M-$10M brands in 2026, ranked by an operator who's managed $150M+ in sales. Real criteria, honest red flags.">
+  <meta property="og:image" content="https://selltru.com/img/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
@@ -44,7 +50,11 @@
     .blog-breadcrumb a { color: var(--blue); text-decoration: none; }
     .agency-card { background: #fff; border: 1px solid var(--gray-200); border-radius: 14px; padding: 28px 30px; margin: 32px 0; }
     .agency-card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 14px; flex-wrap: wrap; }
-    .agency-card-name { font-family: var(--font-head); font-size: 19px; font-weight: 800; color: var(--navy); }
+    .agency-card-name {
+      margin: 0;
+      font-weight: inherit;
+      font-size: inherit;
+      line-height: inherit; font-family: var(--font-head); font-size: 19px; font-weight: 800; color: var(--navy); }
     .agency-card-rank { font-size: 13px; font-weight: 700; background: var(--navy); color: #fff; border-radius: 20px; padding: 4px 12px; white-space: nowrap; }
     .agency-card-rank.orange { background: #FF6B35; }
     .agency-best-for { font-size: 13px; font-weight: 700; color: #FF6B35; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
@@ -105,7 +115,8 @@
       "jobTitle": "Founder, SellTru",
       "description": "Amazon and Walmart PPC expert with 7+ years managing $150M+ in marketplace sales."
     },
-    "publisher": { "@type": "Organization", "name": "SellTru", "url": "https://selltru.com" },
+    "image": "https://selltru.com/img/og-image.png",
+    "publisher": { "@type": "Organization", "name": "SellTru", "url": "https://selltru.com", "logo": { "@type": "ImageObject", "url": "https://selltru.com/img/selltru-logo.png" } },
     "mainEntityOfPage": { "@type": "WebPage", "@id": "https://selltru.com/blog/best-amazon-ppc-agencies-2026" }
   }
   </script>
@@ -254,7 +265,58 @@
 <body>
 
   
-  <selltru-header></selltru-header>
+  <selltru-header><header class="nav" role="banner">
+  <div class="container">
+    <div class="nav-inner">
+      <a class="nav-logo" href="/" aria-label="SellTru home">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+  <rect x="1"  y="20" width="7"  height="13" rx="2.5" fill="#FF6B35"/>
+  <rect x="10" y="13" width="7"  height="20" rx="2.5" fill="#1A56DB"/>
+  <rect x="19" y="6"  width="7"  height="27" rx="2.5" fill="white"/>
+  <rect x="28" y="2"  width="5"  height="31" rx="2"   fill="rgba(255,255,255,0.55)"/>
+</svg>
+        <span class="nav-logo-text">SELL<span>TRU</span></span>
+      </a>
+      <nav class="nav-links" role="navigation" aria-label="Main navigation">
+        <a class="nav-link" href="/amazon-marketing">Amazon</a>
+        <a class="nav-link" href="/walmart-marketing">Walmart</a>
+        <a class="nav-link active" href="/blog">Blog</a>
+        <a class="nav-link" href="/about">About</a>
+        <a class="nav-link" href="/about#contact-form">Contact</a>
+      </nav>
+      <a class="nav-cta" href="/about#contact-form" data-modal-trigger="audit">Get Free Audit</a>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-mobile" aria-label="Mobile navigation">
+    <a href="/amazon-marketing">Amazon Marketing</a>
+    <a href="/walmart-marketing">Walmart Marketing</a>
+    <a href="/blog">Blog</a>
+    <a href="/about">About</a>
+    <a href="/about#contact-form" class="nav-cta">Get Your Free Audit &rarr;</a>
+  </div>
+</header>
+
+<div class="email-bar" id="email-bar" role="complementary" aria-label="Free checklist offer" hidden>
+  <div class="email-bar-inner">
+    <div class="email-bar-copy">
+      <span class="email-bar-label">Free Download</span>
+      <span class="email-bar-text">Get the Amazon Audit Checklist we use on every account we take over.</span>
+    </div>
+    <form class="email-bar-form" id="email-bar-form" novalidate>
+      <input type="email" name="email" class="email-bar-input" placeholder="Your work email" aria-label="Your work email" required autocomplete="email">
+      <button type="submit" class="email-bar-btn">Send It</button>
+    </form>
+    <button class="email-bar-dismiss" id="email-bar-dismiss" aria-label="Dismiss">&times;</button>
+  </div>
+</div>
+
+<form name="email-capture" data-netlify="true" hidden>
+  <input type="email" name="email">
+  <input type="hidden" name="source">
+</form></selltru-header>
   <!-- Sticky Blog CTA Bar -->
   <div id="blog-sticky-bar" aria-label="Free audit offer">
     <p class="bar-text"><strong>Free Amazon PPC Audit</strong> — Most accounts waste 25%+ on bad targeting. We'll find yours in 15 minutes.</p>
@@ -288,7 +350,7 @@
   <main>
     <div class="blog-article">
 
-      <p class="blog-breadcrumb"><a href="../blog.html">← Blog</a> &nbsp;/&nbsp; Amazon Advertising</p>
+      <p class="blog-breadcrumb"><a href="..">← Blog</a> &nbsp;/&nbsp; Amazon Advertising</p>
 
       <p class="section-tag" style="margin-bottom:12px;">Amazon Advertising</p>
       <h1>Best Amazon PPC Agencies 2026: Ranked by a Practitioner, Not a Content Team</h1>
@@ -420,7 +482,7 @@
       <!-- 1. Canopy Management -->
       <div class="agency-card reveal">
         <div class="agency-card-header">
-          <div class="agency-card-name">1. Canopy Management</div>
+          <h3 class="agency-card-name">1. Canopy Management</h3>
           <div class="agency-card-rank">Best for enterprise brands</div>
         </div>
         <p class="agency-best-for">Best for: Established brands wanting full account management</p>
@@ -436,7 +498,7 @@
       <!-- 2. SellTru -->
       <div class="agency-card reveal" style="border-color:#FF6B35;">
         <div class="agency-card-header">
-          <div class="agency-card-name">2. SellTru</div>
+          <h3 class="agency-card-name">2. SellTru</h3>
           <div class="agency-card-rank orange">Best for mid-market brands</div>
         </div>
         <p class="agency-best-for">Best for: Amazon brands doing $1M–$20M who want senior-level work without the enterprise price tag</p>
@@ -455,13 +517,13 @@
           <li>Transparent pricing starting at $3,000/month</li>
           <li>Honest audits before we ask for your business</li>
         </ul>
-        <p style="margin-top:16px;margin-bottom:0;"><a href="../about.html#contact-form" style="color:#FF6B35;font-weight:700;">Request a free account audit from SellTru →</a></p>
+        <p style="margin-top:16px;margin-bottom:0;"><a href="../#contact-form" style="color:#FF6B35;font-weight:700;">Request a free account audit from SellTru →</a></p>
       </div>
 
       <!-- 3. My Amazon Guy -->
       <div class="agency-card reveal">
         <div class="agency-card-header">
-          <div class="agency-card-name">3. My Amazon Guy</div>
+          <h3 class="agency-card-name">3. My Amazon Guy</h3>
           <div class="agency-card-rank">Best for transparency-focused brands</div>
         </div>
         <p class="agency-best-for">Best for: Brands that want to understand what is being done and why</p>
@@ -477,7 +539,7 @@
       <!-- 4. Trivium Group -->
       <div class="agency-card reveal">
         <div class="agency-card-header">
-          <div class="agency-card-name">4. Trivium Group</div>
+          <h3 class="agency-card-name">4. Trivium Group</h3>
           <div class="agency-card-rank">Best for scaling brands</div>
         </div>
         <p class="agency-best-for">Best for: Brands at the $2M–$10M range looking for integrated listing and PPC management</p>
@@ -493,7 +555,7 @@
       <!-- 5. Incrementum Digital -->
       <div class="agency-card reveal">
         <div class="agency-card-header">
-          <div class="agency-card-name">5. Incrementum Digital</div>
+          <h3 class="agency-card-name">5. Incrementum Digital</h3>
           <div class="agency-card-rank">Best for data-driven brands</div>
         </div>
         <p class="agency-best-for">Best for: Analytically-minded brands that want deep reporting and strategic depth</p>
@@ -502,14 +564,14 @@
         <ul>
           <li>Strong analytical and reporting depth</li>
           <li>Good for brands spending $20K+ per month on ads</li>
-          <li><a href="amazon-dsp-advertising-explained.html" style="color:var(--blue);">DSP experience</a> alongside Sponsored Ads management</li>
+          <li><a href="amazon-dsp-advertising-expl" style="color:var(--blue);">DSP experience</a> alongside Sponsored Ads management</li>
         </ul>
       </div>
 
       <!-- 6. Seller Interactive -->
       <div class="agency-card reveal">
         <div class="agency-card-header">
-          <div class="agency-card-name">6. Seller Interactive</div>
+          <h3 class="agency-card-name">6. Seller Interactive</h3>
           <div class="agency-card-rank">Best for broad support needs</div>
         </div>
         <p class="agency-best-for">Best for: Brands that need a wide range of Amazon services beyond just advertising</p>
@@ -525,7 +587,7 @@
       <!-- 7. AMZDudes -->
       <div class="agency-card reveal">
         <div class="agency-card-header">
-          <div class="agency-card-name">7. AMZDudes</div>
+          <h3 class="agency-card-name">7. AMZDudes</h3>
           <div class="agency-card-rank">Best for AI and AMC integration</div>
         </div>
         <p class="agency-best-for">Best for: Brands wanting Amazon Marketing Cloud data and AI-integrated campaign management</p>
@@ -541,7 +603,7 @@
       <!-- 8. Teikametrics -->
       <div class="agency-card reveal">
         <div class="agency-card-header">
-          <div class="agency-card-name">8. Teikametrics</div>
+          <h3 class="agency-card-name">8. Teikametrics</h3>
           <div class="agency-card-rank">Best for automation-first brands</div>
         </div>
         <p class="agency-best-for">Best for: Brands that want algorithmic optimization and are comfortable with a software-driven model</p>
@@ -577,7 +639,7 @@
       <p>A good agency makes meaningful changes to your campaigns multiple times a week. If you ask "how often do your account managers make changes?" and the answer is vague, that is a red flag. The change history log does not lie. Once you are a client, you can see exactly how often your account is being worked.</p>
 
       <div class="blog-callout">
-        <p>Related: <a href="questions-to-ask-amazon-marketing-agency.html">15 questions to ask an Amazon marketing agency before you sign</a></p>
+        <p>Related: <a href="questions-to-ask-amazon-marketing-a">15 questions to ask an Amazon marketing agency before you sign</a></p>
       </div>
 
       <hr class="blog-divider">
@@ -605,7 +667,7 @@
       <p>Account manager-to-client ratios matter. If one person is managing 20 or 30 accounts, your account is not getting the attention it needs. A reasonable ratio is 10 to 15 accounts per manager for a full-service engagement. Ask the question directly. The answer tells you a lot about how the agency is structured behind the scenes.</p>
 
       <div class="blog-callout">
-        <p>Related: <a href="../amazon-agency-pricing.html">How much does Amazon PPC management actually cost in 2026?</a></p>
+        <p>Related: <a href="../amazon-agency-pr">How much does Amazon PPC management actually cost in 2026?</a></p>
       </div>
 
       <hr class="blog-divider">
@@ -621,11 +683,11 @@
       <p>SellTru manages both Amazon and Walmart Connect Ads. We treat them as separate strategies because they are, with different bidding mechanics, different keyword intent, and different customer behavior. If you are already on Amazon and want to build a Walmart presence without starting from zero, that is exactly what we do.</p>
 
       <div class="blog-callout orange">
-        <p>Interested in Walmart advertising? <a href="../walmart-marketing.html" style="color:#7C2D0E;font-weight:700;">See how we approach Walmart Connect Ads →</a></p>
+        <p>Interested in Walmart advertising? <a href="../walmart-mark" style="color:#7C2D0E;font-weight:700;">See how we approach Walmart Connect Ads →</a></p>
       </div>
 
       <div class="blog-callout">
-        <p>Running a small business under $500K/year? The agency criteria shift a bit at your stage. We wrote a guide specifically for small business owners on what to look for, what to avoid, and why you need a profit operator — not a revenue agency: <a href="top-rated-amazon-marketing-agencies-small-business.html" style="color:var(--blue);">top-rated Amazon marketing agencies for small businesses</a>.</p>
+        <p>Running a small business under $500K/year? The agency criteria shift a bit at your stage. We wrote a guide specifically for small business owners on what to look for, what to avoid, and why you need a profit operator — not a revenue agency: <a href="top-rated-amazon-marketing-agencies-small-bus" style="color:var(--blue);">top-rated Amazon marketing agencies for small businesses</a>.</p>
       </div>
 
       <hr class="blog-divider">
@@ -634,7 +696,7 @@
 
       <div class="faq-item open">
         <p class="faq-q">How much does an Amazon PPC agency cost in 2026?</p>
-        <p class="faq-a">Most Amazon PPC agencies charge between $2,500 and $10,000+ per month depending on account size and scope. Mid-market agencies like SellTru typically charge $3,000 to $4,500 per month for full account management. Larger agencies with significant overhead often charge $6,000 to $10,000+ for similar work. Always ask exactly what is included in the retainer before signing. For a full breakdown, see our guide on <a href="amazon-ppc-management-cost.html">how much Amazon PPC management actually costs</a>.</p>
+        <p class="faq-a">Most Amazon PPC agencies charge between $2,500 and $10,000+ per month depending on account size and scope. Mid-market agencies like SellTru typically charge $3,000 to $4,500 per month for full account management. Larger agencies with significant overhead often charge $6,000 to $10,000+ for similar work. Always ask exactly what is included in the retainer before signing. For a full breakdown, see our guide on <a href="amazon-ppc-management">how much Amazon PPC management actually costs</a>.</p>
       </div>
 
       <div class="faq-item open">
@@ -649,7 +711,7 @@
 
       <div class="faq-item open">
         <p class="faq-q">Should I hire an Amazon PPC agency or manage ads in-house?</p>
-        <p class="faq-a">For most brands doing $1M or more on Amazon, an experienced agency will outperform an in-house hire at a lower total cost. The exception is if you can hire someone with five or more years of Amazon-specific PPC experience, which is both rare and expensive. For a full breakdown, see our guide on <a href="amazon-agency-vs-in-house.html">Amazon agency vs. in-house</a>.</p>
+        <p class="faq-a">For most brands doing $1M or more on Amazon, an experienced agency will outperform an in-house hire at a lower total cost. The exception is if you can hire someone with five or more years of Amazon-specific PPC experience, which is both rare and expensive. For a full breakdown, see our guide on <a href="amazon-agency-vs-in-">Amazon agency vs. in-house</a>.</p>
       </div>
 
       <div class="faq-item open">
@@ -681,16 +743,95 @@
       <div class="blog-cta-box">
         <h3>Not sure if your current agency is actually doing the work?</h3>
         <p>We audit Amazon PPC accounts every week. We'll show you exactly where the spend is wasted, what your agency should be doing differently, and what a real performance baseline looks like. Free, no obligation.</p>
-        <a class="btn btn-primary" href="../about.html#contact-form" data-modal-trigger="audit" style="display:inline-block;padding:14px 32px;background:var(--orange);color:#fff;font-weight:700;border-radius:10px;text-decoration:none;font-size:15px;">Get a Free Audit</a>
+        <a class="btn btn-primary" href="../#contact-form" data-modal-trigger="audit" style="display:inline-block;padding:14px 32px;background:var(--orange);color:#fff;font-weight:700;border-radius:10px;text-decoration:none;font-size:15px;">Get a Free Audit</a>
       </div>
       <div style="margin-top:40px;padding:18px 22px 18px 26px;background:#F8FAFC;border:1px solid #E2E8F0;border-left:3px solid #10B981;border-radius:0 12px 12px 0;" class="reveal">
-        <p style="margin:0;font-size:14px;color:#64748B;line-height:1.65;">Have experience with this? The SellTru blog accepts guest posts from Amazon sellers, agency pros, and ecommerce operators. <a href="../write-for-us.html" style="color:#1A56DB;font-weight:600;text-decoration:none;">See our submission guidelines &rarr;</a></p>
+        <p style="margin:0;font-size:14px;color:#64748B;line-height:1.65;">Have experience with this? The SellTru blog accepts guest posts from Amazon sellers, agency pros, and ecommerce operators. <a href="../write-f" style="color:#1A56DB;font-weight:600;text-decoration:none;">See our submission guidelines &rarr;</a></p>
       </div>
 
     </div>
   </main>
 
-  <selltru-footer></selltru-footer>
+  <selltru-footer><footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="nav-logo" href="/" aria-label="SellTru home">
+          <svg width="30" height="30" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+  <rect x="1"  y="20" width="7"  height="13" rx="2.5" fill="#FF6B35"/>
+  <rect x="10" y="13" width="7"  height="20" rx="2.5" fill="#1A56DB"/>
+  <rect x="19" y="6"  width="7"  height="27" rx="2.5" fill="white"/>
+  <rect x="28" y="2"  width="5"  height="31" rx="2"   fill="rgba(255,255,255,0.55)"/>
+</svg>
+          <span class="nav-logo-text">SELL<span>TRU</span></span>
+        </a>
+        <p class="footer-brand-desc">The Amazon marketing agency and Walmart marketplace agency for brands doing $1M to $20M. Fort Lauderdale, FL. Serving brands nationwide.</p>
+        <div class="footer-social" aria-label="Social media">
+          <a href="https://linkedin.com/company/selltru" target="_blank" rel="noopener" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://www.facebook.com/share/1BY35ZocEW/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://www.instagram.com/selltru.amazon" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="/amazon-marketing">Amazon Marketing</a>
+        <a href="/amazon-marketing#listing-optimization">Listing Optimization</a>
+        <a href="/amazon-marketing#ppc">Amazon PPC &amp; Ads</a>
+        <a href="/amazon-ppc-food-beverage">PPC for Food &amp; Beverage</a>
+        <a href="/amazon-ppc-supplements">PPC for Supplements</a>
+        <a href="/amazon-ppc-pet-brands">PPC for Pet Brands</a>
+        <a href="/walmart-marketing">Walmart Marketing</a>
+        <a href="/walmart-marketing#walmart-ads">Walmart Connect Ads</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="/blog">Blog</a>
+        <a href="/questions">FAQ</a>
+        <a href="/lead-magnet">Free Audit Checklist</a>
+        <a href="/amazon-agency-pricing">Agency Pricing Guide</a>
+        <a href="/walmart-advertising-cost">Walmart Advertising Cost</a>
+        <a href="/walmart-connect-calculator">Walmart Connect Calculator</a>
+        <a href="/case-studies">Case Studies</a>
+        <a href="/write-for-us">Write for Us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/about">About SellTru</a>
+        <a href="/about#contact-form">Contact</a>
+        <a href="/about#contact-form">Get a Free Audit</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p><a href="tel:+19548692034">(954) 869-2034</a></p>
+        <p><a href="mailto:contact@selltru.com">contact@selltru.com</a></p>
+        <p>333 Las Olas Way<br>Fort Lauderdale, FL 33301</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+        <p>&copy; 2026 SellTru. All rights reserved. | Amazon Marketing Agency | Fort Lauderdale, FL</p>
+      </div>
+      <div class="footer-certs">
+        <span class="footer-cert">Amazon SPN Certified</span>
+        <span class="footer-cert">Amazon Ads Verified Partner</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-audit-strip" id="sticky-strip" role="complementary" aria-label="Free audit offer">
+  <div class="sticky-strip-text">
+    <div class="sticky-strip-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+    <div class="sticky-strip-copy">
+      <div class="sticky-strip-headline">Free Amazon Audit</div>
+      <div class="sticky-strip-sub">We'll find what's costing you. No obligation.</div>
+    </div>
+  </div>
+  <div class="sticky-strip-actions">
+    <a class="sticky-strip-cta" href="/about#contact-form" data-modal-trigger="audit">Get the Free Audit</a>
+    <button class="sticky-strip-dismiss" id="strip-dismiss" aria-label="Dismiss">&times;</button>
+  </div>
+</div></selltru-footer>
 
   <!-- FAQ accordion toggle -->
   <script>

@@ -14,8 +14,9 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Amazon & Walmart Marketplace Blog | SellTru</title>
-  <meta name="description" content="Expert guides and strategy on Amazon marketing, Amazon PPC, listing optimization, and Walmart.com marketplace growth. Written by SellTru's marketplace specialists.">
+  <meta name="description" content="Expert guides on Amazon marketing, Amazon PPC, listing optimization, and Walmart marketplace growth from SellTru's specialists.">
   <meta property="og:title" content="Amazon & Walmart Marketplace Blog | SellTru">
+  <meta property="og:image" content="https://selltru.com/img/og-image.png">
   <meta property="og:description" content="Practical guides on Amazon PPC, listing optimization, Walmart marketplace, and ecommerce growth — from a team that manages $150M+ in marketplace sales.">
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://selltru.com/blog">
@@ -160,6 +161,12 @@
       margin-bottom: 20px;
       flex: 1;
     }
+    .blog-card-date {
+      font-size: 12px;
+      color: var(--text-light, #64748B);
+      margin-bottom: 6px;
+      display: block;
+    }
     .blog-card-link {
       font-family: var(--font-head);
       font-size: 13px;
@@ -297,7 +304,58 @@
 <body>
 
 
-  <selltru-header></selltru-header>
+  <selltru-header><header class="nav" role="banner">
+  <div class="container">
+    <div class="nav-inner">
+      <a class="nav-logo" href="/" aria-label="SellTru home">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+  <rect x="1"  y="20" width="7"  height="13" rx="2.5" fill="#FF6B35"/>
+  <rect x="10" y="13" width="7"  height="20" rx="2.5" fill="#1A56DB"/>
+  <rect x="19" y="6"  width="7"  height="27" rx="2.5" fill="white"/>
+  <rect x="28" y="2"  width="5"  height="31" rx="2"   fill="rgba(255,255,255,0.55)"/>
+</svg>
+        <span class="nav-logo-text">SELL<span>TRU</span></span>
+      </a>
+      <nav class="nav-links" role="navigation" aria-label="Main navigation">
+        <a class="nav-link" href="/amazon-marketing">Amazon</a>
+        <a class="nav-link" href="/walmart-marketing">Walmart</a>
+        <a class="nav-link active" href="/blog">Blog</a>
+        <a class="nav-link" href="/about">About</a>
+        <a class="nav-link" href="/about#contact-form">Contact</a>
+      </nav>
+      <a class="nav-cta" href="/about#contact-form" data-modal-trigger="audit">Get Free Audit</a>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-mobile" aria-label="Mobile navigation">
+    <a href="/amazon-marketing">Amazon Marketing</a>
+    <a href="/walmart-marketing">Walmart Marketing</a>
+    <a href="/blog">Blog</a>
+    <a href="/about">About</a>
+    <a href="/about#contact-form" class="nav-cta">Get Your Free Audit &rarr;</a>
+  </div>
+</header>
+
+<div class="email-bar" id="email-bar" role="complementary" aria-label="Free checklist offer" hidden>
+  <div class="email-bar-inner">
+    <div class="email-bar-copy">
+      <span class="email-bar-label">Free Download</span>
+      <span class="email-bar-text">Get the Amazon Audit Checklist we use on every account we take over.</span>
+    </div>
+    <form class="email-bar-form" id="email-bar-form" novalidate>
+      <input type="email" name="email" class="email-bar-input" placeholder="Your work email" aria-label="Your work email" required autocomplete="email">
+      <button type="submit" class="email-bar-btn">Send It</button>
+    </form>
+    <button class="email-bar-dismiss" id="email-bar-dismiss" aria-label="Dismiss">&times;</button>
+  </div>
+</div>
+
+<form name="email-capture" data-netlify="true" hidden>
+  <input type="email" name="email">
+  <input type="hidden" name="source">
+</form></selltru-header>
 
 
   <main>
@@ -337,7 +395,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">11 Amazon SEO Tips to Rank Higher in 2026</h2>
               <p class="blog-card-excerpt">The organic engine behind every ad dollar — why your title carries roughly 50% of keyword weight, the 1,000-character bullet indexing limit, the A+ alt text most brands leave empty, and how to build a master keyword list from competitor reverse-ASIN data.</p>
-              <a class="blog-card-link" href="blog/amazon-seo-tips.html">Read Article →</a>
+              <span class="blog-card-date">Jul 29, 2026</span>
+              <a class="blog-card-link" href="blog/amazon-seo">Read Article →</a>
             </div>
           </article>
 
@@ -351,7 +410,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">What Is Amazon FBA? A Practical Guide for Sellers</h2>
               <p class="blog-card-excerpt">Fulfillment by Amazon, explained for sellers — how FBA works, what Amazon handles for you, the full fee stack (fulfillment, storage, aged-inventory, placement), how to send your first shipment, and when FBA is actually worth it.</p>
-              <a class="blog-card-link" href="blog/what-is-amazon-fba.html">Read Article →</a>
+              <span class="blog-card-date">Jul 13, 2026</span>
+              <a class="blog-card-link" href="blog/what-is-amazo">Read Article →</a>
             </div>
           </article>
 
@@ -365,7 +425,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">Rethinking Amazon PPC: Beyond ACoS to TACoS</h2>
               <p class="blog-card-excerpt">Optimizing to ACoS is the wrong way to run Amazon PPC. Why profit-focused brands manage to TACoS instead — the 80/20 rule, a 150% ACoS campaign that lifted organic rank and lowered TACoS, the break-even ACoS and max CPA math, and how to set targets for consumables vs. commodities.</p>
-              <a class="blog-card-link" href="blog/amazon-ppc-beyond-acos-tacos.html">Read Article →</a>
+              <span class="blog-card-date">Jul 10, 2026</span>
+              <a class="blog-card-link" href="blog/amazon-ppc-beyond-acos-">Read Article →</a>
             </div>
           </article>
 
@@ -379,7 +440,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">Best Amazon PPC Strategies 2026</h2>
               <p class="blog-card-excerpt">The 5 Amazon PPC campaign types working best right now — product targeting, Sponsored Brand video, refined category targeting, properly structured auto campaigns, and audience bid adjusters — with real account examples and the ACOS numbers behind each.</p>
-              <a class="blog-card-link" href="blog/best-amazon-ppc-strategies-2026.html">Read Article →</a>
+              <span class="blog-card-date">Jun 29, 2026</span>
+              <a class="blog-card-link" href="blog/best-amazon-ppc-strategies">Read Article →</a>
             </div>
           </article>
 
@@ -393,7 +455,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">How to Use Amazon Brand Analytics for PPC Keywords</h2>
               <p class="blog-card-excerpt">Brand Analytics is a PPC prioritization tool, not just a keyword list builder. How to mine Search Query Performance and Top Search Terms for the keywords your product can actually win — using click share, conversion share, and purchase share to decide what to defend, scale, test, or avoid.</p>
-              <a class="blog-card-link" href="blog/amazon-brand-analytics-ppc-keywords.html">Read Article →</a>
+              <span class="blog-card-date">Jun 15, 2026</span>
+              <a class="blog-card-link" href="blog/amazon-brand-analytics-ppc-key">Read Article →</a>
             </div>
           </article>
 
@@ -407,7 +470,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">Best Walmart Connect Agencies 2026 (Ranked)</h2>
               <p class="blog-card-excerpt">The 8 best Walmart Connect agencies in 2026, ranked by a marketplace operator, with a side-by-side comparison table, real CPC/ROAS/budget numbers, the red flags to avoid, and why you should hire a Walmart marketplace operator, not just an ad manager.</p>
-              <a class="blog-card-link" href="blog/best-walmart-connect-agencies-2026.html">Read Article →</a>
+              <span class="blog-card-date">Jun 8, 2026</span>
+              <a class="blog-card-link" href="blog/best-walmart-connect-agencies">Read Article →</a>
             </div>
           </article>
 
@@ -421,7 +485,8 @@
              <div class="blog-card-body">
                <h2 class="blog-card-title">Amazon PPC for Beverage &amp; CPG Brands (2026)</h2>
                <p class="blog-card-excerpt">Beverage and CPG brands lose money on PPC not because ads fail, but because they do not know what a repeat customer is worth. How to run profitable ads on low-margin consumables, build for repeat purchase, and stop bleeding ACoS on broad terms.</p>
-               <a class="blog-card-link" href="blog/amazon-ppc-for-beverage-cpg-brands.html">Read Article →</a>
+               <span class="blog-card-date">Jun 3, 2026</span>
+              <a class="blog-card-link" href="blog/amazon-ppc-for-beverage-cpg-b">Read Article →</a>
              </div>
            </article>
 
@@ -435,7 +500,8 @@
              <div class="blog-card-body">
                <h2 class="blog-card-title">Amazon PPC for Supplement Brands (2026)</h2>
                <p class="blog-card-excerpt">Supplement brands do not have a traffic problem, they have a traffic-quality problem. Why ads expose a weak offer instead of fixing it, and how to structure Amazon PPC around profit and margin, not just sales volume.</p>
-               <a class="blog-card-link" href="blog/amazon-ppc-for-supplement-brands.html">Read Article →</a>
+               <span class="blog-card-date">Jun 2, 2026</span>
+              <a class="blog-card-link" href="blog/amazon-ppc-for-supplement-b">Read Article →</a>
              </div>
            </article>
 
@@ -449,7 +515,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">How to Get More Walmart Reviews (2026 Guide)</h2>
               <p class="blog-card-excerpt">New Walmart listings stall at zero reviews — but the cold-start problem is fixable. Here are the three compliant ways to seed reviews fast: free review syndication from your own site, the Vine-style Recognized Reviewer program, and Post-Purchase Reviews.</p>
-              <a class="blog-card-link" href="blog/how-to-get-more-walmart-reviews.html">Read Article →</a>
+              <span class="blog-card-date">Jun 1, 2026</span>
+              <a class="blog-card-link" href="blog/how-to-get-more-walmart-re">Read Article →</a>
             </div>
           </article>
 
@@ -463,7 +530,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">What Is Walmart WFS? A Setup Guide for Sellers</h2>
               <p class="blog-card-excerpt">Walmart Fulfillment Services is Walmart's version of Amazon FBA — often cheaper, with no peak-season storage surcharge. Here's what it is, how its fees compare to FBA, and a step-by-step walkthrough of converting and shipping your first inventory.</p>
-              <a class="blog-card-link" href="blog/walmart-fulfillment-services-wfs-guide.html">Read Article →</a>
+              <span class="blog-card-date">May 29, 2026</span>
+              <a class="blog-card-link" href="blog/walmart-fulfillment-services-wfs-">Read Article →</a>
             </div>
           </article>
 
@@ -477,7 +545,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">Amazon DSP Explained: What It Is &amp; How to Get Started</h2>
               <p class="blog-card-excerpt">Amazon DSP is the audience-based half of Amazon advertising — programmatic display and video that retargets shoppers on and off Amazon. Here is what it is, who it is for, and how to get started.</p>
-              <a class="blog-card-link" href="blog/amazon-dsp-advertising-explained.html">Read Article →</a>
+              <span class="blog-card-date">May 29, 2026</span>
+              <a class="blog-card-link" href="blog/amazon-dsp-advertising-expl">Read Article →</a>
             </div>
           </article>
 
@@ -491,7 +560,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">Walmart Connect vs. Amazon Ads: ROAS, CPC, and Performance Compared</h2>
               <p class="blog-card-excerpt">Walmart Connect is not Amazon ads with a smaller budget. Here is how the two platforms actually compare on ROAS, CPC, data speed, and campaign strategy — and which brands should add Walmart Connect to their ad mix.</p>
-              <a class="blog-card-link" href="blog/walmart-connect-vs-amazon-ads.html">Read Article →</a>
+              <span class="blog-card-date">May 22, 2026</span>
+              <a class="blog-card-link" href="blog/walmart-connect-vs-amazo">Read Article →</a>
             </div>
           </article>
 
@@ -505,7 +575,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">How to Use Amazon Business Reports and AI to Optimize Listings in 2026</h2>
               <p class="blog-card-excerpt">Most sellers use AI to rewrite listings. Winning brands use it to diagnose why the listing isn't converting — ASIN by ASIN — then use Manage Your Experiments to prove the fix.</p>
-              <a class="blog-card-link" href="blog/amazon-business-reports-ai-listing-optimization.html">Read Article →</a>
+              <span class="blog-card-date">May 20, 2026</span>
+              <a class="blog-card-link" href="blog/amazon-business-reports-ai-listing-optimiz">Read Article →</a>
             </div>
           </article>
 
@@ -519,7 +590,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">How to Choose an Amazon Agency If You're Doing $1M–$10M Per Year</h2>
               <p class="blog-card-excerpt">At this stage you need a profit operator, not a report cleaner. Here's a 5-step framework for evaluating agencies, the red flags to avoid, and what you should actually expect to pay.</p>
-              <a class="blog-card-link" href="blog/how-to-choose-amazon-agency.html">Read Article →</a>
+              <span class="blog-card-date">May 19, 2026</span>
+              <a class="blog-card-link" href="blog/how-to-choose-amazon-a">Read Article →</a>
             </div>
           </article>
 
@@ -533,7 +605,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">Walmart Connect Ads Guide (2026): How the Platform Works, Campaign Setup, and Optimization</h2>
               <p class="blog-card-excerpt">How Walmart Connect actually works in 2026: ad types, campaign structure, keyword strategy, bidding, weekly optimization, and what good performance actually looks like.</p>
-              <a class="blog-card-link" href="blog/walmart-connect-ads-guide.html">Read Article →</a>
+              <span class="blog-card-date">May 18, 2026</span>
+              <a class="blog-card-link" href="blog/walmart-connect-ads-">Read Article →</a>
             </div>
           </article>
 
@@ -547,7 +620,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">Amazon Subscribe &amp; Save Strategy: The Profit Lever Most Brands Ignore</h2>
               <p class="blog-card-excerpt">Most brands treat Subscribe &amp; Save like a discount checkbox. Here's how to use it as a real profit lever — cutting TACoS, lowering acquisition costs, and building predictable repeat revenue.</p>
-              <a class="blog-card-link" href="blog/amazon-subscribe-and-save-strategy.html">Read Article →</a>
+              <span class="blog-card-date">May 12, 2026</span>
+              <a class="blog-card-link" href="blog/amazon-subscribe-and-save-str">Read Article →</a>
             </div>
           </article>
 
@@ -561,7 +635,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">Top-Rated Amazon Marketing Agencies for Small Businesses (2026)</h2>
               <p class="blog-card-excerpt">The honest guide to finding an Amazon agency as a small business. Green flags, red flags, what the first 90 days should look like, and why you need a profit operator — not a revenue agency.</p>
-              <a class="blog-card-link" href="blog/top-rated-amazon-marketing-agencies-small-business.html">Read Article →</a>
+              <span class="blog-card-date">May 12, 2026</span>
+              <a class="blog-card-link" href="blog/top-rated-amazon-marketing-agencies-small-bus">Read Article →</a>
             </div>
           </article>
 
@@ -575,7 +650,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">How to Advertise on Walmart: Campaign Setup, Bids, and Your First 90 Days</h2>
               <p class="blog-card-excerpt">Campaign setup, keyword research, bid ranges by category, and a week-by-week 90-day launch plan. Built from accounts we actively manage, not platform documentation.</p>
-              <a class="blog-card-link" href="blog/how-to-advertise-on-walmart.html">Read Article →</a>
+              <span class="blog-card-date">May 18, 2026</span>
+              <a class="blog-card-link" href="blog/how-to-advertise-on-wa">Read Article →</a>
             </div>
           </article>
 
@@ -589,7 +665,7 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">Walmart Connect Budget Calculator</h2>
               <p class="blog-card-excerpt">Enter a revenue goal or monthly budget. Get expected clicks, ROAS by phase, and a 90-day projection built from 60+ Walmart accounts we manage.</p>
-              <a class="blog-card-link" href="walmart-connect-calculator.html">Use the Calculator →</a>
+              <a class="blog-card-link" href="walmart-connect-calcu">Use the Calculator →</a>
             </div>
           </article>
 
@@ -603,7 +679,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">Walmart Connect Ads: What Amazon Sellers Need to Know Before Running Their First Campaign</h2>
               <p class="blog-card-excerpt">Walmart Connect is Walmart's version of Amazon's Campaign Manager — but copy-pasting your Amazon campaigns is the most expensive mistake you can make. Here's how the platform actually works and how to set it up right.</p>
-              <a class="blog-card-link" href="blog/walmart-connect-ads.html">Read Article →</a>
+              <span class="blog-card-date">May 8, 2026</span>
+              <a class="blog-card-link" href="blog/walmart-connec">Read Article →</a>
             </div>
           </article>
 
@@ -617,7 +694,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">How to Build an Amazon Storefront with AI (No Graphic Designer Needed)</h2>
               <p class="blog-card-excerpt">Graphic designers charge $2,000–$6,000 to build an Amazon Storefront. The AI workflow — using Claude and ChatGPT together — gets it done in 6–12 hours for free. Here's the exact process.</p>
-              <a class="blog-card-link" href="blog/how-to-build-amazon-storefront-with-ai.html">Read Article →</a>
+              <span class="blog-card-date">May 7, 2026</span>
+              <a class="blog-card-link" href="blog/how-to-build-amazon-storefront-wi">Read Article →</a>
             </div>
           </article>
 
@@ -631,7 +709,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">How to Use Amazon A+ Content to Lift Conversion Rates</h2>
               <p class="blog-card-excerpt">A+ Content isn't decoration — it's the last thing a buyer sees before they read your reviews. Here's how to build it around objections, align it with your PPC, and use it to charge more than your competitors.</p>
-              <a class="blog-card-link" href="blog/amazon-a-plus-content-guide.html">Read Article →</a>
+              <span class="blog-card-date">May 6, 2026</span>
+              <a class="blog-card-link" href="blog/amazon-a-plus-content-">Read Article →</a>
             </div>
           </article>
 
@@ -645,7 +724,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">Best Amazon PPC Agencies 2026: Ranked by a Practitioner</h2>
               <p class="blog-card-excerpt">8 agencies ranked by someone who has managed $150M+ in Amazon sales. Real evaluation criteria, honest assessments of each agency, red flags to watch for, and questions to ask before you sign.</p>
-              <a class="blog-card-link" href="blog/best-amazon-ppc-agencies-2026.html">Read Article →</a>
+              <span class="blog-card-date">May 5, 2026</span>
+              <a class="blog-card-link" href="blog/best-amazon-ppc-agencies">Read Article →</a>
             </div>
           </article>
 
@@ -659,7 +739,7 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">How to Rank on Walmart Search in 2026: The Complete Guide</h2>
               <p class="blog-card-excerpt">Walmart's search algorithm is not Amazon. Here's the exact framework — Walmart-native keyword research, virtual shelf placement, the right PPC runway, and why your Amazon listing is the worst place to start.</p>
-              <a class="blog-card-link" href="blog/how-to-rank-on-walmart-search-2026.html">Read Article →</a>
+              <a class="blog-card-link" href="blog/how-to-rank-on-walmart-search">Read Article →</a>
             </div>
           </article>
 
@@ -673,7 +753,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">Amazon TACoS Explained: The Metric That Actually Tells You If Ads Are Working</h2>
               <p class="blog-card-excerpt">ACoS tells you if your ads are efficient. TACoS tells you if they're growing your business. Here's what it is, how to calculate it, benchmarks by stage, and why most agencies never show it to you.</p>
-              <a class="blog-card-link" href="blog/amazon-tacos-advertising.html">Read Article →</a>
+              <span class="blog-card-date">Apr 30, 2026</span>
+              <a class="blog-card-link" href="blog/amazon-tacos-advert">Read Article →</a>
             </div>
           </article>
 
@@ -687,7 +768,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">Amazon Agency vs. In-House Team: What's Actually Better?</h2>
               <p class="blog-card-excerpt">Burned by an agency? Thinking about hiring in-house? Here's the honest math on what a real in-house team costs, what brands get wrong about control, and how to tell if an agency is worth hiring.</p>
-              <a class="blog-card-link" href="blog/amazon-agency-vs-in-house.html">Read Article →</a>
+              <span class="blog-card-date">Apr 30, 2026</span>
+              <a class="blog-card-link" href="blog/amazon-agency-vs-in-">Read Article →</a>
             </div>
           </article>
 
@@ -701,7 +783,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">How Much Does Amazon PPC Management Cost?</h2>
               <p class="blog-card-excerpt">Fees range from $1,000 to $8,000+ — and price tells you almost nothing about quality. Here's what actually drives the cost, where brands get burned, and what you should expect to pay at your revenue level.</p>
-              <a class="blog-card-link" href="blog/amazon-ppc-management-cost.html">Read Article →</a>
+              <span class="blog-card-date">Apr 30, 2026</span>
+              <a class="blog-card-link" href="blog/amazon-ppc-management">Read Article →</a>
             </div>
           </article>
 
@@ -715,7 +798,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">How to Find Relevant Keywords for Your Amazon Product Listing</h2>
               <p class="blog-card-excerpt">Stop guessing. Here's the exact process — competitor research, Helium 10 X-ray, the page fit check, and post-launch optimization — to find and rank for the keywords that actually drive sales.</p>
-              <a class="blog-card-link" href="blog/amazon-keyword-research-guide.html">Read Article →</a>
+              <span class="blog-card-date">Apr 29, 2026</span>
+              <a class="blog-card-link" href="blog/amazon-keyword-research-">Read Article →</a>
             </div>
           </article>
 
@@ -729,7 +813,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">The Fastest Way to Grow Sales by Adding Walmart Marketplace</h2>
               <p class="blog-card-excerpt">The proven launch playbook — account managers, Walmart-native listings, Shopify review imports, and WFS. Includes a real case study: $1K to $150K/month in 8 months with zero ad spend.</p>
-              <a class="blog-card-link" href="blog/fastest-way-to-grow-walmart-marketplace-sales.html">Read Article →</a>
+              <span class="blog-card-date">Apr 28, 2026</span>
+              <a class="blog-card-link" href="blog/fastest-way-to-grow-walmart-marketplace-">Read Article →</a>
             </div>
           </article>
 
@@ -743,7 +828,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">How to Expand Your Amazon Brand to Walmart.com</h2>
               <p class="blog-card-excerpt">Already winning on Amazon? Here's the step-by-step process for getting live on Walmart — what to set up first, the deals trick that offsets your discount, and what quietly kills Walmart accounts.</p>
-              <a class="blog-card-link" href="blog/how-to-expand-amazon-brand-to-walmart.html">Read Article →</a>
+              <span class="blog-card-date">Apr 27, 2026</span>
+              <a class="blog-card-link" href="blog/how-to-expand-amazon-brand-to-wa">Read Article →</a>
             </div>
           </article>
 
@@ -757,7 +843,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">Amazon Sponsored Products vs. Sponsored Brands: Which Ad Type Should You Use?</h2>
               <p class="blog-card-excerpt">Both ad types serve different purposes — and running them in the wrong order is one of the fastest ways to waste ad budget. Here's the sequencing that actually works.</p>
-              <a class="blog-card-link" href="blog/amazon-sponsored-products-vs-sponsored-brands.html">Read Article →</a>
+              <span class="blog-card-date">Apr 27, 2026</span>
+              <a class="blog-card-link" href="blog/amazon-sponsored-products-vs-sponsored-b">Read Article →</a>
             </div>
           </article>
 
@@ -771,7 +858,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">Does Walmart Have PPC Advertising for Sellers?</h2>
               <p class="blog-card-excerpt">Yes — but it works very differently from Amazon. Here's how Walmart Connect ads actually work, what ROAS to expect, and how to structure campaigns that drive real results.</p>
-              <a class="blog-card-link" href="blog/does-walmart-have-ppc-advertising.html">Read Article →</a>
+              <span class="blog-card-date">Apr 26, 2026</span>
+              <a class="blog-card-link" href="blog/does-walmart-have-ppc-advert">Read Article →</a>
             </div>
           </article>
 
@@ -785,7 +873,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">Is Hiring an Amazon Marketing Agency Really Worth the Cost?</h2>
               <p class="blog-card-excerpt">The ROI math most brands never run. Here's exactly what a good agency should deliver — and how to know if yours is earning its fee.</p>
-              <a class="blog-card-link" href="blog/is-amazon-marketing-agency-worth-it.html">Read Article →</a>
+              <span class="blog-card-date">Apr 26, 2026</span>
+              <a class="blog-card-link" href="blog/is-amazon-marketing-agency-wor">Read Article →</a>
             </div>
           </article>
 
@@ -799,7 +888,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">What Questions Should I Ask Before Hiring an Amazon Marketing Agency?</h2>
               <p class="blog-card-excerpt">12 questions that separate great Amazon agencies from mediocre ones — with examples of what strong and weak answers actually sound like.</p>
-              <a class="blog-card-link" href="blog/questions-to-ask-amazon-marketing-agency.html">Read Article →</a>
+              <span class="blog-card-date">Apr 26, 2026</span>
+              <a class="blog-card-link" href="blog/questions-to-ask-amazon-marketing-a">Read Article →</a>
             </div>
           </article>
 
@@ -813,7 +903,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">Walmart vs Amazon: Where Should Your Brand Focus in 2026?</h2>
               <p class="blog-card-excerpt">Not an either/or. Here's the honest framework for deciding which marketplace deserves your attention — and why the best brands are running both.</p>
-              <a class="blog-card-link" href="blog/walmart-vs-amazon-2026.html">Read Article →</a>
+              <span class="blog-card-date">Apr 30, 2026</span>
+              <a class="blog-card-link" href="blog/walmart-vs-amazon">Read Article →</a>
             </div>
           </article>
 
@@ -827,7 +918,7 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">How to Launch a New Product on Amazon: The 30-Day Playbook</h2>
               <p class="blog-card-excerpt">The first 30 days determine whether your listing ranks or stalls for months. Here's the exact launch framework we use for every new product.</p>
-              <a class="blog-card-link" href="blog/how-to-launch-new-product-on-amazon.html">Read Article →</a>
+              <a class="blog-card-link" href="blog/how-to-launch-new-product-on-a">Read Article →</a>
             </div>
           </article>
 
@@ -841,7 +932,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">How to Reduce Amazon ACOS Without Cutting Ad Spend</h2>
               <p class="blog-card-excerpt">High ACOS isn't a budget problem. It's a targeting and structure problem. Here's how to actually fix it.</p>
-              <a class="blog-card-link" href="blog/how-to-reduce-amazon-acos.html">Read Article →</a>
+              <span class="blog-card-date">Apr 26, 2026</span>
+              <a class="blog-card-link" href="blog/how-to-reduce-amazon">Read Article →</a>
             </div>
           </article>
 
@@ -855,7 +947,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">Amazon Listing Optimization: The Complete Guide for 2026</h2>
               <p class="blog-card-excerpt">Titles, bullets, backend keywords, A+ content, and images — everything that actually moves rank and conversion.</p>
-              <a class="blog-card-link" href="blog/amazon-listing-optimization-guide-2026.html">Read Article →</a>
+              <span class="blog-card-date">Apr 26, 2026</span>
+              <a class="blog-card-link" href="blog/amazon-listing-optimization-guide">Read Article →</a>
             </div>
           </article>
 
@@ -869,7 +962,8 @@
             <div class="blog-card-body">
               <h2 class="blog-card-title">Why Your Amazon Sales Dropped (And What to Fix First)</h2>
               <p class="blog-card-excerpt">Amazon sales can fall off a cliff fast. Most brands look at the wrong thing first. Here's the actual diagnostic checklist.</p>
-                            <a class="blog-card-link" href="blog/why-amazon-sales-dropped.html">Read Article →</a>
+                            <span class="blog-card-date">Apr 26, 2026</span>
+              <a class="blog-card-link" href="blog/why-amazon-sales-dr">Read Article →</a>
             </div>
           </article>
 
@@ -888,7 +982,7 @@
             <h2 class="blog-wfu-title">Know your stuff? Write for us.</h2>
             <p class="blog-wfu-desc">We publish guest posts from Amazon sellers, agency pros, and ecommerce operators. If you've got real experience — not theory — we want your pitch.</p>
           </div>
-          <a href="write-for-us.html" class="blog-wfu-btn">Submit a Pitch →</a>
+          <a href="write-f" class="blog-wfu-btn">Submit a Pitch →</a>
         </div>
       </div>
     </section>
@@ -900,7 +994,7 @@
           <p class="section-tag light" style="margin-bottom:12px;">Free Audit</p>
           <h2>Reading Is Great. Results Are Better.</h2>
           <p>If any of this sounds familiar — high ACOS, stalled ranking, Walmart underperforming — let's look at your account. Free, no obligation, no pitch deck.</p>
-          <a class="btn btn-primary btn-lg" href="about.html#contact-form">Get Your Free Audit</a>
+          <a class="btn btn-primary btn-lg" href="#contact-form">Get Your Free Audit</a>
         </div>
       </div>
     </section>
@@ -908,7 +1002,86 @@
   </main>
 
   <!-- ===== FOOTER ===== -->
-  <selltru-footer></selltru-footer>
+  <selltru-footer><footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="nav-logo" href="/" aria-label="SellTru home">
+          <svg width="30" height="30" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+  <rect x="1"  y="20" width="7"  height="13" rx="2.5" fill="#FF6B35"/>
+  <rect x="10" y="13" width="7"  height="20" rx="2.5" fill="#1A56DB"/>
+  <rect x="19" y="6"  width="7"  height="27" rx="2.5" fill="white"/>
+  <rect x="28" y="2"  width="5"  height="31" rx="2"   fill="rgba(255,255,255,0.55)"/>
+</svg>
+          <span class="nav-logo-text">SELL<span>TRU</span></span>
+        </a>
+        <p class="footer-brand-desc">The Amazon marketing agency and Walmart marketplace agency for brands doing $1M to $20M. Fort Lauderdale, FL. Serving brands nationwide.</p>
+        <div class="footer-social" aria-label="Social media">
+          <a href="https://linkedin.com/company/selltru" target="_blank" rel="noopener" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://www.facebook.com/share/1BY35ZocEW/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://www.instagram.com/selltru.amazon" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="/amazon-marketing">Amazon Marketing</a>
+        <a href="/amazon-marketing#listing-optimization">Listing Optimization</a>
+        <a href="/amazon-marketing#ppc">Amazon PPC &amp; Ads</a>
+        <a href="/amazon-ppc-food-beverage">PPC for Food &amp; Beverage</a>
+        <a href="/amazon-ppc-supplements">PPC for Supplements</a>
+        <a href="/amazon-ppc-pet-brands">PPC for Pet Brands</a>
+        <a href="/walmart-marketing">Walmart Marketing</a>
+        <a href="/walmart-marketing#walmart-ads">Walmart Connect Ads</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="/blog">Blog</a>
+        <a href="/questions">FAQ</a>
+        <a href="/lead-magnet">Free Audit Checklist</a>
+        <a href="/amazon-agency-pricing">Agency Pricing Guide</a>
+        <a href="/walmart-advertising-cost">Walmart Advertising Cost</a>
+        <a href="/walmart-connect-calculator">Walmart Connect Calculator</a>
+        <a href="/case-studies">Case Studies</a>
+        <a href="/write-for-us">Write for Us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/about">About SellTru</a>
+        <a href="/about#contact-form">Contact</a>
+        <a href="/about#contact-form">Get a Free Audit</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p><a href="tel:+19548692034">(954) 869-2034</a></p>
+        <p><a href="mailto:contact@selltru.com">contact@selltru.com</a></p>
+        <p>333 Las Olas Way<br>Fort Lauderdale, FL 33301</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+        <p>&copy; 2026 SellTru. All rights reserved. | Amazon Marketing Agency | Fort Lauderdale, FL</p>
+      </div>
+      <div class="footer-certs">
+        <span class="footer-cert">Amazon SPN Certified</span>
+        <span class="footer-cert">Amazon Ads Verified Partner</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-audit-strip" id="sticky-strip" role="complementary" aria-label="Free audit offer">
+  <div class="sticky-strip-text">
+    <div class="sticky-strip-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+    <div class="sticky-strip-copy">
+      <div class="sticky-strip-headline">Free Amazon Audit</div>
+      <div class="sticky-strip-sub">We'll find what's costing you. No obligation.</div>
+    </div>
+  </div>
+  <div class="sticky-strip-actions">
+    <a class="sticky-strip-cta" href="/about#contact-form" data-modal-trigger="audit">Get the Free Audit</a>
+    <button class="sticky-strip-dismiss" id="strip-dismiss" aria-label="Dismiss">&times;</button>
+  </div>
+</div></selltru-footer>
 
   <script src="/js/main.js" defer></script>
 </body>

@@ -85,6 +85,14 @@ Brands doing $1M to $20M in annual revenue selling physical products on Amazon a
 - [Amazon DSP Explained: What It Is & How to Get Started](https://selltru.com/blog/amazon-dsp-advertising-explained): What Amazon's Demand-Side Platform is (and how it differs from the delivery program), why DSP is audience-based and CPM-billed while PPC is query-based and CPC-billed, readiness benchmarks (100+ reviews, profitable PPC, DSP at ~20-25% of PPC spend), custom-audience plays (retargeting with purchase negation, competitor conquesting, cross-selling, contextual targeting), where ads serve (responsive ecommerce ads, streaming TV/video), and how to start via an agency ($5K/mo) vs. Amazon's $30K-50K minimum.
 - [What Is Walmart WFS? A Setup Guide for Sellers](https://selltru.com/blog/walmart-fulfillment-services-wfs-guide): What Walmart Fulfillment Services is (Walmart's equivalent of Amazon FBA), how WFS fees compare to FBA (≈15% cheaper on average past 1 lb, flat $0.75/cu ft storage year-round with no Oct-Dec peak surcharge, no inbound placement fees, multi-channel fulfillment since late 2024, FedEx default carrier, ~30% conversion lift from the Fulfilled by Walmart badge), and a four-step setup walkthrough (convert a listing to WFS, wait for processing, create an inbound shipment with case-pack math, set up small parcel or LTL and print labels).
 
+- [Walmart Connect Ads Agency](https://selltru.com/walmart-connect-ads-agency): dedicated Walmart Connect advertising management page. Covers Sponsored Products, Sponsored Brands, and Display ad management, 90-day onboarding process, pricing model, and FAQ.
+- [Walmart Connect Advertising Cost](https://selltru.com/walmart-connect-ads-cost): CPC benchmarks by category, budget tiers by revenue stage, management fee models, and a Year 1 cost example for brands expanding to Walmart.
+- [Walmart Connect Ads Guide (2026)](https://selltru.com/blog/walmart-connect-ads-guide): comprehensive guide covering all ad types, campaign structure, keyword strategy, bidding, weekly optimization process, performance benchmarks, and common mistakes.
+- [Walmart Connect vs. Amazon Ads](https://selltru.com/blog/walmart-connect-vs-amazon-ads): compares ROAS benchmarks, CPC ranges, data reporting speed, campaign structure differences, and which brands should add Walmart Connect to their ad strategy.
+- [Amazon PPC for Food and Beverage Brands](https://selltru.com/amazon-ppc-food-beverage): Amazon PPC management built for food, beverage, and CPG brands. Seasonality planning, Subscribe & Save strategy, and category-specific campaign structures.
+- [Amazon PPC for Supplement Brands](https://selltru.com/amazon-ppc-supplements): Amazon PPC for supplement and health brands. Compliance-aware ad strategy, high-competition keyword management, and subscriber acquisition optimization.
+- [Amazon PPC for Pet Brands](https://selltru.com/amazon-ppc-pet-brands): Amazon PPC for pet brands built around buyer loyalty, repeat purchase behavior, ASIN targeting, and Subscribe & Save subscriber acquisition.
+
 ## Contribute
 
 - [Write for Us](https://selltru.com/write-for-us): Guest post guidelines and pitch submission form for Amazon sellers, agency professionals, and ecommerce operators who want to contribute to the SellTru blog
@@ -114,11 +122,4 @@ Yes. SellTru is a certified member of the Amazon Service Provider Network (SPN) 
 Yes. SellTru manages Walmart.com seller accounts, Walmart Connect advertising, and Walmart Fulfillment Services (WFS).
 
 **How do I get started?**
-Request a free marketplace audit at https://selltru.com/about#contact. A marketplace specialist (not a sales rep) will review your account and follow up within one business day.
-- https://selltru.com/walmart-connect-ads-agency: Walmart Connect Ads Agency — dedicated Walmart Connect advertising management page. Covers Sponsored Products, Sponsored Brands, and Display ad management, 90-day onboarding process, pricing model, and FAQ.
-- https://selltru.com/walmart-connect-ads-cost: Walmart Connect Advertising Cost — CPC benchmarks by category, budget tiers by revenue stage, management fee models, and a Year 1 cost example for brands expanding to Walmart.
-- https://selltru.com/blog/walmart-connect-ads-guide: Walmart Connect Ads Guide (2026) — comprehensive guide covering all ad types, campaign structure, keyword strategy, bidding, weekly optimization process, performance benchmarks, and common mistakes.
-- https://selltru.com/blog/walmart-connect-vs-amazon-ads: Walmart Connect vs. Amazon Ads — compares ROAS benchmarks, CPC ranges, data reporting speed, campaign structure differences, and which brands should add Walmart Connect to their ad strategy.
-- Amazon PPC for Food and Beverage Brands: https://selltru.com/amazon-ppc-food-beverage — Amazon PPC management built for food, beverage, and CPG brands. Seasonality planning, Subscribe & Save strategy, and category-specific campaign structures.
-- Amazon PPC for Supplement Brands: https://selltru.com/amazon-ppc-supplements — Amazon PPC for supplement and health brands. Compliance-aware ad strategy, high-competition keyword management, and subscriber acquisition optimization.
-- Amazon PPC for Pet Brands: https://selltru.com/amazon-ppc-pet-brands — Amazon PPC for pet brands built around buyer loyalty, repeat purchase behavior, ASIN targeting, and Subscribe & Save subscriber acquisition.
+Request a free marketplace audit at https://selltru.com/about#contact — a marketplace specialist (not a sales rep) will review your account and follow up within one business day.

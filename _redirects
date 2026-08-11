@@ -28,6 +28,69 @@
 /home/                                               /                          301
 
 # -----------------------------------------------
+# .html -> clean URL 301s (canonical consolidation)
+# -----------------------------------------------
+/index.html    /    301!
+/about.html    /about    301!
+/amazon-agency-pricing.html    /amazon-agency-pricing    301!
+/amazon-dsp-agency.html    /amazon-dsp-agency    301!
+/amazon-marketing.html    /amazon-marketing    301!
+/amazon-ppc-food-beverage.html    /amazon-ppc-food-beverage    301!
+/amazon-ppc-pet-brands.html    /amazon-ppc-pet-brands    301!
+/amazon-ppc-supplements.html    /amazon-ppc-supplements    301!
+/audit-thanks.html    /audit-thanks    301!
+/blog.html    /blog    301!
+/case-studies.html    /case-studies    301!
+/free-audit.html    /free-audit    301!
+/lead-magnet.html    /lead-magnet    301!
+/questions.html    /questions    301!
+/walmart-advertising-cost.html    /walmart-advertising-cost    301!
+/walmart-connect-ads-agency.html    /walmart-connect-ads-agency    301!
+/walmart-connect-ads-cost.html    /walmart-connect-ads-cost    301!
+/walmart-connect-calculator.html    /walmart-connect-calculator    301!
+/walmart-marketing.html    /walmart-marketing    301!
+/write-for-us-thanks.html    /write-for-us-thanks    301!
+/write-for-us.html    /write-for-us    301!
+/blog/amazon-a-plus-content-guide.html    /blog/amazon-a-plus-content-guide    301!
+/blog/amazon-agency-vs-in-house.html    /blog/amazon-agency-vs-in-house    301!
+/blog/amazon-brand-analytics-ppc-keywords.html    /blog/amazon-brand-analytics-ppc-keywords    301!
+/blog/amazon-business-reports-ai-listing-optimization.html    /blog/amazon-business-reports-ai-listing-optimization    301!
+/blog/amazon-dsp-advertising-explained.html    /blog/amazon-dsp-advertising-explained    301!
+/blog/amazon-keyword-research-guide.html    /blog/amazon-keyword-research-guide    301!
+/blog/amazon-listing-optimization-guide-2026.html    /blog/amazon-listing-optimization-guide-2026    301!
+/blog/amazon-ppc-beyond-acos-tacos.html    /blog/amazon-ppc-beyond-acos-tacos    301!
+/blog/amazon-ppc-for-beverage-cpg-brands.html    /blog/amazon-ppc-for-beverage-cpg-brands    301!
+/blog/amazon-ppc-for-supplement-brands.html    /blog/amazon-ppc-for-supplement-brands    301!
+/blog/amazon-ppc-management-cost.html    /blog/amazon-ppc-management-cost    301!
+/blog/amazon-seo-tips.html    /blog/amazon-seo-tips    301!
+/blog/amazon-sponsored-products-vs-sponsored-brands.html    /blog/amazon-sponsored-products-vs-sponsored-brands    301!
+/blog/amazon-subscribe-and-save-strategy.html    /blog/amazon-subscribe-and-save-strategy    301!
+/blog/amazon-tacos-advertising.html    /blog/amazon-tacos-advertising    301!
+/blog/best-amazon-ppc-agencies-2026.html    /blog/best-amazon-ppc-agencies-2026    301!
+/blog/best-amazon-ppc-strategies-2026.html    /blog/best-amazon-ppc-strategies-2026    301!
+/blog/best-walmart-connect-agencies-2026.html    /blog/best-walmart-connect-agencies-2026    301!
+/blog/does-walmart-have-ppc-advertising.html    /blog/does-walmart-have-ppc-advertising    301!
+/blog/fastest-way-to-grow-walmart-marketplace-sales.html    /blog/fastest-way-to-grow-walmart-marketplace-sales    301!
+/blog/how-to-advertise-on-walmart.html    /blog/how-to-advertise-on-walmart    301!
+/blog/how-to-build-amazon-storefront-with-ai.html    /blog/how-to-build-amazon-storefront-with-ai    301!
+/blog/how-to-choose-amazon-agency.html    /blog/how-to-choose-amazon-agency    301!
+/blog/how-to-expand-amazon-brand-to-walmart.html    /blog/how-to-expand-amazon-brand-to-walmart    301!
+/blog/how-to-get-more-walmart-reviews.html    /blog/how-to-get-more-walmart-reviews    301!
+/blog/how-to-launch-new-product-on-amazon.html    /blog/how-to-launch-new-product-on-amazon    301!
+/blog/how-to-rank-on-walmart-search-2026.html    /blog/how-to-rank-on-walmart-search-2026    301!
+/blog/how-to-reduce-amazon-acos.html    /blog/how-to-reduce-amazon-acos    301!
+/blog/is-amazon-marketing-agency-worth-it.html    /blog/is-amazon-marketing-agency-worth-it    301!
+/blog/questions-to-ask-amazon-marketing-agency.html    /blog/questions-to-ask-amazon-marketing-agency    301!
+/blog/top-rated-amazon-marketing-agencies-small-business.html    /blog/top-rated-amazon-marketing-agencies-small-business    301!
+/blog/walmart-connect-ads-guide.html    /blog/walmart-connect-ads-guide    301!
+/blog/walmart-connect-ads.html    /blog/walmart-connect-ads    301!
+/blog/walmart-connect-vs-amazon-ads.html    /blog/walmart-connect-vs-amazon-ads    301!
+/blog/walmart-fulfillment-services-wfs-guide.html    /blog/walmart-fulfillment-services-wfs-guide    301!
+/blog/walmart-vs-amazon-2026.html    /blog/walmart-vs-amazon-2026    301!
+/blog/what-is-amazon-fba.html    /blog/what-is-amazon-fba    301!
+/blog/why-amazon-sales-dropped.html    /blog/why-amazon-sales-dropped    301!
+
+# -----------------------------------------------
 # Custom 404 page (must stay last — catch-all)
 # -----------------------------------------------
 /*    /404.html    404

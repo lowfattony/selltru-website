@@ -107,12 +107,6 @@
 
   <!-- Core pages -->
   <url>
-    <loc>https://selltru.com/audit-thanks</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
     <loc>https://selltru.com/write-for-us</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
@@ -308,4 +302,16 @@
   <url><loc>https://selltru.com/amazon-ppc-food-beverage</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://selltru.com/amazon-ppc-supplements</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://selltru.com/amazon-ppc-pet-brands</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://selltru.com/blog/walmart-vs-amazon-2026</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://selltru.com/blog/how-to-launch-new-product-on-amazon</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

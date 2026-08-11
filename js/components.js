@@ -56,33 +56,33 @@ function activeClass(href) {
 class SellTruHeader extends HTMLElement {
   connectedCallback() {
     this.style.display = 'contents';
-    this.innerHTML = `
+    if (!this.querySelector('header.nav')) this.innerHTML = `
 <header class="nav" role="banner">
   <div class="container">
     <div class="nav-inner">
-      <a class="nav-logo" href="/index.html" aria-label="SellTru home">
+      <a class="nav-logo" href="/" aria-label="SellTru home">
         ${LOGO_NAV}
         <span class="nav-logo-text">SELL<span>TRU</span></span>
       </a>
       <nav class="nav-links" role="navigation" aria-label="Main navigation">
-        <a class="nav-link${activeClass('/amazon-marketing.html')}" href="/amazon-marketing.html">Amazon</a>
-        <a class="nav-link${activeClass('/walmart-marketing.html')}" href="/walmart-marketing.html">Walmart</a>
-        <a class="nav-link${activeClass('/blog.html')}" href="/blog.html">Blog</a>
-        <a class="nav-link${activeClass('/about.html')}" href="/about.html">About</a>
-        <a class="nav-link" href="/about.html#contact-form">Contact</a>
+        <a class="nav-link${activeClass('/amazon-marketing')}" href="/amazon-marketing">Amazon</a>
+        <a class="nav-link${activeClass('/walmart-marketing')}" href="/walmart-marketing">Walmart</a>
+        <a class="nav-link${activeClass('/blog')}" href="/blog">Blog</a>
+        <a class="nav-link${activeClass('/about')}" href="/about">About</a>
+        <a class="nav-link" href="/about#contact-form">Contact</a>
       </nav>
-      <a class="nav-cta" href="/about.html#contact-form" data-modal-trigger="audit">Get Free Audit</a>
+      <a class="nav-cta" href="/about#contact-form" data-modal-trigger="audit">Get Free Audit</a>
       <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
   <div class="nav-mobile" aria-label="Mobile navigation">
-    <a href="/amazon-marketing.html">Amazon Marketing</a>
-    <a href="/walmart-marketing.html">Walmart Marketing</a>
-    <a href="/blog.html">Blog</a>
-    <a href="/about.html">About</a>
-    <a href="/about.html#contact-form" class="nav-cta">Get Your Free Audit &rarr;</a>
+    <a href="/amazon-marketing">Amazon Marketing</a>
+    <a href="/walmart-marketing">Walmart Marketing</a>
+    <a href="/blog">Blog</a>
+    <a href="/about">About</a>
+    <a href="/about#contact-form" class="nav-cta">Get Your Free Audit &rarr;</a>
   </div>
 </header>
 
@@ -113,12 +113,12 @@ class SellTruHeader extends HTMLElement {
 class SellTruFooter extends HTMLElement {
   connectedCallback() {
     this.style.display = 'contents';
-    this.innerHTML = `
+    if (!this.querySelector('footer.footer')) this.innerHTML = `
 <footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="nav-logo" href="/index.html" aria-label="SellTru home">
+        <a class="nav-logo" href="/" aria-label="SellTru home">
           ${LOGO_FOOTER}
           <span class="nav-logo-text">SELL<span>TRU</span></span>
         </a>
@@ -131,31 +131,31 @@ class SellTruFooter extends HTMLElement {
       </div>
       <div class="footer-col">
         <h4>Services</h4>
-        <a href="/amazon-marketing.html">Amazon Marketing</a>
-        <a href="/amazon-marketing.html#listing-optimization">Listing Optimization</a>
-        <a href="/amazon-marketing.html#ppc">Amazon PPC &amp; Ads</a>
-        <a href="/amazon-ppc-food-beverage.html">PPC for Food &amp; Beverage</a>
-        <a href="/amazon-ppc-supplements.html">PPC for Supplements</a>
-        <a href="/amazon-ppc-pet-brands.html">PPC for Pet Brands</a>
-        <a href="/walmart-marketing.html">Walmart Marketing</a>
-        <a href="/walmart-marketing.html#walmart-ads">Walmart Connect Ads</a>
+        <a href="/amazon-marketing">Amazon Marketing</a>
+        <a href="/amazon-marketing#listing-optimization">Listing Optimization</a>
+        <a href="/amazon-marketing#ppc">Amazon PPC &amp; Ads</a>
+        <a href="/amazon-ppc-food-beverage">PPC for Food &amp; Beverage</a>
+        <a href="/amazon-ppc-supplements">PPC for Supplements</a>
+        <a href="/amazon-ppc-pet-brands">PPC for Pet Brands</a>
+        <a href="/walmart-marketing">Walmart Marketing</a>
+        <a href="/walmart-marketing#walmart-ads">Walmart Connect Ads</a>
       </div>
       <div class="footer-col">
         <h4>Resources</h4>
-        <a href="/blog.html">Blog</a>
-        <a href="/questions.html">FAQ</a>
-        <a href="/lead-magnet.html">Free Audit Checklist</a>
-        <a href="/amazon-agency-pricing.html">Agency Pricing Guide</a>
-        <a href="/walmart-advertising-cost.html">Walmart Advertising Cost</a>
-        <a href="/walmart-connect-calculator.html">Walmart Connect Calculator</a>
-        <a href="/case-studies.html">Case Studies</a>
-        <a href="/write-for-us.html">Write for Us</a>
+        <a href="/blog">Blog</a>
+        <a href="/questions">FAQ</a>
+        <a href="/lead-magnet">Free Audit Checklist</a>
+        <a href="/amazon-agency-pricing">Agency Pricing Guide</a>
+        <a href="/walmart-advertising-cost">Walmart Advertising Cost</a>
+        <a href="/walmart-connect-calculator">Walmart Connect Calculator</a>
+        <a href="/case-studies">Case Studies</a>
+        <a href="/write-for-us">Write for Us</a>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
-        <a href="/about.html">About SellTru</a>
-        <a href="/about.html#contact-form">Contact</a>
-        <a href="/about.html#contact-form">Get a Free Audit</a>
+        <a href="/about">About SellTru</a>
+        <a href="/about#contact-form">Contact</a>
+        <a href="/about#contact-form">Get a Free Audit</a>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
@@ -185,7 +185,7 @@ class SellTruFooter extends HTMLElement {
     </div>
   </div>
   <div class="sticky-strip-actions">
-    <a class="sticky-strip-cta" href="/about.html#contact-form" data-modal-trigger="audit">Get the Free Audit</a>
+    <a class="sticky-strip-cta" href="/about#contact-form" data-modal-trigger="audit">Get the Free Audit</a>
     <button class="sticky-strip-dismiss" id="strip-dismiss" aria-label="Dismiss">&times;</button>
   </div>
 </div>`;

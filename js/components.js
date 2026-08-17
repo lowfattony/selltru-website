@@ -369,6 +369,7 @@ function initAuditModal() {
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({ 'first-name': fname.value.trim(), email: emailVal, submission_type: 'partial' })
     });
+    window.gtag && gtag('event', 'sign_up', { event_category: 'conversion', event_label: 'modal_step1_partial' });
 
     document.getElementById('modal-step-1').classList.remove('active');
     document.getElementById('modal-step-2').classList.add('active');

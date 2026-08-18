@@ -160,6 +160,16 @@ Old Fort Lauderdale agency pages 301 → homepage. Key ones:
 - GA event naming inconsistent (generate_lead vs audit_requested double-fire); lead-magnet.html forms fire no conversion events; dead Netlify email-capture mirror on 62 pages; free-audit.html is orphaned (0 inbound links — confirm it's a paid-ads LP); client logos hotlinked from squarespace-cdn
 - GSC: after this deploys — resubmit sitemap, request indexing on 3 new posts + money pages
 
+
+**Editorial SEO batch (same day, second push):**
+- 18 title tags rewritten to <=60 chars incl. " | SellTru" suffix (killed " | SellTru Blog" variant); og:title updated in lockstep; H1s and schema headlines deliberately untouched (title-tag CTR rewrites are intentional; headline must match H1)
+- One fix-of-the-fix: subscribe-and-save post's H1/breadcrumb briefly got the suffixed title injected by global replace — caught in verification, restored
+- 13 meta descriptions rewritten into the 120-165 char window (og:description + schema description updated by same replace)
+- sitemap.xml: lastmod added/refreshed to 2026-08-18 on all 59 URLs
+- Conversion tracking completed: lead-magnet form + popup now fire generate_lead + oaiq; audit-thanks duplicate 'audit_requested' event removed (generate_lead in main.js is now the single lead event)
+- GSC done earlier: sitemap resubmitted, indexing requested on 3 new posts + amazon-dsp-agency
+- Still open: h2->h4 heading skips on service pages (CSS/visual risk - do with screenshots), width/height attrs on 17 imgs (CLS), squarespace-hotlinked client logos (needs download approval), dead Netlify email-capture mirror on 62 pages, free-audit.html orphan status (confirm it's a paid-ads LP)
+
 **Ops note:** stale git lock files (`index.lock`, `HEAD.lock`) from a crashed Aug 17 process repeatedly blocked commits. Fix: `rm -f .git/*.lock` (Andrew must run it — Claude's sandbox can't delete inside .git). Line-ending CRLF warnings on commit are harmless.
 
 ---

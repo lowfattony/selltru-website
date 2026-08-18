@@ -13,11 +13,11 @@
   <meta charset="UTF-8">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free Amazon Account Audit Checklist | 50-Point Diagnostic | SellTru</title>
+  <title>Free Amazon Audit Checklist: 50-Point Diagnostic | SellTru</title>
   <meta name="description" content="A free 50-point Amazon account audit checklist to find exactly what's costing you rank and revenue. Used by SellTru to audit Amazon accounts for $1M to $20M brands.">
   <meta property="og:url" content="https://selltru.com/lead-magnet">
-  <meta property="og:title" content="Free Amazon Account Audit Checklist — 50 Points | SellTru">
-  <meta property="og:description" content="The exact checklist SellTru uses to audit Amazon accounts. Find what's costing you rank and revenue — in under an hour.">
+  <meta property="og:title" content="Free Amazon Audit Checklist: 50-Point Diagnostic | SellTru">
+  <meta property="og:description" content="The exact checklist SellTru uses to audit Amazon accounts. Find what's costing you rank and revenue in under an hour.">
   <meta property="og:image" content="https://selltru.com/img/og-image.png">
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://selltru.com/lead-magnet">
@@ -1186,7 +1186,7 @@
       })
         .then(function (res) {
           if (res.ok) {
-            formView.hidden = true;
+            window.gtag&&gtag("event","generate_lead",{event_category:"conversion",event_label:"lead_magnet_popup"});window.oaiq && oaiq('measure','registration_completed',{type:'customer_action'});formView.hidden = true;
             successView.hidden = false;
             sessionStorage.setItem('st_popup_done', '1');
             setTimeout(hidePopup, 3500);

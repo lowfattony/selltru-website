@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" font-family="-apple-system,'Segoe UI',Arial,sans-serif">
+  <rect width="1200" height="560" rx="18" fill="#0D1B2A"/>
+  <text x="60" y="78" fill="#FFFFFF" font-size="34" font-weight="800">The 4 Sponsored Display Campaigns Worth Running</text>
+  <text x="60" y="112" fill="#8FA3B8" font-size="18">Mapped to where the shopper is in the funnel</text>
+
+  <!-- funnel tiers -->
+  <polygon points="200,160 1000,160 900,280 300,280" fill="#1A56DB" opacity="0.85"/>
+  <polygon points="310,292 890,292 810,400 390,400" fill="#1A56DB" opacity="0.55"/>
+  <polygon points="400,412 800,412 730,510 470,510" fill="#FF6B35" opacity="0.85"/>
+
+  <text x="600" y="205" fill="#FFFFFF" font-size="19" font-weight="700" text-anchor="middle">NEW SHOPPERS</text>
+  <text x="600" y="235" fill="#DCE6F5" font-size="15" text-anchor="middle">Contextual conquesting on weaker competitors  •  Amazon in-market audiences</text>
+  <text x="600" y="262" fill="#AFC4E0" font-size="13" text-anchor="middle">Target rivals with worse ratings and higher prices</text>
+
+  <text x="600" y="335" fill="#FFFFFF" font-size="19" font-weight="700" text-anchor="middle">CONSIDERING</text>
+  <text x="600" y="365" fill="#DCE6F5" font-size="15" text-anchor="middle">Views remarketing — shoppers who viewed and didn't buy (30 days)</text>
+
+  <text x="600" y="450" fill="#FFFFFF" font-size="19" font-weight="700" text-anchor="middle">OWNED</text>
+  <text x="600" y="478" fill="#FFE3D6" font-size="14" text-anchor="middle">Own-page defense  •  Purchases remarketing on the reorder cycle</text>
+
+  <!-- side note -->
+  <text x="1120" y="545" fill="#42546B" font-size="12" text-anchor="end">selltru.com</text>
+</svg>

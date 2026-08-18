@@ -126,6 +126,44 @@ Old Fort Lauderdale agency pages 301 → homepage. Key ones:
 
 ## Session Change Log
 
+### 2026-08-18 — Major repair session: link bug, full-site audit, 3 new posts
+
+**Published 3 posts (Posts 40–42):**
+- `amazon-q4-prep-checklist-2026.html` — Q4 deadlines (PBDD FBA cutoffs Sep 9/16, BFCM Oct 21/28, peak fees Oct 15–Jan 14), ad ramp strategy
+- `amazon-sponsored-display-ads.html` — SD vs DSP, 4 campaign types, settings
+- `drive-external-traffic-to-amazon.html` — Amazon Attribution, ~10% Brand Referral Bonus, channel rankings
+- Method: Andrew unavailable for interview; posts written from his published voice/opinions + verified 2026 data. NO fabricated client examples — posts still need one real story each (voice note pending). Each got 3 inbound links, blog cards, sitemap/llms entries, branded SVG graphics in `img/blog/`.
+
+**CRITICAL BUG FOUND & FIXED — sitewide truncated links (live Aug 10–18):**
+- Commit `b7ae72c` (Aug 10, "clean URLs + 301s") chopped exactly 5 trailing chars off every extensionless internal href (`amazon-tacos-advert`, `ques`, `../write-f`, etc.)
+- Effect: ~375 internal links 404'd for 8 days. Blog index cards all dead — users saw styled 404 ("page loads but no blog text")
+- Fixed in two passes: 269 links (bare//-prefixed/blog/-prefixed) pushed in `1f54fbc`; then 105 more in `../` and `./` form caught by audit agents (first fixer+checker shared a blind spot for those prefixes)
+- All reconstructions verified against pre-bug commit `b7ae72c^`. Lesson: any future URL-format migration must be verified with a resolver audit across ALL href forms
+
+**Full-site audit (4 parallel agents) — fixes applied in pending batch:**
+- 47 dead CTA anchors (`../#contact-form`, bare `#contact-form`) → all now `/about#contact-form` (only about.html has the form)
+- `audit-thanks.html` logo `href=""` (trapped converted leads) → `/`; same bug on 404.html "Back to Homepage" → fixed
+- `write-for-us.html` form had no `action` → never reached thank-you/tracking page → `action="/write-for-us-thanks"` added
+- `main.js` was missing on ALL 42 blog pages: mobile hamburger dead, cta_click tracking never fired on blog → added
+- OpenAI ads pixel (`oaiq`) fired conversions on only 5/64 pages → `registration_completed` now fires on all lead-form successes (components.js + main.js)
+- OG tags: og-default.jpg (nonexistent) → /img/og-image.png on 3 pages; og:url/og:image backfilled on 16 pages; case-studies had zero OG → full block added
+- `amazon-dsp-agency` added to sitemap.xml + llms.txt (was invisible); 5 posts added to llms.txt; 3 missing `_redirects` 301 rules for new posts
+- Article schema `image` added to 5 pages; 2 missing blog card dates on blog.html
+
+**Stretched images fixed (about + case-studies, root cause sitewide):**
+- Cause: commit `403c456` (Aug 10) added width/height attrs, but CSS `width:100%`/`max-width:100%` rules lacked `height:auto` → height locked to attr value (headshot rendered 360×900, Seller Central shots 460×2868)
+- Fixed: `height:auto` added to `.founder-photo` (about.html), `.cs-shot img` (case-studies.html), and the global `img` rule in css/style.css + free-audit.html
+
+**Still open (editorial — needs Andrew's sign-off, don't batch-edit):**
+- 15 blog titles >60 chars; 14 posts use " | SellTru Blog" suffix vs convention " | SellTru"; 12 meta descriptions out of 120–165 range
+- h2→h4 heading skips on service pages; 17 imgs missing width/height attrs; stale sitemap lastmod values
+- GA event naming inconsistent (generate_lead vs audit_requested double-fire); lead-magnet.html forms fire no conversion events; dead Netlify email-capture mirror on 62 pages; free-audit.html is orphaned (0 inbound links — confirm it's a paid-ads LP); client logos hotlinked from squarespace-cdn
+- GSC: after this deploys — resubmit sitemap, request indexing on 3 new posts + money pages
+
+**Ops note:** stale git lock files (`index.lock`, `HEAD.lock`) from a crashed Aug 17 process repeatedly blocked commits. Fix: `rm -f .git/*.lock` (Andrew must run it — Claude's sandbox can't delete inside .git). Line-ending CRLF warnings on commit are harmless.
+
+---
+
 ### 2026-05-06
 - Published Post 13: `amazon-a-plus-content-guide.html`
 - Fixed slug (initially `amazon-a-plus-content-conversion` → corrected to `amazon-a-plus-content-guide`)
@@ -141,16 +179,16 @@ Old Fort Lauderdale agency pages 301 → homepage. Key ones:
 
 ## Topics Already Covered (Avoid Duplicates)
 
-**Amazon:** Sales dropped diagnosis, reducing ACoS, agency worth it, questions to ask agency, listing optimization, Sponsored Products vs Brands, new product launch, keyword research, agency vs in-house, PPC management cost, TACoS, best PPC agencies 2026, A+ Content
+**Amazon:** Sales dropped diagnosis, reducing ACoS, agency worth it, questions to ask agency, listing optimization, Sponsored Products vs Brands, new product launch, keyword research, agency vs in-house, PPC management cost, TACoS, best PPC agencies 2026, A+ Content, Q4/holiday prep 2026, Sponsored Display ads, external traffic + Brand Referral Bonus
 
 **Walmart:** Does Walmart have PPC, expanding Amazon brand to Walmart, growing Walmart sales, Walmart vs Amazon 2026, ranking on Walmart search 2026
 
 ## Topic Ideas Not Yet Covered
 
-**Amazon:** Amazon DSP, Amazon Brand Store design, Amazon Vine program, Amazon FBA vs FBM, Subscribe & Save, external traffic to Amazon, Amazon attribution, seasonal/Q4 strategy, Amazon coupons & deals, account health management, Seller Central vs Vendor Central
+**Amazon:** Amazon DSP, Amazon Brand Store design, Amazon Vine program, Amazon FBA vs FBM, Subscribe & Save, Amazon coupons & deals, account health management, Seller Central vs Vendor Central
 
 **Walmart:** Walmart Fulfillment Services (WFS) deep dive, Walmart seller fees breakdown, Walmart listing best practices, Walmart reviews strategy, Walmart+ for sellers
 
 ---
 
-*Updated: 2026-05-06*
+*Updated: 2026-08-18*

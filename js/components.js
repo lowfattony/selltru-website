@@ -418,6 +418,7 @@ function initAuditModal() {
     }).then(function(r) {
       if (r.ok) {
         window.gtag && gtag('event', 'generate_lead', { event_category: 'conversion', event_label: 'modal_audit_form' });
+        window.oaiq && oaiq('measure','registration_completed',{type:'customer_action'});
         form.style.display = 'none';
         var hdr = document.getElementById('modal-header');
         var pb  = document.getElementById('modal-prog-bar');

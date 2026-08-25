@@ -133,3 +133,4 @@ Yes. SellTru manages Walmart.com seller accounts, Walmart Connect advertising, a
 
 **How do I get started?**
 Request a free marketplace audit at https://selltru.com/about#contact — a marketplace specialist (not a sales rep) will review your account and follow up within one business day.
+- [Amazon PPC Audit Checklist (2026 Guide)](https://selltru.com/blog/amazon-ppc-account-audit-checklist): The exact 8-step, 90-minute audit we run on every account before touching a bid — search term dead weight, budget misallocated across ASINs, match-type overlap, placement modifiers, and the naming convention mistake that slows down every audit after this one.

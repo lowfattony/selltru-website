@@ -1,0 +1,22 @@
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Arial, sans-serif">
+  <rect x="0" y="0" width="700" height="320" fill="#F8FAFC" rx="12"/>
+  <text x="24" y="34" font-size="16" font-weight="700" fill="#0D1B2A">Walmart Connect Display: Onsite vs. Offsite</text>
+
+  <rect x="24" y="56" width="310" height="230" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="44" y="88" font-size="14" font-weight="700" fill="#1A56DB">Onsite Display</text>
+  <text x="44" y="114" font-size="12" fill="#0D1B2A">Homepage, category, item &amp; topic pages</text>
+  <text x="44" y="134" font-size="12" fill="#0D1B2A">Targeting: keyword, contextual, behavioral</text>
+  <text x="44" y="154" font-size="12" fill="#0D1B2A">Buy type: self-serve auction (eCPM)</text>
+  <text x="44" y="174" font-size="12" fill="#0D1B2A">Practical minimum: ~$4,500/mo</text>
+  <text x="44" y="194" font-size="12" fill="#0D1B2A">Best for: launches, seasonal pushes</text>
+
+  <rect x="366" y="56" width="310" height="230" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="386" y="88" font-size="14" font-weight="700" fill="#FF6B35">Offsite Display</text>
+  <text x="386" y="114" font-size="12" fill="#0D1B2A">The open web, social, and CTV</text>
+  <text x="386" y="134" font-size="12" fill="#0D1B2A">Partners: The Trade Desk, TikTok, Roku,</text>
+  <text x="386" y="152" font-size="12" fill="#0D1B2A">Yahoo DSP / Vizio via Magnite (2026)</text>
+  <text x="386" y="172" font-size="12" fill="#0D1B2A">Targeting: Walmart 1st-party shopper data</text>
+  <text x="386" y="192" font-size="12" fill="#0D1B2A">Best for: retargeting &amp; brand reach</text>
+
+  <text x="24" y="308" font-size="12" fill="#64748B">Managed-service onsite display required a $300K annual minimum; self-serve removed that floor in 2026.</text>
+</svg>

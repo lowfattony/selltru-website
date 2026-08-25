@@ -1,0 +1,22 @@
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Arial, sans-serif">
+  <rect x="0" y="0" width="700" height="300" fill="#F8FAFC" rx="12"/>
+  <text x="24" y="34" font-size="16" font-weight="700" fill="#0D1B2A">Negative Exact vs. Negative Phrase</text>
+
+  <rect x="24" y="56" width="310" height="200" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="44" y="88" font-size="14" font-weight="700" fill="#1A56DB">Negative Exact Match</text>
+  <text x="44" y="114" font-size="12" fill="#0D1B2A">Blocks only the precise term</text>
+  <text x="44" y="134" font-size="12" fill="#0D1B2A">Up to 10 words, 80 characters</text>
+  <text x="44" y="154" font-size="12" fill="#0D1B2A">Use for: one proven non-converter</text>
+  <text x="44" y="174" font-size="12" fill="#0D1B2A">Risk level: low — a scalpel</text>
+  <circle cx="290" cy="90" r="10" fill="#1A56DB"/>
+
+  <rect x="366" y="56" width="310" height="200" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="386" y="88" font-size="14" font-weight="700" fill="#FF6B35">Negative Phrase Match</text>
+  <text x="386" y="114" font-size="12" fill="#0D1B2A">Blocks any search containing the phrase</text>
+  <text x="386" y="134" font-size="12" fill="#0D1B2A">Up to 4 words, 80 characters</text>
+  <text x="386" y="154" font-size="12" fill="#0D1B2A">Use for: a whole family of bad queries</text>
+  <text x="386" y="174" font-size="12" fill="#0D1B2A">Risk level: high — a sledgehammer</text>
+  <circle cx="632" cy="90" r="14" fill="#FF6B35"/>
+
+  <text x="24" y="284" font-size="12" fill="#64748B">Amazon offers no negative broad match — exact and phrase are the only two options.</text>
+</svg>

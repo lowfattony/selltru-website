@@ -57,6 +57,14 @@
       line-height: inherit; font-family: var(--font-head); font-size: 19px; font-weight: 800; color: var(--navy); }
     .agency-card-rank { font-size: 13px; font-weight: 700; background: var(--navy); color: #fff; border-radius: 20px; padding: 4px 12px; white-space: nowrap; }
     .agency-card-rank.orange { background: #FF6B35; }
+    .agency-card.featured { border: 2px solid #FF6B35; position: relative; overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,107,53,0.06), rgba(255,255,255,0) 200px);
+      box-shadow: 0 8px 28px rgba(255,107,53,0.15); }
+    .agency-card.featured::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, #FF6B35, #FF9B6B); }
+    .agency-card-badge { display: inline-block; font-family: var(--font-head); font-size: 11px; font-weight: 800;
+      letter-spacing: 0.1em; text-transform: uppercase; color: #fff; background: #FF6B35;
+      border-radius: 6px; padding: 5px 11px; margin-bottom: 14px; }
     .agency-best-for { font-size: 13px; font-weight: 700; color: #FF6B35; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
     .agency-card p { margin-bottom: 10px; }
     .agency-card ul { margin-bottom: 0; }
@@ -64,7 +72,8 @@
     .cost-table th { background: var(--navy); color: #fff; font-family: var(--font-head); font-weight: 700; padding: 12px 14px; text-align: left; }
     .cost-table td { padding: 11px 14px; border-bottom: 1px solid var(--gray-200); color: var(--text); vertical-align: top; }
     .cost-table tr:nth-child(even) td { background: rgba(26,86,219,0.03); }
-    .cost-table tr.highlight td { background: rgba(255,107,53,0.07); font-weight: 600; color: var(--navy); }
+    .cost-table tr.highlight td { background: rgba(255,107,53,0.15); font-weight: 700; color: var(--navy); }
+    .cost-table tr.highlight td:first-child { box-shadow: inset 4px 0 0 #FF6B35; }
     .toc { background: #F8F9FB; border-radius: 12px; padding: 22px 26px; margin: 36px 0; }
     .toc-title { font-family: var(--font-head); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); margin-bottom: 12px; }
     .toc ol { margin-bottom: 0; padding-left: 20px; }
@@ -504,7 +513,8 @@
       </div>
 
       <!-- 2. SellTru -->
-      <div class="agency-card reveal" style="border-color:#FF6B35;">
+      <div class="agency-card reveal featured">
+        <div class="agency-card-badge">Our agency</div>
         <div class="agency-card-header">
           <h3 class="agency-card-name">2. SellTru</h3>
           <div class="agency-card-rank orange">Best for mid-market brands</div>

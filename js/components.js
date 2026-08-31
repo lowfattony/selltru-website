@@ -278,7 +278,7 @@ function initAuditModal() {
     '      <div class="modal-field"><label for="m-marketplace">Which marketplace(s)? *</label><select id="m-marketplace" name="marketplace"><option value="" disabled selected>Select marketplace...</option><option value="amazon">Amazon only</option><option value="walmart">Walmart.com only</option><option value="both">Both Amazon &amp; Walmart.com</option></select></div>',
     '      <div class="modal-row">',
     '        <div class="modal-field"><label for="m-revenue">Annual revenue *</label><select id="m-revenue" name="revenue"><option value="" disabled selected>Select range...</option><option value="pre-launch">Pre-launch</option><option value="under-250k">Under $250K</option><option value="250k-1m">$250K – $1M</option><option value="1m-5m">$1M – $5M</option><option value="5m-20m">$5M – $20M</option><option value="over-20m">Over $20M</option></select></div>',
-    '        <div class="modal-field"><label for="m-adspend">Monthly ad spend *</label><select id="m-adspend" name="adspend"><option value="" disabled selected>Select range...</option><option value="none">Not running ads</option><option value="under-2k">Under $2K/mo</option><option value="2k-10k">$2K – $10K/mo</option><option value="10k-50k">$10K – $50K/mo</option><option value="50k-plus">$50K+/mo</option></select></div>',
+    '        <div class="modal-field"><label for="m-adspend">Monthly ad spend <span style="opacity:.65;font-weight:400;text-transform:none">(optional)</span></label><select id="m-adspend" name="adspend"><option value="" disabled selected>Select range...</option><option value="none">Not running ads</option><option value="under-2k">Under $2K/mo</option><option value="2k-10k">$2K – $10K/mo</option><option value="10k-50k">$10K – $50K/mo</option><option value="50k-plus">$50K+/mo</option></select></div>',
     '      </div>',
     '      <button type="submit" id="modal-submit-btn" class="modal-submit">Send My Audit Request →</button>',
     '    </div>',
@@ -391,7 +391,6 @@ function initAuditModal() {
     if (!company.value.trim())  { company.style.borderColor    = '#EF4444'; if (valid) company.focus();     valid = false; }
     if (!marketplace.value)     { marketplace.style.borderColor = '#EF4444'; if (valid) marketplace.focus(); valid = false; }
     if (!revenue.value)         { revenue.style.borderColor    = '#EF4444'; if (valid) revenue.focus();     valid = false; }
-    if (!adspend.value)         { adspend.style.borderColor    = '#EF4444'; if (valid) adspend.focus();     valid = false; }
     if (!valid) return;
 
     var btn = document.getElementById('modal-submit-btn');

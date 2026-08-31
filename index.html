@@ -1541,7 +1541,7 @@
               </select>
             </div>
             <div class="modal-field">
-              <label for="m-adspend">Monthly ad spend *</label>
+              <label for="m-adspend">Monthly ad spend <span style="opacity:.65;font-weight:400;text-transform:none">(optional)</span></label>
               <select id="m-adspend" name="adspend">
                 <option value="" disabled selected>Select range...</option>
                 <option value="none">Not running ads</option>
@@ -1655,7 +1655,6 @@
           if (!company.value.trim())  { company.style.borderColor    = '#EF4444'; if (valid) company.focus();     valid = false; }
           if (!marketplace.value)     { marketplace.style.borderColor = '#EF4444'; if (valid) marketplace.focus(); valid = false; }
           if (!revenue.value)         { revenue.style.borderColor    = '#EF4444'; if (valid) revenue.focus();     valid = false; }
-          if (!adspend.value)         { adspend.style.borderColor    = '#EF4444'; if (valid) adspend.focus();     valid = false; }
           if (!valid) return;
 
           var btn = document.getElementById('modal-submit-btn');

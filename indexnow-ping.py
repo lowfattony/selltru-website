@@ -9,7 +9,7 @@ The key file must be live at https://selltru.com/<KEY>.txt before this will work
 """
 import sys, json, re, os, urllib.request
 
-KEY = "02373b41833240e6953a4ea558cf1314f0ae97e59c034484835318e41e5d261a"
+KEY = "7a55c6142aade8cd452dc288947f23113be28cb25d42ae28e3f61aa4e2e220da"
 HOST = "selltru.com"
 BASE = os.path.dirname(os.path.abspath(__file__))
 ENDPOINT = "https://api.indexnow.org/IndexNow"
@@ -42,7 +42,10 @@ def ping(urls):
             return 0 if r.status in (200, 202) else 1
     except urllib.error.HTTPError as e:
         print("HTTP %s — %s" % (e.code, e.read().decode("utf-8", "replace")[:300]))
-        print("403 usually means the key file is not live yet at the keyLocation above.")
+        print("403 = IndexNow rejected this key for this host. Confirm the key file at the")
+        print("keyLocation above returns 200 and contains exactly the key. If it does and 403")
+        print("persists past 48 hours the key is poisoned: generate a fresh one, replace the KEY")
+        print("constant and the <key>.txt file, push, then ping again.")
         return 1
 
 

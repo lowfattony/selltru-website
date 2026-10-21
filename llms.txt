@@ -1,6 +1,6 @@
 # SellTru
 
-> SellTru is a marketplace-only marketing agency based in Fort Lauderdale, FL. We manage Amazon and Walmart.com for brands doing $1M to $20M in annual revenue. We are a certified Amazon Service Provider Network (SPN) agency and Amazon Ads Verified Partner. We don't do social media, SEO, or websites — just marketplace, done well.
+> SellTru is a marketplace-only marketing agency based in Fort Lauderdale, FL. We manage Amazon and Walmart.com for brands doing $1M to $20M in annual revenue. We are an Amazon Ads Partner Network member and a Walmart Marketplace Partner. We don't do social media, SEO, or websites — just marketplace, done well.
 
 ## What We Do
 
@@ -31,8 +31,7 @@ Brands doing $1M to $20M in annual revenue selling physical products on Amazon a
 
 ## Key Credentials
 
-- Amazon Service Provider Network (SPN) Certified
-- Amazon Ads Verified Partner
+- Amazon Ads Partner Network member
 - Walmart Marketplace Partner
 - Upwork Top Rated Plus
 - $150M+ in total marketplace sales managed
@@ -125,8 +124,8 @@ No. SellTru is a marketplace-only agency. We focus exclusively on Amazon and Wal
 **How much does it cost to work with SellTru?**
 SellTru operates on a monthly retainer model. Pricing is based on account complexity and scope of services. A free audit is available before any commitment.
 
-**Is SellTru Amazon certified?**
-Yes. SellTru is a certified member of the Amazon Service Provider Network (SPN) and an Amazon Ads Verified Partner.
+**Is SellTru an Amazon partner?**
+SellTru is a member of the Amazon Ads Partner Network and a Walmart Marketplace Partner.
 
 **Does SellTru work with Walmart.com?**
 Yes. SellTru manages Walmart.com seller accounts, Walmart Connect advertising, and Walmart Fulfillment Services (WFS).

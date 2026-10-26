@@ -11,3 +11,9 @@ selltru-header:not(:defined) {
 selltru-footer:not(:defined) {
   display: none;
 }
+
+.amz-text-badge{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;max-width:230px;padding:10px 12px;border:1.5px solid #0D1B2A;border-radius:8px;background:#fff;color:#0D1B2A;font-family:'Plus Jakarta Sans',var(--font-head),sans-serif;font-size:13px;font-weight:700;line-height:1.35;text-align:center}
+.amz-text-badge--on-dark{border-color:rgba(255,255,255,.45);background:rgba(255,255,255,.06);color:#fff;font-weight:600}
+.cert-display-card .amz-text-badge{margin:0 auto 16px}
+.cert-logo-item .amz-text-badge{margin:0 auto}
+@media (max-width:700px){.amz-text-badge{max-width:100%;font-size:12px;padding:8px 10px}}

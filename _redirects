@@ -93,6 +93,28 @@
 /blog/amazon-q4-prep-checklist-2026.html    /blog/amazon-q4-prep-checklist-2026    301!
 /blog/amazon-sponsored-display-ads.html    /blog/amazon-sponsored-display-ads    301!
 /blog/drive-external-traffic-to-amazon.html    /blog/drive-external-traffic-to-amazon    301!
+
+# -----------------------------------------------
+# Truncated and legacy URLs still requested (301)
+# -----------------------------------------------
+/search-marketing-management    /    301
+/search-marketing-management/    /    301
+/blog/amazon-brand-analytics-ppc-key    /blog/amazon-brand-analytics-ppc-keywords    301
+/blog/amazon-brand-analytics-ppc-key/    /blog/amazon-brand-analytics-ppc-keywords    301
+/amazon-mark    /amazon-marketing    301
+/amazon-mark/    /amazon-marketing    301
+/blog/how-to-reduce-amazon    /blog/how-to-reduce-amazon-acos    301
+/blog/how-to-reduce-amazon/    /blog/how-to-reduce-amazon-acos    301
+/lead-m    /lead-magnet    301
+/lead-m/    /lead-magnet    301
+/blog/amazon-business-reports-ai-listing-optimiz    /blog/amazon-business-reports-ai-listing-optimization    301
+/blog/amazon-business-reports-ai-listing-optimiz/    /blog/amazon-business-reports-ai-listing-optimization    301
+/walmart-mark    /walmart-marketing    301
+/walmart-mark/    /walmart-marketing    301
+/blog/amazon-tacos-advert    /blog/amazon-tacos-advertising    301
+/blog/amazon-tacos-advert/    /blog/amazon-tacos-advertising    301
+/amazon-agency-pr    /amazon-agency-pricing    301
+/amazon-agency-pr/    /amazon-agency-pricing    301
 # -----------------------------------------------
 # Custom 404 page (must stay last — catch-all)
 # -----------------------------------------------

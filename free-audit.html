@@ -488,6 +488,7 @@
   </style>
   <link rel="preconnect" href="https://assets.calendly.com">
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <script src="/js/lead-tracking.js" defer></script>
 </head>
 <body>
 
@@ -906,7 +907,7 @@
       btn.textContent = 'Submitting...';
       var data = {};
       new FormData(this).forEach(function(v, k) {
-        if (k.charAt(0) === '_' || k === 'source') return;
+        if ((k.charAt(0) === '_' && k !== '_gotcha') || k === 'source') return;
         if (v) data[k] = v;
       });
       fetch('https://formspree.io/f/xlgakqbq', {
@@ -981,7 +982,7 @@
       if (!valid) return;
       btn.disabled = true; btn.textContent = 'Submitting...';
       var data = {};
-      new FormData(this).forEach(function(v,k){ if(k.charAt(0)==='_'||k==='source')return; if(v) data[k]=v; });
+      new FormData(this).forEach(function(v,k){ if((k.charAt(0)==='_'&&k!=='_gotcha')||k==='source')return; if(v) data[k]=v; });
       fetch('https://formspree.io/f/xlgakqbq',{
         method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
         body:JSON.stringify(data)

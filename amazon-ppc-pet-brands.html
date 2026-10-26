@@ -482,6 +482,7 @@
         <p style="color:rgba(255,255,255,0.7);font-size:17px;line-height:1.7;margin-bottom:36px;max-width:560px;margin-left:auto;margin-right:auto;">We'll pull up your current campaigns, search term reports, ASIN targeting coverage, and Subscribe &amp; Save data and show you exactly where the budget is going and what it should be doing. No pitch deck. No obligation.</p>
         <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;">
           <a class="btn btn-primary btn-lg" href="/about#contact-form" data-modal-trigger="audit">Request Your Free Amazon Audit</a>
+          <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&utm_source=selltru.com&utm_medium=cta&utm_content=amazon-ppc-pet-brands" target="_blank" rel="noopener" style="margin-left:12px;">Book a free 30-minute strategy call</a>
           <a class="btn btn-outline-white btn-lg" href="blog/amazon-subscribe-and-save-strategy">Read the Subscribe &amp; Save Strategy Guide</a>
         </div>
         <p style="margin-top:20px;color:rgba(255,255,255,0.45);font-size:13px;">For qualifying pet brands doing $500K+ on Amazon</p>
@@ -744,7 +745,7 @@
           fetch('https://formspree.io/f/xlgakqbq', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify({ 'first-name': fname.value.trim(), email: emailVal, submission_type: 'partial' })
+            body: JSON.stringify({ 'first-name': fname.value.trim(), email: emailVal, submission_type: 'partial', lead_stage: 'partial' })
           });
           document.getElementById('modal-step-1').classList.remove('active');
           document.getElementById('modal-step-2').classList.add('active');

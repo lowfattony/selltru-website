@@ -1176,7 +1176,7 @@
       submitBtn.disabled = true;
       var payload = {};
       new FormData(form).forEach(function(value, key) {
-        if (key.charAt(0) === '_' || key === 'source') return;
+        if ((key.charAt(0) === '_' && key !== '_gotcha') || key === 'source') return;
         if (value) payload[key] = value;
       });
       fetch('https://formspree.io/f/xlgakqbq', {

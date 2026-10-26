@@ -356,7 +356,7 @@
     oaiq("init", { pixelId: "UeyzoKe3VtFvfSMqVPUoaN" });
   </script>
   <link rel="preconnect" href="https://assets.calendly.com">
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <script src="https://assets.calendly.com/assets/external/widget.js" async defer></script>
 </head>
 <body>
 
@@ -1602,7 +1602,7 @@
           fetch('https://formspree.io/f/xlgakqbq', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify({ 'first-name': fname.value.trim(), email: emailVal, submission_type: 'partial' })
+            body: JSON.stringify({ 'first-name': fname.value.trim(), email: emailVal, submission_type: 'partial', lead_stage: 'partial' })
           });
 
           document.getElementById('modal-step-1').classList.remove('active');

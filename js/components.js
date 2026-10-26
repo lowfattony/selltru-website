@@ -122,7 +122,7 @@ class SellTruFooter extends HTMLElement {
           ${LOGO_FOOTER}
           <span class="nav-logo-text">SELL<span>TRU</span></span>
         </a>
-        <p class="footer-brand-desc">The Amazon marketing agency and Walmart marketplace agency for brands doing $1M to $20M. Fort Lauderdale, FL. Serving brands nationwide.</p>
+        <p class="footer-brand-desc">An Amazon and Walmart marketing agency for brands doing $1M to $20M. Fort Lauderdale, FL. Serving brands nationwide.</p>
         <div class="footer-social" aria-label="Social media">
           <a href="https://linkedin.com/company/selltru" target="_blank" rel="noopener" aria-label="LinkedIn">${ICON_LINKEDIN}</a>
           <a href="https://www.facebook.com/share/1BY35ZocEW/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">${ICON_FACEBOOK}</a>
@@ -166,7 +166,7 @@ class SellTruFooter extends HTMLElement {
     </div>
     <div class="footer-bottom">
       <div class="footer-bottom-left">
-        <p>&copy; 2026 SellTru. All rights reserved. | Amazon Marketing Agency | Fort Lauderdale, FL</p>
+        <p>&copy; 2026 SellTru. All rights reserved. | An Amazon and Walmart marketing agency | Fort Lauderdale, FL</p>
         <p class="amz-tm" style="font-size:11px;opacity:.6;margin-top:6px;">Amazon, Amazon Ads, and all related logos are trademarks of Amazon.com, Inc., or its affiliates.</p>
       </div>
       <div class="footer-certs">

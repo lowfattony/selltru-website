@@ -141,5 +141,5 @@ The conversion path is broken in two places:
 ## Notes
 
 - Site traffic source breakdown not yet pulled — need GSC + Clarity traffic source data to confirm what % is LLM-driven vs. organic vs. direct
-- SEO monitoring checkpoint: **May 26** — check GSC CTR on `/amazon-agency-pricing` and `/how-to-reduce-amazon-acos`
+- SEO monitoring checkpoint: **May 26** — check GSC CTR on `/marketplace-agency-pricing` and `/how-to-reduce-amazon-acos`
 - BRA Cookware inbound lead (2026-05-19) confirmed as first ChatGPT-sourced lead — validates LLM SEO strategy

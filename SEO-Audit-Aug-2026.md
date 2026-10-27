@@ -57,14 +57,14 @@ Blog posts have zero OG tags → no link-preview cards on LinkedIn/Slack/iMessag
 
 ## MEDIUM
 
-- **M1. /questions title tag is 81 characters** (limit 60 incl. suffix). Suggest: "Amazon & Walmart Agency FAQ | SellTru" (37). Some posts also drop the `| SellTru` suffix entirely (reduce-acos, how-to-advertise-on-walmart, tacos) — standardize.
+- **M1. /questions title tag is 81 characters** (limit 60 incl. suffix). Suggest: "Marketplace Agency for Amazon and Walmart FAQ | SellTru" (37). Some posts also drop the `| SellTru` suffix entirely (reduce-acos, how-to-advertise-on-walmart, tacos) — standardize.
 - **M2. Blog index meta description 163 chars** — trim below ~155.
 - **M3. Best-agencies post: agency names aren't headings.** Ranked entries render as styled divs; convert each to an `<h3>` (restyled to match) — the highest-leverage GEO fix on the site's most important commercial post.
 - **M4. No dates/excerpts on blog index cards**; `dateModified` == `datePublished` on every post. Six "2026"-titled posts will decay in January. Add visible "Last updated," bump dateModified on real edits, establish a refresh cadence.
 - **M5. Blog posts have no images** (cost post: 0, reduce-ACOS: 0). Add 2–3 redacted screenshots/diagrams per pillar post — Experience signal + image search asset.
 - **M6. /amazon-marketing is 748 words** for the money page: no pricing anchor, no case-study excerpt, no FAQs. Expand.
 - **M7. Fragmented entity graph:** Organization and LocalBusiness are two unlinked SellTru nodes; Service page re-declares Organization inline instead of `@id` reference; no BreadcrumbList outside blog posts.
-- **M8. Agency-selection cluster crowding:** "best-amazon-ppc-agencies-2026" vs "top-rated...small-business" overlap heavily — differentiate the latter hard around sub-$1M sellers or fold it in.
+- **M8. Agency-selection cluster crowding:** "best-amazon-ppc-management-2026" vs "top-rated...small-business" overlap heavily — differentiate the latter hard around sub-$1M sellers or fold it in.
 - **M9. Sitemap hygiene:** 15 core pages missing lastmod, 14 share a bulk-backfilled date; changefreq/priority ignored by Google (safe to strip).
 - **M10. Image CLS risk:** Squarespace-CDN badge images and blog proof screenshots missing width/height; consider self-hosting the two partner badges.
 - **M11. Dead/unverified sameAs links:** connectively.us profile (HARO shut down Dec 2024 — likely dead, remove); verify Facebook/Instagram URLs.

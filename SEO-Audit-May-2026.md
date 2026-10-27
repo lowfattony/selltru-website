@@ -3,7 +3,7 @@
 **Conducted:** May 15, 2026 | **Last Updated:** May 15, 2026 (all Quick Wins implemented)
 **Data sources:** Google Search Console (24h + 28-day), Google Analytics 4 (28-day), live HTML file audit (9 key pages), competitor web research, project vault (full session history, content calendar, sales pipeline)
 **Scope:** Full site audit — keyword research, on-page SEO, technical SEO, content gaps, competitor comparison, prioritized action plan
-**Site context:** SellTru.com launched as an Amazon/Walmart PPC agency April 2026 — less than 1 month old under the current brand. The domain was previously used by a Fort Lauderdale web design and SEO agency, creating topical contamination in Google's index that decays over time as the domain is reassociated with marketplace advertising content.
+**Site context:** SellTru.com launched with Amazon and Walmart PPC management in April 2026 — less than 1 month old under the current brand. The domain was previously used by a Fort Lauderdale web design and SEO agency, creating topical contamination in Google's index that decays over time as the domain is reassociated with marketplace advertising content.
 
 ---
 
@@ -11,9 +11,9 @@
 
 SellTru is a young site with a strong content foundation and real momentum. Indexed pages grew from ~15 to 33 over the past three months, the query footprint has expanded to 485 unique queries in 28 days, and Google is consistently rewarding the practitioner-voice content with page 1 rankings for competitive terms. The trajectory is clearly upward.
 
-That said, the site is leaving a significant amount of traffic on the table right now due to three specific problems: (1) the highest-impression page on the site (/amazon-agency-pricing, 1,033 impressions in 28 days) is converting only 0.3% of impressions to clicks despite a position 7.2 average — meaning the SERP snippet is failing; (2) the domain's prior use as a Fort Lauderdale web design agency has contaminated Google's topical model, generating 290+ impressions for completely irrelevant local web design queries that will never convert — this is domain-level contamination that decays over time as Google indexes more Amazon/Walmart content; and (3) zero conversion events are being tracked in GA4, making it impossible to measure what's working.
+That said, the site is leaving a significant amount of traffic on the table right now due to three specific problems: (1) the highest-impression page on the site (/marketplace-agency-pricing, 1,033 impressions in 28 days) is converting only 0.3% of impressions to clicks despite a position 7.2 average — meaning the SERP snippet is failing; (2) the domain's prior use as a Fort Lauderdale web design agency has contaminated Google's topical model, generating 290+ impressions for completely irrelevant local web design queries that will never convert — this is domain-level contamination that decays over time as Google indexes more Amazon/Walmart content; and (3) zero conversion events are being tracked in GA4, making it impossible to measure what's working.
 
-**Important: two of the three highest-priority on-page fixes have already been deployed.** The /amazon-agency-pricing title tag and meta description were rewritten on May 12, and the /how-to-reduce-amazon-acos title and meta description were also updated May 12. GSC typically reflects meta changes in ~2 weeks, meaning impact should appear in data around May 26. The www/non-www redirect issue was also resolved on May 1 in Netlify.
+**Important: two of the three highest-priority on-page fixes have already been deployed.** The /marketplace-agency-pricing title tag and meta description were rewritten on May 12, and the /how-to-reduce-amazon-acos title and meta description were also updated May 12. GSC typically reflects meta changes in ~2 weeks, meaning impact should appear in data around May 26. The www/non-www redirect issue was also resolved on May 1 in Netlify.
 
 **All Quick Wins from this audit have been implemented on May 15, 2026.** GA4 conversion tracking is now live (`form_submit` marked as key event; audit-thanks.html GA4 loading fixed). All meta/title tags updated. Internal links to /questions added across 16 blog posts. 404 errors resolved. Weekly backlink outreach task set up to run every Monday at 9 AM.
 
@@ -29,7 +29,7 @@ Changes deployed since site launch — tracked here so the audit reflects curren
 |------|--------|---------------------|
 | May 1, 2026 | Fixed www vs non-www redirect in Netlify — set selltru.com as primary domain | Already resolved; authority consolidating |
 | May 5, 2026 | Added Fort Lauderdale 301 redirects in `_redirects` file — old local web design URLs now redirect to relevant agency pages | Cleans up legacy URL crawl; topical contamination decays over time |
-| May 12, 2026 | Rewrote /amazon-agency-pricing title tag (price signal added) and meta description | GSC impact expected ~May 26 |
+| May 12, 2026 | Rewrote /marketplace-agency-pricing title tag (price signal added) and meta description | GSC impact expected ~May 26 |
 | May 12, 2026 | Rewrote /how-to-reduce-amazon-acos title and meta description | GSC impact expected ~May 26 |
 | Ongoing | Warm-up running on andrew@selltru.com for Apollo outbound sequence — do not activate until May 21 | Outbound launch may drive brand search traffic to site |
 
@@ -60,27 +60,27 @@ Sorted by opportunity score (combination of search demand, current position, and
 | Keyword | Est. Difficulty | Opportunity | Current Position | Intent | Recommended Content |
 |---------|----------------|-------------|-----------------|--------|---------------------|
 | how to reduce acos on amazon | Medium | **High** | 10.4 (pg 1 edge) | Informational | Expand existing post — more H2s, FAQ schema |
-| amazon agency pricing | Medium | **High** | 10.2 (pg 1 edge) | Commercial | CTR fix on existing page |
-| best amazon ppc agency | Medium | **High** | 5.9 (pg 1) | Commercial | CTR fix on existing post |
-| amazon agency cost | Medium | **High** | 12.0 (pg 2) | Commercial | Internal link push + content depth |
+| marketplace agency pricing | Medium | **High** | 10.2 (pg 1 edge) | Commercial | CTR fix on existing page |
+| best Amazon PPC management | Medium | **High** | 5.9 (pg 1) | Commercial | CTR fix on existing post |
+| marketplace agency cost | Medium | **High** | 12.0 (pg 2) | Commercial | Internal link push + content depth |
 | amazon ppc management cost | Medium | **High** | 17.6 (pg 2) | Commercial | Position is the blocker — internal links |
 | walmart ppc agency | Low | **High** | Not ranking | Commercial | New dedicated landing page |
 | walmart connect ads pricing | Very Low | **High** | Not ranking | Commercial | New blog post or landing page |
 | walmart advertising agency | Low | **High** | Not ranking | Commercial | New landing page or dedicated content |
 | walmart connect ads agency | Very Low | **Very High** | Not ranking | Commercial | Dedicated service page — highest-value Walmart term, not yet on content calendar |
-| best amazon ppc agencies 2026 | Medium | **High** | 8.8 (pg 1) | Commercial | CTR optimization + freshness update |
+| best Amazon PPC management firms 2026 | Medium | **High** | 8.8 (pg 1) | Commercial | CTR optimization + freshness update |
 | amazon listing optimization guide 2026 | Medium | **Medium** | 9.3 (pg 1) | Informational | CTR optimization |
 | amazon tacos definition | Medium | **Medium** | 9.4 (pg 1) | Informational | CTR optimization |
 | how to expand amazon brand to walmart | Low | **Medium** | Est. pg 2–3 | Informational | Existing post — internal linking |
 | walmart vs amazon for sellers 2026 | Low | **Medium** | Est. pg 2 | Informational | Update + internal links |
-| amazon ppc agency pricing | Medium | **Medium** | 16.7 | Commercial | Internal link from agency-pricing page |
-| best amazon advertising agencies 2026 | Medium | **Medium** | 8.0 (pg 1) | Commercial | Existing post — needs CTR work |
-| what questions to ask amazon agency | Low | **Medium** | 1.3 (!) | Commercial | Existing post — add CTA + internal links |
+| Amazon PPC management pricing | Medium | **Medium** | 16.7 | Commercial | Internal link from agency-pricing page |
+| best Amazon advertising services 2026 | Medium | **Medium** | 8.0 (pg 1) | Commercial | Existing post — needs CTR work |
+| what questions to ask marketplace agency | Low | **Medium** | 1.3 (!) | Commercial | Existing post — add CTA + internal links |
 | amazon sponsored products vs sponsored brands | Medium | **Medium** | 12.9 | Informational | Existing post — build depth |
 | walmart connect ppc guide | Very Low | **High** | Not ranking | Informational | New comprehensive guide |
 | walmart marketplace management agency | Low | **High** | Not ranking | Commercial | New content |
 | amazon ppc budget calculator | Low | **Medium** | Not ranking | Tool/Transactional | Interactive tool page |
-| amazon agency worth it | Medium | **Medium** | Est. pg 2 | Commercial | Existing post — CTR optimization |
+| marketplace agency worth it | Medium | **Medium** | Est. pg 2 | Commercial | Existing post — CTR optimization |
 | ppc management pricing | High | **Low** | 36.0 (pg 4) | Commercial | Too competitive at current DA — deprioritize |
 | fort lauderdale website design | N/A | **None** | 74.9 | Local/Irrelevant | Remove geo signal from homepage meta description |
 
@@ -92,23 +92,23 @@ Sorted by opportunity score (combination of search demand, current position, and
 
 | Page | Title | Chars | Status | Issue |
 |------|-------|-------|--------|-------|
-| index.html | Amazon Marketing Agency \| Walmart Marketplace Agency \| SellTru | 62 | ✅ Good | None |
-| amazon-agency-pricing.html | Amazon Agency Pricing: $1,500-$8,000/mo, What's Included | 55 | ✅ Rewritten May 12 | New title deployed with stronger price signal — CTR impact expected ~May 26 |
-| blog/best-amazon-ppc-agencies-2026.html | Best Amazon PPC Agencies 2026: Ranked by a Practitioner \| SellTru | 64 | ✅ Good | None |
+| index.html | Marketplace Agency \| Walmart Marketplace Agency \| SellTru | 62 | ✅ Good | None |
+| marketplace-agency-pricing.html | Marketplace Agency Pricing: $1,500-$8,000/mo, What's Included | 55 | ✅ Rewritten May 12 | New title deployed with stronger price signal — CTR impact expected ~May 26 |
+| blog/best-amazon-ppc-management-2026.html | Best Amazon PPC Management Firms 2026: Ranked by a Practitioner \| SellTru | 64 | ✅ Good | None |
 | blog/how-to-reduce-amazon-acos.html | How to Reduce ACoS on Amazon Without Cutting Ad Spend | 54 | ✅ Updated May 12 | New title deployed — CTR impact expected ~May 26 |
 | blog/amazon-ppc-management-cost.html | How Much Does Amazon PPC Management Cost? \| SellTru Blog | 55 | ✅ Good | None |
 | blog/amazon-tacos-advertising.html | Amazon TACoS Explained: Definition, Formula and Benchmarks | 57 | ✅ Good | None |
 | blog/amazon-listing-optimization-guide-2026.html | Amazon Listing Optimization: The Complete Guide for 2026 \| SellTru Blog | 70 | ❌ Too long | Truncated at ~60 chars — "Blog" gets cut |
 | walmart-marketing.html | Walmart PPC & Marketplace Management Agency \| SellTru | 53 | ✅ Updated May 15 | New title deployed — was 72 chars, truncating "SellTru" |
-| amazon-marketing.html | Amazon Marketing Agency for $1M–$20M Brands \| SellTru | 54 | ✅ Updated May 15 | New title deployed — was 84 chars, losing brand name entirely |
+| amazon-marketing.html | Marketplace Agency for $1M–$20M Brands \| SellTru | 54 | ✅ Updated May 15 | New title deployed — was 84 chars, losing brand name entirely |
 
 ### Meta Description Audit
 
 | Page | Chars | Status | Issue |
 |------|-------|--------|-------|
 | index.html | 154 | ✅ Fixed May 15 | "Fort Lauderdale, FL" removed. New meta: "SellTru manages Amazon and Walmart for brands doing $1M to $20M. Expert PPC, listing optimization, and full account management. No generalists. No handoffs." |
-| amazon-agency-pricing.html | 149 | ✅ Rewritten May 12 | New meta deployed — impact expected ~May 26 |
-| blog/best-amazon-ppc-agencies-2026.html | 155 | ✅ Good | None |
+| marketplace-agency-pricing.html | 149 | ✅ Rewritten May 12 | New meta deployed — impact expected ~May 26 |
+| blog/best-amazon-ppc-management-2026.html | 155 | ✅ Good | None |
 | blog/how-to-reduce-amazon-acos.html | 154 | ✅ Updated May 12 | New meta deployed — impact expected ~May 26 |
 | blog/amazon-ppc-management-cost.html | 157 | ✅ Good | None |
 | blog/amazon-tacos-advertising.html | 176 | ❌ Too long | Will be truncated ~155 chars — loses the end |
@@ -121,8 +121,8 @@ Sorted by opportunity score (combination of search demand, current position, and
 | Page | H1 | H2 Count | Issue |
 |------|----|----------|-------|
 | index.html | Strong, benefit-driven | 12 | None — well structured |
-| amazon-agency-pricing.html | Strong | 8 | None |
-| blog/best-amazon-ppc-agencies-2026.html | Strong | 7 | None |
+| marketplace-agency-pricing.html | Strong | 8 | None |
+| blog/best-amazon-ppc-management-2026.html | Strong | 7 | None |
 | blog/how-to-reduce-amazon-acos.html | Good | **4** | Too few — thin content structure for the site's top impression query |
 | blog/amazon-ppc-management-cost.html | Good | 6 | Acceptable |
 | blog/amazon-tacos-advertising.html | Strong | 7 | None |
@@ -135,12 +135,12 @@ Sorted by opportunity score (combination of search demand, current position, and
 | Page | Internal Links | Issue |
 |------|---------------|-------|
 | index.html | ~18 | Good — links to key service pages and blogs |
-| blog/best-amazon-ppc-agencies-2026.html | ~12 | Good |
+| blog/best-amazon-ppc-management-2026.html | ~12 | Good |
 | blog/how-to-reduce-amazon-acos.html | ~10 | Good |
 | blog/amazon-ppc-management-cost.html | ~10 | Good |
 | blog/amazon-tacos-advertising.html | ~9 | Good |
 | blog/amazon-listing-optimization-guide-2026.html | ~10 | Good |
-| amazon-agency-pricing.html | ~6 | **Weak** — most important landing page, fewest links from other pages pointing to it |
+| marketplace-agency-pricing.html | ~6 | **Weak** — most important landing page, fewest links from other pages pointing to it |
 | walmart-marketing.html | ~5 | **Weak** — isolated from blog ecosystem |
 | amazon-marketing.html | ~5 | **Weak** — isolated from blog ecosystem |
 
@@ -149,12 +149,12 @@ Sorted by opportunity score (combination of search demand, current position, and
 All 9 audited pages have schema markup. This is above average for a site this age and a real strength. Specific implementations:
 
 - index.html: Organization + LocalBusiness + WebSite (strong)
-- amazon-agency-pricing.html: Article + FAQPage (5 Q&As)
-- blog/best-amazon-ppc-agencies-2026.html: Article + BreadcrumbList + FAQPage (6 Q&As)
+- marketplace-agency-pricing.html: Article + FAQPage (5 Q&As)
+- blog/best-amazon-ppc-management-2026.html: Article + BreadcrumbList + FAQPage (6 Q&As)
 - Other blog posts: Article schema
 - Service pages: Service schema with hasOfferCatalog
 
-**Gap:** The /amazon-agency-pricing page has Article schema but a PricingPage or FAQPage schema might better match Google's intent classification for this query type. Consider adding a more explicit pricing-oriented schema type.
+**Gap:** The /marketplace-agency-pricing page has Article schema but a PricingPage or FAQPage schema might better match Google's intent classification for this query type. Consider adding a more explicit pricing-oriented schema type.
 
 ---
 
@@ -179,7 +179,7 @@ All 9 audited pages have schema markup. This is above average for a site this ag
 | Key event tracking | ✅ Fixed May 15 | `form_submit` marked as key event in GA4. `audit_requested` custom event firing on audit-thanks.html (GA4 load changed to immediate async). Conversion tracking now live. |
 | Engagement time | ⚠️ Warning | 30-second average engagement time is low for long-form content — suggests visitors aren't scrolling or reading deeply |
 | Returning users | ⚠️ Warning | 170/171 users are first-time visitors — near-zero repeat audience |
-| Breadcrumb schema | ⚠️ Warning | Only present on /blog/best-amazon-ppc-agencies-2026.html — should be added to all blog posts |
+| Breadcrumb schema | ⚠️ Warning | Only present on /blog/best-amazon-ppc-management-2026.html — should be added to all blog posts |
 | FAQ schema | ⚠️ Warning | Only present on 2 pages — should be added to every blog post that has a FAQ section |
 
 ---
@@ -195,7 +195,7 @@ There is no page on selltru.com targeting "walmart ppc cost", "walmart connect a
 - Effort: Moderate (half day)
 
 **Walmart Connect ads complete guide**
-The existing /blog/walmart-connect-ads.html covers the basics. There is no comprehensive, authoritative guide to Walmart Connect advertising — the equivalent of what /blog/best-amazon-ppc-agencies-2026.html is for Amazon. No competitor has built this content at depth. This is the highest-leverage Walmart content gap on the site.
+The existing /blog/walmart-connect-ads.html covers the basics. There is no comprehensive, authoritative guide to Walmart Connect advertising — the equivalent of what /blog/best-amazon-ppc-management-2026.html is for Amazon. No competitor has built this content at depth. This is the highest-leverage Walmart content gap on the site.
 - Recommended format: Long-form guide (3,000+ words)
 - Priority: High
 - Effort: Substantial (multi-day)
@@ -224,7 +224,7 @@ The /walmart-marketing.html page covers the service broadly. There is no dedicat
 
 **Amazon FBA vs FBM comparison** — A common consideration for brands at the $1M+ stage. Informational but builds ICP trust.
 
-**Questions to ask an Amazon agency (dedicated page)** — The existing /blog/questions-to-ask-amazon-marketing-agency.html already ranks at position 1.3 for a high-intent query. This page needs a stronger CTA and more impressions. Internal link to it from every other blog post.
+**Questions to ask a marketplace agency (dedicated page)** — The existing /blog/questions-to-ask-marketplace-agency.html already ranks at position 1.3 for a high-intent query. This page needs a stronger CTA and more impressions. Internal link to it from every other blog post.
 
 **Walmart marketplace setup guide** — "How to sell on Walmart marketplace" is a high-volume informational term. A guide here builds top-of-funnel Walmart traffic that feeds the agency services.
 
@@ -232,7 +232,7 @@ The /walmart-marketing.html page covers the service broadly. There is no dedicat
 
 | Page | Year in Title | Risk |
 |------|--------------|------|
-| blog/best-amazon-ppc-agencies-2026.html | 2026 | Low — freshly targeted |
+| blog/best-amazon-ppc-management-2026.html | 2026 | Low — freshly targeted |
 | blog/amazon-listing-optimization-guide-2026.html | 2026 | Low |
 | blog/walmart-vs-amazon-2026.html | 2026 | Low |
 | blog/how-to-rank-on-walmart-search-2026.html | 2026 | Low |
@@ -280,7 +280,7 @@ The /walmart-marketing.html page covers the service broadly. There is no dedicat
 - New meta live: "SellTru manages Amazon and Walmart for brands doing $1M to $20M. Expert PPC, listing optimization, and full account management. No generalists. No handoffs." (154 chars)
 - Pushed to GitHub → deployed via Netlify.
 
-**2. Rewrite /amazon-agency-pricing title + meta** ✅ DONE May 12
+**2. Rewrite /marketplace-agency-pricing title + meta** ✅ DONE May 12
 - Deployed. GSC impact expected ~May 26. Monitor CTR week of May 26 in GSC Performance report.
 
 **3. Rewrite /blog/how-to-reduce-amazon-acos title + meta** ✅ DONE May 12
@@ -293,13 +293,13 @@ The /walmart-marketing.html page covers the service broadly. There is no dedicat
 - `form_submit` marked as a key event in GA4 Admin → Events. `audit_requested` custom event on audit-thanks.html confirmed firing — GA4 loading changed from deferred (requestIdleCallback) to immediate async so the event fires reliably on page load before a visitor bounces. Both changes pushed to production.
 
 **6. Fix amazon-marketing.html title tag (84 → under 60 chars)** ✅ DONE May 15
-- New title live: "Amazon Marketing Agency for $1M–$20M Brands | SellTru" (54 chars). Pushed to GitHub → deployed via Netlify.
+- New title live: "Marketplace Agency for $1M–$20M Brands | SellTru" (54 chars). Pushed to GitHub → deployed via Netlify.
 
 **7. Fix walmart-marketing.html title tag (72 → under 60 chars)** ✅ DONE May 15
 - New title live: "Walmart PPC & Marketplace Management Agency | SellTru" (53 chars). Pushed to GitHub → deployed via Netlify.
 
 **8. Add internal links to /questions page from every blog post** ✅ DONE May 15
-- Link inserted into 16 blog posts via Python script (first occurrence, idempotency-safe). All 22 blog posts now link to /questions. Line added above `.blog-cta-box` div in each post: "Before hiring any agency to manage your marketplace ads: 15 questions to ask an Amazon marketing agency →"
+- Link inserted into 16 blog posts via Python script (first occurrence, idempotency-safe). All 22 blog posts now link to /questions. Line added above `.blog-cta-box` div in each post: "Before hiring any agency to manage your marketplace ads: 15 questions to ask a marketplace agency →"
 
 **9. Add at least one internal link to /write-for-us page** ✅ NOT NEEDED — May 15
 - Investigation confirmed write-for-us.html is already linked from all blog posts (blog CTA box) and from blog.html. Not an orphan. No action required. Audit flag was incorrect.
@@ -331,7 +331,7 @@ The /walmart-marketing.html page covers the service broadly. There is no dedicat
 
 **3. Build a Walmart PPC cost/pricing page**
 - Target keywords: "walmart ppc cost", "walmart connect ads pricing", "how much does walmart advertising cost"
-- Format: Identical structure to /amazon-agency-pricing.html — transparent, practitioner-written, with actual numbers
+- Format: Identical structure to /marketplace-agency-pricing.html — transparent, practitioner-written, with actual numbers
 - Why now: Competitors have nothing. This page would likely rank top 5 within 60 days given the low competition.
 - Impact: High
 - Effort: Half day
@@ -346,7 +346,7 @@ The /walmart-marketing.html page covers the service broadly. There is no dedicat
 **5. Create a Walmart Connect Ads comprehensive guide**
 - The most valuable piece of Walmart content the site doesn't have yet
 - Target: 3,000+ words, covering campaign types, bidding strategy, targeting options, budgets, and optimization
-- This is the Walmart equivalent of the Amazon PPC agencies post — designed to rank and build backlinks
+- This is the Walmart equivalent of the Amazon PPC management firms post — designed to rank and build backlinks
 - Impact: High
 - Effort: Substantial (2–3 days with research)
 
@@ -382,17 +382,17 @@ The /walmart-marketing.html page covers the service broadly. There is no dedicat
 
 ### index.html
 **Current (187 chars, contains "Fort Lauderdale, FL"):**
-SellTru is a specialized Amazon marketing agency and Walmart marketplace agency for brands doing $1M to $20M. Expert PPC, listing optimization, and account management. Fort Lauderdale, FL.
+SellTru is a specialized marketplace agency and Walmart marketplace agency for brands doing $1M to $20M. Expert PPC, listing optimization, and account management. Fort Lauderdale, FL.
 
 **Suggested (154 chars):**
 SellTru manages Amazon and Walmart for brands doing $1M to $20M. Expert PPC, listing optimization, and full account management. No generalists. No handoffs.
 
-### amazon-agency-pricing.html
+### marketplace-agency-pricing.html
 **Current (149 chars):**
 Three pricing models, what's included at each, and how to tell if you're getting a fair deal. From a team managing $150M+ in marketplace revenue.
 
 **Suggested (156 chars):**
-Most agencies hide their prices. We don't. See what Amazon agencies actually charge, what's included at each tier, and how to spot the ones ripping you off.
+Most agencies hide their prices. We don't. See what marketplace agencies actually charge, what's included at each tier, and how to spot the ones ripping you off.
 
 ### blog/how-to-reduce-amazon-acos.html
 **Current (154 chars):**
@@ -405,7 +405,7 @@ High ACoS is almost never a spend problem — it's a targeting or listing proble
 
 ### amazon-marketing.html
 **Current (200 chars — too long):**
-SellTru is a certified Amazon SPN agency providing end-to-end Amazon management — listing optimization, Sponsored Ads PPC, A+ content, brand store design, and full account management. Get a free audit.
+SellTru is a certified Amazon Ads Partner Network member providing end-to-end Amazon management — listing optimization, Sponsored Ads PPC, A+ content, brand store design, and full account management. Get a free audit.
 
 **Suggested (155 chars):**
 Full-service Amazon management for brands doing $1M to $20M. PPC, listings, A+ content, and account health — handled by a certified SPN agency. Get a free audit.
@@ -428,8 +428,8 @@ Full-service Walmart.com management for brands ready to scale — Walmart Connec
 
 **Next build sessions (ready to execute):**
 - Build the "walmart connect ads agency" dedicated landing page — the single highest-value unclaimed keyword cluster on the site. No competitor has this content at depth.
-- Write the Walmart PPC cost/pricing page — transparent pricing format, identical to amazon-agency-pricing.html, near-zero competition.
+- Write the Walmart PPC cost/pricing page — transparent pricing format, identical to marketplace-agency-pricing.html, near-zero competition.
 - Expand how-to-reduce-amazon-acos.html — currently only 4 H2s for the site's top impression-driving query. Add campaign data, ACoS benchmarks by category, FAQ schema.
 - Build a 90-day content calendar layering in Walmart keyword gaps and content engine priorities from the vault.
 
-**Next monitoring checkpoint:** May 26 — check GSC CTR on /amazon-agency-pricing and /how-to-reduce-amazon-acos to measure impact of May 12 meta changes. Log results in GSC-Daily-Log.md.
+**Next monitoring checkpoint:** May 26 — check GSC CTR on /marketplace-agency-pricing and /how-to-reduce-amazon-acos to measure impact of May 12 meta changes. Log results in GSC-Daily-Log.md.

@@ -32,8 +32,8 @@
 # -----------------------------------------------
 /index.html    /    301!
 /about.html    /about    301!
-/amazon-agency-pricing.html    /amazon-agency-pricing    301!
-/amazon-dsp-agency.html    /amazon-dsp-agency    301!
+/amazon-agency-pricing.html    /marketplace-agency-pricing    301!
+/amazon-dsp-agency.html    /amazon-dsp-management    301!
 /amazon-marketing.html    /amazon-marketing    301!
 /amazon-ppc-food-beverage.html    /amazon-ppc-food-beverage    301!
 /amazon-ppc-pet-brands.html    /amazon-ppc-pet-brands    301!
@@ -52,7 +52,7 @@
 /amazon-account-management-services.html    /amazon-account-management-services    301!
 /amazon-listing-optimization-services.html    /amazon-listing-optimization-services    301!
 /amazon-fba-management-services.html    /amazon-fba-management-services    301!
-/amazon-a-plus-content-agency.html    /amazon-a-plus-content-agency    301!
+/amazon-a-plus-content-agency.html    /amazon-a-plus-content    301!
 /amazon-brand-store-design-services.html    /amazon-brand-store-design-services    301!
 /walmart-wfs-management.html    /walmart-wfs-management    301!
 /amazon-brand-protection-services.html    /amazon-brand-protection-services    301!
@@ -61,7 +61,7 @@
 /write-for-us-thanks.html    /write-for-us-thanks    301!
 /write-for-us.html    /write-for-us    301!
 /blog/amazon-a-plus-content-guide.html    /blog/amazon-a-plus-content-guide    301!
-/blog/amazon-agency-vs-in-house.html    /blog/amazon-agency-vs-in-house    301!
+/blog/amazon-agency-vs-in-house.html    /blog/marketplace-agency-vs-in-house    301!
 /blog/amazon-brand-analytics-ppc-keywords.html    /blog/amazon-brand-analytics-ppc-keywords    301!
 /blog/amazon-business-reports-ai-listing-optimization.html    /blog/amazon-business-reports-ai-listing-optimization    301!
 /blog/amazon-dsp-advertising-explained.html    /blog/amazon-dsp-advertising-explained    301!
@@ -75,22 +75,22 @@
 /blog/amazon-sponsored-products-vs-sponsored-brands.html    /blog/amazon-sponsored-products-vs-sponsored-brands    301!
 /blog/amazon-subscribe-and-save-strategy.html    /blog/amazon-subscribe-and-save-strategy    301!
 /blog/amazon-tacos-advertising.html    /blog/amazon-tacos-advertising    301!
-/blog/best-amazon-ppc-agencies-2026.html    /blog/best-amazon-ppc-agencies-2026    301!
+/blog/best-amazon-ppc-agencies-2026.html    /blog/best-amazon-ppc-management-2026    301!
 /blog/best-amazon-ppc-strategies-2026.html    /blog/best-amazon-ppc-strategies-2026    301!
 /blog/best-walmart-connect-agencies-2026.html    /blog/best-walmart-connect-agencies-2026    301!
 /blog/does-walmart-have-ppc-advertising.html    /blog/does-walmart-have-ppc-advertising    301!
 /blog/fastest-way-to-grow-walmart-marketplace-sales.html    /blog/fastest-way-to-grow-walmart-marketplace-sales    301!
 /blog/how-to-advertise-on-walmart.html    /blog/how-to-advertise-on-walmart    301!
 /blog/how-to-build-amazon-storefront-with-ai.html    /blog/how-to-build-amazon-storefront-with-ai    301!
-/blog/how-to-choose-amazon-agency.html    /blog/how-to-choose-amazon-agency    301!
+/blog/how-to-choose-amazon-agency.html    /blog/how-to-choose-marketplace-agency    301!
 /blog/how-to-expand-amazon-brand-to-walmart.html    /blog/how-to-expand-amazon-brand-to-walmart    301!
 /blog/how-to-get-more-walmart-reviews.html    /blog/how-to-get-more-walmart-reviews    301!
 /blog/how-to-launch-new-product-on-amazon.html    /blog/how-to-launch-new-product-on-amazon    301!
 /blog/how-to-rank-on-walmart-search-2026.html    /blog/how-to-rank-on-walmart-search-2026    301!
 /blog/how-to-reduce-amazon-acos.html    /blog/how-to-reduce-amazon-acos    301!
-/blog/is-amazon-marketing-agency-worth-it.html    /blog/is-amazon-marketing-agency-worth-it    301!
-/blog/questions-to-ask-amazon-marketing-agency.html    /blog/questions-to-ask-amazon-marketing-agency    301!
-/blog/top-rated-amazon-marketing-agencies-small-business.html    /blog/top-rated-amazon-marketing-agencies-small-business    301!
+/blog/is-amazon-marketing-agency-worth-it.html    /blog/is-marketplace-agency-worth-it    301!
+/blog/questions-to-ask-amazon-marketing-agency.html    /blog/questions-to-ask-marketplace-agency    301!
+/blog/top-rated-amazon-marketing-agencies-small-business.html    /blog/top-rated-marketplace-agencies-small-business    301!
 /blog/walmart-connect-ads-guide.html    /blog/walmart-connect-ads-guide    301!
 /blog/walmart-connect-ads.html    /blog/walmart-connect-ads    301!
 /blog/walmart-connect-vs-amazon-ads.html    /blog/walmart-connect-vs-amazon-ads    301!
@@ -122,11 +122,11 @@
 /walmart-mark/    /walmart-marketing    301
 /blog/amazon-tacos-advert    /blog/amazon-tacos-advertising    301
 /blog/amazon-tacos-advert/    /blog/amazon-tacos-advertising    301
-/amazon-agency-pr    /amazon-agency-pricing    301
-/amazon-agency-pr/    /amazon-agency-pricing    301
+/amazon-agency-pr    /marketplace-agency-pricing    301
+/amazon-agency-pr/    /marketplace-agency-pricing    301
 # HTML duplicates that were still served as both /slug and /slug.html
-/amazon-agency-fort-lauderdale.html    /amazon-agency-fort-lauderdale    301!
-/amazon-ppc-management-agency.html    /amazon-ppc-management-agency    301!
+/amazon-agency-fort-lauderdale.html    /marketplace-agency-fort-lauderdale    301!
+/amazon-ppc-management-agency.html    /amazon-ppc-management    301!
 /amazon-tacos-calculator.html    /amazon-tacos-calculator    301!
 /blog/_template.html    /blog    301!
 /blog/_template    /blog    301!
@@ -135,10 +135,52 @@
 /blog/walmart-connect-display-ads.html    /blog/walmart-connect-display-ads    301!
 /blog/what-is-amazon-brand-registry.html    /blog/what-is-amazon-brand-registry    301!
 /walmart-marketplace-agency.html    /walmart-marketplace-agency    301!
-/blog/how-to-choose-amazon-agency-12-questions.html    /blog/how-to-choose-amazon-agency-12-questions    301!
+/blog/how-to-choose-amazon-agency-12-questions.html    /blog/how-to-choose-marketplace-agency-12-questions    301!
 /blog/how-to-get-approved-walmart-marketplace.html    /blog/how-to-get-approved-walmart-marketplace    301!
 
 # Any other .html request. Explicit rules above win. /index.html is already forced to /.
+
+# -----------------------------------------------
+# Retired non-compliant slugs (case 07699407). 301 to the new paths.
+# These rules must stay above the html splat rule.
+# -----------------------------------------------
+/amazon-agency-fort-lauderdale    /marketplace-agency-fort-lauderdale    301
+/amazon-agency-fort-lauderdale/    /marketplace-agency-fort-lauderdale    301
+/amazon-agency-fort-lauderdale.html    /marketplace-agency-fort-lauderdale    301!
+/amazon-agency-pricing    /marketplace-agency-pricing    301
+/amazon-agency-pricing/    /marketplace-agency-pricing    301
+/amazon-agency-pricing.html    /marketplace-agency-pricing    301!
+/amazon-ppc-management-agency    /amazon-ppc-management    301
+/amazon-ppc-management-agency/    /amazon-ppc-management    301
+/amazon-ppc-management-agency.html    /amazon-ppc-management    301!
+/amazon-dsp-agency    /amazon-dsp-management    301
+/amazon-dsp-agency/    /amazon-dsp-management    301
+/amazon-dsp-agency.html    /amazon-dsp-management    301!
+/amazon-a-plus-content-agency    /amazon-a-plus-content    301
+/amazon-a-plus-content-agency/    /amazon-a-plus-content    301
+/amazon-a-plus-content-agency.html    /amazon-a-plus-content    301!
+/blog/how-to-choose-amazon-agency-12-questions    /blog/how-to-choose-marketplace-agency-12-questions    301
+/blog/how-to-choose-amazon-agency-12-questions/    /blog/how-to-choose-marketplace-agency-12-questions    301
+/blog/how-to-choose-amazon-agency-12-questions.html    /blog/how-to-choose-marketplace-agency-12-questions    301!
+/blog/amazon-agency-vs-in-house    /blog/marketplace-agency-vs-in-house    301
+/blog/amazon-agency-vs-in-house/    /blog/marketplace-agency-vs-in-house    301
+/blog/amazon-agency-vs-in-house.html    /blog/marketplace-agency-vs-in-house    301!
+/blog/how-to-choose-amazon-agency    /blog/how-to-choose-marketplace-agency    301
+/blog/how-to-choose-amazon-agency/    /blog/how-to-choose-marketplace-agency    301
+/blog/how-to-choose-amazon-agency.html    /blog/how-to-choose-marketplace-agency    301!
+/blog/is-amazon-marketing-agency-worth-it    /blog/is-marketplace-agency-worth-it    301
+/blog/is-amazon-marketing-agency-worth-it/    /blog/is-marketplace-agency-worth-it    301
+/blog/is-amazon-marketing-agency-worth-it.html    /blog/is-marketplace-agency-worth-it    301!
+/blog/questions-to-ask-amazon-marketing-agency    /blog/questions-to-ask-marketplace-agency    301
+/blog/questions-to-ask-amazon-marketing-agency/    /blog/questions-to-ask-marketplace-agency    301
+/blog/questions-to-ask-amazon-marketing-agency.html    /blog/questions-to-ask-marketplace-agency    301!
+/blog/top-rated-amazon-marketing-agencies-small-business    /blog/top-rated-marketplace-agencies-small-business    301
+/blog/top-rated-amazon-marketing-agencies-small-business/    /blog/top-rated-marketplace-agencies-small-business    301
+/blog/top-rated-amazon-marketing-agencies-small-business.html    /blog/top-rated-marketplace-agencies-small-business    301!
+/blog/best-amazon-ppc-agencies-2026    /blog/best-amazon-ppc-management-2026    301
+/blog/best-amazon-ppc-agencies-2026/    /blog/best-amazon-ppc-management-2026    301
+/blog/best-amazon-ppc-agencies-2026.html    /blog/best-amazon-ppc-management-2026    301!
+
 /*.html    /:splat    301!
 
 # -----------------------------------------------

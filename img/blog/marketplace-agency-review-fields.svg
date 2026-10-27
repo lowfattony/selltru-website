@@ -1,0 +1,24 @@
+<svg viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Arial, sans-serif">
+  <rect width="760" height="420" fill="#F8FAFC" rx="12"/>
+  <text x="28" y="36" font-size="18" font-weight="700" fill="#0D1B2A">What to keep from an agency review</text>
+  <rect x="24" y="56" width="348" height="340" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="44" y="88" font-size="15" font-weight="700" fill="#1A56DB">Keep it</text>
+  <text x="44" y="122" font-size="13" fill="#0D1B2A">1. Revenue band, budget, or SKU count</text>
+  <text x="44" y="152" font-size="13" fill="#0D1B2A">2. Scope: ads, full account, or Walmart</text>
+  <text x="44" y="182" font-size="13" fill="#0D1B2A">3. A metric with a start and an end</text>
+  <text x="44" y="212" font-size="13" fill="#0D1B2A">4. Who did the work, by name</text>
+  <text x="44" y="242" font-size="13" fill="#0D1B2A">5. A problem, not only the honeymoon</text>
+  <text x="44" y="272" font-size="13" fill="#0D1B2A">6. Written in the last 18 months</text>
+  <text x="44" y="318" font-size="13" fill="#334155">You can describe the account</text>
+  <text x="44" y="340" font-size="13" fill="#334155">in one sentence.</text>
+  <rect x="388" y="56" width="348" height="340" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="408" y="88" font-size="15" font-weight="700" fill="#FF6B35">Set it aside</text>
+  <text x="408" y="122" font-size="13" fill="#0D1B2A">Stars with no revenue band</text>
+  <text x="408" y="152" font-size="13" fill="#0D1B2A">"Full service" and no channel named</text>
+  <text x="408" y="182" font-size="13" fill="#0D1B2A">"Sales exploded" with no window</text>
+  <text x="408" y="212" font-size="13" fill="#0D1B2A">Only "the team was responsive"</text>
+  <text x="408" y="242" font-size="13" fill="#0D1B2A">Product-review or web-design praise</text>
+  <text x="408" y="272" font-size="13" fill="#0D1B2A">A burst of identical 5-star lines</text>
+  <text x="408" y="318" font-size="13" fill="#334155">You cannot tell what they</text>
+  <text x="408" y="340" font-size="13" fill="#334155">were hired to do.</text>
+</svg>

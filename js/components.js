@@ -267,7 +267,7 @@ class SellTruFooter extends HTMLElement {
           ${LOGO_FOOTER}
           <span class="nav-logo-text">SELL<span>TRU</span></span>
         </a>
-        <p class="footer-brand-desc">An Amazon and Walmart marketing agency for brands doing $1M to $20M. Fort Lauderdale, FL. Serving brands nationwide.</p>
+        <p class="footer-brand-desc">A marketplace agency for brands selling on Amazon and Walmart, doing $1M to $20M. Fort Lauderdale, FL. Serving brands nationwide.</p>
         <div class="footer-social" aria-label="Social media">
           <a href="https://linkedin.com/company/selltru" target="_blank" rel="noopener" aria-label="LinkedIn">${ICON_LINKEDIN}</a>
           <a href="https://www.facebook.com/share/1BY35ZocEW/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">${ICON_FACEBOOK}</a>
@@ -279,11 +279,11 @@ class SellTruFooter extends HTMLElement {
         <a href="/amazon-marketing">Amazon Marketing</a>
         <a href="/amazon-marketing#listing-optimization">Listing Optimization</a>
         <a href="/amazon-marketing#ppc">Amazon PPC &amp; Ads</a>
-        <a href="/amazon-ppc-management-agency">Amazon PPC Management</a>
+        <a href="/amazon-ppc-management">Amazon PPC Management</a>
         <a href="/amazon-account-management-services">Amazon Account Management</a>
         <a href="/amazon-listing-optimization-services">Amazon Listing Optimization</a>
         <a href="/amazon-fba-management-services">Amazon FBA Management</a>
-        <a href="/amazon-a-plus-content-agency">Amazon A+ Content</a>
+        <a href="/amazon-a-plus-content">Amazon A+ Content</a>
         <a href="/amazon-brand-store-design-services">Amazon Brand Store Design</a>
         <a href="/amazon-brand-protection-services">Amazon Brand Protection</a>
         <a href="/amazon-vendor-central-management">Amazon Vendor Central</a>
@@ -301,7 +301,7 @@ class SellTruFooter extends HTMLElement {
         <a href="/blog">Blog</a>
         <a href="/questions">FAQ</a>
         <a href="/lead-magnet">Free Audit Checklist</a>
-        <a href="/amazon-agency-pricing">Agency Pricing Guide</a>
+        <a href="/marketplace-agency-pricing">Agency Pricing Guide</a>
         <a href="/walmart-advertising-cost">Walmart Advertising Cost</a>
         <a href="/walmart-connect-calculator">Walmart Connect Calculator</a>
         <a href="/case-studies">Case Studies</a>
@@ -310,7 +310,7 @@ class SellTruFooter extends HTMLElement {
       <div class="footer-col">
         <h4>Company</h4>
         <a href="/about">About SellTru</a>
-        <a href="/amazon-agency-fort-lauderdale">Fort Lauderdale</a>
+        <a href="/marketplace-agency-fort-lauderdale">Fort Lauderdale</a>
         <a href="/about#contact-form">Contact</a>
         <a href="/about#contact-form">Get a Free Audit</a>
       </div>
@@ -323,7 +323,7 @@ class SellTruFooter extends HTMLElement {
     </div>
     <div class="footer-bottom">
       <div class="footer-bottom-left">
-        <p>&copy; 2026 SellTru. All rights reserved. | An Amazon and Walmart marketing agency | Fort Lauderdale, FL</p>
+        <p>&copy; 2026 SellTru. All rights reserved. | A marketplace agency for brands on Amazon and Walmart | Fort Lauderdale, FL</p>
         <p class="amz-tm" style="font-size:11px;opacity:.6;margin-top:6px;">Amazon, Amazon Ads, and all related logos are trademarks of Amazon.com, Inc., or its affiliates.</p>
       </div>
       <div class="footer-certs">

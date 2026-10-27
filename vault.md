@@ -69,16 +69,16 @@ Old Fort Lauderdale agency pages 301 → homepage. Key ones:
 |---|------|-------|------|
 | 1 | `why-amazon-sales-dropped` | Why Your Amazon Sales Dropped (And What to Fix First) | 2026-04-26 |
 | 2 | `how-to-reduce-amazon-acos` | How to Reduce Amazon ACOS Without Cutting Ad Spend | 2026-04-26 |
-| 3 | `is-amazon-marketing-agency-worth-it` | Is Hiring an Amazon Marketing Agency Really Worth the Cost? | 2026-04-26 |
-| 4 | `questions-to-ask-amazon-marketing-agency` | What Questions Should I Ask Before Hiring an Amazon Marketing Agency? | 2026-04-26 |
+| 3 | `is-marketplace-agency-worth-it` | Is Hiring a Marketplace Agency Really Worth the Cost? | 2026-04-26 |
+| 4 | `questions-to-ask-marketplace-agency` | What Questions Should I Ask Before Hiring a Marketplace Agency? | 2026-04-26 |
 | 5 | `amazon-listing-optimization-guide-2026` | Amazon Listing Optimization: The Complete Guide for 2026 | 2026-04-26 |
 | 6 | `amazon-sponsored-products-vs-sponsored-brands` | Amazon Sponsored Products vs Sponsored Brands: Which Should You Use? | 2026-04-27 |
 | 7 | `how-to-launch-new-product-on-amazon` | How to Launch a New Product on Amazon: The 30-Day Playbook | 2026-04-27 |
 | 8 | `amazon-keyword-research-guide` | How to Find Relevant Keywords for Your Amazon Product Listing | 2026-04-29 |
-| 9 | `amazon-agency-vs-in-house` | Amazon Agency vs. In-House Team: What's Actually Better? | 2026-04-30 |
+| 9 | `marketplace-agency-vs-in-house` | Marketplace Agency vs. In-House Team: What's Actually Better? | 2026-04-30 |
 | 10 | `amazon-ppc-management-cost` | How Much Does Amazon PPC Management Cost? | 2026-04-30 |
 | 11 | `amazon-tacos-advertising` | Amazon TACoS Explained: The Metric That Actually Tells You If Ads Are Working | 2026-04-30 |
-| 12 | `best-amazon-ppc-agencies-2026` | Best Amazon PPC Agencies 2026: Ranked by a Practitioner | 2026-05-05 |
+| 12 | `best-amazon-ppc-management-2026` | Best Amazon PPC Management Firms 2026: Ranked by a Practitioner | 2026-05-05 |
 | 13 | `amazon-a-plus-content-guide` | Amazon A+ Content: How to Lift Conversion Rates | 2026-05-06 |
 
 ### Walmart Posts
@@ -147,7 +147,7 @@ Old Fort Lauderdale agency pages 301 → homepage. Key ones:
 - `main.js` was missing on ALL 42 blog pages: mobile hamburger dead, cta_click tracking never fired on blog → added
 - OpenAI ads pixel (`oaiq`) fired conversions on only 5/64 pages → `registration_completed` now fires on all lead-form successes (components.js + main.js)
 - OG tags: og-default.jpg (nonexistent) → /img/og-image.png on 3 pages; og:url/og:image backfilled on 16 pages; case-studies had zero OG → full block added
-- `amazon-dsp-agency` added to sitemap.xml + llms.txt (was invisible); 5 posts added to llms.txt; 3 missing `_redirects` 301 rules for new posts
+- `amazon-dsp-management` added to sitemap.xml + llms.txt (was invisible); 5 posts added to llms.txt; 3 missing `_redirects` 301 rules for new posts
 - Article schema `image` added to 5 pages; 2 missing blog card dates on blog.html
 
 **Stretched images fixed (about + case-studies, root cause sitewide):**
@@ -167,7 +167,7 @@ Old Fort Lauderdale agency pages 301 → homepage. Key ones:
 - 13 meta descriptions rewritten into the 120-165 char window (og:description + schema description updated by same replace)
 - sitemap.xml: lastmod added/refreshed to 2026-08-18 on all 59 URLs
 - Conversion tracking completed: lead-magnet form + popup now fire generate_lead + oaiq; audit-thanks duplicate 'audit_requested' event removed (generate_lead in main.js is now the single lead event)
-- GSC done earlier: sitemap resubmitted, indexing requested on 3 new posts + amazon-dsp-agency
+- GSC done earlier: sitemap resubmitted, indexing requested on 3 new posts + amazon-dsp-management
 - Still open: h2->h4 heading skips on service pages (CSS/visual risk - do with screenshots), width/height attrs on 17 imgs (CLS), squarespace-hotlinked client logos (needs download approval), dead Netlify email-capture mirror on 62 pages, free-audit.html orphan status (confirm it's a paid-ads LP)
 
 **Ops note:** stale git lock files (`index.lock`, `HEAD.lock`) from a crashed Aug 17 process repeatedly blocked commits. Fix: `rm -f .git/*.lock` (Andrew must run it — Claude's sandbox can't delete inside .git). Line-ending CRLF warnings on commit are harmless.

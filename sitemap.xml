@@ -4,7 +4,7 @@
   <!-- Blog posts -->
   <url>
     <loc>https://selltru.com/blog/what-is-amazon-brand-registry</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -208,7 +208,7 @@
   </url>
   <url>
     <loc>https://selltru.com/amazon-agency-pricing</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -276,14 +276,14 @@
   </url>
   <url>
     <loc>https://selltru.com/blog/why-amazon-sales-dropped</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://selltru.com/walmart-connect-ads-agency</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -429,6 +429,24 @@
   </url>
   <url>
     <loc>https://selltru.com/walmart-wfs-management</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://selltru.com/amazon-brand-protection-services</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://selltru.com/amazon-vendor-central-management</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://selltru.com/amazon-account-suspension-reinstatement</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

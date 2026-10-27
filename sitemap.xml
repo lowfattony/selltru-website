@@ -3,6 +3,12 @@
 
   <!-- Blog posts -->
   <url>
+    <loc>https://selltru.com/blog/how-to-judge-amazon-agency-reviews</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://selltru.com/blog/how-to-choose-amazon-agency-12-questions</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>

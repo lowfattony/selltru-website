@@ -124,6 +124,23 @@
 /blog/amazon-tacos-advert/    /blog/amazon-tacos-advertising    301
 /amazon-agency-pr    /amazon-agency-pricing    301
 /amazon-agency-pr/    /amazon-agency-pricing    301
+# HTML duplicates that were still served as both /slug and /slug.html
+/amazon-agency-fort-lauderdale.html    /amazon-agency-fort-lauderdale    301!
+/amazon-ppc-management-agency.html    /amazon-ppc-management-agency    301!
+/amazon-tacos-calculator.html    /amazon-tacos-calculator    301!
+/blog/_template.html    /blog    301!
+/blog/_template    /blog    301!
+/blog/amazon-negative-keywords-guide.html    /blog/amazon-negative-keywords-guide    301!
+/blog/amazon-ppc-account-audit-checklist.html    /blog/amazon-ppc-account-audit-checklist    301!
+/blog/walmart-connect-display-ads.html    /blog/walmart-connect-display-ads    301!
+/blog/what-is-amazon-brand-registry.html    /blog/what-is-amazon-brand-registry    301!
+/walmart-marketplace-agency.html    /walmart-marketplace-agency    301!
+/blog/how-to-choose-amazon-agency-12-questions.html    /blog/how-to-choose-amazon-agency-12-questions    301!
+/blog/how-to-get-approved-walmart-marketplace.html    /blog/how-to-get-approved-walmart-marketplace    301!
+
+# Any other .html request. Explicit rules above win. /index.html is already forced to /.
+/*.html    /:splat    301!
+
 # -----------------------------------------------
 # Custom 404 page (must stay last — catch-all)
 # -----------------------------------------------

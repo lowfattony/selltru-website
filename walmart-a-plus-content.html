@@ -23,20 +23,47 @@
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Page-only early faces so preloaded woff2 bind before swap (CLS). */
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 200 800;
+      font-display: swap;
+      src: url('https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2192, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: swap;
+      src: url('https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2192, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+  </style>
   <link rel="preconnect" href="https://assets.calendly.com">
   <script src="https://assets.calendly.com/assets/external/widget.js" async defer></script>
   <style>
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
     .reveal.revealed { opacity: 1; transform: none; }
+    /* Fold page-hero-bg radials into the section so the empty absolute layer
+       does not resize with font swap (Web Review CLS@390 attributed to .page-hero-bg). */
     .page-hero.walmart-hero {
-      background: linear-gradient(150deg, #001E6C 0%, #003087 50%, #0041A8 100%);
+      background:
+        radial-gradient(ellipse at 80% 40%, rgba(255,194,32,0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 10% 80%, rgba(0,48,135,0.6) 0%, transparent 50%),
+        linear-gradient(150deg, #001E6C 0%, #003087 50%, #0041A8 100%);
     }
     .walmart-hero .page-hero-bg {
-      background: radial-gradient(ellipse at 80% 40%, rgba(255,194,32,0.12) 0%, transparent 50%),
-                  radial-gradient(ellipse at 10% 80%, rgba(0,48,135,0.6) 0%, transparent 50%);
+      /* Keep node for markup parity; paint folded into .page-hero.walmart-hero.
+         Hiding stops Chromium from scoring this absolute layer on font reflow. */
+      display: none;
     }
     .stats-band.walmart-band {
       background: linear-gradient(135deg, #003087 0%, #0052CC 100%);
@@ -428,7 +455,7 @@
         <div class="section-header center reveal">
           <p class="section-tag">Module Delivery</p>
           <h2 class="section-title">What We Ship With Every<br>Brand Highlights Pass.</h2>
-          <p class="section-sub wide">No dark process band. Rights first, phone-first modules second, Media Library attach third, then ads and content stay on the same plan.</p>
+          <p class="section-sub wide">Every Brand Highlights pass clears rights first, builds phone-first modules second, and attaches them in the Media Library third, so Walmart Connect and the page stay on the same plan.</p>
         </div>
         <div class="why-grid reveal">
           <div class="why-card">

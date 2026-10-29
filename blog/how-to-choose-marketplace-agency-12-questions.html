@@ -102,6 +102,121 @@
       color: var(--text-light);
       line-height: 1.65;
     }
+
+    /* Blog revisit: gold spacing + Home final CTA + trust */
+    .blog-article { padding: 96px 24px 64px; }
+    .blog-article h1 { margin-bottom: 20px; max-width: 700px; line-height: 1.15; letter-spacing: -0.5px; }
+    .blog-breadcrumb { margin-bottom: 20px; }
+    .section-tag.blog-tag { margin-bottom: 14px; }
+    .blog-meta { margin-bottom: 32px; }
+    .blog-trust-band {
+      background: var(--off-white);
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 28px 0;
+    }
+    .blog-trust-band .trust-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+    .blog-trust-band .trust-badge {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+    }
+    .blog-trust-band .trust-badge-text { color: var(--navy); }
+    .cta-section .blog-cta-calendly {
+      margin-top: 18px;
+      font-size: 15px;
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+    }
+    .cta-section .blog-cta-calendly a {
+      color: var(--white);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+    .blog-rhythm-band {
+      max-width: 760px;
+      margin: 48px auto 0;
+      padding: 0 24px;
+    }
+    .blog-rhythm-band.inner-pad { padding-bottom: 8px; }
+    .blog-proof-strip {
+      background: var(--off-white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 28px 28px;
+      margin: 40px 0 8px;
+    }
+    .blog-proof-strip h2 {
+      font-family: var(--font-head);
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--navy);
+      margin: 0 0 14px;
+    }
+    .blog-proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .blog-proof-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 18px 16px;
+    }
+    .blog-proof-card strong {
+      display: block;
+      font-family: var(--font-head);
+      font-size: 18px;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .blog-proof-card span {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+    .blog-navy-callout {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 28px 28px;
+      margin: 40px 0;
+    }
+    .blog-navy-callout h2 {
+      color: var(--white);
+      font-family: var(--font-head);
+      font-size: 20px;
+      font-weight: 800;
+      margin: 0 0 10px;
+    }
+    .blog-navy-callout p {
+      color: rgba(255,255,255,0.7);
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+    .blog-faq-band {
+      background: var(--off-white);
+      border-top: 1px solid var(--gray-200);
+      margin-top: 48px;
+      padding: 48px 0 8px;
+    }
+    .blog-faq-band .blog-faq-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    @media (max-width: 768px) {
+      .blog-article { padding: 64px 20px 48px; }
+      .blog-proof-grid { grid-template-columns: 1fr; gap: 12px; }
+    }
+
   </style>
   <script type="application/ld+json">
   {
@@ -301,7 +416,7 @@
   <!-- Sticky Blog CTA Bar -->
   <div id="blog-sticky-bar" aria-label="Free audit offer">
     <p class="bar-text"><strong>Free 30-minute strategy call.</strong> Bring a draft agreement, or the lack of one. No pitch deck.</p>
-    <a href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=how-to-choose-marketplace-agency-12-questions" class="bar-cta" target="_blank" rel="noopener">Book the Call &rarr;</a>
+    <a href="/about#contact-form" class="bar-cta" data-modal-trigger="audit">Get a Free Audit &rarr;</a>
     <button class="bar-dismiss" id="bar-close" aria-label="Dismiss">&times;</button>
   </div>
   <script>
@@ -333,7 +448,7 @@
 
       <p class="blog-breadcrumb"><a href="/blog">Blog</a> &nbsp;/&nbsp; Amazon Strategy</p>
       <p class="section-tag blog-tag">Amazon Strategy</p>
-      <h1>How to Choose a Marketplace Agency: 12 Questions to Ask Before You Sign</h1>
+      <h1>Choose a Marketplace Agency: 12 Questions Before You Sign</h1>
       <div class="blog-meta">
         <span>By Andrew Deramo</span>
         <span class="blog-meta-dot"></span>
@@ -396,6 +511,16 @@
       <p>Bring the draft to someone who runs the channel, not only to counsel. A lawyer will see the term and the liability. They will not see that "optimization" left FBA, account health, and Walmart outside the fee. If you want that read from us, the call is 30 minutes and the audit is free. We will tell you if the scope should be smaller.</p>
       <p>One more filter. Ask whether the person on the sales call is the person who will log in. The interview guide covers how many accounts that manager holds. This question is simpler: will you meet them before you sign, and is their name in the agreement? If the name is "the team," you are buying a queue.</p>
 
+      
+      <div class="blog-proof-strip reveal">
+        <h2>Company figures we will stand behind on a call</h2>
+        <div class="blog-proof-grid">
+          <div class="blog-proof-card"><strong>$150M+</strong><span>Marketplace sales managed</span></div>
+          <div class="blog-proof-card"><strong>200+ brands</strong><span>Across Amazon and Walmart</span></div>
+          <div class="blog-proof-card"><strong>90% retention</strong><span>After the 90-day onboarding window</span></div>
+        </div>
+      </div>
+
       <h2>FAQ</h2>
       <h3>How is this different from the other agency questions page?</h3>
       <p>That page is the first-call interview: who manages the account, what onboarding looks like, and what a sample report contains. This page is the scope you confirm in the agreement before you sign: what is included, who owns the logins, how you leave, and which promises do not belong in the contract.</p>
@@ -408,9 +533,22 @@
 
       <hr class="blog-divider">
       <p>Sign the scope you can point at. If the agreement cannot answer these 12 questions, you are not choosing an agency yet. You are choosing a pitch.</p>
+<div class="blog-note reveal"><p>Have experience with this? The SellTru blog accepts guest posts from Amazon sellers, agency pros, and ecommerce operators. <a href="/write-for-us" class="blog-inline-link">See our submission guidelines &rarr;</a></p>
+      </div>
 
-      <div class="blog-cta-box">
-        <h3>Bring the scope, or the lack of one.</h3>
+    </div>
+
+    <section class="blog-trust-band" aria-label="Credentials">
+      <div class="container">
+        <div class="trust-badges">
+          <div class="trust-badge"><span class="trust-badge-text">Amazon Ads Partner Network member</span></div><div class="trust-badge"><span class="trust-badge-text">Upwork Top Rated Plus</span></div><div class="trust-badge"><span class="trust-badge-text">$150M+ sales managed</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" aria-label="Call to action">
+      <div class="container">
+        <h2>Bring the Scope, or the Lack of One.</h2>
         <p>Thirty minutes. We will tell you whether the draft matches the work, and whether we should be the ones doing it.</p>
         <div class="cta-buttons">
           <a class="btn btn-primary btn-lg" href="/about#contact-form" data-modal-trigger="audit">Get Your Free Audit</a>
@@ -418,11 +556,8 @@
         </div>
         <p class="blog-cta-calendly">Prefer a call on the calendar? <a href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=how-to-choose-marketplace-agency-12-questions" target="_blank" rel="noopener">Book a free 30-minute strategy call</a></p>
       </div>
+    </section>
 
-      <div class="blog-note reveal"><p>Have experience with this? The SellTru blog accepts guest posts from Amazon sellers, agency pros, and ecommerce operators. <a href="/write-for-us" class="blog-inline-link">See our submission guidelines &rarr;</a></p>
-      </div>
-
-    </div>
   </main>
 
   <selltru-footer><footer class="footer" role="contentinfo">

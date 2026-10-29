@@ -28,39 +28,23 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://assets.calendly.com">
   <script src="https://assets.calendly.com/assets/external/widget.js" async defer></script>
+  <style>
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.revealed { opacity: 1; transform: none; }
+    .amazon-accent { color: #FF9900; }
+
+    .why-icon svg, .smc-icon svg { width: 22px; height: 22px; display: block; }
+    .why-icon.blue { color: var(--blue); }
+    .why-icon.orange { color: var(--orange); }
+    .why-icon.green { color: var(--blue); }
+    .smc-icon { color: var(--blue); display: flex; align-items: center; }
+  </style>
   <script src="/js/components.js" defer></script>
   <script>
     !function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments);};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f);}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");
     oaiq("init", { pixelId: "UeyzoKe3VtFvfSMqVPUoaN" });
   </script>
-  <style>
-    .buyer-wrap { max-width: 800px; }
-    .buyer-wrap h2 { font-family: var(--font-head); font-size: clamp(26px, 3vw, 34px); font-weight: 800; color: var(--navy); margin: 40px 0 12px; letter-spacing: -0.5px; line-height: 1.15; }
-    .buyer-wrap h3 { font-family: var(--font-head); font-size: 20px; font-weight: 700; color: var(--navy); margin: 26px 0 8px; }
-    .buyer-wrap p, .buyer-wrap li { font-size: 16.5px; line-height: 1.75; color: var(--text); }
-    .buyer-wrap p { margin: 0 0 16px; }
-    .buyer-wrap ul, .buyer-wrap ol { margin: 0 0 18px 1.25em; }
-    .buyer-wrap li { margin-bottom: 8px; }
-    .buyer-wrap a { color: var(--blue); font-weight: 600; }
-    .buyer-note { background: var(--gray-50); border-left: 3px solid var(--orange); border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 8px 0 24px; }
-    .buyer-note p:last-child { margin-bottom: 0; }
-    .crumbs { font-size: 13px; color: rgba(255,255,255,0.75); margin-bottom: 14px; }
-    .crumbs a { color: #fff; font-weight: 600; text-decoration: none; }
-    .crumbs a:hover { text-decoration: underline; }
-    .buyer-faq details { background: #fff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 16px 20px; margin-bottom: 10px; }
-    .buyer-faq summary { font-family: var(--font-head); font-weight: 700; cursor: pointer; color: var(--navy); font-size: 16px; }
-    .buyer-faq details p { margin: 12px 0 0; color: var(--text-light); }
-    .mid-cta { background: rgba(26,86,219,0.06); border-left: 3px solid #1A56DB; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 28px 0; }
-    .mid-cta p { margin: 0 0 14px; }
-    .cta-buttons .btn { margin: 6px 8px 6px 0; }
-    .buyer-table-wrap { overflow-x: auto; margin: 8px 0 24px; }
-    .buyer-table { width: 100%; border-collapse: collapse; font-size: 15px; background: #fff; }
-    .buyer-table caption { caption-side: bottom; text-align: left; font-size: 13px; color: var(--text-light); padding-top: 8px; }
-    .buyer-table th, .buyer-table td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--gray-200); }
-    .buyer-table th { font-family: var(--font-head); color: var(--navy); font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; }
-    .buyer-table td:first-child { font-weight: 700; color: var(--navy); white-space: nowrap; }
-    @media (max-width: 640px) { .buyer-wrap { max-width: 100%; } .buyer-table td:first-child { white-space: normal; } }
-  </style>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -164,6 +148,7 @@
 </head>
 <body>
 
+
 <selltru-header><header class="nav" role="banner">
   <div class="container">
     <div class="nav-inner">
@@ -216,116 +201,310 @@
   <input type="email" name="email">
   <input type="hidden" name="source">
 </form></selltru-header>
-<main>
+  <main>
 
+    <!-- ===== PAGE HERO (amazon-marketing pattern) ===== -->
     <section class="page-hero" aria-label="Amazon Brand Store Design Services">
       <div class="page-hero-bg" aria-hidden="true"></div>
       <div class="container">
         <div class="page-hero-inner">
-          <p class="crumbs"><a href="/">Home</a> / <a href="/amazon-marketing">Amazon Marketing</a> / Brand Store</p>
           <p class="section-tag light" style="margin-bottom:14px;">Amazon Brand Store</p>
-          <h1>Amazon Brand Store Design Services</h1>
-          <p>Layouts, banners, and store pages that give Sponsored Brands traffic somewhere specific to land.</p>
-          <div class="cta-buttons">
-            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-            <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-brand-store-design-services" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
+          <h1>Amazon Brand Store Design That Converts. <span>Built for Sponsored Brands Traffic.</span></h1>
+          <p>Layouts, banners, and store pages for Brand Registry brands doing $1M to $20M. Matched to the campaigns that pay for the visit, not a brochure with your logo on it. Part of the same team that runs your listings and ads.</p>
+          <div style="display:flex; gap:14px; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Amazon Audit</a>
+            <a class="btn btn-outline-white" href="#whats-included">View All Services</a>
           </div>
-          <div style="margin-top:28px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+          <div style="margin-top:36px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
             <span class="amz-text-badge amz-text-badge--on-dark">Amazon Ads Partner Network member</span>
-            <div class="trust-badge"><span class="trust-badge-text">$150M+ sales managed</span></div>
-            <div class="trust-badge"><span class="trust-badge-text">200+ brands</span></div>
+            <div class="trust-badge">
+              <span class="trust-badge-text">$150M+ sales managed</span>
+            </div>
+            <div class="trust-badge">
+              <span class="trust-badge-text">200+ brands</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="service-detail-section" aria-label="Service detail">
+    <!-- ===== STATS BAND ===== -->
+    <div class="stats-band">
       <div class="container">
-        <div class="buyer-wrap">
-
-          <p>Amazon brand store design services are the layout, the banners, and the pages a Sponsored Brands click should land on. SellTru builds that store for Brand Registry brands doing $1M to $20M, next to the listings and the ads. We are an Amazon Ads Partner Network member, with $150M+ in marketplace sales managed across 200+ brands. The do-it-yourself version is <a href="/blog/how-to-build-amazon-storefront-with-ai">how to build an Amazon storefront</a>. This page is the service.</p>
-          <p>A store that looks like a brochure, and that receives every ad, is a dead end with your logo on it. The page has to match the search that paid for the visit.</p>
-
-          <h2>Why the store matters for Sponsored Brands</h2>
-          <p>Sponsored Brands can send a shopper to a product detail page or to a store page. The detail page is the right landing when the query is one ASIN. The store is the right landing when the query is the brand, the line, or a problem that several products solve. The ad choice is on the <a href="/blog/amazon-sponsored-products-vs-sponsored-brands">Sponsored Products versus Sponsored Brands</a> guide. This page is the page the ad lands on.</p>
-          <p>The storefront guide quotes Amazon's comparison of shoppers who visit a Brand Store with shoppers who do not: purchase frequency 53.9% higher, add-to-cart rate 52.1% higher, average selling price 42.4% higher, and average order value 71.3% higher. Those figures are Amazon's, already published on that guide. They are not a SellTru forecast, and they do not appear because a banner is pretty. They show up when the page answers the query that brought the click.</p>
-          <p>If the store has not been touched since it was created, the click is landing on an old assortment. We look at that before we talk about a new visual system. A fresh banner on a stale product grid is still a stale store.</p>
-
-          <h2>Layout and page structure</h2>
-          <p>A home page, plus the subpages the ads actually use. One page per distinct shopper intent. A sleep query and a specific ingredient query should not share a page. That is the failure the storefront guide describes, and it is the one we design against. We do not publish a fixed page count. Amazon's builder allows more pages than a focused catalog needs. Extra pages with no ad and no next step are how stores go quiet.</p>
-          <p>The home page orients. Each subpage sells one job: a collection, a comparison, or a hero ASIN with the products that go with it. Pages with no next product get cut. The layout that works is the shortest one that still matches the campaigns. A long store nobody clicked past the hero is not a better store.</p>
-          <p>We name the pages for the query, not for an internal org chart. "Shop all" is a fallback. It is not the landing page for a specific Sponsored Brands target.</p>
-
-          <div class="mid-cta">
-            <p><strong>Want the store pages matched to the campaigns that will pay for the visit?</strong></p>
-            <div class="cta-buttons">
-              <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-              <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-brand-store-design-services" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
-            </div>
+        <div class="stats-inner">
+          <div class="stat-item">
+            <div class="stat-number">$150M+</div>
+            <div class="stat-label">Sales Managed</div>
           </div>
-
-          <h2>Banner and creative</h2>
-          <p>Banners have to say the product and the reason at the size a phone actually shows. A headline that only works as a desktop mock fails the visit. We use the brand's real colors and the products that are in stock, not a campaign look from a season you are no longer shipping. A banner that hides the product behind a texture is a brand ad. The store still has to sell.</p>
-          <p>The storefront guide describes a do-it-yourself build, with AI tools, in about 6 to 12 hours when you already know the catalog. That path is real. Use it if someone on your team will maintain the pages when the hero ASIN changes. Hire the design when the store has to stay in step with the campaigns, the A+ modules, and the listings, and nobody inside is going to update it.</p>
-          <p>We do not publish a design fee on this page. The old habit of waiting on a designer for a static look is what the guide argues against. Our version is the same standard, tied to the ad account, scoped on the audit.</p>
-
-          <h2>Store analytics</h2>
-          <p>A store without a read is a brochure. We look at which pages the ads land on, which pages people leave, and which product tiles get the click. If a Sponsored Brands campaign points at the home page while the query was a single product, we change the landing page before we raise the bid. The traffic source and the page have to match.</p>
-          <p>We do not invent a store revenue number from a screenshot. If the tile clicks and the orders do not agree, the next edit is the page or the offer, not a new banner for its own sake. The listing still has to convert when the shopper leaves the store for the ASIN. Store design does not repair a detail page that cannot close.</p>
-
-          <h2>Store plus A+ content</h2>
-          <p>A+ modules and the store should tell one story. The comparison you make above the reviews should not contradict the collection page the banner links to. A+ is the listing. The store is the brand visit. The module work is on the <a href="/amazon-a-plus-content">Amazon A+ content services</a> page. <a href="/blog/what-is-amazon-brand-registry">Brand Registry</a> is what unlocks both. The registry page calls the store a free customizable Amazon Store. Creating it does not add an Amazon subscription. Our design time is the part that is scoped, and the audit is where that scope gets said out loud.</p>
-          <p>If Registry is not done, the store cannot be published. We do not design a full set of pages for an account that cannot launch them. Enrollment first, then the pages, then the Sponsored Brands campaigns that point at those pages.</p>
-
-          <div class="mid-cta">
-            <p><strong>If every Sponsored Brands ad lands on one old home page, that is the audit.</strong></p>
-            <div class="cta-buttons">
-              <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-              <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-brand-store-design-services" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
-            </div>
+          <div class="stat-item">
+            <div class="stat-number">200+</div>
+            <div class="stat-label">Brands Supported</div>
           </div>
-
-          <h2>FAQ</h2>
-          <div class="buyer-faq">
-<details>
-<summary>What is an Amazon brand store?</summary>
-<p>An Amazon brand store, also called a Storefront, is the multi-page brand destination inside Amazon for Brand Registry sellers. It holds a home page, subpages, banners, and product tiles. Shoppers reach it from Sponsored Brands, from A+ modules, and from the brand name in search. It is not a replacement for the product detail page.</p>
-</details>
-<details>
-<summary>Is it free?</summary>
-<p>The store is free to create once the brand is in Brand Registry. The Brand Registry page on this site describes it as a free customizable Amazon Store. SellTru's design work is separate. We do not publish a design price here. The audit is free, and the retainer models are on the pricing guide.</p>
-</details>
-<details>
-<summary>How many pages?</summary>
-<p>As many as you have distinct shopper intents, and no more. A home page plus a page for each campaign theme is the usual shape. We do not sell a fixed page package. A page with no ad and no next product is a page we do not build.</p>
-</details>
-<details>
-<summary>Can ads point to the store?</summary>
-<p>Yes. Sponsored Brands can land on a store page instead of a product detail page. The page should match the query. A brand search can land on the home page. A specific problem or ingredient should land on the subpage about that problem. Sending every keyword to one generic home page wastes the click.</p>
-</details>
-<details>
-<summary>How long to build?</summary>
-<p>The do-it-yourself guide describes a 6 to 12 hour build when you already know the catalog and you are doing it yourself. When we build it, the first version follows the audit and the campaigns that will point at the pages. We do not publish a day-count promise. A focused catalog is a design pass, not a multi-month project.</p>
-</details>
+          <div class="stat-item">
+            <div class="stat-number">90%</div>
+            <div class="stat-label">Client Retention</div>
           </div>
-          <p>The storefront guide stays the do-it-yourself build. This page is the design that has to keep up with the ads.</p>
+          <div class="stat-item">
+            <div class="stat-number">45%</div>
+            <div class="stat-label">Avg. ACOS Drop in 90 Days</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- ===== WHY STORE ===== -->
+    <section class="service-detail-section" id="why-brand-store" aria-label="Why Amazon brand store design matters">
+      <div class="container">
+        <div class="section-header center reveal">
+          <p class="section-tag">Why the Brand Store</p>
+          <h2 class="section-title">A Store That Looks Like a Brochure<br>Is a Dead End With Your Logo on It.</h2>
+          <p class="section-sub wide">
+            Sponsored Brands can send a shopper to a product detail page or to a store page. The store is the right landing when the query is the brand, the line, or a problem that several products solve. The ad choice is on the <a href="/blog/amazon-sponsored-products-vs-sponsored-brands" style="color:var(--blue);">Sponsored Products versus Sponsored Brands</a> guide. This page is the page the ad lands on.
+          </p>
+        </div>
+        <div class="why-grid reveal">
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="m3 11 18-5v12L3 14v-3z"/>
+    <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>
+  </svg></div>
+            <h3>Built for Sponsored Brands Landings</h3>
+            <p>The page has to match the search that paid for the visit. A brand query, a line query, and a problem query should not share one generic home page.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="3" y="3" width="18" height="18" rx="2"/>
+    <path d="M3 9h18"/>
+    <path d="M9 21V9"/>
+  </svg></div>
+            <h3>Pages for Intent, Not Org Charts</h3>
+            <p>A home page plus the subpages the ads actually use. Extra pages with no ad and no next product are how stores go quiet.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+    <line x1="12" y1="18" x2="12.01" y2="18"/>
+  </svg></div>
+            <h3>Phone-First Banners</h3>
+            <p>Banners have to say the product and the reason at the size a phone actually shows. A headline that only works as a desktop mock fails the visit.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <line x1="12" y1="20" x2="12" y2="10"/>
+    <line x1="18" y1="20" x2="18" y2="4"/>
+    <line x1="6" y1="20" x2="6" y2="16"/>
+  </svg></div>
+            <h3>Read the Store Analytics</h3>
+            <p>We look at which pages the ads land on, which pages people leave, and which product tiles get the click before we raise a bid.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+    <polyline points="2 17 12 22 22 17"/>
+    <polyline points="2 12 12 17 22 12"/>
+  </svg></div>
+            <h3>One Story With A+</h3>
+            <p>A+ modules and the store should tell one story. The comparison above the reviews should not contradict the collection page the banner links to.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+    <path d="m9 12 2 2 4-4"/>
+  </svg></div>
+            <h3>Brand Registry Gate</h3>
+            <p>If Registry is not done, the store cannot be published. Enrollment first, then the pages, then the Sponsored Brands campaigns that point at those pages.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="cta-section" aria-label="Booking">
+    <!-- ===== WHAT'S INCLUDED ===== -->
+    <section class="service-detail-section alt" id="whats-included" aria-label="What is included">
       <div class="container">
-        <h2>Book a free 30-minute strategy call</h2>
-        <p>Or send the audit. We look at where the ads land, and whether the store pages match those queries, before we talk about a retainer.</p>
+        <div class="section-header center reveal">
+          <p class="section-tag">What's Included</p>
+          <h2 class="section-title">Amazon Brand Store Design Services.</h2>
+          <p class="section-sub">SellTru builds store layouts, banners, and landing pages for Brand Registry brands on the same team that writes the listing and runs the ads. We are an Amazon Ads Partner Network member, with $150M+ in marketplace sales managed across 200+ brands, 90% retention, a 45% average ACOS drop in 90 days, and Upwork Top Rated Plus. The do-it-yourself version is <a href="/blog/how-to-build-amazon-storefront-with-ai" style="color:var(--blue);">how to build an Amazon storefront</a>. This page is the service.</p>
+        </div>
+        <div class="services-cards-grid">
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/>
+    <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/>
+    <path d="M12 3v6"/>
+  </svg></div>
+            <h3>Store Home and Subpages</h3>
+            <p>A home page that orients, plus subpages named for the query. One page per distinct shopper intent. Pages with no next product get cut.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+    <circle cx="8.5" cy="8.5" r="1.5"/>
+    <polyline points="21 15 16 10 5 21"/>
+  </svg></div>
+            <h3>Banner and Creative</h3>
+            <p>Banners that use the brand's real colors and the products that are in stock, not a campaign look from a season you are no longer shipping.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="m3 11 18-5v12L3 14v-3z"/>
+    <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>
+  </svg></div>
+            <h3>Sponsored Brands Landing Map</h3>
+            <p>Match each Sponsored Brands target to the store page that answers it. Brand search can land on home. A specific problem lands on that subpage.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <line x1="12" y1="20" x2="12" y2="10"/>
+    <line x1="18" y1="20" x2="18" y2="4"/>
+    <line x1="6" y1="20" x2="6" y2="16"/>
+  </svg></div>
+            <h3>Store Analytics Review</h3>
+            <p>Tile clicks, exit pages, and ad landings read together. If the tile clicks and the orders do not agree, the next edit is the page or the offer.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+  </svg></div>
+            <h3>A+ and Store Alignment</h3>
+            <p>Module work on the <a href="/amazon-a-plus-content" style="color:var(--blue);">Amazon A+ content</a> page stays in step with the collection pages the banners link to.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+    <path d="M12 11h4"/>
+    <path d="M12 16h4"/>
+    <path d="M8 11h.01"/>
+    <path d="M8 16h.01"/>
+  </svg></div>
+            <h3>Flat Retainer Pricing</h3>
+            <p>Design time is scoped on the audit. Flat monthly retainer, or a one-time pass. Models are on the <a href="/marketplace-agency-pricing" style="color:var(--blue);">marketplace agency pricing</a> guide.</p>
+          </div>
+        </div>
+        <p class="section-sub" style="margin:40px auto 0; text-align:center; max-width:720px;">The storefront guide quotes Amazon's comparison of shoppers who visit a Brand Store with shoppers who do not. Those figures are Amazon's, already published on that guide. They are not a SellTru forecast. They show up when the page answers the query that brought the click. <a href="/blog/what-is-amazon-brand-registry" style="color:var(--blue);">Brand Registry</a> is what unlocks the store.</p>
+      </div>
+    </section>
+
+    <!-- ===== PROCESS ===== -->
+    <section class="process-section" aria-label="Brand store design process">
+      <div class="container">
+        <div class="section-header center reveal">
+          <p class="section-tag light">Getting Started</p>
+          <h2 class="section-title light">Here's How We Build<br>an Amazon Brand Store.</h2>
+          <p class="section-sub light">The first version follows the audit and the campaigns that will point at the pages. We clear Brand Registry before we design a full set of pages the account cannot launch.</p>
+        </div>
+        <div class="process-grid">
+          <div class="process-connector" aria-hidden="true"></div>
+          <div class="process-step reveal">
+            <div class="process-num">01</div>
+            <h3>Audit Ads &amp; Registry</h3>
+            <p>We map where Sponsored Brands land today, check Brand Registry, and name the shopper intents that need their own pages before any design work starts.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">02</div>
+            <h3>Design Pages and Banners</h3>
+            <p>Home orients. Subpages sell one job each. Banners use real products at phone size. Pages with no ad and no next product get cut.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">03</div>
+            <h3>Wire Campaigns &amp; Read</h3>
+            <p>Point each Sponsored Brands target at the matching page, then read tile clicks and exits. Change the landing before raising the bid.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq-section" id="faq" aria-label="Amazon brand store frequently asked questions">
+      <div class="container">
+        <div class="faq-layout">
+          <div class="faq-intro reveal">
+            <p class="section-tag">Common Questions</p>
+            <h2 class="section-title">Brand Store FAQ.</h2>
+            <p>Eligibility, page count, and how ads should land. The storefront guide stays the do-it-yourself build. This page is the design that has to keep up with the ads.</p>
+            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
+          </div>
+          <div class="faq-list reveal">
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>What is an Amazon brand store?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>An Amazon brand store, also called a Storefront, is the multi-page brand destination inside Amazon for Brand Registry sellers. It holds a home page, subpages, banners, and product tiles. Shoppers reach it from Sponsored Brands, from A+ modules, and from the brand name in search. It is not a replacement for the product detail page.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Is it free?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>The store is free to create once the brand is in Brand Registry. The Brand Registry page on this site describes it as a free customizable Amazon Store. SellTru's design work is separate. We do not publish a design price here. The audit is free, and the retainer models are on the pricing guide.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>How many pages?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>As many as you have distinct shopper intents, and no more. A home page plus a page for each campaign theme is the usual shape. We do not sell a fixed page package. A page with no ad and no next product is a page we do not build.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Can ads point to the store?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Yes. Sponsored Brands can land on a store page instead of a product detail page. The page should match the query. A brand search can land on the home page. A specific problem or ingredient should land on the subpage about that problem. Sending every keyword to one generic home page wastes the click.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>How long to build?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>The do-it-yourself guide describes a 6 to 12 hour build when you already know the catalog and you are doing it yourself. When we build it, the first version follows the audit and the campaigns that will point at the pages. We do not publish a day-count promise. A focused catalog is a design pass, not a multi-month project.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA (Home pattern: two btn-lg) ===== -->
+    <section class="cta-section" aria-label="Amazon brand store audit CTA">
+      <div class="container">
+        <h2>If Every Sponsored Brands Ad Lands on One Old Home Page,<br>Start With the Audit.</h2>
+        <p>We look at where the ads land, and whether the store pages match those queries, before we talk about a retainer. No pitch decks. No obligation.</p>
         <div class="cta-buttons">
-          <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-          <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-brand-store-design-services" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
+          <a class="btn btn-primary btn-lg" href="/about#contact-form" data-modal-trigger="audit">Get Your Free Audit</a>
+          <a class="btn btn-outline-white btn-lg" href="tel:+19548692034">Call (954) 869-2034</a>
         </div>
-        <p style="margin-top:18px;"><a class="btn btn-outline-white" href="tel:+19548692034">Call (954) 869-2034</a></p>
+        <p style="margin-top:18px; font-size:15px; color:rgba(255,255,255,0.55);">
+          Prefer a call on the calendar?
+          <a href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-brand-store-design-services" target="_blank" rel="noopener" style="color:var(--white); font-weight:700; text-decoration:underline;">Book a free 30-minute strategy call</a>
+        </p>
       </div>
     </section>
-</main>
+
+  </main>
+
 <selltru-footer><footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-top">

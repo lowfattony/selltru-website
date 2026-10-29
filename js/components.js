@@ -294,7 +294,6 @@ class SellTruFooter extends HTMLElement {
         <a href="/walmart-marketing">Walmart Marketing</a>
         <a href="/walmart-marketing#walmart-ads">Walmart Connect Ads</a>
         <a href="/walmart-marketplace-agency">Walmart Marketplace Agency</a>
-        <a href="/walmart-a-plus-content">Walmart A+ Content</a>
         <a href="/walmart-wfs-management">Walmart WFS Management</a>
       </div>
       <div class="footer-col">

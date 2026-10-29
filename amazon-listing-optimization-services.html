@@ -28,39 +28,23 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://assets.calendly.com">
   <script src="https://assets.calendly.com/assets/external/widget.js" async defer></script>
+  <style>
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.revealed { opacity: 1; transform: none; }
+    .amazon-accent { color: var(--orange); }
+
+    .why-icon svg, .smc-icon svg { width: 22px; height: 22px; display: block; }
+    .why-icon.blue { color: var(--blue); }
+    .why-icon.orange { color: var(--orange); }
+    .why-icon.green { color: var(--blue); }
+    .smc-icon { color: var(--blue); display: flex; align-items: center; }
+  </style>
   <script src="/js/components.js" defer></script>
   <script>
     !function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments);};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f);}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");
     oaiq("init", { pixelId: "UeyzoKe3VtFvfSMqVPUoaN" });
   </script>
-  <style>
-    .buyer-wrap { max-width: 800px; }
-    .buyer-wrap h2 { font-family: var(--font-head); font-size: clamp(26px, 3vw, 34px); font-weight: 800; color: var(--navy); margin: 40px 0 12px; letter-spacing: -0.5px; line-height: 1.15; }
-    .buyer-wrap h3 { font-family: var(--font-head); font-size: 20px; font-weight: 700; color: var(--navy); margin: 26px 0 8px; }
-    .buyer-wrap p, .buyer-wrap li { font-size: 16.5px; line-height: 1.75; color: var(--text); }
-    .buyer-wrap p { margin: 0 0 16px; }
-    .buyer-wrap ul, .buyer-wrap ol { margin: 0 0 18px 1.25em; }
-    .buyer-wrap li { margin-bottom: 8px; }
-    .buyer-wrap a { color: var(--blue); font-weight: 600; }
-    .buyer-note { background: var(--gray-50); border-left: 3px solid var(--orange); border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 8px 0 24px; }
-    .buyer-note p:last-child { margin-bottom: 0; }
-    .crumbs { font-size: 13px; color: rgba(255,255,255,0.75); margin-bottom: 14px; }
-    .crumbs a { color: #fff; font-weight: 600; text-decoration: none; }
-    .crumbs a:hover { text-decoration: underline; }
-    .buyer-faq details { background: #fff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 16px 20px; margin-bottom: 10px; }
-    .buyer-faq summary { font-family: var(--font-head); font-weight: 700; cursor: pointer; color: var(--navy); font-size: 16px; }
-    .buyer-faq details p { margin: 12px 0 0; color: var(--text-light); }
-    .mid-cta { background: rgba(26,86,219,0.06); border-left: 3px solid #1A56DB; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 28px 0; }
-    .mid-cta p { margin: 0 0 14px; }
-    .cta-buttons .btn { margin: 6px 8px 6px 0; }
-    .buyer-table-wrap { overflow-x: auto; margin: 8px 0 24px; }
-    .buyer-table { width: 100%; border-collapse: collapse; font-size: 15px; background: #fff; }
-    .buyer-table caption { caption-side: bottom; text-align: left; font-size: 13px; color: var(--text-light); padding-top: 8px; }
-    .buyer-table th, .buyer-table td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--gray-200); }
-    .buyer-table th { font-family: var(--font-head); color: var(--navy); font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; }
-    .buyer-table td:first-child { font-weight: 700; color: var(--navy); white-space: nowrap; }
-    @media (max-width: 640px) { .buyer-wrap { max-width: 100%; } .buyer-table td:first-child { white-space: normal; } }
-  </style>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -172,6 +156,7 @@
 </head>
 <body>
 
+
 <selltru-header><header class="nav" role="banner">
   <div class="container">
     <div class="nav-inner">
@@ -224,142 +209,314 @@
   <input type="email" name="email">
   <input type="hidden" name="source">
 </form></selltru-header>
-<main>
-    <section class="page-hero" aria-label="Amazon listing optimization services">
+  <main>
+
+    <section class="page-hero" aria-label="Amazon Listing Optimization Services">
       <div class="page-hero-bg" aria-hidden="true"></div>
       <div class="container">
         <div class="page-hero-inner">
-          <p class="crumbs"><a href="/">Home</a> / <a href="/amazon-marketing">Amazon Marketing</a> / Listing Optimization</p>
           <p class="section-tag light" style="margin-bottom:14px;">Amazon Listing Optimization</p>
-          <h1>Amazon Listing Optimization Services</h1>
-          <p>Keyword research, titles, bullets, images, and A+ content for brands that need the page to rank and to convert. The listing audit is free.</p>
-          <div class="cta-buttons">
-            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Listing Audit</a>
-            <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-listing-optimization-services" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
+          <h1>Amazon Listing Optimization That Converts. <span>Titles, Images, A+, Keywords.</span></h1>
+          <p>Keyword research, conversion fixes, and A+ planning for brands doing $1M to $20M. Built by the same team that runs your ads. Amazon Ads Partner Network member. $150M+ managed across 200+ brands.</p>
+          <div style="display:flex; gap:14px; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Amazon Audit</a>
+            <a class="btn btn-outline-white" href="#whats-included">View All Services</a>
           </div>
-          <div style="margin-top:28px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+          <div style="margin-top:36px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
             <span class="amz-text-badge amz-text-badge--on-dark">Amazon Ads Partner Network member</span>
-            <div class="trust-badge"><span class="trust-badge-text">$150M+ sales managed</span></div>
-            <div class="trust-badge"><span class="trust-badge-text">200+ brands</span></div>
+            <div class="trust-badge">
+              <span class="trust-badge-text">$150M+ sales managed</span>
+            </div>
+            <div class="trust-badge">
+              <span class="trust-badge-text">200+ brands</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="service-detail-section" aria-label="Service detail">
+    <div class="stats-band">
       <div class="container">
-        <div class="buyer-wrap">
-
-          <p>Amazon listing optimization services are how a catalog gets found and then chosen. Rank without conversion is a tax. Conversion on the wrong keywords is a page nobody sees. SellTru does this work for brands doing $1M to $20M, on the same team that runs the ads. We are an Amazon Ads Partner Network member. The do-it-yourself version is the <a href="/blog/amazon-listing-optimization-guide-2026">2026 listing optimization guide</a>. This page is the service.</p>
-          <p>If you want the audit without a call, use the <a href="/free-audit">free audit</a> form. We read the ASINs that already have traffic, or the ones you are about to spend behind, before we propose a rewrite.</p>
-
-          <h2>What we optimize: title, bullets, backend terms, images, and A+</h2>
-          <h3>Title</h3>
-          <p>The first words have to be the product a shopper searched for, plus the attributes they filter on: size, count, material, flavor, pack. Search results often show only that opening. We do not stuff the title with synonyms. Amazon product listing optimization that reads like a keyword list trains shoppers to skip you, and the conversion drop shows up in rank a few weeks later.</p>
-          <h3>Bullets</h3>
-          <p>Five bullets. The first line of each one is the benefit. The rest is the specific a buyer needs in order to say yes. Secondary keywords live here when they did not earn the title. The <a href="/blog/amazon-seo-tips">Amazon SEO tips</a> cover why bullets carry search weight even though most shoppers scan. Amazon SEO services, in practice, are this work: indexable words on a page that still reads like a product.</p>
-          <h3>Backend search terms</h3>
-          <p>Yes, we write them. Use the byte limit, do not repeat words already in the title or bullets, leave competitor brand names out, and fill the other backend fields the category shows. Backend terms index a query that would sound unnatural in a bullet. They are not a second title.</p>
-          <h3>Images</h3>
-          <p>The main image sits on a white background with the product large in the frame. The rest of the set answers the objection the bullets cannot: scale, what is in the box, how it is used, how it compares. A weak main image wastes every traffic source, including ads you are already paying for. We direct the set. We do not pretend a stock template is a creative test.</p>
-          <h3>A+ content</h3>
-          <p>Basic and Premium A+ is for Brand Registry sellers. Modules should answer the questions reviews keep asking. The service page is <a href="/amazon-a-plus-content">Amazon A+ content</a>. Requirements stay in the <a href="/blog/amazon-a-plus-content-guide">A+ content guide</a>, and <a href="/blog/what-is-amazon-brand-registry">Brand Registry</a> is the gate. If the variation family is split, we fix the parent-child setup in the same pass.</p>
-
-          <h2>Keyword research process</h2>
-          <p>We do not start from a tool export and paste the highest-volume term into the title. That habit is how listings start ranking for a product they are not.</p>
-          <ol>
-            <li><strong>The product in one sentence.</strong> If the title cannot say what it is, the research is aimed at the wrong query. Attributes shoppers filter on (count, size, scent, material) belong in that sentence.</li>
-            <li><strong>Reverse-ASIN on the listings that already rank</strong> for the job your product does. Terms several of those listings rank for are the category. Terms only one brand ranks for are often a brand name, and brand names do not go in your title.</li>
-            <li><strong>Your own search-term report</strong> from Amazon Ads. Queries that convert belong on the listing when they are accurate. Queries that spend without orders are a negative-keyword problem, not a copy problem. The <a href="/blog/amazon-keyword-research-guide">keyword research guide</a> is the long version. The <a href="/blog/amazon-negative-keywords-guide">negative keyword guide</a> is the ad side of the same list.</li>
-            <li><strong>A page-fit check.</strong> A high-volume term you cannot win, or that describes a different product, stays off the title. Buying that traffic with a mismatched page drags conversion down, and rank follows conversion.</li>
-          </ol>
-          <p>The output is a short list: one primary term, a handful of secondary terms, and a do-not-use list. That list drives the title, the bullets, the backend, and the campaigns. An Amazon listing optimization specialist who never sees the search-term report is guessing which of those terms deserve the first five words.</p>
-
-          <h2>Conversion fixes</h2>
-          <p>Indexing is not the same as being chosen. When sessions rise and unit session percentage does not, we look at the main image and price, the words search results actually show, bullets that lead with a feature nobody buys, reviews that describe a different product than the page promises, missing A+ content, and a variation setup that hides the hero ASIN.</p>
-          <p>The fix is specific: the image, the first bullet, or the A+ module that answers the top return reason. Then leave it long enough to read. Indexing can move within days. A full organic read is 60 to 90 days, the same window on the <a href="/questions">site FAQ</a>.</p>
-          <p>For a consumable, the bullets or A+ should make the refill obvious: how often it is used, and how long a unit lasts. The <a href="/blog/amazon-subscribe-and-save-strategy">Subscribe and Save guide</a> is the profit side of that choice.</p>
-
-          <div class="mid-cta">
-            <p><strong>Want a listing audit on the ASINs that matter?</strong> Send the form or book the call. We read the page before we talk about a rewrite.</p>
-            <div class="cta-buttons">
-              <a class="btn btn-primary" href="/free-audit">Get a Free Listing Audit</a>
-              <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-listing-optimization-services" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
-            </div>
+        <div class="stats-inner">
+          <div class="stat-item">
+            <div class="stat-number">$150M+</div>
+            <div class="stat-label">Sales Managed</div>
           </div>
-
-          <h2>AI-assisted audits</h2>
-          <p>People looking for Amazon listing optimization AI usually find a chatbot rewriting bullets with no account data. We use AI the way the <a href="/blog/amazon-business-reports-ai-listing-optimization">Business Reports guide</a> describes: sort sessions, unit session percentage, and search queries into a traffic problem, a conversion problem, or a positioning problem. A person still publishes the change.</p>
-          <p>Where the account has Manage Your Experiments, we test a title or a main image instead of debating the draft. We do not upload a catalog of model output. If the leak is the campaigns rather than the page, that work sits with <a href="/amazon-account-management-services">account management</a>.</p>
-
-          <h2>Before you buy: freelancer vs agency</h2>
-          <p>A freelancer, including a listing you can buy on a marketplace like Fiverr, is a reasonable way to rewrite one title. Hire that when the catalog is small, the images already work, and someone on your team can judge the draft against real search terms.</p>
-          <p>Hire an Amazon listing optimization services when the page has to match the ad account. The term in the title should be the term in the exact-match campaign, and an image test should be read against conversion, not against whether a draft sounds better. The failure we see on takeovers is a polished listing aimed at the wrong query.</p>
-          <p>An in-house specialist can be the right answer too. The <a href="/blog/marketplace-agency-vs-in-house">agency vs in-house guide</a> is the comparison, and it is not a pitch. If you only need the one-time rewrite, say that on the audit. Scope should match the problem. We would rather do the listing pass than invent a retainer around a single title.</p>
-
-          <h2>Process and timeline</h2>
-          <ol>
-            <li><strong>Audit</strong> the ASINs that matter. Usually that is the traffic you already have, or the ASIN you are about to fund. Free.</li>
-            <li><strong>Research and a written change list:</strong> title, bullets, backend terms, images, and A+. You approve it before anything goes live. Nothing is published from a draft you have not seen.</li>
-            <li><strong>Publish, then watch</strong> indexing and conversion. We do not refresh the copy every week for the sake of activity. Listings need time in the index.</li>
-            <li><strong>Match the campaigns</strong> to the new terms so the traffic and the page say the same thing. A rewrite that the ads ignore is half a project.</li>
-          </ol>
-          <p>Indexing can move within days. Meaningful rank usually takes several weeks of sales on the terms you added. Full organic impact is a 60 to 90 day read. That is the timeline we will use on the call, not a seven-day rank guarantee.</p>
-
-          <div class="mid-cta">
-            <p><strong>If the ads are already running, bring them into the audit.</strong> The search-term report is part of the keyword decision.</p>
-            <div class="cta-buttons">
-              <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-              <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-listing-optimization-services" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
-            </div>
+          <div class="stat-item">
+            <div class="stat-number">200+</div>
+            <div class="stat-label">Brands Supported</div>
           </div>
-
-          <h2>FAQ</h2>
-          <div class="buyer-faq">
-            <details>
-<summary>What is listing optimization?</summary>
-<p>Listing optimization gets a product indexed for the right searches and chosen when a shopper arrives. The work covers the title, bullets, backend search terms, images, A+ content, and the variation family. It is not a keyword list pasted into a title.</p>
-</details>
-<details>
-<summary>How long until rankings change?</summary>
-<p>Indexing can move within days of a published edit. Conversion usually needs a few weeks of traffic on the new page. A fair read on organic sales is 60 to 90 days, after Amazon has reindexed the listing and seen sales on the new terms. We do not judge a rewrite on day three.</p>
-</details>
-<details>
-<summary>Do you write backend search terms?</summary>
-<p>Yes. We use the byte limit without repeating words already in the title or bullets, we leave competitor brand names out, and we fill the other backend fields the category shows. Backend terms let a query index without forcing awkward wording into the bullets.</p>
-</details>
-<details>
-<summary>Fiverr vs agency: which should I hire?</summary>
-<p>A Fiverr freelancer is a reasonable way to rewrite one title when someone on your team can check the draft against real search terms. An agency is the right scope when the listing has to match the ad account, the images, and A+ content across a catalog. If you only need the one title, say so. We will not build a retainer around it.</p>
-</details>
-<details>
-<summary>Can AI optimize listings?</summary>
-<p>AI is useful for sorting Business Reports into a traffic problem, a conversion problem, or a positioning problem. It is a weak way to rewrite a listing with no account data. A person chooses the change and publishes it. Where Manage Your Experiments is available, we test the title or the main image.</p>
-</details>
-<details>
-<summary>Does it lower ACOS?</summary>
-<p>A page that converts can hold rank on a lower bid, and it stops you paying for clicks the page cannot close. Across accounts we manage, average ACOS reduction in the first 90 days is 45%. That average includes ads, listings, and inventory. A single rewrite is not a promise of that number.</p>
-</details>
+          <div class="stat-item">
+            <div class="stat-number">90%</div>
+            <div class="stat-label">Client Retention</div>
           </div>
-          <p>The listing guide stays the how-to. This page is the service. If you want the work done on the catalog, start with the audit.</p>
+          <div class="stat-item">
+            <div class="stat-number">45%</div>
+            <div class="stat-label">Avg. ACOS Drop in 90 Days</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <section class="service-detail-section" id="why-listing" aria-label="Why listing optimization">
+      <div class="container">
+        <div class="section-header center reveal">
+          <p class="section-tag">Why Listing Optimization</p>
+          <h2 class="section-title">Paid Traffic on a Weak Listing<br>Is Just Expensive Noise.</h2>
+          <p class="section-sub wide">
+            Channel ops sit on <a href="/amazon-account-management-services" style="color:var(--blue);">account management</a>. Ads sit on <a href="/amazon-ppc-management" style="color:var(--blue);">PPC management</a>. This page is the product page layer.
+          </p>
+        </div>
+        <div class="why-grid reveal">
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="11" cy="11" r="8"/>
+    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+  </svg></div>
+            <h3>Keywords That Match Intent</h3>
+            <p>Titles, bullets, and backend terms mapped to how shoppers search. We do not stuff synonyms that Amazon ignores.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+    <circle cx="8.5" cy="8.5" r="1.5"/>
+    <polyline points="21 15 16 10 5 21"/>
+  </svg></div>
+            <h3>Images That Carry Conversion</h3>
+            <p>Main image, lifestyle, and infographics built for mobile scroll. Weak images kill the click that PPC paid for.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 20h9"/>
+    <path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506L3 20l.859-3.513a2 2 0 0 1 .506-.854z"/>
+  </svg></div>
+            <h3>Copy That Sells the Product</h3>
+            <p>Bullets and description written for the shopper, not for a keyword density tool. Claims stay inside what you can prove.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="3" y="3" width="18" height="18" rx="2"/>
+    <path d="M3 9h18"/>
+    <path d="M9 21V9"/>
+  </svg></div>
+            <h3>A+ Tied to the Listing</h3>
+            <p>Brand Story and comparison modules that reinforce the same offer as the bullets. Detail on <a href="/amazon-a-plus-content" style="color:var(--blue);">A+ content</a>.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <line x1="12" y1="20" x2="12" y2="10"/>
+    <line x1="18" y1="20" x2="18" y2="4"/>
+    <line x1="6" y1="20" x2="6" y2="16"/>
+  </svg></div>
+            <h3>Before and After Reads</h3>
+            <p>We track conversion rate and organic share after a rewrite. The audit names the gaps; the rewrite closes them.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+    <circle cx="9" cy="7" r="4"/>
+    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+  </svg></div>
+            <h3>Same Team as Ads</h3>
+            <p>Listing work sits with the people who run Sponsored Products. A paid click that lands on a weak page wastes spend. $150M+ managed across 200+ brands.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="cta-section" aria-label="Booking">
+    <section class="service-detail-section alt" id="whats-included" aria-label="What is included">
       <div class="container">
-        <h2>Book a free 30-minute strategy call</h2>
-        <p>Or send the listing audit. We look at the title, the images, and the terms you are paying for before we talk about a project.</p>
+        <div class="section-header center reveal">
+          <p class="section-tag">What's Included</p>
+          <h2 class="section-title">Amazon Listing Optimization Services.</h2>
+          <p class="section-sub">SellTru rewrites the pages that carry your spend. 90% retention. Flat retainers from $3K. Average ACOS drop of 45% in 90 days across the managed book when ads are in scope.</p>
+        </div>
+        <div class="services-cards-grid">
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="11" cy="11" r="8"/>
+    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+  </svg></div>
+            <h3>Keyword Research</h3>
+            <p>Search term reports, competitor titles, and backend term maps before a single character changes on the ASIN.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 20h9"/>
+    <path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506L3 20l.859-3.513a2 2 0 0 1 .506-.854z"/>
+  </svg></div>
+            <h3>Title and Bullets</h3>
+            <p>Rewrites that lead with the benefit shoppers buy, then pack attributes Amazon indexes. No keyword salad.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+    <circle cx="8.5" cy="8.5" r="1.5"/>
+    <polyline points="21 15 16 10 5 21"/>
+  </svg></div>
+            <h3>Image Direction</h3>
+            <p>Shot lists and copy decks for main, secondary, and lifestyle frames. We coordinate with your photographer or our creative partners.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="3" y="3" width="18" height="18" rx="2"/>
+    <path d="M3 9h18"/>
+    <path d="M9 21V9"/>
+  </svg></div>
+            <h3>A+ and Brand Story</h3>
+            <p>Module plans that match the listing promise. Full A+ process lives on <a href="/amazon-a-plus-content" style="color:var(--blue);">A+ content</a>.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+    <path d="M12 11h4"/>
+    <path d="M12 16h4"/>
+    <path d="M8 11h.01"/>
+    <path d="M8 16h.01"/>
+  </svg></div>
+            <h3>Backend and Catalog Hygiene</h3>
+            <p>Search terms, subject matter, and variation structure cleaned so rank signals are not fighting each other.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="m3 11 18-5v12L3 14v-3z"/>
+    <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>
+  </svg></div>
+            <h3>Listing Plus PPC</h3>
+            <p>When ads are in scope, bid and listing work share one plan. See <a href="/amazon-ppc-management" style="color:var(--blue);">Amazon PPC management</a> and the <a href="/marketplace-agency-pricing" style="color:var(--blue);">pricing guide</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process-section" aria-label="Process">
+      <div class="container">
+        <div class="section-header center reveal">
+          <p class="section-tag light">Getting Started</p>
+          <h2 class="section-title light">Here's How a Listing<br>Rewrite Starts.</h2>
+          <p class="section-sub light">Research first. Rewrite second. Measure after publish.</p>
+        </div>
+        <div class="process-grid">
+          <div class="process-connector" aria-hidden="true"></div>
+          <div class="process-step reveal">
+            <div class="process-num">01</div>
+            <h3>Audit the ASIN Set</h3>
+            <p>Conversion, images, title gaps, and search terms that already convert. A short written read.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">02</div>
+            <h3>Rewrite and Creative</h3>
+            <p>Titles, bullets, backend, and image direction. A+ modules when Brand Registry allows.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">03</div>
+            <h3>Publish and Measure</h3>
+            <p>Push live, watch conversion and organic share, and queue what worked to the next set.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq" aria-label="Amazon listing optimization FAQ">
+      <div class="container">
+        <div class="faq-layout">
+          <div class="faq-intro reveal">
+            <p class="section-tag">Common Questions</p>
+            <h2 class="section-title">Listing Optimization FAQ.</h2>
+            <p>Keywords, freelancers, and timelines. Ongoing channel work sits on <a href="/amazon-account-management-services" style="color:var(--blue);">account management</a>.</p>
+            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
+          </div>
+          <div class="faq-list reveal">
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>What does listing optimization include?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Keyword research, title and bullet rewrites, image direction, backend terms, and A+ planning when Brand Registry is available. We do not sell a keyword report with no rewrite.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Do you guarantee rank or conversion lifts?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>No. We measure conversion and organic share after the change. Guarantees on rank are marketing, not operations.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>How long does a rewrite take?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>A focused ASIN set is usually measured in weeks, not months. Catalog size and creative lead times set the calendar.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Freelancer vs a managed team?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Freelancers often deliver copy only. We keep listings tied to ads, inventory, and account health under one retainer when you want the full channel.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Do you rewrite every ASIN?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>We prioritize by revenue and conversion gap. Low-volume long-tail SKUs wait until the core set is clean.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Pricing?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Flat monthly retainers from $3K when listing work sits inside account management, or a scoped project fee for a defined ASIN set. Quoted after the audit.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" aria-label="Amazon listing optimization audit CTA">
+      <div class="container">
+        <h2>If Conversion Is Soft,<br>Start With the Listing Audit.</h2>
+        <p>We look at titles, images, A+, and search terms before we talk about a retainer. No pitch decks. No obligation.</p>
         <div class="cta-buttons">
-          <a class="btn btn-primary" href="/free-audit">Get a Free Listing Audit</a>
-          <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-listing-optimization-services" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
+          <a class="btn btn-primary btn-lg" href="/about#contact-form" data-modal-trigger="audit">Get Your Free Audit</a>
+          <a class="btn btn-outline-white btn-lg" href="tel:+19548692034">Call (954) 869-2034</a>
         </div>
-        <p style="margin-top:18px;"><a class="btn btn-outline-white" href="tel:+19548692034">Call (954) 869-2034</a></p>
+        <p style="margin-top:18px; font-size:15px; color:rgba(255,255,255,0.55);">
+          Prefer a call on the calendar?
+          <a href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-listing-optimization-services" target="_blank" rel="noopener" style="color:var(--white); font-weight:700; text-decoration:underline;">Book a free 30-minute strategy call</a>
+        </p>
       </div>
     </section>
 
-</main>
+  </main>
+
 <selltru-footer><footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-top">

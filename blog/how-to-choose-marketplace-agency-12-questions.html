@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) — deferred until idle -->
+  <!-- Google tag (gtag.js) - deferred until idle -->
   <script>
     window.dataLayer = window.dataLayer || [];
     window.gtag = function(){dataLayer.push(arguments);};
@@ -42,12 +42,12 @@
     .blog-callout { background: rgba(26,86,219,0.06); border-left: 3px solid var(--blue); border-radius: 0 10px 10px 0; padding: 18px 22px; margin: 28px 0; }
     .blog-callout p { margin-bottom: 0; color: var(--navy); font-size: 15px; }
     .blog-callout.orange { background: rgba(255,107,53,0.06); border-left-color: var(--orange); }
-    .blog-cta-box { background: linear-gradient(135deg, #0D1B2A, #1A3A5C); border-radius: 18px; padding: 40px 44px; margin-top: 64px; text-align: center; }
-    .blog-cta-box h3 { color: #fff; font-family: var(--font-head); font-size: 24px; font-weight: 800; margin-bottom: 10px; }
+    .blog-cta-box { background: linear-gradient(135deg, var(--navy), var(--navy-mid)); border-radius: 18px; padding: 40px 44px; margin-top: 64px; text-align: center; }
+    .blog-cta-box h3 { color: var(--white); font-family: var(--font-head); font-size: 24px; font-weight: 800; margin-bottom: 10px; }
     .blog-cta-box p { color: rgba(255,255,255,0.7); font-size: 15px; margin-bottom: 28px; line-height: 1.6; }
     .blog-breadcrumb { font-size: 13px; color: var(--text-light); margin-bottom: 32px; }
     .blog-breadcrumb a { color: var(--blue); text-decoration: none; }
-    .metric-formula { background: var(--navy); color: #fff; border-radius: 12px; padding: 24px 28px; margin: 28px 0; text-align: center; }
+    .metric-formula { background: var(--navy); color: var(--white); border-radius: 12px; padding: 24px 28px; margin: 28px 0; text-align: center; }
     .metric-formula .formula-text { font-family: var(--font-head); font-size: 20px; font-weight: 700; letter-spacing: 0.02em; margin-bottom: 8px; }
     .metric-formula .formula-example { font-size: 14px; color: rgba(255,255,255,0.65); }
     .benchmark-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 28px 0; }
@@ -62,6 +62,45 @@
     @media (max-width: 600px) {
       .blog-article { padding: 48px 20px 64px; }
       .blog-cta-box { padding: 32px 24px; }
+    }
+    .blog-cta-box .cta-buttons { justify-content: center; margin-top: 8px; }
+    .blog-cta-box .cta-buttons .btn { margin: 0; }
+    .blog-cta-calendly {
+      margin-top: 18px;
+      font-size: 15px;
+      color: rgba(255,255,255,0.55);
+    }
+    .blog-cta-calendly a {
+      color: var(--white);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+    
+    .blog-body a[href]:not(.btn):not(.bar-cta):not(.blog-cta-mid-link):not(.blog-cta-calendly a):not(.blog-inline-link) { color: var(--blue); }
+    a.blog-inline-link { color: var(--blue); font-weight: 600; text-decoration: none; }
+    .section-tag.blog-tag { margin-bottom: 12px; }
+    .amz-tm { font-size: 11px; opacity: 0.6; margin-top: 6px; }
+    .blog-figure { width: 100%; border-radius: 10px; margin: 24px 0; }
+    .blog-inline-link { color: var(--blue); font-weight: 600; text-decoration: none; }
+    .blog-cta-mid { margin: 28px 0; }
+    .blog-cta-mid-link {
+      color: var(--orange);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+    .blog-note {
+      margin-top: 40px;
+      padding: 18px 22px 18px 26px;
+      background: var(--off-white);
+      border: 1px solid var(--gray-200);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 12px 12px 0;
+    }
+    .blog-note p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.65;
     }
   </style>
   <script type="application/ld+json">
@@ -143,7 +182,7 @@
       left: 0;
       right: 0;
       z-index: 800;
-      background: #0D1B2A;
+      background: var(--navy);
       border-top: 1px solid rgba(255,255,255,0.08);
       padding: 14px 24px;
       display: flex;
@@ -162,11 +201,11 @@
       font-family: 'Inter',-apple-system,sans-serif;
       line-height: 1.4;
     }
-    .bar-text strong { color: #fff; font-weight: 700; }
+    .bar-text strong { color: var(--white); font-weight: 700; }
     .bar-cta {
       display: inline-block;
-      background: #FF6B35;
-      color: #fff;
+      background: var(--orange);
+      color: var(--white);
       font-family: 'Plus Jakarta Sans',-apple-system,sans-serif;
       font-size: 14px;
       font-weight: 700;
@@ -177,7 +216,7 @@
       transition: background 0.2s;
       flex-shrink: 0;
     }
-    .bar-cta:hover { background: #E55A28; }
+    .bar-cta:hover { background: var(--orange-hover); }
     .bar-dismiss {
       background: none;
       border: none;
@@ -293,7 +332,7 @@
     <div class="blog-article">
 
       <p class="blog-breadcrumb"><a href="/blog">Blog</a> &nbsp;/&nbsp; Amazon Strategy</p>
-      <p class="section-tag" style="margin-bottom:12px;">Amazon Strategy</p>
+      <p class="section-tag blog-tag">Amazon Strategy</p>
       <h1>How to Choose a Marketplace Agency: 12 Questions to Ask Before You Sign</h1>
       <div class="blog-meta">
         <span>By Andrew Deramo</span>
@@ -304,12 +343,12 @@
       </div>
 
       <p>The sales call is the wrong place to decide. By then someone has already told you they are different, and the agreement in your inbox is where the actual job is defined. These 12 questions are for that document, and for the call you have after you have read it. They are not a second copy of the interview list.</p>
-      <p>If you are still picking who to talk to, start with <a href="/blog/how-to-choose-marketplace-agency" style="color:var(--blue);">how to choose a marketplace agency</a>. If you want the questions to ask on the first call, with examples of a strong answer and a weak one, use <a href="/blog/questions-to-ask-marketplace-agency" style="color:var(--blue);">questions to ask a marketplace agency</a>. This page is the step after both of those: what has to be true before you sign.</p>
+      <p>If you are still picking who to talk to, start with <a href="/blog/how-to-choose-marketplace-agency" class="blog-inline-link">how to choose a marketplace agency</a>. If you want the questions to ask on the first call, with examples of a strong answer and a weak one, use <a href="/blog/questions-to-ask-marketplace-agency" class="blog-inline-link">questions to ask a marketplace agency</a>. This page is the step after both of those: what has to be true before you sign.</p>
       <p>SellTru is an agency, and we publish this. Weigh it the way you would weigh any firm writing about how to hire a firm. The company figures we will cite are the ones already on the site: $150M+ in marketplace sales managed, 200+ brands, 90% retention, a 45% average ACOS reduction in the first 90 days, and membership in the Amazon Ads Partner Network. None of those is a forecast for your catalog.</p>
 
       <h2>What you are actually buying</h2>
       <p>Most bad agreements start with a fuzzy noun. "Amazon management" can mean a weekly pass on Sponsored Products, or it can mean listings, inventory, account health, and ads under one team. Those are different jobs, different weeks, and different ways to waste a retainer.</p>
-      <p>Ads only is <a href="/amazon-ppc-management" style="color:var(--blue);">Amazon PPC management</a>: search terms, negatives, bids, and budgets. The whole channel is <a href="/amazon-account-management-services" style="color:var(--blue);">Amazon account management</a>: listings, ads, inventory, and account health together. A project, such as a listing rewrite or a suspended account, is not the same retainer with a new label. If the proposal uses one phrase for all three, ask which one the signature covers.</p>
+      <p>Ads only is <a href="/amazon-ppc-management" class="blog-inline-link">Amazon PPC management</a>: search terms, negatives, bids, and budgets. The whole channel is <a href="/amazon-account-management-services" class="blog-inline-link">Amazon account management</a>: listings, ads, inventory, and account health together. A project, such as a listing rewrite or a suspended account, is not the same retainer with a new label. If the proposal uses one phrase for all three, ask which one the signature covers.</p>
       <p>Brands in the $1M to $20M range usually need the whole channel, then discover on the audit that one piece is the fire. Say that out loud before the scope is written. An agency that will not narrow the job is selling a bundle. An agency that will only talk about bids, while your listing is suppressed, is selling the easy half.</p>
 
       <h2>The 12 questions</h2>
@@ -324,7 +363,7 @@
       <p>You should. The agency is a user you can remove. Campaign history, keyword data, and the catalog stay on your login if you leave. If the proposal creates the ad account in their name, or asks you to hand over the primary user, do not sign. Ownership is not a courtesy. It is how you keep the work you paid for.</p>
 
       <h3>4. If we also sell on Walmart, is that this contract?</h3>
-      <p>Amazon and Walmart are different catalogs, different ads, and different fulfillment. Some firms bolt Walmart on after the Amazon retainer is signed and discover they do not have a team for it. Ask whether Walmart is in this agreement, a second agreement, or not offered. If it is in, the operating page to compare against is <a href="/walmart-marketplace-agency" style="color:var(--blue);">Walmart marketplace agency</a> work: approval, listings, WFS, Connect, then reviews. "We can do Walmart too" is not a scope.</p>
+      <p>Amazon and Walmart are different catalogs, different ads, and different fulfillment. Some firms bolt Walmart on after the Amazon retainer is signed and discover they do not have a team for it. Ask whether Walmart is in this agreement, a second agreement, or not offered. If it is in, the operating page to compare against is <a href="/walmart-marketplace-agency" class="blog-inline-link">Walmart marketplace agency</a> work: approval, listings, WFS, Connect, then reviews. "We can do Walmart too" is not a scope.</p>
 
       <h3>5. If Amazon suspends the account, is reinstatement included?</h3>
       <p>A monitoring retainer and an appeal are different projects. The weekly read of Account Health is prevention. A performance notification that has already stopped you from selling is a Plan of Action, evidence, and follow-up, and Amazon decides the outcome. Ask whether a live suspension is inside the monthly fee, billed as its own project, or turned away. Walk away from any firm that guarantees reinstatement or quotes a success rate in the proposal. They cannot control Amazon's decision, and the number is a sales tool.</p>
@@ -332,14 +371,10 @@
       <h3>6. Which metric is the retainer judged on?</h3>
       <p>ACOS grades ad-attributed sales. TACoS grades ad spend against total sales, including organic. A contract that promises an ACOS drop, and says nothing about total sales, can be "won" by cutting the campaigns that were feeding rank. Ask which number is in the review: ACOS, TACoS, contribution, or total sales. Ask to see it defined. The 45% average ACOS reduction we publish is a company figure for the first 90 days on the accounts behind that stat. It is not a clause you should let anyone paste into your agreement as a promise.</p>
 
-      <div class="blog-cta-box" style="margin:36px 0;">
-        <h3>Want these questions asked against your draft agreement?</h3>
-        <p>Book a 30-minute call. Bring the scope, or tell us you do not have one yet. The audit is free either way.</p>
-        <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=how-to-choose-marketplace-agency-12-questions" target="_blank" rel="noopener" style="display:inline-block;padding:14px 32px;background:var(--orange);color:#fff;font-weight:700;border-radius:10px;text-decoration:none;font-size:15px;">Book a free 30-minute strategy call</a>
-      </div>
+      <p class="blog-cta-mid"><a class="blog-cta-mid-link" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=how-to-choose-marketplace-agency-12-questions" target="_blank" rel="noopener">Book a free 30-minute strategy call</a></p>
 
       <h3>7. What is the onboarding window, and what happens after it?</h3>
-      <p>Marketplace results need time. SellTru uses a 90-day onboarding period, then month to month. Retention after that window is 90%, which is a company figure, not a lock-in. Ask any firm you are comparing: how long is the first term, what notice do you owe, and can you leave if the work is not there? A 12-month contract with no performance exit is a different product from a 90-day start. The fee itself belongs on the <a href="/marketplace-agency-pricing" style="color:var(--blue);">Marketplace agency pricing</a> guide, not in a verbal range on the call.</p>
+      <p>Marketplace results need time. SellTru uses a 90-day onboarding period, then month to month. Retention after that window is 90%, which is a company figure, not a lock-in. Ask any firm you are comparing: how long is the first term, what notice do you owe, and can you leave if the work is not there? A 12-month contract with no performance exit is a different product from a 90-day start. The fee itself belongs on the <a href="/marketplace-agency-pricing" class="blog-inline-link">Marketplace agency pricing</a> guide, not in a verbal range on the call.</p>
 
       <h3>8. Can we see change history, not only a slide?</h3>
       <p>Amazon Ads keeps a change history. Seller Central shows who edited a listing. A monthly PDF of charts does not tell you whether anyone worked the account. Ask to see a redacted change history from a current client, or a sample of the weekly note tied to edits you could verify. If the only artifact is a dashboard the agency hosts, you cannot audit the work when the relationship sours.</p>
@@ -377,12 +412,14 @@
       <div class="blog-cta-box">
         <h3>Bring the scope, or the lack of one.</h3>
         <p>Thirty minutes. We will tell you whether the draft matches the work, and whether we should be the ones doing it.</p>
-        <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit" style="display:inline-block;padding:14px 32px;background:var(--orange);color:#fff;font-weight:700;border-radius:10px;text-decoration:none;font-size:15px;">Get a Free Audit</a>
-        <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=how-to-choose-marketplace-agency-12-questions" target="_blank" rel="noopener" style="margin-top:12px;margin-left:8px;">Book a free 30-minute strategy call</a>
+        <div class="cta-buttons">
+          <a class="btn btn-primary btn-lg" href="/about#contact-form" data-modal-trigger="audit">Get Your Free Audit</a>
+          <a class="btn btn-outline-white btn-lg" href="tel:+19548692034">Call (954) 869-2034</a>
+        </div>
+        <p class="blog-cta-calendly">Prefer a call on the calendar? <a href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=how-to-choose-marketplace-agency-12-questions" target="_blank" rel="noopener">Book a free 30-minute strategy call</a></p>
       </div>
 
-      <div style="margin-top:40px;padding:18px 22px 18px 26px;background:#F8FAFC;border:1px solid #E2E8F0;border-left:3px solid #10B981;border-radius:0 12px 12px 0;" class="reveal">
-        <p style="margin:0;font-size:14px;color:#64748B;line-height:1.65;">Have experience with this? The SellTru blog accepts guest posts from Amazon sellers, agency pros, and ecommerce operators. <a href="/write-for-us" style="color:#1A56DB;font-weight:600;text-decoration:none;">See our submission guidelines &rarr;</a></p>
+      <div class="blog-note reveal"><p>Have experience with this? The SellTru blog accepts guest posts from Amazon sellers, agency pros, and ecommerce operators. <a href="/write-for-us" class="blog-inline-link">See our submission guidelines &rarr;</a></p>
       </div>
 
     </div>
@@ -458,7 +495,7 @@
     <div class="footer-bottom">
       <div class="footer-bottom-left">
         <p>&copy; 2026 SellTru. All rights reserved. | A marketplace agency for brands on Amazon and Walmart | Fort Lauderdale, FL</p>
-        <p class="amz-tm" style="font-size:11px;opacity:.6;margin-top:6px;">Amazon, Amazon Ads, and all related logos are trademarks of Amazon.com, Inc., or its affiliates.</p>
+        <p class="amz-tm">Amazon, Amazon Ads, and all related logos are trademarks of Amazon.com, Inc., or its affiliates.</p>
       </div>
       <div class="footer-certs">
         <span class="footer-cert">Amazon Ads Partner Network member</span>
@@ -481,7 +518,7 @@
   </div>
 </div></selltru-footer>
 
-  <!-- Reveal scroll animation — do not edit -->
+  <!-- Reveal scroll animation - do not edit -->
   <script>
     var ro = new IntersectionObserver(function(entries){
       entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('revealed'); ro.unobserve(e.target); } });

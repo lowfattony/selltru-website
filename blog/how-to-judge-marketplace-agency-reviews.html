@@ -42,12 +42,12 @@
     .blog-callout { background: rgba(26,86,219,0.06); border-left: 3px solid var(--blue); border-radius: 0 10px 10px 0; padding: 18px 22px; margin: 28px 0; }
     .blog-callout p { margin-bottom: 0; color: var(--navy); font-size: 15px; }
     .blog-callout.orange { background: rgba(255,107,53,0.06); border-left-color: var(--orange); }
-    .blog-cta-box { background: linear-gradient(135deg, #0D1B2A, #1A3A5C); border-radius: 18px; padding: 40px 44px; margin-top: 64px; text-align: center; }
-    .blog-cta-box h3 { color: #fff; font-family: var(--font-head); font-size: 24px; font-weight: 800; margin-bottom: 10px; }
+    .blog-cta-box { background: linear-gradient(135deg, var(--navy), var(--navy-mid)); border-radius: 18px; padding: 40px 44px; margin-top: 64px; text-align: center; }
+    .blog-cta-box h3 { color: var(--white); font-family: var(--font-head); font-size: 24px; font-weight: 800; margin-bottom: 10px; }
     .blog-cta-box p { color: rgba(255,255,255,0.7); font-size: 15px; margin-bottom: 28px; line-height: 1.6; }
     .blog-breadcrumb { font-size: 13px; color: var(--text-light); margin-bottom: 32px; }
     .blog-breadcrumb a { color: var(--blue); text-decoration: none; }
-    .metric-formula { background: var(--navy); color: #fff; border-radius: 12px; padding: 24px 28px; margin: 28px 0; text-align: center; }
+    .metric-formula { background: var(--navy); color: var(--white); border-radius: 12px; padding: 24px 28px; margin: 28px 0; text-align: center; }
     .metric-formula .formula-text { font-family: var(--font-head); font-size: 20px; font-weight: 700; letter-spacing: 0.02em; margin-bottom: 8px; }
     .metric-formula .formula-example { font-size: 14px; color: rgba(255,255,255,0.65); }
     .benchmark-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 28px 0; }
@@ -62,6 +62,45 @@
     @media (max-width: 600px) {
       .blog-article { padding: 48px 20px 64px; }
       .blog-cta-box { padding: 32px 24px; }
+    }
+    .blog-cta-box .cta-buttons { justify-content: center; margin-top: 8px; }
+    .blog-cta-box .cta-buttons .btn { margin: 0; }
+    .blog-cta-calendly {
+      margin-top: 18px;
+      font-size: 15px;
+      color: rgba(255,255,255,0.55);
+    }
+    .blog-cta-calendly a {
+      color: var(--white);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+    
+    .blog-body a[href]:not(.btn):not(.bar-cta):not(.blog-cta-mid-link):not(.blog-cta-calendly a):not(.blog-inline-link) { color: var(--blue); }
+    a.blog-inline-link { color: var(--blue); font-weight: 600; text-decoration: none; }
+    .section-tag.blog-tag { margin-bottom: 12px; }
+    .amz-tm { font-size: 11px; opacity: 0.6; margin-top: 6px; }
+    .blog-figure { width: 100%; border-radius: 10px; margin: 24px 0; }
+    .blog-inline-link { color: var(--blue); font-weight: 600; text-decoration: none; }
+    .blog-cta-mid { margin: 28px 0; }
+    .blog-cta-mid-link {
+      color: var(--orange);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+    .blog-note {
+      margin-top: 40px;
+      padding: 18px 22px 18px 26px;
+      background: var(--off-white);
+      border: 1px solid var(--gray-200);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 12px 12px 0;
+    }
+    .blog-note p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.65;
     }
   </style>
   <script type="application/ld+json">
@@ -143,7 +182,7 @@
       left: 0;
       right: 0;
       z-index: 800;
-      background: #0D1B2A;
+      background: var(--navy);
       border-top: 1px solid rgba(255,255,255,0.08);
       padding: 14px 24px;
       display: flex;
@@ -162,11 +201,11 @@
       font-family: 'Inter',-apple-system,sans-serif;
       line-height: 1.4;
     }
-    .bar-text strong { color: #fff; font-weight: 700; }
+    .bar-text strong { color: var(--white); font-weight: 700; }
     .bar-cta {
       display: inline-block;
-      background: #FF6B35;
-      color: #fff;
+      background: var(--orange);
+      color: var(--white);
       font-family: 'Plus Jakarta Sans',-apple-system,sans-serif;
       font-size: 14px;
       font-weight: 700;
@@ -177,7 +216,7 @@
       transition: background 0.2s;
       flex-shrink: 0;
     }
-    .bar-cta:hover { background: #E55A28; }
+    .bar-cta:hover { background: var(--orange-hover); }
     .bar-dismiss {
       background: none;
       border: none;
@@ -293,7 +332,7 @@
     <div class="blog-article">
 
       <p class="blog-breadcrumb"><a href="/blog">Blog</a> &nbsp;/&nbsp; Amazon Strategy</p>
-      <p class="section-tag" style="margin-bottom:12px;">Amazon Strategy</p>
+      <p class="section-tag blog-tag">Amazon Strategy</p>
       <h1>How to Judge Marketplace Agency Reviews Before You Hire</h1>
       <div class="blog-meta">
         <span>By Andrew Deramo</span>
@@ -320,14 +359,14 @@
       <h3>A platform they actually sell on</h3>
       <p>If they sell on Upwork or a similar site, read the text under the badge. Top Rated Plus is a platform status. The site states that SellTru holds it. Open the written reviews anyway. A badge with no paragraph does not tell you the scope.</p>
       <h3>The agency's own site</h3>
-      <p>Quotes on the agency site are ads unless the same story is on a third-party page. Screenshots we publish are on the <a href="/case-studies" style="color:var(--blue);">case studies</a> page, and they are not quotes. A "best agencies" article, including any on this blog, is an argument: use it for names, then test the names with reviews.</p>
+      <p>Quotes on the agency site are ads unless the same story is on a third-party page. Screenshots we publish are on the <a href="/case-studies" class="blog-inline-link">case studies</a> page, and they are not quotes. A "best agencies" article, including any on this blog, is an argument: use it for names, then test the names with reviews.</p>
 
       <h2>Six fields a useful review has to fill</h2>
-      <img src="/img/blog/marketplace-agency-review-fields.svg" alt="Two columns comparing a usable marketplace agency review, which names size, scope, a metric and time window, the person, a problem, and a recent date, with a review to set aside, which offers only stars and vague praise" style="width:100%;border-radius:10px;margin:24px 0;">
+      <img src="/img/blog/marketplace-agency-review-fields.svg" alt="Two columns comparing a usable marketplace agency review, which names size, scope, a metric and time window, the person, a problem, and a recent date, with a review to set aside, which offers only stars and vague praise" class="blog-figure">
       <p>Write these next to every review you keep. If you cannot fill three, it will not help you choose.</p>
       <ol>
         <li><strong>Size.</strong> A revenue band, an ad budget, or a SKU count. "They helped our brand" fits a new seller and a much larger catalog. We work with brands doing $1M to $20M. Far outside that band is a different job.</li>
-        <li><strong>Scope.</strong> PPC only, the whole account, Walmart, Vendor Central, or a project. <a href="/amazon-ppc-management" style="color:var(--blue);">Amazon PPC management</a> is search terms, negatives, bids, and budgets. <a href="/amazon-account-management-services" style="color:var(--blue);">Amazon account management</a> adds listings, inventory, and account health. Stars for bid work do not mean Walmart was included.</li>
+        <li><strong>Scope.</strong> PPC only, the whole account, Walmart, Vendor Central, or a project. <a href="/amazon-ppc-management" class="blog-inline-link">Amazon PPC management</a> is search terms, negatives, bids, and budgets. <a href="/amazon-account-management-services" class="blog-inline-link">Amazon account management</a> adds listings, inventory, and account health. Stars for bid work do not mean Walmart was included.</li>
         <li><strong>A metric and a window.</strong> Name the metric, the start, the end, and the weeks. "Sales exploded" is not that. Ask if total sales moved, or only ad-attributed sales. ACOS grades ads. TACoS grades ad spend against the whole account. Our 45% average ACOS reduction is a company figure for the first 90 days on the accounts behind the homepage stat. A round number with no window is a slogan until someone names the accounts.</li>
         <li><strong>A person.</strong> A name, or a line between the salesperson and the manager. "The team was responsive" can mean one person holds too many accounts. Ask if they are still there, and if you would meet them before you sign.</li>
         <li><strong>A problem.</strong> A suppression, a stockout, a missed launch, a fee they caught, a suspension they did not promise to overturn. The first month is the honeymoon. The useful sentence is what they did when the number went the wrong way.</li>
@@ -338,9 +377,9 @@
       </div>
 
       <h2>What a Walmart review has to say</h2>
-      <p>A lot of "full service" reviews are Amazon stories with Walmart added in the headline. Walmart is a different catalog, a different ad platform, and a different fulfillment choice. A review that never says Walmart Connect, WFS or seller-fulfilled, or the Buy Box did not test the work on the <a href="/walmart-marketplace-agency" style="color:var(--blue);">Walmart marketplace agency</a> page.</p>
+      <p>A lot of "full service" reviews are Amazon stories with Walmart added in the headline. Walmart is a different catalog, a different ad platform, and a different fulfillment choice. A review that never says Walmart Connect, WFS or seller-fulfilled, or the Buy Box did not test the work on the <a href="/walmart-marketplace-agency" class="blog-inline-link">Walmart marketplace agency</a> page.</p>
       <p>If the review says they ran the same campaigns on both, ask what they changed for Walmart search. Shoppers there do not type the same queries. A review that only repeats an Amazon ACOS story is an Amazon review.</p>
-      <p>Keep the 3x figure in its box. The <a href="/walmart-connect-ads-agency" style="color:var(--blue);">Walmart Connect agency</a> page states 3x average Year 1 growth for the accounts in that set. That is a company figure, like the 45% ACOS average. It is not a review you can call, and it is not a rate to write into a contract. If another firm leads with a multiplier and will not name the accounts and the year, ask for the weekly work instead.</p>
+      <p>Keep the 3x figure in its box. The <a href="/walmart-connect-ads-agency" class="blog-inline-link">Walmart Connect agency</a> page states 3x average Year 1 growth for the accounts in that set. That is a company figure, like the 45% ACOS average. It is not a review you can call, and it is not a rate to write into a contract. If another firm leads with a multiplier and will not name the accounts and the year, ask for the weekly work instead.</p>
 
       <h2>Red flags on the review page</h2>
       <p>One review can be noise. The pattern on the page is the finding.</p>
@@ -349,15 +388,11 @@
         <li><strong>Shared sentences.</strong> Three reviews that say the firm went above and beyond, and never mention a search term, a listing, a shipment, or a fee, came from a prompt. Count one, not three.</li>
         <li><strong>The wrong product.</strong> Praise for social media, a website, or a vague SEO project, with no ad account, Buy Box, inventory, or account health. That is not proof they can run Sponsored Products the week after.</li>
         <li><strong>A guarantee they are proud of.</strong> "They guaranteed page one," or "they promised reinstatement." Rank depends on the offer, price, inventory, and competitors. Reinstatement depends on Amazon. We do not guarantee rank, reinstatement, or a savings number. A firm that leads with one is showing you the pitch.</li>
-        <li><strong>Spend went up, and that is the whole story.</strong> A bigger ad budget can be a result, or a fee that rose with the spend. Look for total sales or profit. Why we use a flat retainer, and the ranges, are on the <a href="/marketplace-agency-pricing" style="color:var(--blue);">pricing guide</a>. PPC-only fees are in <a href="/blog/amazon-ppc-management-cost" style="color:var(--blue);">what management costs</a>.</li>
+        <li><strong>Spend went up, and that is the whole story.</strong> A bigger ad budget can be a result, or a fee that rose with the spend. Look for total sales or profit. Why we use a flat retainer, and the ranges, are on the <a href="/marketplace-agency-pricing" class="blog-inline-link">pricing guide</a>. PPC-only fees are in <a href="/blog/amazon-ppc-management-cost" class="blog-inline-link">what management costs</a>.</li>
         <li><strong>No trail.</strong> A first name, no company, no date, only on the agency site. It may be true. You cannot check it, so it does not count toward the three.</li>
       </ul>
 
-      <div class="blog-cta-box" style="margin:36px 0;">
-        <h3>Want a second read on the reviews you kept?</h3>
-        <p>Book a 30-minute call. Bring the three reviews, the proposal, or the fact that the public page was empty. The audit is free either way.</p>
-        <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=how-to-judge-marketplace-agency-reviews" target="_blank" rel="noopener" style="display:inline-block;padding:14px 32px;background:var(--orange);color:#fff;font-weight:700;border-radius:10px;text-decoration:none;font-size:15px;">Book a free 30-minute strategy call</a>
-      </div>
+      <p class="blog-cta-mid"><a class="blog-cta-mid-link" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=how-to-judge-marketplace-agency-reviews" target="_blank" rel="noopener">Book a free 30-minute strategy call</a></p>
 
       <h2>When a $1M to $20M brand has almost no public reviews</h2>
       <p>Brands in this range often will not post. A competitor would see who runs the account, or the agreement forbids it. A short page means you ask. It is not, by itself, a warning, and it is not a reason to lower the standard. Ask for two references in your revenue band, on the channel you are hiring. An Amazon reference does not cover Walmart, and a Walmart reference does not cover Vendor Central.</p>
@@ -371,11 +406,11 @@
         <li>If you left tomorrow, could you keep the logins and the campaign history the same day?</li>
       </ol>
       <p>Campaign history and the catalog should stay on accounts the brand owns. A warm reference who cannot get the ad account back is a bad reference. A quieter one who can point at the edits is a good one.</p>
-      <p>Ask for a redacted Amazon Ads change history, or a weekly note you can match to edits in the account. A monthly PDF does not show that anyone logged in. The same test applies to Walmart Connect. A company figure only counts when the accounts and the window are named. The averages on this site are defined that way. An undefined multiplier is a slogan, not a line for your contract. After the review holds up, settle scope in <a href="/blog/how-to-choose-marketplace-agency-12-questions" style="color:var(--blue);">12 questions before you sign</a>.</p>
+      <p>Ask for a redacted Amazon Ads change history, or a weekly note you can match to edits in the account. A monthly PDF does not show that anyone logged in. The same test applies to Walmart Connect. A company figure only counts when the accounts and the window are named. The averages on this site are defined that way. An undefined multiplier is a slogan, not a line for your contract. After the review holds up, settle scope in <a href="/blog/how-to-choose-marketplace-agency-12-questions" class="blog-inline-link">12 questions before you sign</a>.</p>
 
       <h2>What a review cannot decide</h2>
       <p>A review says someone liked the firm. It does not pick the scope. Hire PPC when listings, inventory, and account health are fine and the gap is the auction. Hire full account management when those fail in the same week. Walmart is its own scope. "Full service" in a review that never mentions it did not test it.</p>
-      <p>Hire when that weekly work is slipping and a founder is doing it at night. A warm review is not a reason to expect a new rank by Friday. We onboard for 90 days, then go month to month. You keep the selling accounts and the ad accounts, and the agency is a user you can remove. If you still cannot describe the work, you have a star, not a review. Use the <a href="/blog/questions-to-ask-marketplace-agency" style="color:var(--blue);">first-call questions</a>, the <a href="/blog/marketplace-agency-vs-in-house" style="color:var(--blue);">in-house cost comparison</a>, and the <a href="/blog/is-marketplace-agency-worth-it" style="color:var(--blue);">worth-it math</a>.</p>
+      <p>Hire when that weekly work is slipping and a founder is doing it at night. A warm review is not a reason to expect a new rank by Friday. We onboard for 90 days, then go month to month. You keep the selling accounts and the ad accounts, and the agency is a user you can remove. If you still cannot describe the work, you have a star, not a review. Use the <a href="/blog/questions-to-ask-marketplace-agency" class="blog-inline-link">first-call questions</a>, the <a href="/blog/marketplace-agency-vs-in-house" class="blog-inline-link">in-house cost comparison</a>, and the <a href="/blog/is-marketplace-agency-worth-it" class="blog-inline-link">worth-it math</a>.</p>
 
       <h2>FAQ</h2>
 
@@ -394,12 +429,14 @@
       <div class="blog-cta-box">
         <h3>Bring the reviews, or the empty page.</h3>
         <p>Thirty minutes. We will read the proof the way this post describes, against your account, before anyone talks about a fee.</p>
-        <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit" style="display:inline-block;padding:14px 32px;background:var(--orange);color:#fff;font-weight:700;border-radius:10px;text-decoration:none;font-size:15px;">Get a Free Audit</a>
-        <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=how-to-judge-marketplace-agency-reviews" target="_blank" rel="noopener" style="margin-top:12px;margin-left:8px;">Book a free 30-minute strategy call</a>
+        <div class="cta-buttons">
+          <a class="btn btn-primary btn-lg" href="/about#contact-form" data-modal-trigger="audit">Get Your Free Audit</a>
+          <a class="btn btn-outline-white btn-lg" href="tel:+19548692034">Call (954) 869-2034</a>
+        </div>
+        <p class="blog-cta-calendly">Prefer a call on the calendar? <a href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=how-to-judge-marketplace-agency-reviews" target="_blank" rel="noopener">Book a free 30-minute strategy call</a></p>
       </div>
 
-      <div style="margin-top:40px;padding:18px 22px 18px 26px;background:#F8FAFC;border:1px solid #E2E8F0;border-left:3px solid #10B981;border-radius:0 12px 12px 0;" class="reveal">
-        <p style="margin:0;font-size:14px;color:#64748B;line-height:1.65;">Have experience with this? The SellTru blog accepts guest posts from Amazon sellers, agency pros, and ecommerce operators. <a href="/write-for-us" style="color:#1A56DB;font-weight:600;text-decoration:none;">See our submission guidelines &rarr;</a></p>
+      <div class="blog-note reveal"><p>Have experience with this? The SellTru blog accepts guest posts from Amazon sellers, agency pros, and ecommerce operators. <a href="/write-for-us" class="blog-inline-link">See our submission guidelines &rarr;</a></p>
       </div>
 
     </div>
@@ -475,7 +512,7 @@
     <div class="footer-bottom">
       <div class="footer-bottom-left">
         <p>&copy; 2026 SellTru. All rights reserved. | A marketplace agency for brands on Amazon and Walmart | Fort Lauderdale, FL</p>
-        <p class="amz-tm" style="font-size:11px;opacity:.6;margin-top:6px;">Amazon, Amazon Ads, and all related logos are trademarks of Amazon.com, Inc., or its affiliates.</p>
+        <p class="amz-tm">Amazon, Amazon Ads, and all related logos are trademarks of Amazon.com, Inc., or its affiliates.</p>
       </div>
       <div class="footer-certs">
         <span class="footer-cert">Amazon Ads Partner Network member</span>

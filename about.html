@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) — deferred until idle -->
+  <!-- Google tag (gtag.js), deferred until idle -->
   <script>
     window.dataLayer = window.dataLayer || [];
     window.gtag = function(){dataLayer.push(arguments);};
@@ -30,7 +30,7 @@
   {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    "name": "Contact SellTru — Free Marketplace Audit",
+    "name": "Contact SellTru, Free Marketplace Audit",
     "description": "Request a free Amazon or Walmart marketplace audit from SellTru. A marketplace specialist will review your account and respond within one business day.",
     "url": "https://selltru.com/about",
     "mainEntity": {
@@ -219,6 +219,40 @@
     !function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments);};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f);}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");
     oaiq("init", { pixelId: "UeyzoKe3VtFvfSMqVPUoaN" });
   </script>
+
+  <style id="about-hero-form-scope">
+    /* Mobile: keep hero audit CTA above the fold */
+    @media (max-width: 480px) {
+      .page-hero { padding-top: 100px !important; padding-bottom: 48px !important; }
+      .page-hero h1 { font-size: 32px !important; line-height: 1.15 !important; margin-bottom: 16px !important; }
+      .page-hero-inner > p:not(.section-tag) { margin-bottom: 24px !important; font-size: 15px !important; }
+    }
+    /* 2-step contact form (mirrors audit modal lightness) */
+    .about-form-step { display: none; }
+    .about-form-step.active { display: block; }
+    .about-form-step-label {
+      font-size: 12px; font-weight: 600; color: var(--text-light);
+      margin: 0 0 16px; text-transform: uppercase; letter-spacing: .04em;
+    }
+    .about-form-progress {
+      height: 4px; background: rgba(15,23,42,.08); border-radius: 999px;
+      margin: 0 0 16px; overflow: hidden;
+    }
+    .about-form-progress > span {
+      display: block; height: 100%; width: 50%; background: var(--orange);
+      border-radius: 999px; transition: width .2s ease;
+    }
+    .about-form-progress[data-step="2"] > span { width: 100%; }
+    .form-optional {
+      opacity: .65; font-weight: 400; text-transform: none; letter-spacing: 0;
+    }
+    .about-form-back {
+      display: inline-block; margin-top: 12px; background: none; border: none;
+      color: var(--blue); font: inherit; font-size: 14px; font-weight: 600;
+      cursor: pointer; padding: 0;
+    }
+    .contact-icon-wrap svg { display: block; }
+  </style>
 </head>
 <body>
 
@@ -286,8 +320,17 @@
         <div class="page-hero-inner">
           <p class="section-tag light" style="margin-bottom:14px;">About SellTru</p>
           <h1>We Don't Do Everything. <span>We Just Do Marketplaces Better Than Anyone Else.</span></h1>
-          <p>We made a decision early on: go deep, not wide. No social media. No websites. No SEO retainers. Just Amazon and Walmart.com — done really well, for brands that are serious about growing there.</p>
-          <a class="btn btn-primary" href="#contact">Work With Us</a>
+          <p>We made a decision early on: go deep, not wide. No social media. No websites. No SEO retainers. Just Amazon and Walmart.com, done really well, for brands that are serious about growing there.</p>
+          <a class="btn btn-primary" href="#contact-form" data-modal-trigger="audit">Get a Free Marketplace Audit</a>
+          <div style="margin-top:36px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+            <span class="amz-text-badge amz-text-badge--on-dark">Amazon Ads Partner Network member</span>
+            <div class="trust-badge">
+              <span class="trust-badge-text">Upwork Top Rated Plus</span>
+            </div>
+            <div class="trust-badge">
+              <span class="trust-badge-text">$150M+ sales managed</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -300,13 +343,13 @@
             <p class="section-tag">Our Story</p>
             <h2 class="section-title">Why We Chose<br>Marketplaces Over Everything</h2>
             <p>
-              SellTru started with a simple observation: brands were hiring agencies that claimed to do everything and getting mediocre results across the board. The agencies that were genuinely excellent all had one thing in common — they focused.
+              SellTru started with a simple observation: brands were hiring agencies that claimed to do everything and getting mediocre results across the board. The agencies that were genuinely excellent all had one thing in common, they focused.
             </p>
             <p>
               So we picked a lane. Amazon and Walmart.com are where our clients' customers shop. That's where we spend all of our time, all of our energy, and all of our expertise. No social campaigns. No website redesigns. No brand strategy decks that gather dust on a shelf. Just marketplace performance.
             </p>
             <p>
-              We're based in Fort Lauderdale, FL and serve brands nationwide — from fast-growing consumer goods companies to established brands that have been underperforming on Amazon for years. What they all have in common: they're done guessing, and they want a team that's been in the weeds long enough to know exactly what to do.
+              We're based in Fort Lauderdale, FL and serve brands nationwide, from fast-growing consumer goods companies to established brands that have been underperforming on Amazon for years. What they all have in common: they're done guessing, and they want a team that's been in the weeds long enough to know exactly what to do.
             </p>
             <p>
               The Fort Lauderdale office, the hours, and how an in-person meeting works are on the <a href="/marketplace-agency-fort-lauderdale" style="color:var(--blue);">Marketplace agency in Fort Lauderdale</a> page.
@@ -317,23 +360,23 @@
             <p class="about-visual-title">What We Stand For</p>
             <div class="values-list">
               <div class="value-item">
-                <span class="value-check">✓</span>
+                <span class="value-check" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
                 <span class="value-text">Specialization over generalization</span>
               </div>
               <div class="value-item">
-                <span class="value-check">✓</span>
+                <span class="value-check" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
                 <span class="value-text">Data that drives decisions, not just reports</span>
               </div>
               <div class="value-item">
-                <span class="value-check">✓</span>
+                <span class="value-check" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
                 <span class="value-text">Honest conversations, even when it's uncomfortable</span>
               </div>
               <div class="value-item">
-                <span class="value-check">✓</span>
+                <span class="value-check" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
                 <span class="value-text">Revenue, not vanity metrics</span>
               </div>
               <div class="value-item">
-                <span class="value-check">✓</span>
+                <span class="value-check" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
                 <span class="value-text">Speed without cutting corners</span>
               </div>
             </div>
@@ -365,14 +408,14 @@
           </div>
           <div class="founder-story reveal">
             <p>Before I ran an agency, I was the client. I was a business owner trying to grow on marketplaces, and I did what every brand owner does when they hit a ceiling: I hired help. Big-name agencies, polished pitch decks, confident promises. I sat through the kickoff calls, signed the retainers, and waited.</p>
-            <p>What I got back were reports full of impressions and clicks while my actual numbers stayed flat. The person who sold me disappeared the day the contract was signed, and my account went to whoever had bandwidth that month. I didn't just hear about the broken agency model — I paid for it, more than once.</p>
+            <p>What I got back were reports full of impressions and clicks while my actual numbers stayed flat. The person who sold me disappeared the day the contract was signed, and my account went to whoever had bandwidth that month. I didn't just hear about the broken agency model, I paid for it, more than once.</p>
             <h3>So I learned it myself</h3>
-            <p>I stopped outsourcing and went deep on how Amazon actually works — campaign structure, match types, ranking, the unglamorous weekly optimization work that agencies skip when nobody's watching. That was more than seven years ago. Since then I've managed over $150M in marketplace sales across 150+ Amazon brands and 60+ Walmart brands, and built the credentials to show for it: <a class="founder-link" href="/questions">Amazon Ads Partner Network</a> membership, Walmart Marketplace Partner, and Upwork Top Rated Plus.</p>
+            <p>I stopped outsourcing and went deep on how Amazon actually works, campaign structure, match types, ranking, the unglamorous weekly optimization work that agencies skip when nobody's watching. That was more than seven years ago. Since then I've managed over $150M in marketplace sales across 150+ Amazon brands and 60+ Walmart brands, and built the credentials to show for it: <a class="founder-link" href="/questions">Amazon Ads Partner Network</a> membership, Walmart Marketplace Partner, and Upwork Top Rated Plus.</p>
             <h3>Why we only do marketplaces</h3>
-            <p>Amazon and Walmart change too fast to be a side offering. An agency that also runs your social ads, your email, and your website redesign is an agency that's average at all of it. We picked one thing — <a class="founder-link" href="/amazon-marketing">Amazon</a> and <a class="founder-link" href="/walmart-marketing">Walmart.com</a> — and built the entire company around being better at it than anyone else.</p>
+            <p>Amazon and Walmart change too fast to be a side offering. An agency that also runs your social ads, your email, and your website redesign is an agency that's average at all of it. We picked one thing, <a class="founder-link" href="/amazon-marketing">Amazon</a> and <a class="founder-link" href="/walmart-marketing">Walmart.com</a>, and built the entire company around being better at it than anyone else.</p>
             <h3>How SellTru is run differently</h3>
-            <p>I'm personally in every account we take on. Not "executive oversight" — actually in the campaigns, looking at the same dashboards my team works in. We stay deliberately small, we only take brands we know we can move, and we price so that the relationship only works if you grow. That's the agency I was looking for as a business owner and never found. So I built it.</p>
-            <p><a class="founder-link" href="https://linkedin.com/in/andrew-deramo" target="_blank" rel="noopener">Connect with me on LinkedIn</a> or <a class="founder-link" href="#contact-form">get a free audit</a> — I read every one that comes in.</p>
+            <p>I'm personally in every account we take on. Not "executive oversight", actually in the campaigns, looking at the same dashboards my team works in. We stay deliberately small, we only take brands we know we can move, and we price so that the relationship only works if you grow. That's the agency I was looking for as a business owner and never found. So I built it.</p>
+            <p><a class="founder-link" href="https://linkedin.com/in/andrew-deramo" target="_blank" rel="noopener">Connect with me on LinkedIn</a> or <a class="founder-link" href="#contact-form">get a free audit</a>, I read every one that comes in.</p>
           </div>
         </div>
       </div>
@@ -408,7 +451,7 @@
           <div class="cert-display-card reveal">
             <div class="cert-upwork-label" aria-label="Upwork Top Rated Plus">Top Rated+</div>
             <div class="cert-display-name">Upwork Top Rated Plus</div>
-            <div class="cert-display-desc">Top Rated Plus status on Upwork — earned through consistent 5-star reviews, on-time delivery, and long-term client relationships across marketplace categories.</div>
+            <div class="cert-display-desc">Top Rated Plus status on Upwork, earned through consistent 5-star reviews, on-time delivery, and long-term client relationships across marketplace categories.</div>
           </div>
         </div>
       </div>
@@ -420,36 +463,36 @@
         <div class="section-header center reveal">
           <p class="section-tag">Who We Work With</p>
           <h2 class="section-title">Right Fit Matters.<br>Here's Who We Work With.</h2>
-          <p class="section-sub">We're selective. Not because we're picky — because working with the right brands means better outcomes for everyone.</p>
+          <p class="section-sub">We're selective. Not because we're picky, because working with the right brands means better outcomes for everyone.</p>
         </div>
         <div class="why-grid">
           <div class="why-card reveal">
-            <div class="why-icon blue">💰</div>
+            <div class="why-icon blue"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
             <h3>Brands Doing $1M to $20M</h3>
             <p>Established enough to have real data, agile enough to move fast. This is the range where our work has the most leverage and the clearest impact.</p>
           </div>
           <div class="why-card reveal">
-            <div class="why-icon orange">📦</div>
+            <div class="why-icon orange"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></div>
             <h3>Physical Product Companies</h3>
-            <p>We work with brands selling physical products — consumer packaged goods, health and wellness, home goods, toys, apparel, and more. If it ships, we can help.</p>
+            <p>We work with brands selling physical products, consumer packaged goods, health and wellness, home goods, toys, apparel, and more. If it ships, we can help.</p>
           </div>
           <div class="why-card reveal">
-            <div class="why-icon green">🌎</div>
+            <div class="why-icon green"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div>
             <h3>US Brands, Nationwide</h3>
-            <p>Based in Fort Lauderdale, FL — but we work with brands across the country. Remote-first means location is never the reason you can't work with us.</p>
+            <p>Based in Fort Lauderdale, FL, but we work with brands across the country. Remote-first means location is never the reason you can't work with us.</p>
           </div>
           <div class="why-card reveal">
-            <div class="why-icon blue">🤝</div>
+            <div class="why-icon blue"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5 5 0 0 1 7.07 0l3.88 3.88a3 3 0 0 1 0 4.24l-1.54 1.54"/><path d="m7 11-2.5-2.5a1 1 0 1 0-3 3"/><path d="m10 10-2.5-2.5a1 1 0 1 0-3 3l3.88 3.88a3 3 0 0 0 4.24 0l.88-.88a1 1 0 1 1 3 3l-2.81 2.81a5 5 0 0 1-7.07 0L3.74 14.26a3 3 0 0 1 0-4.24z"/></svg></div>
             <h3>Brands That Want a Partner</h3>
             <p>We're not a vendor. We're in it with you. We work best with brands that want open communication, shared goals, and a team that treats their account like it's their own.</p>
           </div>
           <div class="why-card reveal">
-            <div class="why-icon orange">🚀</div>
+            <div class="why-icon orange"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
             <h3>New to Marketplaces</h3>
             <p>Just launching on Amazon or Walmart? We've built dozens of accounts from scratch and know exactly what the first 90 days should look like.</p>
           </div>
           <div class="why-card reveal">
-            <div class="why-icon green">📈</div>
+            <div class="why-icon green"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
             <h3>Scaling Existing Accounts</h3>
             <p>Already on Amazon or Walmart but not seeing the growth you expected? We specialize in diagnosing underperforming accounts and fixing the right things first.</p>
           </div>
@@ -469,98 +512,106 @@
               Start with a free marketplace audit. We'll dig into your Amazon or Walmart presence, tell you honestly what we see, and show you exactly where the opportunity is. No obligation. No pitch deck.
             </p>
             <div class="contact-item">
-              <div class="contact-icon-wrap">📞</div>
+              <div class="contact-icon-wrap" style="color:var(--orange);"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
               <div>
                 <h4>Phone</h4>
                 <p><a href="tel:+19548692034" style="color:var(--blue);">(954) 869-2034</a></p>
               </div>
             </div>
             <div class="contact-item">
-              <div class="contact-icon-wrap">✉️</div>
+              <div class="contact-icon-wrap" style="color:var(--orange);"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
               <div>
                 <h4>Email</h4>
                 <p><a href="mailto:contact@selltru.com" style="color:var(--blue);">contact@selltru.com</a></p>
               </div>
             </div>
             <div class="contact-item">
-              <div class="contact-icon-wrap">📍</div>
+              <div class="contact-icon-wrap" style="color:var(--orange);"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></div>
               <div>
                 <h4>Office</h4>
                 <p>333 Las Olas Way<br>Fort Lauderdale, FL 33301</p>
               </div>
             </div>
             <div style="margin-top:36px; padding:24px; background:rgba(26,86,219,0.06); border:1px solid rgba(26,86,219,0.15); border-radius:var(--radius);">
-              <p style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px;">⚡ Typical Response Time: Under 4 Hours</p>
-              <p style="font-size:14px;color:var(--text-light);">You'll hear back from a marketplace specialist — not a sales rep — within one business day.</p>
+              <p style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px;">Typical Response Time: Under 4 Hours</p>
+              <p style="font-size:14px;color:var(--text-light);">You'll hear back from a marketplace specialist, not a sales rep, within one business day.</p>
             </div>
           </div>
           <!-- Form -->
           <div class="form-card reveal" id="contact-form">
             <h3 class="form-title">Request Your Free Marketplace Audit</h3>
-            <form class="contact-form" action="#" method="POST" novalidate>
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label" for="first-name">First Name *</label>
-                  <input class="form-input" type="text" id="first-name" name="first-name" placeholder="John" required>
+            <div class="about-form-progress" id="about-form-progress" data-step="1" aria-hidden="true"><span></span></div>
+            <p class="about-form-step-label" id="about-form-step-label">Step 1 of 2: Your Info</p>
+            <form class="contact-form" id="about-contact-form" action="https://formspree.io/f/xlgakqbq" method="POST" novalidate>
+              <div class="about-form-step active" id="about-form-step-1" data-step="1">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="first-name">First Name *</label>
+                    <input class="form-input" type="text" id="first-name" name="first-name" placeholder="John" required autocomplete="given-name">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="last-name">Last Name *</label>
+                    <input class="form-input" type="text" id="last-name" name="last-name" placeholder="Smith" required autocomplete="family-name">
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label class="form-label" for="last-name">Last Name *</label>
-                  <input class="form-input" type="text" id="last-name" name="last-name" placeholder="Smith" required>
+                  <label class="form-label" for="email">Business Email *</label>
+                  <input class="form-input" type="email" id="email" name="email" placeholder="john@yourbrand.com" required autocomplete="email">
                 </div>
+                <button type="button" class="form-btn" id="about-form-next">Next: About Your Brand &rarr;</button>
               </div>
-              <div class="form-group">
-                <label class="form-label" for="email">Business Email *</label>
-                <input class="form-input" type="email" id="email" name="email" placeholder="john@yourbrand.com" required>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label" for="phone">Phone Number</label>
-                  <input class="form-input" type="tel" id="phone" name="phone" placeholder="(555) 000-0000">
+              <div class="about-form-step" id="about-form-step-2" data-step="2">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="phone">Phone Number <span class="form-optional">(optional)</span></label>
+                    <input class="form-input" type="tel" id="phone" name="phone" placeholder="(555) 000-0000" autocomplete="tel">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="company">Company / Brand Name *</label>
+                    <input class="form-input" type="text" id="company" name="company" placeholder="Your Brand LLC" required autocomplete="organization">
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label class="form-label" for="company">Company / Brand Name *</label>
-                  <input class="form-input" type="text" id="company" name="company" placeholder="Your Brand LLC" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="marketplace">Which marketplace(s) do you need help with? *</label>
-                <select class="form-select" id="marketplace" name="marketplace" required>
-                  <option value="" disabled selected>Select marketplace...</option>
-                  <option value="amazon">Amazon only</option>
-                  <option value="walmart">Walmart.com only</option>
-                  <option value="both">Both Amazon &amp; Walmart.com</option>
-                </select>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label" for="revenue">Annual marketplace revenue *</label>
-                  <select class="form-select" id="revenue" name="revenue" required>
-                    <option value="" disabled selected>Select range...</option>
-                    <option value="pre-launch">Pre-launch / Not yet selling</option>
-                    <option value="under-250k">Under $250K</option>
-                    <option value="250k-1m">$250K – $1M</option>
-                    <option value="1m-5m">$1M – $5M</option>
-                    <option value="5m-20m">$5M – $20M</option>
-                    <option value="over-20m">Over $20M</option>
+                  <label class="form-label" for="marketplace">Which marketplace(s) do you need help with? *</label>
+                  <select class="form-select" id="marketplace" name="marketplace" required>
+                    <option value="" disabled selected>Select marketplace...</option>
+                    <option value="amazon">Amazon only</option>
+                    <option value="walmart">Walmart.com only</option>
+                    <option value="both">Both Amazon &amp; Walmart.com</option>
                   </select>
                 </div>
-                <div class="form-group">
-                  <label class="form-label" for="adspend">Monthly ad spend *</label>
-                  <select class="form-select" id="adspend" name="adspend" required>
-                    <option value="" disabled selected>Select range...</option>
-                    <option value="none">Not running ads yet</option>
-                    <option value="under-2k">Under $2K/mo</option>
-                    <option value="2k-10k">$2K – $10K/mo</option>
-                    <option value="10k-50k">$10K – $50K/mo</option>
-                    <option value="50k-plus">$50K+/mo</option>
-                  </select>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="revenue">Annual marketplace revenue *</label>
+                    <select class="form-select" id="revenue" name="revenue" required>
+                      <option value="" disabled selected>Select range...</option>
+                      <option value="pre-launch">Pre-launch / Not yet selling</option>
+                      <option value="under-250k">Under $250K</option>
+                      <option value="250k-1m">$250K &ndash; $1M</option>
+                      <option value="1m-5m">$1M &ndash; $5M</option>
+                      <option value="5m-20m">$5M &ndash; $20M</option>
+                      <option value="over-20m">Over $20M</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="adspend">Monthly ad spend <span class="form-optional">(optional)</span></label>
+                    <select class="form-select" id="adspend" name="adspend">
+                      <option value="" disabled selected>Select range...</option>
+                      <option value="none">Not running ads yet</option>
+                      <option value="under-2k">Under $2K/mo</option>
+                      <option value="2k-10k">$2K &ndash; $10K/mo</option>
+                      <option value="10k-50k">$10K &ndash; $50K/mo</option>
+                      <option value="50k-plus">$50K+/mo</option>
+                    </select>
+                  </div>
                 </div>
+                <div class="form-group">
+                  <label class="form-label" for="message">What's your biggest marketplace challenge right now? <span class="form-optional">(optional)</span></label>
+                  <textarea class="form-textarea" id="message" name="message" placeholder="e.g. ACOS is out of control, can't rank for key terms, launching a new product line..."></textarea>
+                </div>
+                <button type="submit" class="form-btn">Send My Audit Request &rarr;</button>
+                <button type="button" class="about-form-back" id="about-form-back">Back</button>
               </div>
-<div class="form-group">
-                <label class="form-label" for="message">What's your biggest marketplace challenge right now?</label>
-                <textarea class="form-textarea" id="message" name="message" placeholder="e.g. ACOS is out of control, can't rank for key terms, launching a new product line..."></textarea>
-              </div>
-              <button type="submit" class="form-btn">Send My Audit Request →</button>
               <p style="font-size:12px;color:var(--text-light);text-align:center;margin-top:12px;">No obligation. A marketplace specialist will review your info and reach out within 1 business day.</p>
             </form>
             <p style="font-size:14px;text-align:center;margin-top:14px;"><a href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=about" target="_blank" rel="noopener">Book a free 30-minute strategy call</a></p>
@@ -666,5 +717,61 @@
 </div></selltru-footer>
 
   <script src="/js/main.js" defer></script>
+
+<script>
+(function () {
+  var form = document.getElementById('about-contact-form');
+  if (!form) return;
+  var step1 = document.getElementById('about-form-step-1');
+  var step2 = document.getElementById('about-form-step-2');
+  var nextBtn = document.getElementById('about-form-next');
+  var backBtn = document.getElementById('about-form-back');
+  var label = document.getElementById('about-form-step-label');
+  var prog = document.getElementById('about-form-progress');
+  function showStep(n) {
+    step1.classList.toggle('active', n === 1);
+    step2.classList.toggle('active', n === 2);
+    if (label) label.textContent = n === 1 ? 'Step 1 of 2: Your Info' : 'Step 2 of 2: Your Business';
+    if (prog) prog.setAttribute('data-step', String(n));
+  }
+  if (nextBtn) nextBtn.addEventListener('click', function () {
+    var fname = document.getElementById('first-name');
+    var lname = document.getElementById('last-name');
+    var email = document.getElementById('email');
+    [fname, lname, email].forEach(function (el) { if (el) el.style.borderColor = ''; });
+    var ok = true;
+    if (!fname || !fname.value.trim()) { if (fname) fname.style.borderColor = '#EF4444'; ok = false; }
+    if (!lname || !lname.value.trim()) { if (lname) lname.style.borderColor = '#EF4444'; ok = false; }
+    if (!email || !email.value.trim() || !email.checkValidity()) { if (email) email.style.borderColor = '#EF4444'; ok = false; }
+    if (!ok) return;
+    showStep(2);
+  });
+  if (backBtn) backBtn.addEventListener('click', function () { showStep(1); });
+})();
+</script>
+
+<script>
+(function () {
+  function scrubModalDashes() {
+    var modal = document.getElementById('audit-modal');
+    if (!modal) return;
+    var walk = document.createTreeWalker(modal, NodeFilter.SHOW_TEXT, null);
+    var node;
+    while ((node = walk.nextNode())) {
+      if (node.nodeValue && node.nodeValue.indexOf('\u2014') !== -1) {
+        node.nodeValue = node.nodeValue.split('\u2014').join(':');
+      }
+    }
+  }
+  function boot() {
+    scrubModalDashes();
+    var obs = new MutationObserver(scrubModalDashes);
+    obs.observe(document.body, { childList: true, subtree: true });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();
+</script>
+
 </body>
 </html>

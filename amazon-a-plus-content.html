@@ -28,39 +28,23 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://assets.calendly.com">
   <script src="https://assets.calendly.com/assets/external/widget.js" async defer></script>
+  <style>
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.revealed { opacity: 1; transform: none; }
+    .amazon-accent { color: #FF9900; }
+
+    .why-icon svg, .smc-icon svg { width: 22px; height: 22px; display: block; }
+    .why-icon.blue { color: var(--blue); }
+    .why-icon.orange { color: var(--orange); }
+    .why-icon.green { color: var(--blue); }
+    .smc-icon { color: var(--blue); display: flex; align-items: center; }
+  </style>
   <script src="/js/components.js" defer></script>
   <script>
     !function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments);};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f);}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");
     oaiq("init", { pixelId: "UeyzoKe3VtFvfSMqVPUoaN" });
   </script>
-  <style>
-    .buyer-wrap { max-width: 800px; }
-    .buyer-wrap h2 { font-family: var(--font-head); font-size: clamp(26px, 3vw, 34px); font-weight: 800; color: var(--navy); margin: 40px 0 12px; letter-spacing: -0.5px; line-height: 1.15; }
-    .buyer-wrap h3 { font-family: var(--font-head); font-size: 20px; font-weight: 700; color: var(--navy); margin: 26px 0 8px; }
-    .buyer-wrap p, .buyer-wrap li { font-size: 16.5px; line-height: 1.75; color: var(--text); }
-    .buyer-wrap p { margin: 0 0 16px; }
-    .buyer-wrap ul, .buyer-wrap ol { margin: 0 0 18px 1.25em; }
-    .buyer-wrap li { margin-bottom: 8px; }
-    .buyer-wrap a { color: var(--blue); font-weight: 600; }
-    .buyer-note { background: var(--gray-50); border-left: 3px solid var(--orange); border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 8px 0 24px; }
-    .buyer-note p:last-child { margin-bottom: 0; }
-    .crumbs { font-size: 13px; color: rgba(255,255,255,0.75); margin-bottom: 14px; }
-    .crumbs a { color: #fff; font-weight: 600; text-decoration: none; }
-    .crumbs a:hover { text-decoration: underline; }
-    .buyer-faq details { background: #fff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 16px 20px; margin-bottom: 10px; }
-    .buyer-faq summary { font-family: var(--font-head); font-weight: 700; cursor: pointer; color: var(--navy); font-size: 16px; }
-    .buyer-faq details p { margin: 12px 0 0; color: var(--text-light); }
-    .mid-cta { background: rgba(26,86,219,0.06); border-left: 3px solid #1A56DB; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 28px 0; }
-    .mid-cta p { margin: 0 0 14px; }
-    .cta-buttons .btn { margin: 6px 8px 6px 0; }
-    .buyer-table-wrap { overflow-x: auto; margin: 8px 0 24px; }
-    .buyer-table { width: 100%; border-collapse: collapse; font-size: 15px; background: #fff; }
-    .buyer-table caption { caption-side: bottom; text-align: left; font-size: 13px; color: var(--text-light); padding-top: 8px; }
-    .buyer-table th, .buyer-table td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--gray-200); }
-    .buyer-table th { font-family: var(--font-head); color: var(--navy); font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; }
-    .buyer-table td:first-child { font-weight: 700; color: var(--navy); white-space: nowrap; }
-    @media (max-width: 640px) { .buyer-wrap { max-width: 100%; } .buyer-table td:first-child { white-space: normal; } }
-  </style>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -172,6 +156,7 @@
 </head>
 <body>
 
+
 <selltru-header><header class="nav" role="banner">
   <div class="container">
     <div class="nav-inner">
@@ -224,130 +209,322 @@
   <input type="email" name="email">
   <input type="hidden" name="source">
 </form></selltru-header>
-<main>
+  <main>
 
+    <!-- ===== PAGE HERO (amazon-marketing pattern) ===== -->
     <section class="page-hero" aria-label="Amazon A+ Content Services">
       <div class="page-hero-bg" aria-hidden="true"></div>
       <div class="container">
         <div class="page-hero-inner">
-          <p class="crumbs"><a href="/">Home</a> / <a href="/amazon-marketing">Amazon Marketing</a> / A+ Content</p>
           <p class="section-tag light" style="margin-bottom:14px;">Amazon A+ Content</p>
-          <h1>Amazon A+ Content Services</h1>
-          <p>Basic and Premium A+ modules for Brand Registry brands. The design follows the objection, then the listing, then the ad.</p>
-          <div class="cta-buttons">
-            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-            <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-a-plus-content" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
+          <h1>Amazon A+ Content That Converts. <span>Built for Brand Registry Brands.</span></h1>
+          <p>Basic and Premium A+ modules for Brand Registry brands doing $1M to $20M. Designed from the reviews and the listing, not pasted from a template. Part of the same team that runs your listings and <a href="/amazon-ppc-management" style="color:#fff;font-weight:700;">Amazon PPC</a>.</p>
+          <div style="display:flex; gap:14px; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Amazon Audit</a>
+            <a class="btn btn-outline-white" href="#whats-included">View All Services</a>
           </div>
-          <div style="margin-top:28px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+          <div style="margin-top:36px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
             <span class="amz-text-badge amz-text-badge--on-dark">Amazon Ads Partner Network member</span>
-            <div class="trust-badge"><span class="trust-badge-text">$150M+ sales managed</span></div>
-            <div class="trust-badge"><span class="trust-badge-text">200+ brands</span></div>
+            <div class="trust-badge">
+              <span class="trust-badge-text">$150M+ sales managed</span>
+            </div>
+            <div class="trust-badge">
+              <span class="trust-badge-text">200+ brands</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="service-detail-section" aria-label="Service detail">
+    <!-- ===== STATS BAND ===== -->
+    <div class="stats-band">
       <div class="container">
-        <div class="buyer-wrap">
-
-          <p>Amazon A+ content services builds the modules under the bullets and above the reviews. SellTru does that work for Brand Registry brands doing $1M to $20M, on the same team that writes the listing and runs the ads. We are an Amazon Ads Partner Network member, with $150M+ in marketplace sales managed across 200+ brands. The how-to is the <a href="/blog/amazon-a-plus-content-guide">A+ content guide</a>. This page is the service.</p>
-          <p>A click that lands on empty modules is a click you already paid for. Titles, bullets, images, and backend terms sit on <a href="/amazon-listing-optimization-services">Amazon listing optimization services</a>. A+ is the part of that page that answers the objection the bullets did not have room for.</p>
-
-          <h2>Basic vs Premium A+</h2>
-          <p>Basic A+ is image and copy modules: lifestyle photos, feature callouts, a comparison chart, a brand story, and a path into the Brand Store. It sits below the main images and the bullets, below the buy box, and directly above the reviews. That placement is why the guide treats it as the last chance to answer a shopper who is about to read someone else's opinion.</p>
-          <p>Premium A+ adds the interactive modules the same guide describes: video, a larger hero, and hotspots a shopper can tap. Amazon's own figures, quoted there, say basic A+ can increase sales by up to 8% and Premium A+ by up to 20%. Those are Amazon's numbers, not a SellTru case study, and they are a ceiling, not a quote for your ASIN. We do not put a conversion promise on a module that has not been built for the product yet.</p>
-          <p>Premium is worth the extra production when the listing already has traffic and the product needs to be shown in use. A powder with a scoop, a device with an app, a kit with a setup order. If the account cannot publish Premium, we ship Basic and say so. We do not design a video module the brand cannot submit.</p>
-
-          <h2>Our design process</h2>
-          <ol>
-            <li><strong>Read the reviews and the questions first.</strong> The module list comes from the objections, not from a folder of lifestyle photos.</li>
-            <li><strong>Read the title and the bullets.</strong> A+ should extend them, not restate them. That is the guide's rule, and it is the one we use.</li>
-            <li><strong>Look at the category's modules for the gap.</strong> If every chart ignores the same question, that question is the module.</li>
-            <li><strong>Design at phone size first.</strong> Most of the scroll happens there. Type that only works on a desktop mock fails the visit.</li>
-            <li><strong>Submit, then fix what comes back.</strong> The guide's common rejections are health or supplement claims, links off Amazon, and images that are low quality or the wrong size.</li>
-          </ol>
-
-          <div class="mid-cta">
-            <p><strong>Want the modules built from the reviews, not from a template?</strong></p>
-            <div class="cta-buttons">
-              <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-              <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-a-plus-content" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
-            </div>
+        <div class="stats-inner">
+          <div class="stat-item">
+            <div class="stat-number">$150M+</div>
+            <div class="stat-label">Sales Managed</div>
           </div>
-
-          <h2>Module strategy</h2>
-          <p>Every module has one job. A comparison chart is for the shopper choosing between sizes, or between your line and the obvious alternative, and the facts in it have to be true. A brand story module is the reason the product exists, in one pass, not a company history. A lifestyle image is the use the reviews keep describing. If a module does not answer a hesitation, it comes out.</p>
-          <p>Alt text is the field most catalogs skip. Each image module can carry up to 100 characters Amazon may crawl. Comparison-chart product tiles are no longer indexed that way, and an image that already contains text only gets a short description that does not index. We fill the fields that still count.</p>
-          <p>The store link inside A+ should land on a page that continues the same story. That destination is the <a href="/amazon-brand-store-design-services">brand store</a>, not a second homepage with no next product.</p>
-
-          <h2>Image and copy rules</h2>
-          <p>Requirements live in the <a href="/blog/amazon-a-plus-content-guide">A+ content guide</a>, and <a href="/blog/what-is-amazon-brand-registry">Brand Registry</a> is the gate. A+ used to be called Enhanced Brand Content. Without Registry, the modules are not available, and neither are Sponsored Brands or the Store. If Registry is the blocker, that is the first project.</p>
-          <p>Copy we will not submit: a claim the listing cannot support, a before-and-after we cannot document, an external URL, or a medical promise on a supplement. Images we will not submit: type that disappears on a phone, or a file Amazon has already rejected for size. We do not publish a pixel chart here. The submission error is the current spec.</p>
-          <div class="buyer-note">
-            <p><strong>Examples are the guide's job.</strong> Shoppers searching for Amazon A+ content examples want to see modules. The guide walks through what basic and Premium look like. This page is how those modules get decided, written, and published on your account.</p>
+          <div class="stat-item">
+            <div class="stat-number">200+</div>
+            <div class="stat-label">Brands Supported</div>
           </div>
-
-          <h2>Testing with Manage Your Experiments</h2>
-          <p>Manage Your Experiments is the A/B tool Brand Registry unlocks. Where the account has it, we test a module or a hero against the live version instead of debating the draft in email. A person still chooses the winner. We do not run a stack of untested variants and declare the test finished because a file was uploaded.</p>
-          <p>If the account cannot run the experiment, we still ship one version and change the module the reviews say is missing. A+ does not fix a traffic problem. If the click is the issue, the work belongs on <a href="/amazon-ppc-management">Amazon PPC management</a>.</p>
-
-          <h2>Pricing</h2>
-          <p>A+ design is scoped with the listing work. SellTru uses a flat monthly retainer. We do not publish a design fee on this page, and we do not price the work as a percent of ad spend. The models are on the <a href="/marketplace-agency-pricing">agency pricing guide</a>. The audit is free. If you only need one ASIN, say that. We would rather do the module pass than invent a retainer around a single chart.</p>
-
-          <div class="mid-cta">
-            <p><strong>If the modules are blank or they repeat the bullets, start with the audit.</strong></p>
-            <div class="cta-buttons">
-              <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-              <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-a-plus-content" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
-            </div>
+          <div class="stat-item">
+            <div class="stat-number">90%</div>
+            <div class="stat-label">Client Retention</div>
           </div>
-
-          <h2>FAQ</h2>
-          <div class="buyer-faq">
-<details>
-<summary>What is A+ content?</summary>
-<p>Amazon A+ content, formerly Enhanced Brand Content, is the image and copy modules on a Brand Registry listing. They sit below the bullets and above the reviews. Basic modules cover lifestyle photos, feature callouts, comparison charts, and a brand story. Premium adds video, a larger hero, and hotspots. It is not a second title, and it is not indexed the way the title and bullets are.</p>
-</details>
-<details>
-<summary>Do I need Brand Registry?</summary>
-<p>Yes. A+ content is only available to brands enrolled in Brand Registry. Registry is also what unlocks the Brand Store, Sponsored Brands, and Manage Your Experiments. If you are not enrolled, that is the first step. The Brand Registry guide is the walkthrough.</p>
-</details>
-<details>
-<summary>What are A+ requirements?</summary>
-<p>You need Brand Registry, images that stay legible on a phone, and copy that follows Amazon's content rules: no off-Amazon links, no unsupported health claims, and no low-quality or wrong-size images. Those are the rejection reasons the A+ guide lists. Approval is typically two to seven business days, sometimes within 48 hours. We do not reprint a pixel spec here, because the submission screen is the current one.</p>
-</details>
-<details>
-<summary>How much does A+ design cost?</summary>
-<p>We do not publish a separate design price. A+ work is scoped on the same flat retainer as the rest of the listing, or as a one-time pass if that is all you need. Say which one on the audit. Ad spend is paid to Amazon and is separate. Retainer models are on the pricing guide.</p>
-</details>
-<details>
-<summary>How long does it take?</summary>
-<p>The design is part of the listing pass, then Amazon reviews the submission. The A+ guide says that review is typically two to seven business days, and it often comes back faster. A rejection for a claim or an image size adds a round trip. We do not promise a same-day publish.</p>
-</details>
-<details>
-<summary>Premium A+ eligibility?</summary>
-<p>Amazon decides which brands can publish Premium modules. We check that in the account instead of guessing a sales threshold the public guide does not list. When Premium is available, it is most useful on listings that already have traffic and on products that need to be shown in use. When it is not available, we build Basic A+ and do not pretend a video module will submit.</p>
-</details>
+          <div class="stat-item">
+            <div class="stat-number">45%</div>
+            <div class="stat-label">Avg. ACOS Drop in 90 Days</div>
           </div>
-          <p>More of the how-to, including the approval window and the basic versus Premium split, stays on the A+ guide. Questions about the whole channel belong on listing optimization.</p>
+        </div>
+      </div>
+    </div>
 
+    <!-- ===== WHY A+ ===== -->
+    <section class="service-detail-section" id="why-a-plus" aria-label="Why Amazon A+ content matters">
+      <div class="container">
+        <div class="section-header center reveal">
+          <p class="section-tag">Why A+ Content</p>
+          <h2 class="section-title">A Paid Click That Lands on Empty<br>Modules Is a Click You Already Paid For.</h2>
+          <p class="section-sub wide">
+            Titles, bullets, images, and backend terms belong with the rest of the listing on <a href="/amazon-listing-optimization-services" style="color:var(--blue);">Amazon listing optimization services</a>. A+ is the block that answers the objection the bullets did not have room for.
+          </p>
+        </div>
+        <div class="why-grid reveal">
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+  </svg></div>
+            <h3>Built From Reviews, Not Templates</h3>
+            <p>The module list comes from Amazon reviews and Q&amp;A objections, not from a folder of lifestyle photos.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+    <path d="m9 12 2 2 4-4"/>
+  </svg></div>
+            <h3>Brand Registry First</h3>
+            <p>A+ is only available to Brand Registry brands. We clear Registry before we design modules you cannot submit.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+    <line x1="12" y1="18" x2="12.01" y2="18"/>
+  </svg></div>
+            <h3>Phone-First Design</h3>
+            <p>Most of the scroll happens on a phone. Type and layouts that only work on a desktop mock fail the visit.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+    <polyline points="2 17 12 22 22 17"/>
+    <polyline points="2 12 12 17 22 12"/>
+  </svg></div>
+            <h3>Basic and Premium, When Eligible</h3>
+            <p>We check Premium eligibility in the account. When it is not available, we ship Basic and do not pretend a video module will submit.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="m3 11 18-5v12L3 14v-3z"/>
+    <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>
+  </svg></div>
+            <h3>Paired With the Ads</h3>
+            <p>A+ does not fix a traffic problem. One team owns the listing, the modules, and the PPC so the click and the page tell the same story.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/>
+    <path d="M8.5 2h7"/>
+    <path d="M7 16h10"/>
+  </svg></div>
+            <h3>Tested When You Can</h3>
+            <p>Where Manage Your Experiments is available, we test a module against the live version instead of debating the draft in email.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="cta-section" aria-label="Booking">
+    <!-- ===== WHAT'S INCLUDED ===== -->
+    <section class="service-detail-section alt" id="whats-included" aria-label="What is included">
       <div class="container">
-        <h2>Book a free 30-minute strategy call</h2>
-        <p>Or send the audit. We look at the modules, the reviews, and whether Premium can actually be submitted before we talk about a retainer.</p>
+        <div class="section-header center reveal">
+          <p class="section-tag">What's Included</p>
+          <h2 class="section-title">Amazon A+ Content Services.</h2>
+          <p class="section-sub">SellTru builds Basic and Premium A+ for Brand Registry brands on the same team that writes the listing and runs the ads. We are an Amazon Ads Partner Network member, with $150M+ in marketplace sales managed across 200+ brands, 90% retention, a 45% average ACOS drop in 90 days, and Upwork Top Rated Plus. The how-to is the <a href="/blog/amazon-a-plus-content-guide" style="color:var(--blue);">A+ content guide</a>. This page is the service.</p>
+        </div>
+        <div class="services-cards-grid">
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+    <circle cx="8.5" cy="8.5" r="1.5"/>
+    <polyline points="21 15 16 10 5 21"/>
+  </svg></div>
+            <h3>Basic A+ Modules</h3>
+            <p>Lifestyle photos, feature callouts, comparison charts, and brand story modules that sit below the bullets and above the reviews.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>
+    <path d="M20 3v4"/>
+    <path d="M22 5h-4"/>
+  </svg></div>
+            <h3>Premium A+ When Eligible</h3>
+            <p>Video, larger hero, and hotspot modules when Amazon unlocks them for the brand. Checked in the account before production.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="11" cy="11" r="8"/>
+    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+  </svg></div>
+            <h3>Registry and Requirements Check</h3>
+            <p>Brand Registry, phone-legible images, and copy that follows Amazon content rules. Cleared before design starts.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/>
+    <path d="m14.5 12.5 2-2"/>
+    <path d="m11.5 9.5 2-2"/>
+    <path d="m8.5 6.5 2-2"/>
+    <path d="m17.5 15.5 2-2"/>
+  </svg></div>
+            <h3>Module Strategy</h3>
+            <p>Comparison, brand story, and lifestyle frames with one job each. If a module does not answer a hesitation, it comes out.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/>
+    <path d="M8.5 2h7"/>
+    <path d="M7 16h10"/>
+  </svg></div>
+            <h3>Manage Your Experiments</h3>
+            <p>A/B a module or hero against the live version when the account has it. A person still chooses the winner.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+    <path d="M12 11h4"/>
+    <path d="M12 16h4"/>
+    <path d="M8 11h.01"/>
+    <path d="M8 16h.01"/>
+  </svg></div>
+            <h3>Flat Retainer Pricing</h3>
+            <p>Scoped with the listing. Flat monthly retainer, or a one-time pass if that is all you need. Models are on the <a href="/marketplace-agency-pricing" style="color:var(--blue);">marketplace agency pricing</a> guide.</p>
+          </div>
+        </div>
+        <p class="section-sub" style="margin:40px auto 0; text-align:center; max-width:720px;">Amazon's own figures say basic A+ can increase sales by up to 8% and Premium A+ by up to 20%. Those are Amazon's numbers, not a SellTru case study, and they are a ceiling, not a quote for your ASIN. The store link inside A+ should land on a page that continues the same story. That destination is the <a href="/amazon-brand-store-design-services" style="color:var(--blue);">brand store</a>.</p>
+      </div>
+    </section>
+
+    <!-- ===== PROCESS ===== -->
+    <section class="process-section" aria-label="A+ content process">
+      <div class="container">
+        <div class="section-header center reveal">
+          <p class="section-tag light">Getting Started</p>
+          <h2 class="section-title light">Here's How We Build<br>Amazon A+ Content.</h2>
+          <p class="section-sub light">Design follows the listing pass. We clear Brand Registry and Premium eligibility before production. We do not promise same-day publish.</p>
+        </div>
+        <div class="process-grid">
+          <div class="process-connector" aria-hidden="true"></div>
+          <div class="process-step reveal">
+            <div class="process-num">01</div>
+            <h3>Audit Reviews &amp; Registry</h3>
+            <p>We read the reviews and Q&amp;A, check Brand Registry and Premium eligibility, and confirm the ASIN can receive modules before any design work starts.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">02</div>
+            <h3>Design Phone-First Modules</h3>
+            <p>Modules extend the title and bullets. Comparison, story, and lifestyle frames answer real objections. Type that only works on desktop gets cut.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">03</div>
+            <h3>Submit, Fix &amp; Align</h3>
+            <p>Submit through Brand Registry tools, fix what Amazon rejects for claims or image rules, then keep ads and content aligned. Experiments when available.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq-section" id="faq" aria-label="Amazon A+ frequently asked questions">
+      <div class="container">
+        <div class="faq-layout">
+          <div class="faq-intro reveal">
+            <p class="section-tag">Common Questions</p>
+            <h2 class="section-title">Amazon A+ FAQ.</h2>
+            <p>Eligibility, cost, and what A+ can and cannot do. Channel strategy beyond the modules sits on <a href="/amazon-listing-optimization-services" style="color:var(--blue);">listing optimization</a>.</p>
+            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
+          </div>
+          <div class="faq-list reveal">
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>What is A+ content?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Amazon A+ content, formerly Enhanced Brand Content, is the image and copy modules on a Brand Registry listing. They sit below the bullets and above the reviews. Basic modules cover lifestyle photos, feature callouts, comparison charts, and a brand story. Premium adds video, a larger hero, and hotspots. It is not a second title, and it is not indexed the way the title and bullets are.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Do I need Brand Registry?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Yes. A+ content is only available to brands enrolled in Brand Registry. Registry is also what unlocks the Brand Store, Sponsored Brands, and Manage Your Experiments. If you are not enrolled, that is the first step. The Brand Registry guide is the walkthrough.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>What are A+ requirements?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>You need Brand Registry, images that stay legible on a phone, and copy that follows Amazon's content rules: no off-Amazon links, no unsupported health claims, and no low-quality or wrong-size images. Those are the rejection reasons the A+ guide lists. Approval is typically two to seven business days, sometimes within 48 hours. We do not reprint a pixel spec here, because the submission screen is the current one.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>How much does A+ design cost?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>We do not publish a separate design price. A+ work is scoped on the same flat retainer as the rest of the listing, or as a one-time pass if that is all you need. Say which one on the audit. Ad spend is paid to Amazon and is separate. Retainer models are on the pricing guide.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>How long does it take?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>The design is part of the listing pass, then Amazon reviews the submission. The A+ guide says that review is typically two to seven business days, and it often comes back faster. A rejection for a claim or an image size adds a round trip. We do not promise a same-day publish.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Premium A+ eligibility?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Amazon decides which brands can publish Premium modules. We check that in the account instead of guessing a sales threshold the public guide does not list. When Premium is available, it is most useful on listings that already have traffic and on products that need to be shown in use. When it is not available, we build Basic A+ and do not pretend a video module will submit.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA (Home pattern: two btn-lg) ===== -->
+    <section class="cta-section" aria-label="Amazon A+ audit CTA">
+      <div class="container">
+        <h2>If the Modules Are Blank or Repeat the Bullets,<br>Start With the Audit.</h2>
+        <p>We look at Brand Registry, the modules, the reviews, and whether Premium can actually be submitted before we talk about a retainer. No pitch decks. No obligation.</p>
         <div class="cta-buttons">
-          <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-          <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-a-plus-content" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
+          <a class="btn btn-primary btn-lg" href="/about#contact-form" data-modal-trigger="audit">Get Your Free Audit</a>
+          <a class="btn btn-outline-white btn-lg" href="tel:+19548692034">Call (954) 869-2034</a>
         </div>
-        <p style="margin-top:18px;"><a class="btn btn-outline-white" href="tel:+19548692034">Call (954) 869-2034</a></p>
+        <p style="margin-top:18px; font-size:15px; color:rgba(255,255,255,0.55);">
+          Prefer a call on the calendar?
+          <a href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-a-plus-content" target="_blank" rel="noopener" style="color:var(--white); font-weight:700; text-decoration:underline;">Book a free 30-minute strategy call</a>
+        </p>
       </div>
     </section>
-</main>
+
+  </main>
+
 <selltru-footer><footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-top">

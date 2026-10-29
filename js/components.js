@@ -257,7 +257,6 @@ function stickyAuditHeadline() {
   const path = (window.location.pathname || '/').toLowerCase();
   if (path.includes('walmart')) return 'Free Walmart Audit';
   if (path.includes('amazon')) return 'Free Amazon Audit';
-  if (path === '/' || path.endsWith('/index.html')) return 'Free Amazon Audit';
   return 'Free Marketplace Audit';
 }
 
@@ -356,6 +355,10 @@ class SellTruFooter extends HTMLElement {
     <button class="sticky-strip-dismiss" id="strip-dismiss" aria-label="Dismiss">&times;</button>
   </div>
 </div>`;
+
+    // Always apply channel sticky copy even when static footer.footer skipped rebuild
+    const stickyHeadlineEl = this.querySelector('.sticky-strip-headline');
+    if (stickyHeadlineEl) stickyHeadlineEl.textContent = stickyAuditHeadline();
 
     // Sticky strip -- use this.querySelector since innerHTML was just set above
     const strip = this.querySelector('#sticky-strip');

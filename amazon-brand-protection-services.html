@@ -28,39 +28,23 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://assets.calendly.com">
   <script src="https://assets.calendly.com/assets/external/widget.js" async defer></script>
+  <style>
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.revealed { opacity: 1; transform: none; }
+    .amazon-accent { color: var(--orange); }
+
+    .why-icon svg, .smc-icon svg { width: 22px; height: 22px; display: block; }
+    .why-icon.blue { color: var(--blue); }
+    .why-icon.orange { color: var(--orange); }
+    .why-icon.green { color: var(--blue); }
+    .smc-icon { color: var(--blue); display: flex; align-items: center; }
+  </style>
   <script src="/js/components.js" defer></script>
   <script>
     !function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments);};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f);}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");
     oaiq("init", { pixelId: "UeyzoKe3VtFvfSMqVPUoaN" });
   </script>
-  <style>
-    .buyer-wrap { max-width: 800px; }
-    .buyer-wrap h2 { font-family: var(--font-head); font-size: clamp(26px, 3vw, 34px); font-weight: 800; color: var(--navy); margin: 40px 0 12px; letter-spacing: -0.5px; line-height: 1.15; }
-    .buyer-wrap h3 { font-family: var(--font-head); font-size: 20px; font-weight: 700; color: var(--navy); margin: 26px 0 8px; }
-    .buyer-wrap p, .buyer-wrap li { font-size: 16.5px; line-height: 1.75; color: var(--text); }
-    .buyer-wrap p { margin: 0 0 16px; }
-    .buyer-wrap ul, .buyer-wrap ol { margin: 0 0 18px 1.25em; }
-    .buyer-wrap li { margin-bottom: 8px; }
-    .buyer-wrap a { color: var(--blue); font-weight: 600; }
-    .buyer-note { background: var(--gray-50); border-left: 3px solid var(--orange); border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 8px 0 24px; }
-    .buyer-note p:last-child { margin-bottom: 0; }
-    .crumbs { font-size: 13px; color: rgba(255,255,255,0.75); margin-bottom: 14px; }
-    .crumbs a { color: #fff; font-weight: 600; text-decoration: none; }
-    .crumbs a:hover { text-decoration: underline; }
-    .buyer-faq details { background: #fff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 16px 20px; margin-bottom: 10px; }
-    .buyer-faq summary { font-family: var(--font-head); font-weight: 700; cursor: pointer; color: var(--navy); font-size: 16px; }
-    .buyer-faq details p { margin: 12px 0 0; color: var(--text-light); }
-    .mid-cta { background: rgba(26,86,219,0.06); border-left: 3px solid #1A56DB; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 28px 0; }
-    .mid-cta p { margin: 0 0 14px; }
-    .cta-buttons .btn { margin: 6px 8px 6px 0; }
-    .buyer-table-wrap { overflow-x: auto; margin: 8px 0 24px; }
-    .buyer-table { width: 100%; border-collapse: collapse; font-size: 15px; background: #fff; }
-    .buyer-table caption { caption-side: bottom; text-align: left; font-size: 13px; color: var(--text-light); padding-top: 8px; }
-    .buyer-table th, .buyer-table td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--gray-200); }
-    .buyer-table th { font-family: var(--font-head); color: var(--navy); font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; }
-    .buyer-table td:first-child { font-weight: 700; color: var(--navy); white-space: nowrap; }
-    @media (max-width: 640px) { .buyer-wrap { max-width: 100%; } .buyer-table td:first-child { white-space: normal; } }
-  </style>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -156,6 +140,7 @@
 </head>
 <body>
 
+
 <selltru-header><header class="nav" role="banner">
   <div class="container">
     <div class="nav-inner">
@@ -208,132 +193,310 @@
   <input type="email" name="email">
   <input type="hidden" name="source">
 </form></selltru-header>
-<main>
-    <section class="page-hero" aria-label="Amazon brand protection services">
+  <main>
+
+    <section class="page-hero" aria-label="Amazon Brand Protection Services">
       <div class="page-hero-bg" aria-hidden="true"></div>
       <div class="container">
         <div class="page-hero-inner">
-          <p class="crumbs"><a href="/">Home</a> / <a href="/amazon-marketing">Amazon Marketing</a> / Brand Protection</p>
           <p class="section-tag light" style="margin-bottom:14px;">Amazon Brand Protection</p>
-          <h1>Amazon Brand Protection Services</h1>
-          <p>Hijackers, counterfeits, listing control, and Account Health, handled as ongoing work. If the account is already suspended, that is a separate scope. Book a call or send the audit.</p>
-          <div class="cta-buttons">
+          <h1>Amazon Brand Protection That Uses Registry Tools. <span>Hijackers, Listings, Health.</span></h1>
+          <p>Brand Registry filings, unauthorized seller removal, listing integrity, and health monitoring for brands doing $1M to $20M. Same team as your listings and ads. $150M+ managed across 200+ brands.</p>
+          <div style="display:flex; gap:14px; flex-wrap:wrap;">
             <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Amazon Audit</a>
-            <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-brand-protection-services" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
+            <a class="btn btn-outline-white" href="#whats-included">View All Services</a>
           </div>
-          <div style="margin-top:28px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+          <div style="margin-top:36px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
             <span class="amz-text-badge amz-text-badge--on-dark">Amazon Ads Partner Network member</span>
-            <div class="trust-badge"><span class="trust-badge-text">$150M+ sales managed</span></div>
-            <div class="trust-badge"><span class="trust-badge-text">200+ brands</span></div>
+            <div class="trust-badge">
+              <span class="trust-badge-text">$150M+ sales managed</span>
+            </div>
+            <div class="trust-badge">
+              <span class="trust-badge-text">200+ brands</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="service-detail-section" aria-label="Service detail">
+    <div class="stats-band">
       <div class="container">
-        <div class="buyer-wrap">
-
-          <p>Amazon brand protection services are the ongoing work of keeping your brand the one shoppers actually buy: who else is on the ASIN, whether the catalog still matches what you approved, and whether Account Health is quietly restricting the listing. SellTru does that for brands doing $1M to $20M. We are an Amazon Ads Partner Network member. Company-wide, we have managed $150M+ in marketplace sales across 200+ brands. Those figures are not a hijacker removal rate, and we will not pretend they are.</p>
-          <p>The how-to for enrollment is <a href="/blog/what-is-amazon-brand-registry">what Amazon Brand Registry is</a>. This page is the management after that. Day-to-day Seller Central work that is not a violation case sits with <a href="/amazon-account-management-services">Amazon account management</a>. When sales fall and you do not yet know why, start with <a href="/blog/why-amazon-sales-dropped">why Amazon sales drop</a>.</p>
-
-          <h2>Brand Registry tools (Report a Violation, Project Zero, Transparency)</h2>
-          <p>Brand Registry is free. The registry guide states the eligibility we actually use: a registered word mark, or a pending mark through Amazon's IP Accelerator, that matches the brand, plus a Seller Central or Vendor Central account under the same legal entity. A logo-only design mark does not unlock it. If the legal name on the trademark and the legal name on the account do not match, the application stalls. We check that before anyone spends a month on the wrong filing.</p>
-          <p>Once the brand is in, three protection tools matter more than the badge.</p>
-          <ul>
-            <li><strong>Report a Violation.</strong> This is the direct channel for counterfeit and hijacked listings. The registry guide describes it as faster than a standard complaint. We use it when the evidence matches a real violation, not as a button to press because a price looks annoying.</li>
-            <li><strong>Project Zero.</strong> For brands Amazon qualifies, this is self-service counterfeit removal. You are not waiting on Amazon's review queue for that offer. Qualification is Amazon's decision. Being enrolled in Brand Registry is not the same thing.</li>
-            <li><strong>Transparency.</strong> Codes on the unit that tell Amazon the item is authentic. It is a program you apply for, with labeling on the product. We do not print codes in our office. We tell you whether the account is a fit and what has to change on the packaging before you promise it to retail.</li>
-          </ul>
-          <p>The registry guide also records a published example, one home goods brand, not a category average. The brand was not enrolled. Standard complaints were slow. After enrollment, the report went through Project Zero and the counterfeit listing came down within 24 hours, against the two-to-three-week cycle they had been on. That is one account. It is not a service level we will put on your agreement.</p>
-          <p>Search inside Brand Registry matters before any of those filings. Text and image search across the catalog is how you find someone using your name or your photos on a listing you do not control. We run that search. An alert tool that emails you and stops there is not the same job. Someone still has to file.</p>
-
-          <h2>Hijackers and unauthorized sellers</h2>
-          <p>Listing hijacking, as the sales-drop guide describes it, is another seller adding an offer to your ASIN, undercutting the price, and taking the Buy Box while selling something that is not your product. Check Other Sellers on Amazon. If a name you do not recognize is there at a lower price, treat it as a hijacker until the offer proves otherwise.</p>
-          <p>That is a different problem from an unauthorized reseller of real goods. The product may be genuine and the seller may still have no right to be on your listing. A counterfeit is a third problem: a fake unit, sometimes on your ASIN and sometimes on a copied listing. Amazon hijacker removal and Amazon counterfeit removal are not the same form with a louder adjective. The reason code has to match the evidence you have. A complaint that overclaims is a good way to earn a complaint against your own account.</p>
-          <p>Brands also ask about MAP, a minimum advertised price they are trying to hold with retailers. Amazon does not enforce your MAP policy for you. A low offer might be an authorized seller you already have a contract with, or a seller who should not be on the ASIN at all. We identify the offer and whether Brand Registry gives you a removal path. We do not sell MAP monitoring software, and we do not quote a compliance rate. Price control you want on your own offer is a Seller Central decision. Who else is allowed to make an offer is the protection question.</p>
-          <div class="buyer-note">
-            <p><strong>Test buys:</strong> we use one when the case needs proof of what the other seller actually shipped. We do not order a test buy to look busy, and we do not promise a lab result. If photos and the offer itself are enough for Report a Violation, that is the filing.</p>
+        <div class="stats-inner">
+          <div class="stat-item">
+            <div class="stat-number">$150M+</div>
+            <div class="stat-label">Sales Managed</div>
           </div>
-
-          <h2>Listing control</h2>
-          <p>Hijackers are not the only way a listing stops being yours. Another contributor can change a title, an image, or a bullet. A variation can break and split the reviews. A used offer can sit on a product you sell as new. Listing control is the check that the live page still matches the brand: title, images, bullets, and who is attached to the ASIN.</p>
-          <p>The rewrite itself, when the copy is yours and it is simply weak, is <a href="/amazon-listing-optimization-services">Amazon listing optimization</a>. Protection is the question of who changed it and whether that contributor should be there. We do not treat a bad bullet and a stolen main image as the same ticket.</p>
-          <p>Suppression is adjacent and easy to misread. A listing can go dark because a required attribute is missing, an image fails a guideline, or Account Health flagged the ASIN. The sales-drop guide walks that diagnostic. If the units are in the building and cannot be bought, say so. That can be an inventory problem, not a hijacker. <a href="/amazon-fba-management-services">FBA management</a> covers stranded units. This page covers the case where the listing is wrong because someone else is on it, or because a policy complaint is sitting on it.</p>
-
-          <h2>Account health monitoring and suspension prevention</h2>
-          <p>Account health management here is a weekly read of Seller Central, Performance, Account Health. The sales-drop guide names the items that suppress a listing even when the account is not fully suspended: policy violations, intellectual property complaints, product authenticity flags, and order defect rate. A red or yellow metric can cut visibility without an email that feels like an emergency. We look there before we look at bids.</p>
-          <p>The weekly pass on a protection scope is short on purpose:</p>
-          <ul>
-            <li>Account Health status, and any new policy or IP complaint since the last check.</li>
-            <li>Other sellers on the ASINs that actually make the revenue.</li>
-            <li>Title and main image against the version you approved, so a quiet catalog edit does not wait for a customer complaint.</li>
-            <li>Open violation reports, and whether Amazon has replied.</li>
-            <li>Suppressed ASINs that are compliance documents, not empty warehouses.</li>
-          </ul>
-          <p>We answer the notification with the document or the fix it asks for while the ASIN is still live. That is prevention. It is also most of what keeps a complaint from becoming the only thing the account is about. The operating retainer for listings, ads, and inventory together is account management. Protection can sit inside that scope or be the thing you ask for when the catalog is under attack and the ads are not the fire.</p>
-
-          <div class="mid-cta">
-            <p><strong>Want Account Health and the other sellers read before you pick a scope?</strong> The audit is the right first step. A suspension notice is a different booking, and you should say so.</p>
-            <div class="cta-buttons">
-            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-            <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-brand-protection-services" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
+          <div class="stat-item">
+            <div class="stat-number">200+</div>
+            <div class="stat-label">Brands Supported</div>
           </div>
+          <div class="stat-item">
+            <div class="stat-number">90%</div>
+            <div class="stat-label">Client Retention</div>
           </div>
+          <div class="stat-item">
+            <div class="stat-number">45%</div>
+            <div class="stat-label">Avg. ACOS Drop in 90 Days</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-          <h2>When to hire an appeal specialist</h2>
-          <p>Hire the appeal scope when Amazon has already suspended the account or killed the ASIN and selling has stopped. Writing a Plan of Action is not a side task on a monitoring retainer. The notice, the earlier appeals, and the documents are the whole project. SellTru does that work. It is scoped on its own page: <a href="/amazon-account-suspension-reinstatement">Amazon account reinstatement</a>.</p>
-          <p>We do not promise reinstatement from this page or from that one. Amazon decides. We also do not quote a success rate. If your account is still open and the problem is a hijacker, a counterfeit, or a warning you can still answer, stay here. If the performance notification says you cannot sell, go to the reinstatement page and send the notice.</p>
-          <div class="buyer-note">
-            <p><strong>What we will not tell you:</strong> that a filing today means the offer is gone tomorrow, or that watching Account Health means Amazon cannot suspend you. Both programs still belong to Amazon. Our job is to file the right case and to answer warnings while the account is open.</p>
+    <section class="service-detail-section" id="why-protection" aria-label="Why brand protection">
+      <div class="container">
+        <div class="section-header center reveal">
+          <p class="section-tag">Why Brand Protection</p>
+          <h2 class="section-title">Unauthorized Offers and Drifted Listings<br>Tax Every Paid Click.</h2>
+          <p class="section-sub wide">
+            Registry enrollment and channel strategy sit next to <a href="/amazon-marketing" style="color:var(--blue);">Amazon marketing</a>. This page is the protection operating work.
+          </p>
+        </div>
+        <div class="why-grid reveal">
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+    <path d="m9 12 2 2 4-4"/>
+  </svg></div>
+            <h3>Brand Registry First</h3>
+            <p>Report a Violation, Project Zero, and Transparency only work when Registry is live. Enrollment is the gate, not a side task.</p>
           </div>
-
-          <div class="mid-cta">
-            <p><strong>If you are comparing an agency for this work, ask who files.</strong> Software that only alerts you still leaves the violation open. We file from the account you own.</p>
-            <div class="cta-buttons">
-            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-            <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-brand-protection-services" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="12" cy="12" r="10"/>
+    <path d="m4.9 4.9 14.2 14.2"/>
+  </svg></div>
+            <h3>Hijackers and Unauthorized Sellers</h3>
+            <p>We document offers that break MAP or authenticity, then use the Registry tools Amazon actually honors. Not mass emails that go nowhere.</p>
           </div>
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+    <circle cx="12" cy="12" r="3"/>
+  </svg></div>
+            <h3>Listing Control</h3>
+            <p>Title and image hijacks get caught early. Detail pages that drift away from your brand assets get pulled back.</p>
           </div>
-
-          <h2>FAQ</h2>
-          <div class="buyer-faq">
-            <details>
-<summary>How do I remove hijackers?</summary>
-<p>Open the ASIN as a shopper and check Other Sellers on Amazon. If you are enrolled in Brand Registry, Report a Violation is the direct channel for an unauthorized seller or a counterfeit, and it is faster than a standard complaint. Project Zero, if Amazon has qualified the brand, can take a counterfeit offer down without waiting on that queue. We file from your account and follow the case. We do not promise a removal date.</p>
-</details>
-<details>
-<summary>What is Project Zero?</summary>
-<p>Project Zero is a Brand Registry tool for brands Amazon has qualified. It lets the brand remove counterfeit listings itself instead of waiting on Amazon to review a standard complaint. Transparency is the related program: codes on the unit that mark it as authentic. Enrollment in Brand Registry does not mean you are in either program. We check what the account actually shows before we tell you to rely on it.</p>
-</details>
-<details>
-<summary>Can you help if my account is suspended?</summary>
-<p>Yes. A live suspension is a separate scope from ongoing brand protection. We read the performance notification, build the appeal and the evidence, and follow Amazon's replies. Amazon decides the outcome. We do not guarantee reinstatement and we do not quote a success rate. Monitoring and removal stay on this page. The appeal itself is the reinstatement engagement.</p>
-</details>
-<details>
-<summary>How do I prevent suspension?</summary>
-<p>Watch Account Health every week: policy warnings, intellectual property complaints, authenticity flags, and order defect rate. Answer the notification with the document or the fix it asks for while the listing is still live. Keep Brand Registry current so a hijacker or a counterfeit report does not sit for weeks. Prevention is the point of this work. It is not a promise that Amazon will never suspend the account.</p>
-</details>
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/>
+  </svg></div>
+            <h3>Account Health Watch</h3>
+            <p>Policy warnings and complaint spikes are suspension risk. Monitoring here is cheaper than a reinstatement later.</p>
           </div>
-          <p>The team is in Fort Lauderdale, at 333 Las Olas Way, Fort Lauderdale, FL 33301. Call <a href="tel:+19548692034">(954) 869-2034</a> if you want a person instead of a form. Fees for ongoing management are described on the <a href="/marketplace-agency-pricing">Marketplace agency pricing</a> guide. We do not publish a separate monthly figure for protection work on this page. A one-time read of Account Health and the other sellers is something you can ask for on the audit.</p>
-
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+    <circle cx="9" cy="7" r="4"/>
+    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+  </svg></div>
+            <h3>When You Need an Appeal Specialist</h3>
+            <p>Some cases need a focused Plan of Action. That work lives on <a href="/amazon-account-suspension-reinstatement" style="color:var(--blue);">account suspension reinstatement</a>.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+    <polyline points="2 17 12 22 22 17"/>
+    <polyline points="2 12 12 17 22 12"/>
+  </svg></div>
+            <h3>Tied to the Rest of the Channel</h3>
+            <p>Protection without healthy listings and ads is half a fix. Same team as <a href="/amazon-account-management-services" style="color:var(--blue);">account management</a>.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="cta-section" aria-label="Booking">
+    <section class="service-detail-section alt" id="whats-included" aria-label="What is included">
       <div class="container">
-        <h2>Book a free 30-minute strategy call</h2>
-        <p>Or send the audit. Tell us if the account is still open or if Amazon has already suspended it, so we scope the right work.</p>
+        <div class="section-header center reveal">
+          <p class="section-tag">What's Included</p>
+          <h2 class="section-title">Amazon Brand Protection Services.</h2>
+          <p class="section-sub">SellTru runs Brand Registry tools for brands that already sell, or are ready to enroll. 90% retention. Amazon Ads Partner Network member. Flat retainers from $3K.</p>
+        </div>
+        <div class="services-cards-grid">
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+  </svg></div>
+            <h3>Brand Registry Setup</h3>
+            <p>Enrollment support and tool access: Report a Violation, Project Zero where eligible, and Transparency when it fits the SKU.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="12" cy="12" r="10"/>
+    <path d="m4.9 4.9 14.2 14.2"/>
+  </svg></div>
+            <h3>Unauthorized Seller Removal</h3>
+            <p>Evidence packs and Registry filings against hijackers and counterfeit offers. Follow-through until the offer is gone or Amazon closes the case.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 20h9"/>
+    <path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506L3 20l.859-3.513a2 2 0 0 1 .506-.854z"/>
+  </svg></div>
+            <h3>Listing Integrity</h3>
+            <p>Watch for title, image, and bullet changes that dilute the brand. Restore approved assets when Amazon allows it.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/>
+  </svg></div>
+            <h3>Health Monitoring</h3>
+            <p>Policy notices, IP complaints, and review manipulation signals reviewed on a cadence with the account plan.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+    <polyline points="14 2 14 8 20 8"/>
+    <line x1="16" y1="13" x2="8" y2="13"/>
+    <line x1="16" y1="17" x2="8" y2="17"/>
+    <line x1="10" y1="9" x2="8" y2="9"/>
+  </svg></div>
+            <h3>MAP and Evidence</h3>
+            <p>Documented screenshots and offer history so filings are not guesswork. We do not invent claims Amazon will reject.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+    <path d="M12 11h4"/>
+    <path d="M12 16h4"/>
+    <path d="M8 11h.01"/>
+    <path d="M8 16h.01"/>
+  </svg></div>
+            <h3>Flat Retainer Pricing</h3>
+            <p>Scoped inside the account retainer or as a protection pass. Models are on the <a href="/marketplace-agency-pricing" style="color:var(--blue);">pricing guide</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process-section" aria-label="Process">
+      <div class="container">
+        <div class="section-header center reveal">
+          <p class="section-tag light">Getting Started</p>
+          <h2 class="section-title light">Here's How Brand<br>Protection Starts.</h2>
+          <p class="section-sub light">Registry status first. Then the offer map. Then filings that Amazon will actually read.</p>
+        </div>
+        <div class="process-grid">
+          <div class="process-connector" aria-hidden="true"></div>
+          <div class="process-step reveal">
+            <div class="process-num">01</div>
+            <h3>Registry and Offer Audit</h3>
+            <p>Confirm Brand Registry, map unauthorized offers, and list listing integrity issues.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">02</div>
+            <h3>File and Follow</h3>
+            <p>Submit evidence through Registry tools. Track cases until closed or escalated.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">03</div>
+            <h3>Monitor Health</h3>
+            <p>Ongoing watch on offers, listing edits, and policy signals tied to the account plan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq" aria-label="Amazon brand protection FAQ">
+      <div class="container">
+        <div class="faq-layout">
+          <div class="faq-intro reveal">
+            <p class="section-tag">Common Questions</p>
+            <h2 class="section-title">Brand Protection FAQ.</h2>
+            <p>Registry, hijackers, and what we will not promise. Suspension appeals sit on <a href="/amazon-account-suspension-reinstatement" style="color:var(--blue);">reinstatement</a>.</p>
+            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
+          </div>
+          <div class="faq-list reveal">
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Do I need Brand Registry?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Yes for almost all protection tools. Without Registry you cannot use Report a Violation or Project Zero the way brand owners expect.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Can you guarantee a hijacker is removed?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>No. Amazon decides. We build complete filings and follow up. Outcomes vary by evidence and Amazon's queue.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Is this the same as reinstatement?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>No. Protection tries to keep you out of trouble. Reinstatement is for after a suspension. Different page, different process.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Do you handle counterfeit cases?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Yes when you have Brand Registry and clear evidence. Counterfeit claims without proof get rejected and can hurt the account.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>MAP enforcement?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>We document offers and use the channels Amazon provides. We are not a law firm and do not send cease-and-desist letters as counsel.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Pricing?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Flat retainers from $3K when bundled with account management. A narrower protection scope can be quoted on the audit.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" aria-label="Amazon brand protection audit CTA">
+      <div class="container">
+        <h2>If Unauthorized Offers Are Diluting<br>the Brand, Start With the Audit.</h2>
+        <p>We check Registry, the offer map, and listing integrity before we talk about a retainer. No pitch decks. No obligation.</p>
         <div class="cta-buttons">
-            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Amazon Audit</a>
-            <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-brand-protection-services" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
-          </div>
-        <p style="margin-top:18px;"><a class="btn btn-outline-white" href="tel:+19548692034">Call (954) 869-2034</a></p>
+          <a class="btn btn-primary btn-lg" href="/about#contact-form" data-modal-trigger="audit">Get Your Free Audit</a>
+          <a class="btn btn-outline-white btn-lg" href="tel:+19548692034">Call (954) 869-2034</a>
+        </div>
+        <p style="margin-top:18px; font-size:15px; color:rgba(255,255,255,0.55);">
+          Prefer a call on the calendar?
+          <a href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-brand-protection-services" target="_blank" rel="noopener" style="color:var(--white); font-weight:700; text-decoration:underline;">Book a free 30-minute strategy call</a>
+        </p>
       </div>
     </section>
 
-</main>
+  </main>
+
 <selltru-footer><footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-top">

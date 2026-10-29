@@ -42,6 +42,12 @@
       background: linear-gradient(135deg, #003087 0%, #0052CC 100%);
     }
     .walmart-tag { color: #0052CC; }
+
+    .why-icon svg, .smc-icon svg { width: 22px; height: 22px; display: block; }
+    .why-icon.blue { color: var(--blue); }
+    .why-icon.orange { color: var(--orange); }
+    .why-icon.green { color: var(--blue); }
+    .smc-icon { color: var(--blue); display: flex; align-items: center; }
   </style>
   <script src="/js/components.js" defer></script>
   <script>
@@ -288,32 +294,55 @@
         </div>
         <div class="why-grid reveal">
           <div class="why-card">
-            <div class="why-icon blue">🎨</div>
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/>
+    <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/>
+    <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/>
+    <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/>
+    <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>
+  </svg></div>
             <h3>Brand Highlights, Not Amazon Paste</h3>
             <p>Image, video, and text layouts built in Seller Center Media Library and attached to GTINs you own. Designed for Walmart, not exported from Amazon A+.</p>
           </div>
           <div class="why-card">
-            <div class="why-icon orange">✅</div>
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+    <polyline points="22 4 12 14.01 9 11.01"/>
+  </svg></div>
             <h3>Brand Portal Eligibility First</h3>
             <p>We confirm Brand Portal rights, USPTO trademark, and item ownership before we open a layout. No modules you cannot attach.</p>
           </div>
           <div class="why-card">
-            <div class="why-icon green">📱</div>
+            <div class="why-icon green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+    <line x1="12" y1="18" x2="12.01" y2="18"/>
+  </svg></div>
             <h3>Phone-First Design</h3>
             <p>Most of the scroll on Walmart.com happens on a phone. Type and layouts that only work on a desktop mock fail the visit.</p>
           </div>
           <div class="why-card">
-            <div class="why-icon blue">💬</div>
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+  </svg></div>
             <h3>Built From Reviews, Not Templates</h3>
             <p>The module list comes from Walmart reviews and Q&amp;A objections, not from a folder of lifestyle photos left over from Amazon.</p>
           </div>
           <div class="why-card">
-            <div class="why-icon orange">🎯</div>
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="12" cy="12" r="10"/>
+    <circle cx="12" cy="12" r="6"/>
+    <circle cx="12" cy="12" r="2"/>
+  </svg></div>
             <h3>Paired With Walmart Connect</h3>
             <p>Brand Highlights do not fix a traffic problem. One team owns ads and modules so the click and the page tell the same story.</p>
           </div>
           <div class="why-card">
-            <div class="why-icon green">📦</div>
+            <div class="why-icon green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M16.5 9.4 7.55 4.24"/>
+    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+    <polyline points="3.29 7 12 12 20.71 7"/>
+    <line x1="12" y1="22" x2="12" y2="12"/>
+  </svg></div>
             <h3>Tied to Buy Box Reality</h3>
             <p>A beautiful block on an item that loses the Buy Box to a faster WFS offer is decoration. Inventory still matters.</p>
           </div>
@@ -331,32 +360,60 @@
         </div>
         <div class="services-cards-grid">
           <div class="service-mini-card reveal">
-            <div class="smc-icon">🖼️</div>
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+    <circle cx="8.5" cy="8.5" r="1.5"/>
+    <polyline points="21 15 16 10 5 21"/>
+  </svg></div>
             <h3>Brand Highlights Modules</h3>
             <p>Image, video, and text layouts on the product detail page. Built in the Media Library, then attached to GTINs you own under Brand Portal rules.</p>
           </div>
           <div class="service-mini-card reveal">
-            <div class="smc-icon">🎬</div>
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M4 11v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8H4z"/>
+    <path d="m4 11 7.7-7.7a1 1 0 0 1 1.4 0l6.6 6.6"/>
+    <path d="M10.2 4.7 14 8.5"/>
+    <path d="m14.2 3.5 3.8 3.8"/>
+  </svg></div>
             <h3>Listing Video</h3>
             <p>Product video available more broadly than Brand Highlights. Uploaded through the Media Library, with file and category limits Walmart enforces at submit time.</p>
           </div>
           <div class="service-mini-card reveal">
-            <div class="smc-icon">🔍</div>
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="11" cy="11" r="8"/>
+    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+  </svg></div>
             <h3>Eligibility Check</h3>
             <p>Brand Portal enrollment, active USPTO trademark, clean IP and Trust and Safety record, and published new-condition items you own. Cleared before design starts.</p>
           </div>
           <div class="service-mini-card reveal">
-            <div class="smc-icon">📐</div>
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/>
+    <path d="m14.5 12.5 2-2"/>
+    <path d="m11.5 9.5 2-2"/>
+    <path d="m8.5 6.5 2-2"/>
+    <path d="m17.5 15.5 2-2"/>
+  </svg></div>
             <h3>Module Strategy</h3>
             <p>Comparison, brand story, and lifestyle frames with one job each. If a module does not answer a hesitation, it comes out.</p>
           </div>
           <div class="service-mini-card reveal">
-            <div class="smc-icon">🔗</div>
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+  </svg></div>
             <h3>Walmart Connect Alignment</h3>
             <p>If the item has views and no orders, modules and primary images are usually the missing piece. Ads and content stay in sync. See <a href="/walmart-connect-ads-agency" style="color:var(--blue);">Walmart Connect ads</a>.</p>
           </div>
           <div class="service-mini-card reveal">
-            <div class="smc-icon">📋</div>
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+    <path d="M12 11h4"/>
+    <path d="M12 16h4"/>
+    <path d="M8 11h.01"/>
+    <path d="M8 16h.01"/>
+  </svg></div>
             <h3>Flat Retainer Pricing</h3>
             <p>Scoped with the listing. Flat monthly retainer, or a one-time pass if that is all you need. Models are on the <a href="/marketplace-agency-pricing" style="color:var(--blue);">marketplace agency pricing</a> guide.</p>
           </div>

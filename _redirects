@@ -185,6 +185,9 @@
 /blog/how-to-judge-amazon-agency-reviews/    /blog/how-to-judge-marketplace-agency-reviews    301
 /blog/how-to-judge-amazon-agency-reviews.html    /blog/how-to-judge-marketplace-agency-reviews    301!
 
+# Removed /walmart-a-plus-content (revert PR #12)
+/walmart-a-plus-content /walmart-marketplace-agency 301
+
 /*.html    /:splat    301!
 
 # -----------------------------------------------

@@ -28,39 +28,26 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://assets.calendly.com">
   <script src="https://assets.calendly.com/assets/external/widget.js" async defer></script>
+  <style>
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.revealed { opacity: 1; transform: none; }
+    .page-hero.walmart-hero {
+      background: linear-gradient(150deg, #001E6C 0%, #003087 50%, #0041A8 100%);
+    }
+    .walmart-hero .page-hero-bg {
+      background: radial-gradient(ellipse at 80% 40%, rgba(255,194,32,0.12) 0%, transparent 50%),
+                  radial-gradient(ellipse at 10% 80%, rgba(0,48,135,0.6) 0%, transparent 50%);
+    }
+    .stats-band.walmart-band {
+      background: linear-gradient(135deg, #003087 0%, #0052CC 100%);
+    }
+    .walmart-tag { color: #0052CC; }
+  </style>
   <script src="/js/components.js" defer></script>
   <script>
     !function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments);};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f);}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");
     oaiq("init", { pixelId: "UeyzoKe3VtFvfSMqVPUoaN" });
   </script>
-  <style>
-    .buyer-wrap { max-width: 800px; }
-    .buyer-wrap h2 { font-family: var(--font-head); font-size: clamp(26px, 3vw, 34px); font-weight: 800; color: var(--navy); margin: 40px 0 12px; letter-spacing: -0.5px; line-height: 1.15; }
-    .buyer-wrap h3 { font-family: var(--font-head); font-size: 20px; font-weight: 700; color: var(--navy); margin: 26px 0 8px; }
-    .buyer-wrap p, .buyer-wrap li { font-size: 16.5px; line-height: 1.75; color: var(--text); }
-    .buyer-wrap p { margin: 0 0 16px; }
-    .buyer-wrap ul, .buyer-wrap ol { margin: 0 0 18px 1.25em; }
-    .buyer-wrap li { margin-bottom: 8px; }
-    .buyer-wrap a { color: var(--blue); font-weight: 600; }
-    .buyer-note { background: var(--gray-50); border-left: 3px solid var(--orange); border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 8px 0 24px; }
-    .buyer-note p:last-child { margin-bottom: 0; }
-    .crumbs { font-size: 13px; color: rgba(255,255,255,0.75); margin-bottom: 14px; }
-    .crumbs a { color: var(--white); font-weight: 600; text-decoration: none; }
-    .crumbs a:hover { text-decoration: underline; }
-    .buyer-faq details { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 16px 20px; margin-bottom: 10px; }
-    .buyer-faq summary { font-family: var(--font-head); font-weight: 700; cursor: pointer; color: var(--navy); font-size: 16px; }
-    .buyer-faq details p { margin: 12px 0 0; color: var(--text-light); }
-    .mid-cta { background: var(--blue-light); border-left: 3px solid var(--blue); border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 28px 0; }
-    .mid-cta p { margin: 0 0 14px; }
-    .cta-buttons .btn { margin: 6px 8px 6px 0; }
-    .buyer-table-wrap { overflow-x: auto; margin: 8px 0 24px; }
-    .buyer-table { width: 100%; border-collapse: collapse; font-size: 15px; background: var(--white); }
-    .buyer-table caption { caption-side: bottom; text-align: left; font-size: 13px; color: var(--text-light); padding-top: 8px; }
-    .buyer-table th, .buyer-table td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--gray-200); }
-    .buyer-table th { font-family: var(--font-head); color: var(--navy); font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; }
-    .buyer-table td:first-child { font-weight: 700; color: var(--navy); white-space: nowrap; }
-    @media (max-width: 640px) { .buyer-wrap { max-width: 100%; } .buyer-table td:first-child { white-space: normal; } }
-  </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -172,6 +159,7 @@
 </head>
 <body>
 
+
 <selltru-header><header class="nav" role="banner">
   <div class="container">
     <div class="nav-inner">
@@ -224,19 +212,19 @@
   <input type="email" name="email">
   <input type="hidden" name="source">
 </form></selltru-header>
-<main>
+  <main>
 
-    <section class="page-hero" aria-label="Walmart A+ Content Services">
+    <!-- ===== PAGE HERO ===== -->
+    <section class="page-hero walmart-hero" aria-label="Walmart A+ Content Services">
       <div class="page-hero-bg" aria-hidden="true"></div>
       <div class="container">
         <div class="page-hero-inner">
-          <p class="crumbs"><a href="/">Home</a> / <a href="/walmart-marketing">Walmart Marketing</a> / A+ Content</p>
-          <p class="section-tag light">Walmart A+ Content</p>
-          <h1>Walmart A+ Content &amp; Brand Highlights Services</h1>
-          <p>Brand Highlights, rich media, and video for Brand Portal brands. Built for the Walmart shopper, not pasted from Amazon modules.</p>
+          <p class="section-tag light" style="margin-bottom:14px;">Walmart Brand Highlights</p>
+          <h1>Walmart A+ Content That Converts.<br><span>Built for Brand Portal Brands.</span></h1>
+          <p>Brand Highlights, rich media, and listing video for Brand Portal brands doing $1M to $20M. Designed for the Walmart shopper, not pasted from Amazon modules. Part of the same team that runs your listings and <a href="/walmart-connect-ads-agency" style="color:#fff;font-weight:700;">Walmart Connect ads</a>.</p>
           <div style="display:flex; gap:14px; flex-wrap:wrap;">
-            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-            <a class="btn btn-outline-white" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=walmart-a-plus-content" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
+            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Walmart Audit</a>
+            <a class="btn btn-outline-white" href="#whats-included">View All Services</a>
           </div>
           <div style="margin-top:36px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
             <div class="trust-badge-wmt">
@@ -248,119 +236,264 @@
                 <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220" transform="rotate(240 10 10) translate(0,-5.5)"/>
                 <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(300 10 10) translate(0,-5.5)"/>
               </svg>
-              <span class="trust-badge-text" style="color:var(--white);">Walmart Marketplace Partner</span>
+              <span class="trust-badge-text" style="color:#fff;">Walmart Marketplace Partner</span>
             </div>
-            <div class="trust-badge"><span class="trust-badge-text">3x Walmart Connect growth</span></div>
-            <div class="trust-badge"><span class="trust-badge-text">$150M+ sales managed</span></div>
-            <div class="trust-badge"><span class="trust-badge-text">200+ brands</span></div>
+            <div class="trust-badge">
+              <span class="trust-badge-text">3x Walmart Connect growth</span>
+            </div>
+            <div class="trust-badge">
+              <span class="trust-badge-text">$150M+ sales managed</span>
+            </div>
+            <div class="trust-badge">
+              <span class="trust-badge-text">200+ brands</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="service-detail-section" aria-label="Service detail">
+    <!-- ===== STATS BAND ===== -->
+    <div class="stats-band walmart-band">
       <div class="container">
-        <div class="buyer-wrap">
-
-          <p>When brands search for a Walmart A+ agency, they usually mean Brand Highlights and rich media on Walmart.com. SellTru builds that content for Brand Portal brands doing $1M to $20M, on the same team that runs listings and <a href="/walmart-connect-ads-agency">Walmart Connect ads</a>. We are an Amazon Ads Partner Network member and a Walmart Marketplace Partner, with $150M+ in marketplace sales managed across 200+ brands, 90% retention, a 45% average ACOS drop in 90 days on the Amazon accounts those stats describe, Upwork Top Rated Plus, and 3x average Year 1 Walmart Connect growth. The channel overview is <a href="/walmart-marketing">Walmart marketing</a>. This page is the service.</p>
-          <p>A paid click that lands on a bare item page is a click you already paid for. Titles, attributes, and primary images belong with the rest of the listing on the <a href="/walmart-marketplace-agency">Walmart marketplace agency</a> page. Walmart A+ content is the block that answers the objection the short description did not have room for.</p>
-
-          <h2>What Walmart A+ content actually is</h2>
-          <p>Walmart files the work under rich media. Two pieces matter for most brands:</p>
-          <ul>
-            <li><strong>Brand Highlights.</strong> Image, video, and text layouts on the product detail page. Built in Seller Center Media Library, then attached to GTINs you own. Brand Portal enrollment is required.</li>
-            <li><strong>Listing video.</strong> Product video available more broadly than Brand Highlights. Still uploaded through the Media Library, with file and category limits Walmart enforces at submit time.</li>
-          </ul>
-          <p>People still type "Walmart A+ content" because they know Amazon A+. The shopper job is the same. The module set, the eligibility rules, and the upload path are not. We design for Walmart instead of exporting Amazon A+ and hoping the Media Library accepts it.</p>
-
-          <h2>Brand Portal eligibility first</h2>
-          <p>Brand Highlights are for brand owners in Brand Portal with an active USPTO trademark, a clean IP and Trust and Safety record, and published new-condition items they own. Restricted product types, including alcohol, tobacco, and firearms, cannot use certain rich media. If Registry-style access is the blocker, that is the first project, not a design sprint.</p>
-          <p>We confirm rights in the account before we open a layout. Designing modules a brand cannot attach wastes a week and a retainer conversation.</p>
-
-          <div class="mid-cta">
-            <p><strong>Want Brand Highlights built from the reviews, not from a template?</strong></p>
-            <div style="display:flex; gap:14px; flex-wrap:wrap;">
-              <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-              <a class="btn btn-outline-navy" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=walmart-a-plus-content" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
-            </div>
+        <div class="stats-inner">
+          <div class="stat-item">
+            <div class="stat-number">$150M+</div>
+            <div class="stat-label">Sales Managed</div>
           </div>
-
-          <h2>Our design process</h2>
-          <ol>
-            <li><strong>Read Walmart reviews and Q&amp;A first.</strong> The module list comes from objections, not from a folder of lifestyle photos left over from Amazon.</li>
-            <li><strong>Read the Walmart title and key features.</strong> Brand Highlights should extend them, not restate them in a larger font.</li>
-            <li><strong>Check Brand Portal and item ownership.</strong> No design work starts until the GTIN can actually receive the layout.</li>
-            <li><strong>Design for phone first.</strong> Most of the scroll on Walmart.com happens there. Type that only works on a desktop mock fails the visit.</li>
-            <li><strong>Upload in Media Library, then attach.</strong> Prebuilt templates or a custom layout, then link to eligible items. Fix what Walmart rejects for policy or file rules.</li>
-          </ol>
-
-          <h2>Module strategy that converts</h2>
-          <p>Every block has one job. A comparison layout is for the shopper choosing between sizes or between your line and the obvious alternative, and the facts in it have to be true. A brand story is why the product exists, in one pass, not a company timeline. A lifestyle frame is the use the reviews keep describing. If a module does not answer a hesitation, it comes out.</p>
-          <p>Video earns its place when the product needs to be shown in use: a scoop, a setup order, a fit on a body, a kit in sequence. A static hero with more marketing adjectives does not need a clip attached to it.</p>
-          <div class="buyer-note">
-            <p><strong>We do not invent lift numbers.</strong> Walmart says rich media can help engagement, conversions, and returns. It does not publish a universal percentage we can put in a pitch deck. Amazon publishes its own A+ ceilings on the <a href="/amazon-a-plus-content">Amazon A+ content</a> page. Those are Amazon's numbers, not a Walmart forecast, and not a SellTru case study for your GTIN.</p>
+          <div class="stat-item">
+            <div class="stat-number">200+</div>
+            <div class="stat-label">Brands Supported</div>
           </div>
-
-          <h2>Walmart A+ and Walmart Connect together</h2>
-          <p>Brand Highlights do not fix a traffic problem. If the item has no views, the work belongs on <a href="/walmart-connect-ads-agency">Walmart Connect ads</a>, on search attributes, and on reviews. If the item has views and no orders, the modules and the primary images are usually the missing piece. One team owns both so the ad click and the page tell the same story.</p>
-          <p>Fulfillment still matters. A beautiful Brand Highlights block on an item that loses the Buy Box to a faster WFS offer is decoration. Inventory and inbound sit on <a href="/walmart-wfs-management">Walmart WFS management</a>.</p>
-
-          <h2>Pricing</h2>
-          <p>Walmart A+ content work is scoped with the listing. SellTru uses a flat monthly retainer. We do not publish a design fee on this page, and we do not price the work as a percent of Walmart Connect spend. The models are on the <a href="/marketplace-agency-pricing">marketplace agency pricing</a> guide. The audit is free. If you only need Brand Highlights on a short list of GTINs, say that. We would rather do the module pass than invent a retainer around a single layout.</p>
-
-          <div class="mid-cta">
-            <p><strong>If the item page is blank below the fold, start with the audit.</strong></p>
-            <div style="display:flex; gap:14px; flex-wrap:wrap;">
-              <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-              <a class="btn btn-outline-navy" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=walmart-a-plus-content" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
-            </div>
+          <div class="stat-item">
+            <div class="stat-number">90%</div>
+            <div class="stat-label">Client Retention</div>
           </div>
-
-          <h2>FAQ</h2>
-          <div class="buyer-faq">
-<details>
-<summary>Does Walmart have A+ content?</summary>
-<p>Yes. Shoppers and brands often call it Walmart A+ content. On Walmart.com the product is Brand Highlights, plus listing video, under rich media in Seller Center. Brand Highlights combine images, video, and text on the product detail page. Video is available more broadly. Brand Highlights require Brand Portal enrollment and brand-owner rights on the items you attach.</p>
-</details>
-<details>
-<summary>Who can publish Walmart Brand Highlights?</summary>
-<p>Brand owners registered in Walmart Brand Portal, with an active USPTO trademark, no recorded IP or Trust and Safety violation, and published new-condition items they own. Restricted categories such as alcohol, tobacco, and firearms cannot use certain rich media. We check eligibility in the account before we design modules you cannot submit.</p>
-</details>
-<details>
-<summary>How is Walmart A+ different from Amazon A+?</summary>
-<p>The shopper job is similar: answer objections below the buy box with image, copy, and video. The tooling is not. Walmart Brand Highlights live in the Media Library, attach to GTINs you own, and sit behind Brand Portal rules. Amazon A+ sits behind Brand Registry and Amazon's module set. We design for each channel instead of pasting Amazon modules into Walmart.</p>
-</details>
-<details>
-<summary>How much do Walmart A+ content services cost?</summary>
-<p>We do not publish a separate design fee on this page. Brand Highlights and rich media work is scoped on the same flat retainer as the rest of the Walmart listing work, or as a one-time pass if that is all you need. Ad spend is paid to Walmart Connect and is separate. Retainer models are on the pricing guide.</p>
-</details>
-<details>
-<summary>How long does Walmart Brand Highlights take?</summary>
-<p>Design follows the listing pass. Upload and attach happen in Seller Center Media Library once Brand Portal rights are in place. We do not promise same-day publish. A missing trademark, a Trust and Safety flag, or an item that is not brand-owned will stop the attach step, so we clear those before production.</p>
-</details>
-<details>
-<summary>Will Brand Highlights lift my Walmart conversion rate?</summary>
-<p>Walmart says rich media such as videos and Brand Highlights can help engagement, conversions, and returns. It does not publish a universal lift percentage we can quote. We treat modules as conversion work for items that already get views, not as a substitute for search rank, reviews, or fulfillment. If the click is the problem, the work belongs on Walmart Connect.</p>
-</details>
+          <div class="stat-item">
+            <div class="stat-number">3x</div>
+            <div class="stat-label">Avg. Walmart Connect Growth</div>
           </div>
-          <p>Channel strategy beyond the modules sits on <a href="/walmart-marketplace-agency">Walmart marketplace agency</a>. Brands that also need Amazon modules start on <a href="/amazon-a-plus-content">Amazon A+ content</a>.</p>
+        </div>
+      </div>
+    </div>
 
+    <!-- ===== WHY BRAND HIGHLIGHTS ===== -->
+    <section class="service-detail-section" id="why-brand-highlights" aria-label="Why Brand Highlights matter">
+      <div class="container">
+        <div class="section-header center reveal">
+          <p class="section-tag">Why Brand Highlights</p>
+          <h2 class="section-title">A Paid Click That Lands on a Bare<br>Item Page Is a Click You Already Paid For.</h2>
+          <p class="section-sub wide">
+            Titles, attributes, and primary images belong with the rest of the listing on the <a href="/walmart-marketplace-agency" style="color:var(--blue);">Walmart marketplace agency</a> page. Walmart A+ content is the block that answers the objection the short description did not have room for.
+          </p>
+        </div>
+        <div class="why-grid reveal">
+          <div class="why-card">
+            <div class="why-icon blue">🎨</div>
+            <h3>Brand Highlights, Not Amazon Paste</h3>
+            <p>Image, video, and text layouts built in Seller Center Media Library and attached to GTINs you own. Designed for Walmart, not exported from Amazon A+.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon orange">✅</div>
+            <h3>Brand Portal Eligibility First</h3>
+            <p>We confirm Brand Portal rights, USPTO trademark, and item ownership before we open a layout. No modules you cannot attach.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon green">📱</div>
+            <h3>Phone-First Design</h3>
+            <p>Most of the scroll on Walmart.com happens on a phone. Type and layouts that only work on a desktop mock fail the visit.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon blue">💬</div>
+            <h3>Built From Reviews, Not Templates</h3>
+            <p>The module list comes from Walmart reviews and Q&amp;A objections, not from a folder of lifestyle photos left over from Amazon.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon orange">🎯</div>
+            <h3>Paired With Walmart Connect</h3>
+            <p>Brand Highlights do not fix a traffic problem. One team owns ads and modules so the click and the page tell the same story.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon green">📦</div>
+            <h3>Tied to Buy Box Reality</h3>
+            <p>A beautiful block on an item that loses the Buy Box to a faster WFS offer is decoration. Inventory still matters.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="cta-section" aria-label="Booking">
+    <!-- ===== WHAT'S INCLUDED ===== -->
+    <section class="service-detail-section alt" id="whats-included" aria-label="What is included">
       <div class="container">
-        <h2>Book a free 30-minute strategy call</h2>
-        <p>Or send the audit. We look at Brand Portal rights, the item pages, and whether Brand Highlights can actually be attached before we talk about a retainer.</p>
+        <div class="section-header center reveal">
+          <p class="section-tag">What's Included</p>
+          <h2 class="section-title">Walmart A+ Content Services.</h2>
+          <p class="section-sub">SellTru builds Brand Highlights and rich media for Brand Portal brands on the same team that runs listings and Walmart Connect. We are an Amazon Ads Partner Network member and a Walmart Marketplace Partner, with $150M+ in marketplace sales managed across 200+ brands, 90% retention, a 45% average ACOS drop in 90 days on the Amazon accounts those stats describe, and Upwork Top Rated Plus.</p>
+        </div>
+        <div class="services-cards-grid">
+          <div class="service-mini-card reveal">
+            <div class="smc-icon">🖼️</div>
+            <h3>Brand Highlights Modules</h3>
+            <p>Image, video, and text layouts on the product detail page. Built in the Media Library, then attached to GTINs you own under Brand Portal rules.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon">🎬</div>
+            <h3>Listing Video</h3>
+            <p>Product video available more broadly than Brand Highlights. Uploaded through the Media Library, with file and category limits Walmart enforces at submit time.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon">🔍</div>
+            <h3>Eligibility Check</h3>
+            <p>Brand Portal enrollment, active USPTO trademark, clean IP and Trust and Safety record, and published new-condition items you own. Cleared before design starts.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon">📐</div>
+            <h3>Module Strategy</h3>
+            <p>Comparison, brand story, and lifestyle frames with one job each. If a module does not answer a hesitation, it comes out.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon">🔗</div>
+            <h3>Walmart Connect Alignment</h3>
+            <p>If the item has views and no orders, modules and primary images are usually the missing piece. Ads and content stay in sync. See <a href="/walmart-connect-ads-agency" style="color:var(--blue);">Walmart Connect ads</a>.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon">📋</div>
+            <h3>Flat Retainer Pricing</h3>
+            <p>Scoped with the listing. Flat monthly retainer, or a one-time pass if that is all you need. Models are on the <a href="/marketplace-agency-pricing" style="color:var(--blue);">marketplace agency pricing</a> guide.</p>
+          </div>
+        </div>
+        <p class="section-sub" style="margin:40px auto 0; text-align:center; max-width:720px;">We do not invent lift numbers. Walmart says rich media can help engagement, conversions, and returns. It does not publish a universal percentage we can put in a pitch deck. Amazon publishes its own A+ ceilings on the <a href="/amazon-a-plus-content" style="color:var(--blue);">Amazon A+ content</a> page. Those are Amazon's numbers, not a Walmart forecast.</p>
+      </div>
+    </section>
+
+    <!-- ===== PROCESS ===== -->
+    <section class="process-section" aria-label="Brand Highlights process">
+      <div class="container">
+        <div class="section-header center reveal">
+          <p class="section-tag light">Getting Started</p>
+          <h2 class="section-title light">Here's How We Build<br>Walmart Brand Highlights.</h2>
+          <p class="section-sub light">Design follows the listing pass. Upload and attach happen once Brand Portal rights are in place. We clear blockers before production.</p>
+        </div>
+        <div class="process-grid">
+          <div class="process-connector" aria-hidden="true"></div>
+          <div class="process-step reveal">
+            <div class="process-num">01</div>
+            <h3>Audit Reviews &amp; Rights</h3>
+            <p>We read Walmart reviews and Q&amp;A, check Brand Portal and item ownership, and confirm the GTIN can receive a layout before any design work starts.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">02</div>
+            <h3>Design Phone-First Modules</h3>
+            <p>Modules extend the Walmart title and key features. Comparison, story, and lifestyle frames answer real objections. Type that only works on desktop gets cut.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">03</div>
+            <h3>Upload, Attach &amp; Fix</h3>
+            <p>Upload in Seller Center Media Library, attach to eligible items, and fix what Walmart rejects for policy or file rules. Then we keep ads and content aligned.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ (Home pattern) ===== -->
+    <section class="faq-section" id="faq" aria-label="Walmart A+ frequently asked questions">
+      <div class="container">
+        <div class="faq-layout">
+          <div class="faq-intro reveal">
+            <p class="section-tag">Common Questions</p>
+            <h2 class="section-title">Walmart A+ FAQ.</h2>
+            <p>Eligibility, cost, and what Brand Highlights can and cannot do. Channel strategy beyond the modules sits on <a href="/walmart-marketplace-agency" style="color:var(--blue);">Walmart marketplace agency</a>.</p>
+            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
+          </div>
+          <div class="faq-list reveal">
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Does Walmart have A+ content?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Yes. Shoppers and brands often call it Walmart A+ content. On Walmart.com the product is Brand Highlights, plus listing video, under rich media in Seller Center. Brand Highlights combine images, video, and text on the product detail page. Video is available more broadly. Brand Highlights require Brand Portal enrollment and brand-owner rights on the items you attach.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Who can publish Walmart Brand Highlights?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Brand owners registered in Walmart Brand Portal, with an active USPTO trademark, no recorded IP or Trust and Safety violation, and published new-condition items they own. Restricted categories such as alcohol, tobacco, and firearms cannot use certain rich media. We check eligibility in the account before we design modules you cannot submit.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>How is Walmart A+ different from Amazon A+?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>The shopper job is similar: answer objections below the buy box with image, copy, and video. The tooling is not. Walmart Brand Highlights live in the Media Library, attach to GTINs you own, and sit behind Brand Portal rules. Amazon A+ sits behind Brand Registry and Amazon's module set. We design for each channel instead of pasting Amazon modules into Walmart.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>How much do Walmart A+ content services cost?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>We do not publish a separate design fee on this page. Brand Highlights and rich media work is scoped on the same flat retainer as the rest of the Walmart listing work, or as a one-time pass if that is all you need. Ad spend is paid to Walmart Connect and is separate. Retainer models are on the pricing guide.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>How long does Walmart Brand Highlights take?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Design follows the listing pass. Upload and attach happen in Seller Center Media Library once Brand Portal rights are in place. We do not promise same-day publish. A missing trademark, a Trust and Safety flag, or an item that is not brand-owned will stop the attach step, so we clear those before production.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Will Brand Highlights lift my Walmart conversion rate?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Walmart says rich media such as videos and Brand Highlights can help engagement, conversions, and returns. It does not publish a universal lift percentage we can quote. We treat modules as conversion work for items that already get views, not as a substitute for search rank, reviews, or fulfillment. If the click is the problem, the work belongs on Walmart Connect.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA (Home pattern: two btn-lg) ===== -->
+    <section class="cta-section" aria-label="Walmart A+ audit CTA">
+      <div class="container">
+        <h2>If the Item Page Is Blank Below the Fold,<br>Start With the Audit.</h2>
+        <p>We look at Brand Portal rights, the item pages, and whether Brand Highlights can actually be attached before we talk about a retainer. No pitch decks. No obligation.</p>
         <div class="cta-buttons">
-          <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-          <a class="btn btn-outline-white" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=walmart-a-plus-content" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
+          <a class="btn btn-primary btn-lg" href="/about#contact-form" data-modal-trigger="audit">Get Your Free Audit</a>
+          <a class="btn btn-outline-white btn-lg" href="tel:+19548692034">Call (954) 869-2034</a>
         </div>
-        <p style="margin-top:18px;"><a class="btn btn-outline-white" href="tel:+19548692034">Call (954) 869-2034</a></p>
+        <p style="margin-top:18px; font-size:15px; color:rgba(255,255,255,0.55);">
+          Prefer a call on the calendar?
+          <a href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=walmart-a-plus-content" target="_blank" rel="noopener" style="color:var(--white); font-weight:700; text-decoration:underline;">Book a free 30-minute strategy call</a>
+        </p>
       </div>
     </section>
-</main>
+
+  </main>
+
 <selltru-footer><footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-top">

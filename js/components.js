@@ -253,6 +253,13 @@ class SellTruHeader extends HTMLElement {
   }
 }
 
+function stickyAuditHeadline() {
+  const path = (window.location.pathname || '/').toLowerCase();
+  if (path.includes('walmart')) return 'Free Walmart Audit';
+  if (path.includes('amazon')) return 'Free Amazon Audit';
+  return 'Free Marketplace Audit';
+}
+
 /* --- <selltru-footer> ------------------------------------------- */
 
 class SellTruFooter extends HTMLElement {
@@ -295,6 +302,7 @@ class SellTruFooter extends HTMLElement {
         <a href="/walmart-marketing#walmart-ads">Walmart Connect Ads</a>
         <a href="/walmart-marketplace-agency">Walmart Marketplace Agency</a>
         <a href="/walmart-a-plus-content">Walmart A+ Content</a>
+        <a href="/walmart-listing-optimization-services">Walmart Listing Optimization</a>
         <a href="/walmart-wfs-management">Walmart WFS Management</a>
       </div>
       <div class="footer-col">
@@ -338,7 +346,7 @@ class SellTruFooter extends HTMLElement {
   <div class="sticky-strip-text">
     <div class="sticky-strip-icon" aria-hidden="true">${ICON_SEARCH}</div>
     <div class="sticky-strip-copy">
-      <div class="sticky-strip-headline">Free Amazon Audit</div>
+      <div class="sticky-strip-headline">${stickyAuditHeadline()}</div>
       <div class="sticky-strip-sub">We'll find what's costing you. No obligation.</div>
     </div>
   </div>
@@ -347,6 +355,10 @@ class SellTruFooter extends HTMLElement {
     <button class="sticky-strip-dismiss" id="strip-dismiss" aria-label="Dismiss">&times;</button>
   </div>
 </div>`;
+
+    // Always apply channel sticky copy even when static footer.footer skipped rebuild
+    const stickyHeadlineEl = this.querySelector('.sticky-strip-headline');
+    if (stickyHeadlineEl) stickyHeadlineEl.textContent = stickyAuditHeadline();
 
     // Sticky strip -- use this.querySelector since innerHTML was just set above
     const strip = this.querySelector('#sticky-strip');

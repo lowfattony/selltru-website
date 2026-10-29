@@ -435,12 +435,12 @@ function initAuditModal() {
     '    <p class="modal-sub">Takes 2 minutes. We\'ll show you exactly where your ad spend is leaking.</p>',
     '  </div>',
     '  <div class="modal-progress-bar" id="modal-prog-bar"><div class="modal-progress" id="modal-progress" style="width:50%"></div></div>',
-    '  <p class="modal-step-label" id="modal-step-label">Step 1 of 2 — Your Info</p>',
+    '  <p class="modal-step-label" id="modal-step-label">Step 1 of 2: Your Info</p>',
     '  <form id="modal-audit-form" novalidate>',
     '    <div id="modal-step-1" class="modal-step active">',
     '      <div class="modal-field"><label for="m-fname">First Name *</label><input type="text" id="m-fname" name="first-name" placeholder="Jane"></div>',
     '      <div class="modal-field"><label for="m-email">Work Email *</label><input type="email" id="m-email" name="email" placeholder="jane@brand.com"></div>',
-    '      <button type="button" id="modal-next-btn" class="modal-submit">Next — About Your Brand →</button>',
+    '      <button type="button" id="modal-next-btn" class="modal-submit">Next: About Your Brand →</button>',
     '    </div>',
     '    <div id="modal-step-2" class="modal-step">',
     '      <div class="modal-field"><label for="m-phone">Phone <span style="opacity:.65;font-weight:400;text-transform:none">(optional)</span></label><input type="tel" id="m-phone" name="phone" placeholder="(555) 000-0000"></div>',
@@ -455,7 +455,7 @@ function initAuditModal() {
     '  </form>',
     '  <div class="modal-success" id="modal-success">',
     '    <h3>Application received.</h3>',
-    '    <p>Book a call now while you\'re here — no waiting, no back-and-forth.</p>',
+    '    <p>Book a call now while you\'re here. No waiting, no back-and-forth.</p>',
     '    <div class="calendly-inline-widget" data-url="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1" style="min-width:280px;height:700px;"></div>',
     '  </div>',
     '</div>'
@@ -490,7 +490,7 @@ function initAuditModal() {
     if (form)    { form.style.display = ''; form.reset(); }
     if (header)    header.style.display    = '';
     if (progBar)   progBar.style.display   = '';
-    if (stepLabel) { stepLabel.style.display = ''; stepLabel.textContent = 'Step 1 of 2 — Your Info'; }
+    if (stepLabel) { stepLabel.style.display = ''; stepLabel.textContent = 'Step 1 of 2: Your Info'; }
     if (prog)      prog.style.width = '50%';
     if (mb)        mb.classList.remove('modal-box-calendly');
     overlay.querySelectorAll('.modal-field input,.modal-field select').forEach(function(el) { el.style.borderColor = ''; });
@@ -518,7 +518,7 @@ function initAuditModal() {
     if (trigger) openModal(e);
   });
 
-  // Step 1 — Next button
+  // Step 1: Next button
   document.getElementById('modal-next-btn').addEventListener('click', function() {
     var fname = document.getElementById('m-fname');
     var email = document.getElementById('m-email');
@@ -534,7 +534,7 @@ function initAuditModal() {
     }
     if (!valid) return;
 
-    // Silent partial lead capture — fire and forget
+    // Silent partial lead capture: fire and forget
     fetch('https://formspree.io/f/xlgakqbq', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
@@ -545,10 +545,10 @@ function initAuditModal() {
     document.getElementById('modal-step-1').classList.remove('active');
     document.getElementById('modal-step-2').classList.add('active');
     document.getElementById('modal-progress').style.width = '80%';
-    document.getElementById('modal-step-label').textContent = 'Step 2 of 2 — Your Business';
+    document.getElementById('modal-step-label').textContent = 'Step 2 of 2: Your Business';
   });
 
-  // Step 2 — form submit
+  // Step 2: form submit
   var form = document.getElementById('modal-audit-form');
   form.dataset.hubspotBound = '1'; // prevent main.js double-bind
   form.addEventListener('submit', function(e) {

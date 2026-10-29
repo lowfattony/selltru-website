@@ -221,13 +221,7 @@
   </script>
 
   <style id="about-hero-form-scope">
-    /* Mobile: keep hero audit CTA above the fold */
-    @media (max-width: 480px) {
-      .page-hero { padding-top: 100px !important; padding-bottom: 48px !important; }
-      .page-hero h1 { font-size: 32px !important; line-height: 1.15 !important; margin-bottom: 16px !important; }
-      .page-hero-inner > p:not(.section-tag) { margin-bottom: 24px !important; font-size: 15px !important; }
-    }
-    /* 2-step contact form (mirrors audit modal lightness) */
+    /* 2-step contact form (mirrors audit modal lightness; shared .page-hero-trust / .is-invalid live in css/style.css) */
     .about-form-step { display: none; }
     .about-form-step.active { display: block; }
     .about-form-step-label {
@@ -235,7 +229,7 @@
       margin: 0 0 16px; text-transform: uppercase; letter-spacing: .04em;
     }
     .about-form-progress {
-      height: 4px; background: rgba(15,23,42,.08); border-radius: 999px;
+      height: 4px; background: var(--gray-200); border-radius: 999px;
       margin: 0 0 16px; overflow: hidden;
     }
     .about-form-progress > span {
@@ -322,7 +316,7 @@
           <h1>We Don't Do Everything. <span>We Just Do Marketplaces Better Than Anyone Else.</span></h1>
           <p>We made a decision early on: go deep, not wide. No social media. No websites. No SEO retainers. Just Amazon and Walmart.com, done really well, for brands that are serious about growing there.</p>
           <a class="btn btn-primary" href="#contact-form" data-modal-trigger="audit">Get a Free Marketplace Audit</a>
-          <div style="margin-top:36px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+          <div class="page-hero-trust">
             <span class="amz-text-badge amz-text-badge--on-dark">Amazon Ads Partner Network member</span>
             <div class="trust-badge">
               <span class="trust-badge-text">Upwork Top Rated Plus</span>
@@ -541,22 +535,25 @@
           <div class="form-card reveal" id="contact-form">
             <h3 class="form-title">Request Your Free Marketplace Audit</h3>
             <div class="about-form-progress" id="about-form-progress" data-step="1" aria-hidden="true"><span></span></div>
-            <p class="about-form-step-label" id="about-form-step-label">Step 1 of 2: Your Info</p>
+            <p class="about-form-step-label" id="about-form-step-label" aria-live="polite">Step 1 of 2: Your Info</p>
             <form class="contact-form" id="about-contact-form" action="https://formspree.io/f/xlgakqbq" method="POST" novalidate>
               <div class="about-form-step active" id="about-form-step-1" data-step="1">
                 <div class="form-row">
                   <div class="form-group">
                     <label class="form-label" for="first-name">First Name *</label>
                     <input class="form-input" type="text" id="first-name" name="first-name" placeholder="John" required autocomplete="given-name">
+                    <p class="form-error" id="first-name-error" role="alert">Enter your first name.</p>
                   </div>
                   <div class="form-group">
                     <label class="form-label" for="last-name">Last Name *</label>
                     <input class="form-input" type="text" id="last-name" name="last-name" placeholder="Smith" required autocomplete="family-name">
+                    <p class="form-error" id="last-name-error" role="alert">Enter your last name.</p>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="form-label" for="email">Business Email *</label>
                   <input class="form-input" type="email" id="email" name="email" placeholder="john@yourbrand.com" required autocomplete="email">
+                    <p class="form-error" id="email-error" role="alert">Enter a valid work email.</p>
                 </div>
                 <button type="button" class="form-btn" id="about-form-next">Next: About Your Brand &rarr;</button>
               </div>
@@ -569,6 +566,7 @@
                   <div class="form-group">
                     <label class="form-label" for="company">Company / Brand Name *</label>
                     <input class="form-input" type="text" id="company" name="company" placeholder="Your Brand LLC" required autocomplete="organization">
+                    <p class="form-error" id="company-error" role="alert">Enter your company or brand name.</p>
                   </div>
                 </div>
                 <div class="form-group">
@@ -579,6 +577,7 @@
                     <option value="walmart">Walmart.com only</option>
                     <option value="both">Both Amazon &amp; Walmart.com</option>
                   </select>
+                    <p class="form-error" id="marketplace-error" role="alert">Select a marketplace.</p>
                 </div>
                 <div class="form-row">
                   <div class="form-group">
@@ -592,6 +591,7 @@
                       <option value="5m-20m">$5M &ndash; $20M</option>
                       <option value="over-20m">Over $20M</option>
                     </select>
+                    <p class="form-error" id="revenue-error" role="alert">Select your revenue range.</p>
                   </div>
                   <div class="form-group">
                     <label class="form-label" for="adspend">Monthly ad spend <span class="form-optional">(optional)</span></label>
@@ -718,6 +718,7 @@
 
   <script src="/js/main.js" defer></script>
 
+
 <script>
 (function () {
   var form = document.getElementById('about-contact-form');
@@ -728,48 +729,86 @@
   var backBtn = document.getElementById('about-form-back');
   var label = document.getElementById('about-form-step-label');
   var prog = document.getElementById('about-form-progress');
+  var step1Fields = ['first-name', 'last-name', 'email'];
+  var step2Required = ['company', 'marketplace', 'revenue'];
+
+  function clearInvalid(ids) {
+    ids.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.classList.remove('is-invalid');
+      el.removeAttribute('aria-invalid');
+      var err = document.getElementById(id + '-error');
+      if (err) err.classList.remove('is-visible');
+    });
+  }
+
+  function markInvalid(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.classList.add('is-invalid');
+    el.setAttribute('aria-invalid', 'true');
+    var err = document.getElementById(id + '-error');
+    if (err) err.classList.add('is-visible');
+  }
+
   function showStep(n) {
     step1.classList.toggle('active', n === 1);
     step2.classList.toggle('active', n === 2);
     if (label) label.textContent = n === 1 ? 'Step 1 of 2: Your Info' : 'Step 2 of 2: Your Business';
     if (prog) prog.setAttribute('data-step', String(n));
   }
-  if (nextBtn) nextBtn.addEventListener('click', function () {
+
+  function goNext() {
+    clearInvalid(step1Fields);
     var fname = document.getElementById('first-name');
     var lname = document.getElementById('last-name');
     var email = document.getElementById('email');
-    [fname, lname, email].forEach(function (el) { if (el) el.style.borderColor = ''; });
     var ok = true;
-    if (!fname || !fname.value.trim()) { if (fname) fname.style.borderColor = '#EF4444'; ok = false; }
-    if (!lname || !lname.value.trim()) { if (lname) lname.style.borderColor = '#EF4444'; ok = false; }
-    if (!email || !email.value.trim() || !email.checkValidity()) { if (email) email.style.borderColor = '#EF4444'; ok = false; }
-    if (!ok) return;
+    var firstBad = null;
+    if (!fname || !fname.value.trim()) { markInvalid('first-name'); ok = false; firstBad = firstBad || fname; }
+    if (!lname || !lname.value.trim()) { markInvalid('last-name'); ok = false; firstBad = firstBad || lname; }
+    if (!email || !email.value.trim() || !email.checkValidity()) { markInvalid('email'); ok = false; firstBad = firstBad || email; }
+    if (!ok) { if (firstBad) firstBad.focus(); return false; }
     showStep(2);
-  });
-  if (backBtn) backBtn.addEventListener('click', function () { showStep(1); });
-})();
-</script>
+    var phone = document.getElementById('phone');
+    if (phone) phone.focus();
+    return true;
+  }
 
-<script>
-(function () {
-  function scrubModalDashes() {
-    var modal = document.getElementById('audit-modal');
-    if (!modal) return;
-    var walk = document.createTreeWalker(modal, NodeFilter.SHOW_TEXT, null);
-    var node;
-    while ((node = walk.nextNode())) {
-      if (node.nodeValue && node.nodeValue.indexOf('\u2014') !== -1) {
-        node.nodeValue = node.nodeValue.split('\u2014').join(':');
-      }
+  function goBack() {
+    clearInvalid(step2Required);
+    showStep(1);
+    var fname = document.getElementById('first-name');
+    if (fname) fname.focus();
+  }
+
+  if (nextBtn) nextBtn.addEventListener('click', function () { goNext(); });
+  if (backBtn) backBtn.addEventListener('click', function () { goBack(); });
+
+  // Capture: Enter in step 1 must run Next, not Formspree via main.js
+  form.addEventListener('submit', function (e) {
+    if (step1.classList.contains('active')) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      goNext();
+      return;
     }
-  }
-  function boot() {
-    scrubModalDashes();
-    var obs = new MutationObserver(scrubModalDashes);
-    obs.observe(document.body, { childList: true, subtree: true });
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
-  else boot();
+    // Step 2: enforce required fields like the modal (checkValidity / reportValidity)
+    clearInvalid(step2Required.concat(step1Fields));
+    if (!form.checkValidity()) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      // Mirror native reportValidity while also applying .is-invalid
+      step2Required.forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el && !el.checkValidity()) markInvalid(id);
+      });
+      form.reportValidity();
+      return;
+    }
+    // Valid step 2: let main.js contact-form handler post to Formspree
+  }, true);
 })();
 </script>
 

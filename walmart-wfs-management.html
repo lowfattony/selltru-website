@@ -28,39 +28,33 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://assets.calendly.com">
   <script src="https://assets.calendly.com/assets/external/widget.js" async defer></script>
+  <style>
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.revealed { opacity: 1; transform: none; }
+    .page-hero.walmart-hero {
+      background: linear-gradient(150deg, #001E6C 0%, #003087 50%, #0041A8 100%);
+    }
+    .walmart-hero .page-hero-bg {
+      background: radial-gradient(ellipse at 80% 40%, rgba(255,194,32,0.12) 0%, transparent 50%),
+                  radial-gradient(ellipse at 10% 80%, rgba(0,48,135,0.6) 0%, transparent 50%);
+    }
+    .stats-band.walmart-band {
+      background: linear-gradient(135deg, #003087 0%, #0052CC 100%);
+    }
+    .walmart-tag { color: #0052CC; }
+
+    .why-icon svg, .smc-icon svg { width: 22px; height: 22px; display: block; }
+    .why-icon.blue { color: var(--blue); }
+    .why-icon.orange { color: var(--orange); }
+    .why-icon.green { color: var(--blue); }
+    .smc-icon { color: var(--blue); display: flex; align-items: center; }
+  </style>
   <script src="/js/components.js" defer></script>
   <script>
     !function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments);};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f);}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");
     oaiq("init", { pixelId: "UeyzoKe3VtFvfSMqVPUoaN" });
   </script>
-  <style>
-    .buyer-wrap { max-width: 800px; }
-    .buyer-wrap h2 { font-family: var(--font-head); font-size: clamp(26px, 3vw, 34px); font-weight: 800; color: var(--navy); margin: 40px 0 12px; letter-spacing: -0.5px; line-height: 1.15; }
-    .buyer-wrap h3 { font-family: var(--font-head); font-size: 20px; font-weight: 700; color: var(--navy); margin: 26px 0 8px; }
-    .buyer-wrap p, .buyer-wrap li { font-size: 16.5px; line-height: 1.75; color: var(--text); }
-    .buyer-wrap p { margin: 0 0 16px; }
-    .buyer-wrap ul, .buyer-wrap ol { margin: 0 0 18px 1.25em; }
-    .buyer-wrap li { margin-bottom: 8px; }
-    .buyer-wrap a { color: var(--blue); font-weight: 600; }
-    .buyer-note { background: var(--gray-50); border-left: 3px solid var(--orange); border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 8px 0 24px; }
-    .buyer-note p:last-child { margin-bottom: 0; }
-    .crumbs { font-size: 13px; color: rgba(255,255,255,0.75); margin-bottom: 14px; }
-    .crumbs a { color: #fff; font-weight: 600; text-decoration: none; }
-    .crumbs a:hover { text-decoration: underline; }
-    .buyer-faq details { background: #fff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 16px 20px; margin-bottom: 10px; }
-    .buyer-faq summary { font-family: var(--font-head); font-weight: 700; cursor: pointer; color: var(--navy); font-size: 16px; }
-    .buyer-faq details p { margin: 12px 0 0; color: var(--text-light); }
-    .mid-cta { background: rgba(26,86,219,0.06); border-left: 3px solid #1A56DB; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 28px 0; }
-    .mid-cta p { margin: 0 0 14px; }
-    .cta-buttons .btn { margin: 6px 8px 6px 0; }
-    .buyer-table-wrap { overflow-x: auto; margin: 8px 0 24px; }
-    .buyer-table { width: 100%; border-collapse: collapse; font-size: 15px; background: #fff; }
-    .buyer-table caption { caption-side: bottom; text-align: left; font-size: 13px; color: var(--text-light); padding-top: 8px; }
-    .buyer-table th, .buyer-table td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--gray-200); }
-    .buyer-table th { font-family: var(--font-head); color: var(--navy); font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; }
-    .buyer-table td:first-child { font-weight: 700; color: var(--navy); white-space: nowrap; }
-    @media (max-width: 640px) { .buyer-wrap { max-width: 100%; } .buyer-table td:first-child { white-space: normal; } }
-  </style>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -164,6 +158,7 @@
 </head>
 <body>
 
+
 <selltru-header><header class="nav" role="banner">
   <div class="container">
     <div class="nav-inner">
@@ -202,7 +197,7 @@
   <div class="email-bar-inner">
     <div class="email-bar-copy">
       <span class="email-bar-label">Free Download</span>
-      <span class="email-bar-text">Get the Amazon Audit Checklist we use on every account we take over.</span>
+      <span class="email-bar-text">Get the Walmart Audit Checklist we use on every account we take over.</span>
     </div>
     <form class="email-bar-form" id="email-bar-form" novalidate>
       <input type="email" name="email" class="email-bar-input" placeholder="Your work email" aria-label="Your work email" required autocomplete="email">
@@ -216,134 +211,332 @@
   <input type="email" name="email">
   <input type="hidden" name="source">
 </form></selltru-header>
-<main>
+  <main>
 
-    <section class="page-hero" aria-label="Walmart WFS Management">
+    <section class="page-hero walmart-hero" aria-label="Walmart WFS Management">
       <div class="page-hero-bg" aria-hidden="true"></div>
       <div class="container">
         <div class="page-hero-inner">
-          <p class="crumbs"><a href="/">Home</a> / <a href="/walmart-marketing">Walmart Marketing</a> / WFS</p>
-          <p class="section-tag light" style="margin-bottom:14px;">Walmart WFS</p>
-          <h1>Walmart WFS Management</h1>
-          <p>Enrollment, inbound shipments, fees, and replenishment for brands that want Walmart to pick, pack, and ship.</p>
-          <div class="cta-buttons">
+          <p class="section-tag light" style="margin-bottom:14px;">Walmart WFS Management</p>
+          <h1>Walmart WFS Management That Keeps Items In Stock. <span>Enrollment, Inbound, Inventory.</span></h1>
+          <p>WFS eligibility, inbound setup, and inventory cadence for Brand Portal brands doing $1M to $20M. Part of the same team that runs item pages and <a href="/walmart-connect-ads-agency" style="color:#fff;font-weight:700;">Walmart Connect ads</a>. $150M+ managed across 200+ brands.</p>
+          <div style="display:flex; gap:14px; flex-wrap:wrap;">
             <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Walmart Audit</a>
-            <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=walmart-wfs-management" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
+            <a class="btn btn-outline-white" href="#whats-included">View All Services</a>
           </div>
-          <div style="margin-top:28px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-            <span class="amz-text-badge amz-text-badge--on-dark">Amazon Ads Partner Network member</span>
-            <div class="trust-badge"><span class="trust-badge-text">$150M+ sales managed</span></div>
-            <div class="trust-badge"><span class="trust-badge-text">200+ brands</span></div>
+          <div style="margin-top:36px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+            <div class="trust-badge-wmt">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220" transform="rotate(0 10 10) translate(0,-5.5)"/>
+                <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(60 10 10) translate(0,-5.5)"/>
+                <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220" transform="rotate(120 10 10) translate(0,-5.5)"/>
+                <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(180 10 10) translate(0,-5.5)"/>
+                <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220" transform="rotate(240 10 10) translate(0,-5.5)"/>
+                <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(300 10 10) translate(0,-5.5)"/>
+              </svg>
+              <span class="trust-badge-text" style="color:#fff;">Walmart Marketplace Partner</span>
+            </div>
+            <div class="trust-badge">
+              <span class="trust-badge-text">3x Walmart Connect growth</span>
+            </div>
+            <div class="trust-badge">
+              <span class="trust-badge-text">$150M+ sales managed</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="service-detail-section" aria-label="Service detail">
+    <div class="stats-band walmart-band">
       <div class="container">
-        <div class="buyer-wrap">
-
-          <p>Walmart WFS management covers enrollment, the inbound shipment, the fee choice, and the replenishment after the first case arrives. SellTru does that for brands doing $1M to $20M that already sell on Walmart, or that are ready to. We are an Amazon Ads Partner Network member, with $150M+ in marketplace sales managed across 200+ brands. The how-to is the <a href="/blog/walmart-fulfillment-services-wfs-guide">WFS guide</a>. This page is the ongoing work. Listings and Connect ads around it sit on the <a href="/walmart-marketplace-agency">Walmart marketplace agency</a> page.</p>
-          <p>WFS is a fulfillment program, not a traffic program. A badge on an item Walmart shoppers do not want is still storage. We decide which SKUs belong in the building before we schedule the pickup.</p>
-
-          <h2>What WFS is and who qualifies</h2>
-          <p>Walmart Fulfillment Services is Walmart's version of FBA. You send inventory in. Walmart stores it, picks, packs, and ships. The listing can show a Fulfilled by Walmart badge, and qualifying items can show a 2-day shipping tag. Walmart also handles customer service and returns on WFS orders. The guide is clear that there is no setup fee and no monthly fee to enroll. You pay fulfillment and storage.</p>
-          <p>You do not need WFS to sell on Walmart. Seller-fulfilled orders and a 3PL are allowed. The guide still recommends WFS for most serious sellers because of the badge, the delivery speed, and the conversion difference Walmart has reported. That report, quoted on the guide, is a conversion-rate increase of over 30% on WFS items versus seller-fulfilled ones. It is Walmart's figure, not a SellTru promise, and it is not a reason to inbound a product that should not be on the channel.</p>
-          <p>Who qualifies is an application, not a toggle. Seller Center asks for last year's revenue, SKU count and the share that are new, average selling price, and whether you are the brand owner, an authorized seller, or a reseller. Walmart recommends starting with at least 50 items and replenishing on a steady cadence. A smaller catalog can still be a conversation. We will say if the application is early.</p>
-
-          <h2>WFS fees explained</h2>
-          <p>The <a href="/blog/walmart-fulfillment-services-wfs-guide">WFS guide</a> is the comparison we use, and it tells you to confirm the live rate card before you model margin. For most products at or above about one pound, WFS fulfillment runs about 15% less than FBA. Under 4 ounces, the guide says Amazon still has a small edge, around $3.06 versus $3.45 a unit. Storage on WFS is a flat $0.75 per cubic foot year-round. The guide puts standard FBA storage near $0.78, and peak FBA storage, October to December, near $2.40, with no matching peak surcharge on WFS.</p>
-          <p>WFS has no inbound placement fee. The guide also notes multi-channel fulfillment for Shopify, eBay, and Etsy orders since late 2024. There is no WFS calculator on this site. The rate card moves, including incentives Walmart runs for newer sellers, so Seller Center is the number you should model. The table is the guide's summary, not a bid.</p>
-          <div class="buyer-table-wrap">
-            <table class="buyer-table">
-              <caption>Summary from the WFS guide. Confirm the current WFS and FBA rate cards before you model margin.</caption>
-              <thead>
-                <tr><th>Fee</th><th>Amazon FBA</th><th>Walmart WFS</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>Fulfillment, about 1 lb and up</td><td>Higher</td><td>About 15% less on average</td></tr>
-                <tr><td>Storage, standard</td><td>About $0.78 per cu ft</td><td>$0.75 per cu ft</td></tr>
-                <tr><td>Peak storage, Oct to Dec</td><td>About $2.40 per cu ft</td><td>$0.75 per cu ft, no surcharge</td></tr>
-                <tr><td>Inbound placement</td><td>Yes, and it varies</td><td>None</td></tr>
-                <tr><td>Multi-channel fulfillment</td><td>Yes</td><td>Yes, since late 2024</td></tr>
-              </tbody>
-            </table>
+        <div class="stats-inner">
+          <div class="stat-item">
+            <div class="stat-number">$150M+</div>
+            <div class="stat-label">Sales Managed</div>
           </div>
-          <p>A fee advantage that strands the item is not a win. If the Walmart listing cannot earn the order, cheaper fulfillment is a cheaper way to store product nobody buys. Contribution margin after the real fee is the number that matters, not the badge by itself.</p>
-
-          <div class="mid-cta">
-            <p><strong>Want the fee picture on the SKUs you would actually ship?</strong></p>
-            <div class="cta-buttons">
-              <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Walmart Audit</a>
-              <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=walmart-wfs-management" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
-            </div>
+          <div class="stat-item">
+            <div class="stat-number">200+</div>
+            <div class="stat-label">Brands Supported</div>
           </div>
-
-          <h2>Enrollment and inbound setup</h2>
-          <p>Apply in Seller Center before you build the shipment. Approval is the first deliverable. Then convert the item to WFS, wait until that conversion shows as processed, and only then ship. The guide is blunt that converting a listing is not the same as having stock in the building. Until units are received, the SKU is not WFS inventory, and an ad against it is a click you cannot fulfill.</p>
-          <p>Labeling and carton prep stay with your warehouse or a prep partner you choose. We do not run a prep center. We set the shipment up, specify what receiving requires, and reconcile what Walmart checks in. The same line we use on <a href="/amazon-fba-management-services">Amazon FBA management</a>: plan and reconcile. We do not polybag the goods.</p>
-          <p>We do not move units out of FBA to fill WFS. Those units are in Amazon's buildings. WFS gets its own inbound. The split is planned so Q4 on Amazon is not emptied to stock a second channel that has not earned the units yet.</p>
-
-          <h2>FBA vs WFS</h2>
-          <p>The model matches. The operations do not. FBA shipments can split across buildings and can carry inbound placement fees. The guide describes WFS as one destination, without that placement fee. Storage seasonality is the other split: FBA peak pricing, WFS flat pricing. Returns and customer service on WFS orders sit with Walmart, the way FBA orders sit with Amazon.</p>
-          <p>None of that makes the catalogs copies of each other. A Walmart title is not an Amazon title pasted across. The <a href="/walmart-marketplace-agency">Walmart marketplace agency</a> page is the listing and ads sequence. This page stops at fulfillment: which SKUs belong in WFS, how they get there, and how they stay supplied without a second forgotten spreadsheet.</p>
-          <div class="buyer-note">
-            <p><strong>Two piles of inventory, one owner.</strong> If Amazon and Walmart are both in scope, replenishment has to feed both. We would rather delay a WFS launch a week than advertise an item that cannot ship, or pull Amazon cover down to make the second channel look active.</p>
+          <div class="stat-item">
+            <div class="stat-number">90%</div>
+            <div class="stat-label">Client Retention</div>
           </div>
-
-          <h2>WFS and Walmart search rank</h2>
-          <p>The <a href="/blog/how-to-rank-on-walmart-search-2026">Walmart search ranking guide</a> says WFS products get preferential treatment in search, and that two-day delivery is a trust signal the algorithm reflects. Seller-fulfilled items can still win the order. They have a harder time winning the visibility when a WFS offer shows a faster date. We do not treat the badge as a ranking switch you can flip with an empty warehouse. The badge follows received inventory.</p>
-          <p>If the price is out of range, the same guide says the listing will struggle no matter the fulfillment method. WFS does not repair a price Walmart is already suppressing. Fix the offer, then inbound. Ads come after the item can ship, which is the same order on the marketplace agency page.</p>
-
-          <div class="mid-cta">
-            <p><strong>If the Walmart items are still shipping from your warehouse, start with which SKUs belong in WFS.</strong></p>
-            <div class="cta-buttons">
-              <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Walmart Audit</a>
-              <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=walmart-wfs-management" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
-            </div>
+          <div class="stat-item">
+            <div class="stat-number">3x</div>
+            <div class="stat-label">Walmart Connect Growth</div>
           </div>
+        </div>
+      </div>
+    </div>
 
-          <h2>FAQ</h2>
-          <div class="buyer-faq">
-<details>
-<summary>What are WFS fees?</summary>
-<p>Fulfillment, storage, and nothing to enroll. The WFS guide puts fulfillment about 15% below FBA for most products around one pound and up, storage at $0.75 per cubic foot year-round, and no inbound placement fee. FBA peak storage in that comparison is about $2.40 per cubic foot from October to December. There is no setup fee and no monthly fee to enroll. Confirm the current rate card in Seller Center before you model it. We do not publish a calculator.</p>
-</details>
-<details>
-<summary>Is WFS worth it?</summary>
-<p>For a brand that can replenish a second pool of inventory, and that has items Walmart shoppers will reorder, usually yes. The badge, the 2-day tag, and Walmart's reported conversion gap versus seller-fulfilled items are why the guide recommends it. It is not worth it for a SKU you cannot keep in stock, or for a price Walmart is already suppressing. We will say that on the audit.</p>
-</details>
-<details>
-<summary>Can I use FBA inventory?</summary>
-<p>No. Units in FBA stay in Amazon's warehouses. WFS needs its own shipment. Converting the Walmart listing does not move Amazon inventory, and it does not put stock in a Walmart building. The FBA management page is where the two pools get planned so one channel is not emptied to feed the other.</p>
-</details>
-<details>
-<summary>How does WFS affect the Buy Box?</summary>
-<p>The Fulfilled by Walmart badge and a faster delivery date are what shoppers and the offer compare. That promise matters for the Buy Box and for conversion. A seller-fulfilled item can still win. It loses more often when a WFS competitor shows a better delivery date. The badge does not help an item with no units received.</p>
-</details>
-<details>
-<summary>How do I enroll?</summary>
-<p>Apply in Seller Center. Walmart reviews revenue, SKU count and the share of new products, average selling price, and whether you are the brand owner, an authorized seller, or a reseller. The guide says Walmart recommends at least 50 items and steady replenishment, and that enrollment has no setup or monthly fee. After approval, convert the item, ship the inbound, and wait for received units before you scale ads.</p>
-</details>
+    <section class="service-detail-section" id="why-wfs" aria-label="Why WFS management">
+      <div class="container">
+        <div class="section-header center reveal">
+          <p class="section-tag walmart-tag">Why WFS Management</p>
+          <h2 class="section-title">Walmart Rank Does Not Survive<br>Empty Fulfillment Nodes.</h2>
+          <p class="section-sub wide">
+            Broader Walmart work sits on <a href="/walmart-marketplace-agency" style="color:var(--blue);">Walmart marketplace</a> and <a href="/walmart-marketing" style="color:var(--blue);">Walmart marketing</a>. This page is the fulfillment layer.
+          </p>
+        </div>
+        <div class="why-grid reveal">
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z"/>
+    <path d="M6 18h12"/>
+    <path d="M6 14h12"/>
+    <rect x="6" y="10" width="12" height="12"/>
+  </svg></div>
+            <h3>WFS Enrollment Done Right</h3>
+            <p>Eligibility, inbound setup, and the first shipments planned so units do not sit in limbo. We do not enroll every SKU by default.</p>
           </div>
-          <p>The WFS guide stays the step-by-step, including the rate comparison you should confirm live. This page is the management after the first shipment.</p>
-
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
+    <path d="M15 18H9"/>
+    <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/>
+    <circle cx="17" cy="18" r="2"/>
+    <circle cx="7" cy="18" r="2"/>
+  </svg></div>
+            <h3>Inbound and Inventory Cadence</h3>
+            <p>Shipment plans tied to sell-through. Stockouts and overstock both hurt rank and margin on Walmart.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <line x1="12" y1="20" x2="12" y2="10"/>
+    <line x1="18" y1="20" x2="18" y2="4"/>
+    <line x1="6" y1="20" x2="6" y2="16"/>
+  </svg></div>
+            <h3>WFS and Search Rank</h3>
+            <p>Fulfillment speed and availability feed Walmart search. Ads without stock are wasted Connect spend.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M16.5 9.4 7.55 4.24"/>
+    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+    <polyline points="3.29 7 12 12 20.71 7"/>
+    <line x1="12" y1="22" x2="12" y2="12"/>
+  </svg></div>
+            <h3>FBA vs WFS Clarity</h3>
+            <p>Different networks, different fees, different lead times. We map which SKUs belong on WFS vs seller-fulfilled.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="m3 11 18-5v12L3 14v-3z"/>
+    <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>
+  </svg></div>
+            <h3>Tied to Connect Ads</h3>
+            <p>WFS inventory signals feed Walmart Connect. See <a href="/walmart-connect-ads-agency" style="color:var(--blue);">Walmart Connect ads</a>.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+    <path d="m9 12 2 2 4-4"/>
+  </svg></div>
+            <h3>Same Team as Item Pages</h3>
+            <p>Fulfillment and content share one plan. $150M+ managed across 200+ brands. 90% retention. Flat retainers from $3K.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="cta-section" aria-label="Booking">
+    <section class="service-detail-section alt" id="whats-included" aria-label="What is included">
       <div class="container">
-        <h2>Book a free 30-minute strategy call</h2>
-        <p>Or send the audit. We look at which SKUs can actually be replenished on both channels before we talk about a WFS inbound.</p>
+        <div class="section-header center reveal">
+          <p class="section-tag walmart-tag">What's Included</p>
+          <h2 class="section-title">Walmart WFS Management.</h2>
+          <p class="section-sub">SellTru enrolls, ships, and restocks WFS for brands that need Walmart speed without guessing at fees. 90% retention. Flat retainers from $3K.</p>
+        </div>
+        <div class="services-cards-grid">
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+    <path d="M12 11h4"/>
+    <path d="M12 16h4"/>
+    <path d="M8 11h.01"/>
+    <path d="M8 16h.01"/>
+  </svg></div>
+            <h3>Eligibility Review</h3>
+            <p>Which items qualify for WFS, fee impact, and whether seller-fulfilled still wins on margin.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z"/>
+    <path d="M6 18h12"/>
+    <path d="M6 14h12"/>
+    <rect x="6" y="10" width="12" height="12"/>
+  </svg></div>
+            <h3>Enrollment and Setup</h3>
+            <p>WFS enrollment, ship-node setup, and the first inbound plan with clear unit counts.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
+    <path d="M15 18H9"/>
+    <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/>
+    <circle cx="17" cy="18" r="2"/>
+    <circle cx="7" cy="18" r="2"/>
+  </svg></div>
+            <h3>Inbound Management</h3>
+            <p>Shipment creation, carrier timing, and receiving follow-up so inventory goes live without surprises.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/>
+  </svg></div>
+            <h3>Inventory Health</h3>
+            <p>Days of cover, stranded risk, and restock triggers tied to Walmart demand.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/>
+    <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/>
+    <path d="M12 3v6"/>
+  </svg></div>
+            <h3>Item Page Alignment</h3>
+            <p>Fulfillment badges and content that match what shoppers see. See <a href="/walmart-a-plus-content" style="color:var(--blue);">Walmart A+</a>.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+    <circle cx="9" cy="7" r="4"/>
+    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+  </svg></div>
+            <h3>Flat Retainer Pricing</h3>
+            <p>WFS ops inside a Walmart retainer or scoped project. Models on the <a href="/marketplace-agency-pricing" style="color:var(--blue);">pricing guide</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process-section" aria-label="Process">
+      <div class="container">
+        <div class="section-header center reveal">
+          <p class="section-tag light">Getting Started</p>
+          <h2 class="section-title light">Here's How WFS<br>Work Starts.</h2>
+          <p class="section-sub light">Eligibility first. Inbound second. Restock on a cadence.</p>
+        </div>
+        <div class="process-grid">
+          <div class="process-connector" aria-hidden="true"></div>
+          <div class="process-step reveal">
+            <div class="process-num">01</div>
+            <h3>WFS Audit</h3>
+            <p>Fees, eligibility, and which SKUs belong on WFS vs seller-fulfilled.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">02</div>
+            <h3>Enroll and Inbound</h3>
+            <p>Ship-node setup and the first inbound plan with clear unit counts.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">03</div>
+            <h3>Run Inventory</h3>
+            <p>Restock triggers, receiving follow-up, and ads tied to stock.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq" aria-label="Walmart WFS FAQ">
+      <div class="container">
+        <div class="faq-layout">
+          <div class="faq-intro reveal">
+            <p class="section-tag">Common Questions</p>
+            <h2 class="section-title">WFS FAQ.</h2>
+            <p>Fees, FBA comparisons, and rank. Full marketplace scope sits on <a href="/walmart-marketplace-agency" style="color:var(--blue);">Walmart marketplace</a>.</p>
+            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
+          </div>
+          <div class="faq-list reveal">
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>What is WFS?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Walmart Fulfillment Services. Walmart stores and ships your inventory to customers. Fees and lead times differ from Amazon FBA.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Who should use WFS?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Brands with steady Walmart demand that need two-day speed and want Walmart to handle last-mile. Low-velocity SKUs often stay seller-fulfilled.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Do you compare FBA and WFS?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Yes. Fee math, lead times, and which channel should carry each SKU. We do not move inventory for its own sake.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Does WFS help search rank?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Availability and fulfillment speed are ranking inputs. Stockouts hurt. WFS is one path to stay in stock, not a rank guarantee.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Is Connect included?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>When scoped. Ads and WFS share inventory signals. See <a href="/walmart-connect-ads-agency" style="color:var(--blue);">Walmart Connect ads</a>.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Pricing?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Flat monthly retainers from $3K for brands doing $1M to $20M, or a scoped WFS project fee. Quoted after the audit.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" aria-label="Walmart WFS audit CTA">
+      <div class="container">
+        <h2>If WFS Enrollment or Inbound<br>Is Stuck, Start With the Audit.</h2>
+        <p>We look at eligibility, fees, and inventory before we talk about a retainer. No pitch decks. No obligation.</p>
         <div class="cta-buttons">
-          <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Walmart Audit</a>
-          <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=walmart-wfs-management" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
+          <a class="btn btn-primary btn-lg" href="/about#contact-form" data-modal-trigger="audit">Get Your Free Audit</a>
+          <a class="btn btn-outline-white btn-lg" href="tel:+19548692034">Call (954) 869-2034</a>
         </div>
-        <p style="margin-top:18px;"><a class="btn btn-outline-white" href="tel:+19548692034">Call (954) 869-2034</a></p>
+        <p style="margin-top:18px; font-size:15px; color:rgba(255,255,255,0.55);">
+          Prefer a call on the calendar?
+          <a href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=walmart-wfs-management" target="_blank" rel="noopener" style="color:var(--white); font-weight:700; text-decoration:underline;">Book a free 30-minute strategy call</a>
+        </p>
       </div>
     </section>
-</main>
+
+  </main>
+
 <selltru-footer><footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-top">

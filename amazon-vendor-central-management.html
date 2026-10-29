@@ -28,39 +28,23 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://assets.calendly.com">
   <script src="https://assets.calendly.com/assets/external/widget.js" async defer></script>
+  <style>
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.revealed { opacity: 1; transform: none; }
+    .amazon-accent { color: var(--orange); }
+
+    .why-icon svg, .smc-icon svg { width: 22px; height: 22px; display: block; }
+    .why-icon.blue { color: var(--blue); }
+    .why-icon.orange { color: var(--orange); }
+    .why-icon.green { color: var(--blue); }
+    .smc-icon { color: var(--blue); display: flex; align-items: center; }
+  </style>
   <script src="/js/components.js" defer></script>
   <script>
     !function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments);};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f);}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");
     oaiq("init", { pixelId: "UeyzoKe3VtFvfSMqVPUoaN" });
   </script>
-  <style>
-    .buyer-wrap { max-width: 800px; }
-    .buyer-wrap h2 { font-family: var(--font-head); font-size: clamp(26px, 3vw, 34px); font-weight: 800; color: var(--navy); margin: 40px 0 12px; letter-spacing: -0.5px; line-height: 1.15; }
-    .buyer-wrap h3 { font-family: var(--font-head); font-size: 20px; font-weight: 700; color: var(--navy); margin: 26px 0 8px; }
-    .buyer-wrap p, .buyer-wrap li { font-size: 16.5px; line-height: 1.75; color: var(--text); }
-    .buyer-wrap p { margin: 0 0 16px; }
-    .buyer-wrap ul, .buyer-wrap ol { margin: 0 0 18px 1.25em; }
-    .buyer-wrap li { margin-bottom: 8px; }
-    .buyer-wrap a { color: var(--blue); font-weight: 600; }
-    .buyer-note { background: var(--gray-50); border-left: 3px solid var(--orange); border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 8px 0 24px; }
-    .buyer-note p:last-child { margin-bottom: 0; }
-    .crumbs { font-size: 13px; color: rgba(255,255,255,0.75); margin-bottom: 14px; }
-    .crumbs a { color: #fff; font-weight: 600; text-decoration: none; }
-    .crumbs a:hover { text-decoration: underline; }
-    .buyer-faq details { background: #fff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 16px 20px; margin-bottom: 10px; }
-    .buyer-faq summary { font-family: var(--font-head); font-weight: 700; cursor: pointer; color: var(--navy); font-size: 16px; }
-    .buyer-faq details p { margin: 12px 0 0; color: var(--text-light); }
-    .mid-cta { background: rgba(26,86,219,0.06); border-left: 3px solid #1A56DB; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 28px 0; }
-    .mid-cta p { margin: 0 0 14px; }
-    .cta-buttons .btn { margin: 6px 8px 6px 0; }
-    .buyer-table-wrap { overflow-x: auto; margin: 8px 0 24px; }
-    .buyer-table { width: 100%; border-collapse: collapse; font-size: 15px; background: #fff; }
-    .buyer-table caption { caption-side: bottom; text-align: left; font-size: 13px; color: var(--text-light); padding-top: 8px; }
-    .buyer-table th, .buyer-table td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--gray-200); }
-    .buyer-table th { font-family: var(--font-head); color: var(--navy); font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; }
-    .buyer-table td:first-child { font-weight: 700; color: var(--navy); white-space: nowrap; }
-    @media (max-width: 640px) { .buyer-wrap { max-width: 100%; } .buyer-table td:first-child { white-space: normal; } }
-  </style>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -164,6 +148,7 @@
 </head>
 <body>
 
+
 <selltru-header><header class="nav" role="banner">
   <div class="container">
     <div class="nav-inner">
@@ -216,135 +201,330 @@
   <input type="email" name="email">
   <input type="hidden" name="source">
 </form></selltru-header>
-<main>
-    <section class="page-hero" aria-label="Amazon Vendor Central management">
+  <main>
+
+    <section class="page-hero" aria-label="Amazon Vendor Central Management">
       <div class="page-hero-bg" aria-hidden="true"></div>
       <div class="container">
         <div class="page-hero-inner">
-          <p class="crumbs"><a href="/">Home</a> / <a href="/amazon-marketing">Amazon Marketing</a> / Vendor Central</p>
           <p class="section-tag light" style="margin-bottom:14px;">Amazon Vendor Central</p>
-          <h1>Amazon Vendor Central Management</h1>
-          <p>Purchase orders, chargebacks, catalog control, and ads for brands that sell 1P. We will also tell you if 3P or a hybrid fits better. Book a call or send the audit.</p>
-          <div class="cta-buttons">
+          <h1>Amazon Vendor Central Management for 1P Brands. <span>POs, Chargebacks, Catalog, Ads.</span></h1>
+          <p>Purchase order discipline, chargeback review, catalog control, and vendor ads for brands doing $1M to $20M. $150M+ managed across 200+ brands. Amazon Ads Partner Network member.</p>
+          <div style="display:flex; gap:14px; flex-wrap:wrap;">
             <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Amazon Audit</a>
-            <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-vendor-central-management" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
+            <a class="btn btn-outline-white" href="#whats-included">View All Services</a>
           </div>
-          <div style="margin-top:28px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+          <div style="margin-top:36px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
             <span class="amz-text-badge amz-text-badge--on-dark">Amazon Ads Partner Network member</span>
-            <div class="trust-badge"><span class="trust-badge-text">$150M+ sales managed</span></div>
-            <div class="trust-badge"><span class="trust-badge-text">200+ brands</span></div>
+            <div class="trust-badge">
+              <span class="trust-badge-text">$150M+ sales managed</span>
+            </div>
+            <div class="trust-badge">
+              <span class="trust-badge-text">200+ brands</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="service-detail-section" aria-label="Service detail">
+    <div class="stats-band">
       <div class="container">
-        <div class="buyer-wrap">
-
-          <p>Amazon Vendor Central management is the operating work for a 1P brand: purchase orders, the chargebacks that follow them, the catalog Amazon is buying, and the ads that run inside the vendor account. SellTru does that work. The <a href="/amazon-marketing">Amazon marketing</a> page lists Seller and Vendor Central because we work in both logins. It is not a badge from a vendor partner program, and we will not dress it up as one.</p>
-          <p>Company-wide, SellTru has managed $150M+ in marketplace sales across 200+ brands, with 90% retention. Those figures describe the company. They are not a chargeback recovery rate and they are not a promise about your vendor terms. We are an Amazon Ads Partner Network member. If you sell on Seller Central instead, the matching scope is <a href="/amazon-account-management-services">Amazon account management</a>.</p>
-
-          <h2>1P vs 3P</h2>
-          <p>Vendor Central vs Seller Central is a different business, not a different skin on the same dashboard. On Vendor Central you are a wholesaler. Amazon sends a purchase order, you ship it, and Amazon sells to the customer at a price Amazon sets. On Seller Central you are the seller. You set the price, you own the customer order, and you replenish FBA or ship it yourself. Amazon 1P management is the first model. Calling it "account management" without saying which login you mean is how scopes get confused.</p>
-          <div class="buyer-table-wrap">
-            <table class="buyer-table">
-              <caption>1P and 3P are different logins. Your vendor agreement can change the margin. We read it on the audit.</caption>
-              <thead>
-                <tr><th></th><th>Vendor Central (1P)</th><th>Seller Central (3P)</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>Who the shopper buys from</td><td>Amazon</td><td>Your brand</td></tr>
-                <tr><td>How product moves</td><td>Purchase orders you confirm and ship</td><td>You send FBA or fulfill the order</td></tr>
-                <tr><td>Who sets the retail price</td><td>Amazon</td><td>You</td></tr>
-                <tr><td>Where the work lives</td><td>Vendor Central</td><td>Seller Central</td></tr>
-              </tbody>
-            </table>
+        <div class="stats-inner">
+          <div class="stat-item">
+            <div class="stat-number">$150M+</div>
+            <div class="stat-label">Sales Managed</div>
           </div>
-          <p>Brand Registry can apply to either login. The <a href="/blog/what-is-amazon-brand-registry">Brand Registry guide</a> says the trademark and the account have to sit under the same legal entity, whether that account is Seller or Vendor. Enrollment steps live in that guide. This page assumes you are already in the vendor relationship, or you are deciding whether to stay in it.</p>
-
-          <h2>PO and chargeback management</h2>
-          <p>A purchase order is not a suggestion you glance at. It has a ship window, a quantity, and a destination. Missing the window or shipping a quantity Amazon did not receive is how a shortage claim starts. We confirm the POs you intend to fill, track the dates, and reconcile what left your warehouse against what Amazon checked in. An unreconciled PO is not "Amazon being Amazon" until somebody opens it.</p>
-          <p>Vendor Central chargebacks are the invoices Amazon takes back. The types we see most often are shortage claims, price claims, prep or labeling failures, and problems with the advance ship notice or the pickup. Those names are the dispute categories in the account. We confirm which ones are actually hitting you before we build a project around a category you do not have. A dispute needs the document that matches the claim: the PO, the ASN, the carton detail, the invoice. A narrative email does not replace them.</p>
-          <p>Two jobs sit side by side, and only one of them is a dispute. The first is recovering a claim that should not have been charged. The second is fixing the warehouse step so the next PO does not earn the same claim. We do both. We do not publish a recovery dollar amount or a recovery rate. It depends on the account, the paperwork, and which claims Amazon accepts. Anyone quoting you a percentage before they have logged in is guessing.</p>
-          <div class="buyer-note">
-            <p><strong>What this is not:</strong> FBA reimbursement for lost warehouse units. That is a Seller Central problem, covered on <a href="/amazon-fba-management-services">FBA management</a>. Vendor shortage claims can look similar on a spreadsheet and they are filed in a different system, against a purchase order.</p>
+          <div class="stat-item">
+            <div class="stat-number">200+</div>
+            <div class="stat-label">Brands Supported</div>
           </div>
-
-          <h2>Catalog control</h2>
-          <p>On a vendor account, Amazon is also a retailer with its own idea of the listing. Item setup, images, titles, and variation families still have to be right, and they still get overwritten. Catalog control means knowing which fields you can edit, which changes Amazon accepted, and which ASINs are live in the vendor catalog versus stranded in a setup error.</p>
-          <p>Where the vendor account has Brand Registry, A+ Content and a Brand Store can be in scope. The content standard is the same one on our <a href="/amazon-a-plus-content">A+ content</a> and <a href="/amazon-listing-optimization-services">listing optimization</a> pages. We confirm what that vendor login can actually publish before we plan modules you cannot submit. Availability is an account fact, not a default.</p>
-          <p>We also watch for the 1P version of a hijacked page: detail-page edits you did not make, or an offer state that no longer matches the product you are shipping on the PO. Enforcement tools, when the brand is registered, are described on <a href="/amazon-brand-protection-services">Amazon brand protection</a>. Vendor management uses them. It does not replace them with a purchase order.</p>
-
-          <h2>Ads for vendors</h2>
-          <p>Ads for vendors are Amazon Ads inside Vendor Central. A lot of brand teams still say AMS. The campaigns, where the account has them, are the same family you would recognize from Seller Central: Sponsored Products, Sponsored Brands, and Sponsored Display. Not every vendor account has every type turned on. We look at the login before we propose a structure you cannot build.</p>
-          <p>The weekly pass is the one described on <a href="/amazon-ppc-management">Amazon PPC management</a>: search terms, negatives, bids, and budgets. The login is the part that changes. We do not paste a Seller Central ACOS story onto a vendor account and call it the same result. The company figure we do cite elsewhere, a 45% average ACOS reduction in the first 90 days, describes the Amazon accounts behind that stat. A vendor account is judged on its own numbers after we can see them.</p>
-          <p>Retail readiness still gates the ads. A detail page Amazon has suppressed, or a PO you cannot fill, will waste the click. We would rather pause a campaign than buy traffic for an ASIN the vendor catalog cannot sell this week.</p>
-
-          <div class="mid-cta">
-            <p><strong>Want the POs, the chargebacks, and the ad login read together?</strong> Send the audit or book the call. Say 1P up front so we do not open a Seller Central checklist.</p>
-            <div class="cta-buttons">
-            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-            <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-vendor-central-management" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
+          <div class="stat-item">
+            <div class="stat-number">90%</div>
+            <div class="stat-label">Client Retention</div>
           </div>
+          <div class="stat-item">
+            <div class="stat-number">45%</div>
+            <div class="stat-label">Avg. ACOS Drop in 90 Days</div>
           </div>
+        </div>
+      </div>
+    </div>
 
-          <h2>Switching or hybrid</h2>
-          <p>Some brands are invited into Vendor Central. Some want out. Some run both and hope the two catalogs do not fight. We do not recommend a switch from this page. On the audit we look at four things: margin after the vendor terms you actually signed, whether Amazon is still sending purchase orders, who holds the Buy Box, and whether Seller Central would give you price control you do not have as a wholesaler.</p>
-          <p>Co-op, damage allowance, freight, and payment terms live in your agreement. We read them. We do not publish a standard co-op rate, because there is not one we could honestly print. A comparison that ignores those lines will make 3P look better, or worse, than it is.</p>
-          <p>A hybrid can be the right answer: some ASINs stay on purchase orders, others move to Seller Central where you need to set the price or where Amazon has stopped ordering. It can also be a mess. Two logins, two inventory positions, and no rule for which ASIN lives where, and you end up competing with Amazon on your own product. If we recommend a hybrid, the recommendation includes that rule. The 3P operating week, once an ASIN is on Seller Central, is account management, not a second copy of this page.</p>
-          <p>Leaving Vendor Central is also operational. Open POs still have to ship or be cancelled cleanly. Chargebacks already issued still have to be disputed. Ads have to be rebuilt in the seller account, not assumed to transfer. We sequence that. We do not flip a switch and call it a migration.</p>
-
-          <div class="mid-cta">
-            <p><strong>If you are deciding whether to stay 1P, bring the terms.</strong> A call without the agreement is a tour of Vendor Central. A call with the agreement is a decision.</p>
-            <div class="cta-buttons">
-            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-            <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-vendor-central-management" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
+    <section class="service-detail-section" id="why-vendor" aria-label="Why Vendor Central management">
+      <div class="container">
+        <div class="section-header center reveal">
+          <p class="section-tag">Why Vendor Central</p>
+          <h2 class="section-title">1P Rewards Operators Who<br>Catch Chargebacks Early.</h2>
+          <p class="section-sub wide">
+            3P channel work sits on <a href="/amazon-account-management-services" style="color:var(--blue);">account management</a> and <a href="/amazon-marketing" style="color:var(--blue);">Amazon marketing</a>. This page is the Vendor Central operating layer.
+          </p>
+        </div>
+        <div class="why-grid reveal">
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+    <path d="M9 22v-4h6v4"/>
+    <path d="M8 6h.01"/>
+    <path d="M16 6h.01"/>
+    <path d="M12 6h.01"/>
+    <path d="M12 10h.01"/>
+    <path d="M12 14h.01"/>
+    <path d="M16 10h.01"/>
+    <path d="M16 14h.01"/>
+    <path d="M8 10h.01"/>
+    <path d="M8 14h.01"/>
+  </svg></div>
+            <h3>1P Is a Different Operating System</h3>
+            <p>Purchase orders, cost prices, and chargebacks replace the Seller Central Buy Box fight. The playbook is not a pasted 3P checklist.</p>
           </div>
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+    <path d="M12 11h4"/>
+    <path d="M12 16h4"/>
+    <path d="M8 11h.01"/>
+    <path d="M8 16h.01"/>
+  </svg></div>
+            <h3>PO and Chargeback Discipline</h3>
+            <p>Missed ship windows and content defects become chargebacks. We watch POs and dispute what the evidence supports.</p>
           </div>
-
-          <h2>FAQ</h2>
-          <div class="buyer-faq">
-            <details>
-<summary>What is the difference between Vendor Central and Seller Central?</summary>
-<p>Vendor Central is 1P. You sell wholesale to Amazon on purchase orders, and Amazon is the seller the customer buys from. Seller Central is 3P. Your brand sells to the customer, you set the price, and you fulfill through FBA or merchant fulfillment. The logins, the fees, and the control you keep are different. Which one is better depends on your terms and your catalog, not on a slogan.</p>
-</details>
-<details>
-<summary>What do you do with purchase orders and chargebacks?</summary>
-<p>We confirm the purchase orders you intend to ship, track the ship window, and reconcile what Amazon received. Chargebacks, including shortage claims, price claims, prep or labeling, and advance ship notice problems, get disputed with the documents that support them. We also fix the warehouse step that caused a repeat claim. We do not publish a recovery dollar amount or a recovery rate.</p>
-</details>
-<details>
-<summary>Can you run ads for a vendor account?</summary>
-<p>Yes, when the vendor account has Amazon Ads access. Many brand teams still call that AMS. The weekly work is search terms, negatives, bids, and budgets, in the vendor login rather than Seller Central. We do not assume every vendor account has the same ad types turned on. We look first.</p>
-</details>
-<details>
-<summary>Should we stay 1P, move to 3P, or run both?</summary>
-<p>We will not answer that from a blog post. On the audit we read margin after your vendor terms, whether Amazon is sending purchase orders, who holds the Buy Box, and whether Seller Central would give you price control you do not have now. A hybrid, some ASINs wholesale and some on Seller Central, needs a rule for which ASIN lives where so you are not competing with yourself.</p>
-</details>
-<details>
-<summary>What does Vendor Central management cost?</summary>
-<p>We do not publish a separate monthly figure on this page. Scope is set after we read the vendor account: purchase order volume, chargeback load, catalog size, and whether ads are included. Ongoing retainers are described on the pricing guide. Amazon's own terms, including co-op or freight if your agreement has them, are paid under that agreement, not to SellTru as a standard rate.</p>
-</details>
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 20h9"/>
+    <path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506L3 20l.859-3.513a2 2 0 0 1 .506-.854z"/>
+  </svg></div>
+            <h3>Catalog Control</h3>
+            <p>Vendor catalog accuracy drives discoverability and fewer suppressions. Titles and images still matter when Amazon is the seller of record.</p>
           </div>
-          <p>The team is in Fort Lauderdale, at 333 Las Olas Way, Fort Lauderdale, FL 33301. Call <a href="tel:+19548692034">(954) 869-2034</a> if you want a person instead of a form. Retainer models, without a Vendor Central rate card, are on the <a href="/marketplace-agency-pricing">Marketplace agency pricing</a> guide.</p>
-
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="m3 11 18-5v12L3 14v-3z"/>
+    <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>
+  </svg></div>
+            <h3>Ads for Vendors</h3>
+            <p>Amazon Marketing Services and vendor retail ads need the same TACOS discipline as 3P. We are an Amazon Ads Partner Network member.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+    <polyline points="2 17 12 22 22 17"/>
+    <polyline points="2 12 12 17 22 12"/>
+  </svg></div>
+            <h3>Hybrid 1P and 3P</h3>
+            <p>Many brands run both. We help you see where 1P helps distribution and where 3P keeps margin, without pretending one replaces the other.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="m11 17 2 2a1 1 0 1 0 3-3"/>
+    <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/>
+    <path d="m21 3 1 11h-2"/>
+    <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/>
+    <path d="M3 4h8"/>
+  </svg></div>
+            <h3>Straight Talk on Switching</h3>
+            <p>Moving fully to 1P or back to 3P is a business decision. We will say when Vendor Central is a bad fit for your catalog.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="cta-section" aria-label="Booking">
+    <section class="service-detail-section alt" id="whats-included" aria-label="What is included">
       <div class="container">
-        <h2>Book a free 30-minute strategy call</h2>
-        <p>Or send the audit. Tell us whether you are 1P, 3P, or both, and whether chargebacks or ads are the reason you wrote.</p>
+        <div class="section-header center reveal">
+          <p class="section-tag">What's Included</p>
+          <h2 class="section-title">Amazon Vendor Central Management.</h2>
+          <p class="section-sub">SellTru supports 1P and hybrid brands. 90% retention. Flat retainers from $3K. Straight advice when Vendor Central is the wrong tool for an ASIN.</p>
+        </div>
+        <div class="services-cards-grid">
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+    <path d="M12 11h4"/>
+    <path d="M12 16h4"/>
+    <path d="M8 11h.01"/>
+    <path d="M8 16h.01"/>
+  </svg></div>
+            <h3>PO Management</h3>
+            <p>Accept, acknowledge, and track purchase orders. Flag short ships and window risk before they become chargebacks.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+    <polyline points="14 2 14 8 20 8"/>
+    <line x1="16" y1="13" x2="8" y2="13"/>
+    <line x1="16" y1="17" x2="8" y2="17"/>
+    <line x1="10" y1="9" x2="8" y2="9"/>
+  </svg></div>
+            <h3>Chargeback Review</h3>
+            <p>Dispute packs with shipment and content evidence. Not every chargeback is winnable. We prioritize the ones that are.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 20h9"/>
+    <path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506L3 20l.859-3.513a2 2 0 0 1 .506-.854z"/>
+  </svg></div>
+            <h3>Catalog and Content</h3>
+            <p>Vendor catalog hygiene and A+ where available. Tied to the same brand standards as your 3P listings.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="m3 11 18-5v12L3 14v-3z"/>
+    <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>
+  </svg></div>
+            <h3>Vendor Ads</h3>
+            <p>AMS and retail ad programs with clear efficiency targets. Average ACOS drop of 45% in 90 days is measured across our managed book.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <line x1="12" y1="20" x2="12" y2="10"/>
+    <line x1="18" y1="20" x2="18" y2="4"/>
+    <line x1="6" y1="20" x2="6" y2="16"/>
+  </svg></div>
+            <h3>1P vs 3P Reviews</h3>
+            <p>Quarterly look at margin, availability, and whether hybrid still makes sense for each ASIN family.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+    <circle cx="9" cy="7" r="4"/>
+    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+  </svg></div>
+            <h3>Flat Retainer Pricing</h3>
+            <p>Scoped for Vendor Central brands doing $1M to $20M. Retainers from $3K. Models on the <a href="/marketplace-agency-pricing" style="color:var(--blue);">pricing guide</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process-section" aria-label="Process">
+      <div class="container">
+        <div class="section-header center reveal">
+          <p class="section-tag light">Getting Started</p>
+          <h2 class="section-title light">Here's How Vendor<br>Central Work Starts.</h2>
+          <p class="section-sub light">POs and chargebacks first. Catalog and ads after the bleeding stops.</p>
+        </div>
+        <div class="process-grid">
+          <div class="process-connector" aria-hidden="true"></div>
+          <div class="process-step reveal">
+            <div class="process-num">01</div>
+            <h3>Vendor Audit</h3>
+            <p>Open POs, chargeback history, catalog gaps, and ad efficiency. A short written read.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">02</div>
+            <h3>Stabilize Ops</h3>
+            <p>PO acknowledgment cadence, dispute packs, and catalog fixes that stop repeat defects.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">03</div>
+            <h3>Grow What Works</h3>
+            <p>Vendor ads and assortment decisions tied to margin, not vanity revenue.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq" aria-label="Amazon Vendor Central FAQ">
+      <div class="container">
+        <div class="faq-layout">
+          <div class="faq-intro reveal">
+            <p class="section-tag">Common Questions</p>
+            <h2 class="section-title">Vendor Central FAQ.</h2>
+            <p>1P vs 3P, chargebacks, and ads. Seller Central ops sit on <a href="/amazon-account-management-services" style="color:var(--blue);">account management</a>.</p>
+            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
+          </div>
+          <div class="faq-list reveal">
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Do you replace my vendor manager?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>No. We operate alongside Amazon's vendor managers. We prepare the numbers and the catalog work so those conversations are shorter and clearer.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Seller Central or Vendor Central?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Depends on the brand. Many of our clients are 3P-first. Vendor Central is right when 1P distribution and Amazon retail demand outweigh the margin tradeoff.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Can you reduce chargebacks?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>We reduce avoidable ones with PO discipline and content fixes, and we dispute the rest when evidence exists. We do not promise a zero chargeback month.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Do you run AMS?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Yes. Vendor advertising is part of the retainer when scoped. Spend is paid to Amazon and is separate from the retainer.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Hybrid accounts?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Common. We map which ASINs belong on 1P vs 3P and keep both catalogs from fighting each other.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Pricing?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Flat monthly retainers from $3K. Quoted after an audit of POs, chargebacks, and catalog health.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" aria-label="Amazon Vendor Central audit CTA">
+      <div class="container">
+        <h2>If Chargebacks or Stale POs<br>Are Running the P&amp;L, Start With the Audit.</h2>
+        <p>We look at POs, chargebacks, catalog, and vendor ads before we talk about a retainer. No pitch decks. No obligation.</p>
         <div class="cta-buttons">
-            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Amazon Audit</a>
-            <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-vendor-central-management" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
-          </div>
-        <p style="margin-top:18px;"><a class="btn btn-outline-white" href="tel:+19548692034">Call (954) 869-2034</a></p>
+          <a class="btn btn-primary btn-lg" href="/about#contact-form" data-modal-trigger="audit">Get Your Free Audit</a>
+          <a class="btn btn-outline-white btn-lg" href="tel:+19548692034">Call (954) 869-2034</a>
+        </div>
+        <p style="margin-top:18px; font-size:15px; color:rgba(255,255,255,0.55);">
+          Prefer a call on the calendar?
+          <a href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-vendor-central-management" target="_blank" rel="noopener" style="color:var(--white); font-weight:700; text-decoration:underline;">Book a free 30-minute strategy call</a>
+        </p>
       </div>
     </section>
 
-</main>
+  </main>
+
 <selltru-footer><footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-top">

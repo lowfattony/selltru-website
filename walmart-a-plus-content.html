@@ -45,16 +45,16 @@
     .buyer-note { background: var(--gray-50); border-left: 3px solid var(--orange); border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 8px 0 24px; }
     .buyer-note p:last-child { margin-bottom: 0; }
     .crumbs { font-size: 13px; color: rgba(255,255,255,0.75); margin-bottom: 14px; }
-    .crumbs a { color: #fff; font-weight: 600; text-decoration: none; }
+    .crumbs a { color: var(--white); font-weight: 600; text-decoration: none; }
     .crumbs a:hover { text-decoration: underline; }
-    .buyer-faq details { background: #fff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 16px 20px; margin-bottom: 10px; }
+    .buyer-faq details { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 16px 20px; margin-bottom: 10px; }
     .buyer-faq summary { font-family: var(--font-head); font-weight: 700; cursor: pointer; color: var(--navy); font-size: 16px; }
     .buyer-faq details p { margin: 12px 0 0; color: var(--text-light); }
-    .mid-cta { background: rgba(26,86,219,0.06); border-left: 3px solid #1A56DB; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 28px 0; }
+    .mid-cta { background: var(--blue-light); border-left: 3px solid var(--blue); border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 28px 0; }
     .mid-cta p { margin: 0 0 14px; }
     .cta-buttons .btn { margin: 6px 8px 6px 0; }
     .buyer-table-wrap { overflow-x: auto; margin: 8px 0 24px; }
-    .buyer-table { width: 100%; border-collapse: collapse; font-size: 15px; background: #fff; }
+    .buyer-table { width: 100%; border-collapse: collapse; font-size: 15px; background: var(--white); }
     .buyer-table caption { caption-side: bottom; text-align: left; font-size: 13px; color: var(--text-light); padding-top: 8px; }
     .buyer-table th, .buyer-table td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--gray-200); }
     .buyer-table th { font-family: var(--font-head); color: var(--navy); font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; }
@@ -231,15 +231,26 @@
       <div class="container">
         <div class="page-hero-inner">
           <p class="crumbs"><a href="/">Home</a> / <a href="/walmart-marketing">Walmart Marketing</a> / A+ Content</p>
-          <p class="section-tag light" style="margin-bottom:14px;">Walmart A+ Content</p>
+          <p class="section-tag light">Walmart A+ Content</p>
           <h1>Walmart A+ Content &amp; Brand Highlights Services</h1>
           <p>Brand Highlights, rich media, and video for Brand Portal brands. Built for the Walmart shopper, not pasted from Amazon modules.</p>
-          <div class="cta-buttons">
+          <div style="display:flex; gap:14px; flex-wrap:wrap;">
             <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-            <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=walmart-a-plus-content" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
+            <a class="btn btn-outline-white" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=walmart-a-plus-content" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
           </div>
-          <div style="margin-top:28px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-            <span class="amz-text-badge amz-text-badge--on-dark">Amazon Ads Partner Network member</span>
+          <div style="margin-top:36px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+            <div class="trust-badge-wmt">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220" transform="rotate(0 10 10) translate(0,-5.5)"/>
+                <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(60 10 10) translate(0,-5.5)"/>
+                <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220" transform="rotate(120 10 10) translate(0,-5.5)"/>
+                <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(180 10 10) translate(0,-5.5)"/>
+                <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220" transform="rotate(240 10 10) translate(0,-5.5)"/>
+                <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(300 10 10) translate(0,-5.5)"/>
+              </svg>
+              <span class="trust-badge-text" style="color:var(--white);">Walmart Marketplace Partner</span>
+            </div>
+            <div class="trust-badge"><span class="trust-badge-text">3x Walmart Connect growth</span></div>
             <div class="trust-badge"><span class="trust-badge-text">$150M+ sales managed</span></div>
             <div class="trust-badge"><span class="trust-badge-text">200+ brands</span></div>
           </div>
@@ -251,7 +262,7 @@
       <div class="container">
         <div class="buyer-wrap">
 
-          <p>When brands search for a Walmart A+ agency, they usually mean Brand Highlights and rich media on Walmart.com. SellTru builds that content for Brand Portal brands doing $1M to $20M, on the same team that runs listings and <a href="/walmart-connect-ads-agency">Walmart Connect ads</a>. We are an Amazon Ads Partner Network member and a Walmart Marketplace Partner, with $150M+ in marketplace sales managed across 200+ brands. The channel overview is <a href="/walmart-marketing">Walmart marketing</a>. This page is the service.</p>
+          <p>When brands search for a Walmart A+ agency, they usually mean Brand Highlights and rich media on Walmart.com. SellTru builds that content for Brand Portal brands doing $1M to $20M, on the same team that runs listings and <a href="/walmart-connect-ads-agency">Walmart Connect ads</a>. We are an Amazon Ads Partner Network member and a Walmart Marketplace Partner, with $150M+ in marketplace sales managed across 200+ brands, 90% retention, a 45% average ACOS drop in 90 days on the Amazon accounts those stats describe, Upwork Top Rated Plus, and 3x average Year 1 Walmart Connect growth. The channel overview is <a href="/walmart-marketing">Walmart marketing</a>. This page is the service.</p>
           <p>A paid click that lands on a bare item page is a click you already paid for. Titles, attributes, and primary images belong with the rest of the listing on the <a href="/walmart-marketplace-agency">Walmart marketplace agency</a> page. Walmart A+ content is the block that answers the objection the short description did not have room for.</p>
 
           <h2>What Walmart A+ content actually is</h2>
@@ -268,9 +279,9 @@
 
           <div class="mid-cta">
             <p><strong>Want Brand Highlights built from the reviews, not from a template?</strong></p>
-            <div class="cta-buttons">
+            <div style="display:flex; gap:14px; flex-wrap:wrap;">
               <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-              <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=walmart-a-plus-content" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
+              <a class="btn btn-outline-navy" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=walmart-a-plus-content" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
             </div>
           </div>
 
@@ -299,9 +310,9 @@
 
           <div class="mid-cta">
             <p><strong>If the item page is blank below the fold, start with the audit.</strong></p>
-            <div class="cta-buttons">
+            <div style="display:flex; gap:14px; flex-wrap:wrap;">
               <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-              <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=walmart-a-plus-content" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
+              <a class="btn btn-outline-navy" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=walmart-a-plus-content" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
             </div>
           </div>
 
@@ -344,7 +355,7 @@
         <p>Or send the audit. We look at Brand Portal rights, the item pages, and whether Brand Highlights can actually be attached before we talk about a retainer.</p>
         <div class="cta-buttons">
           <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-          <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=walmart-a-plus-content" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
+          <a class="btn btn-outline-white" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=walmart-a-plus-content" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
         </div>
         <p style="margin-top:18px;"><a class="btn btn-outline-white" href="tel:+19548692034">Call (954) 869-2034</a></p>
       </div>

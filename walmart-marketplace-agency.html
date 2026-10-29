@@ -28,36 +28,34 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://assets.calendly.com">
   <script src="https://assets.calendly.com/assets/external/widget.js" async defer></script>
+  <style>
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.revealed { opacity: 1; transform: none; }
+    .page-hero.walmart-hero {
+      background: linear-gradient(150deg, #001E6C 0%, #003087 50%, #0041A8 100%);
+    }
+    .walmart-hero .page-hero-bg {
+      background: radial-gradient(ellipse at 80% 40%, rgba(255,194,32,0.12) 0%, transparent 50%),
+                  radial-gradient(ellipse at 10% 80%, rgba(0,48,135,0.6) 0%, transparent 50%);
+    }
+    .stats-band.walmart-band {
+      background: linear-gradient(135deg, #003087 0%, #0052CC 100%);
+    }
+    .walmart-tag { color: #0052CC; }
+
+    .why-icon svg, .smc-icon svg { width: 22px; height: 22px; display: block; }
+    .why-icon.blue { color: var(--blue); }
+    .why-icon.orange { color: var(--orange); }
+    .why-icon.green { color: var(--blue); }
+    .smc-icon { color: var(--blue); display: flex; align-items: center; }
+  </style>
   <script src="/js/components.js" defer></script>
   <script>
     !function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments);};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f);}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");
     oaiq("init", { pixelId: "UeyzoKe3VtFvfSMqVPUoaN" });
   </script>
-  <style>
-    .buyer-wrap { max-width: 800px; }
-    .buyer-wrap h2 { font-family: var(--font-head); font-size: clamp(26px, 3vw, 34px); font-weight: 800; color: var(--navy); margin: 40px 0 12px; letter-spacing: -0.5px; line-height: 1.15; }
-    .buyer-wrap h3 { font-family: var(--font-head); font-size: 20px; font-weight: 700; color: var(--navy); margin: 26px 0 8px; }
-    .buyer-wrap p, .buyer-wrap li { font-size: 16.5px; line-height: 1.75; color: var(--text); }
-    .buyer-wrap p { margin: 0 0 16px; }
-    .buyer-wrap ul, .buyer-wrap ol { margin: 0 0 18px 1.25em; }
-    .buyer-wrap li { margin-bottom: 8px; }
-    .buyer-wrap a { color: var(--blue); font-weight: 600; }
-    .buyer-note { background: var(--gray-50); border-left: 3px solid var(--orange); border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 8px 0 24px; }
-    .buyer-note p:last-child { margin-bottom: 0; }
-    .crumbs { font-size: 13px; color: rgba(255,255,255,0.75); margin-bottom: 14px; }
-    .crumbs a { color: #fff; font-weight: 600; text-decoration: none; }
-    .crumbs a:hover { text-decoration: underline; }
-    .buyer-faq details { background: #fff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 16px 20px; margin-bottom: 10px; }
-    .buyer-faq summary { font-family: var(--font-head); font-weight: 700; cursor: pointer; color: var(--navy); font-size: 16px; }
-    .buyer-faq details p { margin: 12px 0 0; color: var(--text-light); }
-    .addr-card { background: #fff; border: 1px solid var(--gray-200); border-radius: 16px; padding: 22px 24px; margin: 12px 0 24px; }
-    .addr-card p { margin-bottom: 6px; }
-    .mid-cta { background: rgba(26,86,219,0.06); border-left: 3px solid #1A56DB; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 28px 0; }
-    .mid-cta p { margin: 0 0 14px; }
-    .cta-buttons .btn { margin: 6px 8px 6px 0; }
-    @media (max-width: 640px) { .buyer-wrap { max-width: 100%; } }
-</style>
-  <script type="application/ld+json">
+
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -161,7 +159,7 @@
 <body>
 
 
-  <selltru-header><header class="nav" role="banner">
+<selltru-header><header class="nav" role="banner">
   <div class="container">
     <div class="nav-inner">
       <a class="nav-logo" href="/" aria-label="SellTru home">
@@ -174,8 +172,8 @@
         <span class="nav-logo-text">SELL<span>TRU</span></span>
       </a>
       <nav class="nav-links" role="navigation" aria-label="Main navigation">
-        <a class="nav-link active" href="/amazon-marketing">Amazon</a>
-        <a class="nav-link" href="/walmart-marketing">Walmart</a>
+        <a class="nav-link" href="/amazon-marketing">Amazon</a>
+        <a class="nav-link active" href="/walmart-marketing">Walmart</a>
         <a class="nav-link" href="/blog">Blog</a>
         <a class="nav-link" href="/about">About</a>
         <a class="nav-link" href="/about#contact-form">Contact</a>
@@ -199,7 +197,7 @@
   <div class="email-bar-inner">
     <div class="email-bar-copy">
       <span class="email-bar-label">Free Download</span>
-      <span class="email-bar-text">Get the Amazon Audit Checklist we use on every account we take over.</span>
+      <span class="email-bar-text">Get the Walmart Audit Checklist we use on every account we take over.</span>
     </div>
     <form class="email-bar-form" id="email-bar-form" novalidate>
       <input type="email" name="email" class="email-bar-input" placeholder="Your work email" aria-label="Your work email" required autocomplete="email">
@@ -214,115 +212,321 @@
   <input type="hidden" name="source">
 </form></selltru-header>
   <main>
-    <section class="page-hero" aria-label="Walmart Marketplace">
+
+    <section class="page-hero walmart-hero" aria-label="Walmart marketplace agency">
       <div class="page-hero-bg" aria-hidden="true"></div>
       <div class="container">
         <div class="page-hero-inner">
-          <p class="crumbs"><a href="/">Home</a> / <a href="/walmart-marketing">Walmart Marketing</a> / Walmart Marketplace Agency</p>
           <p class="section-tag light" style="margin-bottom:14px;">Walmart Marketplace</p>
-          <h1>A Walmart marketplace agency that handles the item page and the ads.</h1>
-          <p>Approval, listings, WFS, Walmart Connect, and reviews, in that order. For brands doing $1M to $20M that are done treating Walmart like a spare Amazon login.</p>
-          <div class="cta-buttons">
+          <h1>A Walmart Marketplace Partner That Handles the Item Page and the Ads. <span>Built for Brand Portal Brands.</span></h1>
+          <p>Approval, listings, WFS, and Walmart Connect for brands doing $1M to $20M. Designed for the Walmart shopper, not pasted from Amazon. $150M+ managed across 200+ brands.</p>
+          <div style="display:flex; gap:14px; flex-wrap:wrap;">
             <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Walmart Audit</a>
-            <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=walmart-marketplace-agency" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
+            <a class="btn btn-outline-white" href="#whats-included">View All Services</a>
           </div>
-          <div style="margin-top:28px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-            <span class="amz-text-badge amz-text-badge--on-dark">Amazon Ads Partner Network member</span>
-            <div class="trust-badge"><span class="trust-badge-text">$150M+ sales managed</span></div>
-            <div class="trust-badge"><span class="trust-badge-text">200+ brands</span></div>
+          <div style="margin-top:36px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+            <div class="trust-badge-wmt">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220" transform="rotate(0 10 10) translate(0,-5.5)"/>
+                <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(60 10 10) translate(0,-5.5)"/>
+                <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220" transform="rotate(120 10 10) translate(0,-5.5)"/>
+                <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(180 10 10) translate(0,-5.5)"/>
+                <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220" transform="rotate(240 10 10) translate(0,-5.5)"/>
+                <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(300 10 10) translate(0,-5.5)"/>
+              </svg>
+              <span class="trust-badge-text" style="color:#fff;">Walmart Marketplace Partner</span>
+            </div>
+            <div class="trust-badge">
+              <span class="trust-badge-text">3x Walmart Connect growth</span>
+            </div>
+            <div class="trust-badge">
+              <span class="trust-badge-text">$150M+ sales managed</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="service-detail-section" aria-label="Service detail">
+    <div class="stats-band walmart-band">
       <div class="container">
-        <div class="buyer-wrap">
-          
-          <p>A Walmart marketplace agency should get you approved, get the item page ready, and only then buy traffic. SellTru does that for brands doing $1M to $20M. We manage Amazon and Walmart together, with $150M+ in marketplace sales across 200+ brands, and we are an Amazon Ads Partner Network member. Walmart is not a side project we staffed after a client asked. The <a href="/walmart-marketing">Walmart marketing</a> page is the service overview. This page is the sequence: approval, listings, WFS, Walmart Connect, and reviews.</p>
-          <p>If you are coming from Amazon, read <a href="/blog/how-to-expand-amazon-brand-to-walmart">how to expand an Amazon brand to Walmart</a> before you clone the catalog. The search behavior is different, the content rules are different, and the ad auction is not Amazon with a new logo.</p>
+        <div class="stats-inner">
+          <div class="stat-item">
+            <div class="stat-number">$150M+</div>
+            <div class="stat-label">Sales Managed</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">200+</div>
+            <div class="stat-label">Brands Supported</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">90%</div>
+            <div class="stat-label">Client Retention</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3x</div>
+            <div class="stat-label">Walmart Connect Growth</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-          <h2>Approval and onboarding</h2>
-          <p>Walmart does not let every applicant list every category. The application covers the company, the products, tax settings, and how orders will ship. Category approval can add another review. We treat that as the first deliverable, not as paperwork the client does alone while we wait to launch ads.</p>
-          <p>On a new account we assemble the application, answer the follow-up questions Walmart sends, and configure payments and shipping templates once the account is open. On an account that is already live and stuck, the audit looks for suppressed items, missing attributes, and a fulfillment setup that will lose the Buy Box. The launch path on the <a href="/walmart-marketing">Walmart marketing page</a> is the same three moves: audit, account and listing build, then advertise. We do not skip to step three because a brand is impatient.</p>
-          <p>Expect the first weeks to be about eligibility and content. A campaign on an item Walmart has not fully accepted is not a test. It is spend with nowhere useful to land.</p>
+    <section class="service-detail-section" id="why-walmart" aria-label="Why a Walmart marketplace partner">
+      <div class="container">
+        <div class="section-header center reveal">
+          <p class="section-tag walmart-tag">Why Walmart Marketplace</p>
+          <h2 class="section-title">Walmart Rewards Operators Who<br>Own the Page and the Ads Together.</h2>
+          <p class="section-sub wide">
+            Channel overview sits on <a href="/walmart-marketing" style="color:var(--blue);">Walmart marketing</a>. This page is the full marketplace stack: onboarding, content, WFS, and Connect.
+          </p>
+        </div>
+        <div class="why-grid reveal">
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/>
+    <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/>
+    <path d="M12 3v6"/>
+  </svg></div>
+            <h3>Approval Through Onboarding</h3>
+            <p>Seller Center or Brand Portal path, category approvals, and the first item setup without a six-month stall.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 20h9"/>
+    <path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506L3 20l.859-3.513a2 2 0 0 1 .506-.854z"/>
+  </svg></div>
+            <h3>Item Pages That Can Rank</h3>
+            <p>Titles, specs, images, and Brand Highlights written for the Walmart shopper. Not pasted Amazon modules.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z"/>
+    <path d="M6 18h12"/>
+    <path d="M6 14h12"/>
+    <rect x="6" y="10" width="12" height="12"/>
+  </svg></div>
+            <h3>WFS When It Pays</h3>
+            <p>Enrollment, inbound, and restock. Detail on <a href="/walmart-wfs-management" style="color:var(--blue);">WFS management</a>.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="m3 11 18-5v12L3 14v-3z"/>
+    <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>
+  </svg></div>
+            <h3>Walmart Connect Ads</h3>
+            <p>Sponsored Products and related formats with efficiency targets. See <a href="/walmart-connect-ads-agency" style="color:var(--blue);">Walmart Connect ads</a>.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+  </svg></div>
+            <h3>Reviews Before You Scale</h3>
+            <p>Ratings and content gaps fixed before Connect spend ramps. Ads on a broken page waste budget.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+    <path d="m9 12 2 2 4-4"/>
+  </svg></div>
+            <h3>One Walmart Team</h3>
+            <p>Item pages, WFS, and ads on one retainer when scoped. $150M+ managed across 200+ brands. 90% retention. 3x Walmart Connect growth on managed accounts where measured.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <h2>Listings that can rank on Walmart search</h2>
-          <p>Walmart search cares about the item title, the attributes, the images, and whether the product matches the way a Walmart shopper types. Pasting an Amazon title across is a common way to stall. The ranking guide, <a href="/blog/how-to-rank-on-walmart-search-2026">how to rank on Walmart search</a>, is the checklist we use: content first, then the signals that come from orders.</p>
-          <p>Weekly listing work on a managed account is practical. We fix attributes that block search filters, rewrite titles that lead with the brand and hide the product, and watch the items that get views and no orders. Content and ads are one system. If the page cannot convert, raising the bid just buys a more expensive lesson. That is the same rule we use on Amazon, and it is why one team owns both the listing and the auction.</p>
-          <p>When Brand Portal is open, the next conversion layer is Brand Highlights and rich media. Brands searching for a Walmart A+ agency usually mean that work. The dedicated service page is <a href="/walmart-a-plus-content">Walmart A+ content and Brand Highlights</a>.</p>
+    <section class="service-detail-section alt" id="whats-included" aria-label="What is included">
+      <div class="container">
+        <div class="section-header center reveal">
+          <p class="section-tag walmart-tag">What's Included</p>
+          <h2 class="section-title">Walmart Marketplace Services.</h2>
+          <p class="section-sub">SellTru runs Walmart end to end when you want one team. 90% retention. Flat retainers from $3K. 3x Walmart Connect growth on managed accounts where measured.</p>
+        </div>
+        <div class="services-cards-grid">
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+    <path d="M12 11h4"/>
+    <path d="M12 16h4"/>
+    <path d="M8 11h.01"/>
+    <path d="M8 16h.01"/>
+  </svg></div>
+            <h3>Approval and Onboarding</h3>
+            <p>Account path, tax and banking setup support, and category approvals so you can list.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 20h9"/>
+    <path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506L3 20l.859-3.513a2 2 0 0 1 .506-.854z"/>
+  </svg></div>
+            <h3>Listings and Brand Highlights</h3>
+            <p>Item page copy, specs, and rich media. See <a href="/walmart-a-plus-content" style="color:var(--blue);">Walmart A+ content</a>.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z"/>
+    <path d="M6 18h12"/>
+    <path d="M6 14h12"/>
+    <rect x="6" y="10" width="12" height="12"/>
+  </svg></div>
+            <h3>WFS Operations</h3>
+            <p>Eligibility, inbound, and inventory health. Full detail on <a href="/walmart-wfs-management" style="color:var(--blue);">WFS management</a>.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="m3 11 18-5v12L3 14v-3z"/>
+    <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>
+  </svg></div>
+            <h3>Walmart Connect</h3>
+            <p>Campaign structure, search terms, and weekly notes. Linked from <a href="/walmart-connect-ads-agency" style="color:var(--blue);">Connect ads</a>.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <line x1="12" y1="20" x2="12" y2="10"/>
+    <line x1="18" y1="20" x2="18" y2="4"/>
+    <line x1="6" y1="20" x2="6" y2="16"/>
+  </svg></div>
+            <h3>Reporting You Can Act On</h3>
+            <p>Sell-through, ad efficiency, and the next three moves. Not a 40-tab dump.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+    <circle cx="9" cy="7" r="4"/>
+    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+  </svg></div>
+            <h3>Flat Retainer Pricing</h3>
+            <p>Retainers from $3K for brands doing $1M to $20M. Models on the <a href="/marketplace-agency-pricing" style="color:var(--blue);">pricing guide</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <h2>WFS, Walmart's fulfillment program</h2>
-          <p>Walmart Fulfillment Services is the equivalent of FBA. You inbound inventory, Walmart stores and ships it, and the item can show a fulfilled-by-Walmart promise. That promise matters for the Buy Box and for conversion. Seller-fulfilled items can still win, but if the delivery date is worse than a WFS competitor, ads are paying to lose the click at the last second.</p>
-          <p>We help brands decide which SKUs belong in WFS, set the inbound up, and keep inventory from stocking out the items we are advertising. Enrollment and replenishment are on <a href="/walmart-wfs-management">Walmart WFS management</a>. The long version, including how the program compares with FBA, is the <a href="/blog/walmart-fulfillment-services-wfs-guide">WFS guide</a>. The Amazon side of that inventory is <a href="/amazon-fba-management-services">Amazon FBA management services</a>. Read it before you ship a pallet. We would rather delay a campaign a week than advertise an item that cannot ship.</p>
+    <section class="process-section" aria-label="Process">
+      <div class="container">
+        <div class="section-header center reveal">
+          <p class="section-tag light">Getting Started</p>
+          <h2 class="section-title light">Here's How a Walmart<br>Engagement Starts.</h2>
+          <p class="section-sub light">Approval and catalog first. Ads after the page can convert.</p>
+        </div>
+        <div class="process-grid">
+          <div class="process-connector" aria-hidden="true"></div>
+          <div class="process-step reveal">
+            <div class="process-num">01</div>
+            <h3>Walmart Audit</h3>
+            <p>Account path, catalog gaps, WFS fit, and Connect readiness.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">02</div>
+            <h3>Launch the Stack</h3>
+            <p>Onboarding, item pages, and WFS enrollment when it pays.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">03</div>
+            <h3>Advertise and Iterate</h3>
+            <p>Connect ads with weekly notes, tied to stock and content.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <h2>Walmart Connect ads</h2>
-          <p>Walmart Connect is the ad platform: Sponsored Products in search, plus Sponsored Brands and display when the account is ready for them. A Walmart Connect agency, which is the same team as our Walmart advertising work, builds the campaigns around Walmart keyword data. We do not import an Amazon keyword list and hope.</p>
-          <p>The <a href="/blog/walmart-connect-ads-guide">Walmart Connect ads guide</a> covers bid ranges and a 90-day plan. The <a href="/blog/how-to-advertise-on-walmart">how to advertise on Walmart</a> article is the operator's version of the first quarter. <a href="/blog/does-walmart-have-ppc-advertising">Does Walmart have PPC</a> is the short explainer if someone on your team is still unsure the channel exists. Costs, which you should read before you set a budget, are on two pages: <a href="/walmart-connect-ads-cost">Walmart Connect ads cost</a> and <a href="/walmart-advertising-cost">Walmart advertising cost</a>. The published ranges there are CPCs often from $0.30 to $1.50, starting ad budgets of $1,500 to $5,000 a month, and management fees of $1,500 to $3,500 a month. You can also run your own numbers in the <a href="/walmart-connect-calculator">Walmart Connect calculator</a>.</p>
-          <p>Day to day, Connect management looks like the Amazon weekly pass, with Walmart's reporting: queries that deserve a higher bid, queries that should be negated, and budgets moved toward items that can actually fulfill the order. The dedicated service page is <a href="/walmart-connect-ads-agency">Walmart Connect ads agency</a>. If you are comparing outside firms, the <a href="/blog/best-walmart-connect-agencies-2026">ranked Walmart Connect agencies</a> list is the one we would want you to read, including the places we are not the right shop.</p>
-          <p>A healthy Sponsored Products account often lands around 3x to 5x ROAS once it is out of the learning window. That figure is from the Connect guide's FAQ, and it is a range we see, not a quote. The first 60 to 90 days are for structure and data. Pulling the budget in week three because a new item is not at peak efficiency is how brands restart the learning forever.</p>
-
-          <div class="mid-cta">
-          <p><strong>Want this applied to your account?</strong> Book a call or send the audit form. Both go to the same team.</p>
-          <div class="cta-buttons">
+    <section class="faq-section" id="faq" aria-label="Walmart marketplace FAQ">
+      <div class="container">
+        <div class="faq-layout">
+          <div class="faq-intro reveal">
+            <p class="section-tag">Common Questions</p>
+            <h2 class="section-title">Walmart Marketplace FAQ.</h2>
+            <p>Onboarding, WFS, and Connect. Fulfillment detail sits on <a href="/walmart-wfs-management" style="color:var(--blue);">WFS management</a>.</p>
             <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-            <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=walmart-marketplace-agency" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
           </div>
-        </div>
-
-          <h2>Reviews before you scale the ads</h2>
-          <p>Walmart shoppers use reviews. The <a href="/blog/how-to-get-more-walmart-reviews">guide to getting more Walmart reviews</a> is the policy-safe version: review syndication from your own site, the Recognized Reviewer program, and post-purchase reviews. It also explains why we will not scale Connect spend onto a zero-review item. Build a base of trust, then buy the traffic. There is no legitimate shortcut where an agency "adds reviews" outside those programs, and we will not pretend there is.</p>
-          <p>On a launch we sequence it. Syndication first if you already collect reviews on your own store. Then the Walmart programs that fit the item's current review count. Ads come up as the item leaves the zero-review state, not on the morning the account is approved.</p>
-
-          <h2>How a Walmart engagement runs</h2>
-          <ol>
-            <li><strong>Audit the item, not just the campaign.</strong> Content, reviews, fulfillment, and only then the ad account. If you are not approved yet, the audit is the application plan.</li>
-            <li><strong>Build the listing and the fulfillment path.</strong> Walmart search content, WFS where it helps the Buy Box, shipping templates where it does not.</li>
-            <li><strong>Turn on Connect in a structure we can read.</strong> Sponsored Products first for most brands. Negatives and bids weekly. The <a href="/blog/walmart-connect-vs-amazon-ads">Walmart Connect vs. Amazon Ads</a> comparison is what we send Amazon-first teams so they stop expecting the same dashboard.</li>
-            <li><strong>Judge it on total sales, not a single campaign.</strong> Paid orders are supposed to help organic rank. If ad spend rises and total sales do not, we change the plan. The company-wide figures we will actually cite are the ones on the homepage: $150M+ in marketplace sales managed, 200+ brands, 90% retention, and a 45% average ACOS reduction in the first 90 days on the Amazon accounts those stats describe. We do not paste Amazon ACOS math onto a Walmart screenshot and call it the same result.</li>
-          </ol>
-          <p>Brands that already run Amazon with us add Walmart without hiring a second agency. The <a href="/amazon-ppc-management">Amazon PPC management</a> page is that side of the house. Fort Lauderdale and South Florida teams can also start in person at <a href="/marketplace-agency-fort-lauderdale">333 Las Olas Way</a>. Everyone else uses the audit form or the strategy call. The fee model on both channels is a flat retainer, explained in the <a href="/marketplace-agency-pricing">agency pricing guide</a>.</p>
-
-          <h2>Walmart agency questions</h2>
-          <div class="buyer-faq">
-            <details>
-<summary>What does a Walmart marketplace agency handle?</summary>
-<p>Seller approval and account setup, listing content built for Walmart search, Walmart Fulfillment Services, Walmart Connect ads, and the review programs Walmart actually allows. The point is one operator across the item page and the ad auction, not an ads login with no one watching the listing.</p>
-</details>
-<details>
-<summary>How does Walmart seller approval and onboarding work?</summary>
-<p>Walmart reviews the application, the category you want to sell in, tax settings, and how you will fulfill orders. We prepare that packet, fix the gaps Walmart kicks back, and only then build listings and ads. Starting with a campaign before the account is clean wastes the first month.</p>
-</details>
-<details>
-<summary>Do you manage Walmart Connect ads and WFS together?</summary>
-<p>Yes. WFS is Walmart's fulfillment program, the equivalent of FBA, and it affects the Buy Box and delivery promise shoppers see. Connect ads buy the visit. We do not scale Sponsored Products onto an item that cannot ship reliably or that has no reviews.</p>
-</details>
-<details>
-<summary>How should a Walmart advertising agency treat reviews?</summary>
-<p>Get the item out of the zero-review state before you pour on ad spend. Walmart's own programs are review syndication from your site, the Recognized Reviewer program, and post-purchase reviews. The reviews guide on this site walks through each one. We do not buy reviews.</p>
-</details>
-<details>
-<summary>What does Walmart agency pricing look like?</summary>
-<p>The Walmart Connect cost guide covers management fees of $1,500 to $3,500 a month, CPCs that often land between $0.30 and $1.50, and starting ad budgets of $1,500 to $5,000 a month. SellTru uses a flat retainer rather than a percent of ad spend. The Amazon pricing guide explains why that model is the one we use on both channels.</p>
-</details>
+          <div class="faq-list reveal">
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>What does a Walmart marketplace engagement include?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Onboarding, item pages, WFS when scoped, Walmart Connect ads, and a weekly operating cadence. You choose the stack on the audit.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Do you only do Walmart?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>No. Many clients run Amazon and Walmart with us. Amazon work is scoped separately on <a href="/amazon-marketing" style="color:var(--blue);">Amazon marketing</a>.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>How long does approval take?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>It varies by category and Walmart's queues. We prepare a complete submission. We do not invent a timeline Walmart did not publish.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Is WFS required?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>No. Some brands stay seller-fulfilled. We recommend WFS when speed and rank upside beat the fee math.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Do you guarantee Connect growth?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>No. We have measured 3x Walmart Connect growth on managed accounts where the baseline and window were defined. That is not a promise for every catalog.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Pricing?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Flat monthly retainers from $3K. Ad spend is paid to Walmart. Quoted after the audit.</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <p>Bring the item page, the fulfillment setup, and the last 30 days of Connect if you already have them. We will tell you whether the gap is approval, content, WFS, reviews, or the bids.</p>
-
         </div>
       </div>
     </section>
 
-    <section class="cta-section" aria-label="Booking">
+    <section class="cta-section" aria-label="Walmart marketplace audit CTA">
       <div class="container">
-        <h2>Book a free 30-minute strategy call</h2>
-        <p>Or send the free audit form. We look at the account before we talk about a retainer. No invented forecast, no lock-in pitch.</p>
+        <h2>If the Walmart Channel Is a Side Project,<br>Start With the Audit.</h2>
+        <p>We look at approval status, item pages, WFS, and Connect before we talk about a retainer. No pitch decks. No obligation.</p>
         <div class="cta-buttons">
-            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Walmart Audit</a>
-            <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=walmart-marketplace-agency" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
-          </div>
-        <p style="margin-top:18px;"><a class="btn btn-outline-white" href="tel:+19548692034">Call (954) 869-2034</a></p>
+          <a class="btn btn-primary btn-lg" href="/about#contact-form" data-modal-trigger="audit">Get Your Free Audit</a>
+          <a class="btn btn-outline-white btn-lg" href="tel:+19548692034">Call (954) 869-2034</a>
+        </div>
+        <p style="margin-top:18px; font-size:15px; color:rgba(255,255,255,0.55);">
+          Prefer a call on the calendar?
+          <a href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=walmart-marketplace-agency" target="_blank" rel="noopener" style="color:var(--white); font-weight:700; text-decoration:underline;">Book a free 30-minute strategy call</a>
+        </p>
       </div>
     </section>
+
   </main>
 
 <selltru-footer><footer class="footer" role="contentinfo">
@@ -365,7 +569,6 @@
         <a href="/walmart-marketing">Walmart Marketing</a>
         <a href="/walmart-marketing#walmart-ads">Walmart Connect Ads</a>
         <a href="/walmart-marketplace-agency">Walmart Marketplace Agency</a>
-        <a href="/walmart-a-plus-content">Walmart A+ Content</a>
         <a href="/walmart-wfs-management">Walmart WFS Management</a>
       </div>
       <div class="footer-col">
@@ -419,6 +622,7 @@
   </div>
 </div></selltru-footer>
 
+  <script src="/js/lead-tracking.js" defer></script>
   <script src="/js/main.js" defer></script>
 </body>
 </html>

@@ -21,6 +21,7 @@ SellTru provides end-to-end marketplace management. Our services include:
 - Walmart Connect advertising (Sponsored Products, Display)
 - Walmart Fulfillment Services (WFS) setup and management
 - Listing creation and optimization for Walmart's search algorithm
+- Walmart A+ content / Brand Highlights and rich media
 - Buy Box optimization
 - Walmart Brand Portal and brand page setup
 - Seller performance management
@@ -43,6 +44,7 @@ Brands doing $1M to $20M in annual revenue selling physical products on Amazon a
 - [Homepage](https://selltru.com/): Agency overview, results, services, FAQ, and free audit CTA
 - [Amazon Marketing](https://selltru.com/amazon-marketing): Full details on all Amazon management and advertising services
 - [Walmart Marketing](https://selltru.com/walmart-marketing): Full details on Walmart.com marketplace management and advertising
+- [Walmart A+ Content & Brand Highlights](https://selltru.com/walmart-a-plus-content): Brand Highlights, rich media, and video modules for Brand Portal brands on Walmart.com
 - [About & Contact](https://selltru.com/about): Agency story, credentials, who we work with, and contact/audit request form
 - [Blog](https://selltru.com/blog): Expert articles on Amazon and Walmart marketplace strategy, advertising, and growth
 - [Free Amazon Audit Checklist](https://selltru.com/lead-magnet): A practical 50-point Amazon account audit checklist for brand owners

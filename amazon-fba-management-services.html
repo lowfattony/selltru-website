@@ -28,39 +28,23 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://assets.calendly.com">
   <script src="https://assets.calendly.com/assets/external/widget.js" async defer></script>
+  <style>
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.revealed { opacity: 1; transform: none; }
+    .amazon-accent { color: var(--orange); }
+
+    .why-icon svg, .smc-icon svg { width: 22px; height: 22px; display: block; }
+    .why-icon.blue { color: var(--blue); }
+    .why-icon.orange { color: var(--orange); }
+    .why-icon.green { color: var(--blue); }
+    .smc-icon { color: var(--blue); display: flex; align-items: center; }
+  </style>
   <script src="/js/components.js" defer></script>
   <script>
     !function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments);};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f);}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");
     oaiq("init", { pixelId: "UeyzoKe3VtFvfSMqVPUoaN" });
   </script>
-  <style>
-    .buyer-wrap { max-width: 800px; }
-    .buyer-wrap h2 { font-family: var(--font-head); font-size: clamp(26px, 3vw, 34px); font-weight: 800; color: var(--navy); margin: 40px 0 12px; letter-spacing: -0.5px; line-height: 1.15; }
-    .buyer-wrap h3 { font-family: var(--font-head); font-size: 20px; font-weight: 700; color: var(--navy); margin: 26px 0 8px; }
-    .buyer-wrap p, .buyer-wrap li { font-size: 16.5px; line-height: 1.75; color: var(--text); }
-    .buyer-wrap p { margin: 0 0 16px; }
-    .buyer-wrap ul, .buyer-wrap ol { margin: 0 0 18px 1.25em; }
-    .buyer-wrap li { margin-bottom: 8px; }
-    .buyer-wrap a { color: var(--blue); font-weight: 600; }
-    .buyer-note { background: var(--gray-50); border-left: 3px solid var(--orange); border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 8px 0 24px; }
-    .buyer-note p:last-child { margin-bottom: 0; }
-    .crumbs { font-size: 13px; color: rgba(255,255,255,0.75); margin-bottom: 14px; }
-    .crumbs a { color: #fff; font-weight: 600; text-decoration: none; }
-    .crumbs a:hover { text-decoration: underline; }
-    .buyer-faq details { background: #fff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 16px 20px; margin-bottom: 10px; }
-    .buyer-faq summary { font-family: var(--font-head); font-weight: 700; cursor: pointer; color: var(--navy); font-size: 16px; }
-    .buyer-faq details p { margin: 12px 0 0; color: var(--text-light); }
-    .mid-cta { background: rgba(26,86,219,0.06); border-left: 3px solid #1A56DB; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 28px 0; }
-    .mid-cta p { margin: 0 0 14px; }
-    .cta-buttons .btn { margin: 6px 8px 6px 0; }
-    .buyer-table-wrap { overflow-x: auto; margin: 8px 0 24px; }
-    .buyer-table { width: 100%; border-collapse: collapse; font-size: 15px; background: #fff; }
-    .buyer-table caption { caption-side: bottom; text-align: left; font-size: 13px; color: var(--text-light); padding-top: 8px; }
-    .buyer-table th, .buyer-table td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--gray-200); }
-    .buyer-table th { font-family: var(--font-head); color: var(--navy); font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; }
-    .buyer-table td:first-child { font-weight: 700; color: var(--navy); white-space: nowrap; }
-    @media (max-width: 640px) { .buyer-wrap { max-width: 100%; } .buyer-table td:first-child { white-space: normal; } }
-  </style>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -164,6 +148,7 @@
 </head>
 <body>
 
+
 <selltru-header><header class="nav" role="banner">
   <div class="container">
     <div class="nav-inner">
@@ -216,129 +201,325 @@
   <input type="email" name="email">
   <input type="hidden" name="source">
 </form></selltru-header>
-<main>
-    <section class="page-hero" aria-label="Amazon FBA management services">
+  <main>
+
+    <section class="page-hero" aria-label="Amazon FBA Management Services">
       <div class="page-hero-bg" aria-hidden="true"></div>
       <div class="container">
         <div class="page-hero-inner">
-          <p class="crumbs"><a href="/">Home</a> / <a href="/amazon-marketing">Amazon Marketing</a> / FBA Management</p>
           <p class="section-tag light" style="margin-bottom:14px;">Amazon FBA Management</p>
-          <h1>Amazon FBA Management Services</h1>
-          <p>Restock planning, inbound shipments, storage fees, and lost-inventory cases, so the ads are not buying rank you cannot stay in stock to keep. Book a call or send the audit.</p>
-          <div class="cta-buttons">
+          <h1>Amazon FBA Management That Protects Margin. <span>Restock, Inbound, Fees, Recovery.</span></h1>
+          <p>Forecasting, shipments, storage control, and reimbursements for brands doing $1M to $20M. Part of the same team that runs your listings and Amazon PPC. $150M+ managed across 200+ brands.</p>
+          <div style="display:flex; gap:14px; flex-wrap:wrap;">
             <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Amazon Audit</a>
-            <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-fba-management-services" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
+            <a class="btn btn-outline-white" href="#whats-included">View All Services</a>
           </div>
-          <div style="margin-top:28px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+          <div style="margin-top:36px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
             <span class="amz-text-badge amz-text-badge--on-dark">Amazon Ads Partner Network member</span>
-            <div class="trust-badge"><span class="trust-badge-text">$150M+ sales managed</span></div>
-            <div class="trust-badge"><span class="trust-badge-text">200+ brands</span></div>
+            <div class="trust-badge">
+              <span class="trust-badge-text">$150M+ sales managed</span>
+            </div>
+            <div class="trust-badge">
+              <span class="trust-badge-text">200+ brands</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="service-detail-section" aria-label="Service detail">
+    <div class="stats-band">
       <div class="container">
-        <div class="buyer-wrap">
-
-          <p>Amazon FBA management services cover how much to send, when it has to leave your warehouse, what it costs to store, and how stranded or lost units get back to saleable or reimbursed. SellTru runs that for brands doing $1M to $20M, next to the listings and the ads. We are an Amazon Ads Partner Network member. The primer is <a href="/blog/what-is-amazon-fba">what Amazon FBA is</a>. This page is the management.</p>
-          <p>FBA work usually sits inside <a href="/amazon-account-management-services">Amazon account management</a>, not in a spreadsheet nobody on the ad team sees. If inventory is the only fire, say that on the audit and we will scope it that way.</p>
-
-          <h2>Inventory forecasting and restock limits</h2>
-          <p>FBA inventory management here is weeks of cover by ASIN, updated from the sales you actually have. The inputs are ordinary and easy to skip: average daily sales, what happens to that rate when ads scale, supplier lead time, freight and Amazon check-in time, units already at FBA, and units already in transit. Safety stock covers the variance in that chain. It is not a round number someone liked in January.</p>
-          <p>Amazon also caps how much you can send. Restock limits follow your Inventory Performance Index and recent sales. The FBA guide notes an IPI line of 400 as of 2026. Below Amazon's current threshold, the next shipment can be blocked even when the product is labeled and waiting. A large purchase order does not create capacity.</p>
-          <p>Each week the list is short: ASINs that will stock out inside one lead time, ASINs holding more cover than you want to store, and any limit that will reject the next inbound. The same checks are on the <a href="/lead-magnet">audit checklist</a>.</p>
-          <div class="buyer-note">
-            <p><strong>How stockouts get avoided:</strong> the flag goes up while there is still time to ship, ads are pulled back when cover cannot survive a spike, and the restock limit is checked before the factory is told to produce. We cannot repeal Amazon's cap. We can stop planning as if it were not there.</p>
+        <div class="stats-inner">
+          <div class="stat-item">
+            <div class="stat-number">$150M+</div>
+            <div class="stat-label">Sales Managed</div>
           </div>
-
-          <h2>Inbound shipment planning</h2>
-          <p>FBA shipment planning is the step that decides whether the forecast was real. We build the shipment around what the forecast says to send, not around whichever cartons happen to be on the dock. Carton contents, labeling, and the ship-to locations Amazon assigns have to match the workflow you chose, or the shipment sits in receiving while the listing stockout clock keeps running.</p>
-          <p>The <a href="/blog/amazon-q4-prep-checklist-2026">2026 Q4 checklist</a> is blunt about timing. Holiday inventory has to be received before Amazon's inbound cutoffs, which means the shipment has to be created weeks earlier. A ship date that lands after the cutoff is a miss, even if the truck left "on time" by your calendar. We track received dates.</p>
-          <p>After check-in, we reconcile units you shipped against units Amazon received. A few missing units are noise. A pattern is a case. The audit checklist calls out unreconciled inbound shipments for that reason. An Amazon FBA management company that never opens those discrepancies is hoping Amazon's receiving team is perfect. It is not.</p>
-
-          <h2>Storage and fee control</h2>
-          <p>FBA is not one fee. Fulfillment, monthly storage, peak-season storage, aged inventory, returns processing, and low-inventory charges hit different SKUs for different reasons. Rates change. We do not reprint Amazon's rate card on this page. The FBA guide records the 2026 figures and tells you to confirm them in Seller Central and the Revenue Calculator before you commit capital. Management is acting on those fees.</p>
-          <ul>
-            <li>Cover targets so a slow ASIN is not sitting on half a year of stock.</li>
-            <li>A removal or a markdown plan before aged-inventory surcharges stack up.</li>
-            <li>A hard look at oversized and slow movers. The FBA guide is clear that those products often belong merchant-fulfilled, even when the hero ASIN stays in FBA.</li>
-            <li>Ad plans that match the units you actually have, so you are not buying rank the week you stock out or paying to push a product that should be selling down.</li>
-          </ul>
-          <p>The point is contribution margin per unit. A lower storage line that starves the ASIN customers already want is not a win. Neither is a full warehouse that looks like growth and bills like a storage unit.</p>
-
-          <div class="mid-cta">
-            <p><strong>Want the cover and the fee picture on your top ASINs?</strong> The audit reads inventory, not just the ad account.</p>
-            <div class="cta-buttons">
-              <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-              <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-fba-management-services" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
-            </div>
+          <div class="stat-item">
+            <div class="stat-number">200+</div>
+            <div class="stat-label">Brands Supported</div>
           </div>
-
-          <h2>Stranded and lost inventory recovery</h2>
-          <p>Stranded inventory is product Amazon is holding that customers cannot buy: a suppressed listing, a deleted SKU, or a broken variation. You pay storage on units that cannot sell. Clearing that queue is part of the weekly pass, which is also how FBA work is described on the <a href="/amazon-marketing">Amazon marketing</a> page. When a listing goes dark, we use <a href="/blog/why-amazon-sales-dropped">why Amazon sales drop</a>.</p>
-          <p>Lost and damaged units are a different problem. Amazon does not always reimburse them on its own. Amazon lost inventory reimbursement, for us, means opening the case: warehouse losses, damaged units, and inbound shipments that checked in short. The audit checklist includes that review because the money is easy to leave unclaimed. We do not publish a recovery dollar amount. It depends on the account, and we are not going to invent one.</p>
-          <p>If the real problem is a suspended selling account rather than missing units, that work is a separate scope: <a href="/amazon-account-suspension-reinstatement">Amazon account reinstatement</a>. It is not part of this inventory retainer.</p>
-
-          <h2>Q4 planning</h2>
-          <p>Q4 inventory is a September problem. The 2026 checklist lists inbound deadlines for Prime Big Deal Days and for Black Friday week, including the difference between Amazon Warehousing and Distribution and FBA, and between minimal shipment splits and Amazon-optimized splits. We run the account against received dates on that list, then check that deals and ad budgets are pointed at ASINs that will actually be in stock.</p>
-          <p>Peak storage pricing runs well past December. Before the season we agree which ASINs to push, which to let sell down, and what the bids should do when cover gets thin. A rank you cannot supply is a rank you rented.</p>
-
-          <h2>FBA plus Walmart WFS</h2>
-          <p>A lot of the brands we work with sell on both marketplaces. Walmart Fulfillment Services is Walmart's version of FBA: you send inventory in, Walmart picks and packs, and the listing can earn fulfilled-by-Walmart treatment. It is not a copy of your FBA shipment. Enrollment, item setup, and inbound steps are different, and the fees are different. See <a href="/walmart-wfs-management">Walmart WFS management</a>. The <a href="/blog/walmart-fulfillment-services-wfs-guide">WFS guide</a> compares the cost with FBA.</p>
-          <p>We do not automatically split FBA stock into WFS. The Walmart listing has to justify a second pile of inventory, and replenishment has to feed both without starving Amazon in Q4. When Walmart is in scope it sits with the same team. See the <a href="/walmart-marketplace-agency">Walmart marketplace agency</a> page.</p>
-
-          <div class="mid-cta">
-            <p><strong>If Q4 inventory is already late, start with the dates.</strong> We would rather tell you a cutoff has passed than sell a plan that cannot be received.</p>
-            <div class="cta-buttons">
-              <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-              <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-fba-management-services" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
-            </div>
+          <div class="stat-item">
+            <div class="stat-number">90%</div>
+            <div class="stat-label">Client Retention</div>
           </div>
-
-          <h2>FAQ</h2>
-          <div class="buyer-faq">
-            <details>
-<summary>What does FBA management include?</summary>
-<p>Forecasting and restock limits, inbound shipment planning, storage and aged-inventory control, stranded listing fixes, and reimbursement cases for units Amazon lost or damaged. Q4 is planned around inbound received dates. We do not run a prep center.</p>
-</details>
-<details>
-<summary>How do you avoid stockouts?</summary>
-<p>We track weeks of cover against your real lead time, including units already in transit, and we flag an ASIN while there is still time to ship. Restock limits can block a shipment even when the goods are ready, so the plan respects the cap. Ads are pulled back when cover cannot survive a spike.</p>
-</details>
-<details>
-<summary>Can you recover lost inventory?</summary>
-<p>We reconcile inbound shipments against what Amazon received, and we open cases for warehouse losses and damage that were not reimbursed. Stranded units, which are in the building but not buyable, get fixed so they can sell. We do not quote a recovery amount. It depends on the account.</p>
-</details>
-<details>
-<summary>Do you handle prep?</summary>
-<p>We plan and reconcile the shipment in Seller Central. We do not operate a prep center. Labeling, polybags, and carton prep stay with your warehouse or a prep partner you choose. We specify what receiving requires so the shipment does not fail check-in.</p>
-</details>
-<details>
-<summary>What does it cost?</summary>
-<p>FBA management is scoped on the same flat retainer as the rest of the account. We do not publish a separate monthly figure for it. Amazon's fulfillment and storage fees are paid to Amazon, not to SellTru. Retainer models are on the pricing guide. A one-time inventory review is something you can ask for on the audit.</p>
-</details>
+          <div class="stat-item">
+            <div class="stat-number">45%</div>
+            <div class="stat-label">Avg. ACOS Drop in 90 Days</div>
           </div>
-          <p>The FBA guide stays the explainer, including fee figures that you should confirm live. This page is the ongoing work. Questions that are really about the whole channel belong on account management.</p>
+        </div>
+      </div>
+    </div>
 
+    <section class="service-detail-section" id="why-fba" aria-label="Why FBA management">
+      <div class="container">
+        <div class="section-header center reveal">
+          <p class="section-tag">Why FBA Management</p>
+          <h2 class="section-title">Stockouts and Storage Fees<br>Quietly Erase Ad Wins.</h2>
+          <p class="section-sub wide">
+            Channel strategy sits on <a href="/amazon-marketing" style="color:var(--blue);">Amazon marketing</a>. Day-to-day ownership sits on <a href="/amazon-account-management-services" style="color:var(--blue);">account management</a>. This page is the FBA slice.
+          </p>
+        </div>
+        <div class="why-grid reveal">
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
+    <path d="M15 18H9"/>
+    <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/>
+    <circle cx="17" cy="18" r="2"/>
+    <circle cx="7" cy="18" r="2"/>
+  </svg></div>
+            <h3>Restock Before the Stockout</h3>
+            <p>Forecast from velocity and lead time, not last month's gut feel. The goal is fewer dark ASINs and fewer panic shipments.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z"/>
+    <path d="M6 18h12"/>
+    <path d="M6 14h12"/>
+    <rect x="6" y="10" width="12" height="12"/>
+  </svg></div>
+            <h3>Storage Fees Under Control</h3>
+            <p>Aged inventory and oversized units burn margin. We flag what should leave FBA before the fee cycle hits.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M16.5 9.4 7.55 4.24"/>
+    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+    <polyline points="3.29 7 12 12 20.71 7"/>
+    <line x1="12" y1="22" x2="12" y2="12"/>
+  </svg></div>
+            <h3>Inbound Done Right</h3>
+            <p>Shipment plans, carton labels, and appointments that clear receiving. A rejected inbound is a week of lost sales.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="11" cy="11" r="8"/>
+    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+  </svg></div>
+            <h3>Stranded and Lost Units</h3>
+            <p>Reconcile stranded inventory and file reimbursements when Amazon's count is wrong. Money left on the floor stays on the floor until someone asks.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+    <line x1="16" y1="2" x2="16" y2="6"/>
+    <line x1="8" y1="2" x2="8" y2="6"/>
+    <line x1="3" y1="10" x2="21" y2="10"/>
+  </svg></div>
+            <h3>Q4 Capacity Planning</h3>
+            <p>Capacity limits and peak fees need a plan in summer, not in October. We build the calendar with the ad plan.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+    <polyline points="2 17 12 22 22 17"/>
+    <polyline points="2 12 12 17 22 12"/>
+  </svg></div>
+            <h3>FBA Plus Walmart WFS</h3>
+            <p>Brands that also sell on Walmart.com need both networks planned together. WFS detail sits on <a href="/walmart-wfs-management" style="color:var(--blue);">Walmart WFS management</a>.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="cta-section" aria-label="Booking">
+    <section class="service-detail-section alt" id="whats-included" aria-label="What is included">
       <div class="container">
-        <h2>Book a free 30-minute strategy call</h2>
-        <p>Or send the audit. We look at weeks of cover, stranded units, and inbound discrepancies before we talk about a retainer.</p>
+        <div class="section-header center reveal">
+          <p class="section-tag">What's Included</p>
+          <h2 class="section-title">Amazon FBA Management Services.</h2>
+          <p class="section-sub">SellTru plans restock and inbound for Brand Registry brands on FBA. 90% retention. Flat retainers from $3K. Amazon Ads Partner Network member.</p>
+        </div>
+        <div class="services-cards-grid">
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <line x1="12" y1="20" x2="12" y2="10"/>
+    <line x1="18" y1="20" x2="18" y2="4"/>
+    <line x1="6" y1="20" x2="6" y2="16"/>
+  </svg></div>
+            <h3>Inventory Forecasting</h3>
+            <p>Velocity, seasonality, and lead times into a restock calendar. Aligned with the PPC plan so ads do not outrun stock.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
+    <path d="M15 18H9"/>
+    <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/>
+    <circle cx="17" cy="18" r="2"/>
+    <circle cx="7" cy="18" r="2"/>
+  </svg></div>
+            <h3>Inbound Shipment Planning</h3>
+            <p>Create and track FBA shipments, carton compliance, and receiving issues. Escalations when a shipment stalls.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z"/>
+    <path d="M6 18h12"/>
+    <path d="M6 14h12"/>
+    <rect x="6" y="10" width="12" height="12"/>
+  </svg></div>
+            <h3>Storage and Aged Inventory</h3>
+            <p>Age reports, removal orders, and liquidation decisions before long-term storage fees compound.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="11" cy="11" r="8"/>
+    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+  </svg></div>
+            <h3>Reimbursements</h3>
+            <p>Stranded inventory cleanup and reimbursement claims for lost or damaged units when the evidence supports it.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+    <line x1="16" y1="2" x2="16" y2="6"/>
+    <line x1="8" y1="2" x2="8" y2="6"/>
+    <line x1="3" y1="10" x2="21" y2="10"/>
+  </svg></div>
+            <h3>Peak Season Prep</h3>
+            <p>Capacity requests, inbound timing, and SKU prioritization for Q4. Tied to the account plan, not a separate project.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+    <path d="M12 11h4"/>
+    <path d="M12 16h4"/>
+    <path d="M8 11h.01"/>
+    <path d="M8 16h.01"/>
+  </svg></div>
+            <h3>Flat Retainer Pricing</h3>
+            <p>FBA work is scoped inside the account retainer or as a focused ops pass. Models are on the <a href="/marketplace-agency-pricing" style="color:var(--blue);">pricing guide</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process-section" aria-label="Process">
+      <div class="container">
+        <div class="section-header center reveal">
+          <p class="section-tag light">Getting Started</p>
+          <h2 class="section-title light">Here's How FBA<br>Management Starts.</h2>
+          <p class="section-sub light">We read velocity and aged inventory before we touch a shipment plan.</p>
+        </div>
+        <div class="process-grid">
+          <div class="process-connector" aria-hidden="true"></div>
+          <div class="process-step reveal">
+            <div class="process-num">01</div>
+            <h3>Inventory Audit</h3>
+            <p>Age, velocity, stranded units, and inbound in flight. A short list of what is burning cash.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">02</div>
+            <h3>Restock Calendar</h3>
+            <p>Lead times and capacity into a weekly plan. Aligned with ads so spend matches stock.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">03</div>
+            <h3>Operate and Recover</h3>
+            <p>Shipments, fee control, and reimbursement claims when the evidence is there.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq" aria-label="Amazon FBA management FAQ">
+      <div class="container">
+        <div class="faq-layout">
+          <div class="faq-intro reveal">
+            <p class="section-tag">Common Questions</p>
+            <h2 class="section-title">FBA Management FAQ.</h2>
+            <p>Forecasting, fees, and reimbursements. Full channel ops sit on <a href="/amazon-account-management-services" style="color:var(--blue);">account management</a>.</p>
+            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
+          </div>
+          <div class="faq-list reveal">
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>What is FBA management?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>The operating work around Fulfillment by Amazon: forecasting, inbound shipments, storage fees, stranded units, and reimbursements. It is not a substitute for your 3PL's warehouse labor.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Do you create shipment plans?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Yes. We build and monitor FBA inbound shipments in Seller Central, including carton labeling guidance and receiving follow-ups.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Can you recover lost inventory?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>When Amazon's records support a reimbursement, we file it. Not every discrepancy pays out. We do not promise a recovery dollar amount up front.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>How does this work with PPC?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>The same team sees both. We do not scale a campaign into a known stockout window. That is part of account management, not a handoff email.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Do you manage WFS too?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Yes for brands on both marketplaces. Walmart Fulfillment Services has its own page at Walmart WFS management.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Pricing?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Flat monthly retainers from $3K when FBA sits inside full account management. A narrower ops scope can be quoted on the audit. Ad spend is separate.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" aria-label="Amazon FBA audit CTA">
+      <div class="container">
+        <h2>If Storage Fees or Stockouts<br>Are Eating the Quarter, Start With the Audit.</h2>
+        <p>We look at age, velocity, inbound, and reimbursements before we talk about a retainer. No pitch decks. No obligation.</p>
         <div class="cta-buttons">
-          <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Amazon Audit</a>
-          <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-fba-management-services" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
+          <a class="btn btn-primary btn-lg" href="/about#contact-form" data-modal-trigger="audit">Get Your Free Audit</a>
+          <a class="btn btn-outline-white btn-lg" href="tel:+19548692034">Call (954) 869-2034</a>
         </div>
-        <p style="margin-top:18px;"><a class="btn btn-outline-white" href="tel:+19548692034">Call (954) 869-2034</a></p>
+        <p style="margin-top:18px; font-size:15px; color:rgba(255,255,255,0.55);">
+          Prefer a call on the calendar?
+          <a href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-fba-management-services" target="_blank" rel="noopener" style="color:var(--white); font-weight:700; text-decoration:underline;">Book a free 30-minute strategy call</a>
+        </p>
       </div>
     </section>
 
-</main>
+  </main>
+
 <selltru-footer><footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-top">

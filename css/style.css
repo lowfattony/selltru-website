@@ -37,11 +37,14 @@ selltru-footer:not(:defined) {
 .blog-trust-band .trust-badge-text{color:var(--navy)}
 .cta-section .blog-cta-calendly{margin-top:18px;font-size:15px;color:rgba(255,255,255,.55);text-align:center}
 .cta-section .blog-cta-calendly a{color:var(--white);font-weight:700;text-decoration:underline}.blog-proof-strip{background:var(--off-white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:28px;margin:40px 0 8px}.blog-proof-strip h2{font-family:var(--font-head);font-size:20px;font-weight:800;color:var(--navy);margin:0 0 14px}.blog-proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.blog-proof-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);padding:18px 16px}.blog-proof-card strong{display:block;font-family:var(--font-head);font-size:18px;color:var(--navy);margin-bottom:6px}.blog-proof-card span{font-size:13px;color:var(--text-light);line-height:1.5}
-.blog-figure{width:100%;height:auto;aspect-ratio:760/420;border-radius:10px;margin:24px 0;background:var(--gray-50)}
-.blog-embed,.calendly-inline-widget{width:100%;aspect-ratio:16/9;min-height:280px}
+.blog-figure{width:100%;height:auto;aspect-ratio:760/420;object-fit:cover;border-radius:10px;margin:24px 0;background:var(--gray-50);display:block}
+.blog-embed,.calendly-inline-widget{width:100%;aspect-ratio:16/9;min-height:280px;display:block}
 .sticky-strip-icon svg{width:18px;height:18px;display:block}
 @media (max-width:768px){
 .blog-article{padding:64px 20px 48px}
 .blog-article h1{min-height:3.45em}
+.blog-meta{min-height:1.5em}
+.blog-article > p:first-of-type{min-height:7.2em}
 .blog-proof-grid{grid-template-columns:1fr;gap:12px}
+.blog-embed,.calendly-inline-widget{min-height:220px}
 }

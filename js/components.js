@@ -384,100 +384,129 @@ class SellTruFooter extends HTMLElement {
 /* --- Audit Modal (shared across all pages) ------------------------------ */
 
 function initAuditModal() {
-  if (document.getElementById('audit-modal')) return; // already initialised
+  var overlay = document.getElementById('audit-modal');
+  var created = false;
 
-  // ── CSS ──
-  var style = document.createElement('style');
-  style.textContent = [
-    '.modal-overlay{position:fixed;inset:0;z-index:1100;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(13,27,42,.72);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;transition:opacity .26s ease;pointer-events:none;}',
-    '.modal-overlay.modal-active{opacity:1;pointer-events:all;}',
-    '.modal-box{background:#fff;border-radius:20px;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;padding:40px 40px 36px;position:relative;transform:translateY(20px) scale(.98);transition:transform .26s cubic-bezier(.34,1.3,.64,1);}',
-    '.modal-overlay.modal-active .modal-box{transform:none;}',
-    '.modal-close{position:absolute;top:16px;right:16px;background:none;border:none;cursor:pointer;font-size:22px;line-height:1;color:#94A3B8;padding:6px 8px;border-radius:8px;transition:color .15s,background .15s;}',
-    '.modal-close:hover{color:#0D1B2A;background:rgba(0,0,0,.06);}',
-    '.modal-header{margin-bottom:16px;}',
-    '.modal-header h2{font-family:"Plus Jakarta Sans",-apple-system,sans-serif;font-size:22px;font-weight:800;color:#0D1B2A;margin-bottom:6px;}',
-    '.modal-header .modal-sub{font-size:14px;color:#64748B;}',
-    '.modal-progress-bar{height:4px;background:#E2E8F0;border-radius:2px;margin-bottom:6px;overflow:hidden;}',
-    '.modal-progress{height:100%;background:linear-gradient(90deg,#1A56DB,#FF6B35);border-radius:2px;transition:width .4s ease;}',
-    '.modal-step-label{font-size:12px;font-weight:600;color:#94A3B8;margin-bottom:20px;text-transform:uppercase;letter-spacing:.04em;}',
-    '.modal-step{display:none;} .modal-step.active{display:block;}',
-    '.modal-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}',
-    '.modal-field{margin-bottom:12px;}',
-    '.modal-field label{display:block;font-size:12px;font-weight:600;color:#334155;text-transform:uppercase;letter-spacing:.04em;margin-bottom:5px;}',
-    '.modal-field input,.modal-field select{width:100%;padding:10px 14px;border:1.5px solid #E2E8F0;border-radius:10px;font-size:14px;color:#1E293B;font-family:"Inter",-apple-system,sans-serif;background:#fff;transition:border-color .15s;}',
-    '.modal-field input:focus,.modal-field select:focus{outline:none;border-color:#1A56DB;}',
-    '.modal-submit{width:100%;margin-top:8px;padding:14px;background:#FF6B35;color:#fff;font-family:"Plus Jakarta Sans",-apple-system,sans-serif;font-size:16px;font-weight:700;border:none;border-radius:12px;cursor:pointer;transition:background .2s;}',
-    '.modal-submit:hover{background:#E55A28;}',
-    '.modal-submit:disabled{opacity:.6;cursor:not-allowed;}',
-    '.modal-success{display:none;text-align:center;padding:20px 0;}',
-    '.modal-success h3{font-family:"Plus Jakarta Sans",-apple-system,sans-serif;font-size:20px;font-weight:800;color:#0D1B2A;margin-bottom:8px;}',
-    '.modal-success p{color:#64748B;font-size:14px;line-height:1.6;}',
-    '.modal-success .calendly-inline-widget{margin-top:14px;border-radius:8px;overflow:hidden;}',
-    '.modal-box-calendly{max-width:700px !important;}',
-    '@media(max-width:520px){.modal-box{padding:28px 20px 24px;}.modal-row{grid-template-columns:1fr;}}'
-  ].join('');
-  document.head.appendChild(style);
+  if (!overlay) {
+    created = true;
+    // ── CSS (injected only when we create the modal) ──
+    var style = document.createElement('style');
+    style.textContent = [
+      '.modal-overlay{position:fixed;inset:0;z-index:1100;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(13,27,42,.72);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;transition:opacity .26s ease;pointer-events:none;}',
+      '.modal-overlay.modal-active{opacity:1;pointer-events:all;}',
+      '.modal-box{background:#fff;border-radius:20px;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;padding:40px 40px 36px;position:relative;transform:translateY(20px) scale(.98);transition:transform .26s cubic-bezier(.34,1.3,.64,1);}',
+      '.modal-overlay.modal-active .modal-box{transform:none;}',
+      '.modal-close{position:absolute;top:16px;right:16px;background:none;border:none;cursor:pointer;font-size:22px;line-height:1;color:#94A3B8;padding:6px 8px;border-radius:8px;transition:color .15s,background .15s;}',
+      '.modal-close:hover{color:#0D1B2A;background:rgba(0,0,0,.06);}',
+      '.modal-header{margin-bottom:16px;}',
+      '.modal-header h2{font-family:"Plus Jakarta Sans",-apple-system,sans-serif;font-size:22px;font-weight:800;color:#0D1B2A;margin-bottom:6px;}',
+      '.modal-header .modal-sub{font-size:14px;color:#64748B;}',
+      '.modal-progress-bar{height:4px;background:#E2E8F0;border-radius:2px;margin-bottom:6px;overflow:hidden;}',
+      '.modal-progress{height:100%;background:linear-gradient(90deg,#1A56DB,#FF6B35);border-radius:2px;transition:width .4s ease;}',
+      '.modal-step-label{font-size:12px;font-weight:600;color:#94A3B8;margin-bottom:20px;text-transform:uppercase;letter-spacing:.04em;}',
+      '.modal-step{display:none;} .modal-step.active{display:block;}',
+      '.modal-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}',
+      '.modal-field{margin-bottom:12px;}',
+      '.modal-field label{display:block;font-size:12px;font-weight:600;color:#334155;text-transform:uppercase;letter-spacing:.04em;margin-bottom:5px;}',
+      '.modal-field input,.modal-field select{width:100%;padding:10px 14px;border:1.5px solid #E2E8F0;border-radius:10px;font-size:14px;color:#1E293B;font-family:"Inter",-apple-system,sans-serif;background:#fff;transition:border-color .15s,box-shadow .15s;}',
+      '.modal-field input:focus,.modal-field select:focus{outline:none;border-color:#1A56DB;}',
+      '.modal-field input.is-invalid,.modal-field select.is-invalid{border-color:var(--danger,#EF4444);box-shadow:0 0 0 3px var(--danger-soft,rgba(239,68,68,.15));}',
+      '.modal-submit{width:100%;margin-top:8px;padding:14px;background:#FF6B35;color:#fff;font-family:"Plus Jakarta Sans",-apple-system,sans-serif;font-size:16px;font-weight:700;border:none;border-radius:12px;cursor:pointer;transition:background .2s;}',
+      '.modal-submit:hover{background:#E55A28;}',
+      '.modal-submit:disabled{opacity:.6;cursor:not-allowed;}',
+      '.modal-success{display:none;text-align:center;padding:20px 0;}',
+      '.modal-success h3{font-family:"Plus Jakarta Sans",-apple-system,sans-serif;font-size:20px;font-weight:800;color:#0D1B2A;margin-bottom:8px;}',
+      '.modal-success p{color:#64748B;font-size:14px;line-height:1.6;}',
+      '.modal-success .calendly-inline-widget{margin-top:14px;border-radius:8px;overflow:hidden;}',
+      '.modal-box-calendly{max-width:700px !important;}',
+      '@media(max-width:520px){.modal-box{padding:28px 20px 24px;}.modal-row{grid-template-columns:1fr;}}'
+    ].join('');
+    document.head.appendChild(style);
 
-  // ── HTML ──
-  var overlay = document.createElement('div');
-  overlay.id = 'audit-modal';
-  overlay.className = 'modal-overlay';
-  overlay.setAttribute('role', 'dialog');
-  overlay.setAttribute('aria-modal', 'true');
-  overlay.setAttribute('aria-labelledby', 'modal-title');
-  overlay.hidden = true;
-  overlay.innerHTML = [
-    '<div class="modal-box">',
-    '  <button class="modal-close" id="modal-close-btn" aria-label="Close">&times;</button>',
-    '  <div class="modal-header" id="modal-header">',
-    '    <h2 id="modal-title">Get Your Free Amazon Audit</h2>',
-    '    <p class="modal-sub">Takes 2 minutes. We\'ll show you exactly where your ad spend is leaking.</p>',
-    '  </div>',
-    '  <div class="modal-progress-bar" id="modal-prog-bar"><div class="modal-progress" id="modal-progress" style="width:50%"></div></div>',
-    '  <p class="modal-step-label" id="modal-step-label">Step 1 of 2: Your Info</p>',
-    '  <form id="modal-audit-form" novalidate>',
-    '    <div id="modal-step-1" class="modal-step active">',
-    '      <div class="modal-field"><label for="m-fname">First Name *</label><input type="text" id="m-fname" name="first-name" placeholder="Jane"></div>',
-    '      <div class="modal-field"><label for="m-email">Work Email *</label><input type="email" id="m-email" name="email" placeholder="jane@brand.com"></div>',
-    '      <button type="button" id="modal-next-btn" class="modal-submit">Next: About Your Brand →</button>',
-    '    </div>',
-    '    <div id="modal-step-2" class="modal-step">',
-    '      <div class="modal-field"><label for="m-phone">Phone <span style="opacity:.65;font-weight:400;text-transform:none">(optional)</span></label><input type="tel" id="m-phone" name="phone" placeholder="(555) 000-0000"></div>',
-    '      <div class="modal-field"><label for="m-company">Company / Brand Name *</label><input type="text" id="m-company" name="company" placeholder="Your Brand LLC"></div>',
-    '      <div class="modal-field"><label for="m-marketplace">Which marketplace(s)? *</label><select id="m-marketplace" name="marketplace"><option value="" disabled selected>Select marketplace...</option><option value="amazon">Amazon only</option><option value="walmart">Walmart.com only</option><option value="both">Both Amazon &amp; Walmart.com</option></select></div>',
-    '      <div class="modal-row">',
-    '        <div class="modal-field"><label for="m-revenue">Annual revenue *</label><select id="m-revenue" name="revenue"><option value="" disabled selected>Select range...</option><option value="pre-launch">Pre-launch</option><option value="under-250k">Under $250K</option><option value="250k-1m">$250K – $1M</option><option value="1m-5m">$1M – $5M</option><option value="5m-20m">$5M – $20M</option><option value="over-20m">Over $20M</option></select></div>',
-    '        <div class="modal-field"><label for="m-adspend">Monthly ad spend <span style="opacity:.65;font-weight:400;text-transform:none">(optional)</span></label><select id="m-adspend" name="adspend"><option value="" disabled selected>Select range...</option><option value="none">Not running ads</option><option value="under-2k">Under $2K/mo</option><option value="2k-10k">$2K – $10K/mo</option><option value="10k-50k">$10K – $50K/mo</option><option value="50k-plus">$50K+/mo</option></select></div>',
-    '      </div>',
-    '      <button type="submit" id="modal-submit-btn" class="modal-submit">Send My Audit Request →</button>',
-    '    </div>',
-    '  </form>',
-    '  <div class="modal-success" id="modal-success">',
-    '    <h3>Application received.</h3>',
-    '    <p>Book a call now while you\'re here. No waiting, no back-and-forth.</p>',
-    '    <div class="calendly-inline-widget" data-url="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1" style="min-width:280px;height:700px;"></div>',
-    '  </div>',
-    '</div>'
-  ].join('');
-  document.body.appendChild(overlay);
+    overlay = document.createElement('div');
+    overlay.id = 'audit-modal';
+    overlay.className = 'modal-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-labelledby', 'modal-title');
+    overlay.hidden = true;
+    overlay.innerHTML = [
+      '<div class="modal-box">',
+      '  <button class="modal-close" id="modal-close-btn" aria-label="Close">&times;</button>',
+      '  <div class="modal-header" id="modal-header">',
+      '    <h2 id="modal-title">Get Your Free Amazon Audit</h2>',
+      '    <p class="modal-sub">Takes 2 minutes. We\'ll show you exactly where your ad spend is leaking.</p>',
+      '  </div>',
+      '  <div class="modal-progress-bar" id="modal-prog-bar"><div class="modal-progress" id="modal-progress" style="width:50%"></div></div>',
+      '  <p class="modal-step-label" id="modal-step-label">Step 1 of 2: Your Info</p>',
+      '  <form id="modal-audit-form" novalidate>',
+      '    <div id="modal-step-1" class="modal-step active">',
+      '      <div class="modal-field"><label for="m-fname">First Name *</label><input type="text" id="m-fname" name="first-name" placeholder="Jane"></div>',
+      '      <div class="modal-field"><label for="m-email">Work Email *</label><input type="email" id="m-email" name="email" placeholder="jane@brand.com"></div>',
+      '      <button type="button" id="modal-next-btn" class="modal-submit">Next: About Your Brand →</button>',
+      '    </div>',
+      '    <div id="modal-step-2" class="modal-step">',
+      '      <div class="modal-field"><label for="m-phone">Phone <span style="opacity:.65;font-weight:400;text-transform:none">(optional)</span></label><input type="tel" id="m-phone" name="phone" placeholder="(555) 000-0000"></div>',
+      '      <div class="modal-field"><label for="m-company">Company / Brand Name *</label><input type="text" id="m-company" name="company" placeholder="Your Brand LLC"></div>',
+      '      <div class="modal-field"><label for="m-marketplace">Which marketplace(s)? *</label><select id="m-marketplace" name="marketplace"><option value="" disabled selected>Select marketplace...</option><option value="amazon">Amazon only</option><option value="walmart">Walmart.com only</option><option value="both">Both Amazon &amp; Walmart.com</option></select></div>',
+      '      <div class="modal-row">',
+      '        <div class="modal-field"><label for="m-revenue">Annual revenue *</label><select id="m-revenue" name="revenue"><option value="" disabled selected>Select range...</option><option value="pre-launch">Pre-launch</option><option value="under-250k">Under $250K</option><option value="250k-1m">$250K – $1M</option><option value="1m-5m">$1M – $5M</option><option value="5m-20m">$5M – $20M</option><option value="over-20m">Over $20M</option></select></div>',
+      '        <div class="modal-field"><label for="m-adspend">Monthly ad spend <span style="opacity:.65;font-weight:400;text-transform:none">(optional)</span></label><select id="m-adspend" name="adspend"><option value="" disabled selected>Select range...</option><option value="none">Not running ads</option><option value="under-2k">Under $2K/mo</option><option value="2k-10k">$2K – $10K/mo</option><option value="10k-50k">$10K – $50K/mo</option><option value="50k-plus">$50K+/mo</option></select></div>',
+      '      </div>',
+      '      <button type="submit" id="modal-submit-btn" class="modal-submit">Send My Audit Request →</button>',
+      '    </div>',
+      '  </form>',
+      '  <div class="modal-success" id="modal-success">',
+      '    <h3>Application received.</h3>',
+      '    <p>Book a call now while you\'re here. No waiting, no back-and-forth.</p>',
+      '    <div class="calendly-inline-widget" data-url="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1" style="min-width:280px;height:700px;"></div>',
+      '  </div>',
+      '</div>'
+    ].join('');
+    document.body.appendChild(overlay);
 
-  // Load Calendly script if not already present
-  if (!document.querySelector('script[src*="calendly.com"]')) {
-    var calScript = document.createElement('script');
-    calScript.src = 'https://assets.calendly.com/assets/external/widget.js';
-    calScript.async = true;
-    calScript.defer = true;
-    document.head.appendChild(calScript);
+    if (!document.querySelector('script[src*="calendly.com"]')) {
+      var calScript = document.createElement('script');
+      calScript.src = 'https://assets.calendly.com/assets/external/widget.js';
+      calScript.async = true;
+      calScript.defer = true;
+      document.head.appendChild(calScript);
+    }
   }
 
-  // ── JS ──
+  // Shared binder: Home embeds the modal in index.html; other pages inject it above.
+  // Same Enter → step 2 path as the About form; never posts a partial lead.
+  bindAuditModalHandlers(overlay);
+  if (created) { /* keep linter quiet */ }
+}
+
+function bindAuditModalHandlers(overlay) {
+  if (!overlay || overlay.dataset.handlersBound === '1') return;
+  overlay.dataset.handlersBound = '1';
+
+  var form = document.getElementById('modal-audit-form');
+  if (form) form.dataset.hubspotBound = '1'; // prevent main.js double-bind
+
+  function clearInvalid(els) {
+    els.forEach(function (el) {
+      if (!el) return;
+      el.classList.remove('is-invalid');
+      el.removeAttribute('aria-invalid');
+      el.style.borderColor = '';
+    });
+  }
+
+  function markInvalid(el) {
+    if (!el) return;
+    el.classList.add('is-invalid');
+    el.setAttribute('aria-invalid', 'true');
+  }
+
   function openModal(e) {
     if (e) e.preventDefault();
     var step1     = document.getElementById('modal-step-1');
     var step2     = document.getElementById('modal-step-2');
     var success   = document.getElementById('modal-success');
-    var form      = document.getElementById('modal-audit-form');
     var header    = document.getElementById('modal-header');
     var progBar   = document.getElementById('modal-prog-bar');
     var stepLabel = document.getElementById('modal-step-label');
@@ -493,7 +522,7 @@ function initAuditModal() {
     if (stepLabel) { stepLabel.style.display = ''; stepLabel.textContent = 'Step 1 of 2: Your Info'; }
     if (prog)      prog.style.width = '50%';
     if (mb)        mb.classList.remove('modal-box-calendly');
-    overlay.querySelectorAll('.modal-field input,.modal-field select').forEach(function(el) { el.style.borderColor = ''; });
+    clearInvalid([].slice.call(overlay.querySelectorAll('.modal-field input,.modal-field select')));
 
     overlay.hidden = false;
     requestAnimationFrame(function() {
@@ -509,8 +538,10 @@ function initAuditModal() {
   }
 
   window.openAuditModal = openModal;
+  window.bindAuditModalHandlers = bindAuditModalHandlers;
 
-  document.getElementById('modal-close-btn').addEventListener('click', closeModal);
+  var closeBtn = document.getElementById('modal-close-btn');
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', function(e) { if (e.target === overlay) closeModal(); });
   document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && !overlay.hidden) closeModal(); });
   document.addEventListener('click', function(e) {
@@ -518,104 +549,115 @@ function initAuditModal() {
     if (trigger) openModal(e);
   });
 
-  // Step 1: Next button
-  document.getElementById('modal-next-btn').addEventListener('click', function() {
+  function goNext() {
     var fname = document.getElementById('m-fname');
     var email = document.getElementById('m-email');
-    var valid = true;
-    fname.style.borderColor = '';
-    email.style.borderColor = '';
-    if (!fname.value.trim()) { fname.style.borderColor = '#EF4444'; fname.focus(); valid = false; }
-    var emailVal = email.value.trim();
+    clearInvalid([fname, email]);
+    var ok = true;
+    var firstBad = null;
+    if (!fname || !fname.value.trim()) { markInvalid(fname); ok = false; firstBad = firstBad || fname; }
+    var emailVal = email ? email.value.trim() : '';
     if (!emailVal || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
-      email.style.borderColor = '#EF4444';
-      if (valid) email.focus();
-      valid = false;
+      markInvalid(email);
+      ok = false;
+      firstBad = firstBad || email;
     }
-    if (!valid) return;
+    if (!ok) { if (firstBad) firstBad.focus(); return false; }
 
-    // Silent partial lead capture: fire and forget
-    fetch('https://formspree.io/f/xlgakqbq', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({ 'first-name': fname.value.trim(), email: emailVal, submission_type: 'partial', lead_stage: 'partial' })
-    });
-    window.gtag && gtag('event', 'sign_up', { event_category: 'conversion', event_label: 'modal_step1_partial' });
-
+    // No partial Formspree — advance only (matches About form).
     document.getElementById('modal-step-1').classList.remove('active');
     document.getElementById('modal-step-2').classList.add('active');
-    document.getElementById('modal-progress').style.width = '80%';
-    document.getElementById('modal-step-label').textContent = 'Step 2 of 2: Your Business';
-  });
+    var prog = document.getElementById('modal-progress');
+    if (prog) prog.style.width = '80%';
+    var stepLabel = document.getElementById('modal-step-label');
+    if (stepLabel) stepLabel.textContent = 'Step 2 of 2: Your Business';
+    var phone = document.getElementById('m-phone');
+    if (phone) phone.focus();
+    return true;
+  }
 
-  // Step 2: form submit
-  var form = document.getElementById('modal-audit-form');
-  form.dataset.hubspotBound = '1'; // prevent main.js double-bind
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    var company     = document.getElementById('m-company');
-    var marketplace = document.getElementById('m-marketplace');
-    var revenue     = document.getElementById('m-revenue');
-    var adspend     = document.getElementById('m-adspend');
-    var valid = true;
-    [company, marketplace, revenue, adspend].forEach(function(el) { el.style.borderColor = ''; });
-    if (!company.value.trim())  { company.style.borderColor    = '#EF4444'; if (valid) company.focus();     valid = false; }
-    if (!marketplace.value)     { marketplace.style.borderColor = '#EF4444'; if (valid) marketplace.focus(); valid = false; }
-    if (!revenue.value)         { revenue.style.borderColor    = '#EF4444'; if (valid) revenue.focus();     valid = false; }
-    if (!valid) return;
+  var nextBtn = document.getElementById('modal-next-btn');
+  if (nextBtn) nextBtn.addEventListener('click', function() { goNext(); });
 
-    var btn = document.getElementById('modal-submit-btn');
-    if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+  if (form) {
+    // Capture: Enter in step 1 runs Next (like About), never a partial lead.
+    form.addEventListener('submit', function(e) {
+      var step1 = document.getElementById('modal-step-1');
+      if (step1 && step1.classList.contains('active')) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        goNext();
+        return;
+      }
 
-    var fname   = document.getElementById('m-fname');
-    var emailEl = document.getElementById('m-email');
-    var phone   = document.getElementById('m-phone');
-    var data = {
-      'first-name': fname   ? fname.value.trim()   : '',
-      email:        emailEl ? emailEl.value.trim() : '',
-      company:      company.value.trim(),
-      marketplace:  marketplace.value,
-      revenue:      revenue.value,
-      adspend:      adspend.value
-    };
-    var phoneVal = phone ? phone.value.trim() : '';
-    if (phoneVal) data.phone = phoneVal;
+      e.preventDefault();
+      var company     = document.getElementById('m-company');
+      var marketplace = document.getElementById('m-marketplace');
+      var revenue     = document.getElementById('m-revenue');
+      var adspend     = document.getElementById('m-adspend');
+      clearInvalid([company, marketplace, revenue, adspend]);
+      var valid = true;
+      var firstBad = null;
+      if (!company || !company.value.trim()) { markInvalid(company); valid = false; firstBad = firstBad || company; }
+      if (!marketplace || !marketplace.value) { markInvalid(marketplace); valid = false; firstBad = firstBad || marketplace; }
+      if (!revenue || !revenue.value) { markInvalid(revenue); valid = false; firstBad = firstBad || revenue; }
+      if (!valid) { if (firstBad) firstBad.focus(); return; }
 
-    fetch('https://formspree.io/f/xlgakqbq', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(data)
-    }).then(function(r) {
-      if (r.ok) {
-        window.gtag && gtag('event', 'generate_lead', { event_category: 'conversion', event_label: 'modal_audit_form' });
-        window.oaiq && oaiq('measure','registration_completed',{type:'customer_action'});
-        form.style.display = 'none';
-        var hdr = document.getElementById('modal-header');
-        var pb  = document.getElementById('modal-prog-bar');
-        var sl  = document.getElementById('modal-step-label');
-        if (hdr) hdr.style.display = 'none';
-        if (pb)  pb.style.display  = 'none';
-        if (sl)  sl.style.display  = 'none';
-        var s = document.getElementById('modal-success');
-        if (s) {
-          s.style.display = 'block';
-          var mb = overlay.querySelector('.modal-box');
-          if (mb) mb.classList.add('modal-box-calendly');
-          if (window.Calendly && window.Calendly.initInlineWidget) {
-            var calEl = s.querySelector('.calendly-inline-widget');
-            if (calEl) Calendly.initInlineWidget({ url: calEl.dataset.url, parentElement: calEl });
+      var btn = document.getElementById('modal-submit-btn');
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+
+      var fname   = document.getElementById('m-fname');
+      var emailEl = document.getElementById('m-email');
+      var phone   = document.getElementById('m-phone');
+      var data = {
+        'first-name': fname   ? fname.value.trim()   : '',
+        email:        emailEl ? emailEl.value.trim() : '',
+        company:      company.value.trim(),
+        marketplace:  marketplace.value,
+        revenue:      revenue.value,
+        adspend:      adspend ? adspend.value : '',
+        lead_stage:   'complete'
+      };
+      var phoneVal = phone ? phone.value.trim() : '';
+      if (phoneVal) data.phone = phoneVal;
+
+      fetch('https://formspree.io/f/xlgakqbq', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(function(r) {
+        if (r.ok) {
+          window.gtag && gtag('event', 'generate_lead', { event_category: 'conversion', event_label: 'modal_audit_form' });
+          window.oaiq && oaiq('measure','registration_completed',{type:'customer_action'});
+          form.style.display = 'none';
+          var hdr = document.getElementById('modal-header');
+          var pb  = document.getElementById('modal-prog-bar');
+          var sl  = document.getElementById('modal-step-label');
+          if (hdr) hdr.style.display = 'none';
+          if (pb)  pb.style.display  = 'none';
+          if (sl)  sl.style.display  = 'none';
+          var s = document.getElementById('modal-success');
+          if (s) {
+            s.style.display = 'block';
+            var mb = overlay.querySelector('.modal-box');
+            if (mb) mb.classList.add('modal-box-calendly');
+            if (window.Calendly && window.Calendly.initInlineWidget) {
+              var calEl = s.querySelector('.calendly-inline-widget');
+              if (calEl) Calendly.initInlineWidget({ url: calEl.dataset.url, parentElement: calEl });
+            }
           }
+        } else {
+          if (btn) { btn.disabled = false; btn.textContent = 'Send My Audit Request →'; }
+          alert('Something went wrong. Please email us at contact@selltru.com');
         }
-      } else {
+      }).catch(function() {
         if (btn) { btn.disabled = false; btn.textContent = 'Send My Audit Request →'; }
         alert('Something went wrong. Please email us at contact@selltru.com');
-      }
-    }).catch(function() {
-      if (btn) { btn.disabled = false; btn.textContent = 'Send My Audit Request →'; }
-      alert('Something went wrong. Please email us at contact@selltru.com');
-    });
-  });
+      });
+    }, true);
+  }
 }
+
 /* --- Register both elements ------------------------------------- */
 
 customElements.define('selltru-header', SellTruHeader);

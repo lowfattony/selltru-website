@@ -1464,7 +1464,7 @@
     .modal-field{margin-bottom:12px;}
     .modal-field label{display:block;font-size:12px;font-weight:600;color:#334155;text-transform:uppercase;letter-spacing:.04em;margin-bottom:5px;}
     .modal-field input,.modal-field select{width:100%;padding:10px 14px;border:1.5px solid #E2E8F0;border-radius:10px;font-size:14px;color:#1E293B;font-family:"Inter",-apple-system,sans-serif;background:#fff;transition:border-color .15s;}
-    .modal-field input:focus,.modal-field select:focus{outline:none;border-color:#1A56DB;}
+    .modal-field input:focus,.modal-field select:focus{outline:none;border-color:#1A56DB;} .modal-field input.is-invalid,.modal-field select.is-invalid{border-color:var(--danger,#EF4444);box-shadow:0 0 0 3px var(--danger-soft,rgba(239,68,68,.15));}
     .modal-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
     .modal-submit{width:100%;margin-top:8px;padding:14px;background:#FF6B35;color:#fff;font-family:"Plus Jakarta Sans",-apple-system,sans-serif;font-size:16px;font-weight:700;border:none;border-radius:12px;cursor:pointer;transition:background .2s;}
     .modal-submit:hover{background:#E55A28;} .modal-submit:disabled{opacity:.6;cursor:not-allowed;}
@@ -1546,151 +1546,14 @@
   </div>
 
   <script>
-    (function() {
+    // Handlers come from shared bindAuditModalHandlers in /js/components.js
+    // (called by <selltru-header>). Fallback if header upgrade is delayed:
+    document.addEventListener('DOMContentLoaded', function () {
       var overlay = document.getElementById('audit-modal');
-      var form    = document.getElementById('modal-audit-form');
-      if (!overlay) return;
-
-      // Prevent main.js from binding its own submit handler
-      if (form) form.dataset.hubspotBound = '1';
-
-      function openModal(e) {
-        if (e) e.preventDefault();
-        var step1     = document.getElementById('modal-step-1');
-        var step2     = document.getElementById('modal-step-2');
-        var success   = document.getElementById('modal-success');
-        var header    = document.getElementById('modal-header');
-        var progBar   = document.getElementById('modal-prog-bar');
-        var stepLabel = document.getElementById('modal-step-label');
-        var prog      = document.getElementById('modal-progress');
-        var mb        = overlay.querySelector('.modal-box');
-
-        if (step1) step1.classList.add('active');
-        if (step2) step2.classList.remove('active');
-        if (success)   success.style.display   = 'none';
-        if (form)    { form.style.display = ''; form.reset(); }
-        if (header)    header.style.display    = '';
-        if (progBar)   progBar.style.display   = '';
-        if (stepLabel) { stepLabel.style.display = ''; stepLabel.textContent = 'Step 1 of 2: Your Info'; }
-        if (prog)      prog.style.width = '50%';
-        if (mb)        mb.classList.remove('modal-box-calendly');
-        overlay.querySelectorAll('.modal-field input,.modal-field select').forEach(function(el) { el.style.borderColor = ''; });
-
-        overlay.hidden = false;
-        requestAnimationFrame(function() {
-          requestAnimationFrame(function() { overlay.classList.add('modal-active'); });
-        });
-        document.body.style.overflow = 'hidden';
+      if (overlay && typeof bindAuditModalHandlers === 'function') {
+        bindAuditModalHandlers(overlay);
       }
-
-      function closeModal() {
-        overlay.classList.remove('modal-active');
-        document.body.style.overflow = '';
-        setTimeout(function() { overlay.hidden = true; }, 260);
-      }
-
-      document.addEventListener('click', function(e) {
-        if (e.target.closest('[data-modal-trigger="audit"]')) openModal(e);
-      });
-      document.getElementById('modal-close-btn').addEventListener('click', closeModal);
-      overlay.addEventListener('click', function(e) { if (e.target === overlay) closeModal(); });
-      document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && !overlay.hidden) closeModal(); });
-
-      // Step 1: Next button
-      var nextBtn = document.getElementById('modal-next-btn');
-      if (nextBtn) {
-        nextBtn.addEventListener('click', function() {
-          var fname = document.getElementById('m-fname');
-          var email = document.getElementById('m-email');
-          var valid = true;
-          fname.style.borderColor = ''; email.style.borderColor = '';
-          if (!fname.value.trim()) { fname.style.borderColor = '#EF4444'; fname.focus(); valid = false; }
-          var emailVal = email.value.trim();
-          if (!emailVal || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
-            email.style.borderColor = '#EF4444'; if (valid) email.focus(); valid = false;
-          }
-          if (!valid) return;
-
-          fetch('https://formspree.io/f/xlgakqbq', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify({ 'first-name': fname.value.trim(), email: emailVal, submission_type: 'partial', lead_stage: 'partial' })
-          });
-
-          document.getElementById('modal-step-1').classList.remove('active');
-          document.getElementById('modal-step-2').classList.add('active');
-          document.getElementById('modal-progress').style.width = '80%';
-          document.getElementById('modal-step-label').textContent = 'Step 2 of 2: Your Business';
-        });
-      }
-
-      // Step 2: form submit
-      if (form) {
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          var company     = document.getElementById('m-company');
-          var marketplace = document.getElementById('m-marketplace');
-          var revenue     = document.getElementById('m-revenue');
-          var adspend     = document.getElementById('m-adspend');
-          var valid = true;
-          [company, marketplace, revenue, adspend].forEach(function(el) { el.style.borderColor = ''; });
-          if (!company.value.trim())  { company.style.borderColor    = '#EF4444'; if (valid) company.focus();     valid = false; }
-          if (!marketplace.value)     { marketplace.style.borderColor = '#EF4444'; if (valid) marketplace.focus(); valid = false; }
-          if (!revenue.value)         { revenue.style.borderColor    = '#EF4444'; if (valid) revenue.focus();     valid = false; }
-          if (!valid) return;
-
-          var btn = document.getElementById('modal-submit-btn');
-          if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
-
-          var fname   = document.getElementById('m-fname');
-          var emailEl = document.getElementById('m-email');
-          var phone   = document.getElementById('m-phone');
-          var data = {
-            'first-name': fname   ? fname.value.trim()   : '',
-            email:         emailEl ? emailEl.value.trim() : '',
-            company:       company.value.trim(),
-            marketplace:   marketplace.value,
-            revenue:       revenue.value,
-            adspend:       adspend.value
-          };
-          var phoneVal = phone ? phone.value.trim() : '';
-          if (phoneVal) data.phone = phoneVal;
-
-          fetch('https://formspree.io/f/xlgakqbq', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify(data)
-          }).then(function(r) {
-            if (r.ok) {
-              window.gtag && gtag('event', 'generate_lead', { event_category: 'conversion', event_label: 'modal_audit_form' });
-              form.style.display = 'none';
-              var hdr = document.getElementById('modal-header');
-              var pb  = document.getElementById('modal-prog-bar');
-              var sl  = document.getElementById('modal-step-label');
-              if (hdr) hdr.style.display = 'none';
-              if (pb)  pb.style.display  = 'none';
-              if (sl)  sl.style.display  = 'none';
-              var s = document.getElementById('modal-success');
-              if (s) {
-                s.style.display = 'block';
-                var mb = overlay.querySelector('.modal-box');
-                if (mb) mb.classList.add('modal-box-calendly');
-                if (window.Calendly && window.Calendly.initInlineWidget) {
-                  var calEl = s.querySelector('.calendly-inline-widget');
-                  if (calEl) Calendly.initInlineWidget({ url: calEl.dataset.url, parentElement: calEl });
-                }
-              }
-            } else {
-              if (btn) { btn.disabled = false; btn.textContent = 'Send My Audit Request →'; }
-              alert('Something went wrong. Please email us at contact@selltru.com.');
-            }
-          }).catch(function() {
-            if (btn) { btn.disabled = false; btn.textContent = 'Send My Audit Request →'; }
-            alert('Something went wrong. Please email us at contact@selltru.com.');
-          });
-        });
-      }
-    })();
+    });
   </script>
 </body>
 </html>

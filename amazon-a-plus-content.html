@@ -31,7 +31,7 @@
   <style>
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
     .reveal.revealed { opacity: 1; transform: none; }
-    .amazon-accent { color: #FF9900; }
+    .amazon-accent { color: var(--orange); }
 
     .why-icon svg, .smc-icon svg { width: 22px; height: 22px; display: block; }
     .why-icon.blue { color: var(--blue); }
@@ -39,6 +39,8 @@
     .why-icon.green { color: var(--blue); }
     .smc-icon { color: var(--blue); display: flex; align-items: center; }
     .section-sub a { color: var(--blue); font-weight: 600; }
+    .page-hero a.link-on-dark { color: var(--white); font-weight: 700; }
+    .page-hero .trust-badge-wmt .trust-badge-text { color: var(--white); }
   </style>
   <script src="/js/components.js" defer></script>
   <script>
@@ -219,7 +221,7 @@
         <div class="page-hero-inner">
           <p class="section-tag light" style="margin-bottom:14px;">Amazon A+ Content</p>
           <h1>Amazon A+ Content That Converts. <span>Built for Brand Registry Brands.</span></h1>
-          <p>Basic and Premium A+ modules for Brand Registry brands doing $1M to $20M. Designed from the reviews and the listing, not pasted from a template. Part of the same team that runs your listings and <a href="/amazon-ppc-management" style="color:#fff;font-weight:700;">Amazon PPC</a>.</p>
+          <p>Basic and Premium A+ modules for Brand Registry brands doing $1M to $20M. Designed from the reviews and the listing, not pasted from a template. Part of the same team that runs your listings and <a class="link-on-dark" href="/amazon-ppc-management">Amazon PPC</a>.</p>
           <div style="display:flex; gap:14px; flex-wrap:wrap;">
             <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Amazon Audit</a>
             <a class="btn btn-outline-white" href="#whats-included">View All Services</a>

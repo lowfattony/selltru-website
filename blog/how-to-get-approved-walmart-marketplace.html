@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) — deferred until idle -->
+  <!-- Google tag (gtag.js) - deferred until idle -->
   <script>
     window.dataLayer = window.dataLayer || [];
     window.gtag = function(){dataLayer.push(arguments);};
@@ -42,12 +42,12 @@
     .blog-callout { background: rgba(26,86,219,0.06); border-left: 3px solid var(--blue); border-radius: 0 10px 10px 0; padding: 18px 22px; margin: 28px 0; }
     .blog-callout p { margin-bottom: 0; color: var(--navy); font-size: 15px; }
     .blog-callout.orange { background: rgba(255,107,53,0.06); border-left-color: var(--orange); }
-    .blog-cta-box { background: linear-gradient(135deg, #0D1B2A, #1A3A5C); border-radius: 18px; padding: 40px 44px; margin-top: 64px; text-align: center; }
-    .blog-cta-box h3 { color: #fff; font-family: var(--font-head); font-size: 24px; font-weight: 800; margin-bottom: 10px; }
+    .blog-cta-box { background: linear-gradient(135deg, var(--navy), var(--navy-mid)); border-radius: 18px; padding: 40px 44px; margin-top: 64px; text-align: center; }
+    .blog-cta-box h3 { color: var(--white); font-family: var(--font-head); font-size: 24px; font-weight: 800; margin-bottom: 10px; }
     .blog-cta-box p { color: rgba(255,255,255,0.7); font-size: 15px; margin-bottom: 28px; line-height: 1.6; }
     .blog-breadcrumb { font-size: 13px; color: var(--text-light); margin-bottom: 32px; }
     .blog-breadcrumb a { color: var(--blue); text-decoration: none; }
-    .metric-formula { background: var(--navy); color: #fff; border-radius: 12px; padding: 24px 28px; margin: 28px 0; text-align: center; }
+    .metric-formula { background: var(--navy); color: var(--white); border-radius: 12px; padding: 24px 28px; margin: 28px 0; text-align: center; }
     .metric-formula .formula-text { font-family: var(--font-head); font-size: 20px; font-weight: 700; letter-spacing: 0.02em; margin-bottom: 8px; }
     .metric-formula .formula-example { font-size: 14px; color: rgba(255,255,255,0.65); }
     .benchmark-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 28px 0; }
@@ -62,6 +62,45 @@
     @media (max-width: 600px) {
       .blog-article { padding: 48px 20px 64px; }
       .blog-cta-box { padding: 32px 24px; }
+    }
+    .blog-cta-box .cta-buttons { justify-content: center; margin-top: 8px; }
+    .blog-cta-box .cta-buttons .btn { margin: 0; }
+    .blog-cta-calendly {
+      margin-top: 18px;
+      font-size: 15px;
+      color: rgba(255,255,255,0.55);
+    }
+    .blog-cta-calendly a {
+      color: var(--white);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+    
+    .blog-body a[href]:not(.btn):not(.bar-cta):not(.blog-cta-mid-link):not(.blog-cta-calendly a):not(.blog-inline-link) { color: var(--blue); }
+    a.blog-inline-link { color: var(--blue); font-weight: 600; text-decoration: none; }
+    .section-tag.blog-tag { margin-bottom: 12px; }
+    .amz-tm { font-size: 11px; opacity: 0.6; margin-top: 6px; }
+    .blog-figure { width: 100%; border-radius: 10px; margin: 24px 0; }
+    .blog-inline-link { color: var(--blue); font-weight: 600; text-decoration: none; }
+    .blog-cta-mid { margin: 28px 0; }
+    .blog-cta-mid-link {
+      color: var(--orange);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+    .blog-note {
+      margin-top: 40px;
+      padding: 18px 22px 18px 26px;
+      background: var(--off-white);
+      border: 1px solid var(--gray-200);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 12px 12px 0;
+    }
+    .blog-note p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.65;
     }
   </style>
   <script type="application/ld+json">
@@ -151,7 +190,7 @@
       left: 0;
       right: 0;
       z-index: 800;
-      background: #0D1B2A;
+      background: var(--navy);
       border-top: 1px solid rgba(255,255,255,0.08);
       padding: 14px 24px;
       display: flex;
@@ -170,11 +209,11 @@
       font-family: 'Inter',-apple-system,sans-serif;
       line-height: 1.4;
     }
-    .bar-text strong { color: #fff; font-weight: 700; }
+    .bar-text strong { color: var(--white); font-weight: 700; }
     .bar-cta {
       display: inline-block;
-      background: #FF6B35;
-      color: #fff;
+      background: var(--orange);
+      color: var(--white);
       font-family: 'Plus Jakarta Sans',-apple-system,sans-serif;
       font-size: 14px;
       font-weight: 700;
@@ -185,7 +224,7 @@
       transition: background 0.2s;
       flex-shrink: 0;
     }
-    .bar-cta:hover { background: #E55A28; }
+    .bar-cta:hover { background: var(--orange-hover); }
     .bar-dismiss {
       background: none;
       border: none;
@@ -301,7 +340,7 @@
     <div class="blog-article">
 
       <p class="blog-breadcrumb"><a href="/blog">Blog</a> &nbsp;/&nbsp; Walmart</p>
-      <p class="section-tag" style="margin-bottom:12px;">Walmart</p>
+      <p class="section-tag blog-tag">Walmart</p>
       <h1>How to Get Approved for Walmart Marketplace</h1>
       <div class="blog-meta">
         <span>By Andrew Deramo</span>
@@ -312,7 +351,7 @@
       </div>
 
       <p>Getting approved to sell on Walmart Marketplace is a gate, not a growth plan. Brands doing $1M to $20M often treat the application as a form they will finish after the ads are built. Walmart reviews the business first. A campaign on an account that is not open, or an item the catalog has not accepted, does not teach you anything. It spends.</p>
-      <p>This is the application and the Seller Center setup. What to do in the months after you are live, including listings that are not a paste of Amazon and the first 90 days, is <a href="/blog/how-to-expand-amazon-brand-to-walmart" style="color:var(--blue);">how to expand an Amazon brand to Walmart</a>. If you want that work done with you, the service page is <a href="/walmart-marketplace-agency" style="color:var(--blue);">Walmart marketplace agency</a>: approval, listings, WFS, Walmart Connect, then reviews.</p>
+      <p>This is the application and the Seller Center setup. What to do in the months after you are live, including listings that are not a paste of Amazon and the first 90 days, is <a href="/blog/how-to-expand-amazon-brand-to-walmart" class="blog-inline-link">how to expand an Amazon brand to Walmart</a>. If you want that work done with you, the service page is <a href="/walmart-marketplace-agency" class="blog-inline-link">Walmart marketplace agency</a>: approval, listings, WFS, Walmart Connect, then reviews.</p>
       <p>We do not guarantee approval. Walmart decides. The requirements below are Walmart's, from their Marketplace Learn guide "Before you start selling on Walmart Marketplace" (updated September 2, 2026) and the business verification guide. Read those pages before you upload anything. This post is the order we use so a $1M to $20M brand does not stall on a document mismatch.</p>
 
       <h2>What Walmart requires before you apply</h2>
@@ -343,14 +382,10 @@
 
       <h2>Fulfillment: WFS or your own warehouse</h2>
       <p>Walmart's requirement is practical. You either ship from a US consumer warehouse that can take returns and hold seller performance standards, or you use Walmart Fulfillment Services. WFS is Walmart storing and shipping the unit, and handling customer support and returns on those orders. It is the closest thing to FBA, and it is not automatic. Enrollment, item setup, and inbound are their own project.</p>
-      <p>How we run that project is on <a href="/walmart-wfs-management" style="color:var(--blue);">Walmart WFS management</a>. The longer comparison with FBA fees and the decision of which SKUs belong in the program is the <a href="/blog/walmart-fulfillment-services-wfs-guide" style="color:var(--blue);">WFS guide</a>. Do not split your Amazon inventory into WFS just because the application asked how you will ship. The Walmart item has to justify a second pile of stock, and the replenishment has to feed both channels.</p>
+      <p>How we run that project is on <a href="/walmart-wfs-management" class="blog-inline-link">Walmart WFS management</a>. The longer comparison with FBA fees and the decision of which SKUs belong in the program is the <a href="/blog/walmart-fulfillment-services-wfs-guide" class="blog-inline-link">WFS guide</a>. Do not split your Amazon inventory into WFS just because the application asked how you will ship. The Walmart item has to justify a second pile of stock, and the replenishment has to feed both channels.</p>
       <p>If you will seller-fulfill, the shipping template and the returns address have to exist before the item is buyable. A delivery promise you cannot keep becomes a performance problem, and performance problems are how new accounts get restricted after the celebration email. Set the promise to something the warehouse has already hit, not to the promise you hope to grow into.</p>
 
-      <div class="blog-cta-box" style="margin:36px 0;">
-        <h3>Stuck on the application or the first items?</h3>
-        <p>Book a 30-minute call. Tell us whether you are not yet approved, or approved and unable to publish. Those are different jobs.</p>
-        <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=how-to-get-approved-walmart-marketplace" target="_blank" rel="noopener" style="display:inline-block;padding:14px 32px;background:var(--orange);color:#fff;font-weight:700;border-radius:10px;text-decoration:none;font-size:15px;">Book a free 30-minute strategy call</a>
-      </div>
+      <p class="blog-cta-mid"><a class="blog-cta-mid-link" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=how-to-get-approved-walmart-marketplace" target="_blank" rel="noopener">Book a free 30-minute strategy call</a></p>
 
       <h2>What to finish after the account opens</h2>
       <p>Approval is the start of setup, not the start of scale. In Seller Center, finish payments, tax settings, fulfillment, and returns before you publish a pile of items. Then publish a short list. Then check that a shopper can actually buy the item: price, inventory, and a delivery date that matches the template.</p>
@@ -359,7 +394,7 @@
 
       <h2>When not to turn on Walmart Connect</h2>
       <p>Walmart Connect is the ad platform: Sponsored Search, onsite display, and brand placements, once the account is allowed to use them. It is the wrong first click. An item that is unpublished, out of stock, or missing the attributes Walmart uses as filters will not teach you a bid. Wait until the offer can be bought.</p>
-      <p>The management of that auction, after the item is ready, is <a href="/walmart-connect-ads-agency" style="color:var(--blue);">Walmart Connect ads agency</a>. The 3x Year 1 growth figure on that page is a result we stand behind for the accounts in that set. It is not what approval produces, and it is not a promise for a new seller in week one. Costs and the calculator live on the pages linked from that service. Use them when you are ready to fund a test, not while the ID photo is still uploading.</p>
+      <p>The management of that auction, after the item is ready, is <a href="/walmart-connect-ads-agency" class="blog-inline-link">Walmart Connect ads agency</a>. The 3x Year 1 growth figure on that page is a result we stand behind for the accounts in that set. It is not what approval produces, and it is not a promise for a new seller in week one. Costs and the calculator live on the pages linked from that service. Use them when you are ready to fund a test, not while the ID photo is still uploading.</p>
       <p>Reviews are the other reason to wait. A zero-review item can be approved and still be a bad place to spend. The review programs Walmart allows are a separate guide. Build a base, then buy traffic. There is no step in the application where an agency is supposed to invent reviews.</p>
 
       <h2>A simple order for a brand that already sells on Amazon</h2>
@@ -391,12 +426,14 @@
       <div class="blog-cta-box">
         <h3>Bring the application status, not a guess.</h3>
         <p>Thirty minutes. If you are not approved, we start there. If you are approved and the items are stuck, we start there instead.</p>
-        <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit" style="display:inline-block;padding:14px 32px;background:var(--orange);color:#fff;font-weight:700;border-radius:10px;text-decoration:none;font-size:15px;">Get a Free Audit</a>
-        <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=how-to-get-approved-walmart-marketplace" target="_blank" rel="noopener" style="margin-top:12px;margin-left:8px;">Book a free 30-minute strategy call</a>
+        <div class="cta-buttons">
+          <a class="btn btn-primary btn-lg" href="/about#contact-form" data-modal-trigger="audit">Get Your Free Audit</a>
+          <a class="btn btn-outline-white btn-lg" href="tel:+19548692034">Call (954) 869-2034</a>
+        </div>
+        <p class="blog-cta-calendly">Prefer a call on the calendar? <a href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=how-to-get-approved-walmart-marketplace" target="_blank" rel="noopener">Book a free 30-minute strategy call</a></p>
       </div>
 
-      <div style="margin-top:40px;padding:18px 22px 18px 26px;background:#F8FAFC;border:1px solid #E2E8F0;border-left:3px solid #10B981;border-radius:0 12px 12px 0;" class="reveal">
-        <p style="margin:0;font-size:14px;color:#64748B;line-height:1.65;">Have experience with this? The SellTru blog accepts guest posts from Amazon sellers, agency pros, and ecommerce operators. <a href="/write-for-us" style="color:#1A56DB;font-weight:600;text-decoration:none;">See our submission guidelines &rarr;</a></p>
+      <div class="blog-note reveal"><p>Have experience with this? The SellTru blog accepts guest posts from Amazon sellers, agency pros, and ecommerce operators. <a href="/write-for-us" class="blog-inline-link">See our submission guidelines &rarr;</a></p>
       </div>
 
     </div>
@@ -472,7 +509,7 @@
     <div class="footer-bottom">
       <div class="footer-bottom-left">
         <p>&copy; 2026 SellTru. All rights reserved. | A marketplace agency for brands on Amazon and Walmart | Fort Lauderdale, FL</p>
-        <p class="amz-tm" style="font-size:11px;opacity:.6;margin-top:6px;">Amazon, Amazon Ads, and all related logos are trademarks of Amazon.com, Inc., or its affiliates.</p>
+        <p class="amz-tm">Amazon, Amazon Ads, and all related logos are trademarks of Amazon.com, Inc., or its affiliates.</p>
       </div>
       <div class="footer-certs">
         <span class="footer-cert">Amazon Ads Partner Network member</span>
@@ -495,7 +532,7 @@
   </div>
 </div></selltru-footer>
 
-  <!-- Reveal scroll animation — do not edit -->
+  <!-- Reveal scroll animation - do not edit -->
   <script>
     var ro = new IntersectionObserver(function(entries){
       entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('revealed'); ro.unobserve(e.target); } });

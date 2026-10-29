@@ -44,7 +44,5 @@ selltru-footer:not(:defined) {
 .blog-article{padding:64px 20px 48px}
 .blog-article h1{min-height:3.45em}
 .blog-meta{min-height:1.5em}
-.blog-article > p:first-of-type{min-height:7.2em}
 .blog-proof-grid{grid-template-columns:1fr;gap:12px}
-.blog-embed,.calendly-inline-widget{min-height:220px}
 }

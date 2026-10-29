@@ -28,36 +28,24 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://assets.calendly.com">
   <script src="https://assets.calendly.com/assets/external/widget.js" async defer></script>
+  <style>
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.revealed { opacity: 1; transform: none; }
+    .amazon-accent { color: var(--orange); }
+
+    .why-icon svg, .smc-icon svg { width: 22px; height: 22px; display: block; }
+    .why-icon.blue { color: var(--blue); }
+    .why-icon.orange { color: var(--orange); }
+    .why-icon.green { color: var(--blue); }
+    .smc-icon { color: var(--blue); display: flex; align-items: center; }
+  </style>
   <script src="/js/components.js" defer></script>
   <script>
     !function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments);};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f);}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");
     oaiq("init", { pixelId: "UeyzoKe3VtFvfSMqVPUoaN" });
   </script>
-  <style>
-    .buyer-wrap { max-width: 800px; }
-    .buyer-wrap h2 { font-family: var(--font-head); font-size: clamp(26px, 3vw, 34px); font-weight: 800; color: var(--navy); margin: 40px 0 12px; letter-spacing: -0.5px; line-height: 1.15; }
-    .buyer-wrap h3 { font-family: var(--font-head); font-size: 20px; font-weight: 700; color: var(--navy); margin: 26px 0 8px; }
-    .buyer-wrap p, .buyer-wrap li { font-size: 16.5px; line-height: 1.75; color: var(--text); }
-    .buyer-wrap p { margin: 0 0 16px; }
-    .buyer-wrap ul, .buyer-wrap ol { margin: 0 0 18px 1.25em; }
-    .buyer-wrap li { margin-bottom: 8px; }
-    .buyer-wrap a { color: var(--blue); font-weight: 600; }
-    .buyer-note { background: var(--gray-50); border-left: 3px solid var(--orange); border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 8px 0 24px; }
-    .buyer-note p:last-child { margin-bottom: 0; }
-    .crumbs { font-size: 13px; color: rgba(255,255,255,0.75); margin-bottom: 14px; }
-    .crumbs a { color: #fff; font-weight: 600; text-decoration: none; }
-    .crumbs a:hover { text-decoration: underline; }
-    .buyer-faq details { background: #fff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 16px 20px; margin-bottom: 10px; }
-    .buyer-faq summary { font-family: var(--font-head); font-weight: 700; cursor: pointer; color: var(--navy); font-size: 16px; }
-    .buyer-faq details p { margin: 12px 0 0; color: var(--text-light); }
-    .addr-card { background: #fff; border: 1px solid var(--gray-200); border-radius: 16px; padding: 22px 24px; margin: 12px 0 24px; }
-    .addr-card p { margin-bottom: 6px; }
-    .mid-cta { background: rgba(26,86,219,0.06); border-left: 3px solid #1A56DB; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 28px 0; }
-    .mid-cta p { margin: 0 0 14px; }
-    .cta-buttons .btn { margin: 6px 8px 6px 0; }
-    @media (max-width: 640px) { .buyer-wrap { max-width: 100%; } }
-</style>
-  <script type="application/ld+json">
+
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -161,7 +149,7 @@
 <body>
 
 
-  <selltru-header><header class="nav" role="banner">
+<selltru-header><header class="nav" role="banner">
   <div class="container">
     <div class="nav-inner">
       <a class="nav-logo" href="/" aria-label="SellTru home">
@@ -214,117 +202,310 @@
   <input type="hidden" name="source">
 </form></selltru-header>
   <main>
+
     <section class="page-hero" aria-label="Amazon PPC Management">
       <div class="page-hero-bg" aria-hidden="true"></div>
       <div class="container">
         <div class="page-hero-inner">
-          <p class="crumbs"><a href="/">Home</a> / <a href="/amazon-marketing">Amazon Marketing</a> / Amazon PPC Management</p>
           <p class="section-tag light" style="margin-bottom:14px;">Amazon PPC Management</p>
-          <h1>Amazon PPC management for brands that want a person in the account every week.</h1>
-          <p>Sponsored Products, Sponsored Brands, and Sponsored Display, run on a flat retainer. Built for brands doing $1M to $20M. The audit is free.</p>
-          <div class="cta-buttons">
+          <h1>Amazon PPC Management With a Person in the Account Every Week. <span>Built for $1M to $20M Brands.</span></h1>
+          <p>Sponsored Products, Brands, and Display with TACOS targets, weekly notes, and listings in the same plan. Amazon Ads Partner Network member. $150M+ managed across 200+ brands.</p>
+          <div style="display:flex; gap:14px; flex-wrap:wrap;">
             <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Amazon Audit</a>
-            <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-ppc-management" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
+            <a class="btn btn-outline-white" href="#whats-included">View All Services</a>
           </div>
-          <div style="margin-top:28px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+          <div style="margin-top:36px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
             <span class="amz-text-badge amz-text-badge--on-dark">Amazon Ads Partner Network member</span>
-            <div class="trust-badge"><span class="trust-badge-text">$150M+ sales managed</span></div>
-            <div class="trust-badge"><span class="trust-badge-text">200+ brands</span></div>
+            <div class="trust-badge">
+              <span class="trust-badge-text">$150M+ sales managed</span>
+            </div>
+            <div class="trust-badge">
+              <span class="trust-badge-text">200+ brands</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="service-detail-section" aria-label="Service detail">
+    <div class="stats-band">
       <div class="container">
-        <div class="buyer-wrap">
-          
-          <p>Amazon PPC management should be in the account every week, with a named person who can explain the bids. SellTru does that work for brands doing $1M to $20M. We have managed $150M+ in marketplace sales across 200+ brands, and we are an Amazon Ads Partner Network member. This page is the operating detail behind the <a href="/amazon-marketing#ppc">Amazon PPC service</a>: what the week looks like, who it is for, and how the fee works.</p>
-          <p>If you are comparing shops, start with the <a href="/blog/best-amazon-ppc-management-2026">ranked list of Amazon PPC management firms</a> and the <a href="/blog/how-to-choose-marketplace-agency">checklist for choosing an agency</a>. Then come back here for how we actually run the account.</p>
-
-          <h2>What weekly Amazon PPC management includes</h2>
-          <p>Weekly means a working session, not a report that restates the console. The Amazon Ads console already shows spend, sales, and ACOS. Management is the set of changes you make after you read it.</p>
-          <h3>Search terms, negatives, and bids</h3>
-          <p>We pull the search-term report and split it into three piles: queries that should become exact-match keywords, queries that should be negatives, and queries that need more data before anyone touches them. Negatives go in the same week. Waiting a month is how a broad campaign funds irrelevant clicks. Bid changes follow the same pass. A keyword that converts and is losing the top of search gets a higher bid. A keyword that spends without orders gets cut or moved down. The <a href="/blog/amazon-negative-keywords-guide">negative keyword guide</a> is the same logic we use inside client accounts.</p>
-          <h3>Campaign structure and match types</h3>
-          <p>Exact, phrase, and broad match do different jobs. Exact harvests demand you already understand. Phrase and broad find new queries. If those match types share one campaign, you cannot bid them differently and you cannot read the data. We separate them, and we separate products so one hero ASIN is not subsidizing a slow one. Auto campaigns stay in the account as a research tool, with the winners graduated into manual campaigns. That structure is also how we judge other agencies when we audit a takeover.</p>
-          <h3>Sponsored Products, Sponsored Brands, and Sponsored Display</h3>
-          <p>Sponsored Products is the core, because that is where high-intent search happens. Sponsored Brands, including video when the creative is ready, covers the top of search and sends shoppers to a Store or a small set of ASINs. Sponsored Display retargets people who viewed the product and did not buy. We do not turn on every ad type on day one if the listing or the search structure is broken. The comparison of <a href="/blog/amazon-sponsored-products-vs-sponsored-brands">Sponsored Products vs. Sponsored Brands</a> is the short version of that sequencing.</p>
-          <h3>The listing the click lands on</h3>
-          <p>A clean campaign still fails if the title, main image, price, or review count cannot close the sale. During the weekly pass we note the ASINs where click volume is fine and conversion is not, and we fix the listing instead of raising the bid. Listing work lives on the <a href="/amazon-marketing">Amazon marketing</a> page and in the <a href="/blog/amazon-listing-optimization-guide-2026">listing optimization guide</a>. Category pages go deeper when the economics are unusual: <a href="/amazon-ppc-supplements">supplements</a>, <a href="/amazon-ppc-food-beverage">food and beverage</a>, and <a href="/amazon-ppc-pet-brands">pet brands</a>.</p>
-          <h3>TACoS, not a single-campaign ACOS</h3>
-          <p>ACOS on one campaign can look ugly while the account is getting healthier, especially on a launch or a ranking push. We read TACoS, total ad spend divided by total sales, next to ACOS. The formula and the benchmarks are in the <a href="/blog/amazon-tacos-advertising">TACoS guide</a>. If you want the waste-cutting version of the same idea, the <a href="/blog/how-to-reduce-amazon-acos">ACOS reduction guide</a> walks through the levers.</p>
-          <div class="buyer-note">
-            <p><strong>What you get every week:</strong> search-term decisions, bid and budget changes, negatives, a short note on what moved, and the listings or queries we are watching. You can open the change history in Amazon Ads and see the work. If a week is quiet, we say why.</p>
+        <div class="stats-inner">
+          <div class="stat-item">
+            <div class="stat-number">$150M+</div>
+            <div class="stat-label">Sales Managed</div>
           </div>
+          <div class="stat-item">
+            <div class="stat-number">200+</div>
+            <div class="stat-label">Brands Supported</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">90%</div>
+            <div class="stat-label">Client Retention</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">45%</div>
+            <div class="stat-label">Avg. ACOS Drop in 90 Days</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-          <h2>Who this is for</h2>
-          <p>The fit is a brand doing roughly $1M to $20M a year that already has a catalog, a real ad budget, and a reason to care about profit as well as rank. Founder-led teams use us when the owner is still approving bids at night. In-house teams use us when one person cannot cover search terms, listings, and a second marketplace. The <a href="/blog/marketplace-agency-vs-in-house">agency vs. in-house breakdown</a> is the honest version of that choice.</p>
-          <p>We are a poor fit if you want a software login and no human, or if you need a guarantee of a specific ACOS. Amazon will not sign that guarantee, and neither will we. Brands under the $1M line should read the <a href="/blog/top-rated-marketplace-agencies-small-business">small-business agency guide</a> before they assume a full retainer is the right spend.</p>
-          <p>Across the accounts behind the homepage numbers, average ACOS is down 45% in the first 90 days. That is an average, not a promise for the next account. Retention is 90% after the initial 90 days, on a month-to-month agreement.</p>
+    <section class="service-detail-section" id="why-ppc" aria-label="Why Amazon PPC management">
+      <div class="container">
+        <div class="section-header center reveal">
+          <p class="section-tag">Why PPC Management</p>
+          <h2 class="section-title">Set-and-Forget Campaigns<br>Bleed Margin Quietly.</h2>
+          <p class="section-sub wide">
+            Full channel work sits on <a href="/amazon-account-management-services" style="color:var(--blue);">account management</a>. This page is the advertising layer. Listing support lives on <a href="/amazon-listing-optimization-services" style="color:var(--blue);">listing optimization</a>.
+          </p>
+        </div>
+        <div class="why-grid reveal">
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="m3 11 18-5v12L3 14v-3z"/>
+    <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>
+  </svg></div>
+            <h3>Weekly Hands in the Console</h3>
+            <p>Someone is in the account every week. Bids, negatives, and structure changes land on a cadence, not a quarterly cleanup.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="12" cy="12" r="10"/>
+    <circle cx="12" cy="12" r="6"/>
+    <circle cx="12" cy="12" r="2"/>
+  </svg></div>
+            <h3>TACOS Over Vanity ACOS</h3>
+            <p>We optimize for total ad cost of sale against growth targets. A low ACOS on a dying ASIN is not a win.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 20h9"/>
+    <path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506L3 20l.859-3.513a2 2 0 0 1 .506-.854z"/>
+  </svg></div>
+            <h3>Ads Tied to Listings</h3>
+            <p>A click that lands on a weak page wastes spend. Listing fixes share the same plan. See <a href="/amazon-listing-optimization-services" style="color:var(--blue);">listing optimization</a>.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <line x1="12" y1="20" x2="12" y2="10"/>
+    <line x1="18" y1="20" x2="18" y2="4"/>
+    <line x1="6" y1="20" x2="6" y2="16"/>
+  </svg></div>
+            <h3>Structure You Can Read</h3>
+            <p>Campaigns named and segmented so you can see what is working. No black-box portfolios you cannot audit.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/>
+  </svg></div>
+            <h3>Daily Anomaly Checks</h3>
+            <p>Spend spikes, lost Buy Box, and suppressed ASINs get a daily look. Bigger moves wait for the weekly plan.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+    <path d="m9 12 2 2 4-4"/>
+  </svg></div>
+            <h3>Retention Over Churn</h3>
+            <p>90% client retention. Flat retainers from $3K for brands doing $1M to $20M. Amazon Ads Partner Network member. $150M+ managed across 200+ brands.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <h2>How Amazon PPC management pricing works</h2>
-          <p>SellTru charges a flat monthly retainer. Published retainers start at $3,000 a month. The wider market, which we wrote up so you do not have to book a call to see a number, runs about $1,500 to $8,000 a month depending on scope. Percent-of-ad-spend pricing, often 10% to 20% of spend, pays the agency more when the budget rises. Percent-of-revenue pricing takes a cut of sales you might have made anyway. We use the flat fee so the incentive is a cleaner account, not a larger invoice.</p>
-          <p>The <a href="/marketplace-agency-pricing">Marketplace agency pricing guide</a> lays out the three models, what is usually included at each band, and the contract terms worth refusing. The shorter field guide is <a href="/blog/amazon-ppc-management-cost">what Amazon PPC management costs</a>. Scope on a typical retainer here is Sponsored Products, Sponsored Brands, and Sponsored Display, plus the listing issues that are blocking those ads. <a href="/amazon-dsp-management">Amazon DSP</a> is a separate decision, and only after Sponsored Products is profitable. DSP amplifies a foundation. It does not replace one.</p>
-          <p>Ad spend is not the retainer. You pay Amazon for the clicks. You pay SellTru to decide which clicks are worth buying. Budget changes above the plan we agreed still need your approval.</p>
+    <section class="service-detail-section alt" id="whats-included" aria-label="What is included">
+      <div class="container">
+        <div class="section-header center reveal">
+          <p class="section-tag">What's Included</p>
+          <h2 class="section-title">Amazon PPC Management.</h2>
+          <p class="section-sub">SellTru runs paid search for Seller Central and Vendor Central brands. 90% retention. Flat retainers from $3K. Average ACOS drop of 45% in 90 days across the managed book.</p>
+        </div>
+        <div class="services-cards-grid">
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="11" cy="11" r="8"/>
+    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+  </svg></div>
+            <h3>Search Term Harvesting</h3>
+            <p>Winning queries promoted. Waste cut with negatives. Report-backed, not gut feel.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="m3 11 18-5v12L3 14v-3z"/>
+    <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>
+  </svg></div>
+            <h3>Sponsored Products and Brands</h3>
+            <p>Core, competitor, and category coverage with clear efficiency targets. Display when it fits the funnel.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <line x1="12" y1="20" x2="12" y2="10"/>
+    <line x1="18" y1="20" x2="18" y2="4"/>
+    <line x1="6" y1="20" x2="6" y2="16"/>
+  </svg></div>
+            <h3>Bid and Budget Control</h3>
+            <p>Dayparting, placement modifiers, and budget caps tied to inventory and margin, not max spend.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+    <path d="M12 11h4"/>
+    <path d="M12 16h4"/>
+    <path d="M8 11h.01"/>
+    <path d="M8 16h.01"/>
+  </svg></div>
+            <h3>Weekly Written Notes</h3>
+            <p>What changed, why, and what we watch next. You are not guessing from a dashboard alone.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M16.5 9.4 7.55 4.24"/>
+    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+    <polyline points="3.29 7 12 12 20.71 7"/>
+    <line x1="12" y1="22" x2="12" y2="12"/>
+  </svg></div>
+            <h3>Inventory-Aware Ads</h3>
+            <p>We do not raise bids into a stockout week. Restock signals feed the plan with <a href="/amazon-fba-management-services" style="color:var(--blue);">FBA management</a> when scoped.</p>
+          </div>
+          <div class="service-mini-card reveal">
+            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+    <circle cx="9" cy="7" r="4"/>
+    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+  </svg></div>
+            <h3>Flat Retainer Pricing</h3>
+            <p>Ad spend is paid to Amazon. Our fee is a flat monthly retainer. Models on the <a href="/marketplace-agency-pricing" style="color:var(--blue);">pricing guide</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="mid-cta">
-          <p><strong>Want this applied to your account?</strong> Book a call or send the audit form. Both go to the same team.</p>
-          <div class="cta-buttons">
+    <section class="process-section" aria-label="Process">
+      <div class="container">
+        <div class="section-header center reveal">
+          <p class="section-tag light">Getting Started</p>
+          <h2 class="section-title light">Here's How PPC<br>Work Starts.</h2>
+          <p class="section-sub light">Audit first. Cleanup second. Scale what converts.</p>
+        </div>
+        <div class="process-grid">
+          <div class="process-connector" aria-hidden="true"></div>
+          <div class="process-step reveal">
+            <div class="process-num">01</div>
+            <h3>Ads Audit</h3>
+            <p>Structure, search terms, wasted spend, and listing gaps that kill conversion.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">02</div>
+            <h3>Stabilize Efficiency</h3>
+            <p>Negatives, bid cleanup, and budget control before we add spend.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">03</div>
+            <h3>Grow What Works</h3>
+            <p>Scale winners, test new coverage, and keep TACOS inside the target.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq" aria-label="Amazon PPC management FAQ">
+      <div class="container">
+        <div class="faq-layout">
+          <div class="faq-intro reveal">
+            <p class="section-tag">Common Questions</p>
+            <h2 class="section-title">Amazon PPC FAQ.</h2>
+            <p>Pricing, rebuilds, and who this is for. Channel ops sit on <a href="/amazon-account-management-services" style="color:var(--blue);">account management</a>.</p>
             <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-            <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-ppc-management" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
           </div>
-        </div>
-
-          <h2>The process</h2>
-          <ol>
-            <li><strong>Audit.</strong> We read campaign structure, change history, and match types before we propose a fee. The same pass is written up as an <a href="/blog/amazon-ppc-account-audit-checklist">account audit checklist</a> if you want to run a version yourself first. The form on this page is that audit request.</li>
-            <li><strong>Structure first.</strong> Branded and non-branded traffic get separated. Auto and manual get separated. Products that do not belong together get their own campaigns. Waste comes out before we scale anything.</li>
-            <li><strong>Weekly management.</strong> Search terms, bids, budgets, negatives, and the listing notes from the section above. You see the change history, not a slide that summarizes it a month later.</li>
-            <li><strong>Day 90, then month to month.</strong> Ninety days is long enough to judge the work and too short to hide inside a contract. After that, you stay because the account is better. Our retention is 90%.</li>
-          </ol>
-          <p>South Florida brands that want the same work in person can use the <a href="/marketplace-agency-fort-lauderdale">Fort Lauderdale office</a>. Brands adding Walmart use the <a href="/walmart-marketplace-agency">Walmart marketplace agency</a> page so the two channels are not copied and pasted onto each other.</p>
-
-          <h2>Questions we hear before a retainer</h2>
-          <div class="buyer-faq">
-            <details>
-<summary>What does weekly Amazon PPC management include?</summary>
-<p>Each week we review search terms, add negatives, adjust bids, and move budget toward the campaigns that are producing profitable sales. Match types stay separated, so exact, phrase, and broad are not dumped into one campaign. We also flag listing problems that are wasting the clicks, because ads cannot fix a page that does not convert.</p>
-</details>
-<details>
-<summary>Who is this Amazon PPC management a fit for?</summary>
-<p>Brands doing about $1M to $20M a year that want senior management of Sponsored Products, Sponsored Brands, and Sponsored Display. If the account is smaller, the pricing guide explains the entry-level market and we will say so on the audit rather than force a retainer.</p>
-</details>
-<details>
-<summary>How does Amazon PPC management pricing work?</summary>
-<p>SellTru uses a flat monthly retainer, starting at $3,000 a month. The published market range for marketplace agency retainers is $1,500 to $8,000 a month. A percent-of-spend model pays the agency more when you spend more, which is why we do not use it. The full comparison is on the marketplace agency pricing page.</p>
-</details>
-<details>
-<summary>How soon should Amazon PPC management change the numbers?</summary>
-<p>There is a 90-day onboarding period because marketplace results need time. Across accounts we manage, the average ACOS reduction in the first 90 days is 45%. After 90 days the agreement is month to month. Retention is 90% because of the work, not because of a long contract.</p>
-</details>
-<details>
-<summary>Do you only manage ads, or the rest of the Amazon account?</summary>
-<p>PPC is the core of this page, and it sits inside full Amazon management: listings, A+ content, account health, and, when the search foundation is profitable, Amazon DSP. Walmart can be added with the same team if that channel is next.</p>
-</details>
+          <div class="faq-list reveal">
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>What does weekly Amazon PPC management include?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Campaign structure, search term work, bid and budget changes, negatives, and a written weekly note. Listing and inventory inputs sit in the same plan when those retainers are active.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Who is this for?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Brands doing $1M to $20M that want a person in the account every week. Below that range we are usually not the right fit.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>How does pricing work?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Flat monthly retainers from $3K. Ad spend is paid to Amazon and is separate. We do not take a percent of spend as the default model.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Do you rebuild campaigns from scratch?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Only when structure is broken. Many accounts need cleanup and harvesting first. The audit decides.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Average ACOS drop?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Across our managed book, average ACOS drop of 45% in 90 days. That is a book average, not a promise for every ASIN.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+                <h3>Seller Central and Vendor Central?</h3>
+                <span class="faq-arrow">+</span>
+              </div>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>Both. Vendor ads are scoped when you sell 1P. See <a href="/amazon-vendor-central-management" style="color:var(--blue);">Vendor Central management</a>.</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <p>More answers live on the <a href="/questions">FAQ</a>. If you would rather talk through the account, use the booking link. The call is 30 minutes and it is free.</p>
-
         </div>
       </div>
     </section>
 
-    <section class="cta-section" aria-label="Booking">
+    <section class="cta-section" aria-label="Amazon PPC management audit CTA">
       <div class="container">
-        <h2>Book a free 30-minute strategy call</h2>
-        <p>Or send the free audit form. We look at the account before we talk about a retainer. No invented forecast, no lock-in pitch.</p>
+        <h2>If Spend Is Up and Margin Is Down,<br>Start With the Ads Audit.</h2>
+        <p>We look at structure, search terms, and listing conversion before we talk about a retainer. No pitch decks. No obligation.</p>
         <div class="cta-buttons">
-            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Amazon Audit</a>
-            <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-ppc-management" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
-          </div>
-        <p style="margin-top:18px;"><a class="btn btn-outline-white" href="tel:+19548692034">Call (954) 869-2034</a></p>
+          <a class="btn btn-primary btn-lg" href="/about#contact-form" data-modal-trigger="audit">Get Your Free Audit</a>
+          <a class="btn btn-outline-white btn-lg" href="tel:+19548692034">Call (954) 869-2034</a>
+        </div>
+        <p style="margin-top:18px; font-size:15px; color:rgba(255,255,255,0.55);">
+          Prefer a call on the calendar?
+          <a href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-ppc-management" target="_blank" rel="noopener" style="color:var(--white); font-weight:700; text-decoration:underline;">Book a free 30-minute strategy call</a>
+        </p>
       </div>
     </section>
+
   </main>
 
 <selltru-footer><footer class="footer" role="contentinfo">
@@ -420,6 +601,7 @@
   </div>
 </div></selltru-footer>
 
+  <script src="/js/lead-tracking.js" defer></script>
   <script src="/js/main.js" defer></script>
 </body>
 </html>

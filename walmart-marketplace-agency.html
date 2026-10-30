@@ -237,10 +237,28 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
 .cx-a-proof-claims{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
 .cx-a-proof-claims .n{font-family:var(--font-head);font-weight:800;font-size:clamp(32px,4vw,44px);letter-spacing:0;color:#0D1B2A;text-align:center}
 .cx-a-proof-claims .l{font-size:13px;color:#4B5563;text-align:center;margin-top:6px}
-.cx-a-logos{display:flex;flex-wrap:wrap;gap:22px 28px;justify-content:center;align-items:center;margin-bottom:40px}
-.cx-a-logos img{height:28px;width:auto;max-width:140px;object-fit:contain;opacity:1;
-  /* Single slate tone #64748B on #F4F6FA  -  black + white logos */
-  filter:brightness(0) saturate(100%) invert(48%) sepia(12%) saturate(643%) hue-rotate(176deg) brightness(93%) contrast(87%)}
+.cx-a-logos{display:flex;flex-wrap:wrap;gap:22px 32px;justify-content:center;align-items:center;margin-bottom:40px}
+.cx-a-logos img{height:28px;width:auto;max-width:150px;object-fit:contain;opacity:1;
+  /* Slate #475569 on #F4F6FA - darker for readability */
+  filter:brightness(0) saturate(100%) invert(26%) sepia(12%) saturate(700%) hue-rotate(176deg) brightness(92%) contrast(100%)}
+.cx-a-logos img.logo-door{height:26px}
+.cx-a-logos img.logo-avs{height:24px;max-width:170px}
+.cx-a-logos img.logo-vb{height:32px}
+.cx-a-logos img.logo-nds{height:30px}
+.cx-a-logos img.logo-light{height:28px}
+/* Mint (helmet) mark: darker ink + optical height match with peers */
+.cx-a-logos img.logo-mint{height:30px;max-width:120px;
+  filter:brightness(0) saturate(100%) invert(12%) sepia(6%) saturate(400%) hue-rotate(176deg) brightness(80%) contrast(135%)}
+@media(max-width:720px){
+  .cx-a-logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 16px;justify-items:center;align-items:center}
+  .cx-a-logos img{height:24px;max-width:110px}
+  .cx-a-logos img.logo-door{height:22px}
+  .cx-a-logos img.logo-avs{height:20px;max-width:120px}
+  .cx-a-logos img.logo-vb{height:28px}
+  .cx-a-logos img.logo-nds{height:26px}
+  .cx-a-logos img.logo-light{height:24px}
+  .cx-a-logos img.logo-mint{height:26px;max-width:100px}
+}
 .cx-a-stat-card{max-width:720px;margin:0 auto;background:#fff;
   border:1px solid #D8DEE8;border-radius:20px;padding:32px;box-shadow:0 18px 40px rgba(13,27,42,.08)}
 .cx-a-stat-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}
@@ -305,9 +323,11 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
 .cx-a .faq-q:hover h3{color:#fff}
 .cx-a .faq-arrow{flex:0 0 28px;align-self:center;display:inline-flex;align-items:center;justify-content:center;
   width:28px;min-width:28px;max-width:28px;height:28px;box-sizing:border-box;overflow:hidden;
-  line-height:28px;color:rgba(255,255,255,.75);font-size:18px;font-weight:500;margin-left:8px;
+  line-height:28px;color:rgba(255,255,255,.75);font-size:0;font-weight:500;margin-left:8px;
   background:transparent;border-radius:0;transform:none;transition:none}
+.cx-a .faq-arrow::before{content:"+";font-size:18px;line-height:28px;color:rgba(255,255,255,.75)}
 .cx-a .faq-item.open .faq-arrow{background:transparent;color:rgba(255,255,255,.75);transform:none}
+.cx-a .faq-item.open .faq-arrow::before{content:"\2212"}
 .faq-a{display:none;padding:0 0 18px}
 .faq-item.open .faq-a{display:block;max-height:none}
 .faq-a p{font-size:16px;color:rgba(255,255,255,.72);line-height:1.7;margin:0}
@@ -318,7 +338,7 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
 .cx-a-cta::before{content:"";position:absolute;inset:0;
   background:radial-gradient(ellipse at 50% 0%,rgba(255,107,53,.16),transparent 55%),
     radial-gradient(ellipse at 80% 100%,rgba(26,86,219,.18),transparent 50%);pointer-events:none}
-.cx-a-cta-box{position:relative;text-align:center;max-width:720px;margin:0 auto;padding:40px 32px;
+.cx-a-cta-box{position:relative;text-align:center;max-width:900px;margin:0 auto;padding:40px 40px;
   border-radius:var(--radius-xl);border:1px solid rgba(255,255,255,.1);
   background:linear-gradient(180deg,rgba(22,34,53,.9),rgba(13,27,42,.95));box-shadow:0 30px 80px rgba(0,0,0,.45)}
 .cx-a-end-nav{position:relative;display:flex;flex-wrap:wrap;gap:10px 18px;justify-content:center;
@@ -329,7 +349,8 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
 body:has(.cx-a) .footer{padding:48px 0 28px !important;min-height:0 !important}
 body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
 .cx-a-cta-box h2{font-family:var(--font-head);font-weight:800;font-size:clamp(26px,3.2vw,38px);
-  line-height:1.15;letter-spacing:0;color:#fff;margin:0 0 14px}
+  line-height:1.15;letter-spacing:0;color:#fff;margin:0 0 14px;max-width:22em;margin-left:auto;margin-right:auto;
+  text-wrap:balance;max-width:none;width:100%}
 .cx-a-cta-box > p{color:rgba(255,255,255,.6);margin:0 auto 28px;font-size:16.5px;max-width:46ch}
 .cx-a-cta-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
 
@@ -366,7 +387,6 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
   .hero-a h1{max-width:none}
   .hero-ctas{flex-direction:column}
   .cx-a .btn-primary,.cx-a .btn-ghost,.cx-a-cta-actions .btn,.cx-a-cta-actions .btn-outline-white{width:100%;justify-content:center}
-  .cx-a-logos img{height:24px}
 }
 
 /* Production: keep Concept A dark even with gold page-hero / walmart-hero hooks for selfcheck */
@@ -407,7 +427,8 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
 /* Punctuation ink-gap: no negative tracking on headings */
 .cx-a h1,.cx-a h2,.cx-a h3,.cx-a .faq-q h3{letter-spacing:0 !important;}
 
-.h-punct{margin-left:-0.07em;}
+/* ink-gap for . and , inside headings (all weights) */
+.cx-a h1 .h-punct,.cx-a h2 .h-punct,.cx-a h3 .h-punct,.h-punct{margin-left:-0.07em;}
 .hero-a h1 .h-punct{margin-left:-0.09em;color:#fff;}
 </style>
 
@@ -655,13 +676,12 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
         <div><div class="n">90%</div><div class="l">Client retention</div></div>
       </div>
       <div class="cx-a-logos" aria-label="Brands SellTru has worked with">
-        <img src="/img/clients/processed/attackletics.webp" alt="Attackletics" width="140" height="30" loading="lazy">
-        <img src="/img/clients/processed/door-daddy.webp" alt="Door Daddy" width="140" height="30" loading="lazy">
-        <img src="/img/clients/processed/applied-vision-sports.webp" alt="Applied Vision Sports" width="140" height="30" loading="lazy">
-        <img src="/img/clients/processed/veeboards.webp" alt="Veeboards" width="140" height="30" loading="lazy">
-        <img src="/img/clients/processed/nds-logo.webp" alt="NDS" width="140" height="30" loading="lazy">
-        <img src="/img/clients/processed/light.bio.webp" alt="Light.bio" width="140" height="30" loading="lazy">
-        <img src="/img/clients/processed/helmet-logo-750x750.webp" alt="Helmet" width="140" height="30" loading="lazy">
+        <img class="logo-door" src="/img/clients/processed/door-daddy.webp" alt="Door Daddy" width="140" height="30" loading="lazy">
+        <img class="logo-avs" src="/img/clients/processed/applied-vision-sports.webp" alt="Applied Vision Sports" width="140" height="30" loading="lazy">
+        <img class="logo-vb" src="/img/clients/processed/veeboards.webp" alt="Veeboards" width="140" height="30" loading="lazy">
+        <img class="logo-nds" src="/img/clients/processed/nds-logo.webp" alt="NDS" width="140" height="30" loading="lazy">
+        <img class="logo-light" src="/img/clients/processed/light.bio.webp" alt="Light.bio" width="140" height="30" loading="lazy">
+        <img class="logo-mint" src="/img/clients/processed/helmet-logo-750x750.webp" alt="Mint" width="140" height="30" loading="lazy">
       </div>
       <div class="cx-a-stat-card" role="group" aria-label="Walmart Seller Center result">
         <div class="cx-a-stat-pair">
@@ -772,7 +792,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
   <section class="cta-section cx-a-cta" aria-label="Walmart marketplace audit CTA">
     <div class="cx-wrap">
       <div class="cx-a-cta-box">
-        <h2>If the Walmart Channel Is a Side Project,<br>Start With the Audit<span class="h-punct">.</span></h2>
+        <h2>If the Walmart Channel Is a Side Project<span class="h-punct">,</span><br>Start With the Audit<span class="h-punct">.</span></h2>
         <p>We look at approval status, item pages, WFS, and Connect before we talk about a retainer. No pitch decks. No obligation.</p>
         <div class="cx-a-cta-actions cta-buttons">
           <a class="btn btn-primary btn-lg" href="/about#contact-form" data-modal-trigger="audit">Get Your Free Walmart Audit</a>

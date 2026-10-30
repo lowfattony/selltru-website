@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-audit-marketplace="walmart">
 <head>
   <script>
     window.dataLayer = window.dataLayer || [];
     window.gtag = function(){dataLayer.push(arguments);};
     gtag('js', new Date());
     gtag('config', 'G-Z5ZERMY21K');
-    function _loadGA(){var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-Z5ZERMY21K';s.async=true;document.head.appendChild(s);}
-    'requestIdleCallback' in window ? requestIdleCallback(_loadGA,{timeout:4000}) : setTimeout(_loadGA,4000);
   </script>
   <meta charset="UTF-8">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -21,42 +19,372 @@
   <meta property="og:description" content="Walmart marketplace agency for $1M to $20M brands. Seller onboarding, listings, WFS, Walmart Connect ads, and reviews. Free audit.">
   <meta property="og:image" content="https://selltru.com/img/og-image.png">
   <meta property="og:type" content="website">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="preconnect" href="https://assets.calendly.com">
-  <script src="https://assets.calendly.com/assets/external/widget.js" async defer></script>
-  <style>
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
-    .reveal.revealed { opacity: 1; transform: none; }
-    .page-hero.walmart-hero {
-      background: linear-gradient(150deg, #001E6C 0%, #003087 50%, #0041A8 100%);
-    }
-    .walmart-hero .page-hero-bg {
-      background: radial-gradient(ellipse at 80% 40%, rgba(255,194,32,0.12) 0%, transparent 50%),
-                  radial-gradient(ellipse at 10% 80%, rgba(0,48,135,0.6) 0%, transparent 50%);
-    }
-    .stats-band.walmart-band {
-      background: linear-gradient(135deg, #003087 0%, #0052CC 100%);
-    }
-    .walmart-tag { color: #0052CC; }
-
-    .why-icon svg, .smc-icon svg { width: 22px; height: 22px; display: block; }
-    .why-icon.blue { color: var(--blue); }
-    .why-icon.orange { color: var(--orange); }
-    .why-icon.green { color: var(--blue); }
-    .smc-icon { color: var(--blue); display: flex; align-items: center; }
-    .page-hero a.link-on-dark { color: var(--white); font-weight: 700; }
-.cta-section a.cta-calendly-link { color: var(--white); font-weight: 700; text-decoration: underline; }
-    .page-hero .trust-badge-wmt .trust-badge-text { color: var(--white); }
-  </style>
+  <link rel="stylesheet" href="/css/style.css">
   <script src="/js/components.js" defer></script>
-  <script>
-    !function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments);};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f);}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");
-    oaiq("init", { pixelId: "UeyzoKe3VtFvfSMqVPUoaN" });
-  </script>
+<style>
+:root{
+  --navy:#0D1B2A;--navy-light:#162235;--navy-mid:#1D3045;
+  --blue:#1A56DB;--orange:#FF6B35;--orange-hover:#E55A28;
+  --white:#fff;--font-head:'Plus Jakarta Sans',system-ui,sans-serif;
+  --font-body:'Inter',system-ui,sans-serif;
+  --radius-sm:10px;--radius:14px;--radius-lg:20px;--radius-xl:28px;
+  --container:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html:has(.cx-a), body:has(.cx-a){min-height:0!important;height:auto!important;margin:0;padding:0}
+body:has(.cx-a){
+  font-family:var(--font-body);
+  background:#070B12;color:rgba(255,255,255,.86);
+  line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+.cx-a a{color:inherit;text-decoration:none}
+.cx-a img, .cx-a svg{display:block;max-width:100%}
+.cx-a .cx-wrap{max-width:var(--container);margin:0 auto;padding:0 28px;width:100%;box-sizing:border-box}
+@media(max-width:480px){.cx-a .cx-wrap{padding:0 18px}}
+.cx-a h1,.cx-a h2,.cx-a h3,.cx-a p,.cx-a li,.cx-a a,.cx-a span{
+  overflow-wrap:break-word;word-break:normal;hyphens:manual;
+}
+
+/* Site header/footer cold-load */
+body:has(.cx-a) selltru-header,
+html:has(.cx-a) selltru-header{display:contents}
+body:has(.cx-a) selltru-header:not(:defined){display:contents}
+body:has(.cx-a) selltru-footer:not(:defined),
+body:has(.cx-a) selltru-footer{display:block}
+body:has(.cx-a) selltru-footer .footer,
+body:has(.cx-a) .footer{
+  background:#0D1B2A!important;color:rgba(255,255,255,.55);
+  margin:0!important;min-height:0!important;
+}
+body:has(.cx-a) selltru-footer::after{display:none!important;content:none!important}
+body:has(.cx-a) .footer a{color:rgba(255,255,255,.55)}
+body:has(.cx-a) .footer a:hover{color:#fff}
+body:has(.cx-a) selltru-footer #sticky-strip,
+body:has(.cx-a) #email-bar,
+body:has(.cx-a) #sticky-strip{display:none!important}
+
+/* Sticky (after hero) */
+body:has(.cx-a) #cx-a-sticky{
+  position:fixed;left:0;right:0;bottom:0;z-index:999;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px 24px;
+  background:linear-gradient(90deg,#0d1f38 0,#162a48 100%);
+  border-top:3px solid var(--orange);
+  box-shadow:0 -12px 48px rgba(0,0,0,.45);
+  transform:translateY(100%);
+  transition:transform .4s cubic-bezier(.16,1,.3,1);
+}
+body:has(.cx-a) #cx-a-sticky.cx-a-sticky-on{transform:translateY(0)}
+body.cx-a-has-sticky-pad{padding-bottom:var(--cx-a-sticky-h, 72px)}
+
+/* g23 sticky clearance: sections clear the sticky band; sticky hides near final CTA */
+.cx-a section.sec,
+.cx-a .cx-a-cta,
+.cx-a h2,
+.cx-a-cta-box {
+  scroll-margin-bottom: calc(var(--cx-a-sticky-h, 72px) + 16px);
+}
+
+/* Reserve sticky height for in-page jumps and keep headings clear of the bar */
+html{scroll-padding-bottom:var(--cx-a-sticky-h, 72px)}
+body:has(.cx-a) .sec,
+body:has(.cx-a) .cx-a-proof,
+body:has(.cx-a) .cx-a-cta,
+body:has(.cx-a) .cx-a-cta-box,
+body:has(.cx-a) #process,
+body:has(.cx-a) #faq,
+body:has(.cx-a) #whats-included,
+body:has(.cx-a) #why-walmart,
+body:has(.cx-a) footer.footer{
+  scroll-margin-bottom:var(--cx-a-sticky-h, 72px);
+}
+body:has(.cx-a) #cx-a-sticky .cx-a-sticky-copy{min-width:0}
+body:has(.cx-a) #cx-a-sticky .cx-a-sticky-headline{
+  font-family:var(--font-head);font-size:14px;font-weight:800;color:#fff;
+}
+body:has(.cx-a) #cx-a-sticky .cx-a-sticky-sub{font-size:12px;color:rgba(255,255,255,.5)}
+body:has(.cx-a) #cx-a-sticky .cx-a-sticky-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
+body:has(.cx-a) #cx-a-sticky .cx-a-sticky-cta{
+  font-family:var(--font-head);font-size:13px;font-weight:800;
+  background:var(--orange);color:#fff;border:none;border-radius:var(--radius-sm);
+  padding:9px 18px;text-decoration:none;white-space:nowrap;
+}
+body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
+  width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.08);
+  border:none;color:rgba(255,255,255,.4);font-size:14px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+}
+
+@media(max-width:560px){
+  body:has(.cx-a) #cx-a-sticky{padding:12px 16px}
+  body:has(.cx-a) #cx-a-sticky .cx-a-sticky-sub{display:none}
+}
+
+/* Buttons: gold .btn system (h56, pad 14/30, 15/700, radius 10)  -  no one-off pad */
+.cx-a .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-family:var(--font-head);font-weight:700;font-size:15px;
+  padding:14px 30px;min-height:56px;height:56px;box-sizing:border-box;
+  border-radius:10px;border:2px solid transparent;cursor:pointer;
+  transition:transform .2s,background .2s,border-color .2s,box-shadow .2s;white-space:nowrap}
+.cx-a .btn-primary{background:var(--orange);border-color:var(--orange);color:#fff}
+.cx-a .btn-primary:hover{background:var(--orange-hover);transform:translateY(-2px);box-shadow:0 12px 32px rgba(255,107,53,.35)}
+.cx-a .btn-ghost{background:transparent;border-color:rgba(255,255,255,.22);color:#fff;padding:14px 30px}
+.cx-a .btn-ghost:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.06)}
+.cx-a .btn-lg{padding:14px 30px;font-size:15px;min-height:56px;height:56px}
+.cx-a .btn-outline-white{background:transparent;border:2px solid rgba(255,255,255,.35);color:#fff;
+  padding:14px 30px;font-size:15px;font-weight:700;border-radius:10px;font-family:var(--font-head);
+  min-height:56px;height:56px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center}
+
+/* Hero A: dark glow + live ops widget */
+.hero-a{position:relative;overflow:hidden;padding:132px 0 80px}
+.hero-a::before{content:"";position:absolute;inset:-20% -10% auto;height:70%;
+  background:radial-gradient(ellipse at 30% 20%,rgba(26,86,219,.35),transparent 55%),
+    radial-gradient(ellipse at 80% 10%,rgba(255,107,53,.18),transparent 45%);
+  pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px 48px;align-items:start;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;color:#FFC220;margin-bottom:18px;
+  padding:6px 12px;border-radius:999px;border:1px solid rgba(255,194,32,.25);background:rgba(255,194,32,.06)}
+.hero-a h1{font-family:var(--font-head);font-weight:800;font-size:clamp(30px,3.8vw,46px);
+  line-height:1.12;letter-spacing:0;color:#fff;max-width:18ch;margin:0 0 16px}
+.hero-lead{font-size:16.5px;line-height:1.65;color:rgba(255,255,255,.62);max-width:46ch;margin:0 0 26px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:36px}
+.trust-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;max-width:560px}
+.trust-pill{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);font-size:12px;color:rgba(255,255,255,.88);white-space:nowrap;overflow:visible;flex:0 0 auto;text-align:center}
+/* rev4c: desktop full labels; <=720 short labels @12px, 2+1 wrap  -  after base .trust-row */
+.trust-pill .pill-short{display:none}
+.trust-pill .pill-full{display:inline}
+@media(max-width:720px){
+  .trust-pill .pill-full{display:none}
+  .trust-pill .pill-short{display:inline}
+  .trust-row{
+    display:grid;
+    grid-template-columns:max-content max-content;
+    justify-content:center;
+    gap:8px;
+    max-width:none;
+  }
+  .trust-pill{
+    font-size:12px;
+    padding:6px 10px;
+    gap:6px;
+    white-space:nowrap;
+    overflow:visible;
+    width:max-content;
+    max-width:none;
+  }
+  .trust-pill:last-child{grid-column:1/-1;justify-self:center}
+  .trust-pill svg{width:14px;height:14px;flex-shrink:0}
+}
+
+
+/* Dark week widget (distinct from B light board) */
+.cx-a-ops{border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;
+  background:linear-gradient(160deg,rgba(22,34,53,.98),rgba(13,27,42,.99));
+  box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 40px rgba(26,86,219,.12)}
+.cx-a-ops-chrome{display:flex;align-items:center;gap:6px;padding:10px 14px;
+  border-bottom:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.25)}
+.cx-a-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.18)}
+.cx-a-dot:nth-child(1){background:#F87171}.cx-a-dot:nth-child(2){background:#FBBF24}.cx-a-dot:nth-child(3){background:#34D399}
+.cx-a-ops-title{margin-left:8px;font-size:12px;font-weight:600;color:#E2E8F0;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.cx-a-ops-grid{display:grid;grid-template-columns:1.3fr .9fr}
+.cx-a-ops-list{padding:6px 0}
+.cx-a-ops-row{display:grid;grid-template-columns:18px minmax(0,1fr) auto;grid-template-rows:auto auto;
+  column-gap:12px;row-gap:3px;align-items:center;padding:11px 16px;
+  border-bottom:1px solid rgba(255,255,255,.06)}
+.cx-a-ops-row:last-child{border-bottom:0}
+.cx-a-check{width:14px;height:14px;border-radius:4px;border:1.5px solid rgba(255,255,255,.25);background:transparent}
+.cx-a-check.is-on{background:#10B981;border-color:#10B981}
+.cx-a-check.is-half{background:rgba(59,130,246,.25);border-color:#3B82F6}
+.cx-a-ops-name{font-size:14px;font-weight:600;color:#fff;line-height:1.25;min-width:0}
+.cx-a-status{font-size:11px;font-weight:700;padding:3px 8px;border-radius:999px;white-space:nowrap;
+  border:1px solid transparent}
+.cx-a-status.is-ready{background:rgba(16,185,129,.15);color:#6EE7B7;border-color:rgba(16,185,129,.3)}
+.cx-a-status.is-progress{background:rgba(59,130,246,.15);color:#93C5FD;border-color:rgba(59,130,246,.3)}
+.cx-a-status.is-queued{background:rgba(255,255,255,.08);color:#E2E8F0;border-color:rgba(255,255,255,.2)}
+.cx-a-ops-desc{grid-column:2/4;margin:0;font-size:12px;color:#D1D9E6;line-height:1.4}
+.cx-a-ops-side{border-left:1px solid rgba(255,255,255,.08);padding:16px;background:rgba(0,0,0,.28)}
+.cx-a-ops-side h3{font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:rgba(255,255,255,.85);margin:0 0 12px}
+.cx-a-cadence{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.cx-a-cadence li{display:grid;grid-template-columns:36px 1fr;gap:8px;font-size:13px;line-height:1.4;color:#F1F5F9}
+.cx-a-cadence strong{font-size:11px;font-weight:800;color:#FFC220}
+.cx-a-ops-note{text-align:center;font-size:11px;color:#CBD5E1;margin:10px 0 0}
+.cx-a-live-status{display:flex;align-items:center;gap:10px;padding:12px 16px;
+  border-bottom:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.22)}
+.cx-a-live-status .cx-a-check{flex-shrink:0}
+.cx-a-live-status-text{font-size:13px;line-height:1.4;color:#E2E8F0;min-width:0}
+.cx-a-live-status-text strong{color:#fff;font-weight:700}
+
+/* Proof band: light surface for contrast rhythm */
+.cx-a-proof{padding:72px 0 64px;background:#F4F6FA;border-top:1px solid #D8DEE8;border-bottom:1px solid #D8DEE8}
+.cx-a-proof-claims{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
+.cx-a-proof-claims .n{font-family:var(--font-head);font-weight:800;font-size:clamp(32px,4vw,44px);letter-spacing:0;color:#0D1B2A;text-align:center}
+.cx-a-proof-claims .l{font-size:13px;color:#4B5563;text-align:center;margin-top:6px}
+.cx-a-logos{display:flex;flex-wrap:wrap;gap:22px 28px;justify-content:center;align-items:center;margin-bottom:40px}
+.cx-a-logos img{height:28px;width:auto;max-width:140px;object-fit:contain;opacity:1;
+  /* Single slate tone #64748B on #F4F6FA  -  black + white logos */
+  filter:brightness(0) saturate(100%) invert(48%) sepia(12%) saturate(643%) hue-rotate(176deg) brightness(93%) contrast(87%)}
+.cx-a-stat-card{max-width:720px;margin:0 auto;background:#fff;
+  border:1px solid #D8DEE8;border-radius:20px;padding:32px;box-shadow:0 18px 40px rgba(13,27,42,.08)}
+.cx-a-stat-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.cx-a-stat-value{font-family:var(--font-head);font-weight:800;font-size:clamp(36px,5vw,52px);letter-spacing:0;color:#0D1B2A;line-height:1}
+.cx-a-stat-value.up{color:#059669}
+.cx-a-stat-label{margin-top:10px;font-size:14px;font-weight:600;color:#4B5563}
+.cx-a .cx-a-stat-inset{display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:14px;row-gap:10px;margin-top:24px;
+  text-decoration:none;background:#F8FAFC;border:1px solid #E5E7EB;border-radius:14px;padding:12px}
+.cx-a .cx-a-stat-source{grid-column:1/-1;margin:0;font-size:13px;line-height:1.4;color:#6B7280}
+.cx-a-stat-inset img{max-height:88px;width:auto;max-width:100%;border-radius:8px;background:#fff}
+.cx-a-stat-inset-cap{font-size:12px;font-weight:600;color:#6B7280;white-space:nowrap}
+
+/* Sections: more vertical air + clear dividers */
+.cx-a .sec{padding:104px 0;border-top:1px solid rgba(255,255,255,.1)}
+.cx-a .sec-tag{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+.cx-a .sec h2{font-family:var(--font-head);font-weight:800;font-size:clamp(26px,3vw,38px);line-height:1.15;letter-spacing:0;color:#fff;margin:0 0 16px}
+.cx-a .sec-sub{font-size:16.5px;color:rgba(255,255,255,.72);max-width:58ch;margin:0 0 44px;line-height:1.7}
+.cx-a .sec-sub a{color:#93C5FD;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.cx-a p,.cx-a li{font-size:16.5px;line-height:1.7;color:rgba(255,255,255,.72)}
+
+/* Bento Why cards: raised surface + WCAG AA text */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.bento-card{grid-column:span 2;background:#1A2740;
+  border:1px solid rgba(255,255,255,.16);border-radius:var(--radius-lg);padding:26px;min-height:160px;
+  box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.bento-card.wide{grid-column:span 3}
+.bento-icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  margin-bottom:14px;color:#93C5FD;background:rgba(26,86,219,.22);border:1px solid rgba(147,197,253,.35)}
+.bento-icon.orange{color:#FFB38A;background:rgba(255,107,53,.2);border-color:rgba(255,179,138,.4)}
+.bento-card h3{font-family:var(--font-head);font-size:17px;font-weight:700;margin:0 0 8px;color:#FFFFFF;letter-spacing:0}
+.bento-card p{font-size:16px;color:#D1D9E6;line-height:1.65;margin:0}
+.bento-card a{color:#93C5FD;font-weight:600}
+
+/* Services as horizontal feature list (different from B cards) */
+.svc-feature{display:grid;grid-template-columns:1fr 1fr;gap:28px 40px;align-items:start}
+.svc-feature h3{font-family:var(--font-head);font-size:clamp(22px,2.5vw,28px);font-weight:800;color:#fff;margin:0 0 12px;letter-spacing:0}
+.svc-list{list-style:none;margin:0;padding:0}
+.svc-list li{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:16px;color:rgba(255,255,255,.78)}
+.svc-list li:last-child{border-bottom:0}
+.svc-list .n{font-family:var(--font-head);font-weight:800;font-size:13px;color:var(--orange);min-width:28px;padding-top:2px}
+.svc-item{min-width:0;display:flex;flex-direction:column;gap:4px}
+.svc-title{font-weight:700;color:#fff;font-size:16px;line-height:1.35}
+.svc-body{font-size:16px;line-height:1.65;color:rgba(255,255,255,.72)}
+.svc-list a{color:#93C5FD;font-weight:600}
+
+/* Process: lighter navy band */
+#process{background:#152338;border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)}
+.process{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:step;margin-top:8px}
+.pstep{padding:30px 26px;border-radius:var(--radius-lg);border:1px solid rgba(255,255,255,.14);background:#1C2E48}
+.pstep::before{counter-increment:step;content:counter(step, decimal-leading-zero);font-family:var(--font-head);font-weight:800;font-size:13px;color:var(--orange);display:block;margin-bottom:14px}
+.pstep h3{font-family:var(--font-head);font-size:18px;font-weight:700;margin:0 0 8px;color:#fff;letter-spacing:0}
+.pstep p{font-size:16px;color:#D1D9E6;margin:0}
+
+/* FAQ: indicators aligned inside each question row */
+.faq-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start}
+.faq-intro p{color:rgba(255,255,255,.72);margin:12px 0 22px;max-width:36ch;font-size:16.5px}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.12)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 0;cursor:pointer;
+  font-family:var(--font-head);font-weight:700;font-size:16px;color:#fff;background:none;border:0;width:100%;text-align:left;
+  box-sizing:border-box;overflow:visible}
+.cx-a .faq-q h3{margin:0;font:inherit;flex:1 1 auto;min-width:0;line-height:1.35;color:#fff}
+.cx-a .faq-q:hover h3{color:#fff}
+.cx-a .faq-arrow{flex:0 0 28px;align-self:center;display:inline-flex;align-items:center;justify-content:center;
+  width:28px;min-width:28px;max-width:28px;height:28px;box-sizing:border-box;overflow:hidden;
+  line-height:28px;color:rgba(255,255,255,.75);font-size:18px;font-weight:500;margin-left:8px;
+  background:transparent;border-radius:0;transform:none;transition:none}
+.cx-a .faq-item.open .faq-arrow{background:transparent;color:rgba(255,255,255,.75);transform:none}
+.faq-a{display:none;padding:0 0 18px}
+.faq-item.open .faq-a{display:block;max-height:none}
+.faq-a p{font-size:16px;color:rgba(255,255,255,.72);line-height:1.7;margin:0}
+.faq-a a{color:#93C5FD;font-weight:600}
+
+/* CTA + end nav (fills sparse dark band with real page links) */
+.cx-a-cta{padding:56px 0 28px;position:relative;overflow:hidden}
+.cx-a-cta::before{content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 0%,rgba(255,107,53,.16),transparent 55%),
+    radial-gradient(ellipse at 80% 100%,rgba(26,86,219,.18),transparent 50%);pointer-events:none}
+.cx-a-cta-box{position:relative;text-align:center;max-width:720px;margin:0 auto;padding:40px 32px;
+  border-radius:var(--radius-xl);border:1px solid rgba(255,255,255,.1);
+  background:linear-gradient(180deg,rgba(22,34,53,.9),rgba(13,27,42,.95));box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.cx-a-end-nav{position:relative;display:flex;flex-wrap:wrap;gap:10px 18px;justify-content:center;
+  max-width:720px;margin:22px auto 0;padding:0 16px 8px}
+.cx-a-end-nav a{font-size:14px;font-weight:600;color:#E2E8F0;text-decoration:none;
+  padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04)}
+.cx-a-end-nav a:hover{color:#fff;border-color:rgba(255,255,255,.28)}
+body:has(.cx-a) .footer{padding:48px 0 28px !important;min-height:0 !important}
+body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
+.cx-a-cta-box h2{font-family:var(--font-head);font-weight:800;font-size:clamp(26px,3.2vw,38px);
+  line-height:1.15;letter-spacing:0;color:#fff;margin:0 0 14px}
+.cx-a-cta-box > p{color:rgba(255,255,255,.6);margin:0 auto 28px;font-size:16.5px;max-width:46ch}
+.cx-a-cta-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+
+@media(max-width:960px){
+  .hero-grid,.faq-layout,.svc-feature{grid-template-columns:1fr;gap:32px}
+  .bento-card,.bento-card.wide{grid-column:span 3}
+  .cx-a-proof-claims,.process{grid-template-columns:1fr 1fr}
+  .hero-a{padding:120px 0 72px}
+  .cx-a .sec{padding:72px 0}
+}
+@media(max-width:720px){
+  /* Mobile: stack week board; Cadence as strip */
+  .cx-a-ops-grid{grid-template-columns:1fr}
+  .cx-a-ops-side{border-left:none;border-top:1px solid rgba(255,255,255,.08);padding:14px 16px}
+  .cx-a-cadence{flex-direction:row;flex-wrap:nowrap;gap:8px;display:flex}
+  .cx-a-cadence li{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:4px;
+    grid-template-columns:none;font-size:11px;padding:8px;border-radius:8px;
+    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+  .cx-a-hero-visual .cx-a-ops{max-height:120vh;overflow:auto}
+  .cx-a-stat-pair{grid-template-columns:1fr}
+  .cx-a .cx-a-stat-inset{margin-top:24px;grid-template-columns:1fr;column-gap:0;row-gap:8px}
+  .cx-a-stat-inset-cap{justify-self:start}
+  .svc-item{display:flex;flex-direction:column;gap:6px}
+  .svc-title{display:block;width:100%}
+  .svc-body{display:block;width:100%}
+}
+
+@media(max-width:560px){
+  .bento-card,.bento-card.wide{grid-column:span 6}
+  .cx-a-proof-claims,.process{grid-template-columns:1fr}
+  .hero-a h1{max-width:none}
+  .hero-ctas{flex-direction:column}
+  .cx-a .btn-primary,.cx-a .btn-ghost,.cx-a-cta-actions .btn,.cx-a-cta-actions .btn-outline-white{width:100%;justify-content:center}
+  .cx-a-logos img{height:24px}
+}
+
+/* Production: keep Concept A dark even with gold page-hero / walmart-hero hooks for selfcheck */
+.page-hero.walmart-hero.hero-a,
+.page-hero.hero-a{
+  background: #070B14 !important;
+  padding: 140px 0 80px;
+}
+@media (max-width: 768px){
+  .page-hero.walmart-hero.hero-a,
+  .page-hero.hero-a{ padding: 100px 0 56px; }
+}
+.page-hero.hero-a .page-hero-bg{ display:none !important; }
+.cta-section.cx-a-cta{ background: transparent; padding: 0; }
+.cta-section.cx-a-cta .cta-calendly-link{ color: var(--white, #fff); font-weight: 700; text-decoration: underline; }
+.hero-a .btn-outline-white{
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,.55);
+}
+.hero-a .btn-outline-white:hover{ background: rgba(255,255,255,.08); color:#fff; }
+.trust-row .trust-badge{ /* pills already styled; neutralize gold badge chrome */
+  background: inherit;
+  border: inherit;
+  padding: inherit;
+  gap: inherit;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* Punctuation ink-gap: no negative tracking on headings */
+.cx-a h1,.cx-a h2,.cx-a h3,.cx-a .faq-q h3{letter-spacing:0 !important;}
+
+.h-punct{margin-left:-0.07em;}
+</style>
 
 <script type="application/ld+json">
 {
@@ -91,42 +419,50 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What does a Walmart marketplace agency handle?",
+      "name": "What does a Walmart marketplace engagement include?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Seller approval and account setup, listing content built for Walmart search, Walmart Fulfillment Services, Walmart Connect ads, and the review programs Walmart actually allows. The point is one operator across the item page and the ad auction, not an ads login with no one watching the listing."
+        "text": "Onboarding, item pages, WFS when scoped, Walmart Connect ads, and a weekly operating cadence. You choose the stack on the audit."
       }
     },
     {
       "@type": "Question",
-      "name": "How does Walmart seller approval and onboarding work?",
+      "name": "Do you only do Walmart?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Walmart reviews the application, the category you want to sell in, tax settings, and how you will fulfill orders. We prepare that packet, fix the gaps Walmart kicks back, and only then build listings and ads. Starting with a campaign before the account is clean wastes the first month."
+        "text": "No. Many clients run Amazon and Walmart with us. Amazon work is scoped separately on Amazon marketing."
       }
     },
     {
       "@type": "Question",
-      "name": "Do you manage Walmart Connect ads and WFS together?",
+      "name": "How long does approval take?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. WFS is Walmart's fulfillment program, the equivalent of FBA, and it affects the Buy Box and delivery promise shoppers see. Connect ads buy the visit. We do not scale Sponsored Products onto an item that cannot ship reliably or that has no reviews."
+        "text": "Often a few weeks when the packet is clean. Category and brand approvals can add time. We prep the packet before you wait on Walmart."
       }
     },
     {
       "@type": "Question",
-      "name": "How should a Walmart advertising agency treat reviews?",
+      "name": "Is WFS required?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Get the item out of the zero-review state before you pour on ad spend. Walmart's own programs are review syndication from your site, the Recognized Reviewer program, and post-purchase reviews. The reviews guide on this site walks through each one. We do not buy reviews."
+        "text": "No. Some brands stay seller-fulfilled. We recommend WFS when speed and rank upside beat the fee math."
       }
     },
     {
       "@type": "Question",
-      "name": "What does Walmart agency pricing look like?",
+      "name": "Do you guarantee Connect growth?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Walmart Connect cost guide covers management fees of $1,500 to $3,500 a month, CPCs that often land between $0.30 and $1.50, and starting ad budgets of $1,500 to $5,000 a month. SellTru uses a flat retainer rather than a percent of ad spend. The Amazon pricing guide explains why that model is the one we use on both channels."
+        "text": "No. We set efficiency targets and report weekly. Results depend on catalog, stock, and creative."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pricing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Flat retainers from about $3K for brands doing $1M to $20M. Details on the pricing guide."
       }
     }
   ]
@@ -158,10 +494,10 @@
   ]
 }
 </script>
+
 </head>
 <body>
-
-
+<div class="cx-a" data-audit-marketplace="walmart">
 <selltru-header><header class="nav" role="banner">
   <div class="container">
     <div class="nav-inner">
@@ -214,326 +550,217 @@
   <input type="email" name="email">
   <input type="hidden" name="source">
 </form></selltru-header>
-  <main>
 
-    <section class="page-hero walmart-hero" aria-label="Walmart marketplace agency">
-      <div class="page-hero-bg" aria-hidden="true"></div>
-      <div class="container">
-        <div class="page-hero-inner">
-          <p class="section-tag light" style="margin-bottom:14px;">Walmart Marketplace</p>
-          <h1>A Walmart Marketplace Partner That Handles the Item Page and the Ads. <span>Built for Brand Portal Brands.</span></h1>
-          <p>Approval, listings, WFS, and Walmart Connect for brands doing $1M to $20M. Designed for the Walmart shopper, not pasted from Amazon. $150M+ managed across 200+ brands.</p>
-          <div style="display:flex; gap:14px; flex-wrap:wrap;">
-            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Walmart Audit</a>
-            <a class="btn btn-outline-white" href="#whats-included">View All Services</a>
-          </div>
-          <div style="margin-top:36px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-            <div class="trust-badge-wmt">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220" transform="rotate(0 10 10) translate(0,-5.5)"/>
-                <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(60 10 10) translate(0,-5.5)"/>
-                <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220" transform="rotate(120 10 10) translate(0,-5.5)"/>
-                <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(180 10 10) translate(0,-5.5)"/>
-                <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220" transform="rotate(240 10 10) translate(0,-5.5)"/>
-                <ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(300 10 10) translate(0,-5.5)"/>
-              </svg>
-              <span class="trust-badge-text">Walmart Marketplace Partner</span>
-            </div>
-            <div class="trust-badge">
-              <span class="trust-badge-text">3x Walmart Connect growth</span>
-            </div>
-            <div class="trust-badge">
-              <span class="trust-badge-text">$150M+ sales managed</span>
-            </div>
-            <div class="trust-badge">
-              <span class="trust-badge-text">Upwork Top Rated Plus</span>
-            </div>
-          </div>
+<main>
+  <section class="page-hero walmart-hero hero-a" aria-label="Walmart marketplace partner">
+    <div class="cx-wrap hero-grid">
+      <div>
+        <p class="eyebrow"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220"/><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(60 10 10) translate(0,-5.5)"/><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220" transform="rotate(120 10 10) translate(0,-5.5)"/><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(180 10 10) translate(0,-5.5)"/><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220" transform="rotate(240 10 10) translate(0,-5.5)"/><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(300 10 10) translate(0,-5.5)"/></svg> Walmart Marketplace</p>
+        <h1>One Walmart partner for listings, WFS, and Connect<span class="h-punct">.</span></h1>
+        <p class="hero-lead">Approval, listings, WFS, and Connect for $1M to $20M brands. Built for the Walmart shopper.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Walmart Audit <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <a class="btn btn-outline-white" href="#whats-included">View All Services</a>
+        </div>
+        <div class="trust-row">
+          <div class="trust-pill trust-badge trust-badge-wmt"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220"/><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(60 10 10) translate(0,-5.5)"/><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220" transform="rotate(120 10 10) translate(0,-5.5)"/><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(180 10 10) translate(0,-5.5)"/><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220" transform="rotate(240 10 10) translate(0,-5.5)"/><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(300 10 10) translate(0,-5.5)"/></svg><span class="pill-full"> Walmart Marketplace Partner</span><span class="pill-short"> Walmart Partner</span></div>
+          <div class="trust-pill trust-badge"><span class="pill-full">Upwork Top Rated Plus</span><span class="pill-short">Upwork Top Rated+</span></div>
+          <div class="trust-pill trust-badge"><span class="pill-full">$150M+ sales managed</span><span class="pill-short">$150M+ sales managed</span></div>
         </div>
       </div>
-    </section>
+      <div class="cx-a-hero-visual">
+        <figure class="cx-a-ops" aria-label="Weekly Walmart ops board">
+          <div class="cx-a-ops-chrome" aria-hidden="true">
+            <span class="cx-a-dot"></span><span class="cx-a-dot"></span><span class="cx-a-dot"></span>
+            <span class="cx-a-ops-title">Weekly ops · live board</span>
+          </div>
+          <div class="cx-a-live-status" aria-label="This week status">
+            <span class="cx-a-check is-on" aria-hidden="true"></span>
+            <span class="cx-a-live-status-text"><strong>This week:</strong> catalog ready · Connect live · Fri note due</span>
+          </div>
+          <div class="cx-a-ops-grid">
+            <div class="cx-a-ops-list">
+              <div class="cx-a-ops-row">
+                <div class="cx-a-check is-on" aria-hidden="true"></div>
+                <span class="cx-a-ops-name">Catalog readiness</span>
+                <span class="cx-a-status is-ready">Ready</span>
+                <p class="cx-a-ops-desc">Titles, specs, images for the Walmart shopper</p>
+              </div>
+              <div class="cx-a-ops-row">
+                <div class="cx-a-check is-half" aria-hidden="true"></div>
+                <span class="cx-a-ops-name">Brand Highlights</span>
+                <span class="cx-a-status is-progress">In design</span>
+                <p class="cx-a-ops-desc">Phone-first modules in Media Library</p>
+              </div>
+              <div class="cx-a-ops-row">
+                <div class="cx-a-check" aria-hidden="true"></div>
+                <span class="cx-a-ops-name">WFS enrollment</span>
+                <span class="cx-a-status is-queued">On hold</span>
+                <p class="cx-a-ops-desc">Only when it pays for the SKU set</p>
+              </div>
+              <div class="cx-a-ops-row">
+                <div class="cx-a-check is-half" aria-hidden="true"></div>
+                <span class="cx-a-ops-name">Walmart Connect</span>
+                <span class="cx-a-status is-progress">Live</span>
+                <p class="cx-a-ops-desc">Search terms reviewed · note due Fri</p>
+              </div>
+            </div>
+            <aside class="cx-a-ops-side">
+              <h3>Cadence</h3>
+              <ul class="cx-a-cadence">
+                <li><strong>Mon</strong><span>Item page gaps</span></li>
+                <li><strong>Wed</strong><span>Connect structure</span></li>
+                <li><strong>Fri</strong><span>Weekly note: wins and next moves</span></li>
+              </ul>
+            </aside>
+          </div>
+        </figure>
+        <p class="cx-a-ops-note">Weekly Walmart ops checklist.</p>
+      </div>
+    </div>
+  </section>
 
-    <div class="stats-band walmart-band">
-      <div class="container">
-        <div class="stats-inner">
-          <div class="stat-item">
-            <div class="stat-number">$150M+</div>
-            <div class="stat-label">Sales Managed</div>
+  <div class="cx-a-proof" aria-label="SellTru proof">
+    <div class="cx-wrap">
+      <div class="cx-a-proof-claims">
+        <div><div class="n">$150M+</div><div class="l">Sales managed</div></div>
+        <div><div class="n">200+</div><div class="l">Brands supported</div></div>
+        <div><div class="n">90%</div><div class="l">Client retention</div></div>
+      </div>
+      <div class="cx-a-logos" aria-label="Brands SellTru has worked with">
+        <img src="/img/clients/processed/attackletics.webp" alt="Attackletics" width="140" height="30" loading="lazy">
+        <img src="/img/clients/processed/door-daddy.webp" alt="Door Daddy" width="140" height="30" loading="lazy">
+        <img src="/img/clients/processed/applied-vision-sports.webp" alt="Applied Vision Sports" width="140" height="30" loading="lazy">
+        <img src="/img/clients/processed/veeboards.webp" alt="Veeboards" width="140" height="30" loading="lazy">
+        <img src="/img/clients/processed/nds-logo.webp" alt="NDS" width="140" height="30" loading="lazy">
+        <img src="/img/clients/processed/light.bio.webp" alt="Light.bio" width="140" height="30" loading="lazy">
+        <img src="/img/clients/processed/helmet-logo-750x750.webp" alt="Helmet" width="140" height="30" loading="lazy">
+      </div>
+      <div class="cx-a-stat-card" role="group" aria-label="Walmart Seller Center result">
+        <div class="cx-a-stat-pair">
+          <div>
+            <div class="cx-a-stat-value">$125,442</div>
+            <div class="cx-a-stat-label">Item sales</div>
           </div>
-          <div class="stat-item">
-            <div class="stat-number">200+</div>
-            <div class="stat-label">Brands Supported</div>
+          <div>
+            <div class="cx-a-stat-value up">+1,228%</div>
+            <div class="cx-a-stat-label">Vs previous 30 days</div>
           </div>
-          <div class="stat-item">
-            <div class="stat-number">90%</div>
-            <div class="stat-label">Client Retention</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">3x</div>
-            <div class="stat-label">Walmart Connect Growth</div>
-          </div>
+        </div>
+        <a class="cx-a-stat-inset" href="/img/walmart-marketplace-agency/walmart-sales-inset.webp" target="_blank" rel="noopener" aria-label="Open Walmart Seller Center screenshot">
+          <p class="cx-a-stat-source">Walmart Seller Center, item sales, last 30 days</p>
+          <img src="/img/walmart-marketplace-agency/walmart-sales-inset.webp" alt="Walmart Seller Center: 125,442.37 USD item sales last 30 days, up 1228.71% vs previous 30 days" width="1180" height="132" loading="eager" decoding="async">
+          <span class="cx-a-stat-inset-cap">Source screenshot</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <section class="sec" id="why-walmart" aria-label="Why a Walmart marketplace partner">
+    <div class="cx-wrap">
+      <p class="sec-tag">Why Walmart</p>
+      <h2>Walmart rewards operators who own the page and the ads together<span class="h-punct">.</span></h2>
+      <p class="sec-sub">Want the channel brief first? Read <a href="/walmart-marketing">Walmart marketing</a>. This engagement is for brand owners who need the full stack.</p>
+      <div class="bento">
+        <article class="bento-card"><div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/><path d="M12 3v6"/></svg></div><h3>Approval through onboarding</h3><p>Seller Center or Brand Portal path, category approvals, and the first item setup without a six-month stall.</p></article>
+        <article class="bento-card"><div class="bento-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506L3 20l.859-3.513a2 2 0 0 1 .506-.854z"/></svg></div><h3>Item pages that can rank</h3><p>Titles, specs, images, and Brand Highlights written for the Walmart shopper.</p></article>
+        <article class="bento-card"><div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z"/><path d="M6 18h12"/><path d="M6 14h12"/><rect x="6" y="10" width="12" height="12"/></svg></div><h3>WFS when it pays</h3><p>Enrollment, inbound, and restock. Detail on <a href="/walmart-wfs-management">WFS management</a>.</p></article>
+        <article class="bento-card"><div class="bento-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div><h3>Walmart Connect ads</h3><p>Sponsored Products with efficiency targets. See <a href="/walmart-connect-ads-agency">Walmart Connect ads</a>.</p></article>
+        <article class="bento-card"><div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Reviews before you scale</h3><p>Ratings and content gaps fixed before Connect spend ramps.</p></article>
+        <article class="bento-card"><div class="bento-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div><h3>One Walmart team</h3><p>Item pages, WFS, and ads on one retainer when scoped. $150M+ managed. 90% retention.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="whats-included" aria-label="What is included">
+    <div class="cx-wrap">
+      <p class="sec-tag">Services</p>
+      <div class="svc-feature">
+        <div>
+          <h2>Walmart marketplace services<span class="h-punct">.</span></h2>
+          <h3>The full Walmart stack on one retainer<span class="h-punct">.</span></h3>
+          <p class="sec-sub" style="margin-bottom:0">Flat retainer pricing for brands doing $1M to $20M. Models on the <a href="/marketplace-agency-pricing">pricing guide</a>.</p>
+        </div>
+        <ul class="svc-list">
+          <li><span class="n">01</span><div class="svc-item"><strong class="svc-title">Approval and onboarding</strong><span class="svc-body">Account path, tax and banking support, category approvals.</span></div></li>
+          <li><span class="n">02</span><div class="svc-item"><strong class="svc-title">Listings and Brand Highlights</strong><span class="svc-body">Item page copy and rich media. See <a href="/walmart-a-plus-content">Walmart A+ content</a>.</span></div></li>
+          <li><span class="n">03</span><div class="svc-item"><strong class="svc-title">WFS operations</strong><span class="svc-body">Eligibility, inbound, inventory. <a href="/walmart-wfs-management">WFS management</a>.</span></div></li>
+          <li><span class="n">04</span><div class="svc-item"><strong class="svc-title">Walmart Connect</strong><span class="svc-body">Structure, search terms, weekly notes. <a href="/walmart-connect-ads-agency">Connect ads</a>.</span></div></li>
+          <li><span class="n">05</span><div class="svc-item"><strong class="svc-title">Reporting you can act on</strong><span class="svc-body">Sell-through, efficiency, next three moves.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="process" aria-label="Process">
+    <div class="cx-wrap">
+      <p class="sec-tag">Process</p>
+      <h2>Here is how a Walmart engagement starts<span class="h-punct">.</span></h2>
+      <div class="process">
+        <div class="pstep"><h3>Walmart audit</h3><p>Account path, catalog gaps, WFS fit, and Connect readiness.</p></div>
+        <div class="pstep"><h3>Launch the stack</h3><p>Onboarding, item pages, and WFS enrollment when it pays.</p></div>
+        <div class="pstep"><h3>Advertise and iterate</h3><p>Connect ads with weekly notes, tied to stock and content.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="faq" aria-label="Walmart marketplace FAQ">
+    <div class="cx-wrap faq-layout">
+      <div class="faq-intro">
+        <p class="sec-tag">FAQ</p>
+        <h2>Walmart marketplace FAQ<span class="h-punct">.</span></h2>
+        <p>Onboarding, WFS, and Connect. Straight answers before you book.</p>
+        <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a free Walmart audit</a>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item open">
+          <button type="button" class="faq-q"><h3>What does a Walmart marketplace engagement include?</h3><span class="faq-arrow">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Onboarding, item pages, WFS when scoped, Walmart Connect ads, and a weekly operating cadence. You choose the stack on the audit.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q"><h3>Do you only do Walmart?</h3><span class="faq-arrow">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>No. Many clients run Amazon and Walmart with us. Amazon work is scoped separately on <a href="/amazon-marketing">Amazon marketing</a>.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q"><h3>How long does approval take?</h3><span class="faq-arrow">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Often a few weeks when the packet is clean. Category and brand approvals can add time. We prep the packet before you wait on Walmart.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q"><h3>Is WFS required?</h3><span class="faq-arrow">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>No. Some brands stay seller-fulfilled. We recommend WFS when speed and rank upside beat the fee math.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q"><h3>Do you guarantee Connect growth?</h3><span class="faq-arrow">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>No. We set efficiency targets and report weekly. Results depend on catalog, stock, and creative.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q"><h3>Pricing?</h3><span class="faq-arrow">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Flat retainers from about $3K for brands doing $1M to $20M. Details on the <a href="/marketplace-agency-pricing">pricing guide</a>.</p></div></div>
         </div>
       </div>
     </div>
+  </section>
 
-    <section class="service-detail-section" id="why-walmart" aria-label="Why a Walmart marketplace partner">
-      <div class="container">
-        <div class="section-header center reveal">
-          <p class="section-tag walmart-tag">Why Walmart Marketplace</p>
-          <h2 class="section-title">Walmart Rewards Operators Who<br>Own the Page and the Ads Together.</h2>
-          <p class="section-sub wide">
-            Channel overview sits on <a href="/walmart-marketing" style="color:var(--blue);">Walmart marketing</a>. This page is the full marketplace stack: onboarding, content, WFS, and Connect.
-          </p>
-        </div>
-        <div class="why-grid reveal">
-          <div class="why-card">
-            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/>
-    <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/>
-    <path d="M12 3v6"/>
-  </svg></div>
-            <h3>Approval Through Onboarding</h3>
-            <p>Seller Center or Brand Portal path, category approvals, and the first item setup without a six-month stall.</p>
-          </div>
-          <div class="why-card">
-            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <path d="M12 20h9"/>
-    <path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506L3 20l.859-3.513a2 2 0 0 1 .506-.854z"/>
-  </svg></div>
-            <h3>Item Pages That Can Rank</h3>
-            <p>Titles, specs, images, and Brand Highlights written for the Walmart shopper. Not pasted Amazon modules.</p>
-          </div>
-          <div class="why-card">
-            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z"/>
-    <path d="M6 18h12"/>
-    <path d="M6 14h12"/>
-    <rect x="6" y="10" width="12" height="12"/>
-  </svg></div>
-            <h3>WFS When It Pays</h3>
-            <p>Enrollment, inbound, and restock. Detail on <a href="/walmart-wfs-management" style="color:var(--blue);">WFS management</a>.</p>
-          </div>
-          <div class="why-card">
-            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <path d="m3 11 18-5v12L3 14v-3z"/>
-    <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>
-  </svg></div>
-            <h3>Walmart Connect Ads</h3>
-            <p>Sponsored Products and related formats with efficiency targets. See <a href="/walmart-connect-ads-agency" style="color:var(--blue);">Walmart Connect ads</a>.</p>
-          </div>
-          <div class="why-card">
-            <div class="why-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-  </svg></div>
-            <h3>Reviews Before You Scale</h3>
-            <p>Ratings and content gaps fixed before Connect spend ramps. Ads on a broken page waste budget.</p>
-          </div>
-          <div class="why-card">
-            <div class="why-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
-    <path d="m9 12 2 2 4-4"/>
-  </svg></div>
-            <h3>One Walmart Team</h3>
-            <p>Item pages, WFS, and ads on one retainer when scoped. $150M+ managed across 200+ brands. 90% retention. 3x Walmart Connect growth on managed accounts where measured.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="service-detail-section alt" id="whats-included" aria-label="What is included">
-      <div class="container">
-        <div class="section-header center reveal">
-          <p class="section-tag walmart-tag">What's Included</p>
-          <h2 class="section-title">Walmart Marketplace Services.</h2>
-          <p class="section-sub">SellTru runs Walmart end to end when you want one team. 90% retention. Flat retainers from $3K. 3x Walmart Connect growth on managed accounts where measured.</p>
-        </div>
-        <div class="services-cards-grid">
-          <div class="service-mini-card reveal">
-            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
-    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
-    <path d="M12 11h4"/>
-    <path d="M12 16h4"/>
-    <path d="M8 11h.01"/>
-    <path d="M8 16h.01"/>
-  </svg></div>
-            <h3>Approval and Onboarding</h3>
-            <p>Account path, tax and banking setup support, and category approvals so you can list.</p>
-          </div>
-          <div class="service-mini-card reveal">
-            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <path d="M12 20h9"/>
-    <path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506L3 20l.859-3.513a2 2 0 0 1 .506-.854z"/>
-  </svg></div>
-            <h3>Listings and Brand Highlights</h3>
-            <p>Item page copy, specs, and rich media. See <a href="/walmart-a-plus-content" style="color:var(--blue);">Walmart A+ content</a>.</p>
-          </div>
-          <div class="service-mini-card reveal">
-            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z"/>
-    <path d="M6 18h12"/>
-    <path d="M6 14h12"/>
-    <rect x="6" y="10" width="12" height="12"/>
-  </svg></div>
-            <h3>WFS Operations</h3>
-            <p>Eligibility, inbound, and inventory health. Full detail on <a href="/walmart-wfs-management" style="color:var(--blue);">WFS management</a>.</p>
-          </div>
-          <div class="service-mini-card reveal">
-            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <path d="m3 11 18-5v12L3 14v-3z"/>
-    <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>
-  </svg></div>
-            <h3>Walmart Connect</h3>
-            <p>Campaign structure, search terms, and weekly notes. Linked from <a href="/walmart-connect-ads-agency" style="color:var(--blue);">Connect ads</a>.</p>
-          </div>
-          <div class="service-mini-card reveal">
-            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <line x1="12" y1="20" x2="12" y2="10"/>
-    <line x1="18" y1="20" x2="18" y2="4"/>
-    <line x1="6" y1="20" x2="6" y2="16"/>
-  </svg></div>
-            <h3>Reporting You Can Act On</h3>
-            <p>Sell-through, ad efficiency, and the next three moves. Not a 40-tab dump.</p>
-          </div>
-          <div class="service-mini-card reveal">
-            <div class="smc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-    <circle cx="9" cy="7" r="4"/>
-    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
-    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-  </svg></div>
-            <h3>Flat Retainer Pricing</h3>
-            <p>Retainers from $3K for brands doing $1M to $20M. Models on the <a href="/marketplace-agency-pricing" style="color:var(--blue);">pricing guide</a>.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="process-section" aria-label="Process">
-      <div class="container">
-        <div class="section-header center reveal">
-          <p class="section-tag light">Getting Started</p>
-          <h2 class="section-title light">Here's How a Walmart<br>Engagement Starts.</h2>
-          <p class="section-sub light">Approval and catalog first. Ads after the page can convert.</p>
-        </div>
-        <div class="process-grid">
-          <div class="process-connector" aria-hidden="true"></div>
-          <div class="process-step reveal">
-            <div class="process-num">01</div>
-            <h3>Walmart Audit</h3>
-            <p>Account path, catalog gaps, WFS fit, and Connect readiness.</p>
-          </div>
-          <div class="process-step reveal">
-            <div class="process-num">02</div>
-            <h3>Launch the Stack</h3>
-            <p>Onboarding, item pages, and WFS enrollment when it pays.</p>
-          </div>
-          <div class="process-step reveal">
-            <div class="process-num">03</div>
-            <h3>Advertise and Iterate</h3>
-            <p>Connect ads with weekly notes, tied to stock and content.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="faq-section" id="faq" aria-label="Walmart marketplace FAQ">
-      <div class="container">
-        <div class="faq-layout">
-          <div class="faq-intro reveal">
-            <p class="section-tag">Common Questions</p>
-            <h2 class="section-title">Walmart Marketplace FAQ.</h2>
-            <p>Onboarding, WFS, and Connect. Fulfillment detail sits on <a href="/walmart-wfs-management" style="color:var(--blue);">WFS management</a>.</p>
-            <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Audit</a>
-          </div>
-          <div class="faq-list reveal">
-            <div class="faq-item">
-              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
-                <h3>What does a Walmart marketplace engagement include?</h3>
-                <span class="faq-arrow">+</span>
-              </div>
-              <div class="faq-a">
-                <div class="faq-a-inner">
-                  <p>Onboarding, item pages, WFS when scoped, Walmart Connect ads, and a weekly operating cadence. You choose the stack on the audit.</p>
-                </div>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
-                <h3>Do you only do Walmart?</h3>
-                <span class="faq-arrow">+</span>
-              </div>
-              <div class="faq-a">
-                <div class="faq-a-inner">
-                  <p>No. Many clients run Amazon and Walmart with us. Amazon work is scoped separately on <a href="/amazon-marketing" style="color:var(--blue);">Amazon marketing</a>.</p>
-                </div>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
-                <h3>How long does approval take?</h3>
-                <span class="faq-arrow">+</span>
-              </div>
-              <div class="faq-a">
-                <div class="faq-a-inner">
-                  <p>It varies by category and Walmart's queues. We prepare a complete submission. We do not invent a timeline Walmart did not publish.</p>
-                </div>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
-                <h3>Is WFS required?</h3>
-                <span class="faq-arrow">+</span>
-              </div>
-              <div class="faq-a">
-                <div class="faq-a-inner">
-                  <p>No. Some brands stay seller-fulfilled. We recommend WFS when speed and rank upside beat the fee math.</p>
-                </div>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
-                <h3>Do you guarantee Connect growth?</h3>
-                <span class="faq-arrow">+</span>
-              </div>
-              <div class="faq-a">
-                <div class="faq-a-inner">
-                  <p>No. We have measured 3x Walmart Connect growth on managed accounts where the baseline and window were defined. That is not a promise for every catalog.</p>
-                </div>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
-                <h3>Pricing?</h3>
-                <span class="faq-arrow">+</span>
-              </div>
-              <div class="faq-a">
-                <div class="faq-a-inner">
-                  <p>Flat monthly retainers from $3K. Ad spend is paid to Walmart. Quoted after the audit.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta-section" aria-label="Walmart marketplace audit CTA">
-      <div class="container">
-        <h2>If the Walmart Channel Is a Side Project,<br>Start With the Audit.</h2>
+  <section class="cta-section cx-a-cta" aria-label="Walmart marketplace audit CTA">
+    <div class="cx-wrap">
+      <div class="cx-a-cta-box">
+        <h2>If Walmart is a side project,<br>start with the audit<span class="h-punct">.</span></h2>
         <p>We look at approval status, item pages, WFS, and Connect before we talk about a retainer. No pitch decks. No obligation.</p>
-        <div class="cta-buttons">
-          <a class="btn btn-primary btn-lg" href="/about#contact-form" data-modal-trigger="audit">Get Your Free Audit</a>
+        <div class="cx-a-cta-actions cta-buttons">
+          <a class="btn btn-primary btn-lg" href="/about#contact-form" data-modal-trigger="audit">Get Your Free Walmart Audit</a>
           <a class="btn btn-outline-white btn-lg" href="tel:+19548692034">Call (954) 869-2034</a>
         </div>
-        <p style="margin-top:18px; font-size:15px; color:rgba(255,255,255,0.55);">
-          Prefer a call on the calendar?
-          <a href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=walmart-marketplace-agency" target="_blank" rel="noopener" class="cta-calendly-link">Book a free 30-minute strategy call</a>
-        </p>
+        <p class="cta-calendly" style="margin-top:16px;text-align:center"><a class="cta-calendly-link" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=walmart-marketplace-agency" target="_blank" rel="noopener">Book a free 30-minute strategy call</a></p>
       </div>
-    </section>
-
-  </main>
+      <nav class="cx-a-end-nav" aria-label="Page sections">
+        <a href="#whats-included">Services</a>
+        <a href="#process">Process</a>
+        <a href="#faq">FAQ</a>
+        <a href="/about#contact-form" data-modal-trigger="audit">Get a free Walmart audit</a>
+      </nav>
+    </div>
+  </section>
+</main>
 
 <selltru-footer><footer class="footer" role="contentinfo">
   <div class="container">
@@ -614,21 +841,261 @@
   </div>
 </footer>
 
-<div class="sticky-audit-strip" id="sticky-strip" role="complementary" aria-label="Free audit offer">
-  <div class="sticky-strip-text">
-    <div class="sticky-strip-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
-    <div class="sticky-strip-copy">
-      <div class="sticky-strip-headline">Free Walmart Audit</div>
-      <div class="sticky-strip-sub">We'll find what's costing you. No obligation.</div>
-    </div>
-  </div>
-  <div class="sticky-strip-actions">
-    <a class="sticky-strip-cta" href="/about#contact-form" data-modal-trigger="audit">Get the Free Audit</a>
-    <button class="sticky-strip-dismiss" id="strip-dismiss" aria-label="Dismiss">&times;</button>
-  </div>
-</div></selltru-footer>
 
-  <script src="/js/lead-tracking.js" defer></script>
-  <script src="/js/main.js" defer></script>
+
+</selltru-footer>
+</div>
+
+<div id="cx-a-sticky" role="complementary" aria-label="Free audit offer">
+  <div class="cx-a-sticky-copy">
+    <div class="cx-a-sticky-headline">Free Walmart audit</div>
+    <div class="cx-a-sticky-sub">We'll find what's costing you. No obligation.</div>
+  </div>
+  <div class="cx-a-sticky-actions">
+    <a class="cx-a-sticky-cta" href="/about#contact-form" data-modal-trigger="audit">Get the free audit</a>
+    <button type="button" class="cx-a-sticky-x" id="cx-a-sticky-x" aria-label="Dismiss">&times;</button>
+  </div>
+</div>
+
+<script src="js/lead-tracking.js" defer></script>
+<script src="js/main.js" defer></script>
+
+<script>
+document.querySelectorAll('.cx-a .faq-q').forEach(function(q){
+  q.addEventListener('click', function(){
+    var item = q.closest('.faq-item');
+    var open = item.classList.contains('open');
+    item.parentElement.querySelectorAll('.faq-item.open').forEach(function(i){ i.classList.remove('open'); });
+    if (!open) item.classList.add('open');
+  });
+});
+</script>
+
+<script>
+(function () {
+  var KEY = 'strip-dismissed-' + location.pathname;
+  var pastStats = false;
+  var endInView = false; /* CTA box and/or footer */
+
+  function bar() { return document.getElementById('cx-a-sticky'); }
+
+  function barHeight() {
+    var el = bar();
+    if (!el) return 72;
+    var h = Math.ceil(el.getBoundingClientRect().height || el.offsetHeight || 0);
+    return h > 0 ? h : 72;
+  }
+
+  function publishHeight() {
+    var h = barHeight();
+    document.documentElement.style.setProperty('--cx-a-sticky-h', h + 'px');
+    return h;
+  }
+
+  function setPad(on) {
+    publishHeight();
+    if (on) document.body.classList.add('cx-a-has-sticky-pad');
+    else document.body.classList.remove('cx-a-has-sticky-pad');
+  }
+
+  /* True when an h2/h3/button/CTA would sit under the sticky band. */
+  function criticalInStickyBand() {
+    var sticky = bar();
+    var h = barHeight();
+    var top = window.innerHeight - h;
+    var bottom = window.innerHeight;
+    var nodes = document.querySelectorAll('h2, h3, button, .btn, .cx-a-cta-box, a.btn');
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      if (sticky && sticky.contains(n)) continue;
+      var r = n.getBoundingClientRect();
+      if (r.bottom <= top || r.top >= bottom) continue;
+      if (r.right <= 0 || r.left >= window.innerWidth) continue;
+      return true;
+    }
+    return false;
+  }
+
+  function shouldShow() {
+    if (sessionStorage.getItem(KEY)) return false;
+    if (!pastStats) return false;
+    if (endInView) return false;
+    if (criticalInStickyBand()) return false;
+    return true;
+  }
+
+  function apply() {
+    var el = bar();
+    if (!el) return;
+    var show = shouldShow();
+    if (show) {
+      el.classList.add('cx-a-sticky-on');
+      requestAnimationFrame(function () { setPad(true); });
+    } else {
+      el.classList.remove('cx-a-sticky-on');
+      /* Keep --cx-a-sticky-h for scroll-margin; drop body pad only when hidden */
+      setPad(false);
+      publishHeight();
+    }
+  }
+
+  function bind() {
+    var x = document.getElementById('cx-a-sticky-x');
+    if (!x || x.dataset.bound) return;
+    x.dataset.bound = '1';
+    x.addEventListener('click', function () {
+      var el = bar();
+      if (el) el.classList.remove('cx-a-sticky-on');
+      setPad(false);
+      publishHeight();
+      sessionStorage.setItem(KEY, '1');
+    });
+  }
+
+  function hideEmail() {
+    var e = document.getElementById('email-bar');
+    if (e) e.style.display = 'none';
+    var s = document.getElementById('sticky-strip');
+    if (s) s.style.display = 'none';
+  }
+
+  function observeStats() {
+    var stats = document.querySelector('.cx-a-proof');
+    if (!stats || !('IntersectionObserver' in window)) {
+      function scrollFallback() {
+        var s = document.querySelector('.cx-a-proof');
+        if (!s) return;
+        pastStats = s.getBoundingClientRect().bottom < 0;
+        var cta = document.querySelector('.cx-a-cta-box');
+        var foot = document.querySelector('footer.footer');
+        endInView = !!(cta && cta.getBoundingClientRect().top < window.innerHeight && cta.getBoundingClientRect().bottom > 0)
+          || !!(foot && foot.getBoundingClientRect().top < window.innerHeight && foot.getBoundingClientRect().bottom > 0);
+        apply();
+      }
+      window.addEventListener('scroll', scrollFallback, { passive: true });
+      scrollFallback();
+      return;
+    }
+
+    new IntersectionObserver(function (entries) {
+      var e = entries[0];
+      if (!e) return;
+      pastStats = !e.isIntersecting && e.boundingClientRect.bottom < 0;
+      apply();
+    }, { threshold: [0, 0.01, 1] }).observe(stats);
+
+    /* Hide sticky while final CTA box or footer is in view */
+    var endNodes = [document.querySelector('.cx-a-cta-box'), document.querySelector('footer.footer')].filter(Boolean);
+    var endVisible = {};
+    function recomputeEnd() {
+      endInView = Object.keys(endVisible).some(function (k) { return endVisible[k]; });
+      apply();
+    }
+    if (endNodes.length) {
+      var endIo = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          endVisible[e.target === endNodes[0] ? 'cta' : 'footer'] = e.isIntersecting;
+        });
+        /* Also treat partial footer/cta as in view when any pixel shows */
+        endInView = entries.some(function (e) { return e.isIntersecting; }) ||
+          Object.keys(endVisible).some(function (k) { return endVisible[k]; });
+        recomputeEnd();
+      }, { threshold: [0, 0.01, 0.1, 1] });
+      endNodes.forEach(function (n, i) {
+        endVisible[i === 0 ? 'cta' : 'footer'] = false;
+        endIo.observe(n);
+      });
+    }
+  }
+
+  function onScrollOrResize() {
+    apply();
+  }
+
+  function boot() {
+    hideEmail();
+    bind();
+    publishHeight();
+    observeStats();
+    apply();
+    window.addEventListener('scroll', onScrollOrResize, { passive: true });
+    window.addEventListener('resize', onScrollOrResize);
+  }
+
+  hideEmail();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+  window.addEventListener('load', function () { hideEmail(); bind(); publishHeight(); apply(); });
+})();
+</script>
+
+
+<script>
+/* Page-scoped: Walmart audit modal title + footer year. Does not edit shared components.js.
+   One-shot year/modal fix (no live DOM observer; prior innerHTML loop froze the page). */
+(function () {
+  var AUDIT_TITLE = 'Get Your Free Walmart Audit';
+  var YEAR = String(new Date().getFullYear());
+
+  function fixModal() {
+    var t = document.getElementById('modal-title');
+    if (!t) return;
+    var cur = t.textContent || '';
+    if (/Amazon/i.test(cur) && cur !== AUDIT_TITLE) t.textContent = AUDIT_TITLE;
+  }
+
+  function fixYear() {
+    var nodes = document.querySelectorAll('footer.footer .footer-bottom p, footer.footer p');
+    nodes.forEach(function (p) {
+      var walk = document.createTreeWalker(p, NodeFilter.SHOW_TEXT, null);
+      var n;
+      while ((n = walk.nextNode())) {
+        var raw = n.nodeValue;
+        if (!raw) continue;
+        var next = raw.replace(/©\s*20\d{2}/g, '© ' + YEAR);
+        if (next !== raw) n.nodeValue = next;
+      }
+    });
+  }
+
+  function runOnce() {
+    fixYear();
+    fixModal();
+  }
+
+  function afterFooter() {
+    var p = (window.customElements && customElements.whenDefined)
+      ? customElements.whenDefined('selltru-footer').catch(function () {})
+      : Promise.resolve();
+    Promise.resolve(p).then(function () {
+      requestAnimationFrame(function () {
+        runOnce();
+        requestAnimationFrame(runOnce);
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', afterFooter);
+  } else {
+    afterFooter();
+  }
+  window.addEventListener('load', runOnce);
+
+  /* Modal title is set when the dialog opens (shared CE still says Amazon). */
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    if (!t || !t.closest) return;
+    if (t.closest('[data-modal-trigger="audit"], [data-modal-trigger="contact"]')) {
+      requestAnimationFrame(fixModal);
+      setTimeout(fixModal, 40);
+    }
+  }, true);
+})();
+</script>
+
 </body>
 </html>

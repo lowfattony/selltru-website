@@ -252,13 +252,13 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
   filter:brightness(0) saturate(100%) invert(12%) sepia(6%) saturate(400%) hue-rotate(176deg) brightness(80%) contrast(135%)}
 @media(max-width:720px){
   .cx-a-logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 16px;justify-items:center;align-items:center}
-  .cx-a-logos img{height:24px;max-width:110px}
-  .cx-a-logos img.logo-door{height:22px}
-  .cx-a-logos img.logo-avs{height:20px;max-width:120px}
-  .cx-a-logos img.logo-vb{height:28px}
-  .cx-a-logos img.logo-nds{height:26px}
-  .cx-a-logos img.logo-light{height:24px}
-  .cx-a-logos img.logo-mint{height:26px;max-width:100px}
+  .cx-a-logos img{height:24px;width:auto;max-width:110px;object-fit:contain}
+  .cx-a-logos img.logo-door,
+  .cx-a-logos img.logo-avs,
+  .cx-a-logos img.logo-vb,
+  .cx-a-logos img.logo-nds,
+  .cx-a-logos img.logo-light,
+  .cx-a-logos img.logo-mint{height:24px;max-width:110px}
 }
 .cx-a-stat-card{max-width:720px;margin:0 auto;background:#fff;
   border:1px solid #D8DEE8;border-radius:20px;padding:32px;box-shadow:0 18px 40px rgba(13,27,42,.08)}
@@ -380,6 +380,8 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
   .svc-item{display:flex;flex-direction:column;gap:6px}
   .svc-title{display:block;width:100%}
   .svc-body{display:block;width:100%}
+  .cx-a-cta-box{padding:32px 22px}
+  .cx-a-cta-box h2{overflow-wrap:normal;word-break:keep-all;hyphens:none}
 }
 
 @media(max-width:560px){
@@ -794,7 +796,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
   <section class="cta-section cx-a-cta" aria-label="Walmart marketplace audit CTA">
     <div class="cx-wrap">
       <div class="cx-a-cta-box">
-        <h2>If the Walmart Channel Is a Side Project<span class="h-punct">,</span><br>Start With the Audit<span class="h-punct">.</span></h2>
+        <h2>If&nbsp;the&nbsp;Walmart&nbsp;Channel Is&nbsp;a&nbsp;Side&nbsp;Project<span class="h-punct">,</span> Start&nbsp;With&nbsp;the&nbsp;Audit<span class="h-punct">.</span></h2>
         <p>We look at approval status, item pages, WFS, and Connect before we talk about a retainer. No pitch decks. No obligation.</p>
         <div class="cx-a-cta-actions cta-buttons">
           <a class="btn btn-primary btn-lg" href="/about#contact-form" data-modal-trigger="audit">Get Your Free Walmart Audit</a>

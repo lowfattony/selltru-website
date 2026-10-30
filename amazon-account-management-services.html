@@ -169,8 +169,8 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
 .hero-a h1{font-family:var(--font-head);font-weight:800;font-size:clamp(24px,2.6vw,30px);
   line-height:1.18;letter-spacing:0;color:#fff;max-width:min(720px,100%);margin:0 0 16px;
 }
-.hero-a h1 > .h1-sub{display:block}
-.hero-a h1 .h-end{white-space:nowrap}
+.hero-a h1 > .h1-sub{display:block;color:var(--orange)}
+.hero-a h1 > .h1-sub .h-punct{color:inherit}
 .hero-a h1 .h-punct{margin-left:-0.055em}
 
 .hero-lead{font-size:16.5px;line-height:1.65;color:rgba(255,255,255,.62);max-width:46ch;margin:0 0 26px}
@@ -298,8 +298,13 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
   margin-left:-0.085em;
   margin-right:0;
 }
+/* DR: even wraps, no hard breaks */
+.cx-a h1,.cx-a h2{text-wrap:balance}
+.cx-a .cx-a-cta-box h2{font-family:var(--font-head);font-weight:800;font-size:clamp(26px,3.2vw,38px);
+  line-height:1.15;letter-spacing:normal;color:#fff;margin:0 0 14px;text-wrap:balance}
 
-.cx-a .svc-lead{font-size:18px;font-weight:700;color:#fff;margin:0 0 12px;max-width:36ch}
+
+.cx-a .svc-lead{font-size:18px;font-weight:700;color:#fff;margin:0 0 12px;max-width:36ch;text-wrap:balance}
 
 .cx-a .sec-sub{font-size:16.5px;color:rgba(255,255,255,.72);max-width:58ch;margin:0 0 44px;line-height:1.7}
 .cx-a .sec-sub a{color:#93C5FD;font-weight:600;text-decoration:underline;text-underline-offset:3px}
@@ -349,9 +354,11 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
 .cx-a .faq-q:hover h3{color:#fff}
 .cx-a .faq-arrow{flex:0 0 28px;align-self:center;display:inline-flex;align-items:center;justify-content:center;
   width:28px;min-width:28px;max-width:28px;height:28px;box-sizing:border-box;overflow:hidden;
-  line-height:28px;color:rgba(255,255,255,.75);font-size:18px;font-weight:500;margin-left:8px;
+  line-height:28px;color:rgba(255,255,255,.75);font-size:0;font-weight:500;margin-left:8px;
   background:transparent;border-radius:0;transform:none;transition:none}
+.cx-a .faq-arrow::before{content:"+";font-size:18px;line-height:28px;color:rgba(255,255,255,.75)}
 .cx-a .faq-item.open .faq-arrow{background:transparent;color:rgba(255,255,255,.75);transform:none}
+.cx-a .faq-item.open .faq-arrow::before{content:"\2212"}
 .faq-a{display:none;padding:0 0 18px}
 .faq-item.open .faq-a{display:block;max-height:none}
 .faq-a p{font-size:16px;color:rgba(255,255,255,.72);line-height:1.7;margin:0}
@@ -602,7 +609,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
     <div class="cx-wrap hero-grid">
       <div>
         <p class="eyebrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> For $1M to $20M brands</p>
-        <h1>Amazon Account Management<br> That Runs the <span class="h-end">Channel<span class="h-punct">.</span></span> <span class="h1-sub">Built for $1M to $20M Brands<span class="h-punct">.</span></span></h1>
+        <h1>Amazon Account Management That Runs the Channel<span class="h-punct">.</span> <span class="h1-sub">Built for $1M to $20M Brands<span class="h-punct">.</span></span></h1>
         <p class="hero-lead">Listings, PPC, inventory, and account health. Flat retainers from $3,000 a month for brands that want a partner, not a ticket queue.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Amazon Audit <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
@@ -702,7 +709,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
   <section class="sec" id="why-account" aria-label="Why Amazon account management">
     <div class="cx-wrap">
       <p class="sec-tag">Why account management</p>
-      <h2>Split Vendors Create Gaps<span class="h-punct">.</span><br>One Team Closes Them<span class="h-punct">.</span></h2>
+      <h2>Split Vendors Create Gaps<span class="h-punct">.</span> One Team Closes Them<span class="h-punct">.</span></h2>
       <p class="sec-sub">Channel strategy beyond the day-to-day sits on <a href="/amazon-marketing">Amazon marketing</a>. Day-to-day ops live here: what gets checked, who owns the fix, and how you hear about it.</p>
       <div class="bento">
         <article class="bento-card"><div class="bento-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506L3 20l.859-3.513a2 2 0 0 1 .506-.854z"/></svg></div><h3>One team owns the channel</h3>
@@ -745,7 +752,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
   <section class="sec" id="process" aria-label="Process">
     <div class="cx-wrap">
       <p class="sec-tag">Process</p>
-      <h2>Here's How Account<br>Management Starts<span class="h-punct">.</span></h2>
+      <h2>Here's How Account Management Starts<span class="h-punct">.</span></h2>
       <div class="process">
         <div class="pstep"><h3>Free account audit</h3>
             <p>We pull listings, ads, health, and inventory signals. You get a short written read of what is costing you money.</p></div>
@@ -798,7 +805,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
   <section class="cta-section cx-a-cta" aria-label="Amazon account management audit CTA">
     <div class="cx-wrap">
       <div class="cx-a-cta-box">
-        <h2>If the Channel Feels Like Three Vendors<br>and No Owner, Start With the Audit<span class="h-punct">.</span></h2>
+        <h2>If the Channel Feels Like Three Vendors and No Owner, Start With the Audit<span class="h-punct">.</span></h2>
         <p>We look at listings, ads, health, and inventory before we talk about a retainer. No pitch decks. No obligation.</p>
         <div class="cx-a-cta-actions cta-buttons">
           <a class="btn btn-primary btn-lg" href="/about#contact-form" data-modal-trigger="audit">Get Your Free Amazon Audit</a>

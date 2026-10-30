@@ -179,7 +179,7 @@
 .cx-a .svc-pricing-card span{display:block;color:rgba(255,255,255,.65);font-size:13px;line-height:1.45}
 .cx-a .svc-pricing-card:hover{border-color:rgba(255,255,255,.28)}
 @media(min-width:961px){
-  .svc-feature{align-items:center}
+  .svc-feature{align-items:start}
 }
 
 /* AMS services chip */
@@ -202,6 +202,157 @@
   .walmart-hero .hero-copy{max-width:36em}
   .page-hero.walmart-hero h1,
   .walmart-hero h1{max-width:22em}
+}
+
+
+/* === Design Review r5 (2026-10-30) — page-only === */
+
+/* 1) Services @1440: eyebrow ~12px above H2; top-align left col (no vertical center) */
+#whats-included > .cx-wrap > .sec-tag{
+  margin:0 0 12px !important;
+}
+@media (min-width:961px){
+  .cx-a .svc-feature,
+  .svc-feature{
+    align-items:start !important;
+  }
+  .svc-feature > div:first-child{
+    align-self:start !important;
+    position:sticky;
+    top:96px;
+  }
+}
+
+/* 2) Footer services: single column, no wrap; widen services col */
+.footer-top{
+  grid-template-columns:minmax(240px,1.15fr) minmax(220px,1.35fr) minmax(160px,1fr) minmax(140px,.9fr) !important;
+  gap:28px 36px !important;
+}
+.footer-col.footer-services{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:6px !important;
+  grid-template-columns:none !important;
+}
+.footer-services h4{grid-column:auto !important;margin:0 0 8px !important}
+.footer-services a{
+  display:block !important;
+  white-space:nowrap !important;
+  overflow:visible !important;
+  text-overflow:clip !important;
+  line-height:1.35 !important;
+}
+@media (max-width:900px){
+  .footer-top{grid-template-columns:1fr !important}
+}
+
+/* 3) Logo strip @390: 3x2 equal cells; optical size around 24px nominal */
+@media (max-width:720px){
+  .cx-a-logos{
+    display:grid !important;
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    gap:18px 12px !important;
+    justify-items:center !important;
+    align-items:center !important;
+    width:100% !important;
+  }
+  .cx-a-logos img{
+    width:auto !important;
+    max-width:100% !important;
+    object-fit:contain !important;
+    justify-self:center !important;
+  }
+  /* wide wordmarks larger */
+  .cx-a-logos img.logo-door,
+  .cx-a-logos img[alt="Door Daddy"]{height:28px !important;max-width:100% !important}
+  .cx-a-logos img.logo-avs,
+  .cx-a-logos img[alt="Applied Vision Sports"]{height:26px !important;max-width:100% !important}
+  .cx-a-logos img.logo-light,
+  .cx-a-logos img[alt="Light.bio"]{height:26px !important;max-width:100% !important}
+  /* square / compact marks smaller */
+  .cx-a-logos img.logo-vb,
+  .cx-a-logos img[alt="Veeboards"]{height:20px !important;max-width:72px !important}
+  .cx-a-logos img.logo-mint,
+  .cx-a-logos img[alt="Mint"]{height:20px !important;max-width:72px !important}
+  .cx-a-logos img.logo-nds,
+  .cx-a-logos img[alt="NDS"]{height:22px !important;max-width:88px !important}
+  /* default remaining around 24 */
+  .cx-a-logos img:not(.logo-door):not(.logo-avs):not(.logo-vb):not(.logo-nds):not(.logo-light):not(.logo-mint){height:24px !important}
+}
+
+/* Desktop logos stay nominal 24px */
+@media (min-width:721px){
+  .cx-a-logos img,
+  .cx-a-logos img.logo-door,
+  .cx-a-logos img.logo-avs,
+  .cx-a-logos img.logo-vb,
+  .cx-a-logos img.logo-nds,
+  .cx-a-logos img.logo-light,
+  .cx-a-logos img.logo-mint{height:24px !important;width:auto;max-width:140px;object-fit:contain}
+}
+
+/* 4) Why-card body @1440: 15px / 1.55 / pad 28 — win over later rules */
+.cx-a .bento-card,
+.bento-card{
+  padding:28px !important;
+}
+.cx-a .bento-card p,
+.bento-card p{
+  font-size:15px !important;
+  line-height:1.55 !important;
+}
+
+/* 5) Proof caption: 12px @ ~70% opacity, centered under both numbers */
+.cx-a-stat-source,
+.cx-a .cx-a-stat-source{
+  font-size:12px !important;
+  opacity:.7 !important;
+  text-align:center !important;
+  color:#4B5563 !important;
+  margin:14px 0 0 !important;
+  width:100% !important;
+}
+
+/* 6) #39 pricing link card: clearer border + arrow, whole card is link */
+.cx-a .svc-pricing-card,
+a.svc-pricing-card{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:12px !important;
+  margin-top:20px !important;
+  padding:16px 18px !important;
+  border-radius:12px !important;
+  border:1px solid rgba(255,255,255,.22) !important;
+  background:rgba(255,255,255,.05) !important;
+  text-decoration:none !important;
+  max-width:34ch !important;
+  transition:border-color .15s ease, background .15s ease;
+}
+.cx-a .svc-pricing-card:hover,
+a.svc-pricing-card:hover{
+  border-color:rgba(255,107,53,.55) !important;
+  background:rgba(255,107,53,.08) !important;
+}
+.cx-a .svc-pricing-card .svc-pricing-copy{flex:1;min-width:0}
+.cx-a .svc-pricing-card strong{display:block;color:#fff;font-size:15px;margin-bottom:4px}
+.cx-a .svc-pricing-card span{display:block;color:rgba(255,255,255,.65);font-size:13px;line-height:1.45}
+.cx-a .svc-pricing-card .svc-pricing-arrow{
+  flex:0 0 auto;
+  color:var(--orange,#FF6B35);
+  font-size:18px;
+  line-height:1;
+  font-weight:700;
+}
+
+/* 7) #40 ACOS chip: 13px + subtle orange-tinted border */
+.cx-a .svc-stat-chip,
+.svc-stat-chip{
+  font-size:13px !important;
+  line-height:1.35 !important;
+  border:1px solid rgba(255,107,53,.35) !important;
+  background:rgba(255,107,53,.08) !important;
+  color:rgba(255,255,255,.92) !important;
 }
 
 </style>

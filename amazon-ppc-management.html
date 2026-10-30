@@ -10,6 +10,9 @@
   <meta charset="UTF-8">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" href="/fonts/plus-jakarta-sans-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/plus-jakarta-sans-800.woff2" as="font" type="font/woff2" crossorigin>
+
   <title>Amazon PPC Management | SellTru</title>
   <meta name="description" content="Amazon PPC management for $1M to $20M brands. Weekly bids and negatives, flat-fee pricing from $3,000 a month, and a free account audit.">
   <meta name="keywords" content="amazon ppc management, amazon ppc agency, amazon advertising management, sponsored products management, amazon ads management">
@@ -35,7 +38,7 @@
   font-family:'Plus Jakarta Sans';
   font-style:normal;
   font-weight:700;
-  font-display:swap;
+  font-display:optional;
   src:url('/fonts/plus-jakarta-sans-700.woff2') format('woff2');
 
   ascent-override:95%;
@@ -47,7 +50,7 @@
   font-family:'Plus Jakarta Sans';
   font-style:normal;
   font-weight:800;
-  font-display:swap;
+  font-display:optional;
   src:url('/fonts/plus-jakarta-sans-800.woff2') format('woff2');
 
   ascent-override:95%;
@@ -113,7 +116,7 @@ body:has(.cx-a) #cx-a-sticky{
   padding:14px 24px;
   background:linear-gradient(90deg,#0d1f38 0,#162a48 100%);
   border-top:3px solid var(--orange);
-  box-shadow:0 -12px 48px rgba(0,0,0,.45);
+  box-shadow:0 8px 24px rgba(0,0,0,.25);
   transform:translateY(100%);
   transition:transform .12s cubic-bezier(.16,1,.3,1);
 }
@@ -170,7 +173,7 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
   border-radius:10px;border:2px solid transparent;cursor:pointer;
   transition:transform .2s,background .2s,border-color .2s,box-shadow .2s;white-space:nowrap}
 .cx-a .btn-primary{background:var(--orange);border-color:var(--orange);color:#fff}
-.cx-a .btn-primary:hover{background:var(--orange-hover);transform:translateY(-2px);box-shadow:0 12px 32px rgba(255,107,53,.35)}
+.cx-a .btn-primary:hover{background:var(--orange-hover);transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,107,53,.28)}
 .cx-a .btn-ghost{background:transparent;border-color:rgba(255,255,255,.22);color:#fff;padding:14px 30px}
 .cx-a .btn-ghost:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.06)}
 .cx-a .btn-lg{padding:14px 30px;font-size:15px;min-height:56px;height:56px}
@@ -239,7 +242,7 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
 /* Dark week widget (distinct from B light board) */
 .cx-a-ops{border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;
   background:linear-gradient(160deg,rgba(22,34,53,.98),rgba(13,27,42,.99));
-  box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 40px rgba(26,86,219,.12)}
+  box-shadow:0 8px 24px rgba(0,0,0,.25),0 0 32px rgba(26,86,219,.10)}
 .cx-a-ops-chrome{display:flex;align-items:center;gap:6px;padding:10px 14px;
   border-bottom:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.25)}
 .cx-a-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.18)}
@@ -287,7 +290,7 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
   /* Single slate tone #64748B on #F4F6FA  -  black + white logos */
   filter:brightness(0) saturate(100%) invert(48%) sepia(12%) saturate(643%) hue-rotate(176deg) brightness(93%) contrast(87%)}
 .cx-a-stat-card{max-width:720px;margin:0 auto;background:#fff;
-  border:1px solid #D8DEE8;border-radius:20px;padding:32px;box-shadow:0 18px 40px rgba(13,27,42,.08)}
+  border:1px solid #D8DEE8;border-radius:20px;padding:32px;box-shadow:0 8px 24px rgba(0,0,0,.12)}
 .cx-a-stat-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px 28px;align-items:end}
 .cx-a-stat-pair > div{min-width:0}
 .cx-a-stat-value{white-space:nowrap;font-variant-numeric:tabular-nums}
@@ -312,7 +315,7 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
 /* Bento Why cards: raised surface + WCAG AA text */
 .bento{--why-card-pad:26px;display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
 .bento-card{grid-column:span 2;background:#1A2740;
-  border:1px solid rgba(255,255,255,.16);border-radius:var(--radius-lg);padding:var(--why-card-pad, 26px);min-height:160px;
+  border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-lg);padding:var(--why-card-pad, 26px);min-height:160px;
   box-shadow:0 8px 24px rgba(0,0,0,.25)}
 .bento-card.wide{grid-column:span 3}
 .bento-icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;
@@ -371,7 +374,7 @@ h3.svc-title{font-family:inherit;font-weight:700;color:#fff;font-size:16px;line-
     radial-gradient(ellipse at 80% 100%,rgba(26,86,219,.18),transparent 50%);pointer-events:none}
 .cx-a-cta-box{position:relative;text-align:center;max-width:720px;margin:0 auto;padding:40px 32px;
   border-radius:var(--radius-xl);border:1px solid rgba(255,255,255,.1);
-  background:linear-gradient(180deg,rgba(22,34,53,.9),rgba(13,27,42,.95));box-shadow:0 30px 80px rgba(0,0,0,.45)}
+  background:linear-gradient(180deg,rgba(22,34,53,.9),rgba(13,27,42,.95));box-shadow:0 8px 24px rgba(0,0,0,.25)}
 .cx-a-end-nav{position:relative;display:flex;flex-wrap:wrap;gap:10px 18px;justify-content:center;
   max-width:720px;margin:22px auto 0;padding:0 16px 8px}
 .cx-a-end-nav a{font-size:14px;font-weight:600;color:#E2E8F0;text-decoration:none;
@@ -446,6 +449,157 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
 @media (min-width:1000px){
   .cx-a-cta-box h2{max-width:14.5em;margin-left:auto;margin-right:auto}
 }
+
+/* === 9+ Design + Web Review (page-only) === */
+/* Logos: 24px (Web Review; Design asked ~28, using 24), one grey ~60% opacity */
+.cx-a-logos{display:flex;flex-wrap:nowrap;gap:28px 36px;justify-content:space-between;align-items:center;margin:0 auto 40px;max-width:720px}
+.cx-a-logos img,
+.cx-a-logos img.logo-door,
+.cx-a-logos img.logo-avs,
+.cx-a-logos img.logo-vb,
+.cx-a-logos img.logo-nds,
+.cx-a-logos img.logo-light,
+.cx-a-logos img.logo-mint{height:24px !important;width:auto;max-width:140px;object-fit:contain;opacity:.6 !important;
+  filter:brightness(0) saturate(100%) invert(40%) sepia(8%) saturate(500%) hue-rotate(176deg) brightness(95%) contrast(90%) !important}
+@media(max-width:720px){
+  .cx-a-logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 16px;justify-items:center;align-items:center;max-width:100%}
+  .cx-a-logos img,.cx-a-logos img.logo-door,.cx-a-logos img.logo-avs,.cx-a-logos img.logo-vb,
+  .cx-a-logos img.logo-nds,.cx-a-logos img.logo-light,.cx-a-logos img.logo-mint{height:24px;max-width:110px;opacity:.6}
+}
+
+/* Proof: center card + claims at same max-width; no inset screenshot (big nums + caption) */
+.cx-a-proof-claims{max-width:720px;margin:0 auto 40px}
+.cx-a-stat-card{max-width:720px;margin:0 auto;background:#fff;border:1px solid #D8DEE8;border-radius:20px;padding:32px;
+  box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.cx-a-stat-source{margin:20px 0 0;font-size:13px;line-height:1.4;color:#6B7280;text-align:center}
+.cx-a-stat-full-link{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:#1A56DB;text-align:center;width:100%}
+.cx-a-stat-value.up{color:var(--orange,#FF6B35)}
+
+/* Section padding scale: 128 @1440 / 72 @390 */
+.cx-a .sec{padding:128px 0;border-top:1px solid rgba(255,255,255,.1)}
+.cx-a-proof{padding:128px 0;background:#F4F6FA;border-top:1px solid #D8DEE8;border-bottom:1px solid #D8DEE8}
+@media(max-width:960px){
+  .cx-a .sec{padding:88px 0}
+  .cx-a-proof{padding:88px 0}
+}
+@media(max-width:480px){
+  .cx-a .sec{padding:72px 0}
+  .cx-a-proof{padding:72px 0}
+}
+
+/* Hero: vertically center board vs copy; soft glow; 32px gap pills->board @390 */
+.hero-grid{align-items:center}
+.cx-a-ops{box-shadow:0 8px 24px rgba(0,0,0,.25),0 0 32px rgba(26,86,219,.10)}
+@media(max-width:960px){
+  .hero-grid{align-items:start;gap:32px}
+  .trust-row{margin-bottom:0}
+  .cx-a-hero-visual{margin-top:32px}
+}
+
+/* Why cards */
+.bento-card{padding:28px;border:1px solid rgba(255,255,255,.12);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.bento-card p{font-size:15px;line-height:1.55;color:#D1D9E6}
+
+/* CTA band */
+.cx-a-cta-box{box-shadow:0 8px 24px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.12)}
+.cx-a-cta-box h2{line-height:1.15;max-width:18em;margin-left:auto;margin-right:auto;width:auto}
+.cx-a-cta-actions{margin-bottom:8px}
+/* Move end-nav pills inside the card */
+.cx-a-cta-box .cx-a-end-nav{margin:16px auto 0;padding:0;max-width:100%}
+.cx-a-cta > .cx-a-end-nav{display:none}
+
+/* FAQ sticky left + +/- match text */
+@media(min-width:961px){
+  .faq-intro{position:sticky;top:96px}
+}
+.cx-a .faq-arrow,.cx-a .faq-arrow::before,
+.cx-a .faq-item.open .faq-arrow,.cx-a .faq-item.open .faq-arrow::before{
+  color:#fff;font-weight:700;opacity:1
+}
+.cx-a .faq-q h3{font-weight:700;color:#fff}
+
+/* Focus-visible rings (brand orange) */
+.cx-a .btn:focus-visible,
+.cx-a a.btn:focus-visible,
+.cx-a .btn-primary:focus-visible,
+.cx-a .btn-ghost:focus-visible,
+.cx-a .btn-outline-white:focus-visible,
+#cx-a-sticky a:focus-visible,
+#cx-a-sticky button:focus-visible,
+.cx-a-sticky a:focus-visible,
+.cx-a-sticky button:focus-visible,
+.cx-a input:focus-visible,
+.cx-a textarea:focus-visible,
+.cx-a select:focus-visible,
+#audit-modal input:focus-visible,
+#audit-modal textarea:focus-visible,
+#audit-modal select:focus-visible,
+#audit-modal button:focus-visible,
+[data-modal] input:focus-visible,
+[data-modal] textarea:focus-visible,
+.modal input:focus-visible,
+.modal textarea:focus-visible,
+.modal button:focus-visible{
+  outline:2px solid var(--orange,#FF6B35);
+  outline-offset:2px
+}
+
+/* Soften heavy shadows / borders on dark cards */
+.pstep,.svc-list li{border-color:rgba(255,255,255,.12)}
+.pstep{box-shadow:none;border:1px solid rgba(255,255,255,.12)}
+.cx-a .btn-primary{box-shadow:0 8px 24px rgba(255,107,53,.28)}
+
+/* Trust row: center; no sep bars (mockup has none) */
+.trust-row{justify-content:center !important;gap:8px !important}
+.trust-sep{display:none !important}
+
+/* Footer services: 2-col when capped */
+.footer-col.footer-services{display:grid;grid-template-columns:1fr 1fr;gap:6px 18px;align-content:start}
+.footer-col.footer-services h4{grid-column:1/-1}
+.footer-col.footer-services a{display:block}
+@media(max-width:560px){
+  .footer-col.footer-services{grid-template-columns:1fr}
+}
+
+/* Process equal height @390; single accent on numerals */
+@media(max-width:560px){
+  .process{grid-template-columns:1fr;align-items:stretch}
+  .pstep{height:100%;min-height:0;display:flex;flex-direction:column}
+}
+.pstep::before{color:var(--orange,#FF6B35)}
+
+/* PPC services pricing link card */
+.cx-a .svc-pricing-card{display:block;margin-top:20px;padding:16px 18px;border-radius:12px;
+  border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);text-decoration:none;max-width:32ch}
+.cx-a .svc-pricing-card strong{display:block;color:#fff;font-size:15px;margin-bottom:4px}
+.cx-a .svc-pricing-card span{display:block;color:rgba(255,255,255,.65);font-size:13px;line-height:1.45}
+.cx-a .svc-pricing-card:hover{border-color:rgba(255,255,255,.28)}
+@media(min-width:961px){
+  .svc-feature{align-items:center}
+}
+
+/* AMS services chip */
+.cx-a .svc-stat-chip{display:inline-block;margin-top:14px;padding:8px 12px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);
+  font-size:13px;font-weight:600;color:rgba(255,255,255,.9);line-height:1.35;max-width:42ch}
+
+/* AMS why trim @390 */
+@media(max-width:480px){
+  #why-account .bento-card p{
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden
+  }
+}
+
+/* WMA: narrow H1 column for 3 even lines @1440 */
+@media(min-width:1000px){
+  body:has(.walmart-hero) .hero-grid,
+  .page-hero.walmart-hero .hero-grid{grid-template-columns:.9fr 1.1fr;gap:40px 40px;align-items:center}
+  .page-hero.walmart-hero .hero-copy,
+  .walmart-hero .hero-copy{max-width:34em}
+  .page-hero.walmart-hero h1,
+  .walmart-hero h1{max-width:16.5em}
+}
+
 </style>
 
 <script type="application/ld+json">
@@ -706,11 +860,9 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
             <div class="cx-a-stat-label">Ad-attributed sales</div>
           </div>
         </div>
-        <a class="cx-a-stat-inset" href="/img/amazon-ppc-management/amazon-acos-full.webp" target="_blank" rel="noopener" aria-label="Open full Amazon Ads Performance screenshot">
-          <p class="cx-a-stat-source">Amazon Ads console · Jan 1 to May 11, 2026</p>
-          <img src="/img/amazon-ppc-management/amazon-acos-inset.webp" alt="Amazon Ads Performance panel: Total cost $20,620.68, Sales $169,242.31, ACOS 12.18%, CPC $0.51, Jan 1 to May 11, 2026" width="2560" height="334" loading="eager" decoding="async">
-          <span class="cx-a-stat-inset-cap">Open full screenshot</span>
-        </a>
+        <p class="cx-a-stat-source">Amazon Ads console · Jan 1 to May 11, 2026</p>
+        <a class="cx-a-stat-full-link" href="/img/amazon-ppc-management/amazon-acos-full.webp" target="_blank" rel="noopener">Open full screenshot</a>
+
       </div>
     </div>
   </div>
@@ -812,13 +964,14 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
           <a class="btn btn-outline-white btn-lg" href="tel:+19548692034">Call (954) 869-2034</a>
         </div>
         <p class="cta-calendly" style="margin-top:16px;text-align:center"><a class="cta-calendly-link" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-ppc-management" target="_blank" rel="noopener">Book a free 30-minute strategy call</a></p>
-      </div>
       <nav class="cx-a-end-nav" aria-label="Page sections">
         <a href="#whats-included">Services</a>
         <a href="#process">Process</a>
         <a href="#faq">FAQ</a>
         <a href="/about#contact-form" data-modal-trigger="audit">Get a free Amazon audit</a>
       </nav>
+      </div>
+      
     </div>
   </section>
 </main>
@@ -843,7 +996,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
           <a href="https://www.instagram.com/selltru.amazon" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
         </div>
       </div>
-      <div class="footer-col">
+      <div class="footer-col footer-services">
         <h4>Services</h4>
         <a href="/amazon-marketing">Amazon Marketing</a>
         <a href="/amazon-marketing#listing-optimization">Listing Optimization</a>
@@ -855,15 +1008,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
         <a href="/amazon-a-plus-content">Amazon A+ Content</a>
         <a href="/amazon-brand-store-design-services">Amazon Brand Store Design</a>
         <a href="/amazon-brand-protection-services">Amazon Brand Protection</a>
-        <a href="/amazon-vendor-central-management">Amazon Vendor Central</a>
-        <a href="/amazon-account-suspension-reinstatement">Amazon Account Reinstatement</a>
-        <a href="/amazon-ppc-food-beverage">PPC for Food &amp; Beverage</a>
-        <a href="/amazon-ppc-supplements">PPC for Supplements</a>
-        <a href="/amazon-ppc-pet-brands">PPC for Pet Brands</a>
-        <a href="/walmart-marketing">Walmart Marketing</a>
-        <a href="/walmart-marketing#walmart-ads">Walmart Connect Ads</a>
-        <a href="/walmart-marketplace-agency">Walmart Marketplace Agency</a>
-        <a href="/walmart-wfs-management">Walmart WFS Management</a>
+        <a href="/amazon-marketing">More services</a>
       </div>
       <div class="footer-col">
         <h4>Resources</h4>

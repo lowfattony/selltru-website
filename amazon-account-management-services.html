@@ -162,12 +162,13 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
   background:radial-gradient(ellipse at 30% 20%,rgba(26,86,219,.35),transparent 55%),
     radial-gradient(ellipse at 80% 10%,rgba(255,107,53,.18),transparent 45%);
   pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px 48px;align-items:start;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.45fr .75fr;gap:40px 48px;align-items:start;position:relative}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;
   letter-spacing:.06em;text-transform:uppercase;color:#FFC220;margin-bottom:18px;
   padding:6px 12px;border-radius:999px;border:1px solid rgba(255,194,32,.25);background:rgba(255,194,32,.06)}
-.hero-a h1{font-family:var(--font-head);font-weight:800;font-size:clamp(28px,3vw,36px);
-  line-height:1.15;letter-spacing:normal;color:#fff;max-width:min(640px, 22ch);margin:0 0 16px}
+.hero-a h1{font-family:var(--font-head);font-weight:800;font-size:clamp(26px,3.1vw,40px);
+  line-height:1.12;letter-spacing:-0.02em;color:#fff;max-width:none;margin:0 0 16px}
+.hero-a h1 > span{display:block}
 .hero-lead{font-size:16.5px;line-height:1.65;color:rgba(255,255,255,.62);max-width:46ch;margin:0 0 26px}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:22px}
 .trust-row{display:flex;flex-wrap:wrap;justify-content:flex-start;align-items:center;gap:8px;max-width:560px;margin-left:0;padding-left:0}
@@ -254,7 +255,7 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
 .cx-a-stat-value{font-family:var(--font-head);font-weight:800;font-size:clamp(36px,5vw,52px);letter-spacing:0;color:#0D1B2A;line-height:1}
 .cx-a-stat-value.up{color:#059669}
 .cx-a-stat-label{margin-top:10px;font-size:14px;font-weight:600;color:#4B5563}
-.cx-a .cx-a-stat-inset{display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:14px;row-gap:10px;margin-top:24px;
+.cx-a .cx-a-stat-inset{display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:14px;row-gap:10px;margin-top:24px;max-width:100%;overflow:hidden;min-width:0;
   text-decoration:none;background:#F8FAFC;border:1px solid #E5E7EB;border-radius:14px;padding:12px}
 .cx-a .cx-a-stat-source{grid-column:1/-1;margin:0;font-size:13px;line-height:1.4;color:#6B7280}
 .cx-a-stat-inset img{max-height:160px;width:auto;max-width:100%;border-radius:8px;background:#fff;object-fit:contain}
@@ -593,7 +594,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
     <div class="cx-wrap hero-grid">
       <div>
         <p class="eyebrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> For $1M to $20M brands</p>
-        <h1>Amazon account management<br>run by one team</h1>
+        <h1>Amazon Account Management That Runs the Channel. <span>Built for $1M to $20M Brands.</span></h1>
         <p class="hero-lead">Listings, PPC, inventory, and account health. Flat retainers from $3,000 a month for brands that want a partner, not a ticket queue.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Amazon Audit <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
@@ -693,7 +694,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
   <section class="sec" id="why-account" aria-label="Why Amazon account management">
     <div class="cx-wrap">
       <p class="sec-tag">Why account management</p>
-      <h2>Split vendors create gaps<span class="h-punct">.</span> One team closes them<span class="h-punct">.</span></h2>
+      <h2>Split Vendors Create Gaps<span class="h-punct">.</span><br>One Team Closes Them<span class="h-punct">.</span></h2>
       <p class="sec-sub">Channel strategy beyond the day-to-day sits on <a href="/amazon-marketing">Amazon marketing</a>. Day-to-day ops live here: what gets checked, who owns the fix, and how you hear about it.</p>
       <div class="bento">
         <article class="bento-card"><div class="bento-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506L3 20l.859-3.513a2 2 0 0 1 .506-.854z"/></svg></div><h3>One team owns the channel</h3>
@@ -717,7 +718,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
       <p class="sec-tag">Services</p>
       <div class="svc-feature">
         <div>
-          <h2>Amazon account management services<span class="h-punct">.</span></h2>
+          <h2>Amazon Account Management Services<span class="h-punct">.</span></h2>
           <p class="sec-sub svc-lead">One retainer. One owner for listings, ads, inventory, and health.</p>
           <p class="sec-sub" style="margin-bottom:0">SellTru runs Seller Central for brands doing $1M to $20M. $150M+ managed, 200+ brands, 90% retention, a 45% average ACOS drop in 90 days, and Upwork Top Rated Plus. See the <a href="/marketplace-agency-pricing">pricing guide</a>.</p>
         </div>
@@ -736,7 +737,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
   <section class="sec" id="process" aria-label="Process">
     <div class="cx-wrap">
       <p class="sec-tag">Process</p>
-      <h2>Here's how account management starts<span class="h-punct">.</span></h2>
+      <h2>Here's How Account<br>Management Starts<span class="h-punct">.</span></h2>
       <div class="process">
         <div class="pstep"><h3>Free account audit</h3>
             <p>We pull listings, ads, health, and inventory signals. You get a short written read of what is costing you money.</p></div>
@@ -752,7 +753,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
     <div class="cx-wrap faq-layout">
       <div class="faq-intro">
         <p class="sec-tag">FAQ</p>
-        <h2>Account management FAQ<span class="h-punct">.</span></h2>
+        <h2>Account Management FAQ<span class="h-punct">.</span></h2>
         <p>Pricing, rebuilds, and who this is for. Channel ops sit on <a href="/amazon-account-management-services">account management</a>.</p>
         <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a free Amazon audit</a>
       </div>
@@ -789,7 +790,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
   <section class="cta-section cx-a-cta" aria-label="Amazon account management audit CTA">
     <div class="cx-wrap">
       <div class="cx-a-cta-box">
-        <h2>If the channel feels like three vendors<br>and no owner, start with the audit<span class="h-punct">.</span></h2>
+        <h2>If the Channel Feels Like Three Vendors<br>and No Owner, Start With the Audit<span class="h-punct">.</span></h2>
         <p>We look at listings, ads, health, and inventory before we talk about a retainer. No pitch decks. No obligation.</p>
         <div class="cx-a-cta-actions cta-buttons">
           <a class="btn btn-primary btn-lg" href="/about#contact-form" data-modal-trigger="audit">Get Your Free Amazon Audit</a>

@@ -142,12 +142,12 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
   background:radial-gradient(ellipse at 30% 20%,rgba(26,86,219,.35),transparent 55%),
     radial-gradient(ellipse at 80% 10%,rgba(255,107,53,.18),transparent 45%);
   pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px 48px;align-items:start;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.45fr .75fr;gap:40px 48px;align-items:start;position:relative}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;
   letter-spacing:.06em;text-transform:uppercase;color:#FFC220;margin-bottom:18px;
   padding:6px 12px;border-radius:999px;border:1px solid rgba(255,194,32,.25);background:rgba(255,194,32,.06)}
-.hero-a h1{font-family:var(--font-head);font-weight:800;font-size:clamp(30px,3.8vw,46px);
-  line-height:1.12;letter-spacing:0;color:#fff;max-width:18ch;margin:0 0 16px}
+.hero-a h1{font-family:var(--font-head);font-weight:800;font-size:clamp(26px,3.1vw,40px);
+  line-height:1.12;letter-spacing:-0.02em;color:#fff;max-width:none;margin:0 0 16px}
 .hero-lead{font-size:16.5px;line-height:1.65;color:rgba(255,255,255,.62);max-width:46ch;margin:0 0 26px}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:36px}
 .trust-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;max-width:560px}
@@ -268,7 +268,7 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
 .svc-list li:last-child{border-bottom:0}
 .svc-list .n{font-family:var(--font-head);font-weight:800;font-size:13px;color:var(--orange);min-width:28px;padding-top:2px}
 .svc-item{min-width:0;display:flex;flex-direction:column;gap:4px}
-.svc-title{font-weight:700;color:#fff;font-size:16px;line-height:1.35}
+.svc-title{font-weight:700;color:#fff;font-size:16px;line-height:1.35}.cx-a-cadence-label{font-family:var(--font-head);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55);margin:0 0 10px;}.svc-dek{font-family:var(--font-head);font-size:clamp(22px,2.5vw,28px);font-weight:800;color:#fff;margin:0 0 12px;letter-spacing:0;}h3.svc-title{font-family:inherit;font-weight:700;color:#fff;font-size:16px;line-height:1.35;margin:0;}
 .svc-body{font-size:16px;line-height:1.65;color:rgba(255,255,255,.72)}
 .svc-list a{color:#93C5FD;font-weight:600}
 
@@ -556,7 +556,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
     <div class="cx-wrap hero-grid">
       <div>
         <p class="eyebrow"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220"/><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(60 10 10) translate(0,-5.5)"/><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220" transform="rotate(120 10 10) translate(0,-5.5)"/><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(180 10 10) translate(0,-5.5)"/><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220" transform="rotate(240 10 10) translate(0,-5.5)"/><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(300 10 10) translate(0,-5.5)"/></svg> Walmart Marketplace</p>
-        <h1>One Walmart partner for listings, WFS, and Connect<span class="h-punct">.</span></h1>
+        <h1>A Walmart Marketplace Partner That Handles the Item Page and the Ads<span class="h-punct" style="margin-left:-0.09em">.</span> <span>Built for Brand Portal Brands<span class="h-punct" style="margin-left:-0.09em">.</span></span></h1>
         <p class="hero-lead">Approval, listings, WFS, and Connect for $1M to $20M brands. Built for the Walmart shopper.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Walmart Audit <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
@@ -606,7 +606,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
               </div>
             </div>
             <aside class="cx-a-ops-side">
-              <h3>Cadence</h3>
+              <p class="cx-a-cadence-label">Cadence</p>
               <ul class="cx-a-cadence">
                 <li><strong>Mon</strong><span>Item page gaps</span></li>
                 <li><strong>Wed</strong><span>Connect structure</span></li>
@@ -659,15 +659,15 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
   <section class="sec" id="why-walmart" aria-label="Why a Walmart marketplace partner">
     <div class="cx-wrap">
       <p class="sec-tag">Why Walmart</p>
-      <h2>Walmart rewards operators who own the page and the ads together<span class="h-punct">.</span></h2>
+      <h2>Walmart Rewards Operators Who<br>Own the Page and the Ads Together<span class="h-punct">.</span></h2>
       <p class="sec-sub">Want the channel brief first? Read <a href="/walmart-marketing">Walmart marketing</a>. This engagement is for brand owners who need the full stack.</p>
       <div class="bento">
-        <article class="bento-card"><div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/><path d="M12 3v6"/></svg></div><h3>Approval through onboarding</h3><p>Seller Center or Brand Portal path, category approvals, and the first item setup without a six-month stall.</p></article>
-        <article class="bento-card"><div class="bento-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506L3 20l.859-3.513a2 2 0 0 1 .506-.854z"/></svg></div><h3>Item pages that can rank</h3><p>Titles, specs, images, and Brand Highlights written for the Walmart shopper.</p></article>
-        <article class="bento-card"><div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z"/><path d="M6 18h12"/><path d="M6 14h12"/><rect x="6" y="10" width="12" height="12"/></svg></div><h3>WFS when it pays</h3><p>Enrollment, inbound, and restock. Detail on <a href="/walmart-wfs-management">WFS management</a>.</p></article>
-        <article class="bento-card"><div class="bento-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div><h3>Walmart Connect ads</h3><p>Sponsored Products with efficiency targets. See <a href="/walmart-connect-ads-agency">Walmart Connect ads</a>.</p></article>
-        <article class="bento-card"><div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Reviews before you scale</h3><p>Ratings and content gaps fixed before Connect spend ramps.</p></article>
-        <article class="bento-card"><div class="bento-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div><h3>One Walmart team</h3><p>Item pages, WFS, and ads on one retainer when scoped. $150M+ managed. 90% retention.</p></article>
+        <article class="bento-card"><div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/><path d="M12 3v6"/></svg></div><h3>Approval Through Onboarding</h3><p>Seller Center or Brand Portal path, category approvals, and the first item setup without a six-month stall.</p></article>
+        <article class="bento-card"><div class="bento-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506L3 20l.859-3.513a2 2 0 0 1 .506-.854z"/></svg></div><h3>Item Pages That Can Rank</h3><p>Titles, specs, images, and Brand Highlights written for the Walmart shopper.</p></article>
+        <article class="bento-card"><div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z"/><path d="M6 18h12"/><path d="M6 14h12"/><rect x="6" y="10" width="12" height="12"/></svg></div><h3>WFS When It Pays</h3><p>Enrollment, inbound, and restock. Detail on <a href="/walmart-wfs-management">WFS management</a>.</p></article>
+        <article class="bento-card"><div class="bento-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div><h3>Walmart Connect Ads</h3><p>Sponsored Products with efficiency targets. See <a href="/walmart-connect-ads-agency">Walmart Connect ads</a>.</p></article>
+        <article class="bento-card"><div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Reviews Before You Scale</h3><p>Ratings and content gaps fixed before Connect spend ramps.</p></article>
+        <article class="bento-card"><div class="bento-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div><h3>One Walmart Team</h3><p>Item pages, WFS, and ads on one retainer when scoped. $150M+ managed. 90% retention.</p></article>
       </div>
     </div>
   </section>
@@ -677,16 +677,17 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
       <p class="sec-tag">Services</p>
       <div class="svc-feature">
         <div>
-          <h2>Walmart marketplace services<span class="h-punct">.</span></h2>
-          <h3>The full Walmart stack on one retainer<span class="h-punct">.</span></h3>
+          <h2>Walmart Marketplace Services<span class="h-punct">.</span></h2>
+          <p class="svc-dek">The full Walmart stack on one retainer.</p>
           <p class="sec-sub" style="margin-bottom:0">Flat retainer pricing for brands doing $1M to $20M. Models on the <a href="/marketplace-agency-pricing">pricing guide</a>.</p>
         </div>
         <ul class="svc-list">
-          <li><span class="n">01</span><div class="svc-item"><strong class="svc-title">Approval and onboarding</strong><span class="svc-body">Account path, tax and banking support, category approvals.</span></div></li>
-          <li><span class="n">02</span><div class="svc-item"><strong class="svc-title">Listings and Brand Highlights</strong><span class="svc-body">Item page copy and rich media. See <a href="/walmart-a-plus-content">Walmart A+ content</a>.</span></div></li>
-          <li><span class="n">03</span><div class="svc-item"><strong class="svc-title">WFS operations</strong><span class="svc-body">Eligibility, inbound, inventory. <a href="/walmart-wfs-management">WFS management</a>.</span></div></li>
-          <li><span class="n">04</span><div class="svc-item"><strong class="svc-title">Walmart Connect</strong><span class="svc-body">Structure, search terms, weekly notes. <a href="/walmart-connect-ads-agency">Connect ads</a>.</span></div></li>
-          <li><span class="n">05</span><div class="svc-item"><strong class="svc-title">Reporting you can act on</strong><span class="svc-body">Sell-through, efficiency, next three moves.</span></div></li>
+          <li><span class="n">01</span><div class="svc-item"><h3 class="svc-title">Approval and Onboarding</h3><span class="svc-body">Account path, tax and banking support, category approvals.</span></div></li>
+          <li><span class="n">02</span><div class="svc-item"><h3 class="svc-title">Listings and Brand Highlights</h3><span class="svc-body">Item page copy and rich media. See <a href="/walmart-a-plus-content">Walmart A+ content</a>.</span></div></li>
+          <li><span class="n">03</span><div class="svc-item"><h3 class="svc-title">WFS Operations</h3><span class="svc-body">Eligibility, inbound, inventory. <a href="/walmart-wfs-management">WFS management</a>.</span></div></li>
+          <li><span class="n">04</span><div class="svc-item"><h3 class="svc-title">Walmart Connect</h3><span class="svc-body">Structure, search terms, weekly notes. <a href="/walmart-connect-ads-agency">Connect ads</a>.</span></div></li>
+          <li><span class="n">05</span><div class="svc-item"><h3 class="svc-title">Reporting You Can Act On</h3><span class="svc-body">Sell-through, efficiency, next three moves.</span></div></li>
+          <li><span class="n">06</span><div class="svc-item"><h3 class="svc-title">Flat Retainer Pricing</h3><span class="svc-body">Flat retainer models for brands doing $1M to $20M. Details on the <a href="/marketplace-agency-pricing">pricing guide</a>.</span></div></li>
         </ul>
       </div>
     </div>
@@ -695,11 +696,11 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
   <section class="sec" id="process" aria-label="Process">
     <div class="cx-wrap">
       <p class="sec-tag">Process</p>
-      <h2>Here is how a Walmart engagement starts<span class="h-punct">.</span></h2>
+      <h2>Here's How a Walmart<br>Engagement Starts<span class="h-punct">.</span></h2>
       <div class="process">
-        <div class="pstep"><h3>Walmart audit</h3><p>Account path, catalog gaps, WFS fit, and Connect readiness.</p></div>
-        <div class="pstep"><h3>Launch the stack</h3><p>Onboarding, item pages, and WFS enrollment when it pays.</p></div>
-        <div class="pstep"><h3>Advertise and iterate</h3><p>Connect ads with weekly notes, tied to stock and content.</p></div>
+        <div class="pstep"><h3>Walmart Audit</h3><p>Account path, catalog gaps, WFS fit, and Connect readiness.</p></div>
+        <div class="pstep"><h3>Launch the Stack</h3><p>Onboarding, item pages, and WFS enrollment when it pays.</p></div>
+        <div class="pstep"><h3>Advertise and Iterate</h3><p>Connect ads with weekly notes, tied to stock and content.</p></div>
       </div>
     </div>
   </section>
@@ -708,7 +709,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
     <div class="cx-wrap faq-layout">
       <div class="faq-intro">
         <p class="sec-tag">FAQ</p>
-        <h2>Walmart marketplace FAQ<span class="h-punct">.</span></h2>
+        <h2>Walmart Marketplace FAQ<span class="h-punct">.</span></h2>
         <p>Onboarding, WFS, and Connect. Straight answers before you book.</p>
         <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a free Walmart audit</a>
       </div>
@@ -744,7 +745,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
   <section class="cta-section cx-a-cta" aria-label="Walmart marketplace audit CTA">
     <div class="cx-wrap">
       <div class="cx-a-cta-box">
-        <h2>If Walmart is a side project,<br>start with the audit<span class="h-punct">.</span></h2>
+        <h2>If the Walmart Channel Is a Side Project,<br>Start With the Audit<span class="h-punct">.</span></h2>
         <p>We look at approval status, item pages, WFS, and Connect before we talk about a retainer. No pitch decks. No obligation.</p>
         <div class="cx-a-cta-actions cta-buttons">
           <a class="btn btn-primary btn-lg" href="/about#contact-form" data-modal-trigger="audit">Get Your Free Walmart Audit</a>

@@ -173,6 +173,17 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
 
 .hero-lead{font-size:16.5px;line-height:1.65;color:rgba(255,255,255,.62);max-width:46ch;margin:0 0 26px}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:22px}
+
+/* Keep .trust-badge for selfcheck; force mockup chip look over global square badge */
+.cx-a .trust-row .trust-pill.trust-badge,
+.cx-a .trust-row .trust-badge{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.06);font-size:12px;color:rgba(255,255,255,.88);
+  white-space:nowrap;overflow:visible;flex:0 0 auto;text-align:center;
+  box-shadow:none;width:auto;height:auto
+}
+
 .trust-row{display:flex;flex-wrap:wrap;justify-content:flex-start;align-items:center;gap:8px;max-width:560px;margin-left:0;padding-left:0}
 .trust-pill{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);font-size:12px;color:rgba(255,255,255,.88);white-space:nowrap;overflow:visible;flex:0 0 auto;text-align:center}
 /* Trust pills: same wording every width; mobile 2+1 wrap */
@@ -575,9 +586,9 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
           <a class="btn btn-outline-white" href="#whats-included">View All Services</a>
         </div>
         <div class="trust-row">
-          <div class="trust-pill">Amazon Ads Partner</div>
-          <div class="trust-pill">Upwork Top Rated Plus</div>
-          <div class="trust-pill">$150M+ sales managed</div>
+          <div class="trust-pill trust-badge">Amazon Ads Partner</div>
+          <div class="trust-pill trust-badge">Upwork Top Rated Plus</div>
+          <div class="trust-pill trust-badge">$150M+ sales managed</div>
         </div>
       </div>
       <div class="cx-a-hero-visual">

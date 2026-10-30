@@ -26,6 +26,11 @@
   margin-left:-0.085em;
   margin-right:0;
 }
+/* DR: even wraps, no hard breaks */
+.cx-a h1,.cx-a h2{text-wrap:balance}
+.cx-a .cx-a-cta-box h2{font-family:var(--font-head);font-weight:800;font-size:clamp(26px,3.2vw,38px);
+  line-height:1.15;letter-spacing:0;color:#fff;margin:0 0 14px;text-wrap:balance}
+
 @font-face{
   font-family:'Plus Jakarta Sans';
   font-style:normal;
@@ -167,8 +172,8 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
 .hero-a h1{font-family:var(--font-head);font-weight:800;font-size:clamp(24px,2.6vw,30px);
   line-height:1.18;letter-spacing:0;color:#fff;max-width:min(720px,100%);margin:0 0 16px;
 }
-.hero-a h1 > .h1-sub{display:block}
-.hero-a h1 .h-end{white-space:nowrap}
+.hero-a h1 > .h1-sub{display:block;color:var(--orange)}
+.hero-a h1 > .h1-sub .h-punct{color:inherit}
 .hero-a h1 .h-punct{margin-left:-0.055em}
 
 .hero-lead{font-size:16.5px;line-height:1.65;color:rgba(255,255,255,.62);max-width:46ch;margin:0 0 26px}
@@ -278,6 +283,7 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
 .cx-a .sec{padding:104px 0;border-top:1px solid rgba(255,255,255,.1)}
 .cx-a .sec-tag{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
 .cx-a .sec h2{font-family:var(--font-head);font-weight:800;font-size:clamp(26px,3vw,38px);line-height:1.15;letter-spacing:0;color:#fff;margin:0 0 16px}
+.cx-a .subhead{font-family:var(--font-head);font-size:18px;font-weight:700;color:#fff;margin:0 0 12px;max-width:36ch;line-height:1.35;text-wrap:balance}
 .cx-a .sec-sub{font-size:16.5px;color:rgba(255,255,255,.72);max-width:58ch;margin:0 0 44px;line-height:1.7}
 .cx-a .sec-sub a{color:#93C5FD;font-weight:600;text-decoration:underline;text-underline-offset:3px}
 .cx-a p,.cx-a li{font-size:16.5px;line-height:1.7;color:rgba(255,255,255,.72)}
@@ -326,9 +332,11 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
 .cx-a .faq-q:hover h3{color:#fff}
 .cx-a .faq-arrow{flex:0 0 28px;align-self:center;display:inline-flex;align-items:center;justify-content:center;
   width:28px;min-width:28px;max-width:28px;height:28px;box-sizing:border-box;overflow:hidden;
-  line-height:28px;color:rgba(255,255,255,.75);font-size:18px;font-weight:500;margin-left:8px;
+  line-height:28px;color:rgba(255,255,255,.75);font-size:0;font-weight:500;margin-left:8px;
   background:transparent;border-radius:0;transform:none;transition:none}
+.cx-a .faq-arrow::before{content:"+";font-size:18px;line-height:28px;color:rgba(255,255,255,.75)}
 .cx-a .faq-item.open .faq-arrow{background:transparent;color:rgba(255,255,255,.75);transform:none}
+.cx-a .faq-item.open .faq-arrow::before{content:"\2212"}
 .faq-a{display:none;padding:0 0 18px}
 .faq-item.open .faq-a{display:block;max-height:none}
 .faq-a p{font-size:16px;color:rgba(255,255,255,.72);line-height:1.7;margin:0}
@@ -579,7 +587,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
     <div class="cx-wrap hero-grid">
       <div>
         <p class="eyebrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> For $1M to $20M brands</p>
-        <h1>Amazon PPC Management With a<br> Person in the Account Every <span class="h-end">Week<span class="h-punct">.</span></span> <span class="h1-sub">Built for $1M to $20M Brands<span class="h-punct">.</span></span></h1>
+        <h1>Amazon PPC Management With a Person in the Account Every Week<span class="h-punct">.</span> <span class="h1-sub">Built for $1M to $20M Brands<span class="h-punct">.</span></span></h1>
         <p class="hero-lead">Sponsored Products, Brands, and Display with TACOS targets and weekly notes. Flat retainers from $3,000 a month.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Amazon Audit <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
@@ -679,7 +687,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
   <section class="sec" id="why-ppc" aria-label="Why Amazon PPC management">
     <div class="cx-wrap">
       <p class="sec-tag">Why PPC management</p>
-      <h2>Set-and-Forget Campaigns<br>Bleed Margin Quietly<span class="h-punct">.</span></h2>
+      <h2>Set-and-Forget Campaigns Bleed Margin Quietly<span class="h-punct">.</span></h2>
       <p class="sec-sub">Need the whole channel run? See <a href="/amazon-account-management-services">account management</a>.</p>
       <div class="bento">
         <article class="bento-card"><div class="bento-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506L3 20l.859-3.513a2 2 0 0 1 .506-.854z"/></svg></div><h3>Weekly hands in the console</h3><p>Someone is in the account every week. Bids, negatives, and structure changes land on a cadence.</p></article>
@@ -699,7 +707,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
         <div>
           <h2>Amazon PPC Management<span class="h-punct">.</span></h2>
           <p class="sec-sub svc-lead">PPC runs inside full Amazon management: listings, A+ content, account health, and DSP when you're ready.</p>
-          <h3>Weekly Amazon ads work on one retainer.</h3>
+          <p class="subhead">Weekly Amazon ads work on one retainer.</p>
           <p class="sec-sub" style="margin-bottom:0">90% retention. Flat retainers from $3K. Average ACOS drop of 45% in 90 days across the managed book. Models on the <a href="/marketplace-agency-pricing">pricing guide</a>.</p>
         </div>
         <ul class="svc-list">
@@ -717,7 +725,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
   <section class="sec" id="process" aria-label="Process">
     <div class="cx-wrap">
       <p class="sec-tag">Process</p>
-      <h2>Here's How PPC<br>Work Starts<span class="h-punct">.</span></h2>
+      <h2>Here's How PPC Work Starts<span class="h-punct">.</span></h2>
       <div class="process">
         <div class="pstep"><h3>Ads audit</h3><p>Structure, search terms, wasted spend, and listing gaps that kill conversion.</p></div>
         <div class="pstep"><h3>Stabilize efficiency</h3><p>Negatives, bid cleanup, and budget control before we add spend.</p></div>
@@ -766,7 +774,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
   <section class="cta-section cx-a-cta" aria-label="Amazon ads audit CTA">
     <div class="cx-wrap">
       <div class="cx-a-cta-box">
-        <h2>If Spend Is Up and Margin Is Down,<br>Start With the Ads Audit<span class="h-punct">.</span></h2>
+        <h2>If Spend Is Up and Margin Is Down, Start With the Ads Audit<span class="h-punct">.</span></h2>
         <p>We look at structure, search terms, and listing conversion before we talk about a retainer. No pitch decks. No obligation.</p>
         <div class="cx-a-cta-actions cta-buttons">
           <a class="btn btn-primary btn-lg" href="/about#contact-form" data-modal-trigger="audit">Get Your Free Amazon Audit</a>

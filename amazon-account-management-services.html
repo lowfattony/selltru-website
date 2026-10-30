@@ -33,6 +33,11 @@
   font-weight:700;
   font-display:swap;
   src:url('/fonts/plus-jakarta-sans-700.woff2') format('woff2');
+
+  ascent-override:95%;
+  descent-override:24%;
+  line-gap-override:0%;
+  size-adjust:100%;
 }
 @font-face{
   font-family:'Plus Jakarta Sans';
@@ -40,7 +45,21 @@
   font-weight:800;
   font-display:swap;
   src:url('/fonts/plus-jakarta-sans-800.woff2') format('woff2');
+
+  ascent-override:95%;
+  descent-override:24%;
+  line-gap-override:0%;
+  size-adjust:100%;
 }
+@font-face{
+  font-family:'Plus Jakarta Sans Fallback';
+  src:local('Arial'),local('Helvetica Neue'),local('Helvetica'),local('sans-serif');
+  size-adjust:105.5%;
+  ascent-override:95%;
+  descent-override:24%;
+  line-gap-override:0%;
+}
+
 :root{
   --navy:#0D1B2A;--navy-light:#162235;--navy-mid:#1D3045;
   --blue:#1A56DB;--orange:#FF6B35;--orange-hover:#E55A28;
@@ -240,9 +259,11 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
 .cx-a-status.is-progress{background:rgba(59,130,246,.15);color:#93C5FD;border-color:rgba(59,130,246,.3)}
 .cx-a-status.is-queued{background:rgba(255,255,255,.08);color:#E2E8F0;border-color:rgba(255,255,255,.2)}
 .cx-a-ops-desc{grid-column:2/4;margin:0;font-size:12px;color:#D1D9E6;line-height:1.4}
+.page-hero .cx-a-ops-desc{margin:0}
 .cx-a-ops-side{border-left:1px solid rgba(255,255,255,.08);padding:16px;background:rgba(0,0,0,.28)}
 .cx-a-ops-side h3{font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:.06em;
   text-transform:uppercase;color:rgba(255,255,255,.85);margin:0 0 12px}
+.cx-a-cadence-label{font-family:var(--font-head);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55);margin:0 0 10px;}
 .cx-a-cadence{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
 .cx-a-cadence li{display:grid;grid-template-columns:36px 1fr;gap:8px;font-size:13px;line-height:1.4;color:#F1F5F9}
 .cx-a-cadence strong{font-size:11px;font-weight:800;color:#FFC220}
@@ -259,7 +280,7 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
 .cx-a-proof-claims .n{font-family:var(--font-head);font-weight:800;font-size:clamp(32px,4vw,44px);letter-spacing:0;color:#0D1B2A;text-align:center}
 .cx-a-proof-claims .l{font-size:13px;color:#4B5563;text-align:center;margin-top:6px}
 .cx-a-logos{display:flex;flex-wrap:wrap;gap:20px 36px;justify-content:space-evenly;align-items:center;margin-bottom:40px}
-.cx-a-logos img{height:28px;width:auto;max-width:140px;object-fit:contain;opacity:1;
+.cx-a-logos img{height:30px;width:140px;max-width:140px;aspect-ratio:140/30;object-fit:contain;opacity:1;
   /* Single slate tone #64748B on #F4F6FA  -  black + white logos */
   filter:brightness(0) saturate(100%) invert(48%) sepia(12%) saturate(643%) hue-rotate(176deg) brightness(93%) contrast(87%)}
 .cx-a-stat-card{max-width:720px;margin:0 auto;background:#fff;
@@ -273,7 +294,7 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
 .cx-a .cx-a-stat-inset{display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:14px;row-gap:10px;margin-top:24px;max-width:100%;overflow:hidden;min-width:0;
   text-decoration:none;background:#F8FAFC;border:1px solid #E5E7EB;border-radius:14px;padding:12px}
 .cx-a .cx-a-stat-source{grid-column:1/-1;margin:0;font-size:13px;line-height:1.4;color:#6B7280}
-.cx-a-stat-inset img{max-height:160px;width:auto;max-width:100%;border-radius:8px;background:#fff;object-fit:contain}
+.cx-a-stat-inset img{aspect-ratio:2560/334;width:100%;height:auto;max-height:160px;max-width:100%;border-radius:8px;background:#fff;object-fit:contain}
 .cx-a-stat-inset-cap{font-size:12px;font-weight:600;color:#6B7280;white-space:nowrap}
 
 /* Sections: more vertical air + clear dividers */
@@ -332,6 +353,7 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
 .svc-list .n{font-family:var(--font-head);font-weight:800;font-size:13px;color:var(--orange);min-width:28px;padding-top:2px}
 .svc-item{min-width:0;display:flex;flex-direction:column;gap:4px}
 .svc-title{font-weight:700;color:#fff;font-size:16px;line-height:1.35}
+h3.svc-title{font-family:inherit;font-weight:700;color:#fff;font-size:16px;line-height:1.35;margin:0;}
 .svc-body{font-size:16px;line-height:1.65;color:rgba(255,255,255,.72)}
 .svc-list a{color:#93C5FD;font-weight:600}
 
@@ -415,7 +437,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
   /* hero h1 width kept for 3-line cap */
   .hero-ctas{flex-direction:column}
   .cx-a .btn-primary,.cx-a .btn-ghost,.cx-a-cta-actions .btn,.cx-a-cta-actions .btn-outline-white{width:100%;justify-content:center}
-  .cx-a-logos img{height:24px}
+  .cx-a-logos img{height:24px;width:auto}
 }
 
 /* Production: keep Concept A dark with gold page-hero hooks for selfcheck */
@@ -668,7 +690,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
               </div>
             </div>
             <aside class="cx-a-ops-side">
-              <h3>Cadence</h3>
+              <p class="cx-a-cadence-label">Cadence</p>
               <ul class="cx-a-cadence">
                 <li><strong>Mon</strong><span>Catalog and listings</span></li>
                 <li><strong>Wed</strong><span>Inventory and health</span></li>
@@ -721,17 +743,17 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
       <h2>Split Vendors Create Gaps<span class="h-punct">.</span> One Team Closes Them<span class="h-punct">.</span></h2>
       <p class="sec-sub">Channel strategy beyond the day-to-day sits on <a href="/amazon-marketing">Amazon marketing</a>. Day-to-day ops live here: what gets checked, who owns the fix, and how you hear about it.</p>
       <div class="bento">
-        <article class="bento-card"><div class="bento-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506L3 20l.859-3.513a2 2 0 0 1 .506-.854z"/></svg></div><h3>One team owns the channel</h3>
+        <article class="bento-card"><div class="bento-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506L3 20l.859-3.513a2 2 0 0 1 .506-.854z"/></svg></div><h3>One Team Owns the Channel</h3>
             <p>Listings, PPC, inventory signals, and account health sit with the same people. You are not bouncing between three vendors who each blame the other.</p></article>
-        <article class="bento-card"><div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div><h3>Daily health, weekly moves</h3>
+        <article class="bento-card"><div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div><h3>Daily Health, Weekly Moves</h3>
             <p>Account health, Buy Box, and campaign anomalies get a daily look. Bigger listing and bid changes land on a weekly cadence with a written note.</p></article>
-        <article class="bento-card"><div class="bento-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg></div><h3>Ads and listings together</h3>
+        <article class="bento-card"><div class="bento-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg></div><h3>Ads and Listings Together</h3>
             <p>A paid click that lands on a weak listing wastes spend. The same team that writes the page also runs Sponsored Products and Brands.</p></article>
-        <article class="bento-card"><div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div><h3>Inventory tied to demand</h3>
+        <article class="bento-card"><div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div><h3>Inventory Tied to Demand</h3>
             <p>Restock and FBA signals feed the ad plan. We do not raise bids into a week where the ASIN will go dark.</p></article>
-        <article class="bento-card"><div class="bento-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div><h3>Reporting you can act on</h3>
+        <article class="bento-card"><div class="bento-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div><h3>Reporting You Can Act On</h3>
             <p>You get the numbers that change a decision: TACOS, organic share, stranded units, and the next three moves. Not a 40-tab dump.</p></article>
-        <article class="bento-card"><div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Retention over churn</h3>
+        <article class="bento-card"><div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Retention Over Churn</h3>
             <p>90% client retention. Flat monthly retainers from $3K for brands doing $1M to $20M. Amazon Ads Partner Network member with $150M+ managed across 200+ brands.</p></article>
       </div>
     </div>
@@ -747,12 +769,12 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
           <p class="sec-sub" style="margin-bottom:0">SellTru runs Seller Central for brands doing $1M to $20M. $150M+ managed, 200+ brands, 90% retention, a 45% average ACOS drop in 90 days, and Upwork Top Rated Plus. See the <a href="/marketplace-agency-pricing">pricing guide</a>.</p>
         </div>
         <ul class="svc-list">
-          <li><span class="n">01</span><div class="svc-item"><strong class="svc-title">Seller Central ops</strong><span class="svc-body">Catalog hygiene, suppressed listings, policy flags, and tickets that keep the account healthy.</span></div></li>
-          <li><span class="n">02</span><div class="svc-item"><strong class="svc-title">Advertising management</strong><span class="svc-body">Sponsored Products, Brands, and Display with TACOS targets. Average ACOS drop of 45% in 90 days across the book.</span></div></li>
-          <li><span class="n">03</span><div class="svc-item"><strong class="svc-title">Listing and content</strong><span class="svc-body">Titles, bullets, images, A+, and backend terms. Full rewrites live on listing optimization.</span></div></li>
-          <li><span class="n">04</span><div class="svc-item"><strong class="svc-title">Inventory and FBA</strong><span class="svc-body">Restock planning and shipment timing tied to the ad plan so you do not buy rank you cannot supply.</span></div></li>
-          <li><span class="n">05</span><div class="svc-item"><strong class="svc-title">Brand and account health</strong><span class="svc-body">Hijacker signals, Brand Registry tools, and suspension risk watched with the same weekly cadence.</span></div></li>
-          <li><span class="n">06</span><div class="svc-item"><strong class="svc-title">Monthly strategy</strong><span class="svc-body">A written plan for the next month: what to push, what to cut, and what to test. Flat retainer.</span></div></li>
+          <li><span class="n">01</span><div class="svc-item"><h3 class="svc-title">Seller Central Ops</h3><span class="svc-body">Catalog hygiene, suppressed listings, policy flags, and tickets that keep the account healthy.</span></div></li>
+          <li><span class="n">02</span><div class="svc-item"><h3 class="svc-title">Advertising Management</h3><span class="svc-body">Sponsored Products, Brands, and Display with TACOS targets. Average ACOS drop of 45% in 90 days across the book.</span></div></li>
+          <li><span class="n">03</span><div class="svc-item"><h3 class="svc-title">Listing and Content</h3><span class="svc-body">Titles, bullets, images, A+, and backend terms. Full rewrites live on listing optimization.</span></div></li>
+          <li><span class="n">04</span><div class="svc-item"><h3 class="svc-title">Inventory and FBA</h3><span class="svc-body">Restock planning and shipment timing tied to the ad plan so you do not buy rank you cannot supply.</span></div></li>
+          <li><span class="n">05</span><div class="svc-item"><h3 class="svc-title">Brand and Account Health</h3><span class="svc-body">Hijacker signals, Brand Registry tools, and suspension risk watched with the same weekly cadence.</span></div></li>
+          <li><span class="n">06</span><div class="svc-item"><h3 class="svc-title">Monthly Strategy</h3><span class="svc-body">A written plan for the next month: what to push, what to cut, and what to test. Flat retainer.</span></div></li>
         </ul>
       </div>
     </div>
@@ -763,11 +785,11 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
       <p class="sec-tag">Process</p>
       <h2>Here's How Account Management Starts<span class="h-punct">.</span></h2>
       <div class="process">
-        <div class="pstep"><h3>Free account audit</h3>
+        <div class="pstep"><h3>Free Account Audit</h3>
             <p>We pull listings, ads, health, and inventory signals. You get a short written read of what is costing you money.</p></div>
-        <div class="pstep"><h3>Access and baseline</h3>
+        <div class="pstep"><h3>Access and Baseline</h3>
             <p>Seller Central, ads, and Brand Registry access. We freeze risky changes until the baseline is clear.</p></div>
-        <div class="pstep"><h3>Operate and report</h3>
+        <div class="pstep"><h3>Operate and Report</h3>
             <p>Weekly work in the console, a written plan, and the next three moves. You always know who owns the fix.</p></div>
       </div>
     </div>

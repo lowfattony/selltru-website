@@ -575,7 +575,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
 .cx-a .svc-pricing-card span{display:block;color:rgba(255,255,255,.65);font-size:13px;line-height:1.45}
 .cx-a .svc-pricing-card:hover{border-color:rgba(255,255,255,.28)}
 @media(min-width:961px){
-  .svc-feature{align-items:center}
+  .svc-feature{align-items:start}
 }
 
 /* AMS services chip */
@@ -598,6 +598,157 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
   .walmart-hero .hero-copy{max-width:34em}
   .page-hero.walmart-hero h1,
   .walmart-hero h1{max-width:16.5em}
+}
+
+
+/* === Design Review r5 (2026-10-30) — page-only === */
+
+/* 1) Services @1440: eyebrow ~12px above H2; top-align left col (no vertical center) */
+#whats-included > .cx-wrap > .sec-tag{
+  margin:0 0 12px !important;
+}
+@media (min-width:961px){
+  .cx-a .svc-feature,
+  .svc-feature{
+    align-items:start !important;
+  }
+  .svc-feature > div:first-child{
+    align-self:start !important;
+    position:sticky;
+    top:96px;
+  }
+}
+
+/* 2) Footer services: single column, no wrap; widen services col */
+.footer-top{
+  grid-template-columns:minmax(240px,1.15fr) minmax(220px,1.35fr) minmax(160px,1fr) minmax(140px,.9fr) !important;
+  gap:28px 36px !important;
+}
+.footer-col.footer-services{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:6px !important;
+  grid-template-columns:none !important;
+}
+.footer-services h4{grid-column:auto !important;margin:0 0 8px !important}
+.footer-services a{
+  display:block !important;
+  white-space:nowrap !important;
+  overflow:visible !important;
+  text-overflow:clip !important;
+  line-height:1.35 !important;
+}
+@media (max-width:900px){
+  .footer-top{grid-template-columns:1fr !important}
+}
+
+/* 3) Logo strip @390: 3x2 equal cells; optical size around 24px nominal */
+@media (max-width:720px){
+  .cx-a-logos{
+    display:grid !important;
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    gap:18px 12px !important;
+    justify-items:center !important;
+    align-items:center !important;
+    width:100% !important;
+  }
+  .cx-a-logos img{
+    width:auto !important;
+    max-width:100% !important;
+    object-fit:contain !important;
+    justify-self:center !important;
+  }
+  /* wide wordmarks larger */
+  .cx-a-logos img.logo-door,
+  .cx-a-logos img[alt="Door Daddy"]{height:28px !important;max-width:100% !important}
+  .cx-a-logos img.logo-avs,
+  .cx-a-logos img[alt="Applied Vision Sports"]{height:26px !important;max-width:100% !important}
+  .cx-a-logos img.logo-light,
+  .cx-a-logos img[alt="Light.bio"]{height:26px !important;max-width:100% !important}
+  /* square / compact marks smaller */
+  .cx-a-logos img.logo-vb,
+  .cx-a-logos img[alt="Veeboards"]{height:20px !important;max-width:72px !important}
+  .cx-a-logos img.logo-mint,
+  .cx-a-logos img[alt="Mint"]{height:20px !important;max-width:72px !important}
+  .cx-a-logos img.logo-nds,
+  .cx-a-logos img[alt="NDS"]{height:22px !important;max-width:88px !important}
+  /* default remaining around 24 */
+  .cx-a-logos img:not(.logo-door):not(.logo-avs):not(.logo-vb):not(.logo-nds):not(.logo-light):not(.logo-mint){height:24px !important}
+}
+
+/* Desktop logos stay nominal 24px */
+@media (min-width:721px){
+  .cx-a-logos img,
+  .cx-a-logos img.logo-door,
+  .cx-a-logos img.logo-avs,
+  .cx-a-logos img.logo-vb,
+  .cx-a-logos img.logo-nds,
+  .cx-a-logos img.logo-light,
+  .cx-a-logos img.logo-mint{height:24px !important;width:auto;max-width:140px;object-fit:contain}
+}
+
+/* 4) Why-card body @1440: 15px / 1.55 / pad 28 — win over later rules */
+.cx-a .bento-card,
+.bento-card{
+  padding:28px !important;
+}
+.cx-a .bento-card p,
+.bento-card p{
+  font-size:15px !important;
+  line-height:1.55 !important;
+}
+
+/* 5) Proof caption: 12px @ ~70% opacity, centered under both numbers */
+.cx-a-stat-source,
+.cx-a .cx-a-stat-source{
+  font-size:12px !important;
+  opacity:.7 !important;
+  text-align:center !important;
+  color:#4B5563 !important;
+  margin:14px 0 0 !important;
+  width:100% !important;
+}
+
+/* 6) #39 pricing link card: clearer border + arrow, whole card is link */
+.cx-a .svc-pricing-card,
+a.svc-pricing-card{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:12px !important;
+  margin-top:20px !important;
+  padding:16px 18px !important;
+  border-radius:12px !important;
+  border:1px solid rgba(255,255,255,.22) !important;
+  background:rgba(255,255,255,.05) !important;
+  text-decoration:none !important;
+  max-width:34ch !important;
+  transition:border-color .15s ease, background .15s ease;
+}
+.cx-a .svc-pricing-card:hover,
+a.svc-pricing-card:hover{
+  border-color:rgba(255,107,53,.55) !important;
+  background:rgba(255,107,53,.08) !important;
+}
+.cx-a .svc-pricing-card .svc-pricing-copy{flex:1;min-width:0}
+.cx-a .svc-pricing-card strong{display:block;color:#fff;font-size:15px;margin-bottom:4px}
+.cx-a .svc-pricing-card span{display:block;color:rgba(255,255,255,.65);font-size:13px;line-height:1.45}
+.cx-a .svc-pricing-card .svc-pricing-arrow{
+  flex:0 0 auto;
+  color:var(--orange,#FF6B35);
+  font-size:18px;
+  line-height:1;
+  font-weight:700;
+}
+
+/* 7) #40 ACOS chip: 13px + subtle orange-tinted border */
+.cx-a .svc-stat-chip,
+.svc-stat-chip{
+  font-size:13px !important;
+  line-height:1.35 !important;
+  border:1px solid rgba(255,107,53,.35) !important;
+  background:rgba(255,107,53,.08) !important;
+  color:rgba(255,255,255,.92) !important;
 }
 
 </style>
@@ -844,10 +995,10 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
         <div><div class="n">90%</div><div class="l">Client retention</div></div>
       </div>
       <div class="cx-a-logos" aria-label="Brands SellTru has worked with">
-        <img src="/img/clients/processed/door-daddy.webp" alt="Door Daddy" width="140" height="30" loading="lazy">
-        <img src="/img/clients/processed/applied-vision-sports.webp" alt="Applied Vision Sports" width="140" height="30" loading="lazy">
-        <img src="/img/clients/processed/veeboards.webp" alt="Veeboards" width="140" height="30" loading="lazy">
-        <img src="/img/clients/processed/nds-logo.webp" alt="NDS" width="140" height="30" loading="lazy">
+        <img src="/img/clients/processed/door-daddy.webp" alt="Door Daddy" class="logo-door" width="140" height="30" loading="lazy">
+        <img src="/img/clients/processed/applied-vision-sports.webp" alt="Applied Vision Sports" class="logo-avs" width="140" height="30" loading="lazy">
+        <img src="/img/clients/processed/veeboards.webp" alt="Veeboards" class="logo-vb" width="140" height="30" loading="lazy">
+        <img src="/img/clients/processed/nds-logo.webp" alt="NDS" class="logo-nds" width="140" height="30" loading="lazy">
 </div>
       <div class="cx-a-stat-card" role="group" aria-label="Amazon Ads ACOS result">
         <div class="cx-a-stat-pair">
@@ -893,541 +1044,9 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
           <p class="subhead">Weekly Amazon ads work on one retainer.</p>
           <p class="sec-sub" style="margin-bottom:0">90% retention. Flat retainers from $3K. Average ACOS drop of 45% in 90 days across the managed book. Models on the <a href="/marketplace-agency-pricing">pricing guide</a>.</p>
           <a class="svc-pricing-card" href="/marketplace-agency-pricing">
-            <strong>Flat retainer pricing</strong>
-            <span>Models for $1M to $20M brands on the pricing guide.</span>
+            <span class="svc-pricing-copy">
+              <strong>Flat retainer pricing</strong>
+              <span>Models for $1M to $20M brands on the pricing guide.</span>
+            </span>
+            <span class="svc-pricing-arrow" aria-hidden="true">→</span>
           </a>
-        </div>
-        <ul class="svc-list">
-          <li><span class="n">01</span><div class="svc-item"><h3 class="svc-title">Search Term Harvesting</h3><span class="svc-body">Winning queries promoted. Waste cut with negatives.</span></div></li>
-          <li><span class="n">02</span><div class="svc-item"><h3 class="svc-title">Sponsored Products and Brands</h3><span class="svc-body">Core, competitor, and category coverage. Display when it fits.</span></div></li>
-          <li><span class="n">03</span><div class="svc-item"><h3 class="svc-title">Bid and Budget Control</h3><span class="svc-body">Dayparting, placements, and caps tied to inventory and margin.</span></div></li>
-          <li><span class="n">04</span><div class="svc-item"><h3 class="svc-title">Weekly Written Notes</h3><span class="svc-body">What changed, why, and what we watch next.</span></div></li>
-          <li><span class="n">05</span><div class="svc-item"><h3 class="svc-title">Inventory-Aware Ads</h3><span class="svc-body">We do not raise bids into a stockout week. Restock signals feed the plan with <a href="/amazon-fba-management-services">FBA management</a> when scoped.</span></div></li>
-          <li><span class="n">06</span><div class="svc-item"><h3 class="svc-title">Flat Retainer Pricing</h3><span class="svc-body">Ad spend is paid to Amazon. Our fee is a flat monthly retainer. Models on the <a href="/marketplace-agency-pricing">pricing guide</a>.</span></div></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="process" aria-label="Process">
-    <div class="cx-wrap">
-      <p class="sec-tag">Process</p>
-      <h2>Here's How PPC Work Starts<span class="h-punct">.</span></h2>
-      <div class="process">
-        <div class="pstep"><h3>Ads Audit</h3><p>Structure, search terms, wasted spend, and listing gaps that kill conversion.</p></div>
-        <div class="pstep"><h3>Stabilize Efficiency</h3><p>Negatives, bid cleanup, and budget control before we add spend.</p></div>
-        <div class="pstep"><h3>Grow What Works</h3><p>Scale winners, test new coverage, and keep TACOS inside the target.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="faq" aria-label="Amazon PPC FAQ">
-    <div class="cx-wrap faq-layout">
-      <div class="faq-intro">
-        <p class="sec-tag">FAQ</p>
-        <h2>Amazon PPC FAQ<span class="h-punct">.</span></h2>
-        <p>Pricing, rebuilds, and who this is for. Channel ops sit on <a href="/amazon-account-management-services">account management</a>.</p>
-        <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a free Amazon audit</a>
-      </div>
-            <div class="faq-list">
-        <div class="faq-item open">
-          <button type="button" class="faq-q"><h3>What does weekly Amazon PPC management include?</h3><span class="faq-arrow">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner"><p>Campaign structure, search term work, bid and budget changes, negatives, and a written weekly note. Listing and inventory inputs sit in the same plan when those retainers are active.</p></div></div>
-        </div>
-        <div class="faq-item">
-          <button type="button" class="faq-q"><h3>Who is this for?</h3><span class="faq-arrow">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner"><p>Brands doing $1M to $20M that want a person in the account every week. Below that range we are usually not the right fit.</p></div></div>
-        </div>
-        <div class="faq-item">
-          <button type="button" class="faq-q"><h3>How does pricing work?</h3><span class="faq-arrow">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner"><p>Flat monthly retainers from $3K. Ad spend is paid to Amazon and is separate. We do not take a percent of spend as the default model.</p></div></div>
-        </div>
-        <div class="faq-item">
-          <button type="button" class="faq-q"><h3>Do you rebuild campaigns from scratch?</h3><span class="faq-arrow">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner"><p>Only when structure is broken. Many accounts need cleanup and harvesting first. The audit decides.</p></div></div>
-        </div>
-        <div class="faq-item">
-          <button type="button" class="faq-q"><h3>Average ACOS drop?</h3><span class="faq-arrow">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner"><p>Across our managed book, average ACOS drop of 45% in 90 days. That is a book average, not a promise for every ASIN.</p></div></div>
-        </div>
-        <div class="faq-item">
-          <button type="button" class="faq-q"><h3>Seller Central and Vendor Central?</h3><span class="faq-arrow">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner"><p>Both. Vendor ads are scoped when you sell 1P. See <a href="/amazon-vendor-central-management">Vendor Central management</a>.</p></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta-section cx-a-cta" aria-label="Amazon ads audit CTA">
-    <div class="cx-wrap">
-      <div class="cx-a-cta-box">
-        <h2>If Spend Is Up and Margin Is Down, Start With the Ads Audit<span class="h-punct">.</span></h2>
-        <p>We look at structure, search terms, and listing conversion before we talk about a retainer. No pitch decks. No obligation.</p>
-        <div class="cx-a-cta-actions cta-buttons">
-          <a class="btn btn-primary btn-lg" href="/about#contact-form" data-modal-trigger="audit">Get Your Free Amazon Audit</a>
-          <a class="btn btn-outline-white btn-lg" href="tel:+19548692034">Call (954) 869-2034</a>
-        </div>
-        <p class="cta-calendly" style="margin-top:16px;text-align:center"><a class="cta-calendly-link" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&amp;utm_source=selltru.com&amp;utm_medium=cta&amp;utm_content=amazon-ppc-management" target="_blank" rel="noopener">Book a free 30-minute strategy call</a></p>
-      <nav class="cx-a-end-nav" aria-label="Page sections">
-        <a href="#whats-included">Services</a>
-        <a href="#process">Process</a>
-        <a href="#faq">FAQ</a>
-        <a href="/about#contact-form" data-modal-trigger="audit">Get a free Amazon audit</a>
-      </nav>
-      </div>
-      
-    </div>
-  </section>
-</main>
-
-<selltru-footer><footer class="footer" role="contentinfo">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a class="nav-logo" href="/" aria-label="SellTru home">
-          <svg width="30" height="30" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-  <rect x="1"  y="20" width="7"  height="13" rx="2.5" fill="#FF6B35"/>
-  <rect x="10" y="13" width="7"  height="20" rx="2.5" fill="#1A56DB"/>
-  <rect x="19" y="6"  width="7"  height="27" rx="2.5" fill="white"/>
-  <rect x="28" y="2"  width="5"  height="31" rx="2"   fill="rgba(255,255,255,0.55)"/>
-</svg>
-          <span class="nav-logo-text">SELL<span>TRU</span></span>
-        </a>
-        <p class="footer-brand-desc">A marketplace agency for brands selling on Amazon and Walmart, doing $1M to $20M. Fort Lauderdale, FL. Serving brands nationwide.</p>
-        <div class="footer-social" aria-label="Social media">
-          <a href="https://linkedin.com/company/selltru" target="_blank" rel="noopener" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-          <a href="https://www.facebook.com/share/1BY35ZocEW/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-          <a href="https://www.instagram.com/selltru.amazon" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-        </div>
-      </div>
-      <div class="footer-col footer-services">
-        <h4>Services</h4>
-        <a href="/amazon-marketing">Amazon Marketing</a>
-        <a href="/amazon-marketing#listing-optimization">Listing Optimization</a>
-        <a href="/amazon-marketing#ppc">Amazon PPC &amp; Ads</a>
-        <a href="/amazon-ppc-management">Amazon PPC Management</a>
-        <a href="/amazon-account-management-services">Amazon Account Management</a>
-        <a href="/amazon-listing-optimization-services">Amazon Listing Optimization</a>
-        <a href="/amazon-fba-management-services">Amazon FBA Management</a>
-        <a href="/amazon-a-plus-content">Amazon A+ Content</a>
-        <a href="/amazon-brand-store-design-services">Amazon Brand Store Design</a>
-        <a href="/amazon-brand-protection-services">Amazon Brand Protection</a>
-        <a href="/amazon-marketing">More services</a>
-      </div>
-      <div class="footer-col">
-        <h4>Resources</h4>
-        <a href="/blog">Blog</a>
-        <a href="/questions">FAQ</a>
-        <a href="/lead-magnet">Free Audit Checklist</a>
-        <a href="/marketplace-agency-pricing">Agency Pricing Guide</a>
-        <a href="/walmart-advertising-cost">Walmart Advertising Cost</a>
-        <a href="/walmart-connect-calculator">Walmart Connect Calculator</a>
-        <a href="/case-studies">Case Studies</a>
-        <a href="/write-for-us">Write for Us</a>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="/about">About SellTru</a>
-        <a href="/marketplace-agency-fort-lauderdale">Fort Lauderdale</a>
-        <a href="/about#contact-form">Contact</a>
-        <a href="/about#contact-form">Get a free audit</a>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <p><a href="tel:+19548692034">(954) 869-2034</a></p>
-        <p><a href="mailto:contact@selltru.com">contact@selltru.com</a></p>
-        <p>333 Las Olas Way<br>Fort Lauderdale, FL 33301</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="footer-bottom-left">
-        <p>&copy; 2026 SellTru. All rights reserved. | A marketplace agency for brands on Amazon and Walmart | Fort Lauderdale, FL</p>
-        <p class="amz-tm" style="font-size:11px;opacity:.6;margin-top:6px;">Amazon, Amazon Ads, and all related logos are trademarks of Amazon.com, Inc., or its affiliates.</p>
-      </div>
-      <div class="footer-certs">
-        <span class="footer-cert">Amazon Ads Partner Network member</span>
-      </div>
-    </div>
-  </div>
-</footer>
-
-
-
-</selltru-footer>
-</div>
-
-<div id="cx-a-sticky" role="complementary" aria-label="Free audit offer">
-  <div class="cx-a-sticky-copy">
-    <div class="cx-a-sticky-headline">Free Amazon audit</div>
-    <div class="cx-a-sticky-sub">We'll find wasted spend. No obligation.</div>
-  </div>
-  <div class="cx-a-sticky-actions">
-    <a class="cx-a-sticky-cta" href="/about#contact-form" data-modal-trigger="audit">Get the free audit</a>
-    <button type="button" class="cx-a-sticky-x" id="cx-a-sticky-x" aria-label="Dismiss">&times;</button>
-  </div>
-</div>
-
-<script src="/js/lead-tracking.js" defer></script>
-<script src="/js/main.js" defer></script>
-
-<script>
-document.querySelectorAll('.cx-a .faq-q').forEach(function(q){
-  q.addEventListener('click', function(){
-    var item = q.closest('.faq-item');
-    var open = item.classList.contains('open');
-    item.parentElement.querySelectorAll('.faq-item.open').forEach(function(i){ i.classList.remove('open'); });
-    if (!open) item.classList.add('open');
-  });
-});
-</script>
-
-<script>
-(function () {
-  var KEY = 'strip-dismissed-' + location.pathname;
-  var pastStats = false;
-  var endInView = false;
-  var coverInBand = false;
-  var coverLatched = false;
-  var everShown = false;
-  var shownClean = false;
-  var showStartedAt = 0;
-  var coverIo = null;
-  var coverTargets = null;
-
-  function bar() { return document.getElementById('cx-a-sticky'); }
-
-  function barHeight() {
-    var el = bar();
-    if (!el) return 72;
-    var h = Math.ceil(el.getBoundingClientRect().height || el.offsetHeight || 0);
-    return h > 0 ? h : 72;
-  }
-
-  function publishHeight() {
-    var h = barHeight();
-    document.documentElement.style.setProperty('--cx-a-sticky-h', h + 'px');
-    return h;
-  }
-
-  function setPad(on) {
-    publishHeight();
-    if (on) document.body.classList.add('cx-a-has-sticky-pad');
-    else document.body.classList.remove('cx-a-has-sticky-pad');
-  }
-
-  /* g30: sync cover check (IO can lag). Stable 72px band while bar is off. */
-  function coverNow() {
-    var sticky = bar();
-    var h = 72;
-    if (sticky && sticky.classList.contains('cx-a-sticky-on')) {
-      var bh = Math.ceil(sticky.getBoundingClientRect().height || 0);
-      if (bh > 8) h = bh;
-    }
-    var top = window.innerHeight - h;
-    var nodes = criticalNodes();
-    for (var i = 0; i < nodes.length; i++) {
-      var r = nodes[i].getBoundingClientRect();
-      if (!r.width || !r.height) continue;
-      if (r.bottom <= top || r.top >= window.innerHeight) continue;
-      if (r.right <= 0 || r.left >= window.innerWidth) continue;
-      return true;
-    }
-    return false;
-  }
-
-  function shouldShow() {
-    if (sessionStorage.getItem(KEY)) return false;
-    if (!pastStats) {
-      coverLatched = false;
-      everShown = false;
-      shownClean = false;
-      showStartedAt = 0;
-      return false;
-    }
-    if (endInView) return false;
-    /* Hide while cover is in the band. Only latch after a clean >=1s show
-       so a flash on a short clear cannot permanently suppress later dwell. */
-    var cover = coverInBand || coverNow();
-    if (cover) {
-      if (shownClean) coverLatched = true;
-      return false;
-    }
-    if (coverLatched) return false;
-    return true;
-  }
-
-  var showTimer = null;
-  var SHOW_DEBOUNCE_MS = 180;
-  var DWELL_MS = 1000;
-
-  function apply() {
-    var el = bar();
-    if (!el) return;
-    if (shouldShow()) {
-      var now = performance.now();
-      if (el.classList.contains('cx-a-sticky-on')) {
-        if (showStartedAt && (now - showStartedAt) >= DWELL_MS) shownClean = true;
-        return;
-      }
-      /* Debounce first paint so sub-200ms clear flashes never show (g28/g30). */
-      if (showTimer) return;
-      showTimer = setTimeout(function () {
-        showTimer = null;
-        var barEl = bar();
-        if (!barEl || !shouldShow()) return;
-        showStartedAt = performance.now();
-        barEl.classList.add('cx-a-sticky-on');
-        everShown = true;
-        requestAnimationFrame(function () { setPad(true); });
-      }, SHOW_DEBOUNCE_MS);
-    } else {
-      if (showTimer) { clearTimeout(showTimer); showTimer = null; }
-      el.classList.remove('cx-a-sticky-on');
-      showStartedAt = 0;
-      setPad(false);
-      publishHeight();
-    }
-  }
-
-  function bind() {
-    var x = document.getElementById('cx-a-sticky-x');
-    if (!x || x.dataset.bound) return;
-    x.dataset.bound = '1';
-    x.addEventListener('click', function () {
-      var el = bar();
-      if (el) el.classList.remove('cx-a-sticky-on');
-      setPad(false);
-      publishHeight();
-      sessionStorage.setItem(KEY, '1');
-    });
-  }
-
-  function hideEmail() {
-    var e = document.getElementById('email-bar');
-    if (e) e.style.display = 'none';
-    var s = document.getElementById('sticky-strip');
-    if (s) s.style.display = 'none';
-  }
-
-  /* Section-boundary sticky + cover IO with latch hysteresis.
-     Show after stats leave the top; hide at final CTA/footer.
-     Cover uses IntersectionObserver on critical nodes in the sticky band
-     (not per-scroll querySelectorAll). Once cover hits after pastStats,
-     latch hide until the reader scrolls back above the stats. */
-  function bandRootMargin() {
-    var h = barHeight();
-    var top = Math.max(0, window.innerHeight - h - 1);
-    return '-' + top + 'px 0px 0px 0px';
-  }
-
-  function criticalNodes() {
-    var sticky = bar();
-    var sel = 'h2, h3, button, .btn, a.btn, .cx-a-cta-box, .cx-a-stat-card, .cx-a-stat-value';
-    return Array.prototype.filter.call(document.querySelectorAll(sel), function (n) {
-      return !(sticky && sticky.contains(n));
-    });
-  }
-
-  function observeCover() {
-    if (!('IntersectionObserver' in window)) return;
-    if (coverIo) coverIo.disconnect();
-    var seen = new Set();
-    coverIo = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) seen.add(e.target);
-        else seen.delete(e.target);
-      });
-      coverInBand = seen.size > 0;
-      if (coverInBand && pastStats && !endInView && everShown) coverLatched = true;
-      apply();
-    }, { root: null, rootMargin: bandRootMargin(), threshold: 0 });
-    coverTargets = criticalNodes();
-    coverTargets.forEach(function (n) { coverIo.observe(n); });
-  }
-
-  function observeSections() {
-    var stats = document.querySelector('.cx-a-stat-card') || document.querySelector('.cx-a-proof');
-    var cta = document.querySelector('.cx-a-cta-box');
-    var foot = document.querySelector('footer.footer');
-
-    function fallback() {
-      if (stats) {
-        var sb = stats.getBoundingClientRect().bottom;
-        if (sb <= 48) pastStats = true;
-        else if (sb > 80) pastStats = false;
-      }
-      var end = false;
-      [cta, foot].forEach(function (n) {
-        if (!n) return;
-        var r = n.getBoundingClientRect();
-        if (r.top < window.innerHeight && r.bottom > 0) end = true;
-      });
-      endInView = end;
-      /* fallback cover scan only when IO unavailable */
-      var sticky = bar();
-      var h = barHeight();
-      var top = window.innerHeight - h;
-      coverInBand = false;
-      criticalNodes().forEach(function (n) {
-        var r = n.getBoundingClientRect();
-        if (r.bottom <= top || r.top >= window.innerHeight) return;
-        if (r.right <= 0 || r.left >= window.innerWidth) return;
-        coverInBand = true;
-      });
-      if (coverInBand && pastStats && !endInView && everShown) coverLatched = true;
-      apply();
-    }
-
-    if (!('IntersectionObserver' in window)) {
-      window.addEventListener('scroll', fallback, { passive: true });
-      fallback();
-      return;
-    }
-
-    if (stats) {
-      new IntersectionObserver(function (entries) {
-        var e = entries[0];
-        if (!e) return;
-        var bottom = e.boundingClientRect.bottom;
-        /* Hysteresis: latch once the card has nearly left the top; clear only when clearly back */
-        if (bottom <= 48) pastStats = true;
-        else if (bottom > 80) pastStats = false;
-        if (!pastStats) coverLatched = false;
-        apply();
-      }, { threshold: [0, 0.01, 0.1, 1] }).observe(stats);
-    }
-
-    var endBits = { cta: false, footer: false };
-    function syncEnd() {
-      endInView = endBits.cta || endBits.footer;
-      apply();
-    }
-    var endIo = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        var key = (cta && e.target === cta) ? 'cta' : 'footer';
-        endBits[key] = !!e.isIntersecting;
-      });
-      syncEnd();
-    }, { threshold: [0, 0.01, 0.1], rootMargin: '96px 0px 96px 0px' });
-    if (cta) endIo.observe(cta);
-    if (foot) endIo.observe(foot);
-
-    observeCover();
-
-    /* Light scroll sync for pastStats + scroll-end re-apply (g27/g28/g30). */
-    var scrollEndTimer = null;
-    function onScrollSync() {
-      if (!stats) return;
-      var sb = stats.getBoundingClientRect().bottom;
-      var next = pastStats;
-      if (sb <= 48) next = true;
-      else if (sb > 80) next = false;
-      if (next !== pastStats) {
-        pastStats = next;
-        if (!pastStats) coverLatched = false;
-        apply();
-      } else {
-        var el = bar();
-        if (el && el.classList.contains('cx-a-sticky-on') && showStartedAt &&
-            (performance.now() - showStartedAt) >= 1000) {
-          shownClean = true;
-        }
-      }
-      if (scrollEndTimer) clearTimeout(scrollEndTimer);
-      scrollEndTimer = setTimeout(function () {
-        scrollEndTimer = null;
-        apply();
-      }, 120);
-    }
-    window.addEventListener('scroll', onScrollSync, { passive: true });
-  }
-
-  function boot() {
-    hideEmail();
-    bind();
-    publishHeight();
-    observeSections();
-    apply();
-    window.addEventListener('resize', function () {
-      publishHeight();
-      observeCover();
-      apply();
-    });
-  }
-
-  hideEmail();
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
-  else boot();
-  window.addEventListener('load', function () { hideEmail(); bind(); publishHeight(); apply(); });
-})();
-</script>
-
-
-
-
-<script>
-/* Page-scoped: Amazon audit modal title + footer year. Does not edit shared components.js.
-   One-shot year/modal fix (no live DOM observer; prior innerHTML loop froze the page). */
-(function () {
-  var AUDIT_TITLE = 'Get a free Amazon audit';
-  var YEAR = String(new Date().getFullYear());
-
-  function fixModal() {
-    var t = document.getElementById('modal-title');
-    if (!t) return;
-    var cur = t.textContent || '';
-    if (cur !== AUDIT_TITLE) t.textContent = AUDIT_TITLE;
-  }
-
-  function fixYear() {
-    var nodes = document.querySelectorAll('footer.footer .footer-bottom p, footer.footer p');
-    nodes.forEach(function (p) {
-      var walk = document.createTreeWalker(p, NodeFilter.SHOW_TEXT, null);
-      var n;
-      while ((n = walk.nextNode())) {
-        var raw = n.nodeValue;
-        if (!raw) continue;
-        var next = raw.replace(/©\s*20\d{2}/g, '© ' + YEAR);
-        if (next !== raw) n.nodeValue = next;
-      }
-    });
-  }
-
-  function runOnce() {
-    fixYear();
-    fixModal();
-  }
-
-  function afterFooter() {
-    var p = (window.customElements && customElements.whenDefined)
-      ? customElements.whenDefined('selltru-footer').catch(function () {})
-      : Promise.resolve();
-    Promise.resolve(p).then(function () {
-      requestAnimationFrame(function () {
-        runOnce();
-        requestAnimationFrame(runOnce);
-      });
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', afterFooter);
-  } else {
-    afterFooter();
-  }
-  window.addEventListener('load', runOnce);
-
-  /* Modal title is set when the dialog opens (shared CE still says Amazon). */
-  document.addEventListener('click', function (e) {
-    var t = e.target;
-    if (!t || !t.closest) return;
-    if (t.closest('[data-modal-trigger="audit"], [data-modal-trigger="contact"]')) {
-      requestAnimationFrame(fixModal);
-      setTimeout(fixModal, 40);
-    }
-  }, true);
-})();
-</script>
-
-</body>
-</html>

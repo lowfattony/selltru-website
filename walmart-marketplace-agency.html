@@ -142,16 +142,22 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
   background:radial-gradient(ellipse at 30% 20%,rgba(26,86,219,.35),transparent 55%),
     radial-gradient(ellipse at 80% 10%,rgba(255,107,53,.18),transparent 45%);
   pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1.45fr .75fr;gap:40px 48px;align-items:start;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px 48px;align-items:start;position:relative}
+.cx-a-hero-visual{min-width:0;width:100%}
+.cx-a-hero-visual .cx-a-ops{width:100%;min-width:360px}
+.cx-a-ops-name{white-space:nowrap}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;
   letter-spacing:.06em;text-transform:uppercase;color:#FFC220;margin-bottom:18px;
   padding:6px 12px;border-radius:999px;border:1px solid rgba(255,194,32,.25);background:rgba(255,194,32,.06)}
-.hero-a h1{font-family:var(--font-head);font-weight:800;font-size:clamp(26px,3.1vw,40px);
-  line-height:1.12;letter-spacing:-0.02em;color:#fff;max-width:none;margin:0 0 16px}
+.hero-a h1{font-family:var(--font-head);font-weight:800;font-size:clamp(26px,2.9vw,32px);line-height:1.15;letter-spacing:-0.02em;color:#fff;max-width:100%;margin:0 0 16px}
+.hero-a h1 span,.hero-a h1 .h-punct{color:#fff !important;-webkit-text-fill-color:#fff !important;}
 .hero-lead{font-size:16.5px;line-height:1.65;color:rgba(255,255,255,.62);max-width:46ch;margin:0 0 26px}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:36px}
-.trust-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;max-width:560px}
-.trust-pill{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);font-size:12px;color:rgba(255,255,255,.88);white-space:nowrap;overflow:visible;flex:0 0 auto;text-align:center}
+.trust-row{display:flex;flex-wrap:wrap;justify-content:flex-start;align-items:center;gap:0;max-width:100%;margin-top:0}
+.trust-pill{display:inline-flex;align-items:center;justify-content:center;gap:5px;padding:7px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);font-size:12px;color:rgba(255,255,255,.88);white-space:nowrap;overflow:visible;flex:0 0 auto;text-align:center;margin:0}
+.trust-row{flex-wrap:nowrap}
+@media (max-width:720px){.trust-row{flex-wrap:wrap}}
+.trust-sep{display:inline-block;width:1px;height:14px;background:rgba(255,255,255,.22);margin:0 8px;flex:0 0 auto;align-self:center}
 /* rev4c: desktop full labels; <=720 short labels @12px, 2+1 wrap  -  after base .trust-row */
 .trust-pill .pill-short{display:none}
 .trust-pill .pill-full{display:inline}
@@ -159,12 +165,14 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
   .trust-pill .pill-full{display:none}
   .trust-pill .pill-short{display:inline}
   .trust-row{
-    display:grid;
-    grid-template-columns:max-content max-content;
-    justify-content:center;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+    align-items:center;
     gap:8px;
     max-width:none;
   }
+  .trust-sep{display:none}
   .trust-pill{
     font-size:12px;
     padding:6px 10px;
@@ -173,8 +181,8 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
     overflow:visible;
     width:max-content;
     max-width:none;
+    margin:0 !important;
   }
-  .trust-pill:last-child{grid-column:1/-1;justify-self:center}
   .trust-pill svg{width:14px;height:14px;flex-shrink:0}
 }
 
@@ -189,7 +197,7 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
 .cx-a-dot:nth-child(1){background:#F87171}.cx-a-dot:nth-child(2){background:#FBBF24}.cx-a-dot:nth-child(3){background:#34D399}
 .cx-a-ops-title{margin-left:8px;font-size:12px;font-weight:600;color:#E2E8F0;
   font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
-.cx-a-ops-grid{display:grid;grid-template-columns:1.3fr .9fr}
+.cx-a-ops-grid{display:grid;grid-template-columns:1.15fr 1fr}
 .cx-a-ops-list{padding:6px 0}
 .cx-a-ops-row{display:grid;grid-template-columns:18px minmax(0,1fr) auto;grid-template-rows:auto auto;
   column-gap:12px;row-gap:3px;align-items:center;padding:11px 16px;
@@ -211,6 +219,12 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
 .cx-a-cadence{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
 .cx-a-cadence li{display:grid;grid-template-columns:36px 1fr;gap:8px;font-size:13px;line-height:1.4;color:#F1F5F9}
 .cx-a-cadence strong{font-size:11px;font-weight:800;color:#FFC220}
+/* cadence mobile fix */
+@media (max-width:720px){
+  .cx-a-cadence li{grid-template-columns:40px 1fr;gap:10px;font-size:13px;line-height:1.4;}
+  .cx-a-ops-side{min-height:0}
+}
+
 .cx-a-ops-note{text-align:center;font-size:11px;color:#CBD5E1;margin:10px 0 0}
 .cx-a-live-status{display:flex;align-items:center;gap:10px;padding:12px 16px;
   border-bottom:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.22)}
@@ -329,11 +343,14 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
 @media(max-width:720px){
   /* Mobile: stack week board; Cadence as strip */
   .cx-a-ops-grid{grid-template-columns:1fr}
+  .cx-a-hero-visual .cx-a-ops{min-width:0}
+  .cx-a-ops-name{white-space:normal}
   .cx-a-ops-side{border-left:none;border-top:1px solid rgba(255,255,255,.08);padding:14px 16px}
   .cx-a-cadence{flex-direction:row;flex-wrap:nowrap;gap:8px;display:flex}
   .cx-a-cadence li{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:4px;
-    grid-template-columns:none;font-size:11px;padding:8px;border-radius:8px;
+    grid-template-columns:none;font-size:11px;line-height:1.35;padding:8px;border-radius:8px;
     background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+  .cx-a-cadence li span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .cx-a-hero-visual .cx-a-ops{max-height:120vh;overflow:auto}
   .cx-a-stat-pair{grid-template-columns:1fr}
   .cx-a .cx-a-stat-inset{margin-top:24px;grid-template-columns:1fr;column-gap:0;row-gap:8px}
@@ -371,19 +388,27 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
   border: 1.5px solid rgba(255,255,255,.55);
 }
 .hero-a .btn-outline-white:hover{ background: rgba(255,255,255,.08); color:#fff; }
-.trust-row .trust-badge{ /* pills already styled; neutralize gold badge chrome */
-  background: inherit;
-  border: inherit;
-  padding: inherit;
-  gap: inherit;
-  color: inherit;
-  font-size: inherit;
+.trust-row .trust-badge.trust-pill,
+.trust-row .trust-pill.trust-badge{
+  /* keep selfcheck trust-badge classes; force Concept A pill chrome over shared badge */
+  display:inline-flex !important;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  padding:7px 10px !important;
+  border-radius:999px !important;
+  border:1px solid rgba(255,255,255,.14) !important;
+  background:rgba(255,255,255,.06) !important;
+  font-size:12px !important;
+  color:rgba(255,255,255,.88) !important;
+  box-shadow:none !important;
 }
 
 /* Punctuation ink-gap: no negative tracking on headings */
 .cx-a h1,.cx-a h2,.cx-a h3,.cx-a .faq-q h3{letter-spacing:0 !important;}
 
 .h-punct{margin-left:-0.07em;}
+.hero-a h1 .h-punct{margin-left:-0.09em;color:#fff;}
 </style>
 
 <script type="application/ld+json">
@@ -556,7 +581,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
     <div class="cx-wrap hero-grid">
       <div>
         <p class="eyebrow"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220"/><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(60 10 10) translate(0,-5.5)"/><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220" transform="rotate(120 10 10) translate(0,-5.5)"/><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(180 10 10) translate(0,-5.5)"/><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220" transform="rotate(240 10 10) translate(0,-5.5)"/><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(300 10 10) translate(0,-5.5)"/></svg> Walmart Marketplace</p>
-        <h1>A Walmart Marketplace Partner That Handles the Item Page and the Ads<span class="h-punct" style="margin-left:-0.09em">.</span> <span>Built for Brand Portal Brands<span class="h-punct" style="margin-left:-0.09em">.</span></span></h1>
+        <h1>A Walmart Marketplace Partner That Handles the Item Page and the Ads<span class="h-punct">.</span> <span>Built for Brand Portal Brands<span class="h-punct">.</span></span></h1>
         <p class="hero-lead">Approval, listings, WFS, and Connect for $1M to $20M brands. Built for the Walmart shopper.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a Free Walmart Audit <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
@@ -564,7 +589,9 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
         </div>
         <div class="trust-row">
           <div class="trust-pill trust-badge trust-badge-wmt"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220"/><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(60 10 10) translate(0,-5.5)"/><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220" transform="rotate(120 10 10) translate(0,-5.5)"/><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(180 10 10) translate(0,-5.5)"/><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#FFC220" transform="rotate(240 10 10) translate(0,-5.5)"/><ellipse cx="10" cy="4.5" rx="2.2" ry="3.5" fill="#0071DC" transform="rotate(300 10 10) translate(0,-5.5)"/></svg><span class="pill-full"> Walmart Marketplace Partner</span><span class="pill-short"> Walmart Partner</span></div>
+          <span class="trust-sep" aria-hidden="true"></span>
           <div class="trust-pill trust-badge"><span class="pill-full">Upwork Top Rated Plus</span><span class="pill-short">Upwork Top Rated+</span></div>
+          <span class="trust-sep" aria-hidden="true"></span>
           <div class="trust-pill trust-badge"><span class="pill-full">$150M+ sales managed</span><span class="pill-short">$150M+ sales managed</span></div>
         </div>
       </div>

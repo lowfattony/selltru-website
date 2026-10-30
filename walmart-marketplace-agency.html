@@ -769,6 +769,20 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
 .cx-a h1 .h-punct,.cx-a h2 .h-punct,.cx-a h3 .h-punct,.h-punct{margin-left:-0.07em;}
 .cx-a h1,.cx-a h2{text-wrap:balance}
 .hero-a h1 .h-punct{margin-left:-0.09em;color:#fff;}
+
+
+/* === Design Review r6 (2026-10-30) — page-only === */
+/* 1) Logos @390 with 6 marks: keep 3x2 equal cells (optical sizes from r5) */
+/* Optional: sticky CTA under services intro @1440 */
+@media (min-width:901px){
+  .svc-feature > div:first-child .svc-sticky-cta{
+    display:inline-flex !important;
+    margin-top:20px;
+    align-items:center;
+  }
+}
+.svc-sticky-cta{display:none}
+
 </style>
 
 <script type="application/ld+json">
@@ -1061,6 +1075,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
           <h2>Walmart Marketplace Services<span class="h-punct">.</span></h2>
           <p class="svc-dek">The full Walmart stack on one retainer.</p>
           <p class="sec-sub" style="margin-bottom:0">Flat retainer pricing for brands doing $1M to $20M. Models on the <a href="/marketplace-agency-pricing">pricing guide</a>.</p>
+          <a class="btn btn-primary svc-sticky-cta" href="/about#contact-form" data-modal-trigger="audit">Get Your Free Walmart Audit</a>
         </div>
         <ul class="svc-list">
           <li><span class="n">01</span><div class="svc-item"><h3 class="svc-title">Approval and Onboarding</h3><span class="svc-body">Account path, tax and banking support, category approvals.</span></div></li>

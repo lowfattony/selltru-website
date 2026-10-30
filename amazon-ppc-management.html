@@ -37,6 +37,11 @@
   font-weight:700;
   font-display:swap;
   src:url('/fonts/plus-jakarta-sans-700.woff2') format('woff2');
+
+  ascent-override:95%;
+  descent-override:24%;
+  line-gap-override:0%;
+  size-adjust:100%;
 }
 @font-face{
   font-family:'Plus Jakarta Sans';
@@ -44,11 +49,25 @@
   font-weight:800;
   font-display:swap;
   src:url('/fonts/plus-jakarta-sans-800.woff2') format('woff2');
+
+  ascent-override:95%;
+  descent-override:24%;
+  line-gap-override:0%;
+  size-adjust:100%;
 }
+@font-face{
+  font-family:'Plus Jakarta Sans Fallback';
+  src:local('Arial'),local('Helvetica Neue'),local('Helvetica'),local('sans-serif');
+  size-adjust:105.5%;
+  ascent-override:95%;
+  descent-override:24%;
+  line-gap-override:0%;
+}
+
 :root{
   --navy:#0D1B2A;--navy-light:#162235;--navy-mid:#1D3045;
   --blue:#1A56DB;--orange:#FF6B35;--orange-hover:#E55A28;
-  --white:#fff;--font-head:'Plus Jakarta Sans',system-ui,sans-serif;
+  --white:#fff;--font-head:'Plus Jakarta Sans','Plus Jakarta Sans Fallback',system-ui,sans-serif;
   --font-body:'Inter',system-ui,sans-serif;
   --radius-sm:10px;--radius:14px;--radius-lg:20px;--radius-xl:28px;
   --container:1180px;
@@ -243,9 +262,11 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
 .cx-a-status.is-progress{background:rgba(59,130,246,.15);color:#93C5FD;border-color:rgba(59,130,246,.3)}
 .cx-a-status.is-queued{background:rgba(255,255,255,.08);color:#E2E8F0;border-color:rgba(255,255,255,.2)}
 .cx-a-ops-desc{grid-column:2/4;margin:0;font-size:12px;color:#D1D9E6;line-height:1.4}
+.page-hero .cx-a-ops-desc{margin:0}
 .cx-a-ops-side{border-left:1px solid rgba(255,255,255,.08);padding:16px;background:rgba(0,0,0,.28)}
 .cx-a-ops-side h3{font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:.06em;
   text-transform:uppercase;color:rgba(255,255,255,.85);margin:0 0 12px}
+.cx-a-cadence-label{font-family:var(--font-head);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55);margin:0 0 10px;}
 .cx-a-cadence{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
 .cx-a-cadence li{display:grid;grid-template-columns:36px 1fr;gap:8px;font-size:13px;line-height:1.4;color:#F1F5F9}
 .cx-a-cadence strong{font-size:11px;font-weight:800;color:#FFC220}
@@ -262,7 +283,7 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
 .cx-a-proof-claims .n{font-family:var(--font-head);font-weight:800;font-size:clamp(32px,4vw,44px);letter-spacing:0;color:#0D1B2A;text-align:center}
 .cx-a-proof-claims .l{font-size:13px;color:#4B5563;text-align:center;margin-top:6px}
 .cx-a-logos{display:flex;flex-wrap:wrap;gap:20px 36px;justify-content:space-evenly;align-items:center;margin-bottom:40px}
-.cx-a-logos img{height:28px;width:auto;max-width:140px;object-fit:contain;opacity:1;
+.cx-a-logos img{height:30px;width:140px;max-width:140px;aspect-ratio:140/30;object-fit:contain;opacity:1;
   /* Single slate tone #64748B on #F4F6FA  -  black + white logos */
   filter:brightness(0) saturate(100%) invert(48%) sepia(12%) saturate(643%) hue-rotate(176deg) brightness(93%) contrast(87%)}
 .cx-a-stat-card{max-width:720px;margin:0 auto;background:#fff;
@@ -276,7 +297,7 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
 .cx-a .cx-a-stat-inset{display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:14px;row-gap:10px;margin-top:24px;max-width:100%;overflow:hidden;min-width:0;
   text-decoration:none;background:#F8FAFC;border:1px solid #E5E7EB;border-radius:14px;padding:12px}
 .cx-a .cx-a-stat-source{grid-column:1/-1;margin:0;font-size:13px;line-height:1.4;color:#6B7280}
-.cx-a-stat-inset img{max-height:160px;width:auto;max-width:100%;border-radius:8px;background:#fff;object-fit:contain}
+.cx-a-stat-inset img{aspect-ratio:2560/334;width:100%;height:auto;max-height:160px;max-width:100%;border-radius:8px;background:#fff;object-fit:contain}
 .cx-a-stat-inset-cap{font-size:12px;font-weight:600;color:#6B7280;white-space:nowrap}
 
 /* Sections: more vertical air + clear dividers */
@@ -310,6 +331,7 @@ body:has(.cx-a) #cx-a-sticky .cx-a-sticky-x{
 .svc-list .n{font-family:var(--font-head);font-weight:800;font-size:13px;color:var(--orange);min-width:28px;padding-top:2px}
 .svc-item{min-width:0;display:flex;flex-direction:column;gap:4px}
 .svc-title{font-weight:700;color:#fff;font-size:16px;line-height:1.35}
+h3.svc-title{font-family:inherit;font-weight:700;color:#fff;font-size:16px;line-height:1.35;margin:0;}
 .svc-body{font-size:16px;line-height:1.65;color:rgba(255,255,255,.72)}
 .svc-list a{color:#93C5FD;font-weight:600}
 
@@ -393,7 +415,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
   /* hero h1 width kept for 3-line cap */
   .hero-ctas{flex-direction:column}
   .cx-a .btn-primary,.cx-a .btn-ghost,.cx-a-cta-actions .btn,.cx-a-cta-actions .btn-outline-white{width:100%;justify-content:center}
-  .cx-a-logos img{height:24px}
+  .cx-a-logos img{height:24px;width:auto}
 }
 
 /* Production: keep Concept A dark with gold page-hero hooks for selfcheck */
@@ -462,39 +484,23 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
       "name": "What does weekly Amazon PPC management include?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Each week we review search terms, add negatives, adjust bids, and move budget toward profitable campaigns. Match types stay separated. We also flag listing problems wasting clicks."
+        "text": "Campaign structure, search term work, bid and budget changes, negatives, and a written weekly note. Listing and inventory inputs sit in the same plan when those retainers are active."
       }
     },
     {
       "@type": "Question",
-      "name": "Who is this Amazon PPC management a fit for?",
+      "name": "Who is this for?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Brands doing about $1M to $20M a year that want senior management of Sponsored Products, Sponsored Brands, and Sponsored Display."
+        "text": "Brands doing $1M to $20M that want a person in the account every week. Below that range we are usually not the right fit."
       }
     },
     {
       "@type": "Question",
-      "name": "How does Amazon PPC management pricing work?",
+      "name": "How does pricing work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Flat monthly retainers from $3,000. Ad spend is paid to Amazon separately. We do not take a percent of spend as the default. See the pricing guide."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How soon should Amazon PPC management change the numbers?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "There is a 90-day onboarding period. Across accounts we manage, the average ACOS reduction in the first 90 days is 45%. After 90 days the agreement is month to month."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you only manage ads, or the rest of the Amazon account?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "PPC runs inside full Amazon management: listings, A+ content, account health, and DSP when you're ready. See account management."
+        "text": "Flat monthly retainers from $3K. Ad spend is paid to Amazon and is separate. We do not take a percent of spend as the default model."
       }
     },
     {
@@ -502,7 +508,23 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
       "name": "Do you rebuild campaigns from scratch?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "When structure is broken, yes. When it is close, we clean and tighten. The audit decides."
+        "text": "Only when structure is broken. Many accounts need cleanup and harvesting first. The audit decides."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Average ACOS drop?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Across our managed book, average ACOS drop of 45% in 90 days. That is a book average, not a promise for every ASIN."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Seller Central and Vendor Central?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both. Vendor ads are scoped when you sell 1P. See Vendor Central management."
       }
     }
   ]
@@ -646,7 +668,7 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
               </div>
             </div>
             <aside class="cx-a-ops-side">
-              <h3>Cadence</h3>
+              <p class="cx-a-cadence-label">Cadence</p>
               <ul class="cx-a-cadence">
                 <li><strong>Mon</strong><span>Search terms</span></li>
                 <li><strong>Wed</strong><span>Bids and budgets</span></li>
@@ -699,12 +721,12 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
       <h2>Set-and-Forget Campaigns Bleed Margin Quietly<span class="h-punct">.</span></h2>
       <p class="sec-sub">Need the whole channel run? See <a href="/amazon-account-management-services">account management</a>.</p>
       <div class="bento">
-        <article class="bento-card"><div class="bento-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506L3 20l.859-3.513a2 2 0 0 1 .506-.854z"/></svg></div><h3>Weekly hands in the console</h3><p>Someone is in the account every week. Bids, negatives, and structure changes land on a cadence.</p></article>
-        <article class="bento-card"><div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div><h3>TACOS over vanity ACOS</h3><p>We optimize for total ad cost of sale against growth targets.</p></article>
-        <article class="bento-card"><div class="bento-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg></div><h3>Ads tied to listings</h3><p>A click on a weak page wastes spend. See <a href="/amazon-listing-optimization-services">listing optimization</a>.</p></article>
-        <article class="bento-card"><div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div><h3>Structure you can read</h3><p>Campaigns named and segmented so you can see what is working.</p></article>
-        <article class="bento-card"><div class="bento-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div><h3>Inventory-aware ads</h3><p>Budgets follow inventory and margin. We do not pour spend into stockouts.</p></article>
-        <article class="bento-card"><div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>One Amazon ads team</h3><p>$150M+ managed. 90% retention. Flat retainers from $3K.</p></article>
+        <article class="bento-card"><div class="bento-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506L3 20l.859-3.513a2 2 0 0 1 .506-.854z"/></svg></div><h3>Weekly Hands in the Console</h3><p>Someone is in the account every week. Bids, negatives, and structure changes land on a cadence.</p></article>
+        <article class="bento-card"><div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div><h3>TACOS Over Vanity ACOS</h3><p>We optimize for total ad cost of sale against growth targets.</p></article>
+        <article class="bento-card"><div class="bento-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg></div><h3>Ads Tied to Listings</h3><p>A click on a weak page wastes spend. See <a href="/amazon-listing-optimization-services">listing optimization</a>.</p></article>
+        <article class="bento-card"><div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div><h3>Structure You Can Read</h3><p>Campaigns named and segmented so you can see what is working.</p></article>
+        <article class="bento-card"><div class="bento-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div><h3>Daily Anomaly Checks</h3><p>Spend spikes, lost Buy Box, and suppressed ASINs get a daily look. Bigger moves wait for the weekly plan.</p></article>
+        <article class="bento-card"><div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Retention Over Churn</h3><p>90% client retention. Flat retainers from $3K for brands doing $1M to $20M. Amazon Ads Partner. $150M+ managed.</p></article>
       </div>
     </div>
   </section>
@@ -720,12 +742,12 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
           <p class="sec-sub" style="margin-bottom:0">90% retention. Flat retainers from $3K. Average ACOS drop of 45% in 90 days across the managed book. Models on the <a href="/marketplace-agency-pricing">pricing guide</a>.</p>
         </div>
         <ul class="svc-list">
-          <li><span class="n">01</span><div class="svc-item"><strong class="svc-title">Search term harvesting</strong><span class="svc-body">Winning queries promoted. Waste cut with negatives.</span></div></li>
-          <li><span class="n">02</span><div class="svc-item"><strong class="svc-title">Sponsored Products and Brands</strong><span class="svc-body">Core, competitor, and category coverage. Display when it fits.</span></div></li>
-          <li><span class="n">03</span><div class="svc-item"><strong class="svc-title">Bid and budget control</strong><span class="svc-body">Dayparting, placements, and caps tied to inventory and margin.</span></div></li>
-          <li><span class="n">04</span><div class="svc-item"><strong class="svc-title">Weekly written notes</strong><span class="svc-body">What changed, why, and what we watch next.</span></div></li>
-          <li><span class="n">05</span><div class="svc-item"><strong class="svc-title">Listings in the same plan</strong><span class="svc-body">Weak pages flagged. Full rewrites on <a href="/amazon-listing-optimization-services">listing optimization</a>.</span></div></li>
-          <li><span class="n">06</span><div class="svc-item"><strong class="svc-title">Reporting you can act on</strong><span class="svc-body">ACOS, TACOS, and the next three moves.</span></div></li>
+          <li><span class="n">01</span><div class="svc-item"><h3 class="svc-title">Search Term Harvesting</h3><span class="svc-body">Winning queries promoted. Waste cut with negatives.</span></div></li>
+          <li><span class="n">02</span><div class="svc-item"><h3 class="svc-title">Sponsored Products and Brands</h3><span class="svc-body">Core, competitor, and category coverage. Display when it fits.</span></div></li>
+          <li><span class="n">03</span><div class="svc-item"><h3 class="svc-title">Bid and Budget Control</h3><span class="svc-body">Dayparting, placements, and caps tied to inventory and margin.</span></div></li>
+          <li><span class="n">04</span><div class="svc-item"><h3 class="svc-title">Weekly Written Notes</h3><span class="svc-body">What changed, why, and what we watch next.</span></div></li>
+          <li><span class="n">05</span><div class="svc-item"><h3 class="svc-title">Inventory-Aware Ads</h3><span class="svc-body">We do not raise bids into a stockout week. Restock signals feed the plan with <a href="/amazon-fba-management-services">FBA management</a> when scoped.</span></div></li>
+          <li><span class="n">06</span><div class="svc-item"><h3 class="svc-title">Flat Retainer Pricing</h3><span class="svc-body">Ad spend is paid to Amazon. Our fee is a flat monthly retainer. Models on the <a href="/marketplace-agency-pricing">pricing guide</a>.</span></div></li>
         </ul>
       </div>
     </div>
@@ -736,9 +758,9 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
       <p class="sec-tag">Process</p>
       <h2>Here's How PPC Work Starts<span class="h-punct">.</span></h2>
       <div class="process">
-        <div class="pstep"><h3>Ads audit</h3><p>Structure, search terms, wasted spend, and listing gaps that kill conversion.</p></div>
-        <div class="pstep"><h3>Stabilize efficiency</h3><p>Negatives, bid cleanup, and budget control before we add spend.</p></div>
-        <div class="pstep"><h3>Grow what works</h3><p>Scale winners, test new coverage, and keep TACOS inside the target.</p></div>
+        <div class="pstep"><h3>Ads Audit</h3><p>Structure, search terms, wasted spend, and listing gaps that kill conversion.</p></div>
+        <div class="pstep"><h3>Stabilize Efficiency</h3><p>Negatives, bid cleanup, and budget control before we add spend.</p></div>
+        <div class="pstep"><h3>Grow What Works</h3><p>Scale winners, test new coverage, and keep TACOS inside the target.</p></div>
       </div>
     </div>
   </section>
@@ -751,30 +773,30 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
         <p>Pricing, rebuilds, and who this is for. Channel ops sit on <a href="/amazon-account-management-services">account management</a>.</p>
         <a class="btn btn-primary" href="/about#contact-form" data-modal-trigger="audit">Get a free Amazon audit</a>
       </div>
-      <div class="faq-list">
+            <div class="faq-list">
         <div class="faq-item open">
           <button type="button" class="faq-q"><h3>What does weekly Amazon PPC management include?</h3><span class="faq-arrow">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner"><p>Each week we review search terms, add negatives, adjust bids, and move budget toward profitable campaigns. Match types stay separated. We also flag listing problems wasting clicks.</p></div></div>
+          <div class="faq-a"><div class="faq-a-inner"><p>Campaign structure, search term work, bid and budget changes, negatives, and a written weekly note. Listing and inventory inputs sit in the same plan when those retainers are active.</p></div></div>
         </div>
         <div class="faq-item">
-          <button type="button" class="faq-q"><h3>Who is this Amazon PPC management a fit for?</h3><span class="faq-arrow">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner"><p>Brands doing about $1M to $20M a year that want senior management of Sponsored Products, Sponsored Brands, and Sponsored Display.</p></div></div>
+          <button type="button" class="faq-q"><h3>Who is this for?</h3><span class="faq-arrow">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Brands doing $1M to $20M that want a person in the account every week. Below that range we are usually not the right fit.</p></div></div>
         </div>
         <div class="faq-item">
-          <button type="button" class="faq-q"><h3>How does Amazon PPC management pricing work?</h3><span class="faq-arrow">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner"><p>Flat monthly retainers from $3,000. Ad spend is paid to Amazon separately. We do not take a percent of spend as the default. See the <a href="/marketplace-agency-pricing">pricing guide</a>.</p></div></div>
-        </div>
-        <div class="faq-item">
-          <button type="button" class="faq-q"><h3>How soon should Amazon PPC management change the numbers?</h3><span class="faq-arrow">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner"><p>There is a 90-day onboarding period. Across accounts we manage, the average ACOS reduction in the first 90 days is 45%. After 90 days the agreement is month to month.</p></div></div>
-        </div>
-        <div class="faq-item">
-          <button type="button" class="faq-q"><h3>Do you only manage ads, or the rest of the Amazon account?</h3><span class="faq-arrow">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner"><p>PPC runs inside full Amazon management: listings, A+ content, account health, and DSP when you're ready. See <a href="/amazon-account-management-services">account management</a>.</p></div></div>
+          <button type="button" class="faq-q"><h3>How does pricing work?</h3><span class="faq-arrow">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Flat monthly retainers from $3K. Ad spend is paid to Amazon and is separate. We do not take a percent of spend as the default model.</p></div></div>
         </div>
         <div class="faq-item">
           <button type="button" class="faq-q"><h3>Do you rebuild campaigns from scratch?</h3><span class="faq-arrow">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner"><p>When structure is broken, yes. When it is close, we clean and tighten. The audit decides.</p></div></div>
+          <div class="faq-a"><div class="faq-a-inner"><p>Only when structure is broken. Many accounts need cleanup and harvesting first. The audit decides.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q"><h3>Average ACOS drop?</h3><span class="faq-arrow">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Across our managed book, average ACOS drop of 45% in 90 days. That is a book average, not a promise for every ASIN.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q"><h3>Seller Central and Vendor Central?</h3><span class="faq-arrow">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Both. Vendor ads are scoped when you sell 1P. See <a href="/amazon-vendor-central-management">Vendor Central management</a>.</p></div></div>
         </div>
       </div>
     </div>

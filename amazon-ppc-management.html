@@ -642,11 +642,11 @@ body:has(.cx-a) .footer-top{gap:32px;padding-bottom:32px;align-items:start}
   .footer-top{grid-template-columns:1fr !important}
 }
 
-/* 3) Logo strip @390: 3x2 equal cells; optical size around 24px nominal */
+/* 3) Logo strip @390: 2x2 equal cells (4 logos); optical size around 24px nominal */
 @media (max-width:720px){
   .cx-a-logos{
     display:grid !important;
-    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
     gap:18px 12px !important;
     justify-items:center !important;
     align-items:center !important;
@@ -736,6 +736,33 @@ a.svc-pricing-card:hover{
   background:rgba(255,107,53,.08) !important;
   color:rgba(255,255,255,.92) !important;
 }
+
+
+
+/* === Design Review r6 (2026-10-30) — page-only === */
+/* 1) Logos @390 with 4 marks: centered 2x2 equal cells (keep optical sizes) */
+@media (max-width:720px){
+  .cx-a-logos{
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:18px 16px !important;
+    justify-items:center !important;
+    align-items:center !important;
+    width:100% !important;
+    max-width:320px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+}
+/* Optional: sticky CTA under services intro @1440 */
+@media (min-width:901px){
+  .svc-feature > div:first-child .svc-sticky-cta{
+    display:inline-flex !important;
+    margin-top:20px;
+    align-items:center;
+  }
+}
+.svc-sticky-cta{display:none}
 
 </style>
 
@@ -1036,6 +1063,7 @@ a.svc-pricing-card:hover{
             </span>
             <span class="svc-pricing-arrow" aria-hidden="true">→</span>
           </a>
+          <a class="btn btn-primary svc-sticky-cta" href="/about#contact-form" data-modal-trigger="audit">Get Your Free Amazon Audit</a>
         </div>
         <ul class="svc-list">
           <li><span class="n">01</span><div class="svc-item"><h3 class="svc-title">Search Term Harvesting</h3><span class="svc-body">Winning queries promoted. Waste cut with negatives.</span></div></li>

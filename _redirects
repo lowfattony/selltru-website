@@ -191,6 +191,12 @@
 /walmart-connect-cost/    /walmart-connect-ads-cost    301
 /walmart-connect-cost.html    /walmart-connect-ads-cost    301!
 
+# GSC not-indexed aliases. Keep these above the html splat and the 404 catch-all.
+/walmart-connect-ads-guide              /blog/walmart-connect-ads-guide    301
+/walmart-connect-ads-guide/             /blog/walmart-connect-ads-guide    301
+/cart                                   /                                 301
+/cart/                                  /                                 301
+
 /*.html    /:splat    301!
 
 # -----------------------------------------------

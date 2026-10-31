@@ -186,6 +186,11 @@
 /blog/how-to-judge-amazon-agency-reviews.html    /blog/how-to-judge-marketplace-agency-reviews    301!
 
 
+# Short Walmart Connect cost URL. Canonical page is /walmart-connect-ads-cost.
+/walmart-connect-cost    /walmart-connect-ads-cost    301
+/walmart-connect-cost/    /walmart-connect-ads-cost    301
+/walmart-connect-cost.html    /walmart-connect-ads-cost    301!
+
 /*.html    /:splat    301!
 
 # -----------------------------------------------

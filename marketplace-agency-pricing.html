@@ -422,6 +422,41 @@
       .pricing-hero { padding: 56px 0 48px; }
       .pricing-article { padding: 0 20px 64px; }
     }
+
+    /* FAQ CTA: mobile stack is scoped to this card only. Desktop spacing stays 12px. */
+    .pricing-cta-box > a.btn + a.btn { margin-left: 12px; }
+    @media (max-width: 480px) {
+      .pricing-cta-box > a.btn {
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        box-sizing: border-box;
+        white-space: normal;
+        text-wrap: pretty;
+        text-align: center;
+        line-height: 1.25;
+      }
+      .pricing-cta-box > a.btn + a.btn {
+        margin-top: 12px;
+        margin-left: 0;
+      }
+      .pricing-cta-box > a.pricing-faq-cta-book {
+        background: transparent;
+        color: var(--white);
+        border-color: rgba(255, 255, 255, 0.3);
+        border-radius: var(--radius-sm);
+        box-shadow: none;
+      }
+      .pricing-cta-box > a.pricing-faq-cta-book:hover {
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--white);
+        border-color: rgba(255, 255, 255, 0.65);
+        transform: none;
+        box-shadow: none;
+      }
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -495,7 +530,7 @@
         "name": "Do marketplace agencies charge setup fees?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, most do. A one-time setup fee of $500–$2,500 is standard for campaign buildout, audit work, and onboarding. Be skeptical of agencies that waive setup fees: it either means they're cutting corners on initial setup or baking it into a higher monthly fee. Setup work takes real hours."
+          "text": "Yes, most do. A one-time setup fee of $500 to $2,500 is standard for campaign buildout, audit work, and onboarding. Be skeptical of agencies that waive setup fees: it either means they're cutting corners on initial setup or baking it into a higher monthly fee. Setup work takes real hours."
         }
       },
       {
@@ -503,7 +538,7 @@
         "name": "What's a fair contract length for a marketplace agency?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Three months is the minimum to evaluate meaningful results. Algorithms take 4–6 weeks to respond to bid changes, and listing optimization takes time to show in conversion data. Six months is reasonable. Twelve months is only fair if there's a performance clause that lets you exit if benchmarks aren't hit. Month-to-month after an initial period is ideal: it keeps the agency accountable."
+          "text": "Three months is the minimum to evaluate meaningful results. Algorithms take 4 to 6 weeks to respond to bid changes, and listing optimization takes time to show in conversion data. Six months is reasonable. Twelve months is only fair if there's a performance clause that lets you exit if benchmarks aren't hit. Month-to-month after an initial period is ideal: it keeps the agency accountable."
         }
       },
       {
@@ -527,7 +562,7 @@
         "name": "How quickly should I see ROI from a marketplace agency?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Month 1 is setup and baseline measurement. You should see initial ACOS improvements and structural fixes within 30–45 days. Meaningful revenue impact from listing optimization and keyword rank gains takes 60–90 days. If you're 90 days in and haven't seen any measurable improvement in ACOS, conversion, or organic rank, something is wrong. That's the benchmark, not 6 months."
+          "text": "Month 1 is setup and baseline measurement. You should see initial ACOS improvements and structural fixes within 30 to 45 days. Meaningful revenue impact from listing optimization and keyword rank gains takes 60 to 90 days. If you're 90 days in and haven't seen any measurable improvement in ACOS, conversion, or organic rank, something is wrong. That's the benchmark, not 6 months."
         }
       },
       {
@@ -535,7 +570,7 @@
         "name": "What's the difference between a marketplace agency and an Amazon consultant?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A consultant typically audits and advises: they tell you what to do and you do it. An agency manages it for you. Consultants tend to cost less ($500–$3,000 for a project) but require internal bandwidth to execute. Agencies cost more monthly but handle execution. For brands without a dedicated internal Amazon resource, an agency is usually the right move."
+          "text": "A consultant typically audits and advises: they tell you what to do and you do it. An agency manages it for you. Consultants tend to cost less ($500 to $3,000 for a project) but require internal bandwidth to execute. Agencies cost more monthly but handle execution. For brands without a dedicated internal Amazon resource, an agency is usually the right move."
         }
       }
     ]
@@ -886,12 +921,12 @@
 
           <div class="pfaq-item reveal">
             <div class="pfaq-q">Do marketplace agencies charge setup fees?</div>
-            <p class="pfaq-a">Yes, most do. A one-time setup fee of $500–$2,500 is standard for campaign buildout, audit work, and onboarding. Be skeptical of agencies that waive setup fees: it either means they're cutting corners on initial setup or baking it into a higher monthly fee. Setup work takes real hours.</p>
+            <p class="pfaq-a">Yes, most do. A one-time setup fee of $500 to $2,500 is standard for campaign buildout, audit work, and onboarding. Be skeptical of agencies that waive setup fees: it either means they're cutting corners on initial setup or baking it into a higher monthly fee. Setup work takes real hours.</p>
           </div>
 
           <div class="pfaq-item reveal">
             <div class="pfaq-q">What's a fair contract length for a marketplace agency?</div>
-            <p class="pfaq-a">Three months is the minimum to evaluate meaningful results. Algorithms take 4–6 weeks to respond to bid changes, and listing optimization takes time to show in conversion data. Six months is reasonable. Twelve months is only fair if there's a performance clause that lets you exit if benchmarks aren't hit. Month-to-month after an initial period is ideal: it keeps the agency accountable.</p>
+            <p class="pfaq-a">Three months is the minimum to evaluate meaningful results. Algorithms take 4 to 6 weeks to respond to bid changes, and listing optimization takes time to show in conversion data. Six months is reasonable. Twelve months is only fair if there's a performance clause that lets you exit if benchmarks aren't hit. Month-to-month after an initial period is ideal: it keeps the agency accountable.</p>
           </div>
 
           <div class="pfaq-item reveal">
@@ -906,12 +941,12 @@
 
           <div class="pfaq-item reveal">
             <div class="pfaq-q">How quickly should I see ROI from a marketplace agency?</div>
-            <p class="pfaq-a">Month 1 is setup and baseline measurement. You should see initial ACOS improvements and structural fixes within 30–45 days. Meaningful revenue impact from listing optimization and keyword rank gains takes 60–90 days. If you're 90 days in and haven't seen any measurable improvement in ACOS, conversion, or organic rank, something is wrong. That's the benchmark, not 6 months.</p>
+            <p class="pfaq-a">Month 1 is setup and baseline measurement. You should see initial ACOS improvements and structural fixes within 30 to 45 days. Meaningful revenue impact from listing optimization and keyword rank gains takes 60 to 90 days. If you're 90 days in and haven't seen any measurable improvement in ACOS, conversion, or organic rank, something is wrong. That's the benchmark, not 6 months.</p>
           </div>
 
           <div class="pfaq-item reveal">
             <div class="pfaq-q">What's the difference between a marketplace agency and an Amazon consultant?</div>
-            <p class="pfaq-a">A consultant typically audits and advises: they tell you what to do and you do it. An agency manages it for you. Consultants tend to cost less ($500–$3,000 for a project) but require internal bandwidth to execute. Agencies cost more monthly but handle execution. For brands without a dedicated internal Amazon resource, an agency is usually the right move.</p>
+            <p class="pfaq-a">A consultant typically audits and advises: they tell you what to do and you do it. An agency manages it for you. Consultants tend to cost less ($500 to $3,000 for a project) but require internal bandwidth to execute. Agencies cost more monthly but handle execution. For brands without a dedicated internal Amazon resource, an agency is usually the right move.</p>
           </div>
 
         </div>
@@ -923,7 +958,7 @@
           <h3>See What SellTru Would Cost<br><span>for Your Specific Account</span></h3>
           <p>We'll audit your Amazon account, show you exactly what we'd work on, and give you a clear price, all before you make any decision. Takes about 30 minutes.</p>
           <a data-modal-trigger="audit" href="/about#contact-form" class="btn btn-primary">Get the Free Audit</a>
-          <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&utm_source=selltru.com&utm_medium=cta&utm_content=marketplace-agency-pricing" target="_blank" rel="noopener" style="margin-left:12px;">Book a free 30-minute strategy call</a>
+          <a class="btn btn-primary pricing-faq-cta-book" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&utm_source=selltru.com&utm_medium=cta&utm_content=marketplace-agency-pricing" target="_blank" rel="noopener">Book a free 30-minute strategy call</a>
           <p class="cta-note">No commitment required. No high-pressure sales call. Just straight talk about your account.</p>
         </div>
 

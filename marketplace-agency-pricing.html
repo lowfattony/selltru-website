@@ -30,6 +30,24 @@
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
     .reveal.revealed { opacity: 1; transform: none; }
 
+    /* Fixed nav is already out of flow. Drop the 72px placeholder so defining
+       selltru-header does not pull the page up. Settled layout is unchanged. */
+    selltru-header:not(:defined) {
+      height: 0;
+      min-height: 0;
+      background: transparent;
+    }
+    /* Real heading font wraps one line more than the fallback only in these
+       widths. min-height matches the settled line count, so desktop and the
+       final mobile heading box stay the same. */
+    @media (min-width: 402px) and (max-width: 435px) {
+      .pricing-hero h1 { min-height: calc(5 * 1.12em); }
+    }
+    @media (min-width: 459px) and (max-width: 475px),
+           (min-width: 481px) and (max-width: 495px) {
+      .pricing-hero h1 { min-height: calc(4 * 1.12em); }
+    }
+
     /* Hero */
     .pricing-hero {
       background: linear-gradient(150deg, #0A1628 0%, #0D1B2A 60%, #112240 100%);

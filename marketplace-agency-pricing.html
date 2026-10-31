@@ -474,6 +474,36 @@
         transform: none;
         box-shadow: none;
       }
+      .pricing-callout > p .btn {
+        display: flex !important;
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box;
+        white-space: normal;
+        text-wrap: pretty;
+        justify-content: center;
+        text-align: center;
+        line-height: 1.25;
+      }
+      .pricing-callout > p .btn + .btn {
+        margin-top: 12px !important;
+      }
+      .pricing-callout > p .pricing-inline-cta-book {
+        background: transparent;
+        color: var(--navy);
+        border-color: var(--gray-300);
+        border-radius: var(--radius-sm);
+        box-shadow: none;
+      }
+      .pricing-callout > p .pricing-inline-cta-book:hover {
+        background: var(--navy);
+        color: var(--white);
+        border-color: var(--navy);
+        transform: none;
+        box-shadow: none;
+      }
     }
   </style>
   <script type="application/ld+json">
@@ -901,7 +931,7 @@
           <p>One thing we offer that most agencies don't: a free account audit before you engage. We'll pull up your account, tell you what's wrong, and give you a clear picture of what the work looks like, before you decide if we're the right fit. No obligation.</p>
           <p style="margin-top:22px;text-align:center;">
             <a href="/about#contact-form" data-modal-trigger="audit" class="btn btn-primary" style="display:inline-block;padding:14px 34px;background:var(--orange);color:#fff;font-weight:700;border-radius:10px;text-decoration:none;font-size:15px;" onclick="if(window.gtag)gtag('event','cta_click',{event_category:'engagement',event_label:'pricing_inline_audit'});">Get Your Free Account Audit &rarr;</a>
-          <a class="btn btn-primary" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&utm_source=selltru.com&utm_medium=cta&utm_content=marketplace-agency-pricing" target="_blank" rel="noopener" style="margin-left:12px;">Book a free 30-minute strategy call</a>
+          <a class="btn btn-primary pricing-inline-cta-book" href="https://calendly.com/andrewd3/30min?hide_gdpr_banner=1&utm_source=selltru.com&utm_medium=cta&utm_content=marketplace-agency-pricing" target="_blank" rel="noopener" style="margin-left:12px;">Book a free 30-minute strategy call</a>
           </p>
           <p style="margin-top:12px;text-align:center;font-size:13px;opacity:0.7;">You'll have our number before the end of the first call.</p>
         </div>

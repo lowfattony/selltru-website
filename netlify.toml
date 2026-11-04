@@ -1,0 +1,11 @@
+# Static site. This file does not set a build command or publish directory.
+# GIT_DEPTH includes the parent commit so the IndexNow plugin can diff it.
+[build.environment]
+  GIT_DEPTH = "2"
+
+[[plugins]]
+  package = "./netlify/plugins/indexnow"
+
+  [plugins.inputs]
+  host = "selltru.com"
+  keyFile = "f4a2be597f17994fe6ae0b11b38244eb.txt"

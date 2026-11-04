@@ -1,0 +1,9 @@
+name: netlify-plugin-indexnow
+inputs:
+  - name: host
+    description: Hostname sent to IndexNow, without a scheme.
+    default: selltru.com
+    required: true
+  - name: keyFile
+    description: IndexNow key filename at the site root. The file contains only the key.
+    required: true

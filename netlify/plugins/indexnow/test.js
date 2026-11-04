@@ -4,6 +4,7 @@ const os = require('os');
 const path = require('path');
 const { execFileSync } = require('child_process');
 const plugin = require('./index.js');
+const lib = require('./lib.js');
 
 function git(dir, args) {
   execFileSync('git', args, { cwd: dir, encoding: 'utf8', stdio: 'pipe' });
@@ -32,7 +33,7 @@ const keyFile = key + '.txt';
 
 function testParser() {
   const text = 'M\0blog/a.html\0A\0index.html\0D\0old.html\0R100\0from.html\0to.html\0C050\0copy-src.html\0copy-dst.html\0T\0typed.html\0M\0readme.md\0';
-  const paths = plugin.htmlPathsFromNameStatus(text);
+  const paths = lib.htmlPathsFromNameStatus(text);
   assert.deepStrictEqual(paths, [
     'blog/a.html',
     'index.html',
@@ -47,35 +48,35 @@ function testParser() {
 
 function testRedirects() {
   const redirects = fs.readFileSync(path.join(__dirname, '..', '..', '..', '_redirects'), 'utf8');
-  const map = plugin.parseHtmlRedirects(redirects);
+  const map = lib.parseHtmlRedirects(redirects);
   const host = 'selltru.com';
-  assert.strictEqual(plugin.htmlPathToUrl('index.html', host, map), 'https://selltru.com/');
-  assert.strictEqual(plugin.htmlPathToUrl('about.html', host, map), 'https://selltru.com/about');
+  assert.strictEqual(lib.htmlPathToUrl('index.html', host, map), 'https://selltru.com/');
+  assert.strictEqual(lib.htmlPathToUrl('about.html', host, map), 'https://selltru.com/about');
   assert.strictEqual(
-    plugin.htmlPathToUrl('blog/walmart-connect-ads-guide.html', host, map),
+    lib.htmlPathToUrl('blog/walmart-connect-ads-guide.html', host, map),
     'https://selltru.com/blog/walmart-connect-ads-guide'
   );
   assert.strictEqual(
-    plugin.htmlPathToUrl('blog/walmart-fulfillment-services-wfs-guide.html', host, map),
+    lib.htmlPathToUrl('blog/walmart-fulfillment-services-wfs-guide.html', host, map),
     'https://selltru.com/blog/walmart-fulfillment-services-wfs-guide'
   );
-  assert.strictEqual(plugin.htmlPathToUrl('blog/_template.html', host, map), 'https://selltru.com/blog');
+  assert.strictEqual(lib.htmlPathToUrl('blog/_template.html', host, map), 'https://selltru.com/blog');
   assert.strictEqual(
-    plugin.htmlPathToUrl('amazon-dsp-agency.html', host, map),
+    lib.htmlPathToUrl('amazon-dsp-agency.html', host, map),
     'https://selltru.com/amazon-dsp-management'
   );
   assert.strictEqual(
-    plugin.htmlPathToUrl('blog/best-amazon-ppc-agencies-2026.html', host, map),
+    lib.htmlPathToUrl('blog/best-amazon-ppc-agencies-2026.html', host, map),
     'https://selltru.com/blog/best-amazon-ppc-management-2026'
   );
-  assert.strictEqual(plugin.htmlPathToUrl('notes.txt', host, map), null);
+  assert.strictEqual(lib.htmlPathToUrl('notes.txt', host, map), null);
 }
 
 async function testContextsSkip() {
   let calls = 0;
   const post = async () => { calls += 1; return { status: 200, body: '' }; };
   for (const context of ['deploy-preview', 'branch-deploy', 'dev', '', undefined]) {
-    const result = await plugin.submitChangedUrls({ context, post, keyFile, host: 'selltru.com' });
+    const result = await lib.submitChangedUrls({ context, post, keyFile, host: 'selltru.com' });
     assert.strictEqual(result.skipped, true, context);
     assert.ok(String(result.reason).startsWith('context:'), result.reason);
   }
@@ -83,8 +84,8 @@ async function testContextsSkip() {
 }
 
 async function testOnSuccessSwallows() {
-  const original = plugin.submitChangedUrls;
-  plugin.submitChangedUrls = async () => { throw new Error('boom'); };
+  const original = lib.submitChangedUrls;
+  lib.submitChangedUrls = async () => { throw new Error('boom'); };
   const previous = process.env.CONTEXT;
   process.env.CONTEXT = 'production';
   try {
@@ -92,7 +93,7 @@ async function testOnSuccessSwallows() {
     assert.strictEqual(result.ok, false);
     assert.ok(result.error.includes('boom'));
   } finally {
-    plugin.submitChangedUrls = original;
+    lib.submitChangedUrls = original;
     if (previous === undefined) delete process.env.CONTEXT;
     else process.env.CONTEXT = previous;
   }
@@ -100,8 +101,8 @@ async function testOnSuccessSwallows() {
 
 async function testDeployPreviewDoesNotPost() {
   let calls = 0;
-  const original = plugin.postIndexNow;
-  plugin.postIndexNow = async () => { calls += 1; return { status: 200, body: '' }; };
+  const original = lib.postIndexNow;
+  lib.postIndexNow = async () => { calls += 1; return { status: 200, body: '' }; };
   const previous = process.env.CONTEXT;
   process.env.CONTEXT = 'deploy-preview';
   try {
@@ -112,7 +113,7 @@ async function testDeployPreviewDoesNotPost() {
     assert.strictEqual(result.skipped, true);
     assert.strictEqual(calls, 0);
   } finally {
-    plugin.postIndexNow = original;
+    lib.postIndexNow = original;
     if (previous === undefined) delete process.env.CONTEXT;
     else process.env.CONTEXT = previous;
   }
@@ -134,7 +135,7 @@ async function testProductionDiff() {
   commit(dir, 'change html');
 
   let payload = null;
-  const result = await plugin.submitChangedUrls({
+  const result = await lib.submitChangedUrls({
     context: 'production',
     cwd: dir,
     publishDir: dir,
@@ -164,7 +165,7 @@ async function testHttpFailureDoesNotThrow() {
   commit(dir, 'base');
   write(dir, 'about.html', '<html>b</html>\n');
   commit(dir, 'edit');
-  const rejected = await plugin.submitChangedUrls({
+  const rejected = await lib.submitChangedUrls({
     context: 'production',
     cwd: dir,
     publishDir: dir,
@@ -174,7 +175,7 @@ async function testHttpFailureDoesNotThrow() {
   });
   assert.strictEqual(rejected.ok, false);
   assert.strictEqual(rejected.status, 403);
-  const thrown = await plugin.submitChangedUrls({
+  const thrown = await lib.submitChangedUrls({
     context: 'production',
     cwd: dir,
     publishDir: dir,
@@ -195,7 +196,7 @@ async function testBadKeySkips() {
   write(dir, 'about.html', '<html>b</html>\n');
   commit(dir, 'edit');
   let calls = 0;
-  const result = await plugin.submitChangedUrls({
+  const result = await lib.submitChangedUrls({
     context: 'production',
     cwd: dir,
     publishDir: dir,
@@ -218,7 +219,7 @@ async function testShallowClone() {
   const shallow = fs.mkdtempSync(path.join(os.tmpdir(), 'indexnow-shallow-'));
   execFileSync('git', ['clone', '--depth', '1', '--no-local', origin, shallow], { encoding: 'utf8', stdio: 'pipe' });
   let payload = null;
-  const result = await plugin.submitChangedUrls({
+  const result = await lib.submitChangedUrls({
     context: 'production',
     cwd: shallow,
     publishDir: shallow,
@@ -233,7 +234,22 @@ async function testShallowClone() {
   assert.deepStrictEqual(payload.urlList, ['https://selltru.com/page']);
 }
 
+async function testPluginExportsOnlyOnSuccess() {
+  assert.deepStrictEqual(Object.keys(plugin).sort(), ['onSuccess']);
+  const { pathToFileURL } = require('url');
+  const loaded = await import(pathToFileURL(require.resolve('./index.js')).href);
+  const logic = loaded.default === undefined ? loaded : loaded.default;
+  const events = new Set(['onPreBuild', 'onBuild', 'onPostBuild', 'onSuccess', 'onError', 'onEnd', 'onPreDev', 'onDev']);
+  const keys = Object.keys(logic);
+  assert.ok(keys.includes('onSuccess'), keys.join(','));
+  for (const key of keys) {
+    assert.ok(events.has(key), 'Netlify would reject export ' + key);
+    assert.strictEqual(typeof logic[key], 'function');
+  }
+}
+
 (async () => {
+  await testPluginExportsOnlyOnSuccess();
   testParser();
   testRedirects();
   await testContextsSkip();

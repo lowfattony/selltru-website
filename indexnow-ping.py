@@ -9,7 +9,7 @@ The key file must be live at https://selltru.com/<KEY>.txt before this will work
 """
 import sys, json, re, os, urllib.request
 
-KEY = "7a55c6142aade8cd452dc288947f23113be28cb25d42ae28e3f61aa4e2e220da"
+KEY = "f4a2be597f17994fe6ae0b11b38244eb"
 HOST = "selltru.com"
 BASE = os.path.dirname(os.path.abspath(__file__))
 ENDPOINT = "https://api.indexnow.org/IndexNow"

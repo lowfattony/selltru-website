@@ -78,7 +78,7 @@
       .compare-table { min-width: 520px; table-layout: auto; }
       .compare-table th:nth-child(4),
       .compare-table td:nth-child(4) { display: none; }
-      .compare-frame::after {
+      .compare-frame.is-scrollable::after {
         content: "";
         position: absolute;
         top: 26px;
@@ -88,7 +88,7 @@
         pointer-events: none;
         background: linear-gradient(to right, rgba(255,255,255,0), #fff);
       }
-      .blog-article p.compare-swipe { display: block; }
+      .blog-article .compare-frame.is-scrollable p.compare-swipe { display: block; }
     }
   </style>
   <script type="application/ld+json">
@@ -317,6 +317,21 @@
       </div>
       </div>
       <p style="font-size:13px;color:var(--text-light);">Fees as published on each agency's own website, checked November 18, 2026. SellTru is not affiliated with the other agencies listed. Ad spend is paid to Amazon and is not included in any fee.</p>
+
+<script>
+(function () {
+  var frame = document.querySelector(".compare-frame");
+  var scroller = frame && frame.querySelector(".compare-scroll");
+  if (!frame || !scroller) return;
+  function sync() {
+    frame.classList.toggle("is-scrollable", scroller.scrollWidth > scroller.clientWidth + 1);
+  }
+  sync();
+  window.addEventListener("resize", sync);
+  window.addEventListener("load", sync);
+})();
+</script>
+
       <p>Two things stand out. First, the low published fees usually come with tight limits: a product count, a spend ceiling, or ads-only scope. Second, a flat fee and a percent-of-spend fee can land on the same number at one budget and drift far apart at another. The rest of this post explains why that matters more than the headline price. If you'd rather compare firms than fees, see our ranking of the <a href="/blog/best-amazon-ppc-management-2026" style="color:var(--blue);">best Amazon PPC management firms</a>.</p>
 
       <h2>The Short Answer: What Most Brands Pay</h2>

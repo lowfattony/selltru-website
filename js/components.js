@@ -148,6 +148,12 @@
 /* Loads Calendly widget.js and widget.css together, only after a booking click. */
 (function () {
   if (window.selltruLoadCalendly) return;
+  if (!document.getElementById("selltru-calendly-nav")) {
+    var navStyle = document.createElement("style");
+    navStyle.id = "selltru-calendly-nav";
+    navStyle.textContent = "body:has(.calendly-overlay) .nav-hamburger{visibility:hidden}";
+    document.head.appendChild(navStyle);
+  }
   var CSS_URL = "https://assets.calendly.com/assets/external/widget.css";
   var JS_URL = "https://assets.calendly.com/assets/external/widget.js";
 

@@ -143,6 +143,45 @@
   else boot();
   document.addEventListener("DOMContentLoaded", boot);
 })();
+
+/* Calendly widget and CSS load on a booking click, not with the page. */
+window.selltruLoadCalendly = function (done) {
+  function finish() {
+    if (window.Calendly) { done(); return; }
+    var tries = 0;
+    var timer = setInterval(function () {
+      tries += 1;
+      if (window.Calendly || tries > 40) {
+        clearInterval(timer);
+        if (window.Calendly) done();
+      }
+    }, 100);
+  }
+  if (window.Calendly) { done(); return; }
+  var existing = document.querySelector('script[data-selltru-calendly="1"]');
+  if (existing) { existing.addEventListener("load", finish); return; }
+  var script = document.createElement("script");
+  script.src = "https://assets.calendly.com/assets/external/widget.js";
+  script.async = true;
+  script.setAttribute("data-selltru-calendly", "1");
+  script.onload = finish;
+  document.head.appendChild(script);
+};
+document.addEventListener("click", function (e) {
+  var link = e.target.closest && e.target.closest('a[href*="calendly.com"]');
+  if (!link) return;
+  if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+  e.preventDefault();
+  var url = link.href;
+  window.selltruLoadCalendly(function () {
+    if (window.Calendly && window.Calendly.initPopupWidget) {
+      window.Calendly.initPopupWidget({ url: url });
+    } else {
+      window.open(url, "_blank", "noopener");
+    }
+  });
+});
+
 /**
  * SellTru Web Components -- components.js
  *
@@ -446,14 +485,6 @@ function initAuditModal() {
   ].join('');
   document.body.appendChild(overlay);
 
-  // Load Calendly script if not already present
-  if (!document.querySelector('script[src*="calendly.com"]')) {
-    var calScript = document.createElement('script');
-    calScript.src = 'https://assets.calendly.com/assets/external/widget.js';
-    calScript.async = true;
-    calScript.defer = true;
-    document.head.appendChild(calScript);
-  }
 
   // ── JS ──
   function openModal(e) {
@@ -585,10 +616,12 @@ function initAuditModal() {
           s.style.display = 'block';
           var mb = overlay.querySelector('.modal-box');
           if (mb) mb.classList.add('modal-box-calendly');
-          if (window.Calendly && window.Calendly.initInlineWidget) {
-            var calEl = s.querySelector('.calendly-inline-widget');
-            if (calEl) Calendly.initInlineWidget({ url: calEl.dataset.url, parentElement: calEl });
-          }
+          window.selltruLoadCalendly(function () {
+            if (window.Calendly && window.Calendly.initInlineWidget) {
+              var calEl = s.querySelector('.calendly-inline-widget');
+              if (calEl) Calendly.initInlineWidget({ url: calEl.dataset.url, parentElement: calEl });
+            }
+          });
         }
       } else {
         if (btn) { btn.disabled = false; btn.textContent = 'Send My Audit Request →'; }

@@ -17,6 +17,6 @@ The key file is `f4a2be597f17994fe6ae0b11b38244eb.txt` at the site root. It cont
 
 A missing parent commit, a bad key file, a network error, or a non-success response is logged and does not fail the build.
 
-`indexnow-ping.py` is a separate manual script. It still uses the older key file `7a55c6142aade8cd452dc288947f23113be28cb25d42ae28e3f61aa4e2e220da.txt`.
+`indexnow-ping.py` is a separate manual script. It uses the same key file, `f4a2be597f17994fe6ae0b11b38244eb.txt`.
 
 To rotate the deploy key, add a new 32-character hex file at the root, put only the key in it, and set `keyFile` in `netlify.toml` to that filename.

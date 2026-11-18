@@ -195,8 +195,6 @@
     !function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments);};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f);}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");
     oaiq("init", { pixelId: "UeyzoKe3VtFvfSMqVPUoaN" });
   </script>
-  <link rel="preconnect" href="https://assets.calendly.com">
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
 <body>
 
@@ -800,10 +798,10 @@
                 s.style.display = 'block';
                 var mb = overlay.querySelector('.modal-box');
                 if (mb) mb.classList.add('modal-box-calendly');
-                if (window.Calendly && window.Calendly.initInlineWidget) {
+                window.selltruLoadCalendly(function(){if (window.Calendly && window.Calendly.initInlineWidget) {
                   var calEl = s.querySelector('.calendly-inline-widget');
                   if (calEl) Calendly.initInlineWidget({ url: calEl.dataset.url, parentElement: calEl });
-                }
+                }});
               }
             } else {
               if (btn) { btn.disabled = false; btn.textContent = 'Send My Audit Request →'; }

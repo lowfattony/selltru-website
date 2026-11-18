@@ -197,6 +197,26 @@
 /cart                                   /                                 301
 /cart/                                  /                                 301
 
+# Agent-built pages whose .html URL returned 200. Force the redirect so the file does not shadow it.
+/amazon-ppc-management.html    /amazon-ppc-management    301!
+/amazon-a-plus-content.html    /amazon-a-plus-content    301!
+/amazon-advertising-management.html    /amazon-advertising-management    301!
+/amazon-dsp-management.html    /amazon-dsp-management    301!
+/full-service-marketplace-management.html    /full-service-marketplace-management    301!
+/marketplace-agency-fort-lauderdale.html    /marketplace-agency-fort-lauderdale    301!
+/services.html    /services    301!
+/walmart-a-plus-content.html    /walmart-a-plus-content    301!
+/walmart-listing-optimization-services.html    /walmart-listing-optimization-services    301!
+# More agent and renamed pages whose .html URL still returned 200.
+/marketplace-agency-pricing.html    /marketplace-agency-pricing    301!
+/blog/best-amazon-ppc-management-2026.html    /blog/best-amazon-ppc-management-2026    301!
+/blog/how-to-choose-marketplace-agency.html    /blog/how-to-choose-marketplace-agency    301!
+/blog/how-to-choose-marketplace-agency-12-questions.html    /blog/how-to-choose-marketplace-agency-12-questions    301!
+/blog/how-to-judge-marketplace-agency-reviews.html    /blog/how-to-judge-marketplace-agency-reviews    301!
+/blog/is-marketplace-agency-worth-it.html    /blog/is-marketplace-agency-worth-it    301!
+/blog/marketplace-agency-vs-in-house.html    /blog/marketplace-agency-vs-in-house    301!
+/blog/questions-to-ask-marketplace-agency.html    /blog/questions-to-ask-marketplace-agency    301!
+/blog/top-rated-marketplace-agencies-small-business.html    /blog/top-rated-marketplace-agencies-small-business    301!
 /*.html    /:splat    301!
 
 # -----------------------------------------------
